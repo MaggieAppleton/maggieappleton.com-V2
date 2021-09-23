@@ -4,13 +4,13 @@ import Link from "next/link";
 import path from "path";
 import Layout from "../components/Layout";
 import {
-    postFilePaths,
-    POSTS_PATH,
+    essayFilePaths,
+    ESSAYS_PATH,
     noteFilePaths,
     NOTES_PATH,
 } from "../utils/mdxUtils";
 
-export default function Index({ posts, notes }) {
+export default function Index({ essays, notes }) {
     return (
         <Layout>
             <h1>Home Page</h1>
@@ -19,13 +19,13 @@ export default function Index({ posts, notes }) {
                 <code>next-mdx-remote</code>.
             </p>
             <ul>
-                {posts.map((post) => (
-                    <li key={post.filePath}>
+                {essays.map((essay) => (
+                    <li key={essay.filePath}>
                         <Link
-                            as={`/${post.filePath.replace(/\.mdx?$/, "")}`}
+                            as={`/${essay.filePath.replace(/\.mdx?$/, "")}`}
                             href={`/[slug]`}
                         >
-                            <a>{post.data.title}</a>
+                            <a>{essay.data.title}</a>
                         </Link>
                     </li>
                 ))}
@@ -47,8 +47,8 @@ export default function Index({ posts, notes }) {
 }
 
 export function getStaticProps() {
-    const posts = postFilePaths.map((filePath) => {
-        const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+    const essays = essayFilePaths.map((filePath) => {
+        const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
         const { content, data } = matter(source);
 
         return {
@@ -69,5 +69,5 @@ export function getStaticProps() {
         };
     });
 
-    return { props: { posts, notes } };
+    return { props: { essays, notes } };
 }
