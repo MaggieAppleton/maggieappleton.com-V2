@@ -22,11 +22,8 @@ export default function Index({ posts, notes }) {
                 {posts.map((post) => (
                     <li key={post.filePath}>
                         <Link
-                            as={`/posts/${post.filePath.replace(
-                                /\.mdx?$/,
-                                ""
-                            )}`}
-                            href={`/posts/[slug]`}
+                            as={`/${post.filePath.replace(/\.mdx?$/, "")}`}
+                            href={`/[slug]`}
                         >
                             <a>{post.data.title}</a>
                         </Link>
@@ -37,11 +34,8 @@ export default function Index({ posts, notes }) {
                 {notes.map((note) => (
                     <li key={note.filePath}>
                         <Link
-                            as={`/notes/${note.filePath.replace(
-                                /\.mdx?$/,
-                                ""
-                            )}`}
-                            href={`/notes/[slug]`}
+                            as={`/${note.filePath.replace(/\.mdx?$/, "")}`}
+                            href={`/[slug]`}
                         >
                             <a>{note.data.title}</a>
                         </Link>
