@@ -8,9 +8,16 @@ import Link from "next/link";
 import path from "path";
 import CustomLink from "../components/CustomLink";
 import Layout from "../components/Layout";
-import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";
-import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
-
+import {
+    caseStudyFilePaths,
+    noteFilePaths,
+    essayFilePaths,
+    patternFilePaths,
+    ESSAYS_PATH,
+    NOTES_PATH,
+    PATTERNS_PATH,
+    CASE_STUDIES_PATH,
+} from "../utils/mdxUtils";
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -49,12 +56,45 @@ export default function NotePage({ source, frontMatter }) {
 
 export const getStaticProps = async ({ params }) => {
     const essays = fs.readdirSync(ESSAYS_PATH);
-    const type = essays.find((e) => e.includes(params.slug)) ? "post" : "note";
+    const notes = fs.readdirSync(NOTES_PATH);
+    const patterns = fs.readdirSync(PATTERNS_PATH);
+    const caseStudies = fs.readdirSync(CASE_STUDIES_PATH);
 
-    const filePath =
-        type === "note"
-            ? path.join(NOTES_PATH, `${params.slug}.mdx`)
-            : path.join(ESSAYS_PATH, `${params.slug}.mdx`);
+    // const type = essays.find((e) => e.includes(params.slug)) ? "post" : "note";
+
+    let type;
+
+    if (caseStudies.find((file) => file.includes(params.slug))) {
+        type = "case-study";
+    } else if (essays.find((file) => file.includes(params.slug))) {
+        type = "essay";
+    } else if (notes.find((file) => file.includes(params.slug))) {
+        type = "note";
+    } else if (patterns.find((file) => file.includes(params.slug))) {
+        type = "pattern";
+    }
+
+    // switch case statement to determine which file to load
+    let filePath;
+    switch (type) {
+        case "essay":
+            filePath = path.join(ESSAYS_PATH, `${params.slug}.mdx`);
+            break;
+        case "note":
+            filePath = path.join(NOTES_PATH, `${params.slug}.mdx`);
+            break;
+        case "pattern":
+            filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
+            break;
+        case "case-study":
+            filePath = path.join(CASE_STUDIES_PATH, `${params.slug}.mdx`);
+            break;
+    }
+
+    // const filePath =
+    //     type === "note"
+    //         ? path.join(NOTES_PATH, `${params.slug}.mdx`)
+    //         : path.join(ESSAYS_PATH, `${params.slug}.mdx`);
 
     const source = fs.readFileSync(filePath);
 
@@ -78,16 +118,20 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-    const notePaths = noteFilePaths
-        // Remove file extensions for page paths
-        .map((path) => path.replace(/\.mdx?$/, ""))
-        // Map the path into the static paths object required by Next.js
-        .map((slug) => ({ params: { slug } }));
+    // Get slugs for all file paths passed in
+    const getSlugParams = (filePaths) =>
+        filePaths
+            // Remove the .mdx extension
+            .map((path) => path.replace(/\.mdx?$/, ""))
+            .map((slug) => ({ params: { slug } }));
 
-    const postPaths = essayFilePaths
-        .map((path) => path.replace(/\.mdx?$/, ""))
-        .map((slug) => ({ params: { slug } }));
-    const paths = notePaths.concat(postPaths);
+    const notePaths = getSlugParams(noteFilePaths);
+    const essayPaths = getSlugParams(essayFilePaths);
+    const patternPaths = getSlugParams(patternFilePaths);
+    const caseStudyPaths = getSlugParams(caseStudyFilePaths);
+
+    // Combine all paths into one array
+    const paths = notePaths.concat(essayPaths, patternPaths, caseStudyPaths);
 
     return {
         paths,
