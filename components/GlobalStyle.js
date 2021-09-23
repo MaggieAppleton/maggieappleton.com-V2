@@ -25,13 +25,13 @@ export const GlobalStyle = createGlobalStyle`
 			--font-secondary: 'Roboto', sans-serif;
 
 			/* Font sizes */
-			--text-xl: 3.357rem;
-			--text-lg: 2.686rem;
-			--text-ml: 2.1485rem;
-			--text-md: 1.718rem; 
-			--text-body: 1.25rem;
-			--text-sm: 1.1rem;
-			--text-xs: 0.88rem;
+			--font-size-xl: 3.357rem;
+			--font-size-lg: 2.686rem;
+			--font-size-ml: 2.1485rem;
+			--font-size-md: 1.718rem; 
+			--font-size-base: 1.25rem;
+			--font-size-sm: 1.1rem;
+			--font-size-xs: 0.88rem;
 
         }
 
@@ -48,4 +48,8 @@ export const GlobalStyle = createGlobalStyle`
                 background: #f5f5f5;
 				padding: var(--spacing-md);
         }
+
+		img {
+			max-width: 100%;
+		}
 `;
