@@ -3,7 +3,8 @@ import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
 import Image from "next/image";
-
+import { H1, H2, H3 } from "../components/Typography";
+import Header from "../components/Header";
 import Layout from "../components/Layout";
 import {
     essayFilePaths,
@@ -19,7 +20,26 @@ import {
 export default function Index({ essays, notes, patterns, projects }) {
     return (
         <Layout>
-            <h1>Home Page</h1>
+            <Header>
+                <H1 style={{ maxWidth: "1200px" }}>
+                    <b>Maggie </b>
+                    makes visual essays about programming, design, and
+                    anthropology.
+                </H1>
+                <h2
+                    style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "var(--font-size-md)",
+                        color: "var(--colour-gray-800)",
+                        fontWeight: "100",
+                    }}
+                >
+                    Currently leading design at{" "}
+                    <a href="">
+                        <b>HASH</b>
+                    </a>
+                </h2>
+            </Header>
 
             {[essays, notes, patterns, projects].map((content, i) => (
                 <div key={i}>

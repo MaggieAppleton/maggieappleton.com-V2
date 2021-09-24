@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProseWrapper = styled.div`
+const ProseWrapper = styled.article`
     display: grid;
     grid-template-columns:
         1fr

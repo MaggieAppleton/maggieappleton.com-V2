@@ -3,19 +3,19 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 	:root {
 		/* Spacing */
-		--space-3xs: 0.125rem;
-		--space-2xs: 0.25rem;
-		--space-xs: 0.5rem;
-		--space-sm: 0.75rem;
-		--space-base: 1rem;
-		--space-md: 1.5rem;
-		--space-lg: 2rem;
-		--space-xl: 2.5rem;
-		--space-2xl: 3rem;
-		--space-3xl: 4rem;
-		--space-4xl: 5rem;
-		--space-5xl: 6rem;
-		--space-6xl: 8rem;
+		--space-2: 0.125rem;
+		--space-4: 0.25rem;
+		--space-8: 0.5rem;
+		--space-12: 0.75rem;
+		--space-16: 1rem;
+		--space-24: 1.5rem;
+		--space-32: 2rem;
+		--space-40: 2.5rem;
+		--space-48: 3rem;
+		--space-64: 4rem;
+		--space-80: 5rem;
+		--space-96: 6rem;
+		--space-128: 8rem; 
 
 		/* Colors */
 		--colour-cream: #F6F5F1;
@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 		--font-sans: 'Lato', sans-serif;
 
 		/* Font sizes */
-		--font-size-3xl: 5.61rem;
+		--font-size-3xl: 5.4rem;
 		--font-size-2xl: 4.209rem;
 		--font-size-xl: 3.157rem;
 		--font-size-lg: 2.369rem;
@@ -39,6 +39,12 @@ export const GlobalStyle = createGlobalStyle`
 		--font-size-sm: 1rem;
 		--font-size-xs: 0.88rem;
 
+		/* Leading */
+		--leading-tightest: 1em;
+		--leading-tight: 1.2em;
+		--leading-snug: 1.33em;
+		--leading-base: 1.5em;
+		--leading-loose: 1.7em;
 	}
 
 	/* CSS Reset */
@@ -126,11 +132,6 @@ export const GlobalStyle = createGlobalStyle`
 		background: var(--colour-cream);
 		padding: var(--space-base);
 		color: var(--colour-black);
-	}
-
-	h1 {
-		font-size: var(--font-size-3xl);
-		font-family: var(--font-serif);
 	}
 
 `;

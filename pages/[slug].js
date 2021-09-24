@@ -38,20 +38,11 @@ const components = {
 export default function NotePage({ source, frontMatter }) {
     return (
         <Layout type={frontMatter.type}>
-            <header>
-                <nav>
-                    <Link href="/">
-                        <a>👈 Go back home</a>
-                    </Link>
-                </nav>
-            </header>
-            <div className="post-header">
+            <div>
                 <h1>{frontMatter.title}</h1>
-                {frontMatter.description && (
-                    <p className="description">{frontMatter.description}</p>
-                )}
+                {frontMatter.description && <p>{frontMatter.description}</p>}
                 {frontMatter.topics && (
-                    <ul className="topics">
+                    <ul>
                         {frontMatter.topics.map((topic) => (
                             <li key={topic}>
                                 <Link href={`/topics/${topic}`}>
