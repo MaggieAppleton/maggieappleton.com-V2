@@ -28,7 +28,6 @@ export const getPostSlugsForTopic = (topic) => {
     });
 
     // Return those posts'
-    console.log(result);
     return result;
 };
 

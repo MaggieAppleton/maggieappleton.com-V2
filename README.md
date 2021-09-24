@@ -9,7 +9,6 @@
 ## Components
 
 
-
 `<ProseWrapper />` wraps around all mdx longform copy.
 
 ### Images

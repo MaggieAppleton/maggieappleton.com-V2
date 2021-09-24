@@ -35,7 +35,6 @@ export default function Index({ essays, notes, patterns, projects }) {
                                 >
                                     <a>{item.data.title}</a>
                                 </Link>
-                                {console.log(item.data.cover)}
                                 {item.data.cover && (
                                     <Image
                                         quality="80"
