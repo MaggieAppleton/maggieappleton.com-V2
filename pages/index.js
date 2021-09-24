@@ -41,8 +41,23 @@ export default function Index({ essays, notes, patterns, projects }) {
                     </a>
                 </h2>
             </Header>
-
+            <Spacer />
+            <section>
+                <H2>The Garden</H2>
+                <h3>What's a digital garden?</h3>
+            </section>
             <GardenSection>
+                <section>
+                    <SectionHeader>Essays</SectionHeader>
+                    <h3>Opinionated, narrative writing with an agenda</h3>
+                </section>
+                <section>
+                    <SectionHeader>Notes</SectionHeader>
+                    <h3>
+                        Loose, unopinionated notes on things I don't fully
+                        understand yet
+                    </h3>
+                </section>
                 {[essays, notes, patterns, projects].map((content, i) => (
                     <div key={i}>
                         {content.map((item, i) => (
@@ -76,10 +91,20 @@ export default function Index({ essays, notes, patterns, projects }) {
 // Styled Components
 
 const GardenSection = styled.section`
-    margin: var(--space-128) 0;
+    margin: var(--space-32) 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 2fr 1fr;
     grid-gap: var(--space-16);
+`;
+
+const SectionHeader = styled.h3`
+    font-family: var(--font-sans);
+    font-size: var(--font-size-lg);
+    font-weight: light;
+`;
+
+const Spacer = styled.div`
+    height: var(--space-128);
 `;
 
 // Fetches the data for the page.

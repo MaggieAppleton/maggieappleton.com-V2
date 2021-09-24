@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
 
 		/* Fonts */
 		--font-serif: 'Canela', serif;
+		--font-body: 'Canela', serif;
 		--font-sans: 'Lato', sans-serif;
 
 		/* Font sizes */
@@ -140,4 +141,14 @@ export const GlobalStyle = createGlobalStyle`
 		color: var(--colour-black);
 	}
 
+	h1, h2 {
+		font-family: var(--font-serif);
+	}
+
+	h3, h4, h5, h6 {
+		font-family: var(--font-sans);
+	}
+	p {
+		font-family: var(--font-body);
+	}
 `;
