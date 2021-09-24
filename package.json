@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reach/menu-button": "^0.16.1",
     "algoliasearch": "^4.10.5",
     "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",

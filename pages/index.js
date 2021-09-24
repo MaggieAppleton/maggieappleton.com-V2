@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
 import Image from "next/image";
+import styled from "styled-components";
 import { H1, H2, H3 } from "../components/Typography";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -41,11 +42,11 @@ export default function Index({ essays, notes, patterns, projects }) {
                 </h2>
             </Header>
 
-            {[essays, notes, patterns, projects].map((content, i) => (
-                <div key={i}>
-                    <ul>
+            <GardenSection>
+                {[essays, notes, patterns, projects].map((content, i) => (
+                    <div key={i}>
                         {content.map((item, i) => (
-                            <li key={i}>
+                            <div key={i}>
                                 <Link
                                     as={`/${item.filePath.replace(
                                         /\.mdx?$/,
@@ -63,16 +64,23 @@ export default function Index({ essays, notes, patterns, projects }) {
                                         height="300"
                                     />
                                 )}
-                            </li>
+                            </div>
                         ))}
-                    </ul>
-                </div>
-            ))}
+                    </div>
+                ))}
+            </GardenSection>
         </Layout>
     );
 }
 
 // Styled Components
+
+const GardenSection = styled.section`
+    margin: var(--space-128) 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: var(--space-16);
+`;
 
 // Fetches the data for the page.
 

@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 		--space-80: 5rem;
 		--space-96: 6rem;
 		--space-128: 8rem; 
+		--space-160: 10rem; 
 
 		/* Colors */
 		--colour-cream: #F6F5F1;
@@ -45,6 +46,11 @@ export const GlobalStyle = createGlobalStyle`
 		--leading-snug: 1.33em;
 		--leading-base: 1.5em;
 		--leading-loose: 1.7em;
+
+		/* Border radius */
+		--border-radius-base: 0.25rem;
+		--border-radius-sm: 0.125rem;
+		--border-radius-lg: 0.5rem;
 	}
 
 	/* CSS Reset */

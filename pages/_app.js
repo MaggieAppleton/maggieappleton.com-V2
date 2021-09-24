@@ -3,6 +3,7 @@ import { GlobalStyle } from "../components/GlobalStyle";
 import Layout from "../components/Layout";
 import "./_app.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps, router }) {
     return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps, router }) {
                 >
                     <Component {...pageProps} key={router.route} />
                 </motion.div>
+                <Footer />
             </container>
         </>
     );

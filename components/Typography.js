@@ -6,8 +6,11 @@ export const H1 = styled.h1`
     font-family: var(--font-serif);
     line-height: var(--leading-tight);
     font-weight: ${(props) => props.fontWeight || "normal"};
-    @media ${breakpoints.mediaSM} {
+    @media ${breakpoints.mediaMD} {
         font-size: var(--font-size-2xl);
+    }
+    @media ${breakpoints.mediaSM} {
+        font-size: var(--font-size-xl);
     }
 `;
 
