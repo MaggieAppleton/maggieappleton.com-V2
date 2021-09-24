@@ -2,9 +2,9 @@
 
 ### The Stack
 
-Next.js
-Reach UI
-[Next SEO](https://github.com/garmeeh/next-seo)
+- Next.js
+- Reach UI
+- [Next SEO](https://github.com/garmeeh/next-seo)
 
 ## Components
 
