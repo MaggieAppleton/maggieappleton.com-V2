@@ -49,6 +49,17 @@ export default function NotePage({ source, frontMatter }) {
                 {frontMatter.description && (
                     <p className="description">{frontMatter.description}</p>
                 )}
+                {frontMatter.topics && (
+                    <ul className="topics">
+                        {frontMatter.topics.map((topic) => (
+                            <li key={topic}>
+                                <Link href={`/topics/${topic}`}>
+                                    <a>{topic}</a>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
             <main>
                 <ProseWrapper>

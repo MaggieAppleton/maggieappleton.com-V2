@@ -7,7 +7,7 @@ export default function DynamicPostsList({ postsToShow }) {
             {postsToShow.map(({ slug, title }) => (
                 <li key={slug}>
                     <article>
-                        <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+                        <Link href="/[slug]" as={`/${slug}`}>
                             <a>
                                 <h2>{title}</h2>
                             </a>

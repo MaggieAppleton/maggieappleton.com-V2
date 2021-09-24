@@ -1,9 +1,15 @@
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
+import {
+    ESSAYS_PATH,
+    NOTES_PATH,
+    CASE_STUDIES_PATH,
+    PATTERNS_PATH,
+} from "./mdxUtils";
 
-export const getPostSlugsForTag = (tag) => {
-    const postDirectory = path.join(process.cwd(), "posts", "essays");
+export const getPostSlugsForTopic = (topic) => {
+    const postDirectory = ESSAYS_PATH;
     const fileNames = fs.readdirSync(postDirectory);
 
     let result = [];
@@ -15,18 +21,19 @@ export const getPostSlugsForTag = (tag) => {
         // Extracts contents of the MDX file
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data } = matter(fileContents);
-        // Filter for posts that include the tag in their array
-        if (data.tags && data.tags.includes(tag)) {
+        // Filter for posts that include the topic in their array
+        if (data.topics && data.topics.includes(topic)) {
             result.push(slug);
         }
     });
 
-    // Return those posts
+    // Return those posts'
+    console.log(result);
     return result;
 };
 
-export const getAllTags = () => {
-    const postDirectory = path.join(process.cwd(), "posts", "essays");
+export const getAllTopics = () => {
+    const postDirectory = ESSAYS_PATH;
 
     const fileNames = fs.readdirSync(postDirectory);
 
@@ -38,20 +45,20 @@ export const getAllTags = () => {
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data } = matter(fileContents);
 
-        if (data.tags) {
-            data.tags.forEach((tag) => {
-                if (!result.includes({ params: { tag } }))
-                    result.push({ params: { tag } });
+        if (data.topics) {
+            data.topics.forEach((topic) => {
+                if (!result.includes({ params: { topic } }))
+                    result.push({ params: { topic } });
             });
         }
     });
 
-    // Return those tags
+    // Return those topics
     return result;
 };
 
 // todo: this could be a blog post?
-export const getUniqueTags = () => {
-    const tags = getAllTags().map((obj) => obj.params.tag);
-    return Array.from(new Set(tags));
+export const getUniqueTopics = () => {
+    const topics = getAllTopics().map((obj) => obj.params.topic);
+    return Array.from(new Set(topics));
 };
