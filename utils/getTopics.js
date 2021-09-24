@@ -4,7 +4,7 @@ import fs from "fs";
 import {
     ESSAYS_PATH,
     NOTES_PATH,
-    CASE_STUDIES_PATH,
+    PROJECTS_PATH,
     PATTERNS_PATH,
 } from "./mdxUtils";
 

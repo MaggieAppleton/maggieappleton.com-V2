@@ -2,6 +2,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
+import Image from "next/image";
+
 import Layout from "../components/Layout";
 import {
     essayFilePaths,
@@ -10,66 +12,50 @@ import {
     NOTES_PATH,
     patternFilePaths,
     PATTERNS_PATH,
-    caseStudyFilePaths,
-    CASE_STUDIES_PATH,
+    projectFilePaths,
+    PROJECTS_PATH,
 } from "../utils/mdxUtils";
 
-export default function Index({ essays, notes, patterns, caseStudies }) {
+export default function Index({ essays, notes, patterns, projects }) {
     return (
         <Layout>
             <h1>Home Page</h1>
 
-            <ul>
-                {essays.map((essay) => (
-                    <li key={essay.filePath}>
-                        <Link
-                            as={`/${essay.filePath.replace(/\.mdx?$/, "")}`}
-                            href={`/[slug]`}
-                        >
-                            <a>{essay.data.title}</a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-            <ul>
-                {patterns.map((pattern) => (
-                    <li key={pattern.filePath}>
-                        <Link
-                            as={`/${pattern.filePath.replace(/\.mdx?$/, "")}`}
-                            href={`/[slug]`}
-                        >
-                            <a>{pattern.data.title}</a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-            <ul>
-                {caseStudies.map((caseStudy) => (
-                    <li key={caseStudy.filePath}>
-                        <Link
-                            as={`/${caseStudy.filePath.replace(/\.mdx?$/, "")}`}
-                            href={`/[slug]`}
-                        >
-                            <a>{caseStudy.data.title}</a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-            <ul>
-                {notes.map((note) => (
-                    <li key={note.filePath}>
-                        <Link
-                            as={`/${note.filePath.replace(/\.mdx?$/, "")}`}
-                            href={`/[slug]`}
-                        >
-                            <a>{note.data.title}</a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            {[essays, notes, patterns, projects].map((content, i) => (
+                <div key={i}>
+                    <ul>
+                        {content.map((item, i) => (
+                            <li key={i}>
+                                <Link
+                                    as={`/${item.filePath.replace(
+                                        /\.mdx?$/,
+                                        ""
+                                    )}`}
+                                    href={`/[slug]`}
+                                >
+                                    <a>{item.data.title}</a>
+                                </Link>
+                                {console.log(item.data.cover)}
+                                {item.data.cover && (
+                                    <Image
+                                        quality="80"
+                                        src={item.data.cover}
+                                        width="300"
+                                        height="300"
+                                    />
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </Layout>
     );
 }
+
+// Styled Components
+
+// Fetches the data for the page.
 
 export function getStaticProps() {
     const essays = essayFilePaths.map((filePath) => {
@@ -105,8 +91,8 @@ export function getStaticProps() {
         };
     });
 
-    const caseStudies = caseStudyFilePaths.map((filePath) => {
-        const source = fs.readFileSync(path.join(CASE_STUDIES_PATH, filePath));
+    const projects = projectFilePaths.map((filePath) => {
+        const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
         const { content, data } = matter(source);
 
         return {
@@ -116,5 +102,5 @@ export function getStaticProps() {
         };
     });
 
-    return { props: { essays, notes, patterns, caseStudies } };
+    return { props: { essays, notes, patterns, projects } };
 }

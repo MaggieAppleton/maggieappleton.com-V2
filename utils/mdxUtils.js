@@ -22,12 +22,8 @@ export const patternFilePaths = fs
     .readdirSync(PATTERNS_PATH)
     .filter((path) => /\.mdx?$/.test(path));
 
-export const CASE_STUDIES_PATH = path.join(
-    process.cwd(),
-    "posts",
-    "case-studies"
-);
+export const PROJECTS_PATH = path.join(process.cwd(), "posts", "projects");
 
-export const caseStudyFilePaths = fs
-    .readdirSync(CASE_STUDIES_PATH)
+export const projectFilePaths = fs
+    .readdirSync(PROJECTS_PATH)
     .filter((path) => /\.mdx?$/.test(path));
