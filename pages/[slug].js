@@ -8,17 +8,17 @@ import Link from "next/link";
 import path from "path";
 
 import Layout from "../components/Layout";
-
+import BasicImage from "../components/mdx/BasicImage";
 import ProseWrapper from "../components/mdx/ProseWrapper";
 import {
-    caseStudyFilePaths,
+    projectFilePaths,
     noteFilePaths,
     essayFilePaths,
     patternFilePaths,
     ESSAYS_PATH,
     NOTES_PATH,
     PATTERNS_PATH,
-    CASE_STUDIES_PATH,
+    PROJECTS_PATH,
 } from "../utils/mdxUtils";
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -29,6 +29,7 @@ const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
+    img: BasicImage,
     FullBleedImage: dynamic(() => import("../components/mdx/FullBleedImage")),
 
     Head,
@@ -74,13 +75,13 @@ export const getStaticProps = async ({ params }) => {
     const essays = fs.readdirSync(ESSAYS_PATH);
     const notes = fs.readdirSync(NOTES_PATH);
     const patterns = fs.readdirSync(PATTERNS_PATH);
-    const caseStudies = fs.readdirSync(CASE_STUDIES_PATH);
+    const projects = fs.readdirSync(PROJECTS_PATH);
 
     // const type = essays.find((e) => e.includes(params.slug)) ? "post" : "note";
 
     let type;
 
-    if (caseStudies.find((file) => file.includes(params.slug))) {
+    if (projects.find((file) => file.includes(params.slug))) {
         type = "case-study";
     } else if (essays.find((file) => file.includes(params.slug))) {
         type = "essay";
@@ -103,7 +104,7 @@ export const getStaticProps = async ({ params }) => {
             filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
             break;
         case "case-study":
-            filePath = path.join(CASE_STUDIES_PATH, `${params.slug}.mdx`);
+            filePath = path.join(PROJECTS_PATH, `${params.slug}.mdx`);
             break;
     }
 
@@ -144,10 +145,10 @@ export const getStaticPaths = async () => {
     const notePaths = getSlugParams(noteFilePaths);
     const essayPaths = getSlugParams(essayFilePaths);
     const patternPaths = getSlugParams(patternFilePaths);
-    const caseStudyPaths = getSlugParams(caseStudyFilePaths);
+    const projectPaths = getSlugParams(projectFilePaths);
 
     // Combine all paths into one array
-    const paths = notePaths.concat(essayPaths, patternPaths, caseStudyPaths);
+    const paths = notePaths.concat(essayPaths, patternPaths, projectPaths);
 
     return {
         paths,
