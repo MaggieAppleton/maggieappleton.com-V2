@@ -20,6 +20,7 @@ export const H2 = styled.h2`
     color: var(--color-gray-800);
     font-weight: 100;
     line-height: var(--leading-tight);
+    margin-bottom: var(--space-12);
     @media ${breakpoints.mediaSM} {
         font-size: var(--font-size-xl);
     }

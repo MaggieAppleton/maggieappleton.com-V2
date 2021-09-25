@@ -36,13 +36,16 @@ export default function Index({ essays, notes, patterns, projects }) {
                         fontSize: "var(--font-size-md)",
                         color: "var(--color-gray-800)",
                         fontWeight: "300",
+                        lineHeight: "var(--leading-loose)",
                     }}
                 >
                     UX designer, illustrator, anthropologist, and mediocre
-                    developer.
+                    developer
                     <br />
                     Currently leading design at{" "}
-                    <a href="https://hash.ai">HASH.</a>{" "}
+                    <a href="https://hash.ai">
+                        <b>HASH</b>
+                    </a>{" "}
                 </h2>
             </Header>
             <Spacer />
@@ -205,7 +208,6 @@ const EssayCard = styled.div`
 `;
 
 const NoteCard = styled.div`
-    border-bottom: 1px solid var(--color-gray-100);
     h3 {
         color: var(--color-gray-800);
         transition: all 0.3s ease-in-out;
@@ -215,10 +217,17 @@ const NoteCard = styled.div`
         line-height: var(--leading-snug);
         margin: var(--space-24) 0;
     }
+    h3::before {
+        content: "";
+        display: inline-block;
+        width: var(--space-16);
+        height: var(--space-16);
+        background: var(--color-gray-300);
+    }
 `;
 
 const GardenSection = styled.section`
-    margin: var(--space-48) 0;
+    margin: var(--space-64) 0;
     display: grid;
     grid-gap: var(--space-64);
     grid-template-columns: 1fr 1fr 1fr;
@@ -267,7 +276,7 @@ const Subheader = styled.p`
     font-size: var(--font-size-base);
     font-weight: 300;
     color: var(--color-gray-800);
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-32);
 `;
 
 // Fetches the data for the page.
