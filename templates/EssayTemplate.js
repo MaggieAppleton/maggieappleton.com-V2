@@ -6,6 +6,21 @@ import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
+    const formattedStartDate = new Date(
+        frontMatter.startDate
+    ).toLocaleDateString("en-GB", {
+        month: "short",
+        year: "numeric",
+    });
+
+    const formattedUpdated = new Date(frontMatter.updated).toLocaleDateString(
+        "en-GB",
+        {
+            month: "short",
+            year: "numeric",
+        }
+    );
+
     return (
         <>
             <Container>
@@ -36,8 +51,8 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                         </ul>
                     )}
                     <div>
-                        <span>Planted {frontMatter.startDate}</span>
-                        <span>Last tended {frontMatter.updated}</span>
+                        <span>Planted {formattedStartDate}</span>
+                        <span>Last tended {formattedUpdated}</span>
                     </div>
                 </Metadata>
             </Container>

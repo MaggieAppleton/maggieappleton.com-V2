@@ -5,7 +5,7 @@ import GrowthIcon from "../components/icons/GrowthIcon";
 import { motion } from "framer-motion";
 
 export default function EssayCard({ slug, cover, title, growthStage, date }) {
-    const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    const formattedDate = new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
         month: "short",
         day: "numeric",
