@@ -1,0 +1,39 @@
+---
+title: "Percentage Pricing"
+description: "SaaS pricing based on a percentage of your annual income"
+type: "essay"
+---
+
+We've gotten very used to a certain pricing model for SaaS products on the web.
+
+You pick from one of three tiers.  
+Subscriptions run between 3-15 USD per month.  
+Signing up for the annual plan gets you 10-30% off.
+
+<FullWidthSection>
+
+<img src="https://via.placeholder.com/1200x300.png" alt="Pricing" />
+
+</FullWidthSection>
+
+These numbers are fine if you live in more economically developed nations like the US or Western Europe. You're spending fractions of a percent of your annual income on most of the software you use.
+
+However for folks who live in less economically developed nations, those same SaaS prices are absurdly high relative to their average salaries.
+
+Let's do some hypothetical calculations to watch this in action. Say you want to buy a subscription to {example} for 12 USD per month, or 144 USD annually.
+
+<PercentageCalculatorOne />
+
+<PercentageCalculatorTwo />
+
+This is a known problem. People in LEDCs are faced with to unreasonably high prices on a web that assumes most of their audience are working cushy tech jobs in the bay area.
+
+What if we had a way to calculate the price of a subscription based on the average salary of the people in a region?
+
+Thankfully we do. [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) (PPP) is currently the best way to do it. The [PPP API](https://github.com/rwieruch/purchasing-power-parity) makes it easy for developers to detect where vistors are located, calculate the purchasing power of that region, and adjust the price accordingly.
+
+Try changing your region to see how the price changes.
+
+<PPP />
+
+If you have a strong ad blocker or VPN turned on you may need to disable it to see this PPP demo.

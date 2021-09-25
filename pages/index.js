@@ -11,6 +11,11 @@ import { Title1, Title2, Title3 } from "../components/Typography";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import {
+    SeedlingIcon,
+    BuddingIcon,
+    EvergreenIcon,
+} from "../components/icons/AllIcons";
+import {
     essayFilePaths,
     ESSAYS_PATH,
     noteFilePaths,
@@ -23,6 +28,7 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
+    console.log(essays);
     return (
         <Layout>
             <Header>
@@ -123,6 +129,11 @@ export default function Index({ essays, notes, patterns, projects }) {
                         <Link key={note.slug} href={`/${note.slug}`}>
                             <a>
                                 <NoteCard>
+                                    {note.data.growthStage && (
+                                        <GrowthIcon
+                                            growthStage={note.data.growthStage}
+                                        />
+                                    )}
                                     <h3>{note.data.title}</h3>
                                 </NoteCard>
                             </a>
@@ -143,13 +154,13 @@ export default function Index({ essays, notes, patterns, projects }) {
                         observations and research
                     </Subheader>
                     {patterns.map((pattern) => (
-                        <div key={pattern.slug}>
-                            <Link href={`/${pattern.slug}`}>
-                                <a>
+                        <Link key={pattern.slug} href={`/${pattern.slug}`}>
+                            <a>
+                                <PatternCard>
                                     <h3>{pattern.data.title}</h3>
-                                </a>
-                            </Link>
-                        </div>
+                                </PatternCard>
+                            </a>
+                        </Link>
                     ))}
                 </section>
                 <section style={{ gridArea: "library" }}>
@@ -249,7 +260,37 @@ const EssayCard = styled.div`
         box-shadow: var(--box-shadow-lg);
         transform: translateY(-2px);
         h3 {
-            color: var(--color-sea-blue);
+            color: var(--color-dark-crimson);
+        }
+    }
+`;
+
+const PatternCard = styled.div`
+    margin: var(--space-16) 0;
+    h3 {
+        color: var(--color-gray-800);
+        transition: all 0.3s ease-in-out;
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        font-weight: 400;
+        line-height: var(--leading-snug);
+        transition: all 0.3s ease-in-out;
+    }
+    h3::before {
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 1.2rem;
+        position: relative;
+        top: 2px;
+        background: var(--color-sea-blue);
+        margin-right: var(--space-12);
+        transition: all 0.3s ease-in-out;
+    }
+    h3:hover {
+        color: var(--color-dark-crimson);
+        ::before {
+            width: var(--space-8);
         }
     }
 `;
@@ -260,6 +301,15 @@ const BookCard = styled.div`
 `;
 
 const NoteCard = styled.div`
+    display: flex;
+    padding: var(--space-16) 0 1.3rem;
+    border-bottom: 1px solid var(--color-gray-100);
+    transition: all 0.3s ease-in-out;
+    svg {
+        position: relative;
+        top: 5px;
+        flex-shrink: 0;
+    }
     h3 {
         color: var(--color-gray-800);
         transition: all 0.3s ease-in-out;
@@ -267,14 +317,14 @@ const NoteCard = styled.div`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
-        margin: var(--space-24) 0;
+        margin-left: var(--space-16);
+        transition: all 0.3s ease-in-out;
     }
-    h3::before {
-        content: "";
-        display: inline-block;
-        width: var(--space-16);
-        height: var(--space-16);
-        background: var(--color-gray-300);
+    &:hover {
+        border-bottom: 1px solid var(--color-sea-blue);
+        h3 {
+            color: var(--color-dark-crimson);
+        }
     }
 `;
 
@@ -330,6 +380,16 @@ const Subheader = styled.p`
     color: var(--color-gray-800);
     margin-bottom: var(--space-32);
 `;
+
+function GrowthIcon({ growthStage }) {
+    if (growthStage === "Seedling") {
+        return <SeedlingIcon width="22" height="22" />;
+    } else if (growthStage === "Budding") {
+        return <BuddingIcon width="22" height="22" />;
+    } else if (growthStage === "Evergreen") {
+        return <EvergreenIcon width="22" height="22" />;
+    }
+}
 
 // Fetches the data for the page.
 
