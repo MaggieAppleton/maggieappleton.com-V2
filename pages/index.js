@@ -66,7 +66,11 @@ export default function Index({ essays, notes, patterns, projects }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8, duration: 1 }}
             >
-                <Title2>The Garden</Title2>
+                <Link href="/garden">
+                    <a href="/garden">
+                        <Title2>The Garden</Title2>
+                    </a>
+                </Link>
                 <Subheader>
                     A digital garden is a llalalalla nonsense, nonsense,
                     lalalalalala. Read more about it.
@@ -146,6 +150,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                                         />
                                     )}
                                     <h3>{note.data.title}</h3>
+                                    <p>{note.data.updated}</p>
                                 </NoteCard>
                             </a>
                         </Link>
@@ -395,6 +400,7 @@ const Subheader = styled.p`
 // Fetches the data for the page.
 
 export function getStaticProps() {
+    // Get all essay posts
     let essays = essayFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
         const { content, data } = matter(source);
@@ -408,7 +414,15 @@ export function getStaticProps() {
         };
     });
 
-    const notes = noteFilePaths.map((filePath) => {
+    // Filter essays for featured property, then reverse sort by updates
+    const filteredEssays = essays
+        .filter((essay) => essay.data.featured === true)
+        .slice(0, 4);
+    const sortedEssays = reverse(sortBy(filteredEssays, "updated"));
+    essays = sortedEssays;
+
+    // Get all note posts
+    let notes = noteFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
         const { content, data } = matter(source);
         const slug = filePath.replace(/\.mdx?$/, "");
@@ -421,7 +435,11 @@ export function getStaticProps() {
         };
     });
 
-    const patterns = patternFilePaths.map((filePath) => {
+    // Sort notes in reverse order by date
+    const sortedNotes = reverse(sortBy(notes, "updated"));
+    notes = sortedNotes;
+
+    let patterns = patternFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
         const { content, data } = matter(source);
         const slug = filePath.replace(/\.mdx?$/, "");
@@ -446,12 +464,6 @@ export function getStaticProps() {
             filePath,
         };
     });
-
-    const filteredEssays = essays
-        .filter((essay) => essay.data.featured === true)
-        .slice(0, 4);
-    const sortedEssays = reverse(sortBy(filteredEssays, "updated"));
-    essays = sortedEssays;
 
     return { props: { essays, notes, patterns, projects } };
 }
