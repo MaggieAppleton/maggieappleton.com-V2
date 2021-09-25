@@ -414,12 +414,15 @@ export function getStaticProps() {
         };
     });
 
-    // Filter essays for featured property, then reverse sort by updates
+    // Filter essays for featured property
     const filteredEssays = essays
         .filter((essay) => essay.data.featured === true)
         .slice(0, 4);
-    const sortedEssays = reverse(sortBy(filteredEssays, "updated"));
-    essays = sortedEssays;
+    // Sort filtered essays by date
+    const sortedEssays = filteredEssays.sort((a, b) => {
+        return new Date(b.data.updated) - new Date(a.data.updated);
+    });
+    essays = filteredEssays;
 
     // Get all note posts
     let notes = noteFilePaths.map((filePath) => {
@@ -436,7 +439,9 @@ export function getStaticProps() {
     });
 
     // Sort notes in reverse order by date
-    const sortedNotes = reverse(sortBy(notes, "updated"));
+    const sortedNotes = notes.sort((a, b) => {
+        return new Date(b.data.updated) - new Date(a.data.updated);
+    });
     notes = sortedNotes;
 
     let patterns = patternFilePaths.map((filePath) => {
