@@ -8,6 +8,7 @@ import Image from "next/image";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
 import { Title1, Title2, Title3 } from "../components/Typography";
+import EssayCard from "../components/EssayCard";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -78,7 +79,10 @@ export default function Index({ essays, notes, patterns, projects }) {
             </motion.section>
             <GardenSection
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{
+                    opacity: 1,
+                    y: 0,
+                }}
                 transition={{ delay: 1.2, duration: 1 }}
             >
                 <section style={{ gridArea: "essays" }}>
@@ -102,28 +106,13 @@ export default function Index({ essays, notes, patterns, projects }) {
                         }}
                     >
                         {essays.map((essay) => (
-                            <Link key={essay.slug} href={`/${essay.slug}`}>
-                                <a>
-                                    <EssayCard>
-                                        {essay.data.cover ? (
-                                            <Image
-                                                src={essay.data.cover}
-                                                alt=""
-                                                width={300}
-                                                height={300}
-                                                layout="responsive"
-                                            />
-                                        ) : (
-                                            <img
-                                                src="https://via.placeholder.com/300x300"
-                                                alt=""
-                                            />
-                                        )}
-                                        <h3>{essay.data.title}</h3>
-                                        <p>{essay.data.growthStage}</p>
-                                    </EssayCard>
-                                </a>
-                            </Link>
+                            <EssayCard
+                                slug={essay.slug}
+                                cover={essay.data.cover}
+                                title={essay.data.title}
+                                growthStage={essay.data.growthStage}
+                                date={essay.data.updated}
+                            />
                         ))}
                     </div>
                 </section>
@@ -150,7 +139,6 @@ export default function Index({ essays, notes, patterns, projects }) {
                                         />
                                     )}
                                     <h3>{note.data.title}</h3>
-                                    <p>{note.data.updated}</p>
                                 </NoteCard>
                             </a>
                         </Link>
@@ -248,38 +236,38 @@ const bookData = [
 
 // Styled Components
 
-const EssayCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid var(--color-gray-100);
-    padding: var(--space-24);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--box-shadow-sm);
-    background: var(--color-cream);
-    transition: all 0.3s ease-in-out;
-    color: var(--color-gray-800);
-    h3 {
-        transition: all 0.3s ease-in-out;
-        font-family: var(--font-body);
-        font-size: var(--font-size-base);
-        font-weight: 400;
-        line-height: var(--leading-snug);
-        margin: var(--space-12) 0;
-    }
-    p {
-        font-family: var(--font-sans);
-        font-size: var(--font-size-sm);
-        color: var(--color-gray-600);
-    }
-    &:hover {
-        box-shadow: var(--box-shadow-lg);
-        transform: translateY(-2px);
-        h3 {
-            color: var(--color-dark-crimson);
-        }
-    }
-`;
+// const EssayCard = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     border: 1px solid var(--color-gray-100);
+//     padding: var(--space-24);
+//     border-radius: var(--border-radius-base);
+//     box-shadow: var(--box-shadow-sm);
+//     background: var(--color-cream);
+//     transition: all 0.3s ease-in-out;
+//     color: var(--color-gray-800);
+//     h3 {
+//         transition: all 0.3s ease-in-out;
+//         font-family: var(--font-body);
+//         font-size: var(--font-size-base);
+//         font-weight: 400;
+//         line-height: var(--leading-snug);
+//         margin: var(--space-12) 0;
+//     }
+//     p {
+//         font-family: var(--font-sans);
+//         font-size: var(--font-size-sm);
+//         color: var(--color-gray-600);
+//     }
+//     &:hover {
+//         box-shadow: var(--box-shadow-lg);
+//         transform: translateY(-2px);
+//         h3 {
+//             color: var(--color-dark-crimson);
+//         }
+//     }
+// `;
 
 const PatternCard = styled.div`
     margin: var(--space-16) 0;
