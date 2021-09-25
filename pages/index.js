@@ -55,10 +55,14 @@ export default function Index({ essays, notes, patterns, projects }) {
             </section>
             <GardenSection>
                 <section style={{ gridArea: "essays" }}>
-                    <SectionHeader>
-                        Essays
-                        <ArrowRightIcon width="28" height="28" />
-                    </SectionHeader>
+                    <Link href="/essays">
+                        <a href="/essays">
+                            <SectionHeader>
+                                Essays
+                                <ArrowRightIcon width="28" height="28" />
+                            </SectionHeader>
+                        </a>
+                    </Link>
                     <Subheader>
                         Opinionated, narrative writing with an agenda
                     </Subheader>
@@ -73,10 +77,14 @@ export default function Index({ essays, notes, patterns, projects }) {
                     ))}
                 </section>
                 <section style={{ gridArea: "notes" }}>
-                    <SectionHeader>
-                        Notes
-                        <ArrowRightIcon width="28" height="28" />
-                    </SectionHeader>
+                    <Link href="/notes">
+                        <a href="/notes">
+                            <SectionHeader>
+                                Notes
+                                <ArrowRightIcon width="28" height="28" />
+                            </SectionHeader>
+                        </a>
+                    </Link>
                     <Subheader>
                         Loose, unopinionated notes on things I don’t entirely
                         understand yet.
@@ -92,10 +100,14 @@ export default function Index({ essays, notes, patterns, projects }) {
                     ))}
                 </section>
                 <section style={{ gridArea: "patterns" }}>
-                    <SectionHeader>
-                        Patterns
-                        <ArrowRightIcon width="28" height="28" />
-                    </SectionHeader>
+                    <Link href="/patterns">
+                        <a href="/patterns">
+                            <SectionHeader>
+                                Patterns
+                                <ArrowRightIcon width="28" height="28" />
+                            </SectionHeader>
+                        </a>
+                    </Link>
                     <Subheader>
                         A catalogue of design patterns based on my own
                         observations and research
@@ -111,10 +123,14 @@ export default function Index({ essays, notes, patterns, projects }) {
                     ))}
                 </section>
                 <section style={{ gridArea: "library" }}>
-                    <SectionHeader>
-                        Library
-                        <ArrowRightIcon width="28" height="28" />
-                    </SectionHeader>
+                    <Link href="/library">
+                        <a href="/library">
+                            <SectionHeader>
+                                Library
+                                <ArrowRightIcon width="28" height="28" />
+                            </SectionHeader>
+                        </a>
+                    </Link>
                     <Subheader>
                         Books I’ve read and books I like the idea of having read
                     </Subheader>
@@ -151,9 +167,9 @@ const SectionHeader = styled.h3`
     font-family: var(--font-sans);
     font-size: var(--font-size-lg);
     font-weight: 100;
+    color: var(--color-gray-800);
     display: flex;
     align-items: center;
-    transition: all 0.3s ease-in-out;
     svg {
         transition: all 0.3s ease-in-out;
         position: relative;
@@ -161,11 +177,10 @@ const SectionHeader = styled.h3`
         margin-left: var(--space-8);
     }
     &:hover {
+        transition: all 0.3s ease-in-out;
         color: var(--color-salmon);
         cursor: pointer;
         svg {
-            position: relative;
-            top: 3px;
             margin-left: var(--space-16);
             color: var(--color-salmon);
         }
