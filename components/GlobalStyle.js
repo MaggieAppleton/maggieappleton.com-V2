@@ -19,16 +19,16 @@ export const GlobalStyle = createGlobalStyle`
 		--space-160: 10rem; 
 
 		/* Colors */
-		--colour-cream: #F6F5F1;
-		--colour-black: #353534;
-		--colour-gray-800: #5C5C5B;
-		--colour-gray-600: #999895;
-		--colour-gray-400: #D3D3D1;
-		--colour-salmon: #FD8A78; 
+		--color-cream: #F6F5F1;
+		--color-black: #353534;
+		--color-gray-800: #5C5C5B;
+		--color-gray-600: #999895;
+		--color-gray-400: #D3D3D1;
+		--color-salmon: #FD8A78; 
 
 		/* Fonts */
 		--font-serif: 'Canela', serif;
-		--font-body: 'Canela', serif;
+		--font-body: 'Canela Text', serif;
 		--font-sans: 'Lato', sans-serif;
 
 		/* Font sizes */
@@ -136,9 +136,9 @@ export const GlobalStyle = createGlobalStyle`
 	/* Base styles */
 
 	body {
-		background: var(--colour-cream);
+		background: var(--color-cream);
 		padding: var(--space-base);
-		color: var(--colour-black);
+		color: var(--color-black);
 	}
 
 	h1, h2 {
@@ -148,7 +148,8 @@ export const GlobalStyle = createGlobalStyle`
 	h3, h4, h5, h6 {
 		font-family: var(--font-sans);
 	}
-	p {
+	p, a {
 		font-family: var(--font-body);
+		font-size: var(--font-size-base);
 	}
 `;

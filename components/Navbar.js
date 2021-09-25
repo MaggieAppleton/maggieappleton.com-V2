@@ -1,18 +1,16 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import {
-    Menu,
-    MenuList,
-    MenuButton,
-    MenuItem,
-    MenuItems,
-    MenuPopover,
-    MenuLink,
-} from "@reach/menu-button";
-import "@reach/menu-button/styles.css";
 import { motion } from "framer-motion";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleFlyout = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <StyledNavbar
             initial={{ opacity: 0, y: -50 }}
@@ -25,22 +23,30 @@ export default function Navbar() {
                 </a>
             </Link>
             <div>
-                <Dropdown label="The Garden">
-                    <StyledMenuLink as="a" href="/essays">
-                        Essays
-                    </StyledMenuLink>
-                    <StyledMenuLink as="a" href="/notes">
-                        Notes
-                    </StyledMenuLink>
-                    <StyledMenuLink as="a" href="/patterns">
-                        Patterns
-                    </StyledMenuLink>
-                    <StyledMenuLink as="a" href="/library">
-                        Library
-                    </StyledMenuLink>
-                    <StyledMenuLink as="a" href="/garden">
-                        Explore all
-                    </StyledMenuLink>
+                <Link href="/garden">
+                    <HoverLink
+                        onFocus={handleFlyout}
+                        onMouseOver={handleFlyout}
+                        onClick={handleFlyout}
+                        href="/garden"
+                    >
+                        <span>The Garden</span>
+                        <ChevronDownIcon width="22" height="22" />
+                    </HoverLink>
+                </Link>
+                <Dropdown style={{ display: isOpen ? "block" : "none" }}>
+                    <Link href="/essays">
+                        <a href="/essays">Essays</a>
+                    </Link>
+                    <Link href="/notes">
+                        <a href="/notes">Notes</a>
+                    </Link>
+                    <Link href="/patterns">
+                        <a href="/patterns">Patterns</a>
+                    </Link>
+                    <Link href="/library">
+                        <a href="/library">Library</a>
+                    </Link>
                 </Dropdown>
                 <Link href="/projects">
                     <a>Projects</a>
@@ -61,53 +67,34 @@ const StyledNavbar = styled(motion.nav)`
     flex-direction: row;
     justify-content: space-between;
     padding: var(--space-24) var(--space-32);
-    & a:not(:first-child) {
+    & a {
         margin-left: var(--space-24);
         text-decoration: none;
-        color: var(--color-salmon);
         font-size: var(--font-size-sm);
         font-family: var(--font-sans);
     }
 `;
 
-function Dropdown({ label, labelHref, children, ...props }) {
-    return (
-        <Menu>
-            <StyledMenuButton>{label}</StyledMenuButton>
-            <StyledMenuList>{children}</StyledMenuList>
-        </Menu>
-    );
-}
-
-const StyledMenuButton = styled(MenuButton)`
-    border: none;
-    background: none;
-    margin-left: var(--space-24);
-    text-decoration: none;
-    color: var(--color-salmon);
-    font-size: var(--font-size-sm);
-    font-family: var(--font-sans);
-`;
-
-const StyledMenuLink = styled(MenuLink)`
-    text-decoration: none;
+const Dropdown = styled(motion.div)`
+    position: absolute;
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
-    background: var(--colour-cream);
-    font-size: var(--font-size-sm);
-    font-family: var(--font-sans);
+    margin-top: var(--space-8);
+    background: var(--color-cream);
+    padding: var(--space-8) var(--space-16);
+    border-radius: var(--border-radius-base);
+    z-index: 1;
+    & a {
+        margin-left: var(--space-8);
+        display: block;
+        padding: var(--space-4) 0;
+    }
 `;
 
-const StyledMenuList = styled(MenuList)`
-    padding: var(--space-8) var(--space-12);
-    background: var(--colour-cream);
-    border-radius: var(--border-radius-base);
-    margin-top: var(--space-8);
-    width: var(--space-128);
-    z-index: 1;
-    position: relative;
-    & a:last-child {
-        color: green;
+const HoverLink = styled.a`
+    & span,
+    & svg {
+        display: inline-block;
+        vertical-align: middle;
     }
 `;

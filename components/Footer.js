@@ -19,7 +19,7 @@ export default function Footer() {
 
 const StyledFooter = styled.footer`
     padding: var(--space-64) 0;
-    border-top: 1px solid var(--colour-gray-400);
+    border-top: 1px solid var(--color-gray-400);
 `;
 
 const FooterContent = styled.div`

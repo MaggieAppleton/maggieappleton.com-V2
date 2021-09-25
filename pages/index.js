@@ -31,7 +31,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                     style={{
                         fontFamily: "var(--font-sans)",
                         fontSize: "var(--font-size-md)",
-                        color: "var(--colour-gray-800)",
+                        color: "var(--color-gray-800)",
                         fontWeight: "100",
                     }}
                 >

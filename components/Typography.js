@@ -17,7 +17,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-size: var(--font-size-xl);
     font-family: var(--font-serif);
-    color: var(--colour-gray-800);
+    color: var(--color-gray-800);
     font-weight: light;
     line-height: var(--leading-tight);
     @media ${breakpoints.mediaSM} {
@@ -28,7 +28,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
     font-size: var(--font-size-lg);
     font-family: var(--font-sans);
-    color: var(--colour-gray-800);
+    color: var(--color-gray-800);
     line-height: var(--leading-tight);
     @media ${breakpoints.mediaSM} {
         font-size: var(--font-size-md);
