@@ -18,7 +18,7 @@ export default function Navbar() {
         <StyledNavbar
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
         >
             <Link href="/">
                 <a href="/">
@@ -71,12 +71,17 @@ const StyledNavbar = styled(motion.nav)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: var(--space-24) var(--space-32);
+    padding: var(--space-24) var(--space-16);
     & a {
         margin-left: var(--space-24);
         text-decoration: none;
         font-size: var(--font-size-sm);
         font-family: var(--font-sans);
+        color: var(--color-gray-800);
+        transition: color 0.2s ease-in-out;
+        :hover {
+            color: var(--color-dark-crimson);
+        }
     }
 `;
 
@@ -97,9 +102,14 @@ const Dropdown = styled(motion.div)`
 `;
 
 const HoverLink = styled.a`
-    & span,
-    & svg {
+    span,
+    svg {
         display: inline-block;
         vertical-align: middle;
+    }
+    svg {
+        margin-left: var(--space-4);
+        position: relative;
+        top: 1px;
     }
 `;

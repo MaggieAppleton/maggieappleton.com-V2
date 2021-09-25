@@ -3,13 +3,22 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
+import GrowthIcon from "../components/Icons/GrowthIcon";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
     return (
         <>
             <Container>
                 <div>
-                    <p>Essays</p>
+                    <Link href="/essays">
+                        <a href="/essays">
+                            <p>Essays</p>
+                        </a>
+                    </Link>
+                    <GrowthIcon
+                        size="16"
+                        growthStage={frontMatter.growthStage}
+                    />
                     <p>{frontMatter.growthStage}</p>
                 </div>
                 <h1>{frontMatter.title}</h1>
@@ -48,9 +57,16 @@ const Container = styled.div`
         display: flex;
         flex-direction: row;
         p {
-            margin-right: var(--space-16);
+            margin: 0 var(--space-12);
             font-family: var(--font-sans);
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+        }
+        svg {
+            position: relative;
+            top: 1px;
         }
     }
     h1 {
@@ -58,9 +74,12 @@ const Container = styled.div`
         line-height: var(--leading-tight);
         padding: var(--space-24) 0 var(--space-48);
         border-bottom: 1px solid var(--color-gray-300);
+        @media ${breakpoints.mediaSM} {
+            font-size: var(--font-size-xl);
+        }
     }
 
-    @media ${breakpoints.SM} {
+    @media ${breakpoints.mediaSM} {
         padding: 0 var(--space-16);
     }
 `;
@@ -98,7 +117,7 @@ const StyledMain = styled.main`
     background: white;
     grid-column: 1/4 !important;
     width: 100%;
-    @media ${breakpoints.SM} {
+    @media ${breakpoints.mediaSM} {
         padding: var(--space-80) var(--space-16);
     }
 `;

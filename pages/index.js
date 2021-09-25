@@ -8,13 +8,10 @@ import Image from "next/image";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
 import { Title1, Title2, Title3 } from "../components/Typography";
+import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import {
-    SeedlingIcon,
-    BuddingIcon,
-    EvergreenIcon,
-} from "../components/icons/AllIcons";
+import GrowthIcon from "../components/Icons/GrowthIcon";
 import {
     essayFilePaths,
     ESSAYS_PATH,
@@ -33,13 +30,19 @@ export default function Index({ essays, notes, patterns, projects }) {
         <Layout>
             <Header>
                 <Title1
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2, duration: 1 }}
                     style={{ maxWidth: "1200px", marginTop: "var(--space-32)" }}
                 >
                     <b>Maggie </b>
                     makes visual essays about programming, design, and
                     anthropology.
                 </Title1>
-                <h2
+                <motion.h2
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5, duration: 1 }}
                     style={{
                         fontFamily: "var(--font-sans)",
                         fontSize: "var(--font-size-md)",
@@ -55,17 +58,25 @@ export default function Index({ essays, notes, patterns, projects }) {
                     <a href="https://hash.ai">
                         <b>HASH</b>
                     </a>{" "}
-                </h2>
+                </motion.h2>
             </Header>
             <Spacer />
-            <section>
+            <motion.section
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 1 }}
+            >
                 <Title2>The Garden</Title2>
                 <Subheader>
                     A digital garden is a llalalalla nonsense, nonsense,
                     lalalalalala. Read more about it.
                 </Subheader>
-            </section>
-            <GardenSection>
+            </motion.section>
+            <GardenSection
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 1 }}
+            >
                 <section style={{ gridArea: "essays" }}>
                     <Link href="/essays">
                         <a href="/essays">
@@ -328,7 +339,7 @@ const NoteCard = styled.div`
     }
 `;
 
-const GardenSection = styled.section`
+const GardenSection = styled(motion.section)`
     margin: var(--space-64) 0;
     display: grid;
     grid-gap: var(--space-80);
@@ -380,16 +391,6 @@ const Subheader = styled.p`
     color: var(--color-gray-800);
     margin-bottom: var(--space-32);
 `;
-
-function GrowthIcon({ growthStage }) {
-    if (growthStage === "Seedling") {
-        return <SeedlingIcon width="22" height="22" />;
-    } else if (growthStage === "Budding") {
-        return <BuddingIcon width="22" height="22" />;
-    } else if (growthStage === "Evergreen") {
-        return <EvergreenIcon width="22" height="22" />;
-    }
-}
 
 // Fetches the data for the page.
 
