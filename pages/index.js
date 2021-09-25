@@ -18,6 +18,7 @@ import {
     projectFilePaths,
     PROJECTS_PATH,
 } from "../utils/mdxUtils";
+import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
     console.log(essays);
@@ -32,15 +33,16 @@ export default function Index({ essays, notes, patterns, projects }) {
                 <h2
                     style={{
                         fontFamily: "var(--font-sans)",
-                        fontSize: "var(--font-size-lg)",
+                        fontSize: "var(--font-size-md)",
                         color: "var(--color-gray-800)",
                         fontWeight: "300",
                     }}
                 >
+                    UX designer, illustrator, anthropologist, and mediocre
+                    developer.
+                    <br />
                     Currently leading design at{" "}
-                    <a href="https://hash.ai">
-                        <b>HASH</b>
-                    </a>
+                    <a href="https://hash.ai">HASH.</a>{" "}
                 </h2>
             </Header>
             <Spacer />
@@ -53,11 +55,14 @@ export default function Index({ essays, notes, patterns, projects }) {
             </section>
             <GardenSection>
                 <section style={{ gridArea: "essays" }}>
-                    <SectionHeader>Essays</SectionHeader>
+                    <SectionHeader>
+                        Essays
+                        <ArrowRightIcon width="28" height="28" />
+                    </SectionHeader>
                     <Subheader>
                         Opinionated, narrative writing with an agenda
                     </Subheader>
-                    {essays.map((essay) => (
+                    {essays.slice(0, 6).map((essay) => (
                         <div key={essay.slug}>
                             <Link href={`/${essay.slug}`}>
                                 <a>
@@ -68,12 +73,15 @@ export default function Index({ essays, notes, patterns, projects }) {
                     ))}
                 </section>
                 <section style={{ gridArea: "notes" }}>
-                    <SectionHeader>Notes</SectionHeader>
+                    <SectionHeader>
+                        Notes
+                        <ArrowRightIcon width="28" height="28" />
+                    </SectionHeader>
                     <Subheader>
                         Loose, unopinionated notes on things I don’t entirely
                         understand yet.
                     </Subheader>
-                    {notes.map((note) => (
+                    {notes.slice(0, 12).map((note) => (
                         <div key={note.slug}>
                             <Link href={`/${note.slug}`}>
                                 <a>
@@ -84,7 +92,10 @@ export default function Index({ essays, notes, patterns, projects }) {
                     ))}
                 </section>
                 <section style={{ gridArea: "patterns" }}>
-                    <SectionHeader>Patterns</SectionHeader>
+                    <SectionHeader>
+                        Patterns
+                        <ArrowRightIcon width="28" height="28" />
+                    </SectionHeader>
                     <Subheader>
                         A catalogue of design patterns based on my own
                         observations and research
@@ -100,12 +111,20 @@ export default function Index({ essays, notes, patterns, projects }) {
                     ))}
                 </section>
                 <section style={{ gridArea: "library" }}>
-                    <SectionHeader>Library</SectionHeader>
+                    <SectionHeader>
+                        Library
+                        <ArrowRightIcon width="28" height="28" />
+                    </SectionHeader>
                     <Subheader>
                         Books I’ve read and books I like the idea of having read
                     </Subheader>
                 </section>
             </GardenSection>
+            <Spacer />
+            <section>
+                <H2>Projects</H2>
+                <Subheader>In the past I have made things</Subheader>
+            </section>
         </Layout>
     );
 }
@@ -132,6 +151,25 @@ const SectionHeader = styled.h3`
     font-family: var(--font-sans);
     font-size: var(--font-size-lg);
     font-weight: 100;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    svg {
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        top: 3px;
+        margin-left: var(--space-8);
+    }
+    &:hover {
+        color: var(--color-salmon);
+        cursor: pointer;
+        svg {
+            position: relative;
+            top: 3px;
+            margin-left: var(--space-16);
+            color: var(--color-salmon);
+        }
+    }
 `;
 
 const Spacer = styled.div`

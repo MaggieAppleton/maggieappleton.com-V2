@@ -3,8 +3,14 @@
 ### The Stack
 
 - Next.js
+- React
+- Hero Icons
+- Algolia Search
+- Styled Components
+- Framer Motion
 - Reach UI
 - [Next SEO](https://github.com/garmeeh/next-seo)
+- [Lodash](https://lodash.com/)
 
 ## Components
 
