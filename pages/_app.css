@@ -1,11 +1,11 @@
 /* fonts go here */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 @font-face {
     font-family: "Canela Text";
     src: local("CanelaText-Medium"),
-        url("/public/fonts/CanelaText-Medium.woff") format("woff2"),
-        url("/public/fonts/CanelaText-Medium.woff") format("woff");
+        url("/fonts/CanelaText-Medium.woff") format("woff2"),
+        url("/fonts/CanelaText-Medium.woff") format("woff");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -14,8 +14,8 @@
 @font-face {
     font-family: "Canela Text";
     src: local("CanelaText-Light"),
-        url("/public/fonts/CanelaText-Light.woff2") format("woff2"),
-        url("/public/fonts/CanelaText-Light.woff") format("woff");
+        url("/fonts/CanelaText-Light.woff2") format("woff2"),
+        url("/fonts/CanelaText-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -24,8 +24,8 @@
 @font-face {
     font-family: "Canela Text";
     src: local("CanelaText-LightItalic"),
-        url("/public/fonts/CanelaText-LightItalic.woff2") format("woff2"),
-        url("/public/fonts/CanelaText-LightItalic.woff") format("woff");
+        url("/fonts/CanelaText-LightItalic.woff2") format("woff2"),
+        url("/fonts/CanelaText-LightItalic.woff") format("woff");
     font-weight: 300;
     font-style: italic;
     font-display: swap;
@@ -34,8 +34,8 @@
 @font-face {
     font-family: "Canela";
     src: local("Canela Regular"), local("Canela-Regular"),
-        url("/public/fonts/Canela-Regular.woff2") format("woff2"),
-        url("/public/fonts/Canela-Regular.woff") format("woff");
+        url("/fonts/Canela-Regular.woff2") format("woff2"),
+        url("/fonts/Canela-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -43,9 +43,8 @@
 
 @font-face {
     font-family: "Canela";
-    src: local("Canela-Bold"),
-        url("/public/fonts/Canela-Bold.woff2") format("woff2"),
-        url("/public/fonts/Canela-Bold.woff") format("woff");
+    src: local("Canela-Bold"), url("/fonts/Canela-Bold.woff2") format("woff2"),
+        url("/fonts/Canela-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -54,8 +53,8 @@
 @font-face {
     font-family: "Canela";
     src: local("Canela-ThinItalic"),
-        url("/public/fonts/Canela-ThinItalic.woff2") format("woff2"),
-        url("/public/fonts/Canela-ThinItalic.woff") format("woff");
+        url("/fonts/Canela-ThinItalic.woff2") format("woff2"),
+        url("/fonts/Canela-ThinItalic.woff") format("woff");
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -63,9 +62,8 @@
 
 @font-face {
     font-family: "Canela";
-    src: local("Canela-Thin"),
-        url("/public/fonts/Canela-Thin.woff2") format("woff2"),
-        url("/public/fonts/Canela-Thin.woff") format("woff");
+    src: local("Canela-Thin"), url("/fonts/Canela-Thin.woff2") format("woff2"),
+        url("/fonts/Canela-Thin.woff") format("woff");
     font-weight: 100;
     font-style: normal;
     font-display: swap;

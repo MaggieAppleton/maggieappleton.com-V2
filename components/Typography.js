@@ -15,13 +15,13 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
     font-family: var(--font-serif);
     color: var(--color-gray-800);
-    font-weight: light;
+    font-weight: 100;
     line-height: var(--leading-tight);
     @media ${breakpoints.mediaSM} {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
     }
 `;
 

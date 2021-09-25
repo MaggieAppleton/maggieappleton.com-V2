@@ -21,10 +21,11 @@ export const GlobalStyle = createGlobalStyle`
 		/* Colors */
 		--color-cream: #F6F5F1;
 		--color-black: #353534;
-		--color-gray-800: #5C5C5B;
+		--color-gray-800: #4D4D4C;
 		--color-gray-600: #999895;
 		--color-gray-400: #D3D3D1;
-		--color-salmon: #FD8A78; 
+		--color-salmon: #FD8A78;
+		--color-purple: #7960AD; 
 
 		/* Fonts */
 		--font-serif: 'Canela', serif;
@@ -47,6 +48,7 @@ export const GlobalStyle = createGlobalStyle`
 		--leading-snug: 1.33em;
 		--leading-base: 1.5em;
 		--leading-loose: 1.7em;
+		--leading-looser: 1.9em;
 
 		/* Border radius */
 		--border-radius-base: 0.25rem;
@@ -116,21 +118,21 @@ export const GlobalStyle = createGlobalStyle`
 
 	/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 	@media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-	
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-	}
-	html, body, #root {
-		height: 100%;
+		html:focus-within {
+			scroll-behavior: auto;
+		}
+		
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+		}
+		html, body, #root {
+			height: 100%;
 	}
 
 	/* Base styles */
@@ -148,8 +150,11 @@ export const GlobalStyle = createGlobalStyle`
 	h3, h4, h5, h6 {
 		font-family: var(--font-sans);
 	}
-	p, a {
+	p, ul, ol {
 		font-family: var(--font-body);
 		font-size: var(--font-size-base);
+	}
+	a {
+		text-decoration: none;
 	}
 `;

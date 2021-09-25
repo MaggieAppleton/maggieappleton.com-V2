@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
 import Image from "next/image";
+import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
 import { H1, H2, H3 } from "../components/Typography";
 import Header from "../components/Header";
@@ -19,6 +20,7 @@ import {
 } from "../utils/mdxUtils";
 
 export default function Index({ essays, notes, patterns, projects }) {
+    console.log(essays);
     return (
         <Layout>
             <Header>
@@ -30,13 +32,13 @@ export default function Index({ essays, notes, patterns, projects }) {
                 <h2
                     style={{
                         fontFamily: "var(--font-sans)",
-                        fontSize: "var(--font-size-md)",
+                        fontSize: "var(--font-size-lg)",
                         color: "var(--color-gray-800)",
-                        fontWeight: "100",
+                        fontWeight: "300",
                     }}
                 >
                     Currently leading design at{" "}
-                    <a href="">
+                    <a href="https://hash.ai">
                         <b>HASH</b>
                     </a>
                 </h2>
@@ -44,45 +46,65 @@ export default function Index({ essays, notes, patterns, projects }) {
             <Spacer />
             <section>
                 <H2>The Garden</H2>
-                <h3>What's a digital garden?</h3>
+                <Subheader>
+                    A digital garden is a llalalalla nonsense, nonsense,
+                    lalalalalala. Read more about it.
+                </Subheader>
             </section>
             <GardenSection>
-                <section>
+                <section style={{ gridArea: "essays" }}>
                     <SectionHeader>Essays</SectionHeader>
-                    <h3>Opinionated, narrative writing with an agenda</h3>
+                    <Subheader>
+                        Opinionated, narrative writing with an agenda
+                    </Subheader>
+                    {essays.map((essay) => (
+                        <div key={essay.slug}>
+                            <Link href={`/${essay.slug}`}>
+                                <a>
+                                    <h3>{essay.data.title}</h3>
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
                 </section>
-                <section>
+                <section style={{ gridArea: "notes" }}>
                     <SectionHeader>Notes</SectionHeader>
-                    <h3>
-                        Loose, unopinionated notes on things I don't fully
-                        understand yet
-                    </h3>
+                    <Subheader>
+                        Loose, unopinionated notes on things I don’t entirely
+                        understand yet.
+                    </Subheader>
+                    {notes.map((note) => (
+                        <div key={note.slug}>
+                            <Link href={`/${note.slug}`}>
+                                <a>
+                                    <h3>{note.data.title}</h3>
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
                 </section>
-                {[essays, notes, patterns, projects].map((content, i) => (
-                    <div key={i}>
-                        {content.map((item, i) => (
-                            <div key={i}>
-                                <Link
-                                    as={`/${item.filePath.replace(
-                                        /\.mdx?$/,
-                                        ""
-                                    )}`}
-                                    href={`/[slug]`}
-                                >
-                                    <a>{item.data.title}</a>
-                                </Link>
-                                {item.data.cover && (
-                                    <Image
-                                        quality="80"
-                                        src={item.data.cover}
-                                        width="300"
-                                        height="300"
-                                    />
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                ))}
+                <section style={{ gridArea: "patterns" }}>
+                    <SectionHeader>Patterns</SectionHeader>
+                    <Subheader>
+                        A catalogue of design patterns based on my own
+                        observations and research
+                    </Subheader>
+                    {patterns.map((pattern) => (
+                        <div key={pattern.slug}>
+                            <Link href={`/${pattern.slug}`}>
+                                <a>
+                                    <h3>{pattern.data.title}</h3>
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
+                </section>
+                <section style={{ gridArea: "library" }}>
+                    <SectionHeader>Library</SectionHeader>
+                    <Subheader>
+                        Books I’ve read and books I like the idea of having read
+                    </Subheader>
+                </section>
             </GardenSection>
         </Layout>
     );
@@ -93,18 +115,34 @@ export default function Index({ essays, notes, patterns, projects }) {
 const GardenSection = styled.section`
     margin: var(--space-32) 0;
     display: grid;
-    grid-template-columns: 2fr 1fr;
     grid-gap: var(--space-16);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "essays essays notes"
+        "patterns library library";
+    @media ${breakpoints.mediaSM} {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "essays" "notes" "patterns" "library";
+    }
 `;
 
 const SectionHeader = styled.h3`
     font-family: var(--font-sans);
     font-size: var(--font-size-lg);
-    font-weight: light;
+    font-weight: 100;
 `;
 
 const Spacer = styled.div`
     height: var(--space-128);
+`;
+
+const Subheader = styled.p`
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    font-weight: 300;
+    color: var(--color-gray-800);
 `;
 
 // Fetches the data for the page.
@@ -113,10 +151,12 @@ export function getStaticProps() {
     const essays = essayFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
         const { content, data } = matter(source);
+        const slug = filePath.replace(/\.mdx$/, "");
 
         return {
             content,
             data,
+            slug,
             filePath,
         };
     });
@@ -124,10 +164,12 @@ export function getStaticProps() {
     const notes = noteFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
         const { content, data } = matter(source);
+        const slug = filePath.replace(/\.mdx?$/, "");
 
         return {
             content,
             data,
+            slug,
             filePath,
         };
     });
@@ -135,10 +177,12 @@ export function getStaticProps() {
     const patterns = patternFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
         const { content, data } = matter(source);
+        const slug = filePath.replace(/\.mdx?$/, "");
 
         return {
             content,
             data,
+            slug,
             filePath,
         };
     });
@@ -146,10 +190,12 @@ export function getStaticProps() {
     const projects = projectFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
         const { content, data } = matter(source);
+        const slug = filePath.replace(/\.mdx?$/, "");
 
         return {
             content,
             data,
+            slug,
             filePath,
         };
     });

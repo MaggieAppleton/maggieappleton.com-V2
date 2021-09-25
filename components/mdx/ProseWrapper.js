@@ -10,6 +10,10 @@ const ProseWrapper = styled.article`
         grid-column: 2;
     }
     font-size: var(--font-size-base);
+    p {
+        line-height: var(--leading-looser);
+        margin-bottom: var(--space-32);
+    }
 `;
 
 export default ProseWrapper;

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import useOnClickOutside from "../utils/onclickOutside";
 import styled from "styled-components";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -6,6 +7,8 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const ref = useRef();
+    useOnClickOutside(ref, () => setIsOpen(false));
 
     const handleFlyout = () => {
         setIsOpen(!isOpen);
@@ -27,14 +30,16 @@ export default function Navbar() {
                     <HoverLink
                         onFocus={handleFlyout}
                         onMouseOver={handleFlyout}
-                        onClick={handleFlyout}
                         href="/garden"
                     >
                         <span>The Garden</span>
                         <ChevronDownIcon width="22" height="22" />
                     </HoverLink>
                 </Link>
-                <Dropdown style={{ display: isOpen ? "block" : "none" }}>
+                <Dropdown
+                    ref={ref}
+                    style={{ display: isOpen ? "block" : "none" }}
+                >
                     <Link href="/essays">
                         <a href="/essays">Essays</a>
                     </Link>
