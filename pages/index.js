@@ -302,7 +302,7 @@ const BookCard = styled.div`
 
 const NoteCard = styled.div`
     display: flex;
-    padding: var(--space-16) 0 1.3rem;
+    padding: var(--space-16) 0 1.2rem;
     border-bottom: 1px solid var(--color-gray-100);
     transition: all 0.3s ease-in-out;
     svg {
@@ -353,14 +353,14 @@ const SectionHeader = styled.h3`
     align-items: center;
     margin-bottom: var(--space-4);
     svg {
-        transition: all 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
         position: relative;
         top: 0px;
         margin-left: var(--space-8);
     }
     &:hover {
-        transition: all 0.3s ease-in-out;
-        color: var(--color-sea-blue);
+        transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
+        color: var(--color-crimson);
         cursor: pointer;
         svg {
             margin-left: var(--space-12);
