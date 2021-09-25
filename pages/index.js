@@ -59,29 +59,53 @@ export default function Index({ essays, notes, patterns, projects }) {
                         <a href="/essays">
                             <SectionHeader>
                                 Essays
-                                <ArrowRightIcon width="28" height="28" />
+                                <ArrowRightIcon width="18" height="18" />
                             </SectionHeader>
                         </a>
                     </Link>
                     <Subheader>
                         Opinionated, narrative writing with an agenda
                     </Subheader>
-                    {essays.slice(0, 6).map((essay) => (
-                        <div key={essay.slug}>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns:
+                                "repeat(auto-fit, minmax(300px, 1fr))",
+                            gridGap: "var(--space-16)",
+                        }}
+                    >
+                        {essays.slice(0, 4).map((essay) => (
                             <Link href={`/${essay.slug}`}>
                                 <a>
-                                    <h3>{essay.data.title}</h3>
+                                    <EssayCard key={essay.slug}>
+                                        {essay.data.cover ? (
+                                            <Image
+                                                src={essay.data.cover}
+                                                alt=""
+                                                width={300}
+                                                height={300}
+                                                layout="responsive"
+                                            />
+                                        ) : (
+                                            <img
+                                                src="https://via.placeholder.com/300x300"
+                                                alt=""
+                                            />
+                                        )}
+                                        <h3>{essay.data.title}</h3>
+                                        <p>{essay.data.growthStage}</p>
+                                    </EssayCard>
                                 </a>
                             </Link>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </section>
                 <section style={{ gridArea: "notes" }}>
                     <Link href="/notes">
                         <a href="/notes">
                             <SectionHeader>
                                 Notes
-                                <ArrowRightIcon width="28" height="28" />
+                                <ArrowRightIcon width="18" height="18" />
                             </SectionHeader>
                         </a>
                     </Link>
@@ -89,14 +113,14 @@ export default function Index({ essays, notes, patterns, projects }) {
                         Loose, unopinionated notes on things I don’t entirely
                         understand yet.
                     </Subheader>
-                    {notes.slice(0, 12).map((note) => (
-                        <div key={note.slug}>
-                            <Link href={`/${note.slug}`}>
-                                <a>
+                    {notes.slice(0, 16).map((note) => (
+                        <Link href={`/${note.slug}`}>
+                            <a>
+                                <NoteCard>
                                     <h3>{note.data.title}</h3>
-                                </a>
-                            </Link>
-                        </div>
+                                </NoteCard>
+                            </a>
+                        </Link>
                     ))}
                 </section>
                 <section style={{ gridArea: "patterns" }}>
@@ -104,7 +128,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                         <a href="/patterns">
                             <SectionHeader>
                                 Patterns
-                                <ArrowRightIcon width="28" height="28" />
+                                <ArrowRightIcon width="18" height="18" />
                             </SectionHeader>
                         </a>
                     </Link>
@@ -127,7 +151,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                         <a href="/library">
                             <SectionHeader>
                                 Library
-                                <ArrowRightIcon width="28" height="28" />
+                                <ArrowRightIcon width="18" height="18" />
                             </SectionHeader>
                         </a>
                     </Link>
@@ -147,10 +171,56 @@ export default function Index({ essays, notes, patterns, projects }) {
 
 // Styled Components
 
+const EssayCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--color-gray-100);
+    padding: var(--space-24);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-sm);
+    background: var(--color-cream);
+    transition: all 0.3s ease-in-out;
+    color: var(--color-gray-800);
+    h3 {
+        transition: all 0.3s ease-in-out;
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        font-weight: 400;
+        line-height: var(--leading-snug);
+        margin: var(--space-12) 0;
+    }
+    p {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-xs);
+        color: var(--color-gray-600);
+    }
+    &:hover {
+        box-shadow: var(--box-shadow-lg);
+        transform: translateY(-2px);
+        h3 {
+            color: var(--color-sea-blue);
+        }
+    }
+`;
+
+const NoteCard = styled.div`
+    border-bottom: 1px solid var(--color-gray-100);
+    h3 {
+        color: var(--color-gray-800);
+        transition: all 0.3s ease-in-out;
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        font-weight: 400;
+        line-height: var(--leading-snug);
+        margin: var(--space-24) 0;
+    }
+`;
+
 const GardenSection = styled.section`
-    margin: var(--space-32) 0;
+    margin: var(--space-48) 0;
     display: grid;
-    grid-gap: var(--space-16);
+    grid-gap: var(--space-64);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -165,24 +235,25 @@ const GardenSection = styled.section`
 
 const SectionHeader = styled.h3`
     font-family: var(--font-sans);
-    font-size: var(--font-size-lg);
-    font-weight: 100;
+    font-size: var(--font-size-base);
+    font-weight: 600;
     color: var(--color-gray-800);
     display: flex;
     align-items: center;
+    margin-bottom: var(--space-4);
     svg {
         transition: all 0.3s ease-in-out;
         position: relative;
-        top: 3px;
+        top: 0px;
         margin-left: var(--space-8);
     }
     &:hover {
         transition: all 0.3s ease-in-out;
-        color: var(--color-salmon);
+        color: var(--color-sea-blue);
         cursor: pointer;
         svg {
-            margin-left: var(--space-16);
-            color: var(--color-salmon);
+            margin-left: var(--space-12);
+            color: var(--color-sea-blue);
         }
     }
 `;
@@ -196,6 +267,7 @@ const Subheader = styled.p`
     font-size: var(--font-size-base);
     font-weight: 300;
     color: var(--color-gray-800);
+    margin-bottom: var(--space-24);
 `;
 
 // Fetches the data for the page.

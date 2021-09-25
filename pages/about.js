@@ -1,10 +1,11 @@
 import Layout from "../components/Layout";
+import { H1, H2 } from "../components/Typography";
 
 export default function About() {
     return (
         <Layout>
-            <h1>About Page</h1>
-            <p>Good</p>
+            <H1>About</H1>
+            <H2>Good</H2>
         </Layout>
     );
 }

@@ -34,3 +34,12 @@ export const H3 = styled.h3`
         font-size: var(--font-size-md);
     }
 `;
+
+export const SmallCaps = styled.p`
+    font-size: var(--font-size-sm);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: var(--color-black);
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+`;

@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import { H1, H2 } from "../components/Typography";
 
 export default function Essays() {
     return (

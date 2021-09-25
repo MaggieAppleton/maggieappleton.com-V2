@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { SmallCaps } from "./typography";
 
 export default function Footer() {
     return (
         <StyledFooter>
             <FooterContent>
-                <p>Stuff, yeah?</p>
+                <SmallCaps>Stuff, yeah?</SmallCaps>
                 <Link href="/">
                     <a>Home</a>
                 </Link>

@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import { H1 } from "../components/typography";
+import { H1, H2 } from "../components/typography";
 
 export default function Garden() {
     return (
@@ -9,7 +9,7 @@ export default function Garden() {
                 <H1>Garden</H1>
             </Header>
 
-            <p>Stuff</p>
+            <H2>Stuff</H2>
         </Layout>
     );
 }

@@ -23,9 +23,13 @@ export const GlobalStyle = createGlobalStyle`
 		--color-black: #353534;
 		--color-gray-800: #4D4D4C;
 		--color-gray-600: #999895;
-		--color-gray-400: #D3D3D1;
+		--color-gray-300: #D3D3D1;
+		--color-gray-100: #E9E9E6;
 		--color-salmon: #FD8A78;
-		--color-purple: #7960AD; 
+		--color-dark-crimson: #550037;
+		--color-sea-blue: #04A5BB;
+		--color-purple: #7558B2;
+
 
 		/* Fonts */
 		--font-serif: 'Canela', serif;
@@ -39,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
 		--font-size-lg: 2.369rem;
 		--font-size-md: 1.77rem; 
 		--font-size-base: 1.33rem;
-		--font-size-sm: 1rem;
+		--font-size-sm: 1.1rem;
 		--font-size-xs: 0.88rem;
 
 		/* Leading */
@@ -54,6 +58,27 @@ export const GlobalStyle = createGlobalStyle`
 		--border-radius-base: 0.25rem;
 		--border-radius-sm: 0.125rem;
 		--border-radius-lg: 0.5rem;
+
+		/* Box Shadows */
+		--box-shadow-sm:
+		0.2px 0.2px 0.8px -10px rgba(40, 10, 0, 0.014),
+		0.4px 0.4px 2px -10px rgba(40, 10, 0, 0.02),
+		0.8px 0.8px 3.8px -10px rgba(40, 10, 0, 0.025),
+		1.3px 1.3px 6.7px -10px rgba(40, 10, 0, 0.03),
+		2.5px 2.5px 12.5px -10px rgba(40, 10, 0, 0.036),
+		6px 6px 30px -10px rgba(40, 10, 0, 0.05)
+	  ;
+	  
+		--box-shadow-lg:
+		0.2px 0.4px 0.8px -10px rgba(0, 0, 0, 0.03),
+		0.4px 0.9px 2px -10px rgba(0, 0, 0, 0.030),
+		0.8px 1.8px 3.8px -10px rgba(0, 0, 0, 0.038),
+		1.3px 3.1px 6.7px -10px rgba(0, 0, 0, 0.045),
+		2.5px 5.8px 12.5px -10px rgba(0, 0, 0, 0.06),
+		6px 14px 30px -10px rgba(0, 0, 0, 0.08)
+	  ;
+	  
+
 	}
 
 	/* CSS Reset */
