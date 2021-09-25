@@ -85,6 +85,7 @@ const Metadata = styled.div`
         margin-top: var(--space-16);
         li {
             margin-right: var(--space-16);
+            margin-bottom: var(--space-4);
             font-family: var(--font-sans);
             font-size: var(--font-size-sm);
         }
