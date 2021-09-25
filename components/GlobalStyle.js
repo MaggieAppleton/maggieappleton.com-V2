@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
 		--font-size-xs: 0.88rem;
 
 		/* Leading */
-		--leading-tightest: 1em;
+		--leading-tighter: 1.08em;
 		--leading-tight: 1.2em;
 		--leading-snug: 1.33em;
 		--leading-base: 1.5em;

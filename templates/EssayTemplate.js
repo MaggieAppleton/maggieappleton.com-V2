@@ -1,32 +1,103 @@
 import { MDXRemote } from "next-mdx-remote";
 import ProseWrapper from "../components/mdx/ProseWrapper";
-import Layout from "../components/Layout";
 import Link from "next/link";
+import styled from "styled-components";
+import { breakpoints } from "../utils/breakpoints";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
     return (
-        <Layout type={frontMatter.type}>
-            <div>
+        <>
+            <Container>
+                <div>
+                    <p>Essays</p>
+                    <p>{frontMatter.growthStage}</p>
+                </div>
                 <h1>{frontMatter.title}</h1>
                 {frontMatter.description && <p>{frontMatter.description}</p>}
-                <p>Essay</p>
-                {frontMatter.topics && (
-                    <ul>
-                        {frontMatter.topics.map((topic) => (
-                            <li key={topic}>
-                                <Link href={`/topics/${topic}`}>
-                                    <a>{topic}</a>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
-            <main>
+                <Metadata style={{ display: "flex", flexDirection: "row" }}>
+                    {frontMatter.topics && (
+                        <ul>
+                            {frontMatter.topics.map((topic) => (
+                                <li key={topic}>
+                                    <Link href={`/topics/${topic}`}>
+                                        <a>{topic}</a>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                    <div>
+                        <span>Planted {frontMatter.startDate}</span>
+                        <span>Last tended {frontMatter.updated}</span>
+                    </div>
+                </Metadata>
+            </Container>
+            <StyledMain>
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
                 </ProseWrapper>
-            </main>
-        </Layout>
+            </StyledMain>
+        </>
     );
 }
+
+const Container = styled.div`
+    max-width: 780px;
+    margin: 0 auto;
+    div:first-child {
+        display: flex;
+        flex-direction: row;
+        p {
+            margin-right: var(--space-16);
+            font-family: var(--font-sans);
+            font-size: var(--font-size-sm);
+        }
+    }
+    h1 {
+        font-size: var(--font-size-2xl);
+        line-height: var(--leading-tight);
+        padding: var(--space-24) 0 var(--space-48);
+        border-bottom: 1px solid var(--color-gray-300);
+    }
+
+    @media ${breakpoints.SM} {
+        padding: 0 var(--space-16);
+    }
+`;
+
+const Metadata = styled.div`
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    justify-content: space-between;
+    div {
+        margin-top: var(--space-16);
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 70%;
+        padding: 0;
+        margin-top: var(--space-16);
+        li {
+            margin-right: var(--space-16);
+            font-family: var(--font-sans);
+            font-size: var(--font-size-sm);
+        }
+    }
+`;
+
+const StyledMain = styled.main`
+    margin-top: var(--space-80);
+    padding: var(--space-80) 0 var(--space-128);
+    background: white;
+    grid-column: 1/4 !important;
+    width: 100%;
+    @media ${breakpoints.SM} {
+        padding: var(--space-80) var(--space-16);
+    }
+`;

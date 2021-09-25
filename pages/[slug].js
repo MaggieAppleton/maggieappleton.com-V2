@@ -7,6 +7,7 @@ import path from "path";
 import BasicImage from "../components/mdx/BasicImage";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
+import { Title1, Title2, Title3 } from "../components/Typography";
 import {
     projectFilePaths,
     noteFilePaths,
@@ -26,6 +27,9 @@ const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
+    h1: Title1,
+    h2: Title2,
+    h3: Title3,
     img: BasicImage,
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
     Head,

@@ -2,6 +2,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
+import sortBy from "lodash/sortBy";
+import reverse from "lodash/reverse";
 import Image from "next/image";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
@@ -21,7 +23,6 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
-    console.log(essays);
     return (
         <Layout>
             <Header>
@@ -79,10 +80,10 @@ export default function Index({ essays, notes, patterns, projects }) {
                             gridGap: "var(--space-16)",
                         }}
                     >
-                        {essays.slice(0, 4).map((essay) => (
-                            <Link href={`/${essay.slug}`}>
+                        {essays.map((essay) => (
+                            <Link key={essay.slug} href={`/${essay.slug}`}>
                                 <a>
-                                    <EssayCard key={essay.slug}>
+                                    <EssayCard>
                                         {essay.data.cover ? (
                                             <Image
                                                 src={essay.data.cover}
@@ -119,7 +120,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                         understand yet.
                     </Subheader>
                     {notes.slice(0, 12).map((note) => (
-                        <Link href={`/${note.slug}`}>
+                        <Link key={note.slug} href={`/${note.slug}`}>
                             <a>
                                 <NoteCard>
                                     <h3>{note.data.title}</h3>
@@ -192,7 +193,17 @@ export default function Index({ essays, notes, patterns, projects }) {
 
 const bookData = [
     {
-        title: "The Design of Everyday Things",
+        title: "The Design of Nonsense Things",
+        author: "Don Norman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+    {
+        title: "Thinking Bad and Slow",
+        author: "Daniel Kahneman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+    {
+        title: "The Design of Boring Things",
         author: "Don Norman",
         cover: "https://via.placeholder.com/200x300",
     },
@@ -202,17 +213,7 @@ const bookData = [
         cover: "https://via.placeholder.com/200x300",
     },
     {
-        title: "The Design of Everyday Things",
-        author: "Don Norman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-    {
-        title: "Thinking Fast and Slow",
-        author: "Daniel Kahneman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-    {
-        title: "Thinking Fast and Slow",
+        title: "Thinking Fast and Dumb",
         author: "Daniel Kahneman",
         cover: "https://via.placeholder.com/200x300",
     },
@@ -333,7 +334,7 @@ const Subheader = styled.p`
 // Fetches the data for the page.
 
 export function getStaticProps() {
-    const essays = essayFilePaths.map((filePath) => {
+    let essays = essayFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
         const { content, data } = matter(source);
         const slug = filePath.replace(/\.mdx$/, "");
@@ -384,6 +385,12 @@ export function getStaticProps() {
             filePath,
         };
     });
+
+    const filteredEssays = essays
+        .filter((essay) => essay.data.featured === true)
+        .slice(0, 4);
+    const sortedEssays = reverse(sortBy(filteredEssays, "updated"));
+    essays = sortedEssays;
 
     return { props: { essays, notes, patterns, projects } };
 }

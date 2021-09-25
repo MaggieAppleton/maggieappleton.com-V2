@@ -4,7 +4,7 @@ import { breakpoints } from "../utils/breakpoints";
 export const Title1 = styled.h1`
     font-size: var(--font-size-3xl);
     font-family: var(--font-serif);
-    line-height: var(--leading-tight);
+    line-height: var(--leading-tighter);
     font-weight: ${(props) => props.fontWeight || "normal"};
     @media ${breakpoints.mediaMD} {
         font-size: var(--font-size-2xl);
