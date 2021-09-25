@@ -64,9 +64,7 @@ export const getAllPostSlugs = () => {
 
     return published.map((filename) => {
         return {
-            params: {
-                slug: filename.replace(".mdx", ""),
-            },
+            params: {},
         };
     });
 };

@@ -1,0 +1,73 @@
+---
+title: "What the Fork is the React Virtual DOM"
+aliases: ["React Virtual DOM"]
+
+updated: "2019-01-20"
+
+topics: ["React", "Web Development", "JavaScript", "Illustrated Notes"]
+type: "note"
+growthStage: "Evergreen"
+---
+
+<BasicImage
+    alt=""
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_400/v1592834724/maggieappleton.com/egghead-course-notes/react-vdom/thumb_2x.png"
+/>
+
+<br />
+
+<IntroParagraph>
+
+When I was first [[learning React]] I couldn't quite wrap my head around why it was any different to JavaScript.
+
+</IntroParagraph>
+
+The idea of the virtual DOM system helped clarify a few things for me. Primarily it got me to understand the DOM, the virtual DOM, and your React app are all separate systems talking to one another. Not one big mesh. While learning it I drew out an explanation you can see below.
+
+<br />
+
+<SimpleCard width="740px">
+
+<p aria-role="image" style="margin: 0 auto; text-align: center;font-size: 3em">
+    ⚠️
+</p>
+
+<h3 style="text-align: center; margin-top: 0; font-weight: 800;"> HOWEVER </h3>
+
+This post is slightly dated, and the React team isn't keen on the term **"Virtual DOM"** as a mental model for how React works under the hood.
+
+https://twitter.com/dan_abramov/status/1066328666341294080
+
+Instead Dan wrote up a nice long explanation on [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/) which clarifies the details how React updates the UI.
+
+They still have a section of the docs about the [Virtual DOM](https://reactjs.org/docs/faq-internals.html), but it's not an essential piece of the React ecosystem to learn about.
+
+The below explanation will still help you understand the basic concept that React figures out what needs to change on the DOM before changing it, but go to other sources if you want a more in-depth explanation.
+
+<br />
+
+</SimpleCard>
+
+<BasicImage
+    alt="One of the reasons React is so darn fast at updating changes  is that it uses a virtual DOM"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1592262854/maggieappleton.com/egghead-course-notes/react-vdom/ReactVDom_1_2x.png"
+/>
+
+<BasicImage
+    alt="All the code we write in React only interacts with this virtual DOM"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1592262852/maggieappleton.com/egghead-course-notes/react-vdom/ReactVDom_2_2x.png"
+/>
+
+<BasicImage
+    alt="This is helpful because passing the actual DOM lots of changes is slow"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1592262852/maggieappleton.com/egghead-course-notes/react-vdom/ReactVDom_3_2x.png"
+/>
+
+<BasicImage
+    alt="React's DOM runs a diffing algorithm"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1592262854/maggieappleton.com/egghead-course-notes/react-vdom/ReactVDom_4_2x.png"
+/>
+
+#### Want more illustrated notes on web development?
+
+Take a look at [[Building Custom React Hooks]], [[JSX is a Lovechild]] or find out [[What the Fork is Babel?]]

@@ -1,0 +1,108 @@
+---
+title: "Immutable Data with Immer and Personal Assistant Bots"
+
+updated: "2019-08-10"
+
+type: "note"
+growthStage: "Evergreen"
+topics: ["Web Development", "Illustrated Notes", "JavaScript"]
+---
+
+<Center>
+
+## Let's talk about **immutable data**
+
+</Center>
+
+![A robot and a pair of socks](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_500/v1592262593/maggieappleton.com/egghead-course-notes/immer/robo-socks.png)
+
+With socks. And personal assistant bots.  
+I know, you're already so excited.
+
+**Immutability** and **state** are two developer buzzwords it took me forever to "get."
+
+Their underlying meanings aren't necessarily that complex.  
+But it's tough to fully comprehend what they mean, and why they're important, until you see them in action.
+
+[State](<https://en.wikipedia.org/wiki/State_(computer_science)>) just means the way an application is at a single point in time.
+
+For example, if we've typed _"how does CSS grid work"_ into the search bar, and there are three checkboxes ticked, and we have a dropdown menu open that's the current "state" of things.  
+If we close the menu that's a state change.
+
+Behind the scenes in apps we have to account for every state an app could be in (which gets expontential very quicky). This is usually called ["managing state"](https://codeburst.io/state-management-in-javascript-15d0d98837e1) and appears to be a [neverending problem](https://medium.com/razroo/the-history-of-javascript-state-management-in-2019-161491d588ed)
+
+---
+
+### **Immutable State** is one approach to solving our complex state problem – it simply means making a second copy of things before you change them.
+
+It's the same as copying and pasting a new _ImportantThing_Version2_Draft.md_ document before liberally changing enourmous chunks of it.
+Then when you realise your poor editing choices and want to go back to the original version, it's there waiting for you.
+
+Writing [immutable code](https://en.wikipedia.org/wiki/Immutable_object) is a [wildly](https://medium.com/tribalscale/understanding-immutability-fdd627b66e58) [popular](https://itnext.io/why-concept-of-immutability-is-so-damn-important-for-a-beginner-front-end-developer-8da85b565c8e) concept in general. And a good idea when you don't want to muck everything up.
+
+---
+
+Okay now you're all caught up on the jargon. Lets get to some illustrated notes.
+
+These are from a course [Michel Weststrate](https://twitter.com/mweststrate) made about their elegant new tool [Immer](https://immerjs.github.io/immer/docs/introduction) – it helps handle manage immutable state in a sane way.
+
+<a
+    noTip
+    href="https://egghead.io/courses/immutable-javascript-data-structures-with-immer"
+>
+    <ImageFrame
+        width="800px"
+        alt="Immutable JavaScript Data Structures with Immer"
+        src="https://og-image-egghead-course.now.sh/immutable-javascript-data-structures-with-immer?af=54fd64"
+    />
+</a>
+
+Michel walks us through building a gifting app with React & Immer that seamlessly handles all the messy state work.
+
+{" "}
+
+<BasicImage
+    alt="Immer is a small JS library that makes working with immutable state easy and enjoyable. It's like a small assistant that helps you make copies and edits to documents."
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262596/maggieappleton.com/egghead-course-notes/immer/immer-1.png"
+/>
+
+{" "}
+
+<BasicImage
+    alt="Immer's produce function does all the work - it takes a state object and runs a draft function telling the state how it should change."
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262597/maggieappleton.com/egghead-course-notes/immer/immer-2.png"
+/>
+
+{" "}
+
+<BasicImage
+    alt="The product function supports currying - which is when we nest functions inside others to make our code composable"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262597/maggieappleton.com/egghead-course-notes/immer/immer-3.png"
+/>
+
+{" "}
+
+<BasicImage
+    alt="We can easily use immer with other libraries like React and write callback functions using immer's produce function"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262596/maggieappleton.com/egghead-course-notes/immer/immer-4.png"
+/>
+
+<br />
+
+<TwoCol gridGap="3em">
+
+<BasicImage
+    style="max-width: 90%"
+    alt="CSS is awesome cup"
+    src="https://images-na.ssl-images-amazon.com/images/I/51graM2SdzL._SX466_.jpg"
+/>
+
+Yes the cup in the illustration is based on this classic CSS one that I don't own, but kind of want to.
+
+ </TwoCol>
+
+---
+
+### Want more illustrated notes on web development?
+
+Take a look at [[Testing Apps with Cypress]], [[The JAMStack, Gatsby & Contentful]] or [[A Fresh Serving of JavaScript ES2019]]

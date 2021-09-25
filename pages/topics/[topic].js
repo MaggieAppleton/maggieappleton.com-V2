@@ -51,7 +51,6 @@ export const getStaticProps = async ({ params }) => {
     const frontMatterArr = postsWithTopic.map((post) => matter(post).data);
     const frontMatterAndSlug = frontMatterArr.map((fm, i) => ({
         ...fm,
-        slug: slugsWithTopic[i],
     }));
 
     return {

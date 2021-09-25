@@ -1,0 +1,66 @@
+---
+updated: "2020-06-16"
+title: "What the Fork is React Suspense?"
+aliases: ["React Suspense"]
+
+type: "note"
+topics: ["Illustrated Notes", "React", "Web Development"]
+growthStage: "Evergreen"
+---
+
+<IntroParagraph>
+
+Suspense is [an upcoming React feature](https://reactjs.org/docs/concurrent-mode-suspense.html) that's part of the new "concurrent mode."
+
+</IntroParagraph>
+
+Since everyone is getting all hyped up about it, I wanted to figure out what the excitement was and drew some quick summary notes.
+
+<BasicImage
+    alt="Wtf is React supense?"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_750/v1592262756/maggieappleton.com/egghead-course-notes/reactsuspense/WftReactSuspense_1.png"
+/>
+
+<BasicImage
+    alt="Allows us to suspend rendering parts of our app until a particular condition is met, such as waiting until our data load. This keeps our interface interactive."
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262756/maggieappleton.com/egghead-course-notes/reactsuspense/WftReactSuspense_2.png"
+/>
+
+<BasicImage
+    alt="This allows us to prioritize the order that elements render in, based on those conditions. From high priority to low priority."
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262754/maggieappleton.com/egghead-course-notes/reactsuspense/WftReactSuspense_4.png"
+/>
+
+<BasicImage
+    alt="We create a suspense boundary around our components, and declare a fallback element to display while the data is loading."
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262755/maggieappleton.com/egghead-course-notes/reactsuspense/WftReactSuspense_3.png"
+/>
+
+This is a pretty lightweight intro, but you get the gist of it. CSS-Tricks has a nice in-depth write up on [React Suspense in Practice](https://css-tricks.com/react-suspense-in-practice/)
+
+If you're looking to properly learn how React suspense works, [Kent C. Dodds](https://twitter.com/kentcdodds) and [Michael Chan](https://twitter.com/chantastic) both made egghead courses on it
+
+<a
+    noTip
+    href="https://egghead.io/courses/use-suspense-to-simplify-your-async-ui"
+>
+    <ImageFrame
+        width="800px"
+        alt="Shareable Custom Hooks in React"
+        src="https://og-image-egghead-course.now.sh/use-suspense-to-simplify-your-async-ui"
+    />
+</a>
+
+<a noTip href="https://egghead.io/courses/build-an-app-with-react-suspense">
+    <ImageFrame
+        width="800px"
+        alt="Shareable Custom Hooks in React"
+        src="https://og-image-egghead-course.now.sh/build-an-app-with-react-suspense"
+    />
+</a>
+
+---
+
+#### Want to know what the fork is going on with other web development topics?
+
+Take a look at [[What the Fork is xState?]], [[What the Fork is Rust?]], or the [[What the Fork is Babel?]]

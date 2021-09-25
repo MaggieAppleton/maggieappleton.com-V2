@@ -1,0 +1,127 @@
+---
+title: "Positioning Elements & Scrollytelling in CSS"
+
+updated: "2020-12-26"
+
+type: "note"
+topics: ["The Web", "CSS", "Web Development"]
+growthStage: "Budding"
+---
+
+<Subtext>
+    
+Notes (mostly to myself) on how the CSS <b>position</b> property works because I <i>constantly</i> forget.
+
+</Subtext>
+
+Having control over where elements are positioned on a webpage is essential for building [scrollytelling](https://medium.com/nightingale/from-storytelling-to-scrollytelling-a-short-introduction-and-beyond-fbda32066964) stories. We have to understand exactly how elements will behave within the layout, especially in relation to the scrollbar and viewport.
+
+The `position` property determines where an element appears on the page. Sounds simple. But it also includes how an element relates to its parent element, the browser window, how it behaves on scroll, and whether placement properties like `top`, `right`, `bottom`, `left` and `z-index` will have any effect.
+
+## **Position** can have six possible values
+
+### 1. Static
+
+`static` is the default value for elements. They stick to the normal page flow and placement properties (top, left, z-index, etc.) don't have any effect.
+
+ <Center>
+
+<StaticCSSPosition />
+
+ </Center>
+
+{" "}
+
+<Spacer />
+
+### 2. Relative
+
+`relative` keeps the element in the normal document flow, but allows us to use placement properties. This means we can move the element up, down, left or right, relative to where it would have been in the normal document flow.
+
+For example, if we nudge this box `-10px` up, and `-10px` to the left, it moves to here:
+
+ <Center>
+
+<RelativeCSSPosition />
+
+ </Center>
+
+In our CSS we would just need to declare a `relative` property on our box, then add `top` and `left` properties:
+
+```css
+.redBox {
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+```
+
+{" "}
+
+<Spacer />
+
+### 3. Absolute
+
+`absolute` removes the element from the normal document flow. It places itself on an absolute position relative to the whole document.
+
+The position of the parent has no influence on where the child shows up. Placement values like `top` and `left` are calculated relative to the document.
+
+Declaring `position: absolute`, `left: 10px` and `bottom: 20px` on this `.redBox` element would position it 10 pixels from the left and 10px from the bottom of the document.
+
+<Center>
+
+<AbsoluteCSSPosition />
+
+</Center>
+
+<br />
+
+#### **Relative Parents and Absolute children**
+
+If you declare `position: relative` on the parent element, and `position: absolute` on the child, it now positions itself relative to the parent.
+
+This is useful for creating overlapping elements.
+
+<Spacer />
+
+### 4. Fixed
+
+`fixed` is similar to absolute, but sticks itself to the viewport rather than the document. Fixed elements don't move when you scroll down the page - they are always visible.
+
+Fixed is useful for persistent elements like navigation bars or menus.
+
+Declaring `position: fixed;`, `top: 10px;` and `right: 10px` on an element will position it 10 px from the top and right-hand side of the browser viewport. The rest of the document scrolls behind it.
+
+<Center>
+
+<FixedCSSPosition />
+
+</Center>
+
+#### **Annoying Transform Quirk**
+
+If any parent element has a `transform: translate()` property declared on it, `fixed` won't work.
+
+<Spacer />
+
+### 5. Sticky
+
+`sticky` makes an element "stick" to the viewport when it reaches a certain point – usually when the top of the viewport hits the top of the element.
+
+It behaves like a `relative` element until it hits the sticking point, and then becomes `fixed`.
+
+For sticky to work, the parent element needs to have the `relative` property declared.
+
+<Spacer />
+
+### 6. Inherit
+
+`inherit` forces an element to inherit the position property of its parent. This wouldn't otherwise happen as `position` doesn't flow down the cascade.
+
+---
+
+#### Sources
+
+[Position](https://css-tricks.com/almanac/properties/p/position/) in the CSS-Tricks Almanac  
+[Advanced Positioning Tutorial](https://www.internetingishard.com/html-and-css/advanced-positioning/) on Internetting is Hard  
+[Easier Scrollytelling with Position Sticky](https://pudding.cool/process/scrollytelling-sticky/) from The Pudding

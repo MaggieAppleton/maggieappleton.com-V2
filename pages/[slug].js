@@ -30,7 +30,7 @@ const components = {
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
     img: BasicImage,
-    FullBleedImage: dynamic(() => import("../components/mdx/FullBleedImage")),
+    FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
 
     Head,
 };

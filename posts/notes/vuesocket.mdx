@@ -1,0 +1,60 @@
+---
+title: "Instachatting with Vue & Socket.io"
+aliases: ["Vue & Socket.io"]
+
+updated: "2019-05-20"
+
+type: "note"
+topics: ["Web Development", "Illustrated Notes"]
+growthStage: "Evergreen"
+---
+
+<IntroParagraph>
+
+The _intantness_ of chat apps has always been a mystery to me.  
+The technical details of moving emojis through The Internet Pipes and across continents in 0.004 miliseconds is well beyond my paygrade.
+
+</IntroParagraph>
+
+But I got a tiny window of insight into the magic while illustrating notes for [Mark Barton's course](https://egghead.io/courses/vue-and-socket-io-for-real-time-communication) on building chat apps with [Vue](https://vuejs.org/) and [Socket.io](https://socket.io/)
+
+<a
+    noTip
+    href="https://egghead.io/courses/vue-and-socket-io-for-real-time-communication"
+>
+    <ImageFrame
+        width="800px"
+        alt="Course illustration of a Vue logo and multiple chat bubble floating above it"
+        src="https://og-image-egghead-course.now.sh/vue-and-socket-io-for-real-time-communication"
+    />
+</a>
+
+Turns out it's not magic, but instead done through [websockets](https://en.wikipedia.org/wiki/WebSocket). Which are like little portals that hold open a consistent connection between two machines.
+
+I obviously still haven't a clue what goes on inside that dark little portal. Thankfully using tools like Vue & Socket.io save us from that level of depth.
+
+<BasicImage
+    alt="Vue and socket.io for real-time communication"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_800/v1592262571/maggieappleton.com/egghead-course-notes/vuesocket/vuesocket1.png"
+/>
+
+<BasicImage
+    alt="Socket.io gives us bidirectional communication between two clients"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262575/maggieappleton.com/egghead-course-notes/vuesocket/vuesocket2.png"
+/>
+
+<BasicImage
+    alt="The emit method lets us send and recieve any knd of event. We can target specific users or a group of users"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262574/maggieappleton.com/egghead-course-notes/vuesocket/vuesocket3.png"
+/>
+
+<BasicImage
+    alt="The full vue and socket sketchnote"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262568/maggieappleton.com/egghead-course-notes/vuesocket/vuesocket_sketchnotes--mini.png"
+/>
+
+---
+
+### Want more illustrated notes on web development?
+
+Take a look at [[Essential Web Security Tactics]], [[Speaking the GraphQL Query Language]] or [[A Fresh Serving of JavaScript ES2019]]
