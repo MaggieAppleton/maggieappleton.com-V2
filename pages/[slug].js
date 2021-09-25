@@ -1,15 +1,12 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Link from "next/link";
 import path from "path";
-
-import Layout from "../components/Layout";
 import BasicImage from "../components/mdx/BasicImage";
-import ProseWrapper from "../components/mdx/ProseWrapper";
+import EssayTemplate from "../templates/EssayTemplate";
+import NoteTemplate from "../templates/NoteTemplate";
 import {
     projectFilePaths,
     noteFilePaths,
@@ -31,35 +28,44 @@ const components = {
     // See the notes in README.md for more details.
     img: BasicImage,
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
-
     Head,
 };
 
 export default function NotePage({ source, frontMatter }) {
-    return (
-        <Layout type={frontMatter.type}>
-            <div>
-                <h1>{frontMatter.title}</h1>
-                {frontMatter.description && <p>{frontMatter.description}</p>}
-                {frontMatter.topics && (
-                    <ul>
-                        {frontMatter.topics.map((topic) => (
-                            <li key={topic}>
-                                <Link href={`/topics/${topic}`}>
-                                    <a>{topic}</a>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
-            <main>
-                <ProseWrapper>
-                    <MDXRemote {...source} components={components} />
-                </ProseWrapper>
-            </main>
-        </Layout>
-    );
+    if (frontMatter.type === "note") {
+        return (
+            <NoteTemplate
+                source={source}
+                frontMatter={frontMatter}
+                components={components}
+            />
+        );
+    } else if (frontMatter.type === "essay") {
+        return (
+            <EssayTemplate
+                source={source}
+                frontMatter={frontMatter}
+                components={components}
+            />
+        );
+    }
+    // } else if (frontMatter.type === "pattern") {
+    //     return (
+    //         <PatternTemplate
+    //             source={source}
+    //             frontMatter={frontMatter}
+    //             components={components}
+    //         />
+    //     );
+    // } else if (frontMatter.type === "project") {
+    //     return (
+    //         <ProjectTemplate
+    //             source={source}
+    //             frontMatter={frontMatter}
+    //             components={components}
+    //         />
+    //     );
+    // }
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -73,7 +79,7 @@ export const getStaticProps = async ({ params }) => {
     let type;
 
     if (projects.find((file) => file.includes(params.slug))) {
-        type = "case-study";
+        type = "project";
     } else if (essays.find((file) => file.includes(params.slug))) {
         type = "essay";
     } else if (notes.find((file) => file.includes(params.slug))) {
@@ -94,7 +100,7 @@ export const getStaticProps = async ({ params }) => {
         case "pattern":
             filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
             break;
-        case "case-study":
+        case "project":
             filePath = path.join(PROJECTS_PATH, `${params.slug}.mdx`);
             break;
     }

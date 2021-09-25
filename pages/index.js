@@ -5,7 +5,7 @@ import path from "path";
 import Image from "next/image";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
-import { H1, H2, H3 } from "../components/Typography";
+import { Title1, Title2, Title3 } from "../components/Typography";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import {
@@ -25,11 +25,13 @@ export default function Index({ essays, notes, patterns, projects }) {
     return (
         <Layout>
             <Header>
-                <H1 style={{ maxWidth: "1200px" }}>
+                <Title1
+                    style={{ maxWidth: "1200px", marginTop: "var(--space-32)" }}
+                >
                     <b>Maggie </b>
                     makes visual essays about programming, design, and
                     anthropology.
-                </H1>
+                </Title1>
                 <h2
                     style={{
                         fontFamily: "var(--font-sans)",
@@ -50,7 +52,7 @@ export default function Index({ essays, notes, patterns, projects }) {
             </Header>
             <Spacer />
             <section>
-                <H2>The Garden</H2>
+                <Title2>The Garden</Title2>
                 <Subheader>
                     A digital garden is a llalalalla nonsense, nonsense,
                     lalalalalala. Read more about it.
@@ -116,7 +118,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                         Loose, unopinionated notes on things I don’t entirely
                         understand yet.
                     </Subheader>
-                    {notes.slice(0, 16).map((note) => (
+                    {notes.slice(0, 12).map((note) => (
                         <Link href={`/${note.slug}`}>
                             <a>
                                 <NoteCard>
@@ -130,7 +132,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                     <Link href="/patterns">
                         <a href="/patterns">
                             <SectionHeader>
-                                Patterns
+                                Pattern Catalogue
                                 <ArrowRightIcon width="18" height="18" />
                             </SectionHeader>
                         </a>
@@ -161,16 +163,60 @@ export default function Index({ essays, notes, patterns, projects }) {
                     <Subheader>
                         Books I’ve read and books I like the idea of having read
                     </Subheader>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns:
+                                "repeat(auto-fit, minmax(180px, 1fr))",
+                            gridGap: "var(--space-24)",
+                        }}
+                    >
+                        {bookData.slice(0, 4).map((book) => (
+                            <BookCard key={book.title}>
+                                <img src={book.cover} alt="" />
+                                <p>{book.title}</p>
+                                <h4>{book.author}</h4>
+                            </BookCard>
+                        ))}
+                    </div>
                 </section>
             </GardenSection>
             <Spacer />
             <section>
-                <H2>Projects</H2>
+                <Title2>Projects</Title2>
                 <Subheader>In the past I have made things</Subheader>
             </section>
         </Layout>
     );
 }
+
+const bookData = [
+    {
+        title: "The Design of Everyday Things",
+        author: "Don Norman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+    {
+        title: "Thinking Fast and Slow",
+        author: "Daniel Kahneman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+    {
+        title: "The Design of Everyday Things",
+        author: "Don Norman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+    {
+        title: "Thinking Fast and Slow",
+        author: "Daniel Kahneman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+    {
+        title: "Thinking Fast and Slow",
+        author: "Daniel Kahneman",
+        cover: "https://via.placeholder.com/200x300",
+    },
+];
 
 // Styled Components
 
@@ -195,7 +241,7 @@ const EssayCard = styled.div`
     }
     p {
         font-family: var(--font-sans);
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-sm);
         color: var(--color-gray-600);
     }
     &:hover {
@@ -205,6 +251,11 @@ const EssayCard = styled.div`
             color: var(--color-sea-blue);
         }
     }
+`;
+
+const BookCard = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 const NoteCard = styled.div`
@@ -229,7 +280,7 @@ const NoteCard = styled.div`
 const GardenSection = styled.section`
     margin: var(--space-64) 0;
     display: grid;
-    grid-gap: var(--space-64);
+    grid-gap: var(--space-80);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:

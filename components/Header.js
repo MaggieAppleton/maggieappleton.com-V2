@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { H1 } from "./Typography";
 
 export default function Header({ children }) {
     return <HeaderWrapper>{children}</HeaderWrapper>;

@@ -43,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
 		--font-size-lg: 2.369rem;
 		--font-size-md: 1.77rem; 
 		--font-size-base: 1.33rem;
-		--font-size-sm: 1.1rem;
+		--font-size-sm: 1rem;
 		--font-size-xs: 0.88rem;
 
 		/* Leading */

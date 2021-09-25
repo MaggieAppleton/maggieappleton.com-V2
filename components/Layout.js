@@ -6,10 +6,10 @@ export default function Layout({ children, type }) {
 
 const StyledLayout = styled.main`
     max-width: 1400px;
-    margin: var(--space-48) auto;
+    margin: var(--space-32) auto;
     padding: 0 var(--space-48);
     @media (max-width: 768px) {
-        margin: var(--space-32) auto;
+        margin: var(--space-24) auto;
         padding: 0 var(--space-32);
     }
     @media (max-width: 576px) {

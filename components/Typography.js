@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 
-export const H1 = styled.h1`
+export const Title1 = styled.h1`
     font-size: var(--font-size-3xl);
     font-family: var(--font-serif);
     line-height: var(--leading-tight);
@@ -14,7 +14,7 @@ export const H1 = styled.h1`
     }
 `;
 
-export const H2 = styled.h2`
+export const Title2 = styled.h2`
     font-size: var(--font-size-2xl);
     font-family: var(--font-serif);
     color: var(--color-gray-800);
@@ -26,7 +26,7 @@ export const H2 = styled.h2`
     }
 `;
 
-export const H3 = styled.h3`
+export const Title3 = styled.h3`
     font-size: var(--font-size-lg);
     font-family: var(--font-sans);
     color: var(--color-gray-800);
