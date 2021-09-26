@@ -11,10 +11,7 @@ export default function UnderlineHoverLink({ href, children }) {
 }
 
 const LinkContainer = styled.div`
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     position: relative;

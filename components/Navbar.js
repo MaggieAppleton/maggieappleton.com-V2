@@ -26,7 +26,7 @@ export default function Navbar() {
                     <img src="https://via.placeholder.com/40x40" alt="logo" />
                 </a>
             </Link>
-            <div>
+            <div className="main">
                 <Link href="/garden">
                     <HoverLink
                         onFocus={handleFlyout}
@@ -42,16 +42,24 @@ export default function Navbar() {
                     style={{ display: isOpen ? "block" : "none" }}
                 >
                     <Link href="/essays">
-                        <a href="/essays">Essays</a>
+                        <UnderlineHoverLink href="/essays">
+                            Essays
+                        </UnderlineHoverLink>
                     </Link>
                     <Link href="/notes">
-                        <a href="/notes">Notes</a>
+                        <UnderlineHoverLink href="/notes">
+                            Notes
+                        </UnderlineHoverLink>
                     </Link>
                     <Link href="/patterns">
-                        <a href="/patterns">Patterns</a>
+                        <UnderlineHoverLink href="/patterns">
+                            Patterns
+                        </UnderlineHoverLink>
                     </Link>
                     <Link href="/library">
-                        <a href="/library">Library</a>
+                        <UnderlineHoverLink href="/library">
+                            Library
+                        </UnderlineHoverLink>
                     </Link>
                 </Dropdown>
                 <Link href="/projects">
@@ -76,16 +84,19 @@ const StyledNavbar = styled(motion.nav)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: var(--space-24) var(--space-16);
-    & a {
-        margin-left: var(--space-24);
-        text-decoration: none;
-        font-size: var(--font-size-sm);
-        font-family: var(--font-sans);
-        color: var(--color-gray-800);
-        transition: color 0.2s ease-in-out;
-        :hover {
-            color: var(--color-dark-crimson);
+    padding: var(--space-24) var(--space-32);
+    .main {
+        a {
+            margin-left: var(--space-24);
+            padding-bottom: var(--space-4);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            font-family: var(--font-sans);
+            color: var(--color-gray-800);
+            transition: color 0.2s ease-in-out;
+            :hover {
+                color: var(--color-dark-crimson);
+            }
         }
     }
 `;
@@ -97,12 +108,14 @@ const Dropdown = styled(motion.div)`
     margin-top: var(--space-8);
     background: var(--color-cream);
     padding: var(--space-8) var(--space-16);
-    border-radius: var(--border-radius-base);
+    border-radius: var(--border-radius-sm);
     z-index: 1;
-    & a {
-        margin-left: var(--space-8);
+    .main & div {
         display: block;
-        padding: var(--space-4) 0;
+        padding: var(--space-8) 0;
+        a {
+            margin: 0 var(--space-8) var(--space-4) var(--space-8);
+        }
     }
 `;
 
@@ -111,6 +124,17 @@ const HoverLink = styled.a`
     svg {
         display: inline-block;
         vertical-align: middle;
+        transition: color 0.3s ease-in-out, transform 0.8s ease-in-out;
+        color: var(--color-dark-crimson);
+    }
+    &:hover {
+        span {
+            color: var(--color-sea-blue);
+        }
+        svg {
+            color: var(--color-sea-blue);
+            transform: rotateY(180deg);
+        }
     }
     svg {
         margin-left: var(--space-4);
