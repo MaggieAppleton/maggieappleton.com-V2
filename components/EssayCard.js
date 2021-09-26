@@ -18,7 +18,7 @@ export default function EssayCard({ slug, cover, title, growthStage, date }) {
                     {cover ? (
                         <Image
                             src={cover}
-                            alt=""
+                            alt={title}
                             width={300}
                             height={300}
                             layout="responsive"
@@ -31,8 +31,10 @@ export default function EssayCard({ slug, cover, title, growthStage, date }) {
                     )}
                     <h3>{title}</h3>
                     <div>
-                        <p>{growthStage}</p>
-                        <GrowthIcon size="14" growthStage={growthStage} />
+                        {growthStage && <p>{growthStage}</p>}
+                        {growthStage && (
+                            <GrowthIcon size="14" growthStage={growthStage} />
+                        )}
                         <p>{formattedDate}</p>
                     </div>
                 </StyledEssayCard>
@@ -49,7 +51,7 @@ const StyledEssayCard = styled(motion.div)`
     padding: var(--space-24);
     border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-sm);
-    background: var(--color-cream);
+    background: var(--color-light-cream);
     transition: all 0.3s ease-in-out;
     color: var(--color-gray-800);
     h3 {

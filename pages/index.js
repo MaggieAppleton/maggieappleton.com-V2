@@ -26,7 +26,6 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
-    console.log(essays);
     return (
         <Layout>
             <Header>

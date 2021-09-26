@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {
     getPostSlugsForTopic,
     getAllTopics,
@@ -7,18 +6,14 @@ import {
 import { getPostdata } from "../../utils/getPosts";
 import matter from "gray-matter";
 import styled from "styled-components";
+import Layout from "../../components/Layout";
 import DynamicPostsList from "../../components/DynamicPostsList";
-// import TopicPill from '../../components/TopicPill'
 
 export default function TopicPage({ topic, topics, frontMatterAndSlug }) {
     const topicName = topic[0].toUpperCase() + topic.slice(1);
-
     return (
-        <>
-            <Head></Head>
-
+        <Layout>
             <header>
-                Other topics:{" "}
                 <ul>
                     {topics.map((topic) => (
                         <div topic={topic} key={topic} />
@@ -26,10 +21,10 @@ export default function TopicPage({ topic, topics, frontMatterAndSlug }) {
                 </ul>
             </header>
 
-            <h1>{topicName} posts</h1>
+            <h1>Posts related to {topicName}</h1>
 
             <DynamicPostsList postsToShow={frontMatterAndSlug} />
-        </>
+        </Layout>
     );
 }
 

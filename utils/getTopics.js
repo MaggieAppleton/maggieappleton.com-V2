@@ -51,7 +51,6 @@ export const getAllTopics = () => {
             });
         }
     });
-
     // Return those topics
     return result;
 };
@@ -59,5 +58,6 @@ export const getAllTopics = () => {
 // todo: this could be a blog post?
 export const getUniqueTopics = () => {
     const topics = getAllTopics().map((obj) => obj.params.topic);
+    console.log(topics);
     return Array.from(new Set(topics));
 };

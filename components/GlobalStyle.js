@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 		--space-160: 10rem; 
 
 		/* Colors */
+		--color-light-cream: #FAF8F5;
 		--color-cream: #F6F5F1;
 		--color-black: #353534;
 		--color-gray-800: #4D4D4C;
@@ -55,9 +56,9 @@ export const GlobalStyle = createGlobalStyle`
 		--leading-looser: 1.9em;
 
 		/* Border radius */
-		--border-radius-base: 0.25rem;
-		--border-radius-sm: 0.125rem;
-		--border-radius-lg: 0.5rem;
+		--border-radius-sm: 0.2rem;
+		--border-radius-base: 0.4rem;
+		--border-radius-lg: 0.6rem;
 
 		/* Box Shadows */
 		--box-shadow-sm:

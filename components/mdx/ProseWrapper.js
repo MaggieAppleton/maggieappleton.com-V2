@@ -14,6 +14,22 @@ const ProseWrapper = styled.article`
         line-height: var(--leading-looser);
         margin-bottom: var(--space-32);
     }
+    h1 {
+        font-size: var(--font-size-2xl);
+        margin: var(--space-80) 0 var(--space-24);
+    }
+    h2 {
+        font-size: var(--font-size-xl);
+        margin: var(--space-64) 0 var(--space-24);
+    }
+    h3 {
+        font-size: var(--font-size-lg);
+        font-weight: 400;
+        margin: var(--space-32) 0 var(--space-24);
+    }
+    h4 {
+        font-size: var(--font-size-xl);
+    }
 `;
 
 export default ProseWrapper;
