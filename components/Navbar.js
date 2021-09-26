@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import UnderlineHoverLink from "./UnderlineHoverLink";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -54,13 +55,17 @@ export default function Navbar() {
                     </Link>
                 </Dropdown>
                 <Link href="/projects">
-                    <a>Projects</a>
+                    <UnderlineHoverLink href="/projects">
+                        Projects
+                    </UnderlineHoverLink>
                 </Link>
                 <Link href="/about">
-                    <a>About</a>
+                    <UnderlineHoverLink href="/about">About</UnderlineHoverLink>
                 </Link>
                 <Link href="/start">
-                    <a>Start Here</a>
+                    <UnderlineHoverLink href="/start">
+                        Start Here
+                    </UnderlineHoverLink>
                 </Link>
             </div>
         </StyledNavbar>

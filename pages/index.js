@@ -2,9 +2,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
-import sortBy from "lodash/sortBy";
-import reverse from "lodash/reverse";
-import Image from "next/image";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
 import { Spacer } from "../components/Spacer";
@@ -13,6 +10,7 @@ import EssayCard from "../components/cards/EssayCard";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import UnderlineHoverLink from "../components/UnderlineHoverLink";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import {
     essayFilePaths,
@@ -56,9 +54,9 @@ export default function Index({ essays, notes, patterns, projects }) {
                     developer
                     <br />
                     Currently leading design at{" "}
-                    <a href="https://hash.ai">
+                    <UnderlineHoverLink href="https://hash.ai">
                         <b>HASH</b>
-                    </a>{" "}
+                    </UnderlineHoverLink>{" "}
                 </motion.h2>
             </Header>
             <Spacer large />
