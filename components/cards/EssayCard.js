@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import GrowthIcon from "../components/icons/GrowthIcon";
+import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
 export default function EssayCard({ slug, cover, title, growthStage, date }) {

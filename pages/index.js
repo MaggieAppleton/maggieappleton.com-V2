@@ -7,8 +7,9 @@ import reverse from "lodash/reverse";
 import Image from "next/image";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
+import { Spacer } from "../components/Spacer";
 import { Title1, Title2, Title3 } from "../components/Typography";
-import EssayCard from "../components/EssayCard";
+import EssayCard from "../components/cards/EssayCard";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -60,7 +61,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                     </a>{" "}
                 </motion.h2>
             </Header>
-            <Spacer />
+            <Spacer large />
             <motion.section
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -235,39 +236,6 @@ const bookData = [
 
 // Styled Components
 
-// const EssayCard = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     border: 1px solid var(--color-gray-100);
-//     padding: var(--space-24);
-//     border-radius: var(--border-radius-base);
-//     box-shadow: var(--box-shadow-sm);
-//     background: var(--color-cream);
-//     transition: all 0.3s ease-in-out;
-//     color: var(--color-gray-800);
-//     h3 {
-//         transition: all 0.3s ease-in-out;
-//         font-family: var(--font-body);
-//         font-size: var(--font-size-base);
-//         font-weight: 400;
-//         line-height: var(--leading-snug);
-//         margin: var(--space-12) 0;
-//     }
-//     p {
-//         font-family: var(--font-sans);
-//         font-size: var(--font-size-sm);
-//         color: var(--color-gray-600);
-//     }
-//     &:hover {
-//         box-shadow: var(--box-shadow-lg);
-//         transform: translateY(-2px);
-//         h3 {
-//             color: var(--color-dark-crimson);
-//         }
-//     }
-// `;
-
 const PatternCard = styled.div`
     margin: var(--space-16) 0;
     h3 {
@@ -332,7 +300,7 @@ const NoteCard = styled.div`
 `;
 
 const GardenSection = styled(motion.section)`
-    margin: var(--space-64) 0;
+    margin: var(--space-64) 0 var(--space-24);
     display: grid;
     grid-gap: var(--space-80);
     grid-template-columns: 1fr 1fr 1fr;
@@ -370,10 +338,6 @@ const SectionHeader = styled.h3`
             color: var(--color-sea-blue);
         }
     }
-`;
-
-const Spacer = styled.div`
-    height: var(--space-128);
 `;
 
 const Subheader = styled.p`

@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
-import NoteCard from "../components/NoteCard";
+import NoteCard from "../components/cards/NoteCard";
 import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";
 
 export default function Notes({ notes }) {

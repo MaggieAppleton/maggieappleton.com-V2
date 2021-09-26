@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
-import EssayCard from "../components/EssayCard";
+import EssayCard from "../components/cards/EssayCard";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
 
 export default function Essays({ essays }) {

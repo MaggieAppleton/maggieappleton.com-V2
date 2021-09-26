@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import GrowthIcon from "../components/icons/GrowthIcon";
+import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
 export default function PatternCard({ slug, title, growthStage }) {

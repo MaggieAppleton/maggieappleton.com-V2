@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
-import PatternCard from "../components/PatternCard";
+import PatternCard from "../components/cards/PatternCard";
 import { patternFilePaths, PATTERNS_PATH } from "../utils/mdxUtils";
 
 export default function Patterns({ patterns }) {
