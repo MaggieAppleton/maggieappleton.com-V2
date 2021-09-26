@@ -4,18 +4,21 @@
 
 - Next.js
 - React
-- Hero Icons
+- MDX
+- MDX Remote
+- Hero Icons – used for minor icons (crosses, arrows, etc.)
 - Algolia Search
 - Styled Components
 - Framer Motion
 - Reach UI
+- [React Masonry CSS](https://github.com/paulcollett/react-masonry-css)
 - [Next SEO](https://github.com/garmeeh/next-seo)
 - [Lodash](https://lodash.com/)
 
+
 ## Components
 
-
-`<ProseWrapper />` wraps around all mdx longform copy.
+`<ProseWrapper />` wraps around all MDX longform copy. Limits it to 72ch and places it in grid-column 2. Sets body copy to 1.25rem (20px)
 
 ### Images
 
