@@ -7,6 +7,8 @@ import path from "path";
 import BasicImage from "../components/mdx/BasicImage";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
+import ProjectTemplate from "../templates/ProjectTemplate";
+import PatternTemplate from "../templates/PatternTemplate";
 import { Title1, Title2, Title3, Title4 } from "../components/Typography";
 import {
     projectFilePaths,
@@ -48,6 +50,22 @@ export default function NotePage({ source, frontMatter }) {
     } else if (frontMatter.type === "essay") {
         return (
             <EssayTemplate
+                source={source}
+                frontMatter={frontMatter}
+                components={components}
+            />
+        );
+    } else if (frontMatter.type === "project") {
+        return (
+            <ProjectTemplate
+                source={source}
+                frontMatter={frontMatter}
+                components={components}
+            />
+        );
+    } else if (frontMatter.type === "pattern") {
+        return (
+            <PatternTemplate
                 source={source}
                 frontMatter={frontMatter}
                 components={components}

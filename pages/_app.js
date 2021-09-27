@@ -1,6 +1,5 @@
 import { GlobalStyle } from "../components/GlobalStyle";
 import { AnimatePresence } from "framer-motion";
-import Layout from "../components/Layout";
 import "./_app.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";

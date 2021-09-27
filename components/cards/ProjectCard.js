@@ -4,12 +4,11 @@ import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
-export default function EssayCard({ slug, cover, title, date }) {
+export default function ProjectCard({ slug, cover, title, date, topics }) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
-            month: "short",
-            day: "numeric",
+            month: "long",
         });
     }
 
@@ -22,18 +21,21 @@ export default function EssayCard({ slug, cover, title, date }) {
                             src={cover}
                             alt={title}
                             width={300}
-                            height={300}
+                            height={225}
                             layout="responsive"
                         />
                     ) : (
                         <img
-                            src="https://via.placeholder.com/300x250"
+                            src="https://via.placeholder.com/300x225"
                             alt={title}
                         />
                     )}
                     <Metadata>
                         <h3>{title}</h3>
-                        <span className="metadata">{formattedDate(date)}</span>
+                        <div className="metadata">
+                            <span>{formattedDate(date)}</span>
+                            <span>{topics}</span>
+                        </div>
                     </Metadata>
                 </StyledProjectCard>
             </a>
@@ -44,8 +46,9 @@ export default function EssayCard({ slug, cover, title, date }) {
 const Metadata = styled.div`
     display: flex;
     flex-direction: column;
-    margin: var(--space-16) var(--space-24);
+    margin: var(--space-16) 0;
     h3 {
+        text-align: center;
         transition: all 0.3s ease-in-out;
         font-family: var(--font-body);
         font-size: var(--font-size-base);
@@ -53,23 +56,33 @@ const Metadata = styled.div`
         line-height: var(--leading-snug);
         margin-bottom: var(--space-8);
     }
+    div {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
 `;
 
 const StyledProjectCard = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid var(--color-gray-100);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--box-shadow-sm);
-    background: var(--color-light-cream);
+    background: var(--color-cream);
     transition: all 0.3s ease-in-out;
     color: var(--color-gray-800);
+    img,
+    div:first-child {
+        border-radius: var(--border-radius-base);
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 0 !important;
+    }
     &:hover {
-        box-shadow: var(--box-shadow-lg);
         transform: translateY(-2px);
         h3 {
             color: var(--color-dark-crimson);
+        }
+        & > div:first-child {
+            box-shadow: var(--box-shadow-lg);
         }
     }
 `;

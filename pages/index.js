@@ -199,7 +199,11 @@ export default function Index({ essays, notes, patterns, projects }) {
             </GardenSection>
             <Spacer />
             <section>
-                <Title2>Projects</Title2>
+                <Link href="/projects">
+                    <a href="/projects">
+                        <Title2>Projects</Title2>
+                    </a>
+                </Link>
                 <Subheader>In the past I have made things</Subheader>
                 <div
                     style={{
@@ -213,6 +217,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                         <Link key={project.slug} href={`/${project.slug}`}>
                             <a>
                                 <ProjectCard
+                                    slug={project.slug}
                                     title={project.data.title}
                                     cover={project.data.cover}
                                     date={project.data.updated}
@@ -428,7 +433,7 @@ export function getStaticProps() {
         };
     });
 
-    const projects = projectFilePaths.map((filePath) => {
+    let projects = projectFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
         const { content, data } = matter(source);
         const slug = filePath.replace(/\.mdx?$/, "");
@@ -440,6 +445,16 @@ export function getStaticProps() {
             filePath,
         };
     });
+
+    // Filter projects for featured property
+    const filteredProjects = projects
+        .filter((project) => project.data.featured === true)
+        .slice(0, 4);
+    // Sort filtered essays by date
+    const sortedProjects = filteredProjects.sort((a, b) => {
+        return new Date(b.data.updated) - new Date(a.data.updated);
+    });
+    projects = sortedProjects;
 
     return { props: { essays, notes, patterns, projects } };
 }

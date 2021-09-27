@@ -26,11 +26,13 @@ const StyledMasonry = styled(Masonry)`
     width: auto;
     margin-top: var(--space-64);
     & .masonry_grid_column + .masonry_grid_column {
-        margin-left: var(--space-16);
+        margin-left: ${(props) =>
+            props.largeGap ? "var(--space-32)" : "var(--space-16)"};
         background-clip: padding-box;
     }
     & .masonry_grid_column div:first-child {
-        margin-bottom: var(--space-16);
+        margin-bottom: ${(props) =>
+            props.largeGap ? "var(--space-32)" : "var(--space-16)"};
     }
 `;
 

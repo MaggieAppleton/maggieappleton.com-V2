@@ -1,18 +1,15 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { SmallCaps } from "./typography";
+import UnderlineHoverLink from "./UnderlineHoverLink";
 
 export default function Footer() {
     return (
         <StyledFooter>
             <FooterContent>
                 <SmallCaps>Stuff, yeah?</SmallCaps>
-                <Link href="/">
-                    <a>Home</a>
-                </Link>
-                <Link href="/about">
-                    <a>About</a>
-                </Link>
+                <p>Want to stay up to date?</p>
+                <p>RSS Feed</p>
             </FooterContent>
         </StyledFooter>
     );
@@ -20,7 +17,7 @@ export default function Footer() {
 
 const StyledFooter = styled.footer`
     padding: var(--space-64) 0;
-    border-top: 1px solid var(--color-gray-400);
+    border-top: 1px solid var(--color-gray-300);
 `;
 
 const FooterContent = styled.div`

@@ -12,12 +12,14 @@ export default function Projects({ projects }) {
         <Layout>
             <Title1>Projects</Title1>
             <Title2>Stuff</Title2>
-            <MasonryGrid>
-                {projects.map((note) => (
+            <MasonryGrid largeGap>
+                {projects.map((project) => (
                     <ProjectCard
-                        slug={note.slug}
-                        title={note.data.title}
-                        date={note.data.updated}
+                        slug={project.slug}
+                        title={project.data.title}
+                        date={project.data.updated}
+                        cover={project.data.cover}
+                        topics={project.data.topics}
                     />
                 ))}
             </MasonryGrid>
