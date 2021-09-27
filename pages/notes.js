@@ -11,7 +11,10 @@ export default function Notes({ notes }) {
     return (
         <Layout>
             <Title1>Notes</Title1>
-            <Title2>Stuff</Title2>
+            <Title2>
+                Loose, unopinionated notes on things I don’t entirely understand
+                yet.
+            </Title2>
             <MasonryGrid>
                 {notes.map((note) => (
                     <NoteCard

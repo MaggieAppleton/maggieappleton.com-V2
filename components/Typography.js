@@ -37,6 +37,14 @@ export const Title3 = styled(motion.h3)`
     }
 `;
 
+export const Title4 = styled(motion.h4)`
+    font-size: var(--font-size-md);
+    font-family: var(--font-sans);
+    color: var(--color-gray-800);
+    font-weight: 300;
+    line-height: var(--leading-tight);
+`;
+
 export const SmallCaps = styled.p`
     font-size: var(--font-size-sm);
     font-family: var(--font-sans);

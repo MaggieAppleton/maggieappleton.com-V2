@@ -130,14 +130,14 @@ export default function Index({ essays, notes, patterns, projects }) {
                     {notes.slice(0, 12).map((note) => (
                         <Link key={note.slug} href={`/${note.slug}`}>
                             <a>
-                                <NoteCard>
+                                <IndexNoteCard>
                                     {note.data.growthStage && (
                                         <GrowthIcon
                                             growthStage={note.data.growthStage}
                                         />
                                     )}
                                     <h3>{note.data.title}</h3>
-                                </NoteCard>
+                                </IndexNoteCard>
                             </a>
                         </Link>
                     ))}
@@ -158,9 +158,9 @@ export default function Index({ essays, notes, patterns, projects }) {
                     {patterns.map((pattern) => (
                         <Link key={pattern.slug} href={`/${pattern.slug}`}>
                             <a>
-                                <PatternCard>
+                                <IndexPatternCard>
                                     <h3>{pattern.data.title}</h3>
-                                </PatternCard>
+                                </IndexPatternCard>
                             </a>
                         </Link>
                     ))}
@@ -234,7 +234,7 @@ const bookData = [
 
 // Styled Components
 
-const PatternCard = styled.div`
+const IndexPatternCard = styled.div`
     margin: var(--space-16) 0;
     h3 {
         color: var(--color-gray-800);
@@ -269,7 +269,7 @@ const BookCard = styled.div`
     flex-direction: column;
 `;
 
-const NoteCard = styled.div`
+const IndexNoteCard = styled.div`
     display: flex;
     padding: var(--space-16) 0 1.2rem;
     border-bottom: 1px solid var(--color-gray-100);

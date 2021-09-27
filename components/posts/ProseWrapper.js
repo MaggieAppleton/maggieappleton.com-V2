@@ -28,7 +28,7 @@ const ProseWrapper = styled.article`
         margin: var(--space-32) 0 var(--space-24);
     }
     h4 {
-        font-size: var(--font-size-xl);
+        margin: var(--space-24) 0 var(--space-16);
     }
 `;
 

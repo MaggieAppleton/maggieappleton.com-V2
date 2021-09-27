@@ -14,13 +14,14 @@ export default function NoteCard({ slug, title, growthStage, date }) {
         <Link key={slug} href={`/${slug}`}>
             <a>
                 <StyledNoteCard>
-                    {growthStage && <p>{growthStage}</p>}
-                    {growthStage && (
-                        <GrowthIcon size="14" growthStage={growthStage} />
-                    )}
                     <h3>{title}</h3>
-                    <div>
-                        <p>{formattedDate}</p>
+
+                    <div className="metadata">
+                        <span>{formattedDate}</span>
+                        {growthStage && <span>{growthStage}</span>}
+                        {growthStage && (
+                            <GrowthIcon size="14" growthStage={growthStage} />
+                        )}
                     </div>
                 </StyledNoteCard>
             </a>

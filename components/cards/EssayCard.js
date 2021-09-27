@@ -30,12 +30,12 @@ export default function EssayCard({ slug, cover, title, growthStage, date }) {
                         />
                     )}
                     <h3>{title}</h3>
-                    <div>
-                        {growthStage && <p>{growthStage}</p>}
+                    <div className="metadata">
+                        {growthStage && <span>{growthStage}</span>}
                         {growthStage && (
                             <GrowthIcon size="14" growthStage={growthStage} />
                         )}
-                        <p>{formattedDate}</p>
+                        <span>{formattedDate}</span>
                     </div>
                 </StyledEssayCard>
             </a>
@@ -61,11 +61,6 @@ const StyledEssayCard = styled(motion.div)`
         font-weight: 400;
         line-height: var(--leading-snug);
         margin: var(--space-12) 0;
-    }
-    p {
-        font-family: var(--font-sans);
-        font-size: var(--font-size-sm);
-        color: var(--color-gray-600);
     }
     div {
         display: flex;

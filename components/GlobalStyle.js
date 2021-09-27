@@ -22,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
 		--color-light-cream: #FAF8F5;
 		--color-cream: #F6F5F1;
 		--color-black: #353534;
-		--color-gray-800: #4D4D4C;
-		--color-gray-600: #999895;
+		--color-gray-800: #4A4A46;
+		--color-gray-600: #777472;
 		--color-gray-300: #D3D3D1;
 		--color-gray-100: #E9E9E6;
 		--color-salmon: #FD8A78;
@@ -183,5 +183,10 @@ export const GlobalStyle = createGlobalStyle`
 	a {
 		text-decoration: none;
 		color: var(--color-dark-crimson);
+	}
+	.metadata span, span.metadata {
+		font-size: var(--font-size-sm);
+		font-family: var(--font-sans);
+		color: var(--color-gray-600);
 	}
 `;

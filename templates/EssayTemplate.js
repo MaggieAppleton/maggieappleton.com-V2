@@ -1,25 +1,18 @@
 import { MDXRemote } from "next-mdx-remote";
-import ProseWrapper from "../components/mdx/ProseWrapper";
+import ProseWrapper from "../components/posts/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
-    const formattedStartDate = new Date(
-        frontMatter.startDate
-    ).toLocaleDateString("en-GB", {
-        month: "short",
-        year: "numeric",
-    });
-
-    const formattedUpdated = new Date(frontMatter.updated).toLocaleDateString(
-        "en-GB",
-        {
-            month: "short",
+    function formattedDate(date) {
+        return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
-        }
-    );
+            month: "short",
+            day: "numeric",
+        });
+    }
 
     return (
         <>
@@ -50,9 +43,17 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                             ))}
                         </ul>
                     )}
-                    <div>
-                        <span>Planted {formattedStartDate}</span>
-                        <span>Last tended {formattedUpdated}</span>
+                    <div className="metadata">
+                        {frontMatter.startDate && (
+                            <span>
+                                Planted {formattedDate(frontMatter.startDate)}
+                            </span>
+                        )}
+                        {frontMatter.updated && (
+                            <span>
+                                Last tended {formattedDate(frontMatter.updated)}
+                            </span>
+                        )}
                     </div>
                 </Metadata>
             </Container>
@@ -100,8 +101,6 @@ const Container = styled.div`
 `;
 
 const Metadata = styled.div`
-    font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
     justify-content: space-between;
     div {
         margin-top: var(--space-16);

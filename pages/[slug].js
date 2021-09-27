@@ -7,7 +7,7 @@ import path from "path";
 import BasicImage from "../components/mdx/BasicImage";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
-import { Title1, Title2, Title3 } from "../components/Typography";
+import { Title1, Title2, Title3, Title4 } from "../components/Typography";
 import {
     projectFilePaths,
     noteFilePaths,
@@ -30,6 +30,7 @@ const components = {
     h1: Title1,
     h2: Title2,
     h3: Title3,
+    h4: Title4,
     img: BasicImage,
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
     Head,
