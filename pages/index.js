@@ -7,6 +7,8 @@ import styled from "styled-components";
 import { Spacer } from "../components/Spacer";
 import { Title1, Title2, Title3 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
+import ProjectCard from "../components/cards/ProjectCard";
+
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -199,6 +201,26 @@ export default function Index({ essays, notes, patterns, projects }) {
             <section>
                 <Title2>Projects</Title2>
                 <Subheader>In the past I have made things</Subheader>
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns:
+                            "repeat(auto-fit, minmax(320px, 1fr))",
+                        gridGap: "var(--space-24)",
+                    }}
+                >
+                    {projects.slice(0, 3).map((project) => (
+                        <Link key={project.slug} href={`/${project.slug}`}>
+                            <a>
+                                <ProjectCard
+                                    title={project.data.title}
+                                    cover={project.data.cover}
+                                    date={project.data.updated}
+                                />
+                            </a>
+                        </Link>
+                    ))}
+                </div>
             </section>
         </Layout>
     );

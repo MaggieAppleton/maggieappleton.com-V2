@@ -5,10 +5,13 @@ import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
 export default function EssayCard({ slug, cover, title, date }) {
-    const formattedDate = new Date(date).toLocaleDateString("en-GB", {
-        year: "numeric",
-        month: "long",
-    });
+    function formattedDate(date) {
+        return new Date(date).toLocaleDateString("en-GB", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+    }
 
     return (
         <Link key={slug} href={`/${slug}`}>
@@ -24,51 +27,44 @@ export default function EssayCard({ slug, cover, title, date }) {
                         />
                     ) : (
                         <img
-                            src="https://via.placeholder.com/300x300"
+                            src="https://via.placeholder.com/300x250"
                             alt={title}
                         />
                     )}
-                    <h3>{title}</h3>
-                    <div>
-                        <p>{formattedDate}</p>
-                    </div>
+                    <Metadata>
+                        <h3>{title}</h3>
+                        <span className="metadata">{formattedDate(date)}</span>
+                    </Metadata>
                 </StyledProjectCard>
             </a>
         </Link>
     );
 }
 
-const StyledProjectCard = styled(motion.div)`
+const Metadata = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid var(--color-gray-100);
-    padding: var(--space-24);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--box-shadow-sm);
-    background: var(--color-light-cream);
-    transition: all 0.3s ease-in-out;
-    color: var(--color-gray-800);
+    margin: var(--space-16) var(--space-24);
     h3 {
         transition: all 0.3s ease-in-out;
         font-family: var(--font-body);
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
-        margin: var(--space-12) 0;
+        margin-bottom: var(--space-8);
     }
-    p {
-        font-family: var(--font-sans);
-        font-size: var(--font-size-sm);
-        color: var(--color-gray-600);
-    }
-    div {
-        display: flex;
-        align-items: center;
-        svg {
-            margin: 0 var(--space-8);
-        }
-    }
+`;
+
+const StyledProjectCard = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--color-gray-100);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-sm);
+    background: var(--color-light-cream);
+    transition: all 0.3s ease-in-out;
+    color: var(--color-gray-800);
     &:hover {
         box-shadow: var(--box-shadow-lg);
         transform: translateY(-2px);

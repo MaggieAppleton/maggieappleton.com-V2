@@ -15,7 +15,7 @@ export default function NoteTemplate({ source, frontMatter, components }) {
     }
 
     return (
-        <Wrapper>
+        <>
             <Container>
                 <div>
                     <Link href="/notes">
@@ -34,29 +34,25 @@ export default function NoteTemplate({ source, frontMatter, components }) {
                     {frontMatter.description && (
                         <p>{frontMatter.description}</p>
                     )}
-                    {frontMatter.updated && (
-                        <p>
-                            <small>{formattedDate(frontMatter.updated)}</small>
-                        </p>
-                    )}
-                    {frontMatter.startDate && (
-                        <p>
-                            <small>
-                                {formattedDate(frontMatter.startDate)}
-                            </small>
-                        </p>
-                    )}
-                    {frontMatter.topics && (
-                        <ul>
-                            {frontMatter.topics.map((topic) => (
-                                <li key={topic}>
-                                    <Link href={`/topics/${topic}`}>
-                                        <a>{topic}</a>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    <Metadata className="metadata">
+                        {frontMatter.updated && (
+                            <span>{formattedDate(frontMatter.updated)}</span>
+                        )}
+                        {frontMatter.startDate && (
+                            <span>{formattedDate(frontMatter.startDate)}</span>
+                        )}
+                        {frontMatter.topics && (
+                            <ul>
+                                {frontMatter.topics.map((topic) => (
+                                    <li key={topic}>
+                                        <Link href={`/topics/${topic}`}>
+                                            <a>{topic}</a>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </Metadata>
                 </div>
             </Container>
             <StyledMain>
@@ -64,17 +60,23 @@ export default function NoteTemplate({ source, frontMatter, components }) {
                     <MDXRemote {...source} components={components} />
                 </ProseWrapper>
             </StyledMain>
-        </Wrapper>
+        </>
     );
 }
 
-const Wrapper = styled.div`
+const Metadata = styled.section`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    ul {
+        display: inline-block;
+        list-style: none;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-sm);
+    }
 `;
 
 const Container = styled.div`
-    max-width: 20%;
+    width: 780px;
     margin: 0 auto;
     div:first-child {
         display: flex;
@@ -92,12 +94,16 @@ const Container = styled.div`
             top: 1px;
         }
     }
+    div:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+    }
     h1 {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
         line-height: var(--leading-tight);
         font-weight: 400;
-        padding: var(--space-24) 0 var(--space-48);
-        border-bottom: 1px solid var(--color-gray-300);
+        padding: var(--space-24) 0 var(--space-24);
+        border-right: 1px solid var(--color-gray-300);
         @media ${breakpoints.mediaSM} {
             font-size: var(--font-size-xl);
         }
