@@ -50,6 +50,7 @@ const StyledNoteCard = styled(motion.div)`
         transition: all 0.3s ease-in-out;
     }
     &:hover {
+        transform: scale3d(1.02, 1.02, 1.02);
         border-bottom: 1px solid var(--color-sea-blue);
         h3 {
             color: var(--color-dark-crimson);

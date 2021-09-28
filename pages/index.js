@@ -285,9 +285,12 @@ const IndexPatternCard = styled.div`
     }
     h3:hover {
         color: var(--color-dark-crimson);
+        transform: scale3d(1, 1.03, 1.03);
         ::before {
-            width: var(--space-8);
+            width: var(--space-12);
         }
+    }
+    &:hover {
     }
 `;
 
@@ -321,6 +324,7 @@ const IndexNoteCard = styled.div`
         h3 {
             color: var(--color-dark-crimson);
         }
+        transform: scale3d(1.02, 1.02, 1.02);
     }
 `;
 

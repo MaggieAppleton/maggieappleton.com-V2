@@ -77,7 +77,7 @@ const StyledProjectCard = styled(motion.div)`
         margin-bottom: 0 !important;
     }
     &:hover {
-        transform: translateY(-2px);
+        transform: scale3d(1.02, 1.02, 1.02);
         h3 {
             color: var(--color-dark-crimson);
         }

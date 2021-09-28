@@ -12,7 +12,7 @@ export default function Patterns({ patterns }) {
         <Layout>
             <Title1>Pattern Catalogue</Title1>
             <p>Stuff</p>
-            <MasonryGrid>
+            <MasonryGrid largeGap>
                 {patterns.map((essay) => (
                     <PatternCard
                         slug={essay.slug}

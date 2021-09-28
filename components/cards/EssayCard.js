@@ -71,7 +71,7 @@ const StyledEssayCard = styled(motion.div)`
     }
     &:hover {
         box-shadow: var(--box-shadow-lg);
-        transform: translateY(-2px);
+        transform: scale3d(1.02, 1.02, 1.02);
         h3 {
             color: var(--color-dark-crimson);
         }

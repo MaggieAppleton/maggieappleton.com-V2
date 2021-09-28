@@ -44,9 +44,10 @@ const StyledPatternCard = styled(motion.div)`
         transition: all 0.3s ease-in-out;
     }
     h3:hover {
+        transform: scale3d(1, 1.02, 1.02);
         color: var(--color-dark-crimson);
         ::before {
-            width: var(--space-8);
+            width: var(--space-12);
         }
     }
 `;
