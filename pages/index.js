@@ -8,7 +8,8 @@ import { Spacer } from "../components/Spacer";
 import { Title1, Title2, Title3 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
-
+import BookCard from "../components/cards/BookCard";
+import { bookData } from "../posts/books";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -188,11 +189,13 @@ export default function Index({ essays, notes, patterns, projects }) {
                         }}
                     >
                         {bookData.slice(0, 4).map((book) => (
-                            <BookCard key={book.title}>
-                                <img src={book.cover} alt="" />
-                                <p>{book.title}</p>
-                                <h4>{book.author}</h4>
-                            </BookCard>
+                            <BookCard
+                                key={book.title}
+                                cover={book.cover}
+                                title={book.title}
+                                author={book.author}
+                                link={book.link}
+                            />
                         ))}
                     </div>
                 </section>
@@ -231,34 +234,6 @@ export default function Index({ essays, notes, patterns, projects }) {
     );
 }
 
-const bookData = [
-    {
-        title: "The Design of Nonsense Things",
-        author: "Don Norman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-    {
-        title: "Thinking Bad and Slow",
-        author: "Daniel Kahneman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-    {
-        title: "The Design of Boring Things",
-        author: "Don Norman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-    {
-        title: "Thinking Fast and Slow",
-        author: "Daniel Kahneman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-    {
-        title: "Thinking Fast and Dumb",
-        author: "Daniel Kahneman",
-        cover: "https://via.placeholder.com/200x300",
-    },
-];
-
 // Styled Components
 
 const IndexPatternCard = styled.div`
@@ -292,11 +267,6 @@ const IndexPatternCard = styled.div`
     }
     &:hover {
     }
-`;
-
-const BookCard = styled.div`
-    display: flex;
-    flex-direction: column;
 `;
 
 const IndexNoteCard = styled.div`

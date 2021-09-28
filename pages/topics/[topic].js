@@ -1,9 +1,9 @@
 import {
-    getPostSlugsForTopic,
+    getAllPostSlugsForTopic,
     getAllTopics,
     getUniqueTopics,
 } from "../../utils/getTopics";
-import { getPostdata } from "../../utils/getPosts";
+import { getPostdata } from "../../utils/getAllPosts";
 import matter from "gray-matter";
 import styled from "styled-components";
 import Layout from "../../components/Layout";
@@ -39,9 +39,9 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({ params }) => {
     const topic = params?.topic;
     const topics = getUniqueTopics().filter((t) => t !== topic); // Get all OTHER unique topics
-    const slugsWithTopic = getPostSlugsForTopic(params?.topic);
+    const slugsWithTopic = getAllPostSlugsForTopic(params?.topic);
     const postsWithTopic = await Promise.all(
-        slugsWithTopic.map((slug) => getPostdata(slug))
+        slugsWithTopic.map((post) => getPostdata(post.slug))
     );
     const frontMatterArr = postsWithTopic.map((post) => matter(post).data);
     const frontMatterAndSlug = frontMatterArr.map((fm, i) => ({
