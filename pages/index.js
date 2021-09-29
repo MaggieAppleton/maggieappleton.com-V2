@@ -28,6 +28,37 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
+    const collectionAnimation = {
+        hidden: {
+            opacity: 0,
+            transition: {
+                when: "afterChildren",
+            },
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const itemAnimation = {
+        hidden: {
+            opacity: 0,
+            y: -50,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+            },
+        },
+    };
+
     return (
         <Layout>
             <Header>
@@ -64,9 +95,9 @@ export default function Index({ essays, notes, patterns, projects }) {
             </Header>
             <Spacer large />
             <motion.section
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, duration: 1 }}
+                variants={collectionAnimation}
+                initial="hidden"
+                animate="visible"
             >
                 <Link href="/garden">
                     <a href="/garden">
@@ -79,12 +110,9 @@ export default function Index({ essays, notes, patterns, projects }) {
                 </Subheader>
             </motion.section>
             <GardenSection
-                initial={{ opacity: 0, y: 50 }}
-                animate={{
-                    opacity: 1,
-                    y: 0,
-                }}
-                transition={{ delay: 1.2, duration: 1 }}
+                variants={collectionAnimation}
+                initial="hidden"
+                animate="visible"
             >
                 <section style={{ gridArea: "essays" }}>
                     <Link href="/essays">
@@ -108,6 +136,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                     >
                         {essays.map((essay) => (
                             <EssayCard
+                                variants={itemAnimation}
                                 slug={essay.slug}
                                 cover={essay.data.cover}
                                 title={essay.data.title}

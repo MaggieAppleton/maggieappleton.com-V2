@@ -38,14 +38,15 @@ export const GlobalStyle = createGlobalStyle`
 		--font-sans: 'Lato', sans-serif;
 
 		/* Font sizes */
-		--font-size-3xl: 5.4rem;
-		--font-size-2xl: 4.209rem;
-		--font-size-xl: 3.157rem;
-		--font-size-lg: 2.369rem;
-		--font-size-md: 1.77rem; 
-		--font-size-base: 1.33rem;
+		--ratio: 1.33;
+		--font-size-3xl: calc(var(--font-size-2xl) * var(--ratio));
+		--font-size-2xl: calc(var(--font-size-xl) * var(--ratio));
+		--font-size-xl: calc(var(--font-size-lg) * var(--ratio));
+		--font-size-lg: calc(var(--font-size-md) * var(--ratio));
+		--font-size-md: calc(var(--font-size-base) * var(--ratio)); 
+		--font-size-base: calc(1rem * var(--ratio));
 		--font-size-sm: 1rem;
-		--font-size-xs: 0.88rem;
+		--font-size-xs: calc(1rem / var(--ratio));
 
 		/* Leading */
 		--leading-tighter: 1.08em;

@@ -1,30 +1,26 @@
 export const bookData = [
     {
-        id: 1,
-        title: "From Bacteria to Bach and Back",
-        author: "Daniel C. Dennett",
-        cover: "https://via.placeholder.com/200x280",
-        link: "",
-    },
-    {
-        id: 2,
-        title: "The Mind in Motion",
-        author: "Barbara Tversky",
-        cover: "https://via.placeholder.com/200x280",
-        link: "",
-    },
-    {
-        id: 3,
         title: "New Dark Age",
+        subtitle: "Technology and the End of the Future",
         author: "James Bridle",
-        cover: "https://via.placeholder.com/200x280",
-        link: "",
+        cover: "http://books.google.com/books/content?id=pZyaDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     },
     {
-        id: 4,
-        title: "Dealers of Lightning",
-        author: "Michael Hiltzik",
-        cover: "https://via.placeholder.com/200x280",
-        link: "",
+        title: "From Bacteria to Bach and Back",
+        subtitle: "The Evolution of Minds",
+        author: "Daniel Clement Dennett",
+        cover: "http://books.google.com/books/content?id=L78PDQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    },
+    {
+        title: "Mind in Motion",
+        subtitle: "How Action Shapes Thought",
+        author: "Barbara Tversky",
+        cover: "http://books.google.com/books/content?id=SpCsvAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    },
+    {
+        title: "If Then",
+        subtitle: "How the Simulmatics Corporation Invented the Future",
+        author: "Jill Lepore",
+        cover: "http://books.google.com/books/content?id=xxwczgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     },
 ];

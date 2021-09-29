@@ -4,17 +4,23 @@ import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
-export default function EssayCard({ slug, cover, title, growthStage, date }) {
+export default function EssayCard({
+    slug,
+    cover,
+    title,
+    growthStage,
+    date,
+    variants,
+}) {
     const formattedDate = new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
         month: "short",
         day: "numeric",
     });
-
     return (
         <Link key={slug} href={`/${slug}`}>
             <a>
-                <StyledEssayCard>
+                <StyledEssayCard variants={variants}>
                     {cover ? (
                         <Image
                             src={cover}
