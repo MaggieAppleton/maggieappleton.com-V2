@@ -35,6 +35,7 @@ const components = {
     h4: Title4,
     img: BasicImage,
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
+    TweetEmbed: dynamic(() => import("../components/mdx/TweetEmbed")),
     Head,
 };
 
