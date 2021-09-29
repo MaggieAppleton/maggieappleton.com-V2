@@ -53,7 +53,7 @@ const StyledEssayCard = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid var(--color-gray-100);
+    border: 1px solid var(--color-tinted-cream);
     padding: var(--space-24);
     border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-sm);

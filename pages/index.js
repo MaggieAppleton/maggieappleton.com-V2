@@ -307,7 +307,7 @@ const IndexPatternCard = styled.div`
 const IndexNoteCard = styled.div`
     display: flex;
     padding: var(--space-16) 0 1.2rem;
-    border-bottom: 1px solid var(--color-gray-100);
+    border-bottom: 1px solid var(--color-tinted-cream);
     transition: all 0.3s ease-in-out;
     svg {
         position: relative;

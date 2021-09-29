@@ -19,14 +19,13 @@ export const GlobalStyle = createGlobalStyle`
 		--space-160: 10rem; 
 
 		/* Colors */
-		--color-light-cream: #FAF8F5;
+		--color-light-cream: #FBF9F8;
 		--color-cream: #F6F5F1;
-		--color-tinted-cream: #E6E3DF;
+		--color-tinted-cream: #E6E3E1;
 		--color-black: #353534;
 		--color-gray-800: #4A4A46;
 		--color-gray-600: #777472;
 		--color-gray-300: #D3D3D1;
-		--color-gray-100: #E9E9E6;
 		--color-salmon: #FD8A78;
 		--color-crimson: #550037;
 		--color-sea-blue: #04A5BB;
