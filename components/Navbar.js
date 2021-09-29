@@ -92,10 +92,14 @@ const StyledNavbar = styled(motion.nav)`
             text-decoration: none;
             font-size: var(--font-size-sm);
             font-family: var(--font-sans);
-            color: var(--color-gray-800);
             transition: color 0.2s ease-in-out;
+            span {
+                color: var(--color-gray-800);
+            }
             :hover {
-                color: var(--color-dark-crimson);
+                span {
+                    color: var(--color-crimson);
+                }
             }
         }
     }
@@ -105,10 +109,13 @@ const Dropdown = styled(motion.div)`
     position: absolute;
     display: flex;
     flex-direction: column;
-    margin-top: var(--space-8);
+    margin-top: 0.7rem;
     background: var(--color-cream);
-    padding: var(--space-8) var(--space-16);
+    padding: var(--space-8) var(--space-32) var(--space-8) var(--space-8);
+    margin-left: 1.2rem;
+    border: 1px solid var(--color-tinted-cream);
     border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow-lg);
     z-index: 1;
     .main & div {
         display: block;
@@ -125,7 +132,7 @@ const HoverLink = styled.a`
         display: inline-block;
         vertical-align: middle;
         transition: color 0.3s ease-in-out, transform 0.8s ease-in-out;
-        color: var(--color-dark-crimson);
+        color: var(--color-gray-600);
     }
     &:hover {
         span {

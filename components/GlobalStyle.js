@@ -21,13 +21,14 @@ export const GlobalStyle = createGlobalStyle`
 		/* Colors */
 		--color-light-cream: #FAF8F5;
 		--color-cream: #F6F5F1;
+		--color-tinted-cream: #E6E3DF;
 		--color-black: #353534;
 		--color-gray-800: #4A4A46;
 		--color-gray-600: #777472;
 		--color-gray-300: #D3D3D1;
 		--color-gray-100: #E9E9E6;
 		--color-salmon: #FD8A78;
-		--color-dark-crimson: #550037;
+		--color-crimson: #550037;
 		--color-sea-blue: #04A5BB;
 		--color-purple: #7558B2;
 
@@ -49,12 +50,12 @@ export const GlobalStyle = createGlobalStyle`
 		--font-size-xs: calc(1rem / var(--ratio));
 
 		/* Leading */
-		--leading-tighter: 1.08em;
-		--leading-tight: 1.2em;
-		--leading-snug: 1.33em;
-		--leading-base: 1.5em;
-		--leading-loose: 1.7em;
-		--leading-looser: 1.9em;
+		--leading-tighter: 110%;
+		--leading-tight: 120%;
+		--leading-snug: 130%;
+		--leading-base: 140%;
+		--leading-loose: 170%;
+		--leading-looser: 190%;
 
 		/* Border radius */
 		--border-radius-sm: 0.2rem;
@@ -183,7 +184,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	a {
 		text-decoration: none;
-		color: var(--color-dark-crimson);
+		color: var(--color-crimson);
 	}
 	.metadata span, span.metadata {
 		font-size: var(--font-size-sm);
