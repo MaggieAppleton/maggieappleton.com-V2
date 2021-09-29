@@ -10,11 +10,12 @@ import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
 import { bookData } from "../posts/books";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import UnderlineHoverLink from "../components/UnderlineHoverLink";
 import GrowthIcon from "../components/Icons/GrowthIcon";
+import { useInView } from "react-intersection-observer";
 import {
     essayFilePaths,
     ESSAYS_PATH,
@@ -28,6 +29,9 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
+    // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
+    const { ref, inView } = useInView();
+
     const collectionAnimation = {
         hidden: {
             opacity: 0,
@@ -38,8 +42,10 @@ export default function Index({ essays, notes, patterns, projects }) {
         visible: {
             opacity: 1,
             transition: {
+                delay: 0.2,
+                ease: "easeInOut",
                 when: "beforeChildren",
-                staggerChildren: 0.1,
+                staggerChildren: 0.2,
             },
         },
     };
@@ -47,13 +53,11 @@ export default function Index({ essays, notes, patterns, projects }) {
     const itemAnimation = {
         hidden: {
             opacity: 0,
-            y: -50,
         },
         visible: {
             opacity: 1,
-            y: 0,
             transition: {
-                duration: 0.3,
+                duration: 0.4,
                 ease: "easeInOut",
             },
         },
@@ -95,9 +99,9 @@ export default function Index({ essays, notes, patterns, projects }) {
             </Header>
             <Spacer large />
             <motion.section
-                variants={collectionAnimation}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 1 }}
             >
                 <Link href="/garden">
                     <a href="/garden">
@@ -219,6 +223,8 @@ export default function Index({ essays, notes, patterns, projects }) {
                     >
                         {bookData.slice(0, 4).map((book) => (
                             <BookCard
+                                small
+                                subtitle={book.subtitle}
                                 key={book.title}
                                 cover={book.cover}
                                 title={book.title}
@@ -288,7 +294,7 @@ const IndexPatternCard = styled.div`
         transition: all 0.3s ease-in-out;
     }
     h3:hover {
-        color: var(--color-dark-crimson);
+        color: var(--color-crimson);
         transform: scale3d(1, 1.03, 1.03);
         ::before {
             width: var(--space-12);
@@ -321,7 +327,7 @@ const IndexNoteCard = styled.div`
     &:hover {
         border-bottom: 1px solid var(--color-sea-blue);
         h3 {
-            color: var(--color-dark-crimson);
+            color: var(--color-crimson);
         }
         transform: scale3d(1.02, 1.02, 1.02);
     }

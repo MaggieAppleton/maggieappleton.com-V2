@@ -1,12 +1,29 @@
 import styled from "styled-components";
 
-export default function BookCard({ cover, title, author, link }) {
+export default function BookCard({
+    small,
+    cover,
+    title,
+    subtitle,
+    author,
+    link,
+}) {
     return (
-        <a href={link} target="_blank" rel="noopener noreferrer">
-            <StyledBookCard>
+        <a
+            style={{ cursor: "pointer" }}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <StyledBookCard small={small}>
                 <img src={cover} alt={title} />
-                <p>{title}</p>
-                <span className="metadata">{author}</span>
+                <div>
+                    <p>
+                        {title}
+                        {!small && subtitle && `: ${subtitle}`}
+                    </p>
+                    <span className="metadata">{author}</span>
+                </div>
             </StyledBookCard>
         </a>
     );
@@ -16,19 +33,35 @@ const StyledBookCard = styled.div`
     display: flex;
     flex-direction: column;
     transition: all 0.4s ease-in-out;
+    padding: ${(props) =>
+        props.small
+            ? "0 0 var(--space-16) 0"
+            : "0 var(--space-4) var(--space-48) var(--space-4)"};
     img {
-        border-radius: var(--border-radius-sm);
-    }
-    p {
         transition: all 0.4s ease-in-out;
-        margin: var(--space-8) 0 var(--space-4);
-        line-height: var(--leading-snug);
+        border-radius: var(--border-radius-base);
+        box-shadow: var(--box-shadow-sm);
+        border: 1px solid var(--color-tinted-cream);
+    }
+    div {
+        transition: all 0.4s ease-in-out;
+    }
+    div p {
+        transition: all 0.4s ease-in-out;
+        margin: var(--space-12) 0 var(--space-8) 0;
+        line-height: var(--leading-base);
         color: var(--color-black);
     }
     &:hover {
-        transform: scale3d(1.02, 1.02, 1.02);
+        img {
+            box-shadow: var(--box-shadow-lg);
+            transform: scale3d(1.02, 1.02, 1.02);
+        }
         p {
-            color: var(--color-dark-crimson);
+            color: var(--color-crimson);
+        }
+        div {
+            transform: translateY(4px);
         }
     }
 `;

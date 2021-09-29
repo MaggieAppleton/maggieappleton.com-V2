@@ -79,7 +79,7 @@ const StyledEssayCard = styled(motion.div)`
         box-shadow: var(--box-shadow-lg);
         transform: scale3d(1.02, 1.02, 1.02);
         h3 {
-            color: var(--color-dark-crimson);
+            color: var(--color-crimson);
         }
     }
 `;

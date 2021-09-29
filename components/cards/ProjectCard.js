@@ -79,7 +79,7 @@ const StyledProjectCard = styled(motion.div)`
     &:hover {
         transform: scale3d(1.02, 1.02, 1.02);
         h3 {
-            color: var(--color-dark-crimson);
+            color: var(--color-crimson);
         }
         & > div:first-child {
             box-shadow: var(--box-shadow-lg);

@@ -32,7 +32,7 @@ export default function Notes({ notes }) {
 // Fetches the data for the page.
 
 export function getStaticProps() {
-    // Get all essay posts
+    // Get all note posts
     let notes = noteFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
         const { content, data } = matter(source);

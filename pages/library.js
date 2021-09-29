@@ -12,6 +12,7 @@ export default function Library() {
             <MasonryGrid largeGap breakpointColumnsObj={breakpointColumnsObj}>
                 {bookData.map((book) => (
                     <BookCard
+                        subtitle={book.subtitle}
                         link={book.link}
                         title={book.title}
                         author={book.author}

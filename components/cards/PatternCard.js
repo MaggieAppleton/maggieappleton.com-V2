@@ -45,7 +45,7 @@ const StyledPatternCard = styled(motion.div)`
     }
     h3:hover {
         transform: scale3d(1, 1.02, 1.02);
-        color: var(--color-dark-crimson);
+        color: var(--color-crimson);
         ::before {
             width: var(--space-12);
         }

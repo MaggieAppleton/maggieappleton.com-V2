@@ -53,7 +53,7 @@ const StyledNoteCard = styled(motion.div)`
         transform: scale3d(1.02, 1.02, 1.02);
         border-bottom: 1px solid var(--color-sea-blue);
         h3 {
-            color: var(--color-dark-crimson);
+            color: var(--color-crimson);
         }
     }
 `;
