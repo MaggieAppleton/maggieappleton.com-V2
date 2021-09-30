@@ -1,18 +1,20 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import useOnClickOutside from "../utils/onclickOutside";
 import styled from "styled-components";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import UnderlineHoverLink from "./UnderlineHoverLink";
+import { debounce } from "lodash";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef();
     useOnClickOutside(ref, () => setIsOpen(false));
 
-    const handleFlyout = () => {
-        setIsOpen(!isOpen);
+    // Need to debounce this so that it only fires once
+    let handleFlyout = () => {
+        setIsOpen(true);
     };
 
     return (
@@ -37,31 +39,43 @@ export default function Navbar() {
                         <ChevronDownIcon width="22" height="22" />
                     </HoverLink>
                 </Link>
-                <Dropdown
-                    ref={ref}
-                    style={{ display: isOpen ? "block" : "none" }}
-                >
-                    <Link href="/essays">
-                        <UnderlineHoverLink href="/essays">
-                            Essays
-                        </UnderlineHoverLink>
-                    </Link>
-                    <Link href="/notes">
-                        <UnderlineHoverLink href="/notes">
-                            Notes
-                        </UnderlineHoverLink>
-                    </Link>
-                    <Link href="/patterns">
-                        <UnderlineHoverLink href="/patterns">
-                            Patterns
-                        </UnderlineHoverLink>
-                    </Link>
-                    <Link href="/library">
-                        <UnderlineHoverLink href="/library">
-                            Library
-                        </UnderlineHoverLink>
-                    </Link>
-                </Dropdown>
+                <AnimatePresence>
+                    {isOpen && (
+                        <Dropdown
+                            key="dropdown"
+                            ref={ref}
+                            initial={{
+                                opacity: 0,
+                                rotateX: "90deg",
+                                transformOrigin: "top",
+                            }}
+                            animate={{ opacity: 1, rotateX: "0deg" }}
+                            exit={{ opacity: 0, rotateX: "90deg" }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                        >
+                            <Link href="/essays">
+                                <UnderlineHoverLink href="/essays">
+                                    Essays
+                                </UnderlineHoverLink>
+                            </Link>
+                            <Link href="/notes">
+                                <UnderlineHoverLink href="/notes">
+                                    Notes
+                                </UnderlineHoverLink>
+                            </Link>
+                            <Link href="/patterns">
+                                <UnderlineHoverLink href="/patterns">
+                                    Patterns
+                                </UnderlineHoverLink>
+                            </Link>
+                            <Link href="/library">
+                                <UnderlineHoverLink href="/library">
+                                    Library
+                                </UnderlineHoverLink>
+                            </Link>
+                        </Dropdown>
+                    )}
+                </AnimatePresence>
                 <Link href="/projects">
                     <UnderlineHoverLink href="/projects">
                         Projects
@@ -127,6 +141,7 @@ const Dropdown = styled(motion.div)`
 `;
 
 const HoverLink = styled.a`
+    cursor: pointer;
     span,
     svg {
         display: inline-block;
