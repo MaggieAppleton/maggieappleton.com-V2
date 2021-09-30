@@ -1,0 +1,66 @@
+---
+title: "Building Bespoke Personal Components"
+updated: "2021-09-30"
+startDate: "2021-09-30"
+type: "note"
+topics: ["Web Development", "Design", "Digital Gardening"]
+growthStage: "Seedling"
+---
+
+In the early 2010's we got something magical on the web; a new class of libraries that made building interactive JavaScript components _much_ easier.
+
+-   Google led the way with Angular 1 in 2010
+-   Ember and Bootstrap in 2011
+-   React and Vue in 2013
+
+We're now swimming in JavaScript [Component Toolkits](https://bestofjs.org/projects?tags=component)
+
+---
+
+Sure, the web had interactive components before we smeared JavaScript all over it. Plenty of HTML elements allow you to interact with them.
+
+An HTML `<button>` is certainly interactive.
+
+<button>Click Me</button>
+
+As are input `<select>` menus, checkboxes, and `<summary>` dropdowns.
+
+<select>
+    <option>The First Option</option>
+    <option>Another One</option>
+    <option>Bunch of Options Here</option>
+</select>
+
+<input type="text"></input>
+<input type="checkbox"></input>
+
+<details>
+    <summary>I'm a summary</summary>
+    I'm a detail
+</details>
+
+There's a limit to the amount of interactive fun we can have with these though. To have true feedback loops between a component and the person using it, we need a few more programmatic tools like variables, event handlers, and state.
+
+If I want that button to do anything, it needs a JavaScript function attached to it.
+
+`<button onClick={fireTheCannons}>Click Me</button>`
+
+---
+
+To get the pedantic definitional debate out of the way, by "components" I mean reusable, interactive blocks of content on the web with a specific purpose. We might also call these _widgets_, _blocks_ or _web thingamabobs_
+
+The best definitions are always examples. Here's what I mean:
+
+This is a calendar component.
+
+This is an animation component.
+
+This component gives you contextual information.
+
+This component tells you how flour to use for a pound cake.
+
+Given that rich web components are only a decade old, we're still in the toddler phase of making them accessible to everyone.
+
+By _accessible_ I don't mean a11y accessible to _use_ (although it's critical whatever we build on the web is useable by everyone). I mean accessible to _create_.
+
+I'm talking about [[End User Programming]] here.
