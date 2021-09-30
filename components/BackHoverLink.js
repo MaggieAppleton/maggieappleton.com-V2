@@ -3,16 +3,14 @@ import { ArrowLeftIcon } from "@heroicons/react/solid";
 
 export default function BackHoverLink({ href, children }) {
     return (
-        <LinkContainer>
+        <LinkContainer href={href}>
             <ArrowLeftIcon width="16" height="16" />
-            <StyledLink href={href}>
-                <span>{children}</span>
-            </StyledLink>
+            <StyledLink>{children}</StyledLink>
         </LinkContainer>
     );
 }
 
-const LinkContainer = styled.div`
+const LinkContainer = styled.a`
     display: inline-block;
     align-items: center;
     justify-content: center;
@@ -39,14 +37,12 @@ const LinkContainer = styled.div`
         }
     }
 `;
-const StyledLink = styled.a`
+const StyledLink = styled.span`
+    display: inline-block;
+    transition: all 0.8s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+    color: var(--color-crimson);
     position: relative;
     white-space: nowrap;
     text-decoration: none;
     outline: none;
-    span {
-        display: inline-block;
-        transition: all 0.8s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
-        color: var(--color-crimson);
-    }
 `;

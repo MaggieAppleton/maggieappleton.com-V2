@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 		--space-160: 10rem; 
 
 		/* Colors */
-		--color-light-cream: #FBF9F8;
+		--color-light-cream: #FCFBF7;
 		--color-cream: #F6F5F1;
 		--color-tinted-cream: #E6E3E1;
 		--color-black: #353534;

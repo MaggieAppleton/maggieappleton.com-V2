@@ -29,16 +29,18 @@ export default function Navbar() {
                 </a>
             </Link>
             <div className="main">
-                <Link href="/garden">
-                    <HoverLink
-                        onFocus={handleFlyout}
-                        onMouseOver={handleFlyout}
-                        href="/garden"
-                    >
-                        <span>The Garden</span>
-                        <ChevronDownIcon width="22" height="22" />
-                    </HoverLink>
-                </Link>
+                <div className="outside-dropdown">
+                    <Link href="/garden">
+                        <HoverLink
+                            onFocus={handleFlyout}
+                            onMouseOver={handleFlyout}
+                            href="/garden"
+                        >
+                            <span>The Garden</span>
+                            <ChevronDownIcon width="22" height="22" />
+                        </HoverLink>
+                    </Link>
+                </div>
                 <AnimatePresence>
                     {isOpen && (
                         <Dropdown
@@ -54,41 +56,43 @@ export default function Navbar() {
                             transition={{ duration: 0.6, ease: "easeInOut" }}
                         >
                             <Link href="/essays">
-                                <UnderlineHoverLink href="/essays">
+                                <DropdownLink href="/essays">
                                     Essays
-                                </UnderlineHoverLink>
+                                </DropdownLink>
                             </Link>
                             <Link href="/notes">
-                                <UnderlineHoverLink href="/notes">
-                                    Notes
-                                </UnderlineHoverLink>
+                                <DropdownLink href="/notes">Notes</DropdownLink>
                             </Link>
                             <Link href="/patterns">
-                                <UnderlineHoverLink href="/patterns">
+                                <DropdownLink href="/patterns">
                                     Patterns
-                                </UnderlineHoverLink>
+                                </DropdownLink>
                             </Link>
                             <Link href="/library">
-                                <UnderlineHoverLink href="/library">
+                                <DropdownLink href="/library">
                                     Library
-                                </UnderlineHoverLink>
+                                </DropdownLink>
                             </Link>
                         </Dropdown>
                     )}
                 </AnimatePresence>
-                <Link href="/projects">
-                    <UnderlineHoverLink href="/projects">
-                        Projects
-                    </UnderlineHoverLink>
-                </Link>
-                <Link href="/about">
-                    <UnderlineHoverLink href="/about">About</UnderlineHoverLink>
-                </Link>
-                <Link href="/start">
-                    <UnderlineHoverLink href="/start">
-                        Start Here
-                    </UnderlineHoverLink>
-                </Link>
+                <div className="outside-dropdown">
+                    <Link href="/projects">
+                        <UnderlineHoverLink href="/projects">
+                            Projects
+                        </UnderlineHoverLink>
+                    </Link>
+                    <Link href="/about">
+                        <UnderlineHoverLink href="/about">
+                            About
+                        </UnderlineHoverLink>
+                    </Link>
+                    <Link href="/start">
+                        <UnderlineHoverLink href="/start">
+                            Start Here
+                        </UnderlineHoverLink>
+                    </Link>
+                </div>
             </div>
         </StyledNavbar>
     );
@@ -99,7 +103,8 @@ const StyledNavbar = styled(motion.nav)`
     flex-direction: row;
     justify-content: space-between;
     padding: var(--space-24) var(--space-32);
-    .main {
+    .outside-dropdown {
+        display: inline-block;
         a {
             margin-left: var(--space-24);
             padding-bottom: var(--space-4);
@@ -118,6 +123,22 @@ const StyledNavbar = styled(motion.nav)`
         }
     }
 `;
+const DropdownLink = styled.a`
+    margin: 0 !important;
+    color: var(--color-gray-800);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-sans);
+    border-bottom: 1px solid var(--color-tinted-cream);
+    border-left: 2px solid var(--color-cream);
+    padding: var(--space-12) var(--space-32) var(--space-12) var(--space-16);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background: var(--color-light-cream);
+        color: var(--color-crimson);
+        border-left: 2px solid var(--color-sea-blue);
+    }
+`;
 
 const Dropdown = styled(motion.div)`
     position: absolute;
@@ -125,19 +146,11 @@ const Dropdown = styled(motion.div)`
     flex-direction: column;
     margin-top: 0.7rem;
     background: var(--color-cream);
-    padding: var(--space-8) var(--space-32) var(--space-8) var(--space-8);
     margin-left: 1.2rem;
     border: 1px solid var(--color-tinted-cream);
     border-radius: var(--border-radius-sm);
     box-shadow: var(--box-shadow-lg);
     z-index: 1;
-    .main & div {
-        display: block;
-        padding: var(--space-8) 0;
-        a {
-            margin: 0 var(--space-8) var(--space-4) var(--space-8);
-        }
-    }
 `;
 
 const HoverLink = styled.a`
