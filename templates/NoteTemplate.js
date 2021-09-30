@@ -1,9 +1,10 @@
 import { MDXRemote } from "next-mdx-remote";
-import ProseWrapper from "../components/posts/ProseWrapper";
+import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
+import BackHoverLink from "../components/BackHoverLink";
 
 export default function NoteTemplate({ source, frontMatter, components }) {
     function formattedDate(date) {
@@ -19,9 +20,7 @@ export default function NoteTemplate({ source, frontMatter, components }) {
             <Container>
                 <div>
                     <Link href="/notes">
-                        <a href="/notes">
-                            <p>notes</p>
-                        </a>
+                        <BackHoverLink href="/notes">notes</BackHoverLink>
                     </Link>
                     <GrowthIcon
                         size="16"
@@ -29,31 +28,33 @@ export default function NoteTemplate({ source, frontMatter, components }) {
                     />
                     <p>{frontMatter.growthStage}</p>
                 </div>
-                <div>
-                    <h1>{frontMatter.title}</h1>
-                    {frontMatter.description && (
-                        <p>{frontMatter.description}</p>
+                <h1>{frontMatter.title}</h1>
+                {frontMatter.description && <p>{frontMatter.description}</p>}
+                <Metadata style={{ display: "flex", flexDirection: "row" }}>
+                    {frontMatter.topics && (
+                        <ul>
+                            {frontMatter.topics.map((topic) => (
+                                <li key={topic}>
+                                    <Link href={`/topics/${topic}`}>
+                                        <a>{topic}</a>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     )}
-                    <Metadata className="metadata">
-                        {frontMatter.updated && (
-                            <span>{formattedDate(frontMatter.updated)}</span>
-                        )}
+                    <div className="metadata">
                         {frontMatter.startDate && (
-                            <span>{formattedDate(frontMatter.startDate)}</span>
+                            <span>
+                                Planted {formattedDate(frontMatter.startDate)}
+                            </span>
                         )}
-                        {frontMatter.topics && (
-                            <ul>
-                                {frontMatter.topics.map((topic) => (
-                                    <li key={topic}>
-                                        <Link href={`/topics/${topic}`}>
-                                            <a>{topic}</a>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                        {frontMatter.updated && (
+                            <span>
+                                Last tended {formattedDate(frontMatter.updated)}
+                            </span>
                         )}
-                    </Metadata>
-                </div>
+                    </div>
+                </Metadata>
             </Container>
             <StyledMain>
                 <ProseWrapper>
@@ -64,46 +65,33 @@ export default function NoteTemplate({ source, frontMatter, components }) {
     );
 }
 
-const Metadata = styled.section`
-    display: flex;
-    flex-direction: column;
-    ul {
-        display: inline-block;
-        list-style: none;
-        font-family: var(--font-sans);
-        font-size: var(--font-size-sm);
-    }
-`;
-
 const Container = styled.div`
     width: 780px;
-    margin: 0 auto;
+    margin: var(--space-24) auto 0;
     div:first-child {
-        display: flex;
-        flex-direction: row;
+        a,
         p {
-            margin: 0 var(--space-12);
+            display: inline-block;
             font-family: var(--font-sans);
             font-size: var(--font-size-xs);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: bold;
+            padding-right: var(--space-16);
+        }
+        p {
+            padding-left: var(--space-12);
         }
         svg {
             position: relative;
-            top: 1px;
+            top: 3px;
         }
     }
-    div:nth-child(2) {
-        display: flex;
-        flex-direction: row;
-    }
     h1 {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-2xl);
         line-height: var(--leading-tight);
-        font-weight: 400;
-        padding: var(--space-24) 0 var(--space-24);
-        border-right: 1px solid var(--color-gray-300);
+        padding: var(--space-24) 0 var(--space-48);
+        border-bottom: 1px solid var(--color-gray-300);
         @media ${breakpoints.mediaSM} {
             font-size: var(--font-size-xl);
         }
@@ -114,10 +102,35 @@ const Container = styled.div`
     }
 `;
 
+const Metadata = styled.section`
+    justify-content: space-between;
+    div {
+        margin-top: var(--space-16);
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 70%;
+        padding: 0;
+        margin-top: var(--space-16);
+        li {
+            margin-right: var(--space-16);
+            margin-bottom: var(--space-4);
+            font-family: var(--font-sans);
+            font-size: var(--font-size-sm);
+        }
+    }
+`;
+
 const StyledMain = styled.main`
-    margin-top: var(--space-80);
+    margin-top: var(--space-16);
     padding: var(--space-80) 0 var(--space-128);
-    background: white;
+    background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {

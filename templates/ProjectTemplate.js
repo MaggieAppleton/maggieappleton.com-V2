@@ -1,5 +1,5 @@
 import { MDXRemote } from "next-mdx-remote";
-import ProseWrapper from "../components/posts/ProseWrapper";
+import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
@@ -120,9 +120,9 @@ const Metadata = styled.div`
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-80);
+    margin-top: var(--space-16);
     padding: var(--space-80) 0 var(--space-128);
-    background: white;
+    background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {

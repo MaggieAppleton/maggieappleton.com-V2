@@ -1,9 +1,10 @@
 import { MDXRemote } from "next-mdx-remote";
-import ProseWrapper from "../components/posts/ProseWrapper";
+import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
+import BackHoverLink from "../components/BackHoverLink";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
     function formattedDate(date) {
@@ -19,9 +20,7 @@ export default function EssayTemplate({ source, frontMatter, components }) {
             <Container>
                 <div>
                     <Link href="/essays">
-                        <a href="/essays">
-                            <p>Essays</p>
-                        </a>
+                        <BackHoverLink href="/essays">Essays</BackHoverLink>
                     </Link>
                     <GrowthIcon
                         size="16"
@@ -68,21 +67,24 @@ export default function EssayTemplate({ source, frontMatter, components }) {
 
 const Container = styled.div`
     max-width: 780px;
-    margin: 0 auto;
+    margin: var(--space-24) auto 0;
     div:first-child {
-        display: flex;
-        flex-direction: row;
+        a,
         p {
-            margin: 0 var(--space-12);
+            display: inline-block;
             font-family: var(--font-sans);
             font-size: var(--font-size-xs);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: bold;
+            padding-right: var(--space-16);
+        }
+        p {
+            padding-left: var(--space-12);
         }
         svg {
             position: relative;
-            top: 1px;
+            top: 3px;
         }
     }
     h1 {
@@ -126,9 +128,9 @@ const Metadata = styled.div`
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-80);
+    margin-top: var(--space-16);
     padding: var(--space-80) 0 var(--space-128);
-    background: white;
+    background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {

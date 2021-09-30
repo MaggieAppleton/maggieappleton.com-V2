@@ -1,8 +1,11 @@
 import { MDXRemote } from "next-mdx-remote";
-import ProseWrapper from "../components/posts/ProseWrapper";
+import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
+import Layout from "../components/Layout";
+import { Title1 } from "../components/Typography";
+import BackHoverLink from "../components/BackHoverLink";
 
 export default function PatternTemplate({ source, frontMatter, components }) {
     function formattedDate(date) {
@@ -14,16 +17,14 @@ export default function PatternTemplate({ source, frontMatter, components }) {
     }
 
     return (
-        <>
+        <Layout>
             <Container>
                 <div>
                     <Link href="/patterns">
-                        <a href="/patterns">
-                            <p>Patterns</p>
-                        </a>
+                        <BackHoverLink href="/patterns">Patterns</BackHoverLink>
                     </Link>
                 </div>
-                <h1>{frontMatter.title}</h1>
+                <Title1>{frontMatter.title}</Title1>
                 {frontMatter.description && <p>{frontMatter.description}</p>}
                 <Metadata style={{ display: "flex", flexDirection: "row" }}>
                     {frontMatter.topics && (
@@ -56,34 +57,26 @@ export default function PatternTemplate({ source, frontMatter, components }) {
                     <MDXRemote {...source} components={components} />
                 </ProseWrapper>
             </StyledMain>
-        </>
+        </Layout>
     );
 }
 
 const Container = styled.div`
-    max-width: 780px;
+    max-width: 1400px;
     margin: 0 auto;
     div:first-child {
-        display: flex;
-        flex-direction: row;
-        p {
-            margin: 0 var(--space-12);
+        a {
             font-family: var(--font-sans);
             font-size: var(--font-size-xs);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: bold;
         }
-        svg {
-            position: relative;
-            top: 1px;
-        }
     }
     h1 {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
         line-height: var(--leading-tight);
-        padding: var(--space-24) 0 var(--space-48);
-        border-bottom: 1px solid var(--color-gray-300);
+        border-right: 1px solid black;
         @media ${breakpoints.mediaSM} {
             font-size: var(--font-size-xl);
         }
@@ -120,9 +113,10 @@ const Metadata = styled.div`
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-80);
+    margin-top: var(--space-16);
     padding: var(--space-80) 0 var(--space-128);
     background: white;
+    border-radius: var(--border-radius-sm);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
