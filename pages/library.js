@@ -3,12 +3,14 @@ import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import BookCard from "../components/cards/BookCard";
 import { bookData } from "../posts/books";
+import PostCount from "../components/PostCount";
 
 export default function Library() {
     return (
         <Layout>
             <Title1>Library</Title1>
             <Title2>Stuff</Title2>
+            <PostCount postType="books" posts={bookData} />
             <MasonryGrid largeGap breakpointColumnsObj={breakpointColumnsObj}>
                 {bookData.map((book) => (
                     <BookCard

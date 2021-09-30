@@ -6,12 +6,14 @@ import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import EssayCard from "../components/cards/EssayCard";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
+import PostCount from "../components/PostCount";
 
 export default function Essays({ essays }) {
     return (
         <Layout>
             <Title1>Essays</Title1>
-            <p>Stuff</p>
+            <Title2>Stuff</Title2>
+            <PostCount postType="essays" posts={essays} />
             <MasonryGrid>
                 {essays.map((essay) => (
                     <EssayCard

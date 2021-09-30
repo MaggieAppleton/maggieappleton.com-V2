@@ -6,6 +6,7 @@ import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import NoteCard from "../components/cards/NoteCard";
 import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";
+import PostCount from "../components/PostCount";
 
 export default function Notes({ notes }) {
     return (
@@ -15,6 +16,7 @@ export default function Notes({ notes }) {
                 Loose, unopinionated notes on things I don’t entirely understand
                 yet.
             </Title2>
+            <PostCount postType="notes" posts={notes} />
             <MasonryGrid>
                 {notes.map((note) => (
                     <NoteCard

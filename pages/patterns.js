@@ -6,12 +6,14 @@ import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import PatternCard from "../components/cards/PatternCard";
 import { patternFilePaths, PATTERNS_PATH } from "../utils/mdxUtils";
+import PostCount from "../components/PostCount";
 
 export default function Patterns({ patterns }) {
     return (
         <Layout>
             <Title1>Pattern Catalogue</Title1>
-            <p>Stuff</p>
+            <Title2>Stuff</Title2>
+            <PostCount postType="patterns" posts={patterns} />
             <MasonryGrid largeGap>
                 {patterns.map((essay) => (
                     <PatternCard
