@@ -34,6 +34,7 @@ const components = {
     h3: Title3,
     h4: Title4,
     img: BasicImage,
+    TwoColumn: dynamic(() => import("../components/mdx/TwoColumn")),
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
     TweetEmbed: dynamic(() => import("../components/mdx/TweetEmbed")),
