@@ -8,6 +8,9 @@ const IntroParagraph = styled.p`
         font-weight: bold;
         margin: 1.15rem var(--space-12) 0 0;
     }
+    p {
+        margin-bottom: 0;
+    }
 `;
 
 export default IntroParagraph;

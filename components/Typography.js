@@ -7,6 +7,7 @@ export const Title1 = styled(motion.h1)`
     font-family: var(--font-serif);
     line-height: var(--leading-tighter);
     font-weight: ${(props) => props.fontWeight || "normal"};
+    margin-bottom: var(--space-16);
     @media ${breakpoints.mediaMD} {
         font-size: var(--font-size-2xl);
     }

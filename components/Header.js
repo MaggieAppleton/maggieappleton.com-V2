@@ -7,5 +7,5 @@ export default function Header({ children }) {
 const HeaderWrapper = styled.header`
     display: flex;
     flex-direction: column;
-    gap: var(--space-48);
+    gap: var(--space-32);
 `;

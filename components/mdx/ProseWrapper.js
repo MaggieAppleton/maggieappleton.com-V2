@@ -16,11 +16,11 @@ const ProseWrapper = styled.article`
     }
     h1 {
         font-size: var(--font-size-2xl);
-        margin: var(--space-80) 0 var(--space-24);
+        margin: var(--space-80) 0 var(--space-32);
     }
     h2 {
         font-size: var(--font-size-xl);
-        margin: var(--space-64) 0 var(--space-24);
+        margin: var(--space-64) 0 var(--space-32);
     }
     h3 {
         font-size: var(--font-size-lg);
