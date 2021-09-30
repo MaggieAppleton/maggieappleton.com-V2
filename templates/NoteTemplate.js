@@ -5,16 +5,9 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/BackHoverLink";
+import RelativeDate from "../components/RelativeDate";
 
 export default function NoteTemplate({ source, frontMatter, components }) {
-    function formattedDate(date) {
-        return new Date(date).toLocaleDateString("en-GB", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-    }
-
     return (
         <>
             <Container>
@@ -45,12 +38,16 @@ export default function NoteTemplate({ source, frontMatter, components }) {
                     <div className="metadata">
                         {frontMatter.startDate && (
                             <span>
-                                Planted {formattedDate(frontMatter.startDate)}
+                                Planted{" "}
+                                <RelativeDate
+                                    postDate={frontMatter.startDate}
+                                />
                             </span>
                         )}
                         {frontMatter.updated && (
                             <span>
-                                Last tended {formattedDate(frontMatter.updated)}
+                                Last tended{" "}
+                                <RelativeDate postDate={frontMatter.updated} />
                             </span>
                         )}
                     </div>
