@@ -18,6 +18,7 @@ const LinkContainer = styled.div`
     left: 3px;
     top: 1px;
 `;
+
 const StyledLink = styled.a`
     cursor: pointer;
     position: relative;

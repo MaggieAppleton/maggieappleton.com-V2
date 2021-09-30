@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import path from "path";
 import BasicImage from "../components/mdx/BasicImage";
+import TooltipLink from "../components/links/TooltipLink";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
@@ -34,6 +35,7 @@ const components = {
     h3: Title3,
     h4: Title4,
     img: BasicImage,
+    a: TooltipLink,
     TwoColumn: dynamic(() => import("../components/mdx/TwoColumn")),
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),

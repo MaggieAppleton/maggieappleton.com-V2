@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function GrowthStage({ stage }) {
     if (stage === "Evergreen") {
         return (
-            <Tooltip content="Lalalalal">
+            <Tooltip content="">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
             </Tooltip>
         );
