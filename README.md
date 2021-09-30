@@ -11,6 +11,7 @@
 - Styled Components
 - Framer Motion
 - Reach UI
+- [Tippy.js](https://atomiks.github.io/tippyjs/)
 - [React Masonry CSS](https://github.com/paulcollett/react-masonry-css)
 - [Next SEO](https://github.com/garmeeh/next-seo)
 - [Lodash](https://lodash.com/)
@@ -18,7 +19,7 @@
 
 ## Components
 
-`<ProseWrapper />` wraps around all MDX longform copy. Limits it to 72ch and places it in grid-column 2. Sets body copy to 1.25rem (20px)
+`<ProseWrapper />` wraps around all MDX longform copy. Limits it to 72ch and places it in grid-column 2. Sets body copy to 1.33rem (22px)
 
 ### Images
 
