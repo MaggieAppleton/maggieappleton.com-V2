@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { SmallCaps } from "./typography";
-import UnderlineHoverLink from "./UnderlineHoverLink";
+import UnderlineHoverLink from "./links/UnderlineHoverLink";
 
 export default function Footer() {
     return (

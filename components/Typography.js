@@ -24,9 +24,6 @@ export const Title2 = styled(motion.h2)`
     line-height: var(--leading-tight);
     margin-bottom: var(--space-12);
     transition: all 0.3s ease-in-out;
-    &:hover {
-        color: var(--color-crimson);
-    }
     @media ${breakpoints.mediaSM} {
         font-size: var(--font-size-xl);
     }

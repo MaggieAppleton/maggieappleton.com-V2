@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import Layout from "../components/Layout";
 import { Title1 } from "../components/Typography";
-import BackHoverLink from "../components/BackHoverLink";
+import BackHoverLink from "../components/links/BackHoverLink";
 
 export default function PatternTemplate({ source, frontMatter, components }) {
     function formattedDate(date) {

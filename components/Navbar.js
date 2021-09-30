@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import UnderlineHoverLink from "./UnderlineHoverLink";
+import UnderlineHoverLink from "./links/UnderlineHoverLink";
 import { debounce } from "lodash";
 
 export default function Navbar() {

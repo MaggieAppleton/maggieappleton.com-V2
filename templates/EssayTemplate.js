@@ -4,18 +4,11 @@ import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
-import BackHoverLink from "../components/BackHoverLink";
+import BackHoverLink from "../components/links/BackHoverLink";
 import RelativeDate from "../components/RelativeDate";
+import GrowthStage from "../components/GrowthStage";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
-    function formattedDate(date) {
-        return new Date(date).toLocaleDateString("en-GB", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-    }
-
     return (
         <>
             <Container>
@@ -27,7 +20,7 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                         size="16"
                         growthStage={frontMatter.growthStage}
                     />
-                    <p>{frontMatter.growthStage}</p>
+                    <GrowthStage stage={frontMatter.growthStage} />
                 </div>
                 <h1>{frontMatter.title}</h1>
                 {frontMatter.description && <p>{frontMatter.description}</p>}

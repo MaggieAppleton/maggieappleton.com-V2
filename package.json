@@ -9,6 +9,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.4",
     "@reach/menu-button": "^0.16.1",
+    "@tippyjs/react": "^4.2.5",
     "algoliasearch": "^4.10.5",
     "dotenv": "^10.0.0",
     "feed": "^4.2.2",

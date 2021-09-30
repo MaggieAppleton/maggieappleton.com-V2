@@ -70,6 +70,15 @@ export const GlobalStyle = createGlobalStyle`
 		2.5px 2.5px 12.5px -10px rgba(40, 10, 0, 0.036),
 		6px 6px 30px -10px rgba(40, 10, 0, 0.05)
 	  ;
+
+	  --box-shadow-md: 
+	  1px 0.9px 2.3px -3px rgba(40, 10, 0, 0.02),
+	  2.4px 2.2px 5.5px -3px rgba(40, 10, 0, 0.028),
+	  4.5px 4.1px 10.4px -3px rgba(40, 10, 0, 0.035),
+	  8px 7.4px 18.5px -3px rgba(40, 10, 0, 0.042),
+	  15px 13.8px 34.7px -3px rgba(40, 10, 0, 0.05),
+	  36px 33px 83px -3px rgba(40, 10, 0, 0.07)
+	;
 	  
 		--box-shadow-lg:
 		0.2px 0.4px 0.8px -10px rgba(0, 0, 0, 0.03),

@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
-import BackHoverLink from "../components/BackHoverLink";
+import BackHoverLink from "../components/links/BackHoverLink";
 import RelativeDate from "../components/RelativeDate";
 
 export default function NoteTemplate({ source, frontMatter, components }) {
