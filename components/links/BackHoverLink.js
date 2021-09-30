@@ -40,7 +40,7 @@ const LinkContainer = styled.a`
 const StyledLink = styled.span`
     display: inline-block;
     transition: all 0.8s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
-    color: var(--color-crimson);
+    color: var(--color-bright-crimson);
     position: relative;
     white-space: nowrap;
     text-decoration: none;

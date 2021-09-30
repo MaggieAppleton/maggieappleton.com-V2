@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function TooltipLink({ href, children }) {
     return (
-        <Tooltip content={href}>
+        <Tooltip content={<StyledUrl href={href}>{href}</StyledUrl>}>
             <StyledContainer>
                 <StyledLink href={href}>
                     <span>{children}</span>
@@ -13,7 +13,14 @@ export default function TooltipLink({ href, children }) {
     );
 }
 
-const 
+const StyledUrl = styled.a`
+    color: var(--color-bright-crimson);
+    transition: color 0.2s ease-in-out;
+    text-align: center;
+    &:hover {
+        color: var(--color-sea-blue);
+    }
+`;
 
 const StyledContainer = styled.div`
     display: inline-block;

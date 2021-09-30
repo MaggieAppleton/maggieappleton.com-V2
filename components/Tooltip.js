@@ -21,7 +21,10 @@ const Tooltip = forwardRef(({ content, children }, ref) => {
 
 const StyledTippy = styled(Tippy)`
     font-family: var(--font-sans);
-    padding: var(--space-4) 0;
+    font-size: var(--font-size-sm);
+    word-break: break-word;
+    white-space: pre-wrap;
+    padding: var(--space-4);
     margin-bottom: var(--space-4);
     background-color: var(--color-light-cream);
     color: var(--color-gray-800);

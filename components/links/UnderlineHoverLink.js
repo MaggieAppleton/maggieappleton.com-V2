@@ -67,7 +67,7 @@ const StyledLink = styled.a`
     span {
         display: inline-block;
         transition: all 0.5s cubic-bezier(0.2, 1, 0.8, 1);
-        color: var(--color-crimson);
+        color: var(--color-bright-crimson);
     }
     &:hover span {
         transform: translate3d(0, -2px, 0);

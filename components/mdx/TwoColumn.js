@@ -4,7 +4,9 @@ export default function TwoColumn({ children }) {
     return <TwoColumnContainer>{children}</TwoColumnContainer>;
 }
 
-const TwoColumnContainer = styled.div`
+const TwoColumnContainer = styled.section.withConfig({
+    componentId: "TwoColumnContainer",
+})`
     width: 100%;
     grid-column: 1 / 4 !important;
     max-width: ${(props) => props.width || "1400px"};
@@ -13,7 +15,6 @@ const TwoColumnContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
     img {
         max-width: 45%;
         margin: var(--space-8);
