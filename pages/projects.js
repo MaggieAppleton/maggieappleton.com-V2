@@ -11,7 +11,7 @@ export default function Projects({ projects }) {
     return (
         <Layout>
             <Title1>Projects</Title1>
-            <Title2>Stuff</Title2>
+            <Title2>In the past I have made things</Title2>
             <MasonryGrid largeGap>
                 {projects.map((project) => (
                     <ProjectCard
