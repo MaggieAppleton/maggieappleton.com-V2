@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 		--font-size-md: calc(var(--font-size-base) * var(--ratio)); 
 		--font-size-base: calc(1rem * var(--ratio));
 		--font-size-sm: 1rem;
-		--font-size-xs: calc(1rem / var(--ratio));
+		--font-size-xs: 0.88rem;
 
 		/* Leading */
 		--leading-tighter: 110%;
