@@ -15,8 +15,9 @@ export default function Patterns({ patterns }) {
             <Title2>Stuff</Title2>
             <PostCount postType="patterns" posts={patterns} />
             <MasonryGrid largeGap>
-                {patterns.map((essay) => (
+                {patterns.map((essay, i) => (
                     <PatternCard
+                        key={i}
                         slug={essay.slug}
                         title={essay.data.title}
                         growthStage={essay.data.growthStage}

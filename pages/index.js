@@ -222,11 +222,11 @@ export default function Index({ essays, notes, patterns, projects }) {
                             gridGap: "var(--space-24)",
                         }}
                     >
-                        {bookData.slice(0, 4).map((book) => (
+                        {bookData.slice(0, 4).map((book, i) => (
                             <BookCard
                                 small
                                 subtitle={book.subtitle}
-                                key={book.title}
+                                key={i}
                                 cover={book.cover}
                                 title={book.title}
                                 author={book.author}

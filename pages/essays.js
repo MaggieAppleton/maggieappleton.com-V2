@@ -17,8 +17,9 @@ export default function Essays({ essays }) {
                 <PostCount postType="essays" posts={essays} />
             </header>
             <MasonryGrid>
-                {essays.map((essay) => (
+                {essays.map((essay, i) => (
                     <EssayCard
+                        key={i}
                         slug={essay.slug}
                         cover={essay.data.cover}
                         title={essay.data.title}

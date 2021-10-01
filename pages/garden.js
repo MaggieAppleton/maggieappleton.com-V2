@@ -27,8 +27,9 @@ export default function Garden({ essays, notes, patterns }) {
             </Header>
             <Title2>Stuff</Title2>
             <MasonryGrid>
-                {essays.map((essay) => (
+                {essays.map((essay, i) => (
                     <EssayCard
+                        key={i}
                         slug={essay.slug}
                         cover={essay.data.cover}
                         title={essay.data.title}
@@ -36,16 +37,18 @@ export default function Garden({ essays, notes, patterns }) {
                         date={essay.data.updated}
                     />
                 ))}
-                {notes.map((note) => (
+                {notes.map((note, i) => (
                     <NoteCard
+                        key={i}
                         slug={note.slug}
                         title={note.data.title}
                         growthStage={note.data.growthStage}
                         date={note.data.updated}
                     />
                 ))}
-                {patterns.map((essay) => (
+                {patterns.map((essay, i) => (
                     <PatternCard
+                        key={i}
                         slug={essay.slug}
                         title={essay.data.title}
                         growthStage={essay.data.growthStage}

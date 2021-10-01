@@ -3,7 +3,7 @@ import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
-export default function NoteCard({ slug, title, growthStage, date }) {
+export default function NoteCard({ slug, title, growthStage, date, key }) {
     const formattedDate = new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
         month: "short",
@@ -11,7 +11,7 @@ export default function NoteCard({ slug, title, growthStage, date }) {
     });
 
     return (
-        <Link key={slug} href={`/${slug}`}>
+        <Link key={key} href={`/${slug}`}>
             <a>
                 <StyledNoteCard>
                     <h3>{title}</h3>

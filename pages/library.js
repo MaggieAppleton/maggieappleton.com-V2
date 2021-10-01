@@ -14,8 +14,9 @@ export default function Library() {
                 <PostCount postType="books" posts={bookData} />
             </header>
             <MasonryGrid largeGap breakpointColumnsObj={breakpointColumnsObj}>
-                {bookData.map((book) => (
+                {bookData.map((book, i) => (
                     <BookCard
+                        key={i}
                         subtitle={book.subtitle}
                         link={book.link}
                         title={book.title}
