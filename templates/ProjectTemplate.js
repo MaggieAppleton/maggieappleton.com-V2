@@ -3,6 +3,7 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
+import Header from "../components/Header";
 
 export default function ProjectTemplate({ source, frontMatter, components }) {
     function formattedDate(date) {
@@ -15,6 +16,11 @@ export default function ProjectTemplate({ source, frontMatter, components }) {
 
     return (
         <>
+        <Header
+                title={frontMatter.title}
+                description={frontMatter.description}
+                keywords={...frontMatter.topics}
+            />
             <HeaderSection>
                 <div>
                     <Link href="/projects">

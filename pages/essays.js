@@ -7,28 +7,32 @@ import MasonryGrid from "../components/MasonryGrid";
 import EssayCard from "../components/cards/EssayCard";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
 import PostCount from "../components/PostCount";
+import Header from "../components/Header";
 
 export default function Essays({ essays }) {
     return (
-        <Layout>
-            <header>
-                <Title1>Essays</Title1>
-                <Title2>Stuff</Title2>
-                <PostCount postType="essays" posts={essays} />
-            </header>
-            <MasonryGrid>
-                {essays.map((essay, i) => (
-                    <EssayCard
-                        key={i}
-                        slug={essay.slug}
-                        cover={essay.data.cover}
-                        title={essay.data.title}
-                        growthStage={essay.data.growthStage}
-                        date={essay.data.updated}
-                    />
-                ))}
-            </MasonryGrid>
-        </Layout>
+        <>
+            <Header title="Essays by Maggie Appleton" />
+            <Layout>
+                <header>
+                    <Title1>Essays</Title1>
+                    <Title2>Stuff</Title2>
+                    <PostCount postType="essays" posts={essays} />
+                </header>
+                <MasonryGrid>
+                    {essays.map((essay, i) => (
+                        <EssayCard
+                            key={i}
+                            slug={essay.slug}
+                            cover={essay.data.cover}
+                            title={essay.data.title}
+                            growthStage={essay.data.growthStage}
+                            date={essay.data.updated}
+                        />
+                    ))}
+                </MasonryGrid>
+            </Layout>
+        </>
     );
 }
 

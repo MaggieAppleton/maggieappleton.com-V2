@@ -6,24 +6,28 @@ import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import ProjectCard from "../components/cards/ProjectCard";
 import { projectFilePaths, PROJECTS_PATH } from "../utils/mdxUtils";
+import Header from "../components/Header";
 
 export default function Projects({ projects }) {
     return (
-        <Layout>
-            <Title1>Projects</Title1>
-            <Title2>In the past I have made things</Title2>
-            <MasonryGrid largeGap>
-                {projects.map((project) => (
-                    <ProjectCard
-                        slug={project.slug}
-                        title={project.data.title}
-                        date={project.data.updated}
-                        cover={project.data.cover}
-                        topics={project.data.topics}
-                    />
-                ))}
-            </MasonryGrid>
-        </Layout>
+        <>
+            <Header title="Projects by Maggie Appleton" />
+            <Layout>
+                <Title1>Projects</Title1>
+                <Title2>In the past I have made things</Title2>
+                <MasonryGrid largeGap>
+                    {projects.map((project) => (
+                        <ProjectCard
+                            slug={project.slug}
+                            title={project.data.title}
+                            date={project.data.updated}
+                            cover={project.data.cover}
+                            topics={project.data.topics}
+                        />
+                    ))}
+                </MasonryGrid>
+            </Layout>
+        </>
     );
 }
 

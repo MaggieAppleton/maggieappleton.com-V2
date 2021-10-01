@@ -21,42 +21,45 @@ import { bookData } from "../posts/books";
 
 export default function Garden({ essays, notes, patterns }) {
     return (
-        <Layout>
-            <Header>
-                <Title1>Garden</Title1>
-            </Header>
-            <Title2>Stuff</Title2>
-            <MasonryGrid>
-                {essays.map((essay, i) => (
-                    <EssayCard
-                        key={i}
-                        slug={essay.slug}
-                        cover={essay.data.cover}
-                        title={essay.data.title}
-                        growthStage={essay.data.growthStage}
-                        date={essay.data.updated}
-                    />
-                ))}
-                {notes.map((note, i) => (
-                    <NoteCard
-                        key={i}
-                        slug={note.slug}
-                        title={note.data.title}
-                        growthStage={note.data.growthStage}
-                        date={note.data.updated}
-                    />
-                ))}
-                {patterns.map((essay, i) => (
-                    <PatternCard
-                        key={i}
-                        slug={essay.slug}
-                        title={essay.data.title}
-                        growthStage={essay.data.growthStage}
-                        date={essay.data.updated}
-                    />
-                ))}
-            </MasonryGrid>
-        </Layout>
+        <>
+            <Header title="Digital Garden" />
+            <Layout>
+                <header>
+                    <Title1>Garden</Title1>
+                    <Title2>Stuff</Title2>
+                </header>
+                <MasonryGrid>
+                    {essays.map((essay, i) => (
+                        <EssayCard
+                            key={i}
+                            slug={essay.slug}
+                            cover={essay.data.cover}
+                            title={essay.data.title}
+                            growthStage={essay.data.growthStage}
+                            date={essay.data.updated}
+                        />
+                    ))}
+                    {notes.map((note, i) => (
+                        <NoteCard
+                            key={i}
+                            slug={note.slug}
+                            title={note.data.title}
+                            growthStage={note.data.growthStage}
+                            date={note.data.updated}
+                        />
+                    ))}
+                    {patterns.map((essay, i) => (
+                        <PatternCard
+                            key={i}
+                            slug={essay.slug}
+                            title={essay.data.title}
+                            growthStage={essay.data.growthStage}
+                            date={essay.data.updated}
+                        />
+                    ))}
+                </MasonryGrid>
+            </Layout>
+        </>
     );
 }
 

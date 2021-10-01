@@ -66,9 +66,17 @@ export default function Index({ essays, notes, patterns, projects }) {
     };
 
     return (
-        <NextSeo>
+        // <NextSeo>
+        <>
+            <Header title="Maggie Appleton" />
             <Layout>
-                <Header>
+                <header
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "var(--space-32)",
+                    }}
+                >
                     <Title1
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -102,7 +110,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                             <b>HASH</b>
                         </UnderlineHoverLink>{" "}
                     </motion.h2>
-                </Header>
+                </header>
                 <Spacer large />
                 <motion.section
                     initial={{ opacity: 0, x: -50 }}
@@ -273,7 +281,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                     </div>
                 </section>
             </Layout>
-        </NextSeo>
+        </>
     );
 }
 

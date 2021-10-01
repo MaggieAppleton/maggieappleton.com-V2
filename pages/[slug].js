@@ -2,7 +2,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
-import Head from "next/head";
 import path from "path";
 import BasicImage from "../components/mdx/BasicImage";
 import TooltipLink from "../components/links/TooltipLink";
@@ -25,26 +24,31 @@ import {
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
+
 const components = {
     // a: CustomLink,
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
+    Head,
     h1: Title1,
     h2: Title2,
     h3: Title3,
     h4: Title4,
+    img: BasicImage,
+    a: TooltipLink,
+    pre: dynamic(() => import("../components/mdx/CodeBlock"), {
+        ssr: false,
+    }),
     TwoColumn: dynamic(() => import("../components/mdx/TwoColumn"), {
         ssr: false,
     }),
     TweetEmbed: dynamic(() => import("../components/mdx/TweetEmbed"), {
         ssr: false,
+        loading: () => <div>Loading...</div>,
     }),
-    img: BasicImage,
-    a: TooltipLink,
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
-    Head,
 };
 
 export default function NotePage({ source, frontMatter }) {
@@ -81,23 +85,6 @@ export default function NotePage({ source, frontMatter }) {
             />
         );
     }
-    // } else if (frontMatter.type === "pattern") {
-    //     return (
-    //         <PatternTemplate
-    //             source={source}
-    //             frontMatter={frontMatter}
-    //             components={components}
-    //         />
-    //     );
-    // } else if (frontMatter.type === "project") {
-    //     return (
-    //         <ProjectTemplate
-    //             source={source}
-    //             frontMatter={frontMatter}
-    //             components={components}
-    //         />
-    //     );
-    // }
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -136,11 +123,6 @@ export const getStaticProps = async ({ params }) => {
             filePath = path.join(PROJECTS_PATH, `${params.slug}.mdx`);
             break;
     }
-
-    // const filePath =
-    //     type === "note"
-    //         ? path.join(NOTES_PATH, `${params.slug}.mdx`)
-    //         : path.join(ESSAYS_PATH, `${params.slug}.mdx`);
 
     const source = fs.readFileSync(filePath);
 

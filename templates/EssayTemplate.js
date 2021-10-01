@@ -8,10 +8,16 @@ import BackHoverLink from "../components/links/BackHoverLink";
 import RelativeDate from "../components/templates/RelativeDate";
 import GrowthStage from "../components/templates/GrowthStage";
 import Topics from "../components/templates/Topics";
+import Header from "../components/Header";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
     return (
         <>
+            <Header
+                title={frontMatter.title}
+                description={frontMatter.description}
+                keywords={...frontMatter.topics}
+            />
             <HeaderSection>
                 <div>
                     <Link href="/essays">
@@ -120,7 +126,7 @@ const Metadata = styled.div`
 
 const StyledMain = styled.main`
     margin-top: var(--space-16);
-    padding: var(--space-80) 0 var(--space-128);
+    padding: var(--space-64) 0 var(--space-128);
     background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;

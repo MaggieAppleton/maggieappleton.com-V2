@@ -6,6 +6,7 @@ import { breakpoints } from "../utils/breakpoints";
 import Layout from "../components/Layout";
 import { Title1 } from "../components/Typography";
 import BackHoverLink from "../components/links/BackHoverLink";
+import Header from "../components/Header";
 
 export default function PatternTemplate({ source, frontMatter, components }) {
     function formattedDate(date) {
@@ -17,6 +18,12 @@ export default function PatternTemplate({ source, frontMatter, components }) {
     }
 
     return (
+        <>
+        <Header
+                title={frontMatter.title}
+                description={frontMatter.description}
+                keywords={...frontMatter.topics}
+            />
         <Layout>
             <HeaderSection>
                 <div>
@@ -58,6 +65,7 @@ export default function PatternTemplate({ source, frontMatter, components }) {
                 </ProseWrapper>
             </StyledMain>
         </Layout>
+        </>
     );
 }
 

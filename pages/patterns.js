@@ -7,25 +7,29 @@ import MasonryGrid from "../components/MasonryGrid";
 import PatternCard from "../components/cards/PatternCard";
 import { patternFilePaths, PATTERNS_PATH } from "../utils/mdxUtils";
 import PostCount from "../components/PostCount";
+import Header from "../components/Header";
 
 export default function Patterns({ patterns }) {
     return (
-        <Layout>
-            <Title1>Pattern Catalogue</Title1>
-            <Title2>Stuff</Title2>
-            <PostCount postType="patterns" posts={patterns} />
-            <MasonryGrid largeGap>
-                {patterns.map((essay, i) => (
-                    <PatternCard
-                        key={i}
-                        slug={essay.slug}
-                        title={essay.data.title}
-                        growthStage={essay.data.growthStage}
-                        date={essay.data.updated}
-                    />
-                ))}
-            </MasonryGrid>
-        </Layout>
+        <>
+            <Header title="Pattern Library of Maggie Appleton" />
+            <Layout>
+                <Title1>Pattern Catalogue</Title1>
+                <Title2>Stuff</Title2>
+                <PostCount postType="patterns" posts={patterns} />
+                <MasonryGrid largeGap>
+                    {patterns.map((essay, i) => (
+                        <PatternCard
+                            key={i}
+                            slug={essay.slug}
+                            title={essay.data.title}
+                            growthStage={essay.data.growthStage}
+                            date={essay.data.updated}
+                        />
+                    ))}
+                </MasonryGrid>
+            </Layout>
+        </>
     );
 }
 

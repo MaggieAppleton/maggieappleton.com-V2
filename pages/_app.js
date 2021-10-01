@@ -1,7 +1,7 @@
 import { GlobalStyle } from "../components/GlobalStyle";
-import { AnimatePresence } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
 import "./_app.css";
-import { DefaultSeo } from "next-seo";
+// import { DefaultSeo } from "next-seo";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }) {
         <>
             <GlobalStyle />
             <container>
-                <DefaultSeo
+                {/* <DefaultSeo
                     openGraph={{
                         type: "website",
                         locale: "en_GB",
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps, router }) {
                         handle: "@mappletons",
                         cardType: "summary_large_image",
                     }}
-                />
+                /> */}
                 <Navbar />
                 {/* <AnimatePresence
                     exitBeforeEnter

@@ -6,10 +6,16 @@ import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
 import RelativeDate from "../components/templates/RelativeDate";
+import Header from "../components/Header";
 
 export default function NoteTemplate({ source, frontMatter, components }) {
     return (
         <>
+        <Header
+                title={frontMatter.title}
+                description={frontMatter.description}
+                keywords={...frontMatter.topics}
+            />
             <HeaderSection>
                 <div>
                     <Link href="/notes">
