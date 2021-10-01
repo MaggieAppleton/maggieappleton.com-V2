@@ -4,6 +4,8 @@ import Link from "next/link";
 import path from "path";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
+import { NextSeo } from "next-seo";
+// Components
 import { Spacer } from "../components/Spacer";
 import { Title1, Title2, Title3 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
@@ -64,206 +66,214 @@ export default function Index({ essays, notes, patterns, projects }) {
     };
 
     return (
-        <Layout>
-            <Header>
-                <Title1
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2, duration: 1 }}
-                    style={{ maxWidth: "1200px", marginTop: "var(--space-32)" }}
-                >
-                    <b>Maggie </b>
-                    makes visual essays about programming, design, and
-                    anthropology.
-                </Title1>
-                <motion.h2
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                    style={{
-                        fontFamily: "var(--font-sans)",
-                        fontSize: "var(--font-size-md)",
-                        color: "var(--color-gray-800)",
-                        fontWeight: "300",
-                        lineHeight: "var(--leading-loose)",
-                    }}
-                >
-                    UX designer, illustrator, anthropologist, and mediocre
-                    developer
-                    <br />
-                    Currently leading design at{" "}
-                    <UnderlineHoverLink href="https://hash.ai">
-                        <b>HASH</b>
-                    </UnderlineHoverLink>{" "}
-                </motion.h2>
-            </Header>
-            <Spacer large />
-            <motion.section
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7, duration: 1 }}
-            >
-                <Link href="/garden">
-                    <a href="/garden">
-                        <Title2>The Garden</Title2>
-                    </a>
-                </Link>
-                <Subheader>
-                    A digital garden is a llalalalla nonsense, nonsense,
-                    lalalalalala. Read more about it.
-                </Subheader>
-            </motion.section>
-            <GardenSection
-                variants={collectionAnimation}
-                initial="hidden"
-                animate="visible"
-            >
-                <section style={{ gridArea: "essays" }}>
-                    <Link href="/essays">
-                        <a href="/essays">
-                            <SectionHeader>
-                                Essays
-                                <ArrowRightIcon width="18" height="18" />
-                            </SectionHeader>
-                        </a>
-                    </Link>
-                    <Subheader>
-                        Opinionated, narrative writing with an agenda
-                    </Subheader>
-                    <div
+        <NextSeo>
+            <Layout>
+                <Header>
+                    <Title1
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2, duration: 1 }}
                         style={{
-                            display: "grid",
-                            gridTemplateColumns:
-                                "repeat(auto-fit, minmax(300px, 1fr))",
-                            gridGap: "var(--space-16)",
+                            maxWidth: "1200px",
+                            marginTop: "var(--space-32)",
                         }}
                     >
-                        {essays.map((essay, i) => (
-                            <EssayCard
-                                key={i}
-                                variants={itemAnimation}
-                                slug={essay.slug}
-                                cover={essay.data.cover}
-                                title={essay.data.title}
-                                growthStage={essay.data.growthStage}
-                                date={essay.data.updated}
-                            />
+                        <b>Maggie </b>
+                        makes visual essays about programming, design, and
+                        anthropology.
+                    </Title1>
+                    <motion.h2
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5, duration: 1 }}
+                        style={{
+                            fontFamily: "var(--font-sans)",
+                            fontSize: "var(--font-size-md)",
+                            color: "var(--color-gray-800)",
+                            fontWeight: "300",
+                            lineHeight: "var(--leading-loose)",
+                        }}
+                    >
+                        UX designer, illustrator, anthropologist, and mediocre
+                        developer
+                        <br />
+                        Currently leading design at{" "}
+                        <UnderlineHoverLink href="https://hash.ai">
+                            <b>HASH</b>
+                        </UnderlineHoverLink>{" "}
+                    </motion.h2>
+                </Header>
+                <Spacer large />
+                <motion.section
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.7, duration: 1 }}
+                >
+                    <Link href="/garden">
+                        <a href="/garden">
+                            <Title2>The Garden</Title2>
+                        </a>
+                    </Link>
+                    <Subheader>
+                        A digital garden is a llalalalla nonsense, nonsense,
+                        lalalalalala. Read more about it.
+                    </Subheader>
+                </motion.section>
+                <GardenSection
+                    variants={collectionAnimation}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <section style={{ gridArea: "essays" }}>
+                        <Link href="/essays">
+                            <a href="/essays">
+                                <SectionHeader>
+                                    Essays
+                                    <ArrowRightIcon width="18" height="18" />
+                                </SectionHeader>
+                            </a>
+                        </Link>
+                        <Subheader>
+                            Opinionated, narrative writing with an agenda
+                        </Subheader>
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns:
+                                    "repeat(auto-fit, minmax(300px, 1fr))",
+                                gridGap: "var(--space-16)",
+                            }}
+                        >
+                            {essays.map((essay, i) => (
+                                <EssayCard
+                                    key={i}
+                                    variants={itemAnimation}
+                                    slug={essay.slug}
+                                    cover={essay.data.cover}
+                                    title={essay.data.title}
+                                    growthStage={essay.data.growthStage}
+                                    date={essay.data.updated}
+                                />
+                            ))}
+                        </div>
+                    </section>
+                    <section style={{ gridArea: "notes" }}>
+                        <Link href="/notes">
+                            <a href="/notes">
+                                <SectionHeader>
+                                    Notes
+                                    <ArrowRightIcon width="18" height="18" />
+                                </SectionHeader>
+                            </a>
+                        </Link>
+                        <Subheader>
+                            Loose, unopinionated notes on things I don’t
+                            entirely understand yet.
+                        </Subheader>
+                        {notes.slice(0, 12).map((note) => (
+                            <Link key={note.slug} href={`/${note.slug}`}>
+                                <a>
+                                    <IndexNoteCard>
+                                        {note.data.growthStage && (
+                                            <GrowthIcon
+                                                growthStage={
+                                                    note.data.growthStage
+                                                }
+                                            />
+                                        )}
+                                        <h3>{note.data.title}</h3>
+                                    </IndexNoteCard>
+                                </a>
+                            </Link>
                         ))}
-                    </div>
-                </section>
-                <section style={{ gridArea: "notes" }}>
-                    <Link href="/notes">
-                        <a href="/notes">
-                            <SectionHeader>
-                                Notes
-                                <ArrowRightIcon width="18" height="18" />
-                            </SectionHeader>
-                        </a>
-                    </Link>
-                    <Subheader>
-                        Loose, unopinionated notes on things I don’t entirely
-                        understand yet.
-                    </Subheader>
-                    {notes.slice(0, 12).map((note) => (
-                        <Link key={note.slug} href={`/${note.slug}`}>
-                            <a>
-                                <IndexNoteCard>
-                                    {note.data.growthStage && (
-                                        <GrowthIcon
-                                            growthStage={note.data.growthStage}
-                                        />
-                                    )}
-                                    <h3>{note.data.title}</h3>
-                                </IndexNoteCard>
+                    </section>
+                    <section style={{ gridArea: "patterns" }}>
+                        <Link href="/patterns">
+                            <a href="/patterns">
+                                <SectionHeader>
+                                    Pattern Catalogue
+                                    <ArrowRightIcon width="18" height="18" />
+                                </SectionHeader>
                             </a>
                         </Link>
-                    ))}
-                </section>
-                <section style={{ gridArea: "patterns" }}>
-                    <Link href="/patterns">
-                        <a href="/patterns">
-                            <SectionHeader>
-                                Pattern Catalogue
-                                <ArrowRightIcon width="18" height="18" />
-                            </SectionHeader>
-                        </a>
-                    </Link>
-                    <Subheader>
-                        A catalogue of design patterns based on my own
-                        observations and research
-                    </Subheader>
-                    {patterns.map((pattern) => (
-                        <Link key={pattern.slug} href={`/${pattern.slug}`}>
-                            <a>
-                                <IndexPatternCard>
-                                    <h3>{pattern.data.title}</h3>
-                                </IndexPatternCard>
+                        <Subheader>
+                            A catalogue of design patterns based on my own
+                            observations and research
+                        </Subheader>
+                        {patterns.map((pattern) => (
+                            <Link key={pattern.slug} href={`/${pattern.slug}`}>
+                                <a>
+                                    <IndexPatternCard>
+                                        <h3>{pattern.data.title}</h3>
+                                    </IndexPatternCard>
+                                </a>
+                            </Link>
+                        ))}
+                    </section>
+                    <section style={{ gridArea: "library" }}>
+                        <Link href="/library">
+                            <a href="/library">
+                                <SectionHeader>
+                                    Library
+                                    <ArrowRightIcon width="18" height="18" />
+                                </SectionHeader>
                             </a>
                         </Link>
-                    ))}
-                </section>
-                <section style={{ gridArea: "library" }}>
-                    <Link href="/library">
-                        <a href="/library">
-                            <SectionHeader>
-                                Library
-                                <ArrowRightIcon width="18" height="18" />
-                            </SectionHeader>
+                        <Subheader>
+                            Books I’ve read and books I like the idea of having
+                            read
+                        </Subheader>
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns:
+                                    "repeat(auto-fit, minmax(180px, 1fr))",
+                                gridGap: "var(--space-24)",
+                            }}
+                        >
+                            {bookData.slice(0, 4).map((book, i) => (
+                                <BookCard
+                                    small
+                                    subtitle={book.subtitle}
+                                    key={i}
+                                    cover={book.cover}
+                                    title={book.title}
+                                    author={book.author}
+                                    link={book.link}
+                                />
+                            ))}
+                        </div>
+                    </section>
+                </GardenSection>
+                <Spacer />
+                <section>
+                    <Link href="/projects">
+                        <a href="/projects">
+                            <Title2>Projects</Title2>
                         </a>
                     </Link>
-                    <Subheader>
-                        Books I’ve read and books I like the idea of having read
-                    </Subheader>
+                    <Subheader>In the past I have made things</Subheader>
                     <div
                         style={{
                             display: "grid",
                             gridTemplateColumns:
-                                "repeat(auto-fit, minmax(180px, 1fr))",
+                                "repeat(auto-fit, minmax(320px, 1fr))",
                             gridGap: "var(--space-24)",
                         }}
                     >
-                        {bookData.slice(0, 4).map((book, i) => (
-                            <BookCard
-                                small
-                                subtitle={book.subtitle}
+                        {projects.slice(0, 3).map((project, i) => (
+                            <ProjectCard
                                 key={i}
-                                cover={book.cover}
-                                title={book.title}
-                                author={book.author}
-                                link={book.link}
+                                slug={project.slug}
+                                title={project.data.title}
+                                cover={project.data.cover}
+                                date={project.data.updated}
                             />
                         ))}
                     </div>
                 </section>
-            </GardenSection>
-            <Spacer />
-            <section>
-                <Link href="/projects">
-                    <a href="/projects">
-                        <Title2>Projects</Title2>
-                    </a>
-                </Link>
-                <Subheader>In the past I have made things</Subheader>
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns:
-                            "repeat(auto-fit, minmax(320px, 1fr))",
-                        gridGap: "var(--space-24)",
-                    }}
-                >
-                    {projects.slice(0, 3).map((project, i) => (
-                        <ProjectCard
-                            key={i}
-                            slug={project.slug}
-                            title={project.data.title}
-                            cover={project.data.cover}
-                            date={project.data.updated}
-                        />
-                    ))}
-                </div>
-            </section>
-        </Layout>
+            </Layout>
+        </NextSeo>
     );
 }
 
