@@ -138,8 +138,9 @@ export default function Index({ essays, notes, patterns, projects }) {
                             gridGap: "var(--space-16)",
                         }}
                     >
-                        {essays.map((essay) => (
+                        {essays.map((essay, i) => (
                             <EssayCard
+                                key={i}
                                 variants={itemAnimation}
                                 slug={essay.slug}
                                 cover={essay.data.cover}
@@ -251,17 +252,14 @@ export default function Index({ essays, notes, patterns, projects }) {
                         gridGap: "var(--space-24)",
                     }}
                 >
-                    {projects.slice(0, 3).map((project) => (
-                        <Link key={project.slug} href={`/${project.slug}`}>
-                            <a>
-                                <ProjectCard
-                                    slug={project.slug}
-                                    title={project.data.title}
-                                    cover={project.data.cover}
-                                    date={project.data.updated}
-                                />
-                            </a>
-                        </Link>
+                    {projects.slice(0, 3).map((project, i) => (
+                        <ProjectCard
+                            key={i}
+                            slug={project.slug}
+                            title={project.data.title}
+                            cover={project.data.cover}
+                            date={project.data.updated}
+                        />
                     ))}
                 </div>
             </section>

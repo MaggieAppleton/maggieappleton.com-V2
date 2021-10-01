@@ -11,6 +11,7 @@ export default function EssayCard({
     growthStage,
     date,
     variants,
+    key,
 }) {
     const formattedDate = new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
@@ -18,7 +19,7 @@ export default function EssayCard({
         day: "numeric",
     });
     return (
-        <Link key={slug} href={`/${slug}`}>
+        <Link key={key} href={`/${slug}`}>
             <a>
                 <StyledEssayCard variants={variants}>
                     {cover ? (

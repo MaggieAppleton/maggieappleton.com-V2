@@ -5,12 +5,12 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
-import RelativeDate from "../components/RelativeDate";
+import RelativeDate from "../components/templates/RelativeDate";
 
 export default function NoteTemplate({ source, frontMatter, components }) {
     return (
         <>
-            <Container>
+            <HeaderSection>
                 <div>
                     <Link href="/notes">
                         <BackHoverLink href="/notes">notes</BackHoverLink>
@@ -52,7 +52,7 @@ export default function NoteTemplate({ source, frontMatter, components }) {
                         )}
                     </div>
                 </Metadata>
-            </Container>
+            </HeaderSection>
             <StyledMain>
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
@@ -62,7 +62,7 @@ export default function NoteTemplate({ source, frontMatter, components }) {
     );
 }
 
-const Container = styled.div`
+const HeaderSection = styled.header`
     width: 780px;
     margin: var(--space-24) auto 0;
     div:first-child {

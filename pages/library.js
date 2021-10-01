@@ -8,9 +8,11 @@ import PostCount from "../components/PostCount";
 export default function Library() {
     return (
         <Layout>
-            <Title1>Library</Title1>
-            <Title2>Stuff</Title2>
-            <PostCount postType="books" posts={bookData} />
+            <header>
+                <Title1>Library</Title1>
+                <Title2>Stuff</Title2>
+                <PostCount postType="books" posts={bookData} />
+            </header>
             <MasonryGrid largeGap breakpointColumnsObj={breakpointColumnsObj}>
                 {bookData.map((book) => (
                     <BookCard

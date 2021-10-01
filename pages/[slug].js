@@ -6,8 +6,6 @@ import Head from "next/head";
 import path from "path";
 import BasicImage from "../components/mdx/BasicImage";
 import TooltipLink from "../components/links/TooltipLink";
-import TweetEmbed from "../components/mdx/TweetEmbed";
-import TwoColumn from "../components/mdx/TwoColumn";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
@@ -36,11 +34,15 @@ const components = {
     h2: Title2,
     h3: Title3,
     h4: Title4,
-    TwoColumn: TwoColumn,
+    TwoColumn: dynamic(() => import("../components/mdx/TwoColumn"), {
+        ssr: false,
+    }),
+    TweetEmbed: dynamic(() => import("../components/mdx/TweetEmbed"), {
+        ssr: false,
+    }),
     img: BasicImage,
     a: TooltipLink,
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
-    TweetEmbed: TweetEmbed,
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
     Head,
 };

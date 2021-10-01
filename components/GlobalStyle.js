@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
 		--color-tinted-cream: #E6E3E1;
 		--color-black: #353534;
 		--color-gray-800: #4A4A46;
-		--color-gray-600: #777472;
+		--color-gray-600: #706E6C;
 		--color-gray-300: #D3D3D1;
 		--color-bright-crimson: #960462;
 		--color-crimson: #550037;

@@ -15,7 +15,7 @@ export default function ProjectTemplate({ source, frontMatter, components }) {
 
     return (
         <>
-            <Container>
+            <HeaderSection>
                 <div>
                     <Link href="/projects">
                         <a href="/projects">
@@ -50,7 +50,7 @@ export default function ProjectTemplate({ source, frontMatter, components }) {
                         )}
                     </div>
                 </Metadata>
-            </Container>
+            </HeaderSection>
             <StyledMain>
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
@@ -60,7 +60,7 @@ export default function ProjectTemplate({ source, frontMatter, components }) {
     );
 }
 
-const Container = styled.div`
+const HeaderSection = styled.header`
     max-width: 780px;
     margin: 0 auto;
     div:first-child {

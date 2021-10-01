@@ -11,9 +11,11 @@ import PostCount from "../components/PostCount";
 export default function Essays({ essays }) {
     return (
         <Layout>
-            <Title1>Essays</Title1>
-            <Title2>Stuff</Title2>
-            <PostCount postType="essays" posts={essays} />
+            <header>
+                <Title1>Essays</Title1>
+                <Title2>Stuff</Title2>
+                <PostCount postType="essays" posts={essays} />
+            </header>
             <MasonryGrid>
                 {essays.map((essay) => (
                     <EssayCard

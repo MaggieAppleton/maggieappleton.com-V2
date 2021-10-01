@@ -1,7 +1,6 @@
 export default function RelativeDate({ postDate }) {
     const date = new Date(postDate);
     const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
-    console.log(date);
     const deltaWeeks = deltaDays / 7;
     const deltaMonths = deltaDays / 30;
     const deltaYears = deltaDays / 365;

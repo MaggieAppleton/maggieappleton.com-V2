@@ -3,11 +3,14 @@ import {
     getAllTopics,
     getUniqueTopics,
 } from "../../utils/getTopics";
+import slugifyTopic from "../../utils/slugifyTopic";
 import { getPostdata } from "../../utils/getAllPosts";
 import matter from "gray-matter";
 import styled from "styled-components";
 import Layout from "../../components/Layout";
 import DynamicPostsList from "../../components/DynamicPostsList";
+
+// ? Possibly useful for reference: https://github.com/inadeqtfuturs/garden/blob/b8b98f4931e204cbb34fa0bcc11fab75b24c0df1/src/pages/tags/%5Bslug%5D.js
 
 export default function TopicPage({ topic, topics, frontMatterAndSlug }) {
     const topicName = topic[0].toUpperCase() + topic.slice(1);

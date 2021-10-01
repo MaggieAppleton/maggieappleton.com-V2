@@ -1,4 +1,4 @@
-import Tooltip from "./Tooltip";
+import Tooltip from "../Tooltip";
 import styled from "styled-components";
 
 export default function GrowthStage({ stage }) {
@@ -12,14 +12,12 @@ export default function GrowthStage({ stage }) {
         return (
             <Tooltip content="Bababababa">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
-                //{" "}
             </Tooltip>
         );
     } else if (stage === "Seedling") {
         return (
             <Tooltip content="Sasasasas">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
-                //{" "}
             </Tooltip>
         );
     }

@@ -18,7 +18,7 @@ export default function PatternTemplate({ source, frontMatter, components }) {
 
     return (
         <Layout>
-            <Container>
+            <HeaderSection>
                 <div>
                     <Link href="/patterns">
                         <BackHoverLink href="/patterns">Patterns</BackHoverLink>
@@ -51,7 +51,7 @@ export default function PatternTemplate({ source, frontMatter, components }) {
                         )}
                     </div>
                 </Metadata>
-            </Container>
+            </HeaderSection>
             <StyledMain>
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
@@ -61,7 +61,7 @@ export default function PatternTemplate({ source, frontMatter, components }) {
     );
 }
 
-const Container = styled.div`
+const HeaderSection = styled.header`
     max-width: 1400px;
     margin: 0 auto;
     div:first-child {

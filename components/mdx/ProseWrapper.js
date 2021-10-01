@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../utils/breakpoints";
 
 const ProseWrapper = styled.article`
     display: grid;
@@ -14,6 +15,9 @@ const ProseWrapper = styled.article`
         line-height: var(--leading-looser);
         margin-bottom: var(--space-32);
         font-size: calc(var(--font-size-base) * 1.05);
+        @media ${breakpoints.mediaSM} {
+            font-size: calc(var(--font-size-base) / 1.05);
+        }
     }
     h1 {
         font-size: var(--font-size-2xl);

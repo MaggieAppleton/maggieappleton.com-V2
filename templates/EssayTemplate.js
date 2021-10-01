@@ -5,13 +5,14 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
-import RelativeDate from "../components/RelativeDate";
-import GrowthStage from "../components/GrowthStage";
+import RelativeDate from "../components/templates/RelativeDate";
+import GrowthStage from "../components/templates/GrowthStage";
+import Topics from "../components/templates/Topics";
 
 export default function EssayTemplate({ source, frontMatter, components }) {
     return (
         <>
-            <Container>
+            <HeaderSection>
                 <div>
                     <Link href="/essays">
                         <BackHoverLink href="/essays">Essays</BackHoverLink>
@@ -26,15 +27,7 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                 {frontMatter.description && <p>{frontMatter.description}</p>}
                 <Metadata style={{ display: "flex", flexDirection: "row" }}>
                     {frontMatter.topics && (
-                        <ul>
-                            {frontMatter.topics.map((topic) => (
-                                <li key={topic}>
-                                    <Link href={`/topics/${topic}`}>
-                                        <a>{topic}</a>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <Topics topics={frontMatter.topics} />
                     )}
                     <div className="metadata">
                         {frontMatter.startDate && (
@@ -53,7 +46,7 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                         )}
                     </div>
                 </Metadata>
-            </Container>
+            </HeaderSection>
             <StyledMain>
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
@@ -63,7 +56,7 @@ export default function EssayTemplate({ source, frontMatter, components }) {
     );
 }
 
-const Container = styled.div`
+const HeaderSection = styled.header`
     max-width: 780px;
     margin: var(--space-24) auto 0;
     div:first-child {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ slug, cover, title, date, topics }) {
+export default function ProjectCard({ slug, cover, title, date, topics, key }) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
@@ -13,7 +13,7 @@ export default function ProjectCard({ slug, cover, title, date, topics }) {
     }
 
     return (
-        <Link key={slug} href={`/${slug}`}>
+        <Link key={key} href={`/${slug}`}>
             <a>
                 <StyledProjectCard>
                     {cover ? (
