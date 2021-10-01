@@ -12,12 +12,14 @@ export default function GrowthStage({ stage }) {
         return (
             <Tooltip content="Bababababa">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
+                //{" "}
             </Tooltip>
         );
     } else if (stage === "Seedling") {
         return (
             <Tooltip content="Sasasasas">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
+                //{" "}
             </Tooltip>
         );
     }

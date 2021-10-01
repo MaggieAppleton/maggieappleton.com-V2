@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/shift-away.css";
-// import "tippy.js/themes/light.css";
 
 const Tooltip = forwardRef(({ content, children }, ref) => {
     return (

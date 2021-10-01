@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 export default function TweetEmbed({ tweetId }) {
     return (
-        <TweetContainer>
+        <TweetContainer className="tweet">
             <TwitterTweetEmbed tweetId={tweetId} />
         </TweetContainer>
     );
 }
 
-const TweetContainer = styled.span.withConfig({
-    componentId: "TweetContainer",
-})`
-    margin: 0 auto var(--space-32);
-    width: 550px;
-    max-width: 100%;
+const TweetContainer = styled.div`
+    &.tweet {
+        margin: 0 auto var(--space-32);
+        width: 550px;
+        max-width: 100%;
+    }
 `;

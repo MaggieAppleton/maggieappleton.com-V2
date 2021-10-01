@@ -4,9 +4,7 @@ export default function TwoColumn({ children }) {
     return <TwoColumnContainer>{children}</TwoColumnContainer>;
 }
 
-const TwoColumnContainer = styled.section.withConfig({
-    componentId: "TwoColumnContainer",
-})`
+const TwoColumnContainer = styled.div`
     width: 100%;
     grid-column: 1 / 4 !important;
     max-width: ${(props) => props.width || "1400px"};

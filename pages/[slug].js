@@ -36,11 +36,11 @@ const components = {
     h2: Title2,
     h3: Title3,
     h4: Title4,
+    TwoColumn: TwoColumn,
     img: BasicImage,
     a: TooltipLink,
-    TwoColumn: TwoColumn,
-    TweetEmbed: TweetEmbed,
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
+    TweetEmbed: TweetEmbed,
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
     Head,
 };

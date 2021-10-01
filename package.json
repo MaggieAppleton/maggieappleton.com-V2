@@ -11,7 +11,7 @@
     "@reach/menu-button": "^0.16.1",
     "@tippyjs/react": "^4.2.5",
     "algoliasearch": "^4.10.5",
-    "babel-plugin-styled-components": "^1.13.2",
+    "babel-plugin-styled-components": "1.10.2",
     "dotenv": "^10.0.0",
     "feed": "^4.2.2",
     "framer-motion": "^4.1.17",
