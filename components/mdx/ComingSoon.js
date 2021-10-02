@@ -3,15 +3,8 @@ import styled from "styled-components";
 export default function ComingSoon() {
     return (
         <ComingSoonContainer>
-            <svg width="65" height="65">
-                <circle
-                    cx="32"
-                    cy="32"
-                    r="30"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="2"
-                />
+            <svg width={65} height={65}>
+                <circle cx={32} cy={32} r={30} fill="none" stroke="#000" />
             </svg>
             <h1>Coming Soon</h1>
             <p>Feel free to bug me on twitter to finish writing this.</p>

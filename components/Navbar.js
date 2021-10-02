@@ -136,7 +136,6 @@ const DropdownLink = styled.a`
     &:hover {
         background: var(--color-light-cream);
         color: var(--color-crimson);
-        border-left: 2px solid var(--color-sea-blue);
     }
 `;
 

@@ -44,7 +44,7 @@ function roundDatesToWeek(postDate) {
     return Math.round(deltaMonths);
 }
 
-function RelativeDate({ postDate }) {
+export function RelativeDate({ postDate }) {
     const date = new Date(postDate);
     const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
     const deltaWeeks = deltaDays / 7;
@@ -59,7 +59,7 @@ function RelativeDate({ postDate }) {
     } else if (deltaMonths < 12) {
         result = `${Math.round(deltaMonths)} months ago`;
     } else if (deltaYears < 2) {
-        result = `${Math.round(deltaYears)} years and ${Math.round(
+        result = `${Math.round(deltaYears)} year and ${Math.round(
             remainderMonths
         )} months ago`;
     } else {
