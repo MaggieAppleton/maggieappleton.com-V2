@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
-import RelativeDate from "../components/templates/RelativeDate";
+import Dates from "../components/templates/Dates";
 import Header from "../components/Header";
 
 export default function NoteTemplate({ source, frontMatter, components }) {
@@ -41,22 +41,10 @@ export default function NoteTemplate({ source, frontMatter, components }) {
                             ))}
                         </ul>
                     )}
-                    <div className="metadata">
-                        {frontMatter.startDate && (
-                            <span>
-                                Planted{" "}
-                                <RelativeDate
-                                    postDate={frontMatter.startDate}
-                                />
-                            </span>
-                        )}
-                        {frontMatter.updated && (
-                            <span>
-                                Last tended{" "}
-                                <RelativeDate postDate={frontMatter.updated} />
-                            </span>
-                        )}
-                    </div>
+                    <Dates
+                        startDate={frontMatter.startDate}
+                        updated={frontMatter.updated}
+                    />
                 </Metadata>
             </HeaderSection>
             <StyledMain>

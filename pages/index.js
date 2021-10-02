@@ -142,7 +142,8 @@ export default function Index({ essays, notes, patterns, projects }) {
                             </a>
                         </Link>
                         <Subheader>
-                            Opinionated, narrative writing with an agenda
+                            Opinionated, longform narrative writing with an
+                            agenda
                         </Subheader>
                         <div
                             style={{
@@ -205,8 +206,8 @@ export default function Index({ essays, notes, patterns, projects }) {
                             </a>
                         </Link>
                         <Subheader>
-                            A catalogue of design patterns based on my own
-                            observations and research
+                            A catalogue of design patterns gathered from my own
+                            observations and research.
                         </Subheader>
                         {patterns.map((pattern) => (
                             <Link key={pattern.slug} href={`/${pattern.slug}`}>
@@ -229,7 +230,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                         </Link>
                         <Subheader>
                             Books I’ve read and books I like the idea of having
-                            read
+                            read.
                         </Subheader>
                         <div
                             style={{

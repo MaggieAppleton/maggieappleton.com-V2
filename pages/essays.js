@@ -16,7 +16,9 @@ export default function Essays({ essays }) {
             <Layout>
                 <header>
                     <Title1>Essays</Title1>
-                    <Title2>Stuff</Title2>
+                    <Title2>
+                        Opinionated, longform narrative writing with an agenda.
+                    </Title2>
                     <PostCount postType="essays" posts={essays} />
                 </header>
                 <MasonryGrid>

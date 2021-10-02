@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
-import RelativeDate from "../components/templates/RelativeDate";
+import Dates from "../components/templates/Dates";
 import GrowthStage from "../components/templates/GrowthStage";
 import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
@@ -35,22 +35,10 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                     {frontMatter.topics && (
                         <Topics topics={frontMatter.topics} />
                     )}
-                    <div className="metadata">
-                        {frontMatter.startDate && (
-                            <span>
-                                Planted{" "}
-                                <RelativeDate
-                                    postDate={frontMatter.startDate}
-                                />
-                            </span>
-                        )}
-                        {frontMatter.updated && (
-                            <span>
-                                Last tended{" "}
-                                <RelativeDate postDate={frontMatter.updated} />
-                            </span>
-                        )}
-                    </div>
+                    <Dates
+                        startDate={frontMatter.startDate}
+                        updated={frontMatter.updated}
+                    />
                 </Metadata>
             </HeaderSection>
             <StyledMain>
@@ -101,12 +89,6 @@ const HeaderSection = styled.header`
 
 const Metadata = styled.div`
     justify-content: space-between;
-    div {
-        margin-top: var(--space-16);
-        display: flex;
-        flex-direction: column;
-        text-align: right;
-    }
     ul {
         list-style: none;
         display: flex;

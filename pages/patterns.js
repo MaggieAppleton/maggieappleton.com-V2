@@ -15,7 +15,10 @@ export default function Patterns({ patterns }) {
             <Header title="Pattern Library of Maggie Appleton" />
             <Layout>
                 <Title1>Pattern Catalogue</Title1>
-                <Title2>Stuff</Title2>
+                <Title2>
+                    A catalogue of design patterns gathered from my own
+                    observations and research.
+                </Title2>
                 <PostCount postType="patterns" posts={patterns} />
                 <MasonryGrid largeGap>
                     {patterns.map((essay, i) => (

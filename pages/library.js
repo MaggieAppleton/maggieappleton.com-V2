@@ -13,7 +13,10 @@ export default function Library() {
             <Layout>
                 <header>
                     <Title1>Library</Title1>
-                    <Title2>Stuff</Title2>
+                    <Title2>
+                        Books I’ve read and books I like the idea of having
+                        read.
+                    </Title2>
                     <PostCount postType="books" posts={bookData} />
                 </header>
                 <MasonryGrid
