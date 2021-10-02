@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export default function Dates({ startDate, updated }) {
-    const relativeStart = roundDatesToWeek(startDate);
-    const relativeUpdated = roundDatesToWeek(updated);
+    const relativeStart = roundDatesToMonth(startDate);
+    const relativeUpdated = roundDatesToMonth(updated);
 
-    if (relativeStart === relativeUpdated) {
+    if (relativeStart === relativeUpdated || relativeUpdated > 23) {
         return (
             <StyledDates className="metadata">
                 <span>
@@ -37,7 +37,7 @@ const StyledDates = styled.div`
     text-align: right;
 `;
 
-function roundDatesToWeek(postDate) {
+function roundDatesToMonth(postDate) {
     const date = new Date(postDate);
     const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
     const deltaMonths = deltaDays / 30;
