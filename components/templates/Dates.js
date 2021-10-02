@@ -6,7 +6,7 @@ export default function Dates({ startDate, updated }) {
 
     if (relativeStart === relativeUpdated || relativeUpdated > 18) {
         return (
-            <StyledDates className="metadata">
+            <StyledDates>
                 <span>
                     Planted <RelativeDate postDate={updated} />
                 </span>
@@ -14,7 +14,7 @@ export default function Dates({ startDate, updated }) {
         );
     } else {
         return (
-            <StyledDates className="metadata">
+            <StyledDates>
                 {startDate && (
                     <span>
                         Planted <RelativeDate postDate={startDate} />
@@ -35,6 +35,14 @@ const StyledDates = styled.div`
     display: flex;
     flex-direction: column;
     text-align: right;
+    span {
+        display: inline-block;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-sm);
+        color: var(--color-gray-600);
+        letter-spacing: 0.01em;
+        font-weight: 400;
+    }
 `;
 
 function roundDatesToMonth(postDate) {

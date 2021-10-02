@@ -473,11 +473,11 @@ export function getStaticProps() {
     });
 
     // Filter projects for featured property
-    const filteredProjects = projects
-        .filter((project) => project.data.featured === true)
-        .slice(0, 4);
+    // const filteredProjects = projects
+    //     .filter((project) => project.data.featured === true)
+    //     .slice(0, 4);
     // Sort filtered essays by date
-    const sortedProjects = filteredProjects.sort((a, b) => {
+    const sortedProjects = projects.slice(0, 4).sort((a, b) => {
         return new Date(b.data.updated) - new Date(a.data.updated);
     });
     projects = sortedProjects;

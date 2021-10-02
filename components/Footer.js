@@ -9,13 +9,13 @@ export default function Footer() {
             <FooterContent>
                 <SmallCaps>Stuff, yeah?</SmallCaps>
                 <p>Want to stay up to date?</p>
-                {/* <p>RSS Feed</p>
+                <p>RSS Feed</p>
                 <p>Changelog</p>
                 <p>Now</p>
                 <p>Start Here</p>
                 <p>Social links</p>
                 <p>Library</p>
-                <p>Newsletter signup</p> */}
+                <p>Newsletter signup</p>
             </FooterContent>
         </StyledFooter>
     );

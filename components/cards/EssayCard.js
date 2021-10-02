@@ -4,6 +4,7 @@ import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 import { RelativeDate } from "../templates/Dates";
+import PatternA from "../visuals/PatternA";
 
 export default function EssayCard({
     slug,
@@ -27,9 +28,10 @@ export default function EssayCard({
                             layout="responsive"
                         />
                     ) : (
-                        <img
-                            src="https://via.placeholder.com/300x300"
-                            alt={title}
+                        <PatternA
+                            width="250"
+                            height="250"
+                            style={{ margin: "2rem auto" }}
                         />
                     )}
                     <h3>{title}</h3>
