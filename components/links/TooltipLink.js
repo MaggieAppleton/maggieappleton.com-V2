@@ -14,11 +14,11 @@ export default function TooltipLink({ href, children }) {
 }
 
 const StyledUrl = styled.a`
-    color: var(--color-bright-crimson);
+    color: var(--color-gray-600);
     transition: color 0.2s ease-in-out;
     text-align: center;
     &:hover {
-        color: var(--color-sea-blue);
+        color: var(--color-bright-crimson);
     }
 `;
 
@@ -83,6 +83,6 @@ const StyledLink = styled.a`
     }
     &:hover span {
         transform: translate3d(0, -1px, 0);
-        color: var(--color-sea-blue);
+        color: var(--color-dark-crimson);
     }
 `;

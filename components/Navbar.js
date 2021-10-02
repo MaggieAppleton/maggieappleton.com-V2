@@ -87,11 +87,11 @@ export default function Navbar() {
                             About
                         </UnderlineHoverLink>
                     </Link>
-                    <Link href="/start">
+                    {/* <Link href="/start">
                         <UnderlineHoverLink href="/start">
                             Start Here
                         </UnderlineHoverLink>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </StyledNavbar>

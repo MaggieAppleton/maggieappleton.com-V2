@@ -16,10 +16,9 @@ export default function ProjectTemplate({ source, frontMatter, components }) {
 
     return (
         <>
-        <Header
+            <Header
                 title={frontMatter.title}
                 description={frontMatter.description}
-                keywords={...frontMatter.topics}
             />
             <HeaderSection>
                 <div>

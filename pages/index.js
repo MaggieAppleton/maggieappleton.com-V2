@@ -381,7 +381,7 @@ const SectionHeader = styled.h3`
     }
     &:hover {
         transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
-        color: var(--color-crimson);
+        color: var(--color-bright-crimson);
         cursor: pointer;
         svg {
             margin-left: var(--space-12);

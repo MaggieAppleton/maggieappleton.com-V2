@@ -30,7 +30,6 @@ const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
-    Head,
     h1: Title1,
     h2: Title2,
     h3: Title3,
@@ -38,6 +37,9 @@ const components = {
     img: BasicImage,
     a: TooltipLink,
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
+        ssr: false,
+    }),
+    ComingSoon: dynamic(() => import("../components/mdx/ComingSoon"), {
         ssr: false,
     }),
     TwoColumn: dynamic(() => import("../components/mdx/TwoColumn"), {

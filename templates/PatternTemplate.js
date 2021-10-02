@@ -19,52 +19,57 @@ export default function PatternTemplate({ source, frontMatter, components }) {
 
     return (
         <>
-        <Header
+            <Header
                 title={frontMatter.title}
                 description={frontMatter.description}
-                keywords={...frontMatter.topics}
             />
-        <Layout>
-            <HeaderSection>
-                <div>
-                    <Link href="/patterns">
-                        <BackHoverLink href="/patterns">Patterns</BackHoverLink>
-                    </Link>
-                </div>
-                <Title1>{frontMatter.title}</Title1>
-                {frontMatter.description && <p>{frontMatter.description}</p>}
-                <Metadata style={{ display: "flex", flexDirection: "row" }}>
-                    {frontMatter.topics && (
-                        <ul>
-                            {frontMatter.topics.map((topic) => (
-                                <li key={topic}>
-                                    <Link href={`/topics/${topic}`}>
-                                        <a>{topic}</a>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                    <div className="metadata">
-                        {frontMatter.startDate && (
-                            <span>
-                                Planted {formattedDate(frontMatter.startDate)}
-                            </span>
-                        )}
-                        {frontMatter.updated && (
-                            <span>
-                                Last tended {formattedDate(frontMatter.updated)}
-                            </span>
-                        )}
+            <Layout>
+                <HeaderSection>
+                    <div>
+                        <Link href="/patterns">
+                            <BackHoverLink href="/patterns">
+                                Patterns
+                            </BackHoverLink>
+                        </Link>
                     </div>
-                </Metadata>
-            </HeaderSection>
-            <StyledMain>
-                <ProseWrapper>
-                    <MDXRemote {...source} components={components} />
-                </ProseWrapper>
-            </StyledMain>
-        </Layout>
+                    <Title1>{frontMatter.title}</Title1>
+                    {frontMatter.description && (
+                        <p>{frontMatter.description}</p>
+                    )}
+                    <Metadata style={{ display: "flex", flexDirection: "row" }}>
+                        {frontMatter.topics && (
+                            <ul>
+                                {frontMatter.topics.map((topic) => (
+                                    <li key={topic}>
+                                        <Link href={`/topics/${topic}`}>
+                                            <a>{topic}</a>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                        <div className="metadata">
+                            {frontMatter.startDate && (
+                                <span>
+                                    Planted{" "}
+                                    {formattedDate(frontMatter.startDate)}
+                                </span>
+                            )}
+                            {frontMatter.updated && (
+                                <span>
+                                    Last tended{" "}
+                                    {formattedDate(frontMatter.updated)}
+                                </span>
+                            )}
+                        </div>
+                    </Metadata>
+                </HeaderSection>
+                <StyledMain>
+                    <ProseWrapper>
+                        <MDXRemote {...source} components={components} />
+                    </ProseWrapper>
+                </StyledMain>
+            </Layout>
         </>
     );
 }

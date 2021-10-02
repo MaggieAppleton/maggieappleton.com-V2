@@ -27,9 +27,11 @@ export const GlobalStyle = createGlobalStyle`
 		--color-gray-600: #706E6C;
 		--color-gray-300: #D3D3D1;
 		--color-bright-crimson: #960462;
-		--color-crimson: #550037;
+		--color-crimson: #5F023E;
 		--color-sea-blue: #04A5BB;
+		--color-dark-sea-blue: #017989;
 		--color-purple: #7558B2;
+		--color-salmon: #FD8370;
 
 
 		/* Fonts */

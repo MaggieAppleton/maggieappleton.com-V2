@@ -16,7 +16,7 @@ export default function EssayTemplate({ source, frontMatter, components }) {
             <Header
                 title={frontMatter.title}
                 description={frontMatter.description}
-                keywords={...frontMatter.topics}
+                keywords={frontMatter.topics}
             />
             <HeaderSection>
                 <div>

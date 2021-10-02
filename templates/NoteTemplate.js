@@ -11,10 +11,10 @@ import Header from "../components/Header";
 export default function NoteTemplate({ source, frontMatter, components }) {
     return (
         <>
-        <Header
+            <Header
                 title={frontMatter.title}
                 description={frontMatter.description}
-                keywords={...frontMatter.topics}
+                keywords={frontMatter.topics}
             />
             <HeaderSection>
                 <div>
