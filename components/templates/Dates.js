@@ -4,7 +4,7 @@ export default function Dates({ startDate, updated }) {
     const relativeStart = roundDatesToMonth(startDate);
     const relativeUpdated = roundDatesToMonth(updated);
 
-    if (relativeStart === relativeUpdated || relativeUpdated > 23) {
+    if (relativeStart === relativeUpdated || relativeUpdated > 18) {
         return (
             <StyledDates className="metadata">
                 <span>
@@ -46,6 +46,7 @@ function roundDatesToMonth(postDate) {
 
 export function RelativeDate({ postDate }) {
     const date = new Date(postDate);
+    console.log(date);
     const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
     const deltaWeeks = deltaDays / 7;
     const deltaMonths = deltaDays / 30;
@@ -56,12 +57,8 @@ export function RelativeDate({ postDate }) {
         result = `${Math.round(deltaDays)} days ago`;
     } else if (deltaWeeks < 4) {
         result = `${Math.round(deltaWeeks)} weeks ago`;
-    } else if (deltaMonths < 12) {
+    } else if (deltaMonths < 18) {
         result = `${Math.round(deltaMonths)} months ago`;
-    } else if (deltaYears < 2) {
-        result = `${Math.round(deltaYears)} year and ${Math.round(
-            remainderMonths
-        )} months ago`;
     } else {
         result = `${Math.round(deltaYears)} years ago`;
     }

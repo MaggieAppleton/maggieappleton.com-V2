@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
+import { RelativeDate } from "../templates/Dates";
 
 export default function EssayCard({
     slug,
@@ -13,11 +14,6 @@ export default function EssayCard({
     variants,
     key,
 }) {
-    const formattedDate = new Date(date).toLocaleDateString("en-GB", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
     return (
         <Link key={key} href={`/${slug}`}>
             <a>
@@ -42,7 +38,9 @@ export default function EssayCard({
                         {growthStage && (
                             <GrowthIcon size="14" growthStage={growthStage} />
                         )}
-                        <span>{formattedDate}</span>
+                        <span>
+                            <RelativeDate postDate={date} />
+                        </span>
                     </div>
                 </StyledEssayCard>
             </a>
