@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
-import BasicImage from "../components/mdx/BasicImage";
+import Img from "../components/mdx/Img";
 import TooltipLink from "../components/links/TooltipLink";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
@@ -34,9 +34,12 @@ const components = {
     h2: Title2,
     h3: Title3,
     h4: Title4,
-    img: BasicImage,
+    img: Img,
     a: TooltipLink,
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
+        ssr: false,
+    }),
+    BasicImage: dynamic(() => import("../components/mdx/BasicImage"), {
         ssr: false,
     }),
     ImageFrame: dynamic(() => import("../components/mdx/ImageFrame"), {

@@ -1,10 +1,27 @@
 import styled from "styled-components";
 
-const BasicImage = styled.img`
-    width: 100%;
+export default function BasicImage({ src, alt, width, showalt }) {
+    return (
+        <Container>
+            <StyledBasicImage src={src} alt={alt} width={width || "100%"} />
+            {showalt && <figcaption>{alt}</figcaption>}
+        </Container>
+    );
+}
+
+const Container = styled.figure`
+    max-width: 100%;
     grid-column: 1 / 4 !important;
-    max-width: ${(props) => props.width || "1000px"};
-    margin: var(--space-48) auto;
+    margin: var(--space-48) auto var(--space-48);
+    text-align: center;
+    figcaption {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-sm);
+        color: var(--color-gray-600);
+    }
 `;
 
-export default BasicImage;
+const StyledBasicImage = styled.img`
+    width: ${(props) => props.width || "1100px"};
+    margin-bottom: var(--space-16);
+`;
