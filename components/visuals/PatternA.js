@@ -2,7 +2,13 @@ import * as React from "react";
 
 function PatternA(props) {
     return (
-        <svg viewBox="0 0 472.01 404.13" {...props}>
+        <svg
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin meet"
+            viewBox="0 0 472.01 404.13"
+            {...props}
+        >
             <defs>
                 <style>
                     {

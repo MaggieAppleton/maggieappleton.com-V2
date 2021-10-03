@@ -8,6 +8,9 @@ function DarkVoid(props) {
             style={{ maxWidth: "100%", marginLeft: "-1rem", zIndex: "-10" }}
             width="1000px"
             height="auto"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin meet"
             preserveAspectRatio="xMidYMid"
             viewBox="0 0 1187.63 1564.17"
             alt="a dark, mysterious void where your code executes"

@@ -2,7 +2,13 @@ import * as React from "react";
 
 function BuddingIcon(props) {
     return (
-        <svg viewBox="0 0 25 25" {...props}>
+        <svg
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin meet"
+            viewBox="0 0 25 25"
+            {...props}
+        >
             <defs>
                 <style>{".budding__cls-1{fill:var(--color-sea-blue)}"}</style>
             </defs>
