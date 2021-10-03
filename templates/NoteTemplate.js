@@ -6,7 +6,10 @@ import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/Icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
 import Dates from "../components/templates/Dates";
+import GrowthStage from "../components/templates/GrowthStage";
+import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
+import { TwitterReply } from "../components/templates/TwitterReply";
 
 export default function NoteTemplate({
     source,
@@ -30,7 +33,7 @@ export default function NoteTemplate({
                         size="16"
                         growthStage={frontMatter.growthStage}
                     />
-                    <p>{frontMatter.growthStage}</p>
+                    <GrowthStage stage={frontMatter.growthStage} />
                 </div>
                 <TitleContainer>
                     <h1>{frontMatter.title}</h1>
@@ -40,15 +43,7 @@ export default function NoteTemplate({
                 </TitleContainer>
                 <Metadata style={{ display: "flex", flexDirection: "row" }}>
                     {frontMatter.topics && (
-                        <ul>
-                            {frontMatter.topics.map((topic) => (
-                                <li key={topic}>
-                                    <Link href={`/topics/${topic}`}>
-                                        <a>{topic}</a>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <Topics topics={frontMatter.topics} />
                     )}
                     <Dates
                         startDate={frontMatter.startDate}
@@ -61,6 +56,10 @@ export default function NoteTemplate({
                     <MDXRemote {...source} components={components} />
                 </ProseWrapper>
             </StyledMain>
+            <TwitterReply
+                url={`https://maggieappleton.com/${slug}/`}
+                title={frontMatter.title}
+            />
         </>
     );
 }
@@ -82,7 +81,7 @@ const TitleContainer = styled.div`
 `;
 
 const HeaderSection = styled.header`
-    width: 780px;
+    max-width: 780px;
     margin: var(--space-24) auto 0;
     div:first-child {
         a,
@@ -103,19 +102,14 @@ const HeaderSection = styled.header`
             top: 3px;
         }
     }
+
     @media ${breakpoints.mediaSM} {
         padding: 0 var(--space-16);
     }
 `;
 
-const Metadata = styled.section`
+const Metadata = styled.div`
     justify-content: space-between;
-    div {
-        margin-top: var(--space-16);
-        display: flex;
-        flex-direction: column;
-        text-align: right;
-    }
     ul {
         list-style: none;
         display: flex;
@@ -135,7 +129,7 @@ const Metadata = styled.section`
 
 const StyledMain = styled.main`
     margin-top: var(--space-16);
-    padding: var(--space-80) 0 var(--space-128);
+    padding: var(--space-64) 0 var(--space-128);
     background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
