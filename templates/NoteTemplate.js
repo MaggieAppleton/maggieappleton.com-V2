@@ -32,8 +32,12 @@ export default function NoteTemplate({
                     />
                     <p>{frontMatter.growthStage}</p>
                 </div>
-                <h1>{frontMatter.title}</h1>
-                {frontMatter.description && <p>{frontMatter.description}</p>}
+                <TitleContainer>
+                    <h1>{frontMatter.title}</h1>
+                    {frontMatter.description && (
+                        <p>{frontMatter.description}</p>
+                    )}
+                </TitleContainer>
                 <Metadata style={{ display: "flex", flexDirection: "row" }}>
                     {frontMatter.topics && (
                         <ul>
@@ -61,6 +65,22 @@ export default function NoteTemplate({
     );
 }
 
+const TitleContainer = styled.div`
+    padding: var(--space-24) 0 var(--space-48);
+    border-bottom: 1px solid var(--color-gray-300);
+    h1 {
+        font-size: var(--font-size-2xl);
+        line-height: var(--leading-tight);
+        @media ${breakpoints.mediaSM} {
+            font-size: var(--font-size-xl);
+        }
+    }
+    p {
+        font-size: var(--font-size-md);
+        margin-top: var(--space-12);
+    }
+`;
+
 const HeaderSection = styled.header`
     width: 780px;
     margin: var(--space-24) auto 0;
@@ -83,16 +103,6 @@ const HeaderSection = styled.header`
             top: 3px;
         }
     }
-    h1 {
-        font-size: var(--font-size-2xl);
-        line-height: var(--leading-tight);
-        padding: var(--space-24) 0 var(--space-48);
-        border-bottom: 1px solid var(--color-gray-300);
-        @media ${breakpoints.mediaSM} {
-            font-size: var(--font-size-xl);
-        }
-    }
-
     @media ${breakpoints.mediaSM} {
         padding: 0 var(--space-16);
     }

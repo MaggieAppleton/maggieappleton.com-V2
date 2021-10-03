@@ -1,14 +1,14 @@
-import Layout from "../../components/Layout";
-import { Title1, Title2 } from "../../components/Typography";
+import Layout from "../components/Layout";
+import { Title1, Title2 } from "../components/Typography";
 import { MDXRemote } from "next-mdx-remote";
-import ProseWrapper from "../../components/mdx/ProseWrapper";
+import ProseWrapper from "../components/mdx/ProseWrapper";
 import styled from "styled-components";
-import { breakpoints } from "../../utils/breakpoints";
+import { breakpoints } from "../utils/breakpoints";
 
-export default function Now() {
+export default function Changelog() {
     return (
         <Layout>
-            <Title1>Now</Title1>
+            <Title1>Changelog</Title1>
             <Title2>Stuff</Title2>
             <StyledMain>
                 <ProseWrapper>
@@ -29,5 +29,3 @@ const StyledMain = styled.main`
         padding: var(--space-80) var(--space-16);
     }
 `;
-
-// TODO - use getstaticProps to read the now.mdx file for this.

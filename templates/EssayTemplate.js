@@ -17,7 +17,6 @@ export default function EssayTemplate({
     components,
     slug,
 }) {
-    console.log(source, frontMatter);
     return (
         <>
             <Header
@@ -36,8 +35,12 @@ export default function EssayTemplate({
                     />
                     <GrowthStage stage={frontMatter.growthStage} />
                 </div>
-                <h1>{frontMatter.title}</h1>
-                {frontMatter.description && <p>{frontMatter.description}</p>}
+                <TitleContainer>
+                    <h1>{frontMatter.title}</h1>
+                    {frontMatter.description && (
+                        <p>{frontMatter.description}</p>
+                    )}
+                </TitleContainer>
                 <Metadata style={{ display: "flex", flexDirection: "row" }}>
                     {frontMatter.topics && (
                         <Topics topics={frontMatter.topics} />
@@ -61,6 +64,22 @@ export default function EssayTemplate({
     );
 }
 
+const TitleContainer = styled.div`
+    padding: var(--space-24) 0 var(--space-48);
+    border-bottom: 1px solid var(--color-gray-300);
+    h1 {
+        font-size: var(--font-size-2xl);
+        line-height: var(--leading-tight);
+        @media ${breakpoints.mediaSM} {
+            font-size: var(--font-size-xl);
+        }
+    }
+    p {
+        font-size: var(--font-size-md);
+        margin-top: var(--space-12);
+    }
+`;
+
 const HeaderSection = styled.header`
     max-width: 780px;
     margin: var(--space-24) auto 0;
@@ -81,15 +100,6 @@ const HeaderSection = styled.header`
         svg {
             position: relative;
             top: 3px;
-        }
-    }
-    h1 {
-        font-size: var(--font-size-2xl);
-        line-height: var(--leading-tight);
-        padding: var(--space-24) 0 var(--space-48);
-        border-bottom: 1px solid var(--color-gray-300);
-        @media ${breakpoints.mediaSM} {
-            font-size: var(--font-size-xl);
         }
     }
 

@@ -20,7 +20,7 @@ export default function Footer() {
                         { text: "Notes", slug: "/notes" },
                         { text: "Now", slug: "/now" },
                         { text: "Patterns", slug: "/patterns" },
-                        { text: "Tools", slug: "/tools" },
+                        { text: "Tools I Use", slug: "/uses" },
                         { text: "Library", slug: "/library" },
                         { text: "Changelog", slug: "/changelog" },
                         ,

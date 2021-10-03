@@ -20,43 +20,60 @@ import {
 import { bookData } from "../posts/books";
 
 export default function Garden({ essays, notes, patterns }) {
+    const allPosts = essays.concat(notes, patterns);
+    const sortedPosts = allPosts.sort((a, b) => {
+        return new Date(b.data.updated) - new Date(a.data.updated);
+    });
+
     return (
         <>
-            <Header title="Digital Garden" />
+            <Header title="The Garden of Maggie Appleton" />
             <Layout>
                 <header>
-                    <Title1>Garden</Title1>
-                    <Title2>Stuff</Title2>
+                    <Title1>The Garden</Title1>
+                    <Title2>
+                        A collection of essays, notes, and half-baked
+                        explorations I'm always tending to.
+                    </Title2>
                 </header>
-                <MasonryGrid>
-                    {essays.map((essay, i) => (
-                        <EssayCard
-                            key={i}
-                            slug={essay.slug}
-                            cover={essay.data.cover}
-                            title={essay.data.title}
-                            growthStage={essay.data.growthStage}
-                            date={essay.data.updated}
-                        />
-                    ))}
-                    {notes.map((note, i) => (
-                        <NoteCard
-                            key={i}
-                            slug={note.slug}
-                            title={note.data.title}
-                            growthStage={note.data.growthStage}
-                            date={note.data.updated}
-                        />
-                    ))}
-                    {patterns.map((essay, i) => (
-                        <PatternCard
-                            key={i}
-                            slug={essay.slug}
-                            title={essay.data.title}
-                            growthStage={essay.data.growthStage}
-                            date={essay.data.updated}
-                        />
-                    ))}
+                <MasonryGrid
+                    columnGapLeft="var(--space-24)"
+                    columnGapBottom="var(--space-24)"
+                >
+                    {sortedPosts.map((post, i) => {
+                        if (post.data.type === "essay") {
+                            return (
+                                <EssayCard
+                                    key={i}
+                                    slug={post.slug}
+                                    cover={post.data.cover}
+                                    title={post.data.title}
+                                    growthStage={post.data.growthStage}
+                                    date={post.data.updated}
+                                />
+                            );
+                        } else if (post.data.type === "note") {
+                            return (
+                                <NoteCard
+                                    key={i}
+                                    slug={post.slug}
+                                    title={post.data.title}
+                                    growthStage={post.data.growthStage}
+                                    date={post.data.updated}
+                                />
+                            );
+                        } else if (post.data.type === "pattern") {
+                            return (
+                                <PatternCard
+                                    key={i}
+                                    slug={post.slug}
+                                    title={post.data.title}
+                                    growthStage={post.data.growthStage}
+                                    date={post.data.updated}
+                                />
+                            );
+                        }
+                    })}
                 </MasonryGrid>
             </Layout>
         </>

@@ -54,7 +54,6 @@ function roundDatesToMonth(postDate) {
 
 export function RelativeDate({ postDate }) {
     const date = new Date(postDate);
-    console.log(date);
     const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
     const deltaWeeks = deltaDays / 7;
     const deltaMonths = deltaDays / 30;
