@@ -2,18 +2,29 @@ import styled from "styled-components";
 
 export default function ImageFrame({ src, alt, width, showalt }) {
     return (
-        <div>
+        <Container>
             <StyledImageFrame src={src} alt={alt} width={width || "100%"} />
             {showalt && <span>{alt}</span>}
-        </div>
+        </Container>
     );
 }
 
-const StyledImageFrame = styled.img`
-    width: 100%;
+const Container = styled.div`
+    max-width: 100%;
     grid-column: 1 / 4 !important;
-    max-width: ${(props) => props.width || "1000px"};
-    margin: 0 auto;
+    margin: var(--space-24) auto var(--space-48);
+    text-align: center;
+    span {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-sm);
+        color: var(--color-gray-600);
+    }
+`;
+
+const StyledImageFrame = styled.img`
+    width: ${(props) => props.width || "1100px"};
     border-radius: var(--border-radius-base);
-    box-shadow: var(--box-shadow-md);
+    border: 1px solid var(--color-tinted-cream);
+    box-shadow: var(--box-shadow-lg);
+    margin-bottom: var(--space-16);
 `;
