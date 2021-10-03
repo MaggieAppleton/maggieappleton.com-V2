@@ -8,7 +8,12 @@ import { Title1 } from "../components/Typography";
 import BackHoverLink from "../components/links/BackHoverLink";
 import Header from "../components/Header";
 
-export default function PatternTemplate({ source, frontMatter, components }) {
+export default function PatternTemplate({
+    source,
+    frontMatter,
+    components,
+    slug,
+}) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",

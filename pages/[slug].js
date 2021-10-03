@@ -42,6 +42,9 @@ const components = {
     ComingSoon: dynamic(() => import("../components/mdx/ComingSoon"), {
         ssr: false,
     }),
+    Draft: dynamic(() => import("../components/mdx/Draft"), {
+        ssr: false,
+    }),
     TwoColumn: dynamic(() => import("../components/mdx/TwoColumn"), {
         ssr: false,
     }),
@@ -61,10 +64,11 @@ const components = {
     ),
 };
 
-export default function NotePage({ source, frontMatter }) {
+export default function PostPage({ source, frontMatter, slug }) {
     if (frontMatter.type === "note") {
         return (
             <NoteTemplate
+                slug={slug}
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
@@ -73,6 +77,7 @@ export default function NotePage({ source, frontMatter }) {
     } else if (frontMatter.type === "essay") {
         return (
             <EssayTemplate
+                slug={slug}
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
@@ -81,6 +86,7 @@ export default function NotePage({ source, frontMatter }) {
     } else if (frontMatter.type === "project") {
         return (
             <ProjectTemplate
+                slug={slug}
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
@@ -89,6 +95,7 @@ export default function NotePage({ source, frontMatter }) {
     } else if (frontMatter.type === "pattern") {
         return (
             <PatternTemplate
+                slug={slug}
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
@@ -151,6 +158,7 @@ export const getStaticProps = async ({ params }) => {
         props: {
             source: mdxSource,
             frontMatter: data,
+            slug: params.slug,
         },
     };
 };

@@ -9,8 +9,15 @@ import Dates from "../components/templates/Dates";
 import GrowthStage from "../components/templates/GrowthStage";
 import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
+import { TwitterReply } from "../components/templates/TwitterReply";
 
-export default function EssayTemplate({ source, frontMatter, components }) {
+export default function EssayTemplate({
+    source,
+    frontMatter,
+    components,
+    slug,
+}) {
+    console.log(source, frontMatter);
     return (
         <>
             <Header
@@ -46,6 +53,10 @@ export default function EssayTemplate({ source, frontMatter, components }) {
                     <MDXRemote {...source} components={components} />
                 </ProseWrapper>
             </StyledMain>
+            <TwitterReply
+                url={`https://maggieappleton.com/${slug}/`}
+                title={frontMatter.title}
+            />
         </>
     );
 }

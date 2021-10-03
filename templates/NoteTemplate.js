@@ -8,7 +8,12 @@ import BackHoverLink from "../components/links/BackHoverLink";
 import Dates from "../components/templates/Dates";
 import Header from "../components/Header";
 
-export default function NoteTemplate({ source, frontMatter, components }) {
+export default function NoteTemplate({
+    source,
+    frontMatter,
+    components,
+    slug,
+}) {
     return (
         <>
             <Header

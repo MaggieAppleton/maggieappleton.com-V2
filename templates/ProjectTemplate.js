@@ -5,7 +5,12 @@ import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import Header from "../components/Header";
 
-export default function ProjectTemplate({ source, frontMatter, components }) {
+export default function ProjectTemplate({
+    source,
+    frontMatter,
+    components,
+    slug,
+}) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
