@@ -39,6 +39,9 @@ const components = {
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
         ssr: false,
     }),
+    ImageFrame: dynamic(() => import("../components/mdx/ImageFrame"), {
+        ssr: false,
+    }),
     ComingSoon: dynamic(() => import("../components/mdx/ComingSoon"), {
         ssr: false,
     }),
@@ -52,8 +55,18 @@ const components = {
         ssr: false,
         loading: () => <div>Loading...</div>,
     }),
-    IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
-    FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
+    IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph"), {
+        ssr: false,
+    }),
+    FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage"), {
+        ssr: false,
+    }),
+    FullWidthBackground: dynamic(
+        () => import("../components/mdx/FullWidthBackground"),
+        {
+            ssr: false,
+        }
+    ),
 
     // Unique components – used in specific essays or notes
     MysteriousVoid: dynamic(
