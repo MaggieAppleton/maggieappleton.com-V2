@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { SmallCaps } from "./typography";
+import { breakpoints } from "../utils/breakpoints";
 import UnderlineHoverLink from "./links/UnderlineHoverLink";
 
 export default function Footer() {
@@ -14,18 +15,17 @@ export default function Footer() {
                 <SitemapList>
                     {[
                         { text: "The Garden", slug: "/garden" },
-                        { text: "Start Here", slug: "/start" },
+                        // { text: "Start Here", slug: "/start" },
                         { text: "Essays", slug: "/essays" },
                         { text: "About", slug: "/about" },
                         { text: "Notes", slug: "/notes" },
-                        { text: "Now", slug: "/now" },
-                        { text: "Patterns", slug: "/patterns" },
-                        { text: "Tools I Use", slug: "/uses" },
+                        // { text: "Now", slug: "/now" },
+                        // { text: "Patterns", slug: "/patterns" },
+                        // { text: "Tools I Use", slug: "/uses" },
                         { text: "Library", slug: "/library" },
-                        { text: "Changelog", slug: "/changelog" },
-                        ,
+                        // { text: "Changelog", slug: "/changelog" },
                         { text: "Projects", slug: "/projects" },
-                        { text: "Illustration Resources", slug: "/resources" },
+                        // { text: "Illustration Resources", slug: "/resources" },
                     ].map((link, i) => {
                         return (
                             <li key={i}>
@@ -63,17 +63,12 @@ const RSSFeed = styled.div`
 const SitemapList = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: start;
     list-style: none;
     grid-gap: var(--space-12) var(--space-48);
+    padding-inline-start: 0;
     li span {
         color: var(--color-gray-600);
     }
-`;
-
-const StyledFooter = styled.footer`
-    padding: var(--space-64) 0;
-    border-top: 1px solid var(--color-gray-300);
 `;
 
 const FooterContent = styled.div`
@@ -82,12 +77,19 @@ const FooterContent = styled.div`
     max-width: 1400px;
     margin: var(--space-48) auto;
     padding: 0 var(--space-48);
-    @media (max-width: 768px) {
+    @media ${breakpoints.mediaMD} {
         margin: var(--space-32) auto;
         padding: 0 var(--space-32);
+        grid-template-columns: 1fr;
     }
-    @media (max-width: 576px) {
+    @media ${breakpoints.mediaSM} {
         margin: var(--space-16) auto;
         padding: 0 var(--space-16);
+        grid-template-columns: 1fr;
     }
+`;
+
+const StyledFooter = styled.footer`
+    padding: var(--space-64) 0;
+    border-top: 1px solid var(--color-gray-300);
 `;
