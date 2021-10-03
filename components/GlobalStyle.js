@@ -174,6 +174,10 @@ export const GlobalStyle = createGlobalStyle`
 			height: 100%;
 	}
 
+	iframe {
+		max-width:100%;
+	}
+
 	/* Base styles */
 
 	body {
