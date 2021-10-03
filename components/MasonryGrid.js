@@ -27,12 +27,12 @@ const StyledMasonry = styled(Masonry)`
     margin-top: var(--space-64);
     & .masonry_grid_column + .masonry_grid_column {
         margin-left: ${(props) =>
-            props.largeGap ? "var(--space-32)" : "var(--space-16)"};
+            props.columnGapLeft ? props.columnGapLeft : "var(--space-16)"};
         background-clip: padding-box;
     }
     & .masonry_grid_column div:first-child {
         margin-bottom: ${(props) =>
-            props.largeGap ? "var(--space-32)" : "var(--space-16)"};
+            props.columnGapBottom ? props.columnGapBottom : "var(--space-16)"};
     }
 `;
 

@@ -33,7 +33,7 @@ const StyledLink = styled.a`
         position: absolute;
         width: 100%;
         height: 1px;
-        top: 100%;
+        top: 110%;
         left: 0;
         pointer-events: none;
         clip-path: polygon(
@@ -50,11 +50,11 @@ const StyledLink = styled.a`
         );
     }
     &:hover::before {
-        transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+        transform: translate3d(0, 2px, 0) scale3d(1, 3, 1);
         clip-path: polygon(
             0% 0%,
             0% 100%,
-            50% 100%,
+            100% 100%,
             50% 0,
             50% 0,
             50% 100%,

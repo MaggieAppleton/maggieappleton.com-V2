@@ -51,6 +51,14 @@ const components = {
     }),
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph")),
     FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage")),
+
+    // Unique components – used in specific essays or notes
+    MysteriousVoid: dynamic(
+        () => import("../components/unique/MysteriousVoid"),
+        {
+            ssr: false,
+        }
+    ),
 };
 
 export default function NotePage({ source, frontMatter }) {

@@ -20,7 +20,7 @@ export default function Notes({ notes }) {
                     understand yet.
                 </Title2>
                 <PostCount postType="notes" posts={notes} />
-                <MasonryGrid>
+                <MasonryGrid columnGapLeft="3rem" columnGapBottom="1rem">
                     {notes.map((note) => (
                         <NoteCard
                             slug={note.slug}
