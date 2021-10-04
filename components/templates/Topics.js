@@ -1,4 +1,4 @@
-import slugifyTopic from "../../utils/slugifyTopic";
+import { slugifyTopic } from "../../utils/slugifyTopic";
 import styled from "styled-components";
 import Link from "next/link";
 

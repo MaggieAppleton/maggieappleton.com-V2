@@ -1,4 +1,4 @@
-function slugifyTopic(topic) {
+export function slugifyTopic(topic) {
     const slug = topic
         .toString()
         .toLowerCase()
@@ -7,4 +7,7 @@ function slugifyTopic(topic) {
     return slug;
 }
 
-export default slugifyTopic;
+export function deslugifyTopic(slug) {
+    const topic = slug.toString().replace(/-/g, " ");
+    return topic;
+}
