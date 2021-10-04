@@ -2,6 +2,7 @@ import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
 import { ESSAYS_PATH, NOTES_PATH, PATTERNS_PATH } from "./mdxUtils";
+import { slugifyTopic } from "./slugifyTopic";
 
 // Get the slug links for each post that matches a given topic
 export const getAllPostSlugsForTopic = (topic) => {
@@ -13,11 +14,16 @@ export const getAllPostSlugsForTopic = (topic) => {
                 const filePath = path.join(dir, file);
                 const fileContents = fs.readFileSync(filePath, "utf8");
                 const { data } = matter(fileContents);
-                if (data.topics && data.topics.includes(topic)) {
-                    return {
-                        slug: file.replace(".mdx", ""),
-                        title: data.title,
-                    };
+                if (data.topics) {
+                    const slugifiedTopics = data.topics.map((topic) =>
+                        slugifyTopic(topic)
+                    );
+                    if (slugifiedTopics.includes(topic)) {
+                        return {
+                            slug: file.replace(".mdx", ""),
+                            topic: topic,
+                        };
+                    }
                 }
                 return null;
             })
@@ -25,12 +31,10 @@ export const getAllPostSlugsForTopic = (topic) => {
         return slugs;
     };
 
-    const allSlugs = [
-        getSlugsForTopic(ESSAYS_PATH),
-        getSlugsForTopic(NOTES_PATH),
-        getSlugsForTopic(PATTERNS_PATH),
-    ];
-    return allSlugs.flat();
+    const essaySlugs = getSlugsForTopic(ESSAYS_PATH);
+    const noteSlugs = getSlugsForTopic(NOTES_PATH);
+    const patternSlugs = getSlugsForTopic(PATTERNS_PATH);
+    return [...essaySlugs, ...noteSlugs, ...patternSlugs];
 };
 
 //     const postDirectory = ESSAYS_PATH;
@@ -55,27 +59,27 @@ export const getAllPostSlugsForTopic = (topic) => {
 //     return result;
 // };
 
+/**
+ * @returns {Array} - An array of objects containing the slugs for all topics in notes, patterns, and essays
+ */
 export const getAllTopics = () => {
-    const postDirectory = ESSAYS_PATH;
-
-    const fileNames = fs.readdirSync(postDirectory);
-
     let result = [];
-
-    fileNames.forEach((filename) => {
-        const fullPath = path.join(postDirectory, filename);
-
-        const fileContents = fs.readFileSync(fullPath, "utf8");
-        const { data } = matter(fileContents);
-
-        if (data.topics) {
-            data.topics.forEach((topic) => {
-                if (!result.includes({ params: { topic } }))
-                    result.push({ params: { topic } });
-            });
-        }
+    [ESSAYS_PATH, NOTES_PATH, PATTERNS_PATH].forEach((dir) => {
+        const files = fs.readdirSync(dir);
+        files.forEach((file) => {
+            const filePath = path.join(dir, file);
+            const fileContents = fs.readFileSync(filePath, "utf8");
+            const { data } = matter(fileContents);
+            if (data.topics) {
+                data.topics.forEach((topic) => {
+                    const slugifiedTopic = slugifyTopic(topic);
+                    if (!result.includes({ params: { topic: slugifiedTopic } }))
+                        result.push({ params: { topic: slugifiedTopic } });
+                });
+            }
+        });
     });
-    // Return those topics
+
     return result;
 };
 
