@@ -19,8 +19,8 @@ import {
 } from "../utils/mdxUtils";
 import { bookData } from "../posts/books";
 
-export default function Garden({ essays, notes, patterns }) {
-    const allPosts = essays.concat(notes, patterns);
+export default function Garden({ essays, notes }) {
+    const allPosts = essays.concat(notes);
     const sortedPosts = allPosts.sort((a, b) => {
         return new Date(b.data.updated) - new Date(a.data.updated);
     });
@@ -37,8 +37,8 @@ export default function Garden({ essays, notes, patterns }) {
                     </Title2>
                 </header>
                 <MasonryGrid
-                    columnGapLeft="var(--space-24)"
-                    columnGapBottom="var(--space-24)"
+                    columnGapLeft="var(--space-12)"
+                    columnGapBottom="var(--space-12)"
                 >
                     {sortedPosts.map((post, i) => {
                         if (post.data.type === "essay") {
@@ -55,16 +55,6 @@ export default function Garden({ essays, notes, patterns }) {
                         } else if (post.data.type === "note") {
                             return (
                                 <NoteCard
-                                    key={i}
-                                    slug={post.slug}
-                                    title={post.data.title}
-                                    growthStage={post.data.growthStage}
-                                    date={post.data.updated}
-                                />
-                            );
-                        } else if (post.data.type === "pattern") {
-                            return (
-                                <PatternCard
                                     key={i}
                                     slug={post.slug}
                                     title={post.data.title}

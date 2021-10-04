@@ -63,14 +63,19 @@ export default function Navbar() {
                             <Link href="/notes">
                                 <DropdownLink href="/notes">Notes</DropdownLink>
                             </Link>
-                            <Link href="/patterns">
+                            {/* <Link href="/patterns">
                                 <DropdownLink href="/patterns">
                                     Patterns
                                 </DropdownLink>
-                            </Link>
+                            </Link> */}
                             <Link href="/library">
                                 <DropdownLink href="/library">
                                     Library
+                                </DropdownLink>
+                            </Link>
+                            <Link href="/antilibrary">
+                                <DropdownLink href="/antilibrary">
+                                    Antilibrary
                                 </DropdownLink>
                             </Link>
                         </Dropdown>

@@ -35,9 +35,10 @@ export default function NoteCard({ slug, title, growthStage, date, key }) {
 const StyledNoteCard = styled(motion.div)`
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
-    padding: var(--space-16) 0;
-    border-bottom: 1px solid var(--color-tinted-cream);
+    gap: var(--space-12);
+    padding: var(--space-16) var(--space-24);
+    border-radius: var(--border-radius-base);
+    border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
     h3 {
         color: var(--color-gray-800);
@@ -67,7 +68,9 @@ const StyledNoteCard = styled(motion.div)`
     }
     &:hover {
         transform: scale3d(1.02, 1.02, 1.02);
-        border-bottom: 1px solid var(--color-sea-blue);
+        background: var(--color-light-cream);
+        box-shadow: var(--box-shadow-sm);
+        border: 1px solid var(--color-tinted-cream);
         h3 {
             color: var(--color-crimson);
         }

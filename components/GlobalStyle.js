@@ -43,7 +43,6 @@ export const GlobalStyle = createGlobalStyle`
 		--font-sans: 'Lato', sans-serif;
 
 
-
 		/* Leading */
 		--leading-tighter: 110%;
 		--leading-tight: 120%;
@@ -65,16 +64,16 @@ export const GlobalStyle = createGlobalStyle`
 		1.3px 1.3px 6.7px -10px rgba(40, 10, 0, 0.03),
 		2.5px 2.5px 12.5px -10px rgba(40, 10, 0, 0.036),
 		6px 6px 30px -10px rgba(40, 10, 0, 0.05)
-	  ;
+	  	;
 
-	  --box-shadow-md: 
-	  1px 0.9px 2.3px -3px rgba(40, 10, 0, 0.02),
-	  2.4px 2.2px 5.5px -3px rgba(40, 10, 0, 0.028),
-	  4.5px 4.1px 10.4px -3px rgba(40, 10, 0, 0.035),
-	  8px 7.4px 18.5px -3px rgba(40, 10, 0, 0.042),
-	  15px 13.8px 34.7px -3px rgba(40, 10, 0, 0.05),
-	  36px 33px 83px -3px rgba(40, 10, 0, 0.07)
-	;
+		--box-shadow-md: 
+		1px 0.9px 2.3px -3px rgba(40, 10, 0, 0.02),
+		2.4px 2.2px 5.5px -3px rgba(40, 10, 0, 0.028),
+		4.5px 4.1px 10.4px -3px rgba(40, 10, 0, 0.035),
+		8px 7.4px 18.5px -3px rgba(40, 10, 0, 0.042),
+		15px 13.8px 34.7px -3px rgba(40, 10, 0, 0.05),
+		36px 33px 83px -3px rgba(40, 10, 0, 0.07)
+		;
 	  
 		--box-shadow-lg:
 		0.2px 0.4px 0.8px -10px rgba(0, 0, 0, 0.03),
@@ -83,7 +82,8 @@ export const GlobalStyle = createGlobalStyle`
 		1.3px 3.1px 6.7px -10px rgba(0, 0, 0, 0.045),
 		2.5px 5.8px 12.5px -10px rgba(0, 0, 0, 0.06),
 		6px 14px 30px -10px rgba(0, 0, 0, 0.08)
-	  ;
+	  	;
+
 	  
 	  /* Fluid type scale */
 	  /* @link https://utopia.fyi/type/calculator?c=320,20,1.25,1200,22,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
@@ -98,8 +98,6 @@ export const GlobalStyle = createGlobalStyle`
 	  );
 
 	}
-
-
 		@media screen and (min-width: 1200px) {
 		:root {
 		--fluid-screen: calc(var(--fluid-max-width) * 1px);

@@ -1,25 +1,25 @@
 import fs from "fs";
 import path from "path";
 
-// Recursive function that calls itself to fetches all the files, including those in subdirectories
-const getAllDirectoryFiles = function (dirPath, arrayOfFiles) {
-    let files = fs.readdirSync(dirPath);
+// // Recursive function that calls itself to fetches all the files, including those in subdirectories
+// const getAllDirectoryFiles = function (dirPath, arrayOfFiles) {
+//     let files = fs.readdirSync(dirPath);
 
-    arrayOfFiles = arrayOfFiles || [];
+//     arrayOfFiles = arrayOfFiles || [];
 
-    files.forEach(function (file) {
-        if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-            arrayOfFiles = getAllDirectoryFiles(
-                dirPath + "/" + file,
-                arrayOfFiles
-            );
-        } else {
-            arrayOfFiles.push(file);
-        }
-    });
+//     files.forEach(function (file) {
+//         if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+//             arrayOfFiles = getAllDirectoryFiles(
+//                 dirPath + "/" + file,
+//                 arrayOfFiles
+//             );
+//         } else {
+//             arrayOfFiles.push(file);
+//         }
+//     });
 
-    return arrayOfFiles;
-};
+//     return arrayOfFiles;
+// };
 
 // ESSAYS_PATH is useful when you want to get the path to a specific file
 export const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");

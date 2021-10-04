@@ -196,7 +196,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                             </Link>
                         ))}
                     </section>
-                    <section style={{ gridArea: "patterns" }}>
+                    {/* <section style={{ gridArea: "patterns" }}>
                         <Link href="/patterns">
                             <a href="/patterns">
                                 <SectionHeader>
@@ -218,7 +218,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                                 </a>
                             </Link>
                         ))}
-                    </section>
+                    </section> */}
                     <section style={{ gridArea: "library" }}>
                         <Link href="/library">
                             <a href="/library">
@@ -358,7 +358,7 @@ const GardenSection = styled(motion.section)`
     grid-template-rows: auto;
     grid-template-areas:
         "essays essays notes"
-        "patterns library library";
+        "library library null";
     @media ${breakpoints.mediaSM} {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
