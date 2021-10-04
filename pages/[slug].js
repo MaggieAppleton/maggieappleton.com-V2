@@ -54,6 +54,9 @@ const components = {
     TwoColumn: dynamic(() => import("../components/mdx/TwoColumn"), {
         ssr: false,
     }),
+    ThreeColumn: dynamic(() => import("../components/mdx/ThreeColumn"), {
+        ssr: false,
+    }),
     TweetEmbed: dynamic(() => import("../components/mdx/TweetEmbed"), {
         ssr: false,
         loading: () => <div>Loading...</div>,

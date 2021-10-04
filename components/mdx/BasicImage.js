@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export default function BasicImage({ src, alt, width, showalt }) {
+export default function BasicImage({ src, alt, width, showalt, imageWidth }) {
     return (
         <Container>
-            <StyledBasicImage src={src} alt={alt} width={width || "100%"} />
+            <StyledBasicImage
+                imageWidth={imageWidth}
+                src={src}
+                alt={alt}
+                width={width || "100%"}
+            />
             {showalt && <figcaption>{alt}</figcaption>}
         </Container>
     );
@@ -22,6 +27,6 @@ const Container = styled.figure`
 `;
 
 const StyledBasicImage = styled.img`
-    width: ${(props) => props.width || "1100px"};
+    width: ${(props) => props.imageWidth || "1100px"};
     margin-bottom: var(--space-16);
 `;

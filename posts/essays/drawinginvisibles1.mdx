@@ -9,10 +9,11 @@ growthStage: "Evergreen"
 topics: ["Design", "How to Illustrate", "Metaphors"]
 ---
 
+<!--
 import Feature from "./Feature.js";
 import MultipartIntro from "./MultipartIntro.js";
 import EggheadCourseCard from "../../../src/components/mdx/egghead-course-card.js";
-import InlineSignUp from "../../../src/components/InlineSignup.js";
+import InlineSignUp from "../../../src/components/InlineSignup.js"; -->
 
 This is a long, overdue case study showing how I make an [egghead](https://egghead.io/) course illustration.
 
@@ -37,38 +38,42 @@ One part of that is making _**course illustrations**_, which are like album cove
 
 <Center>Here's a few of them...</Center>
 
-<ImageGrid>
+<TwoColumn maxWidth="1200px">
 
-<EggheadCourseCard
-    title="CSS Selectors in Depth"
+<BasicImage
+    alt="CSS Selectors in Depth"
+    showalt
     url="https://egghead.io/courses/css-selectors-in-depth?af=54fd64"
-    image="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/235/full/EGH_CSSSelectors_Final.png"
+    src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/235/full/EGH_CSSSelectors_Final.png"
 />
 
-<EggheadCourseCard
-    title="Create Transitions with React Transition Group"
+<BasicImage
+    alt="Create Transitions with React Transition Group"
+    showalt
     url="https://egghead.io/courses/create-smooth-performant-transitions-with-react-transition-group-v2?af=54fd64"
-    image="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/213/full/EGH_React_Transitions_Final.png"
+    src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/213/full/EGH_React_Transitions_Final.png"
 />
 
-<EggheadCourseCard
-    title="Reduce Redux Boilerplate with Redux-Actions"
+<BasicImage
+    alt="Reduce Redux Boilerplate with Redux-Actions"
+    showalt
     url="https://egghead.io/courses/reduce-redux-boilerplate-with-redux-actions?af=54fd64"
-    image="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/140/full/EGH_ReduxActions_1_Final.png"
+    src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/140/full/EGH_ReduxActions_1_Final.png"
 />
 
-<EggheadCourseCard
-    title="A Journey with Vue-Router"
+<BasicImage
+    alt="A Journey with Vue-Router"
+    showalt
     url="https://egghead.io/courses/a-journey-with-vue-router?af=54fd64"
-    image="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/354/full/VueRouter.png"
+    src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/354/full/VueRouter.png"
 />
 
-</ImageGrid>
+</TwoColumn>
 
 <br />
 <Center>And a couple more...</Center>
 
-<ThreeImageGrid imgWidth="340px" imgPadding="1.2em">
+<ThreeColumn maxWidth="1200px">
 
 <img src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/399/full/React_Suspense_Final.png" />
 
@@ -106,7 +111,7 @@ One part of that is making _**course illustrations**_, which are like album cove
 
 <img src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/216/full/EGH_TSGuards_Final.png" />
 
-</ThreeImageGrid>
+</ThreeColumn>
 
 So far I've made over 150 of these things, and I'm almost beginning to think I know what I'm doing. <Footnote idName={1}>I don't make all of our illustrations – I work with a rotating team of freelancers who help with the load. Lovely folks like <a href="https://dribbble.com/maximebourgeois">Maxime</a> and <a href="https://dribbble.com/Aleksandr_Ageev">Aleksander</a> have made plenty of them.</Footnote>
 
