@@ -40,6 +40,21 @@ const ProseWrapper = styled.article`
         font-weight: 400;
         margin: var(--space-24) 0 var(--space-16);
     }
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        margin-bottom: var(--space-16);
+        padding-left: var(--space-16);
+        line-height: var(--leading-loose);
+    }
+    li::before {
+        content: "•";
+        display: inline-block;
+        margin-left: -1rem;
+        width: var(--space-16);
+    }
 `;
 
 export default ProseWrapper;

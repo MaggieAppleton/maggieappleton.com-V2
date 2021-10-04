@@ -22,7 +22,7 @@ export default function PatternCard({ slug, title, growthStage, key }) {
 }
 
 const StyledPatternCard = styled(motion.div)`
-    margin: var(--space-16) 0;
+    margin: 0 var(--space-16) var(--space-16) 0;
     padding: var(--space-16);
     h3 {
         color: var(--color-gray-800);

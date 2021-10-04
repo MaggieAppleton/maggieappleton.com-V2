@@ -46,7 +46,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
 const Metadata = styled.div`
     display: flex;
     flex-direction: column;
-    margin: var(--space-16) 0;
+    margin: 0 var(--space-16) var(--space-16) 0;
     h3 {
         text-align: center;
         transition: all 0.3s ease-in-out;

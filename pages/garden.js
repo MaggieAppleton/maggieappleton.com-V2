@@ -36,10 +36,7 @@ export default function Garden({ essays, notes }) {
                         explorations I'm always tending to.
                     </Title2>
                 </header>
-                <MasonryGrid
-                    columnGapLeft="var(--space-12)"
-                    columnGapBottom="var(--space-12)"
-                >
+                <MasonryGrid>
                     {sortedPosts.map((post, i) => {
                         if (post.data.type === "essay") {
                             return (

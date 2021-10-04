@@ -35,6 +35,7 @@ const StyledBookCard = styled.div`
     display: flex;
     flex-direction: column;
     transition: all 0.4s ease-in-out;
+    margin: 0 var(--space-12) var(--space-12) 0;
     padding: ${(props) =>
         props.small
             ? "0 0 var(--space-16) 0"

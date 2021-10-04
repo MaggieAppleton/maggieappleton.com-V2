@@ -150,7 +150,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                                 display: "grid",
                                 gridTemplateColumns:
                                     "repeat(auto-fit, minmax(300px, 1fr))",
-                                gridGap: "var(--space-16)",
+                                gridGap: "var(--space-12)",
                             }}
                         >
                             {essays.map((essay, i) => (
@@ -237,7 +237,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                                 display: "grid",
                                 gridTemplateColumns:
                                     "repeat(auto-fit, minmax(180px, 1fr))",
-                                gridGap: "var(--space-24)",
+                                gridGap: "var(--space-12)",
                             }}
                         >
                             {bookData.slice(0, 4).map((book, i) => (

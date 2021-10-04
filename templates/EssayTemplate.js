@@ -69,7 +69,7 @@ const TitleContainer = styled.div`
     border-bottom: 1px solid var(--color-gray-300);
     h1 {
         font-size: var(--font-size-2xl);
-        line-height: var(--leading-tight);
+        line-height: var(--leading-tighter);
     }
     p {
         font-size: var(--font-size-md);

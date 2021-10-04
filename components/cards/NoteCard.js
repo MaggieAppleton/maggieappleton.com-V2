@@ -40,6 +40,7 @@ const StyledNoteCard = styled(motion.div)`
     border-radius: var(--border-radius-base);
     border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
+    margin: 0 var(--space-16) var(--space-16) 0;
     h3 {
         color: var(--color-gray-800);
         transition: all 0.3s ease-in-out;

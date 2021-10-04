@@ -25,7 +25,7 @@ export default function Library() {
                     <PostCount postType="books" posts={bookData} />
                 </header>
                 <MasonryGrid
-                    columnGapLeft="var(--space-32)"
+                    columnGapLeft="var(--space-16)"
                     columnGapBottom="var(--space-48)"
                     breakpointColumnsObj={breakpointColumnsObj}
                 >

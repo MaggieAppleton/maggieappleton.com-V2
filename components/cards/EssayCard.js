@@ -56,6 +56,7 @@ const StyledEssayCard = styled(motion.div)`
     justify-content: space-between;
     border: 1px solid var(--color-tinted-cream);
     padding: var(--space-24);
+    margin: 0 var(--space-12) var(--space-12) 0;
     border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-sm);
     background: var(--color-light-cream);
