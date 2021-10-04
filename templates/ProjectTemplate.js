@@ -94,9 +94,6 @@ const HeaderSection = styled.header`
         line-height: var(--leading-tight);
         padding: var(--space-24) 0 var(--space-48);
         border-bottom: 1px solid var(--color-gray-300);
-        @media ${breakpoints.mediaSM} {
-            font-size: var(--font-size-xl);
-        }
     }
 
     @media ${breakpoints.mediaSM} {
@@ -124,7 +121,7 @@ const Metadata = styled.div`
             margin-right: var(--space-16);
             margin-bottom: var(--space-4);
             font-family: var(--font-sans);
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
         }
     }
 `;

@@ -95,9 +95,6 @@ const HeaderSection = styled.header`
         font-size: var(--font-size-3xl);
         line-height: var(--leading-tight);
         border-right: 1px solid black;
-        @media ${breakpoints.mediaSM} {
-            font-size: var(--font-size-xl);
-        }
     }
 
     @media ${breakpoints.mediaSM} {
@@ -125,7 +122,7 @@ const Metadata = styled.div`
             margin-right: var(--space-16);
             margin-bottom: var(--space-4);
             font-family: var(--font-sans);
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
         }
     }
 `;

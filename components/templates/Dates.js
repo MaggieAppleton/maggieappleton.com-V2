@@ -38,7 +38,7 @@ const StyledDates = styled.div`
     span {
         display: inline-block;
         font-family: var(--font-sans);
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
         color: var(--color-gray-600);
         letter-spacing: 0.01em;
         font-weight: 400;

@@ -8,12 +8,6 @@ export const Title1 = styled(motion.h1)`
     line-height: var(--leading-tighter);
     font-weight: ${(props) => props.fontWeight || "normal"};
     margin-bottom: var(--space-16);
-    @media ${breakpoints.mediaMD} {
-        font-size: var(--font-size-2xl);
-    }
-    @media ${breakpoints.mediaSM} {
-        font-size: var(--font-size-xl);
-    }
 `;
 
 export const Title2 = styled(motion.h2)`
@@ -24,9 +18,6 @@ export const Title2 = styled(motion.h2)`
     line-height: var(--leading-tight);
     margin-bottom: var(--space-12);
     transition: all 0.3s ease-in-out;
-    @media ${breakpoints.mediaSM} {
-        font-size: var(--font-size-xl);
-    }
 `;
 
 export const Title3 = styled(motion.h3)`
@@ -34,9 +25,6 @@ export const Title3 = styled(motion.h3)`
     font-family: var(--font-sans);
     color: var(--color-gray-800);
     line-height: var(--leading-tight);
-    @media ${breakpoints.mediaSM} {
-        font-size: var(--font-size-md);
-    }
 `;
 
 export const Title4 = styled(motion.h4)`

@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+
 	:root {
+		
 		/* Spacing */
 		--space-2: 0.125rem;
 		--space-4: 0.25rem;
@@ -40,16 +42,7 @@ export const GlobalStyle = createGlobalStyle`
 		--font-body: 'Canela Text', serif;
 		--font-sans: 'Lato', sans-serif;
 
-		/* Font sizes */
-		--ratio: 1.33;
-		--font-size-3xl: calc(var(--font-size-2xl) * var(--ratio));
-		--font-size-2xl: calc(var(--font-size-xl) * var(--ratio));
-		--font-size-xl: calc(var(--font-size-lg) * var(--ratio));
-		--font-size-lg: calc(var(--font-size-md) * var(--ratio));
-		--font-size-md: calc(var(--font-size-base) * var(--ratio)); 
-		--font-size-base: calc(1rem * var(--ratio));
-		--font-size-sm: 1rem;
-		--font-size-xs: 0.88rem;
+
 
 		/* Leading */
 		--leading-tighter: 110%;
@@ -57,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
 		--leading-snug: 130%;
 		--leading-base: 140%;
 		--leading-loose: 170%;
-		--leading-looser: 190%;
+		--leading-looser: 200%;
 
 		/* Border radius */
 		--border-radius-sm: 0.2rem;
@@ -92,8 +85,91 @@ export const GlobalStyle = createGlobalStyle`
 		6px 14px 30px -10px rgba(0, 0, 0, 0.08)
 	  ;
 	  
+	  /* Fluid type scale */
+	  /* @link https://utopia.fyi/type/calculator?c=320,20,1.25,1200,22,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+	  --fluid-min-width: 320;
+	  --fluid-max-width: 1200;
+	
+	  --fluid-screen: 100vw;
+	  --fluid-bp: calc(
+		(var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+		  (var(--fluid-max-width) - var(--fluid-min-width))
+	  );
 
 	}
+
+
+		@media screen and (min-width: 1200px) {
+		:root {
+		--fluid-screen: calc(var(--fluid-max-width) * 1px);
+			}
+		}
+  
+		:root {
+			--f--2-min: 14.5;
+			--f--2-max: 15;
+			--font-size-xs: calc(
+			((var(--f--2-min) / 16) * 1rem) + (var(--f--2-max) - var(--f--2-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f--1-min: 16.00;
+			--f--1-max: 16.50;
+			--font-size-sm: calc(
+			((var(--f--1-min) / 16) * 1rem) + (var(--f--1-max) - var(--f--1-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-0-min: 20.00;
+			--f-0-max: 22.00;
+			--font-size-base: calc(
+			((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-1-min: 25.00;
+			--f-1-max: 29.33;
+			--font-size-md: calc(
+			((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-2-min: 31.25;
+			--f-2-max: 39.09;
+			--font-size-lg: calc(
+			((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-3-min: 39.06;
+			--f-3-max: 52.11;
+			--font-size-xl: calc(
+			((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-4-min: 48.83;
+			--f-4-max: 71;
+			--font-size-2xl: calc(
+			((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-5-min: 61.04;
+			--f-5-max: 92.59;
+			--font-size-3xl: calc(
+			((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
+				var(--fluid-bp)
+			);
+		
+			--f-6-min: 76.29;
+			--f-6-max: 123.43;
+			--font-size-4xl: calc(
+			((var(--f-6-min) / 16) * 1rem) + (var(--f-6-max) - var(--f-6-min)) *
+				var(--fluid-bp)
+			);
+		}
 
 	/* CSS Reset */
 	/* Box sizing rules */

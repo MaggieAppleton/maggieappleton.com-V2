@@ -70,9 +70,6 @@ const TitleContainer = styled.div`
     h1 {
         font-size: var(--font-size-2xl);
         line-height: var(--leading-tight);
-        @media ${breakpoints.mediaSM} {
-            font-size: var(--font-size-xl);
-        }
     }
     p {
         font-size: var(--font-size-md);
@@ -122,7 +119,7 @@ const Metadata = styled.div`
             margin-right: var(--space-16);
             margin-bottom: var(--space-4);
             font-family: var(--font-sans);
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
         }
     }
 `;
