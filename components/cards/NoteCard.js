@@ -5,23 +5,16 @@ import { motion } from "framer-motion";
 import { RelativeDate } from "../templates/Dates";
 
 export default function NoteCard({ slug, title, growthStage, date, key }) {
-    const formattedDate = new Date(date).toLocaleDateString("en-GB", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
-
     return (
         <Link key={key} href={`/${slug}`}>
             <a>
                 <StyledNoteCard>
-                    <h3>{title}</h3>
-
+                    {growthStage && (
+                        <GrowthIcon size="24" growthStage={growthStage} />
+                    )}
                     <div>
-                        {growthStage && <span>{growthStage}</span>}
-                        {growthStage && (
-                            <GrowthIcon size="14" growthStage={growthStage} />
-                        )}
+                        <h3>{title}</h3>
+
                         <span>
                             <RelativeDate postDate={date} />
                         </span>
@@ -34,13 +27,12 @@ export default function NoteCard({ slug, title, growthStage, date, key }) {
 
 const StyledNoteCard = styled(motion.div)`
     display: flex;
-    flex-direction: column;
-    gap: var(--space-12);
-    padding: var(--space-16) var(--space-24);
-    border-radius: var(--border-radius-base);
-    border: 1px solid transparent;
-    transition: all 0.3s ease-in-out;
+    flex-direction: row;
+    padding: var(--space-16);
     margin: 0 var(--space-16) var(--space-16) 0;
+    border-radius: var(--border-radius-base);
+    border: 1px solid var(--color-cream);
+    transition: all 0.3s ease-in-out;
     h3 {
         color: var(--color-gray-800);
         transition: all 0.3s ease-in-out;
@@ -48,23 +40,25 @@ const StyledNoteCard = styled(motion.div)`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
+        margin-left: var(--space-16);
         transition: all 0.3s ease-in-out;
+    }
+    svg {
+        position: relative;
+        top: 4px;
+        flex-shrink: 0;
     }
     div {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         span {
-            display: inline-block;
             font-family: var(--font-sans);
-            font-size: var(--font-size-xs);
+            font-size: calc(var(--font-size-xs) / 1.08);
             color: var(--color-gray-600);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: 400;
-            margin-top: 2px;
-        }
-        svg {
-            margin: 0 var(--space-8);
+            margin: var(--space-8) 0 0 var(--space-16);
         }
     }
     &:hover {

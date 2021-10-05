@@ -55,6 +55,17 @@ const ProseWrapper = styled.article`
         margin-left: -1rem;
         width: var(--space-16);
     }
+    hr {
+        margin: var(--space-128) auto;
+        height: 0;
+        color: transparent;
+        border: 1px solid var(--color-salmon);
+        border-radius: 100%;
+        width: 40%;
+        @media ${breakpoints.mediaSM} {
+            margin: var(--space-48) 0;
+        }
+    }
 `;
 
 export default ProseWrapper;

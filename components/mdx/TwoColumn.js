@@ -17,6 +17,7 @@ const TwoColumnContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--space-16);
     justify-content: center;
+    padding: 0 var(--space-8);
     @media ${breakpoints.mediaSM} {
         grid-template-columns: 1fr;
     }
@@ -24,5 +25,7 @@ const TwoColumnContainer = styled.div`
     img,
     figure {
         grid-column: auto !important;
+        margin: 0;
+        border-radius: var(--border-radius-base);
     }
 `;

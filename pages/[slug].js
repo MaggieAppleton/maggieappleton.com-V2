@@ -9,7 +9,14 @@ import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
-import { Title1, Title2, Title3, Title4 } from "../components/Typography";
+import Podcastiframe from "../components/mdx/Podcastiframe";
+import {
+    Title1,
+    Title2,
+    Title3,
+    Title4,
+    Subtext,
+} from "../components/Typography";
 import {
     projectFilePaths,
     noteFilePaths,
@@ -34,6 +41,8 @@ const components = {
     h2: Title2,
     h3: Title3,
     h4: Title4,
+    Podcastiframe: Podcastiframe,
+    Subtext: Subtext,
     img: Img,
     a: TooltipLink,
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
