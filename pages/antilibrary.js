@@ -6,6 +6,7 @@ import { antiBookData } from "../posts/antibooks";
 import PostCount from "../components/PostCount";
 import Header from "../components/Header";
 import Link from "next/link";
+import styled from "styled-components";
 
 export default function AntiLibrary() {
     return (
@@ -16,9 +17,7 @@ export default function AntiLibrary() {
                     <Title1>
                         Antilibrary{" "}
                         <Link href="/library">
-                            <a style={{ color: "var(--color-gray-300)" }}>
-                                / Library
-                            </a>
+                            <StyledLink>/ Library</StyledLink>
                         </Link>
                     </Title1>
                     <Title2>Books I like the idea of having read.</Title2>
@@ -44,6 +43,15 @@ export default function AntiLibrary() {
         </>
     );
 }
+
+const StyledLink = styled.a`
+    color: var(--color-gray-300);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        color: var(--color-bright-crimson);
+    }
+`;
 
 const breakpointColumnsObj = {
     default: 4,

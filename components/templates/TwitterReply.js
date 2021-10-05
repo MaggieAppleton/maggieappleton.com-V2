@@ -5,7 +5,7 @@ export const TwitterReply = ({ title, url }) => {
     const twitterHandle = "mappletons";
 
     return (
-        <div
+        <section
         // css={css`
         //     display: flex;
         //     align-items: center;
@@ -53,6 +53,6 @@ export const TwitterReply = ({ title, url }) => {
                 </svg>
                 Tell Twitter About It
             </TwitterShareButton>
-        </div>
+        </section>
     );
 };

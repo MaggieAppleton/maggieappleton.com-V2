@@ -6,6 +6,7 @@ import { bookData } from "../posts/books";
 import PostCount from "../components/PostCount";
 import Header from "../components/Header";
 import Link from "next/link";
+import styled from "styled-components";
 
 export default function Library() {
     return (
@@ -16,9 +17,7 @@ export default function Library() {
                     <Title1>
                         Library{" "}
                         <Link href="/antilibrary">
-                            <a style={{ color: "var(--color-gray-300)" }}>
-                                / Antilibrary
-                            </a>
+                            <StyledLink>/ Antilibrary</StyledLink>
                         </Link>
                     </Title1>
                     <Title2>Books I’ve read.</Title2>
@@ -44,6 +43,15 @@ export default function Library() {
         </>
     );
 }
+
+const StyledLink = styled.a`
+    color: var(--color-gray-300);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        color: var(--color-bright-crimson);
+    }
+`;
 
 const breakpointColumnsObj = {
     default: 4,

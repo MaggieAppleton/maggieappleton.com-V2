@@ -46,7 +46,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
 const Metadata = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 0 var(--space-16) var(--space-16) 0;
+    margin-top: var(--space-12);
     h3 {
         text-align: center;
         transition: all 0.3s ease-in-out;
@@ -70,6 +70,7 @@ const StyledProjectCard = styled(motion.div)`
     background: var(--color-cream);
     transition: all 0.3s ease-in-out;
     color: var(--color-gray-800);
+    margin: 0 var(--space-16) var(--space-16) 0;
     img,
     div:first-child {
         border-radius: var(--border-radius-base);

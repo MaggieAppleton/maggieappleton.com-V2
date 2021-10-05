@@ -6,6 +6,8 @@ import {
 import { deslugifyTopic } from "../../utils/slugifyTopic";
 import { getPostdata } from "../../utils/getAllPosts";
 import matter from "gray-matter";
+import { Title1, SmallTitle2 } from "../../components/Typography";
+import { Spacer } from "../../components/Spacer";
 import Layout from "../../components/Layout";
 import DynamicPostsList from "../../components/DynamicPostsList";
 
@@ -27,8 +29,11 @@ export default function TopicPage({ topic, topics, frontMatterAndSlug }) {
                 </ul>
             </header>
 
-            <h1>Posts related to {topicName}</h1>
-
+            <Title1>{topicName}</Title1>
+            <SmallTitle2>
+                All essays, notes, and patterns related to {topicName}
+            </SmallTitle2>
+            <Spacer size="small" />
             <DynamicPostsList postsToShow={frontMatterAndSlug} />
         </Layout>
     );

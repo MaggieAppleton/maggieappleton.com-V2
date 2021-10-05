@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { NextSeo } from "next-seo";
 // Components
 import { Spacer } from "../components/Spacer";
-import { Title1, Title2, Title3 } from "../components/Typography";
+import { Title1, Title2, SmallTitle2 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
@@ -90,17 +90,10 @@ export default function Index({ essays, notes, patterns, projects }) {
                         makes visual essays about programming, design, and
                         anthropology.
                     </Title1>
-                    <motion.h2
+                    <SmallTitle2
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5, duration: 1 }}
-                        style={{
-                            fontFamily: "var(--font-sans)",
-                            fontSize: "var(--font-size-md)",
-                            color: "var(--color-gray-800)",
-                            fontWeight: "300",
-                            lineHeight: "var(--leading-loose)",
-                        }}
                     >
                         UX designer, illustrator, anthropologist, and mediocre
                         developer
@@ -109,9 +102,9 @@ export default function Index({ essays, notes, patterns, projects }) {
                         <UnderlineHoverLink href="https://hash.ai">
                             <b>HASH</b>
                         </UnderlineHoverLink>{" "}
-                    </motion.h2>
+                    </SmallTitle2>
                 </header>
-                <Spacer large />
+                <Spacer size="large" />
                 <motion.section
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -359,6 +352,9 @@ const GardenSection = styled(motion.section)`
     grid-template-areas:
         "essays essays notes"
         "library library null";
+    @media ${breakpoints.mediaMD} {
+        grid-gap: var(--space-24);
+    }
     @media ${breakpoints.mediaSM} {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
