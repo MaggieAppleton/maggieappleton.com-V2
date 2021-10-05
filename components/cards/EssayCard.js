@@ -76,7 +76,7 @@ const StyledEssayCard = styled(motion.div)`
         span {
             display: inline-block;
             font-family: var(--font-sans);
-            font-size: var(--font-size-xs);
+            font-size: calc(var(--font-size-xs) / 1.08);
             color: var(--color-gray-600);
             text-transform: uppercase;
             letter-spacing: 0.05em;

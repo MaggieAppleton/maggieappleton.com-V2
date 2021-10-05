@@ -66,14 +66,15 @@ export default function NoteTemplate({
 
 const TitleContainer = styled.div`
     padding: var(--space-24) 0 var(--space-48);
-    border-bottom: 1px solid var(--color-gray-300);
+    border-bottom: 1px solid var(--color-tinted-cream);
     h1 {
         font-size: var(--font-size-2xl);
         line-height: var(--leading-tighter);
     }
     p {
         font-size: var(--font-size-md);
-        margin-top: var(--space-12);
+        margin: var(--space-24) 0 0 0;
+        color: var(--color-gray-600);
     }
 `;
 
