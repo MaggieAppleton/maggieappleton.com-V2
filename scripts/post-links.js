@@ -3,6 +3,7 @@ import { getAllPostData } from '../utils/getAllPosts.js'
 
 // Extract all instances of substrings between double brackets [[]] from a long string
 const bracketsExtractor = (str) => {
+    if(!str) return []
     const matcher = /((?!\])(?!\[).)+/gs
     return str.match(matcher)
 }
