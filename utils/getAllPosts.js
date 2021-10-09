@@ -1,12 +1,12 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
+
 import {
     NOTES_PATH,
     ESSAYS_PATH,
     PATTERNS_PATH,
-    PROJECTS_PATH,
-} from "./mdxUtils";
+} from "./mdxUtils.js";
 
 // Get Post based on Slug
 export const getPostdata = async (slug) => {
@@ -24,3 +24,31 @@ export const getPostdata = async (slug) => {
 
     return post;
 };
+
+export const getAllPostData = () => {
+    // get all note files
+    const noteFiles = fs.readdirSync(NOTES_PATH);
+    // read note files
+    const notesData = noteFiles.map(file => {
+        console.log('file', file);
+
+        const note = fs.readFileSync(path.join(NOTES_PATH, file), "utf8");
+        const { content, data } = matter(note);
+        const slug = file.replace(/\.mdx?$/, "");
+        
+        console.log('data', data);
+        console.log('slug', slug)
+
+        const { title, aliases, growthStage } = data;
+
+        return {
+            content,
+            slug,
+            title,
+            aliases,
+            growthStage
+        }
+    })
+
+    return notesData;
+}
