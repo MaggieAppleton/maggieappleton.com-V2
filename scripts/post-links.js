@@ -1,5 +1,10 @@
-import fs from 'fs'
-import { getAllPostData } from '../utils/getAllPosts.js'
+const fs = require('fs')
+const path = require('path')
+const matter = require('gray-matter')
+
+const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
+const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
+const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
 
 // Extract all instances of substrings between double brackets [[]] from a long string
 const bracketsExtractor = (str) => {
@@ -33,6 +38,34 @@ const getExcerpt = (str) => {
     if (!str) return ''
     const stripped = stripExcerpt(str)
     return `${stripped.substring(0, 280).trimEnd()}...`
+}
+
+const getDataForBacklinks = (fileNames, filePath) => fileNames.map(fileName => {
+    const file = fs.readFileSync(path.join(filePath, fileName), "utf8");
+    const { content, data } = matter(file);
+    const slug = fileName.replace(/\.mdx?$/, "");
+    const { title, aliases, growthStage } = data;
+
+    return {
+        content,
+        slug,
+        title,
+        aliases,
+        growthStage
+    }
+})
+
+const getAllPostData = () => {
+    // get all note files
+    const essayFiles = fs.readdirSync(ESSAYS_PATH);
+    const noteFiles = fs.readdirSync(NOTES_PATH);
+    const patternFiles = fs.readdirSync(PATTERNS_PATH);
+
+    const essaysData = getDataForBacklinks(essayFiles, ESSAYS_PATH);
+    const notesData = getDataForBacklinks(noteFiles, NOTES_PATH);
+    const patternsData = getDataForBacklinks(patternFiles, PATTERNS_PATH);
+    
+    return [...essaysData, ...notesData, ...patternsData];
 }
 
 ;(function () {

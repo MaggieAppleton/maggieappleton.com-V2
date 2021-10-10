@@ -24,31 +24,3 @@ export const getPostdata = async (slug) => {
 
     return post;
 };
-
-const getDataForBacklinks = (fileNames, filePath) => fileNames.map(fileName => {
-    const file = fs.readFileSync(path.join(filePath, fileName), "utf8");
-    const { content, data } = matter(file);
-    const slug = fileName.replace(/\.mdx?$/, "");
-    const { title, aliases, growthStage } = data;
-
-    return {
-        content,
-        slug,
-        title,
-        aliases,
-        growthStage
-    }
-})
-
-export const getAllPostData = () => {
-    // get all note files
-    const essayFiles = fs.readdirSync(ESSAYS_PATH);
-    const noteFiles = fs.readdirSync(NOTES_PATH);
-    const patternFiles = fs.readdirSync(PATTERNS_PATH);
-
-    const essaysData = getDataForBacklinks(essayFiles, ESSAYS_PATH);
-    const notesData = getDataForBacklinks(noteFiles, NOTES_PATH);
-    const patternsData = getDataForBacklinks(patternFiles, PATTERNS_PATH);
-    
-    return [...essaysData, ...notesData, ...patternsData];
-}
