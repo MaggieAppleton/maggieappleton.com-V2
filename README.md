@@ -19,7 +19,7 @@
 
 ## Components
 
-`<ProseWrapper />` wraps around all MDX longform copy. Limits it to 72ch and places it in grid-column 2. Sets body copy to 1.33rem (22px)
+`<ProseWrapper />` wraps around all MDX longform copy. Limits it to 72ch and places it in grid-column 2.
 
 ### Images
 
