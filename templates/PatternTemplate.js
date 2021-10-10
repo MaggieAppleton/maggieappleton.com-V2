@@ -13,6 +13,7 @@ export default function PatternTemplate({
     frontMatter,
     components,
     slug,
+    backlinks
 }) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
@@ -72,6 +73,10 @@ export default function PatternTemplate({
                 <StyledMain>
                     <ProseWrapper>
                         <MDXRemote {...source} components={components} />
+                        {/* todo: replace this with a proper component */}
+                        {backlinks.length ? <pre style={{ whiteSpace: 'pre-wrap' }}>
+                            {JSON.stringify(backlinks, 4, null)}
+                        </pre> : null}
                     </ProseWrapper>
                 </StyledMain>
             </Layout>

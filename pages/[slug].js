@@ -3,6 +3,8 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
+import { linkify } from '../utils/linkify'
+import PostLinks from '../links.json'
 import Img from "../components/mdx/Img";
 import TooltipLink from "../components/links/TooltipLink";
 import EssayTemplate from "../templates/EssayTemplate";
@@ -94,7 +96,7 @@ const components = {
     ),
 };
 
-export default function PostPage({ source, frontMatter, slug }) {
+export default function PostPage({ source, frontMatter, slug, backlinks }) {
     if (frontMatter.type === "note") {
         return (
             <NoteTemplate
@@ -102,6 +104,7 @@ export default function PostPage({ source, frontMatter, slug }) {
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
+                backlinks={backlinks}
             />
         );
     } else if (frontMatter.type === "essay") {
@@ -111,6 +114,7 @@ export default function PostPage({ source, frontMatter, slug }) {
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
+                backlinks={backlinks}
             />
         );
     } else if (frontMatter.type === "project") {
@@ -129,6 +133,7 @@ export default function PostPage({ source, frontMatter, slug }) {
                 source={source}
                 frontMatter={frontMatter}
                 components={components}
+                backlinks={backlinks}
             />
         );
     }
@@ -174,8 +179,9 @@ export const getStaticProps = async ({ params }) => {
     const source = fs.readFileSync(filePath);
 
     const { content, data } = matter(source);
+    const contentWithBidirectionalLinks = linkify(content, data.title);
 
-    const mdxSource = await serialize(content, {
+    const mdxSource = await serialize(contentWithBidirectionalLinks, {
         // Optionally pass remark/rehype plugins
         mdxOptions: {
             remarkPlugins: [],
@@ -183,12 +189,14 @@ export const getStaticProps = async ({ params }) => {
         },
         scope: data,
     });
+    const backlinks = PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks || []
 
     return {
         props: {
             source: mdxSource,
             frontMatter: data,
             slug: params.slug,
+            backlinks
         },
     };
 };
