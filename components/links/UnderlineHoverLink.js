@@ -50,7 +50,7 @@ const StyledLink = styled.a`
         );
     }
     &:hover::before {
-        transform: translate3d(0, 2px, 0) scale3d(1, 3, 1);
+        transform: translate3d(0, 2px, 0) scale3d(1, 2, 1);
         clip-path: polygon(
             0% 0%,
             0% 100%,
@@ -71,6 +71,6 @@ const StyledLink = styled.a`
     }
     &:hover span {
         transform: translate3d(0, -2px, 0);
-        color: var(--color-sea-blue);
+        color: var(--color-crimson);
     }
 `;

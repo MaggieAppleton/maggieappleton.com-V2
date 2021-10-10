@@ -25,7 +25,7 @@ export default function NoteTemplate({
                 keywords={frontMatter.topics}
             />
             <HeaderSection>
-                <div>
+                <div className="above-title">
                     <Link href="/notes">
                         <BackHoverLink href="/notes">notes</BackHoverLink>
                     </Link>
@@ -81,7 +81,7 @@ const TitleContainer = styled.div`
 const HeaderSection = styled.header`
     max-width: 780px;
     margin: var(--space-24) auto 0;
-    div:first-child {
+    div.above-title {
         a,
         p {
             display: inline-block;
@@ -108,26 +108,11 @@ const HeaderSection = styled.header`
 
 const Metadata = styled.div`
     justify-content: space-between;
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 70%;
-        padding: 0;
-        margin-top: var(--space-16);
-        li {
-            margin-right: var(--space-16);
-            margin-bottom: var(--space-4);
-            font-family: var(--font-sans);
-            font-size: var(--font-size-xs);
-        }
-    }
 `;
 
 const StyledMain = styled.main`
     margin-top: var(--space-16);
-    padding: var(--space-64) 0 var(--space-128);
+    padding: var(--space-64) 0 var(--space-16);
     background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;

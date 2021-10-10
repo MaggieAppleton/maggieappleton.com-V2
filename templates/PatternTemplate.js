@@ -30,7 +30,7 @@ export default function PatternTemplate({
             />
             <Layout>
                 <HeaderSection>
-                    <div>
+                    <div className="above-title">
                         <Link href="/patterns">
                             <BackHoverLink href="/patterns">
                                 Patterns
@@ -82,7 +82,7 @@ export default function PatternTemplate({
 const HeaderSection = styled.header`
     max-width: 1400px;
     margin: 0 auto;
-    div:first-child {
+    div.above-title {
         a {
             font-family: var(--font-sans);
             font-size: var(--font-size-xs);
@@ -110,26 +110,11 @@ const Metadata = styled.div`
         flex-direction: column;
         text-align: right;
     }
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 70%;
-        padding: 0;
-        margin-top: var(--space-16);
-        li {
-            margin-right: var(--space-16);
-            margin-bottom: var(--space-4);
-            font-family: var(--font-sans);
-            font-size: var(--font-size-xs);
-        }
-    }
 `;
 
 const StyledMain = styled.main`
     margin-top: var(--space-16);
-    padding: var(--space-80) 0 var(--space-128);
+    padding: var(--space-64) 0 var(--space-16);
     background: white;
     border-radius: var(--border-radius-sm);
     grid-column: 1/4 !important;

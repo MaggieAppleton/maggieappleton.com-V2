@@ -1,22 +1,41 @@
 import { slugifyTopic } from "../../utils/slugifyTopic";
 import styled from "styled-components";
 import Link from "next/link";
+import UnderlineHoverLink from "../links/UnderlineHoverLink";
 
 export default function Topics({ topics }) {
     return (
-        <ul>
+        <StyledList>
             {topics.sort().map((topic) => {
                 const slug = slugifyTopic(topic);
                 return (
-                    <li key={topic}>
+                    <StyledTag key={topic}>
                         <Link href={`/topics/${slug}`}>
-                            <a>{topic}</a>
+                            <UnderlineHoverLink href={`/topics/${slug}`}>
+                                {topic}
+                            </UnderlineHoverLink>
                         </Link>
-                    </li>
+                    </StyledTag>
                 );
             })}
-        </ul>
+        </StyledList>
     );
 }
 
-const styledTag = styled.div``;
+const StyledList = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 70%;
+    padding: 0;
+    margin-top: var(--space-16);
+`;
+
+const StyledTag = styled.li`
+    transition: all 0.3s ease-in-out;
+    margin-right: var(--space-16);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-xs);
+`;
