@@ -1,11 +1,11 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
+
 import {
     NOTES_PATH,
     ESSAYS_PATH,
     PATTERNS_PATH,
-    PROJECTS_PATH,
 } from "./mdxUtils";
 
 // Get Post based on Slug

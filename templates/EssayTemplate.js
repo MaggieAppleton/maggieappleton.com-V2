@@ -16,6 +16,7 @@ export default function EssayTemplate({
     frontMatter,
     components,
     slug,
+    backlinks
 }) {
     return (
         <>
@@ -54,6 +55,10 @@ export default function EssayTemplate({
             <StyledMain>
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
+                    {/* todo: replace this with a proper component */}
+                    {backlinks.length ? <pre style={{ whiteSpace: 'pre-wrap' }}>
+                        {JSON.stringify(backlinks, 4, null)}
+                    </pre> : null}
                 </ProseWrapper>
             </StyledMain>
             <TwitterReply
