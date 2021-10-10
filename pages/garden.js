@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import { Title1, Title2 } from "../components/typography";
+import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import EssayCard from "../components/cards/EssayCard";
 // import BookCard from "../components/cards/BookCard";
