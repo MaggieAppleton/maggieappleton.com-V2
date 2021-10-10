@@ -114,7 +114,7 @@ const Metadata = styled.div`
 
 const StyledMain = styled.main`
     margin-top: var(--space-16);
-    padding: var(--space-64) 0 var(--space-16);
+    padding: var(--space-64) 0;
     background: white;
     border-radius: var(--border-radius-sm);
     grid-column: 1/4 !important;

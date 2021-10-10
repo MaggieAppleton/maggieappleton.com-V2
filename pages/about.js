@@ -11,6 +11,10 @@ export default function About() {
                     <Title1>About</Title1>
                     <Title2>Good</Title2>
                 </header>
+                <p>
+                    UX designer, anthropologist, illustrator, and mediocre
+                    developer
+                </p>
             </Layout>
         </>
     );
