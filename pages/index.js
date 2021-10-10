@@ -12,12 +12,11 @@ import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
 import { bookData } from "../posts/books";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
 import GrowthIcon from "../components/Icons/GrowthIcon";
-import { useInView } from "react-intersection-observer";
 import {
     essayFilePaths,
     ESSAYS_PATH,
@@ -32,7 +31,6 @@ import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({ essays, notes, patterns, projects }) {
     // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
-    const { ref, inView } = useInView();
 
     const collectionAnimation = {
         hidden: {
