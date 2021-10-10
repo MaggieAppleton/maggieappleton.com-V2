@@ -15,10 +15,13 @@ export default function AntiLibrary() {
             <Layout>
                 <header>
                     <Title1>
-                        Antilibrary{" "}
                         <Link href="/library">
-                            <StyledLink>/ Library</StyledLink>
-                        </Link>
+                            <StyledLink>Library </StyledLink>
+                        </Link>{" "}
+                        <span style={{ color: "var(--color-gray-300)" }}>
+                            |
+                        </span>{" "}
+                        Antilibrary
                     </Title1>
                     <Title2>Books I like the idea of having read.</Title2>
                     <PostCount postType="antibooks" posts={antiBookData} />

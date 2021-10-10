@@ -16,8 +16,11 @@ export default function Library() {
                 <header>
                     <Title1>
                         Library{" "}
+                        <span style={{ color: "var(--color-gray-300)" }}>
+                            |
+                        </span>
                         <Link href="/antilibrary">
-                            <StyledLink>/ Antilibrary</StyledLink>
+                            <StyledLink> Antilibrary</StyledLink>
                         </Link>
                     </Title1>
                     <Title2>Books I’ve read.</Title2>
