@@ -6,7 +6,7 @@ import {
     NOTES_PATH,
     ESSAYS_PATH,
     PATTERNS_PATH,
-} from "./mdxUtils.js";
+} from "./mdxUtils";
 
 // Get Post based on Slug
 export const getPostdata = async (slug) => {
