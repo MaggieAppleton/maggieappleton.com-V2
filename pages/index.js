@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
-import GrowthIcon from "../components/Icons/GrowthIcon";
+import GrowthIcon from "../components/icons/GrowthIcon";
 import {
     essayFilePaths,
     ESSAYS_PATH,

@@ -3,7 +3,7 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
-import GrowthIcon from "../components/Icons/GrowthIcon";
+import GrowthIcon from "../components/icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
 import Dates from "../components/templates/Dates";
 import GrowthStage from "../components/templates/GrowthStage";
@@ -16,7 +16,7 @@ export default function EssayTemplate({
     frontMatter,
     components,
     slug,
-    backlinks
+    backlinks,
 }) {
     return (
         <>
@@ -56,9 +56,11 @@ export default function EssayTemplate({
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
                     {/* todo: replace this with a proper component */}
-                    {backlinks.length ? <pre style={{ whiteSpace: 'pre-wrap' }}>
-                        {JSON.stringify(backlinks, 4, null)}
-                    </pre> : null}
+                    {backlinks.length ? (
+                        <pre style={{ whiteSpace: "pre-wrap" }}>
+                            {JSON.stringify(backlinks, 4, null)}
+                        </pre>
+                    ) : null}
                 </ProseWrapper>
             </StyledMain>
             <TwitterReply

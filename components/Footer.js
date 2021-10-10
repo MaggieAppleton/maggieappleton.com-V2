@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { SmallCaps } from "./typography";
+import { SmallCaps } from "./Typography";
 import { breakpoints } from "../utils/breakpoints";
 import UnderlineHoverLink from "./links/UnderlineHoverLink";
 
