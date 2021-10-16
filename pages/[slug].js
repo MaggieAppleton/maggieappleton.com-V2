@@ -3,8 +3,8 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
-import { linkify } from '../utils/linkify'
-import PostLinks from '../links.json'
+import { linkify } from "../utils/linkify";
+import PostLinks from "../links.json";
 import Img from "../components/mdx/Img";
 import TooltipLink from "../components/links/TooltipLink";
 import EssayTemplate from "../templates/EssayTemplate";
@@ -75,9 +75,6 @@ const components = {
         loading: () => <div>Loading...</div>,
     }),
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph"), {
-        ssr: false,
-    }),
-    FullWidthImage: dynamic(() => import("../components/mdx/FullWidthImage"), {
         ssr: false,
     }),
     FullWidthBackground: dynamic(
@@ -189,14 +186,16 @@ export const getStaticProps = async ({ params }) => {
         },
         scope: data,
     });
-    const backlinks = PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks || []
+    const backlinks =
+        PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks ||
+        [];
 
     return {
         props: {
             source: mdxSource,
             frontMatter: data,
             slug: params.slug,
-            backlinks
+            backlinks,
         },
     };
 };
