@@ -2,26 +2,26 @@ import styled from "styled-components";
 import { breakpoints } from "../../utils/breakpoints";
 
 // TODO
-// - Make the sidenote appear on hover.
+// - Make the Footnote appear on hover.
 // - Add smooth hover animations
 
-export default function Sidenote({ children, idName }) {
+export default function Footnote({ children, idName }) {
     return (
-        <SidenoteContainer>
+        <FootnoteContainer>
             <label
                 for={idName}
-                className="margin-toggle sidenote-number"
+                className="margin-toggle footnote-number"
             ></label>
             <input type="checkbox" id={idName} className="margin-toggle" />
-            <span className="sidenote">{children}</span>
-        </SidenoteContainer>
+            <span className="footnote">{children}</span>
+        </FootnoteContainer>
     );
 }
 
-const SidenoteContainer = styled.aside`
+const FootnoteContainer = styled.aside`
     position: relative;
     transition: all 0.3s ease-in-out;
-    .sidenote {
+    .footnote {
         width: 280px;
         max-width: 100%;
         line-height: var(--leading-base);
@@ -39,18 +39,18 @@ const SidenoteContainer = styled.aside`
         cursor: pointer;
     }
 
-    .sidenote-number {
-        counter-increment: sidenote-counter;
+    .footnote-number {
+        counter-increment: footnote-counter;
     }
 
-    .sidenote-number:after,
-    .sidenote:before {
+    .footnote-number:after,
+    .footnote:before {
         position: relative;
         vertical-align: baseline;
     }
 
-    .sidenote-number:after {
-        content: counter(sidenote-counter);
+    .footnote-number:after {
+        content: counter(footnote-counter);
         font-size: 0.9em;
         top: -0.5rem;
         left: 0em;
@@ -58,18 +58,18 @@ const SidenoteContainer = styled.aside`
         color: var(--color-gray-600);
     }
 
-    .sidenote:before {
-        content: counter(sidenote-counter) " ";
+    .footnote:before {
+        content: counter(footnote-counter) " ";
         font-size: 0.9em;
         top: -0.3rem;
         padding-right: 8px;
     }
 
-    label.sidenote-number {
+    label.footnote-number {
         display: inline-block;
     }
 
-    label.margin-toggle:not(.sidenote-number) {
+    label.margin-toggle:not(.footnote-number) {
         display: none;
     }
 
@@ -77,15 +77,15 @@ const SidenoteContainer = styled.aside`
         display: none;
     }
 
-    label.margin-toggle:not(.sidenote-number) {
+    label.margin-toggle:not(.footnote-number) {
         display: inline;
     }
 
-    .sidenote {
+    .footnote {
         display: none;
     }
 
-    .margin-toggle:hover + .sidenote,
+    .margin-toggle:hover + .footnote,
     .margin-toggle:hover + .marginnote {
         display: inline-block;
         width: 280px;

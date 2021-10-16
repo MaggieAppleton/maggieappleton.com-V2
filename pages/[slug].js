@@ -12,7 +12,7 @@ import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
 import Podcastiframe from "../components/mdx/Podcastiframe";
-import Sidenote from "../components/mdx/Sidenote";
+import Footnote from "../components/mdx/Footnote";
 import {
     Title1,
     Title2,
@@ -46,7 +46,7 @@ const components = {
     h4: Title4,
     Podcastiframe: Podcastiframe,
     Subtext: Subtext,
-    Sidenote: Sidenote,
+    Footnote: Footnote,
     img: Img,
     a: TooltipLink,
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
