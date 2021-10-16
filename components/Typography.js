@@ -44,7 +44,7 @@ export const Title4 = styled(motion.h4)`
 `;
 
 export const SmallCaps = styled.p`
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-family: var(--font-sans);
     font-weight: 700;
     color: var(--color-black);

@@ -114,7 +114,7 @@ const StyledNavbar = styled(motion.nav)`
             margin-left: var(--space-24);
             padding-bottom: var(--space-4);
             text-decoration: none;
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
             font-family: var(--font-sans);
             transition: color 0.2s ease-in-out;
             span {
@@ -132,7 +132,7 @@ const DropdownLink = styled.a`
     margin: 0 !important;
     color: var(--color-gray-800);
     text-decoration: none;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-family: var(--font-sans);
     border-bottom: 1px solid var(--color-tinted-cream);
     border-left: 2px solid var(--color-cream);

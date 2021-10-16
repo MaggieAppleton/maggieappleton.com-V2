@@ -10,6 +10,7 @@ const ProseWrapper = styled.article`
     & > * {
         grid-column: 2;
     }
+    counter-reset: footnote-counter;
     font-size: var(--font-size-base);
     p {
         font-size: var(--font-size-base);

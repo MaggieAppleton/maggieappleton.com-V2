@@ -5,93 +5,103 @@ import { breakpoints } from "../../utils/breakpoints";
 // - Make the Footnote appear on hover.
 // - Add smooth hover animations
 
-export default function Footnote({ children, idName }) {
+const Footnote = ({ idName, children }) => {
     return (
         <FootnoteContainer>
             <label
-                for={idName}
+                htmlFor={idName}
                 className="margin-toggle footnote-number"
             ></label>
             <input type="checkbox" id={idName} className="margin-toggle" />
             <span className="footnote">{children}</span>
         </FootnoteContainer>
     );
-}
+};
 
+// todo: clean this up
 const FootnoteContainer = styled.aside`
-    position: relative;
-    transition: all 0.3s ease-in-out;
+    display: inline;
     .footnote {
-        width: 280px;
-        max-width: 100%;
-        line-height: var(--leading-base);
+        float: right;
+        clear: right;
+        margin-right: -44%;
+        width: 40%;
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: var(--font-size-sm);
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-left: 2px solid var(--color-gray-300);
-        padding-left: var(--space-16);
-        background: white;
-        transition: all 0.3s ease-in-out;
+        opacity: 90%;
+        line-height: var(--leading-base);
+        vertical-align: baseline;
+        position: relative;
+        border-left: 1px solid var(--color-gray-300);
+        padding-left: 1em;
+        a::before,
+        a:hover::before,
+        a {
+            background: none;
+            transform: none;
+        }
+        a span {
+            font-size: var(--font-size-sm);
+        }
     }
-
     label {
         cursor: pointer;
     }
-
     .footnote-number {
         counter-increment: footnote-counter;
     }
-
     .footnote-number:after,
     .footnote:before {
         position: relative;
         vertical-align: baseline;
     }
-
     .footnote-number:after {
         content: counter(footnote-counter);
-        font-size: 0.9em;
+        font-size: 0.8em;
         top: -0.5rem;
-        left: 0em;
-        padding-right: 3px;
-        color: var(--color-gray-600);
+        left: 0.1em;
+        padding-right: 0px;
     }
-
     .footnote:before {
-        content: counter(footnote-counter) " ";
+        content: counter(footnote-counter);
         font-size: 0.9em;
         top: -0.3rem;
-        padding-right: 8px;
+        padding-right: var(--space-8);
     }
-
+    blockquote .footnote {
+        margin-right: -82%;
+        min-width: 59%;
+        text-align: left;
+    }
     label.footnote-number {
-        display: inline-block;
+        display: inline;
+        padding-right: var(--space-8);
     }
-
     label.margin-toggle:not(.footnote-number) {
         display: none;
     }
-
     input.margin-toggle {
         display: none;
     }
-
-    label.margin-toggle:not(.footnote-number) {
-        display: inline;
-    }
-
-    .footnote {
-        display: none;
-    }
-
-    .margin-toggle:hover + .footnote,
-    .margin-toggle:hover + .marginnote {
-        display: inline-block;
-        width: 280px;
-        vertical-align: baseline;
-        position: absolute;
-        top: 0;
-        left: 0;
+    @media (max-width: 1420px) {
+        label.margin-toggle:not(.footnote-number) {
+            display: inline;
+        }
+        .footnote,
+        .marginnote {
+            display: none;
+        }
+        .margin-toggle:checked + .footnote {
+            display: block;
+            float: left;
+            left: 0;
+            clear: both;
+            width: 95%;
+            margin: 1rem 0;
+            position: relative;
+        }
     }
 `;
+
+export default Footnote;
