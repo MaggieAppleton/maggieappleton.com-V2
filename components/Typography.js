@@ -16,7 +16,7 @@ export const Title2 = styled(motion.h2)`
     color: var(--color-gray-800);
     font-weight: 100;
     line-height: var(--leading-tight);
-    margin-bottom: var(--space-12);
+    margin: var(--space-16) 0 var(--space-12);
     transition: all 0.3s ease-in-out;
 `;
 

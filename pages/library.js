@@ -58,5 +58,6 @@ const StyledLink = styled.a`
 export const BookshelfGrid = styled.section`
     display: grid;
     grid-gap: var(--space-24);
+    margin: var(--space-80) 0;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 `;

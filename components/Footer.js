@@ -19,22 +19,21 @@ export default function Footer() {
                         { text: "Essays", slug: "/essays" },
                         { text: "About", slug: "/about" },
                         { text: "Notes", slug: "/notes" },
-                        // { text: "Now", slug: "/now" },
+                        { text: "Now", slug: "/now" },
                         // { text: "Patterns", slug: "/patterns" },
                         // { text: "Tools I Use", slug: "/uses" },
                         { text: "Library", slug: "/library" },
                         // { text: "Changelog", slug: "/changelog" },
                         { text: "Projects", slug: "/projects" },
+                        { text: "Colophon", slug: "/colophon" },
                         // { text: "Illustration Resources", slug: "/resources" },
                     ].map((link, i) => {
                         return (
                             <li key={i}>
                                 <Link href={link.slug}>
-                                    <SmallCaps>
-                                        <UnderlineHoverLink>
-                                            {link.text}
-                                        </UnderlineHoverLink>
-                                    </SmallCaps>
+                                    <UnderlineHoverLink href={link.slug}>
+                                        {link.text}
+                                    </UnderlineHoverLink>
                                 </Link>
                             </li>
                         );
@@ -64,10 +63,11 @@ const SitemapList = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr;
     list-style: none;
-    grid-gap: var(--space-12) var(--space-48);
+    grid-gap: var(--space-4) var(--space-48);
     padding-inline-start: 0;
     li span {
         color: var(--color-gray-600);
+        font-size: var(--font-size-sm);
     }
 `;
 
