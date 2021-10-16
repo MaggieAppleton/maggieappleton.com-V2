@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
-import MasonryGrid from "../components/MasonryGrid";
+import styled from "styled-components";
 import NoteCard from "../components/cards/NoteCard";
 import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";
 import Header from "../components/Header";
@@ -20,7 +20,7 @@ export default function Notes({ notes }) {
                     understand yet.
                 </Title2>
                 <PostCount postType="notes" posts={notes} />
-                <MasonryGrid>
+                <NotesGrid>
                     {notes.map((note) => (
                         <NoteCard
                             slug={note.slug}
@@ -29,11 +29,17 @@ export default function Notes({ notes }) {
                             date={note.data.updated}
                         />
                     ))}
-                </MasonryGrid>
+                </NotesGrid>
             </Layout>
         </>
     );
 }
+
+const NotesGrid = styled.section`
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+`;
 
 // Fetches the data for the page.
 

@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
-import MasonryGrid from "../components/MasonryGrid";
+import { BookshelfGrid } from "./library";
 import BookCard from "../components/cards/BookCard";
 import { antiBookData } from "../posts/antibooks";
 import PostCount from "../components/PostCount";
@@ -26,11 +26,7 @@ export default function AntiLibrary() {
                     <Title2>Books I like the idea of having read.</Title2>
                     <PostCount postType="antibooks" posts={antiBookData} />
                 </header>
-                <MasonryGrid
-                    columnGapLeft="var(--space-32)"
-                    columnGapBottom="var(--space-48)"
-                    breakpointColumnsObj={breakpointColumnsObj}
-                >
+                <BookshelfGrid>
                     {antiBookData.map((book, i) => (
                         <BookCard
                             key={i}
@@ -41,7 +37,7 @@ export default function AntiLibrary() {
                             cover={book.cover}
                         />
                     ))}
-                </MasonryGrid>
+                </BookshelfGrid>
             </Layout>
         </>
     );
@@ -55,9 +51,3 @@ const StyledLink = styled.a`
         color: var(--color-bright-crimson);
     }
 `;
-
-const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-};

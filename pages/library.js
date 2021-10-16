@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
-import MasonryGrid from "../components/MasonryGrid";
 import BookCard from "../components/cards/BookCard";
 import { bookData } from "../posts/books";
 import PostCount from "../components/PostCount";
@@ -26,11 +25,7 @@ export default function Library() {
                     <Title2>Books I’ve read.</Title2>
                     <PostCount postType="books" posts={bookData} />
                 </header>
-                <MasonryGrid
-                    columnGapLeft="var(--space-16)"
-                    columnGapBottom="var(--space-48)"
-                    breakpointColumnsObj={breakpointColumnsObj}
-                >
+                <BookshelfGrid>
                     {bookData.map((book, i) => (
                         <BookCard
                             key={i}
@@ -41,7 +36,7 @@ export default function Library() {
                             cover={book.cover}
                         />
                     ))}
-                </MasonryGrid>
+                </BookshelfGrid>
             </Layout>
         </>
     );
@@ -56,8 +51,8 @@ const StyledLink = styled.a`
     }
 `;
 
-const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-};
+export const BookshelfGrid = styled.section`
+    display: grid;
+    grid-gap: var(--space-24);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+`;
