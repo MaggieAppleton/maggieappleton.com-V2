@@ -9,6 +9,7 @@ import Dates from "../components/templates/Dates";
 import GrowthStage from "../components/templates/GrowthStage";
 import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
+import BackToTop from "../components/mdx/BackToTop";
 import { TwitterReply } from "../components/templates/TwitterReply";
 
 export default function NoteTemplate({
@@ -53,6 +54,7 @@ export default function NoteTemplate({
                 </Metadata>
             </HeaderSection>
             <StyledMain>
+                <BackToTop />
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
                     {/* todo: replace this with a proper component */}

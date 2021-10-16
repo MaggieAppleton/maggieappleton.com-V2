@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import { Title1, Title2 } from "../components/Typography";
+import { Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import EssayCard from "../components/cards/EssayCard";
 // import BookCard from "../components/cards/BookCard";
@@ -18,6 +18,8 @@ import {
     PATTERNS_PATH,
 } from "../utils/mdxUtils";
 import { bookData } from "../posts/books";
+import TitleWithCount from "../components/TitleWithCount";
+import { concat } from "lodash";
 
 export default function Garden({ essays, notes }) {
     const allPosts = essays.concat(notes);
@@ -30,7 +32,9 @@ export default function Garden({ essays, notes }) {
             <Header title="The Garden of Maggie Appleton" />
             <Layout>
                 <header>
-                    <Title1>The Garden</Title1>
+                    <TitleWithCount posts={concat(essays, notes)}>
+                        The Garden
+                    </TitleWithCount>
                     <Title2>
                         A collection of essays, notes, and half-baked
                         explorations I'm always tending to.

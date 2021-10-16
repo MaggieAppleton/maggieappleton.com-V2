@@ -7,19 +7,18 @@ import styled from "styled-components";
 import NoteCard from "../components/cards/NoteCard";
 import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";
 import Header from "../components/Header";
-import PostCount from "../components/PostCount";
+import TitleWithCount from "../components/TitleWithCount";
 
 export default function Notes({ notes }) {
     return (
         <>
             <Header title="Notes by Maggie Appleton" />
             <Layout>
-                <Title1>Notes</Title1>
+                <TitleWithCount posts={notes}>Notes</TitleWithCount>
                 <Title2>
                     Loose, unopinionated notes on things I don’t entirely
                     understand yet.
                 </Title2>
-                <PostCount postType="notes" posts={notes} />
                 <NotesGrid>
                     {notes.map((note) => (
                         <NoteCard

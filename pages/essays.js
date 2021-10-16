@@ -2,12 +2,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
-import { Title1, Title2 } from "../components/Typography";
+import { Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import EssayCard from "../components/cards/EssayCard";
 import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
-import PostCount from "../components/PostCount";
 import Header from "../components/Header";
+import TitleWithCount from "../components/TitleWithCount";
 
 export default function Essays({ essays }) {
     return (
@@ -15,11 +15,10 @@ export default function Essays({ essays }) {
             <Header title="Essays by Maggie Appleton" />
             <Layout>
                 <header>
-                    <Title1>Essays</Title1>
+                    <TitleWithCount posts={essays}>Essays</TitleWithCount>
                     <Title2>
                         Opinionated, longform narrative writing with an agenda.
                     </Title2>
-                    <PostCount postType="essays" posts={essays} />
                 </header>
                 <MasonryGrid>
                     {essays.map((essay, i) => (

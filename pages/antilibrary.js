@@ -1,12 +1,12 @@
 import Layout from "../components/Layout";
-import { Title1, Title2 } from "../components/Typography";
+import { Title2 } from "../components/Typography";
 import { BookshelfGrid } from "./library";
 import BookCard from "../components/cards/BookCard";
 import { antiBookData } from "../posts/antibooks";
-import PostCount from "../components/PostCount";
 import Header from "../components/Header";
 import Link from "next/link";
 import styled from "styled-components";
+import TitleWithCount from "../components/TitleWithCount";
 
 export default function AntiLibrary() {
     return (
@@ -14,17 +14,21 @@ export default function AntiLibrary() {
             <Header title="Antilibrary of Maggie Appleton" />
             <Layout>
                 <header>
-                    <Title1>
+                    <TitleWithCount posts={antiBookData}>
                         <Link href="/library">
                             <StyledLink>Library </StyledLink>
                         </Link>{" "}
-                        <span style={{ color: "var(--color-gray-300)" }}>
+                        <div
+                            style={{
+                                color: "var(--color-gray-300)",
+                                display: "inline-block",
+                            }}
+                        >
                             |
-                        </span>{" "}
+                        </div>{" "}
                         Antilibrary
-                    </Title1>
+                    </TitleWithCount>
                     <Title2>Books I like the idea of having read.</Title2>
-                    <PostCount postType="antibooks" posts={antiBookData} />
                 </header>
                 <BookshelfGrid>
                     {antiBookData.map((book, i) => (

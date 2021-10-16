@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
-import { Title1, Title2 } from "../components/Typography";
+import { Title2 } from "../components/Typography";
 import BookCard from "../components/cards/BookCard";
 import { bookData } from "../posts/books";
-import PostCount from "../components/PostCount";
 import Header from "../components/Header";
 import Link from "next/link";
 import styled from "styled-components";
+import TitleWithCount from "../components/TitleWithCount";
 
 export default function Library() {
     return (
@@ -13,17 +13,21 @@ export default function Library() {
             <Header title="Library of Maggie Appleton" />
             <Layout>
                 <header>
-                    <Title1>
+                    <TitleWithCount posts={bookData}>
                         Library{" "}
-                        <span style={{ color: "var(--color-gray-300)" }}>
+                        <div
+                            style={{
+                                color: "var(--color-gray-300)",
+                                display: "inline-block",
+                            }}
+                        >
                             |
-                        </span>
+                        </div>
                         <Link href="/antilibrary">
                             <StyledLink> Antilibrary</StyledLink>
                         </Link>
-                    </Title1>
+                    </TitleWithCount>
                     <Title2>Books I’ve read.</Title2>
-                    <PostCount postType="books" posts={bookData} />
                 </header>
                 <BookshelfGrid>
                     {bookData.map((book, i) => (
