@@ -9,11 +9,11 @@ import matter from "gray-matter";
 import { Title1, SmallTitle2 } from "../../components/Typography";
 import { Spacer } from "../../components/Spacer";
 import Layout from "../../components/Layout";
-import DynamicPostsList from "../../components/DynamicPostsList";
+import DynamicPostsGrid from "../../components/DynamicPostsGrid";
 
 // ? Possibly useful for reference: https://github.com/inadeqtfuturs/garden/blob/b8b98f4931e204cbb34fa0bcc11fab75b24c0df1/src/pages/tags/%5Bslug%5D.js
 
-export default function TopicPage({ topic, topics, frontMatterAndSlug }) {
+export default function TopicPage({ topic, topics, postData }) {
     const topicName = deslugifyTopic(topic)
         .split(" ")
         .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
@@ -34,7 +34,7 @@ export default function TopicPage({ topic, topics, frontMatterAndSlug }) {
                 All essays, notes, and patterns related to {topicName}
             </SmallTitle2>
             <Spacer size="small" />
-            <DynamicPostsList postsToShow={frontMatterAndSlug} />
+            <DynamicPostsGrid postsToShow={postData} />
         </Layout>
     );
 }
@@ -57,7 +57,7 @@ export const getStaticProps = async ({ params }) => {
     );
 
     const frontMatterArr = postsWithTopic.map((post) => matter(post).data);
-    const frontMatterAndSlug = frontMatterArr.map((fm, i) => ({
+    const postData = frontMatterArr.map((fm, i) => ({
         ...fm,
         slug: slugsWithTopic[i].slug,
     }));
@@ -66,7 +66,7 @@ export const getStaticProps = async ({ params }) => {
         props: {
             topic,
             topics,
-            frontMatterAndSlug,
+            postData,
         },
     };
 };

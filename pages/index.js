@@ -110,7 +110,13 @@ export default function Index({ essays, notes, patterns, projects }) {
                 >
                     <Link href="/garden">
                         <a href="/garden">
-                            <Title2>The Garden</Title2>
+                            <Title2
+                                style={{
+                                    fontSize: "var(--font-size-2xl)",
+                                }}
+                            >
+                                The Garden
+                            </Title2>
                         </a>
                     </Link>
                     <Subheader>
@@ -249,7 +255,13 @@ export default function Index({ essays, notes, patterns, projects }) {
                 <section>
                     <Link href="/projects">
                         <a href="/projects">
-                            <Title2>Projects</Title2>
+                            <Title2
+                                style={{
+                                    fontSize: "var(--font-size-2xl)",
+                                }}
+                            >
+                                Projects
+                            </Title2>
                         </a>
                     </Link>
                     <Subheader>In the past I have made things</Subheader>
