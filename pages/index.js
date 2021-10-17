@@ -121,7 +121,8 @@ export default function Index({ essays, notes, patterns, projects }) {
                     </Link>
                     <Subheader>
                         A digital garden is a collection of imperfect notes,
-                        essays, and ideas – growing slowly over time.
+                        essays, and ideas growing slowly over time.{" "}
+                        <a href="/garden-history">Read more about gardens.</a>
                     </Subheader>
                 </motion.section>
                 <GardenSection
