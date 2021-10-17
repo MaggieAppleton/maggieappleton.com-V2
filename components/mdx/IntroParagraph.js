@@ -4,8 +4,8 @@ import { breakpoints } from "../../utils/breakpoints";
 const IntroParagraph = styled.p`
     :first-letter {
         float: left;
-        font-size: 4.8rem;
-        line-height: ;
+        font-size: 5.4rem;
+        line-height: 3rem;
         font-weight: bold;
         margin: 1.15rem var(--space-12) 0 0;
     }
@@ -15,8 +15,8 @@ const IntroParagraph = styled.p`
     @media ${breakpoints.mediaSM} {
         :first-letter {
             float: left;
-            font-size: 4.2rem;
-            line-height: ;
+            font-size: 4.6rem;
+            line-height: 2rem;
             font-weight: bold;
             margin: 1.15rem var(--space-8) 0 0;
         }

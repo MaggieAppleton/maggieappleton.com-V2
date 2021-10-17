@@ -6,8 +6,9 @@ import {
 import { deslugifyTopic } from "../../utils/slugifyTopic";
 import { getPostdata } from "../../utils/getAllPosts";
 import matter from "gray-matter";
-import { Title1, SmallTitle2 } from "../../components/Typography";
-import { Spacer } from "../../components/Spacer";
+import { Title2 } from "../../components/Typography";
+import TitleWithCount from "../../components/TitleWithCount";
+import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import DynamicPostsGrid from "../../components/DynamicPostsGrid";
 
@@ -20,22 +21,20 @@ export default function TopicPage({ topic, topics, postData }) {
         .join(" ");
 
     return (
-        <Layout>
-            <header>
-                <ul>
-                    {topics.map((topic) => (
-                        <div topic={topic} key={topic} />
-                    ))}
-                </ul>
-            </header>
-
-            <Title1>{topicName}</Title1>
-            <SmallTitle2>
-                All essays, notes, and patterns related to {topicName}
-            </SmallTitle2>
-            <Spacer size="small" />
-            <DynamicPostsGrid postsToShow={postData} />
-        </Layout>
+        <>
+            <Header title={`${topicName} posts by Maggie Appleton`} />
+            <Layout>
+                <header style={{ marginBottom: "var(--space-80)" }}>
+                    <TitleWithCount posts={postData}>
+                        {topicName}
+                    </TitleWithCount>
+                    <Title2>
+                        Essays, notes, and patterns related to {topicName}
+                    </Title2>
+                </header>
+                <DynamicPostsGrid postsToShow={postData} />
+            </Layout>
+        </>
     );
 }
 

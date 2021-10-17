@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Link from "next/link";
+import MasonryGrid from "./MasonryGrid";
 import NoteCard from "../components/cards/NoteCard";
 import EssayCard from "../components/cards/EssayCard";
 
 export default function DynamicPostsGrid({ postsToShow }) {
     console.log(postsToShow);
     return (
-        <TopicGrid>
+        <MasonryGrid>
             {postsToShow.map(
                 ({ slug, title, type, growthStage, cover, updated }, i) => {
                     if (type === "essay") {
@@ -33,7 +33,7 @@ export default function DynamicPostsGrid({ postsToShow }) {
                     }
                 }
             )}
-        </TopicGrid>
+        </MasonryGrid>
     );
 }
 

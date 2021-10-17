@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import ClubIcon from "../icons/ClubIcon";
+import EvergreenIcon from "../icons/EvergreenIcon";
 import { motion } from "framer-motion";
 
 export default function ProjectCard({ slug, cover, title, date, topics, key }) {
@@ -34,7 +34,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
                         <h3>{title}</h3>
                         <div className="metadata">
                             <span>{formattedDate(date)}</span>
-                            <ClubIcon />
+                            <EvergreenIcon width="14" height="14" />
                             <span>{topics}</span>
                         </div>
                     </Metadata>

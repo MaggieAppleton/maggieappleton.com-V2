@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { SmallCaps } from "./Typography";
 import { breakpoints } from "../utils/breakpoints";
 import UnderlineHoverLink from "./links/UnderlineHoverLink";
+import { RssIcon } from "@heroicons/react/solid";
 
 export default function Footer() {
     return (
@@ -10,7 +10,10 @@ export default function Footer() {
             <FooterContent>
                 <RSSFeed>
                     <h3>Want to stay up to date?</h3>
-                    <span>Subscribe via RSS Feed</span>
+                    <button>
+                        <RssIcon width="20" height="20" />
+                        Subscribe via RSS Feed
+                    </button>
                 </RSSFeed>
                 <SitemapList>
                     {[
@@ -19,13 +22,13 @@ export default function Footer() {
                         { text: "Essays", slug: "/essays" },
                         { text: "About", slug: "/about" },
                         { text: "Notes", slug: "/notes" },
-                        { text: "Now", slug: "/now" },
+                        // { text: "Now", slug: "/now" },
                         // { text: "Patterns", slug: "/patterns" },
                         // { text: "Tools I Use", slug: "/uses" },
                         { text: "Library", slug: "/library" },
                         // { text: "Changelog", slug: "/changelog" },
                         { text: "Projects", slug: "/projects" },
-                        { text: "Colophon", slug: "/colophon" },
+                        // { text: "Colophon", slug: "/colophon" },
                         // { text: "Illustration Resources", slug: "/resources" },
                     ].map((link, i) => {
                         return (
@@ -51,11 +54,21 @@ const RSSFeed = styled.div`
         font-weight: 300;
         margin-bottom: var(--space-24);
     }
-    span {
+    button {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        padding: var(--space-8) 1.2rem;
+        background: none;
+        border: 1px solid var(--color-tinted-cream);
+        border-radius: 3rem;
         font-family: var(--font-sans);
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
         font-weight: 400;
         color: var(--color-gray-800);
+        &:hover {
+            cursor: pointer;
+        }
     }
 `;
 
