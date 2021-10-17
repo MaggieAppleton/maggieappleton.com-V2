@@ -284,6 +284,7 @@ export default function Index({ essays, notes, patterns, projects }) {
                                 title={project.data.title}
                                 cover={project.data.cover}
                                 date={project.data.updated}
+                                topics={project.data.topics}
                             />
                         ))}
                     </div>

@@ -5,7 +5,7 @@ const ProseWrapper = styled.article`
     display: grid;
     grid-template-columns:
         1fr
-        min(70ch, 100%)
+        min(72ch, 100%)
         1fr;
     & > * {
         grid-column: 2;

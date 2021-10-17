@@ -88,7 +88,7 @@ const TitleContainer = styled.div`
 `;
 
 const HeaderSection = styled.header`
-    max-width: 780px;
+    max-width: 800px;
     margin: var(--space-24) auto 0;
     div.above-title {
         a,

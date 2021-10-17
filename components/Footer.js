@@ -68,6 +68,7 @@ const SitemapList = styled.ul`
     li span {
         color: var(--color-gray-600);
         font-size: var(--font-size-sm);
+        font-family: var(--font-sans);
     }
 `;
 

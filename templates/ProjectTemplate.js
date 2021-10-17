@@ -71,7 +71,7 @@ export default function ProjectTemplate({
 }
 
 const HeaderSection = styled.header`
-    max-width: 780px;
+    max-width: 1400px;
     margin: 0 auto;
     div.above-title {
         display: flex;

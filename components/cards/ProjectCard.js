@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import GrowthIcon from "../icons/GrowthIcon";
+import ClubIcon from "../icons/ClubIcon";
 import { motion } from "framer-motion";
 
 export default function ProjectCard({ slug, cover, title, date, topics, key }) {
@@ -34,7 +34,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
                         <h3>{title}</h3>
                         <div className="metadata">
                             <span>{formattedDate(date)}</span>
-
+                            <ClubIcon />
                             <span>{topics}</span>
                         </div>
                     </Metadata>
@@ -59,7 +59,7 @@ const Metadata = styled.div`
     }
     div {
         display: flex;
-        align-content: center;
+        align-items: center;
         justify-content: center;
         span {
             display: inline-block;
