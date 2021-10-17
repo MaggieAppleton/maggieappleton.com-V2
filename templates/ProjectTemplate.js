@@ -70,7 +70,7 @@ export default function ProjectTemplate({
 }
 
 const TitleContainer = styled.div`
-    padding: var(--space-24) 0 var(--space-48);
+    padding: var(--space-24) 0 var(--space-8);
     p {
         font-size: var(--font-size-md);
         margin: var(--space-24) 0 0 0;

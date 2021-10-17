@@ -7,7 +7,10 @@ type: "project"
 topics: ["illustration"]
 ---
 
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_1800/v1589143454/maggieappleton.com/google-speedometer/Banner.png" />
+<BasicImage
+    width="100%"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_1800/v1589143454/maggieappleton.com/google-speedometer/Banner.png"
+/>
 
 <Center>
 
@@ -22,7 +25,7 @@ topics: ["illustration"]
 
 </Center>
 
-<TwoColumn>
+<TwoColumn maxWidth="1100px" alignItems="flex-start">
 
 <p>
     Addy Osmani from the Google Chrome team got in touch when they needed a new
@@ -39,19 +42,27 @@ topics: ["illustration"]
 
 </TwoColumn>
 
-<br />
-<br />
+<Spacer />
 
-<FullWidthBackground bgcolour="linear-gradient(#1F4463, #0C2641)">
+<div style={{ background: "linear-gradient(#1F4463, #0C2641)", gridColumn: "1/4", width: "100%", color: "var(--color-cream)", padding: "var(--space-128) var(--space-16)" }}>
 
-<div style={{ display: 'grid', gridColumnTemplate: '1fr'}}>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: '6rem'}}>
 
-<img src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_500/v1589143455/maggieappleton.com/google-speedometer/Final-Dark-Export.png" />
+<img
+    width="550px"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_500/v1589143455/maggieappleton.com/google-speedometer/Final-Dark-Export.png"
+/>
 
-<img src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_550/v1589143453/maggieappleton.com/google-speedometer/Alt1_Isolated.png" />
+<img
+    width="650px"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_550/v1589143453/maggieappleton.com/google-speedometer/Alt1_Isolated.png"
+/>
 
-<img src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_550/v1589143456/maggieappleton.com/google-speedometer/Alt2_Isolated.png" />
+<img
+    width="650px"
+    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_550/v1589143456/maggieappleton.com/google-speedometer/Alt2_Isolated.png"
+/>
 
 </div>
 
-</FullWidthBackground>
+</div>
