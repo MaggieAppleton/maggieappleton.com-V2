@@ -13,7 +13,7 @@ export default function PatternTemplate({
     frontMatter,
     components,
     slug,
-    backlinks
+    backlinks,
 }) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
@@ -74,9 +74,11 @@ export default function PatternTemplate({
                     <ProseWrapper>
                         <MDXRemote {...source} components={components} />
                         {/* todo: replace this with a proper component */}
-                        {backlinks.length ? <pre style={{ whiteSpace: 'pre-wrap' }}>
-                            {JSON.stringify(backlinks, 4, null)}
-                        </pre> : null}
+                        {backlinks.length ? (
+                            <pre style={{ whiteSpace: "pre-wrap" }}>
+                                {JSON.stringify(backlinks, 4, null)}
+                            </pre>
+                        ) : null}
                     </ProseWrapper>
                 </StyledMain>
             </Layout>
@@ -99,7 +101,6 @@ const HeaderSection = styled.header`
     h1 {
         font-size: var(--font-size-3xl);
         line-height: var(--leading-tight);
-        border-right: 1px solid black;
     }
 
     @media ${breakpoints.mediaSM} {

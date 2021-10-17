@@ -1,8 +1,13 @@
 import { MDXRemote } from "next-mdx-remote";
 import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
+import BackToTop from "../components/mdx/BackToTop";
+import { TwitterReply } from "../components/templates/TwitterReply";
+import { Title1 } from "../components/Typography";
 import styled from "styled-components";
+import Topics from "../components/templates/Topics";
 import { breakpoints } from "../utils/breakpoints";
+import BackHoverLink from "../components/links/BackHoverLink";
 import Header from "../components/Header";
 
 export default function ProjectTemplate({
@@ -15,7 +20,6 @@ export default function ProjectTemplate({
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
             month: "short",
-            day: "numeric",
         });
     }
 
@@ -25,27 +29,19 @@ export default function ProjectTemplate({
                 title={frontMatter.title}
                 description={frontMatter.description}
             />
+
             <HeaderSection>
                 <div className="above-title">
                     <Link href="/projects">
-                        <a href="/projects">
-                            <p>Projects</p>
-                        </a>
+                        <BackHoverLink href="/projects">Projects</BackHoverLink>
                     </Link>
                 </div>
-                <h1>{frontMatter.title}</h1>
-                {frontMatter.description && <p>{frontMatter.description}</p>}
+                <TitleContainer>
+                    <Title1>{frontMatter.title}</Title1>
+                </TitleContainer>
                 <Metadata style={{ display: "flex", flexDirection: "row" }}>
                     {frontMatter.topics && (
-                        <ul>
-                            {frontMatter.topics.map((topic) => (
-                                <li key={topic}>
-                                    <Link href={`/topics/${topic}`}>
-                                        <a>{topic}</a>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <Topics topics={frontMatter.topics} />
                     )}
                     <div className="metadata">
                         {frontMatter.startDate && (
@@ -54,46 +50,55 @@ export default function ProjectTemplate({
                             </span>
                         )}
                         {frontMatter.updated && (
-                            <span>
-                                Last tended {formattedDate(frontMatter.updated)}
-                            </span>
+                            <span>{formattedDate(frontMatter.updated)}</span>
                         )}
                     </div>
                 </Metadata>
             </HeaderSection>
             <StyledMain>
+                <BackToTop />
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
                 </ProseWrapper>
             </StyledMain>
+            <TwitterReply
+                url={`https://maggieappleton.com/${slug}/`}
+                title={frontMatter.title}
+            />
         </>
     );
 }
 
+const TitleContainer = styled.div`
+    padding: var(--space-24) 0 var(--space-48);
+    p {
+        font-size: var(--font-size-md);
+        margin: var(--space-24) 0 0 0;
+        color: var(--color-gray-600);
+    }
+`;
+
 const HeaderSection = styled.header`
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: var(--space-24) auto 0;
     div.above-title {
-        display: flex;
-        flex-direction: row;
+        a,
         p {
-            margin: 0 var(--space-12);
+            display: inline-block;
             font-family: var(--font-sans);
             font-size: var(--font-size-xs);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: bold;
+            padding-right: var(--space-16);
+        }
+        p {
+            padding-left: var(--space-12);
         }
         svg {
             position: relative;
-            top: 1px;
+            top: 3px;
         }
-    }
-    h1 {
-        font-size: var(--font-size-2xl);
-        line-height: var(--leading-tight);
-        padding: var(--space-24) 0 var(--space-48);
-        border-bottom: 1px solid var(--color-gray-300);
     }
 
     @media ${breakpoints.mediaSM} {
@@ -102,13 +107,7 @@ const HeaderSection = styled.header`
 `;
 
 const Metadata = styled.div`
-    justify-content: space-between;
-    div {
-        margin-top: var(--space-16);
-        display: flex;
-        flex-direction: column;
-        text-align: right;
-    }
+    display: flex;
 `;
 
 const StyledMain = styled.main`

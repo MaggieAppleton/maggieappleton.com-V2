@@ -6,7 +6,9 @@ import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
 import Img from "../components/mdx/Img";
+import Center from "../components/mdx/Center";
 import TooltipLink from "../components/links/TooltipLink";
+import { Spacer } from "../components/Spacer";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
@@ -48,6 +50,8 @@ const components = {
     Subtext: Subtext,
     Footnote: Footnote,
     img: Img,
+    Spacer: Spacer,
+    Center: Center,
     a: TooltipLink,
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
         ssr: false,

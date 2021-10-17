@@ -16,7 +16,7 @@ const TwoColumnContainer = styled.div`
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--space-16);
-    justify-content: center;
+    align-items: center;
     padding: 0 var(--space-8);
     @media ${breakpoints.mediaSM} {
         grid-template-columns: 1fr;

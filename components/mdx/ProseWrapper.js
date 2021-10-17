@@ -27,6 +27,7 @@ const ProseWrapper = styled.article`
     h2 {
         font-size: var(--font-size-xl);
         margin: var(--space-64) 0 var(--space-32);
+        line-height: var(--leading-base);
         @media ${breakpoints.mediaSM} {
             margin: var(--space-48) 0 var(--space-24);
         }
