@@ -11,6 +11,7 @@ export default function TitleWithCount({ posts, children }) {
 }
 
 const StyledContainer = styled(motion.div)`
+    margin-top: -2.8rem;
     span {
         position: relative;
         top: 3.6rem;

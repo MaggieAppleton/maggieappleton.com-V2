@@ -33,7 +33,7 @@ const StyledLink = styled.a`
         position: absolute;
         width: 100%;
         height: 1px;
-        top: 110%;
+        top: 95%;
         left: 0;
         pointer-events: none;
         clip-path: polygon(

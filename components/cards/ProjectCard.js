@@ -34,6 +34,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
                         <h3>{title}</h3>
                         <div className="metadata">
                             <span>{formattedDate(date)}</span>
+
                             <span>{topics}</span>
                         </div>
                     </Metadata>
@@ -60,6 +61,19 @@ const Metadata = styled.div`
         display: flex;
         align-content: center;
         justify-content: center;
+        span {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: calc(var(--font-size-xs) / 1.08);
+            color: var(--color-gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+        svg {
+            margin: 0 var(--space-8);
+        }
     }
 `;
 

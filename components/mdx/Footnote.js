@@ -5,7 +5,7 @@ import { breakpoints } from "../../utils/breakpoints";
 // - Make the Footnote appear on hover.
 // - Add smooth hover animations
 
-const Footnote = ({ idName, children }) => {
+const Footnote = ({ idName, children, isClosed }) => {
     return (
         <FootnoteContainer>
             <label

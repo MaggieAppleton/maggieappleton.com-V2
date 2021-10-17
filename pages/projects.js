@@ -3,19 +3,22 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import { Title1, Title2 } from "../components/Typography";
-import MasonryGrid from "../components/MasonryGrid";
 import ProjectCard from "../components/cards/ProjectCard";
 import { projectFilePaths, PROJECTS_PATH } from "../utils/mdxUtils";
 import Header from "../components/Header";
+import styled from "styled-components";
+import TitleWithCount from "../components/TitleWithCount";
 
 export default function Projects({ projects }) {
     return (
         <>
             <Header title="Projects by Maggie Appleton" />
             <Layout>
-                <Title1>Projects</Title1>
-                <Title2>In the past I have made things</Title2>
-                <MasonryGrid largeGap>
+                <header>
+                    <TitleWithCount posts={projects}>Projects</TitleWithCount>
+                    <Title2>In the past I have made things.</Title2>
+                </header>
+                <ProjectGrid>
                     {projects.map((project) => (
                         <ProjectCard
                             slug={project.slug}
@@ -25,11 +28,18 @@ export default function Projects({ projects }) {
                             topics={project.data.topics}
                         />
                     ))}
-                </MasonryGrid>
+                </ProjectGrid>
             </Layout>
         </>
     );
 }
+
+const ProjectGrid = styled.section`
+    display: grid;
+    grid-gap: var(--space-24);
+    margin: var(--space-80) 0;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+`;
 
 // Fetches the data for the page.
 

@@ -122,7 +122,10 @@ export default function Index({ essays, notes, patterns, projects }) {
                     <Subheader>
                         A digital garden is a collection of imperfect notes,
                         essays, and ideas growing slowly over time.{" "}
-                        <a href="/garden-history">Read more about gardens.</a>
+                        <ReadmoreLink href="/garden-history">
+                            Learn more
+                            <ArrowRightIcon width="18" height="18" />
+                        </ReadmoreLink>
                     </Subheader>
                 </motion.section>
                 <GardenSection
@@ -291,6 +294,27 @@ export default function Index({ essays, notes, patterns, projects }) {
 }
 
 // Styled Components
+
+const ReadmoreLink = styled.a`
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    svg {
+        transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
+        position: relative;
+        top: 1px;
+        margin-left: var(--space-8);
+    }
+    &:hover {
+        transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
+        color: var(--color-bright-crimson);
+        cursor: pointer;
+        svg {
+            margin-left: var(--space-12);
+            color: var(--color-sea-blue);
+        }
+    }
+`;
 
 const IndexPatternCard = styled.div`
     margin: var(--space-16) 0;
