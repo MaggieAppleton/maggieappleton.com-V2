@@ -63,7 +63,7 @@ const ProseWrapper = styled.article`
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
-        top: 3px;
+        top: 4px;
         right: 2.5rem;
     }
     hr {

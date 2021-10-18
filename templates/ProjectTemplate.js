@@ -3,9 +3,9 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import BackToTop from "../components/mdx/BackToTop";
 import { TwitterReply } from "../components/templates/TwitterReply";
+import EvergreenIcon from "../components/Icons/EvergreenIcon";
 import { Title1 } from "../components/Typography";
 import styled from "styled-components";
-import Topics from "../components/templates/Topics";
 import { breakpoints } from "../utils/breakpoints";
 import BackHoverLink from "../components/links/BackHoverLink";
 import Header from "../components/Header";
@@ -19,7 +19,7 @@ export default function ProjectTemplate({
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
-            month: "short",
+            month: "long",
         });
     }
 
@@ -39,20 +39,16 @@ export default function ProjectTemplate({
                 <TitleContainer>
                     <Title1>{frontMatter.title}</Title1>
                 </TitleContainer>
-                <Metadata style={{ display: "flex", flexDirection: "row" }}>
+                <Metadata className="metadata">
                     {frontMatter.topics && (
-                        <Topics topics={frontMatter.topics} />
+                        <span style={{ textTransform: "capitalize" }}>
+                            {frontMatter.topics}
+                        </span>
                     )}
-                    <div className="metadata">
-                        {frontMatter.startDate && (
-                            <span>
-                                Planted {formattedDate(frontMatter.startDate)}
-                            </span>
-                        )}
-                        {frontMatter.updated && (
-                            <span>{formattedDate(frontMatter.updated)}</span>
-                        )}
-                    </div>
+                    <EvergreenIcon width="14" height="14" />
+                    {frontMatter.updated && (
+                        <span>{formattedDate(frontMatter.updated)}</span>
+                    )}
                 </Metadata>
             </HeaderSection>
             <StyledMain>
@@ -70,7 +66,7 @@ export default function ProjectTemplate({
 }
 
 const TitleContainer = styled.div`
-    padding: var(--space-24) 0 var(--space-8);
+    padding: var(--space-16) 0 var(--space-8);
     p {
         font-size: var(--font-size-md);
         margin: var(--space-24) 0 0 0;
@@ -108,6 +104,8 @@ const HeaderSection = styled.header`
 
 const Metadata = styled.div`
     display: flex;
+    grid-gap: var(--space-8);
+    align-items: center;
 `;
 
 const StyledMain = styled.main`
@@ -117,6 +115,6 @@ const StyledMain = styled.main`
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-80) var(--space-16);
+        padding: var(--space-32) var(--space-16);
     }
 `;

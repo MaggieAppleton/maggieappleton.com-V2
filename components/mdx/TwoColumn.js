@@ -1,9 +1,20 @@
 import styled from "styled-components";
 import { breakpoints } from "../../utils/breakpoints";
 
-export default function TwoColumn({ children, maxWidth, alignItems }) {
+export default function TwoColumn({
+    children,
+    maxWidth,
+    alignItems,
+    gridTemplateColumns,
+    gridGap,
+}) {
     return (
-        <TwoColumnContainer alignItems={alignItems} maxWidth={maxWidth}>
+        <TwoColumnContainer
+            gridTemplateColumns={gridTemplateColumns}
+            alignItems={alignItems}
+            maxWidth={maxWidth}
+            gridGap={gridGap}
+        >
             {children}
         </TwoColumnContainer>
     );
@@ -16,8 +27,8 @@ const TwoColumnContainer = styled.div`
     margin: var(--space-24) auto var(--space-48);
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--space-16);
+    grid-template-columns: ${(props) => props.gridTemplateColumns || "1fr 1fr"};
+    grid-gap: ${(props) => props.gridGap || "var(--space-16)"};
     align-items: ${(props) => props.alignItems || "center"};
     padding: 0 var(--space-8);
     @media ${breakpoints.mediaSM} {
