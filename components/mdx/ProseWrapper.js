@@ -55,15 +55,15 @@ const ProseWrapper = styled.article`
     li::before {
         content: "";
         display: inline-block;
-        width: 25px;
+        width: 24px;
         clear: both;
-        height: 20px;
+        height: 24px;
         margin-right: -1.5rem;
-        background-image: url(http://placehold.it/20x20);
+        background-image: url("/images/leaf-icon.svg");
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
-        top: 0;
+        top: 3px;
         right: 2.5rem;
     }
     hr {
