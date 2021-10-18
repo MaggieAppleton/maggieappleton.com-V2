@@ -10,6 +10,7 @@ import GrowthStage from "../components/templates/GrowthStage";
 import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
 import BackToTop from "../components/mdx/BackToTop";
+import Backlinks from "../components/templates/Backlinks";
 import { TwitterReply } from "../components/templates/TwitterReply";
 
 export default function NoteTemplate({
@@ -57,11 +58,8 @@ export default function NoteTemplate({
                 <BackToTop />
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
-                    {/* todo: replace this with a proper component */}
                     {backlinks.length ? (
-                        <pre style={{ whiteSpace: "pre-wrap" }}>
-                            {JSON.stringify(backlinks, 4, null)}
-                        </pre>
+                        <Backlinks backlinks={backlinks} />
                     ) : null}
                 </ProseWrapper>
             </StyledMain>
