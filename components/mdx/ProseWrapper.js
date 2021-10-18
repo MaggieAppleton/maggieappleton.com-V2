@@ -45,17 +45,26 @@ const ProseWrapper = styled.article`
     ul {
         padding: 0;
         list-style: none;
+        margin-top: 0;
     }
     li {
         margin-bottom: var(--space-16);
-        padding-left: var(--space-16);
-        line-height: var(--leading-loose);
+        line-height: var(--leading-looser);
+        margin-left: 2.5rem;
     }
     li::before {
-        content: "•";
+        content: "";
         display: inline-block;
-        margin-left: -1rem;
-        width: var(--space-16);
+        width: 25px;
+        clear: both;
+        height: 20px;
+        margin-right: -1.5rem;
+        background-image: url(http://placehold.it/20x20);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 0;
+        right: 2.5rem;
     }
     hr {
         margin: var(--space-128) auto;
