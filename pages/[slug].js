@@ -6,6 +6,7 @@ import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
 import Img from "../components/mdx/Img";
+import ReferencesLink from "../components/mdx/ReferencesLink";
 import Center from "../components/mdx/Center";
 import TooltipLink from "../components/links/TooltipLink";
 import { Spacer } from "../components/Spacer";
@@ -52,6 +53,7 @@ const components = {
     img: Img,
     Spacer: Spacer,
     Center: Center,
+    ReferencesLink: ReferencesLink,
     a: TooltipLink,
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
         ssr: false,
@@ -63,6 +65,9 @@ const components = {
         ssr: false,
     }),
     ComingSoon: dynamic(() => import("../components/mdx/ComingSoon"), {
+        ssr: false,
+    }),
+    References: dynamic(() => import("../components/mdx/References"), {
         ssr: false,
     }),
     Draft: dynamic(() => import("../components/mdx/Draft"), {

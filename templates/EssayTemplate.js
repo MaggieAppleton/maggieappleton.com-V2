@@ -58,15 +58,15 @@ export default function EssayTemplate({
                 <BackToTop />
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
-                    {backlinks.length ? (
-                        <Backlinks backlinks={backlinks} />
-                    ) : null}
                 </ProseWrapper>
             </StyledMain>
             <TwitterReply
                 url={`https://maggieappleton.com/${slug}/`}
                 title={frontMatter.title}
             />
+            <ProseWrapper>
+                {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
+            </ProseWrapper>
         </>
     );
 }
