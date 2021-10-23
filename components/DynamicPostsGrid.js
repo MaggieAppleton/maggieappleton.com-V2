@@ -4,7 +4,6 @@ import NoteCard from "../components/cards/NoteCard";
 import EssayCard from "../components/cards/EssayCard";
 
 export default function DynamicPostsGrid({ postsToShow }) {
-    console.log(postsToShow);
     return (
         <MasonryGrid>
             {postsToShow.map(
