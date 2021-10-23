@@ -14,7 +14,16 @@ export default function Colophon() {
                         site was made'
                     </Title2>
                 </header>
-                <p></p>
+                <p>
+                    Everything starts as a reasonably unopinionated note (as
+                    much as that's possible – I'm a cultural relativist at heart
+                    and question the idea of pure, objective knowledge). Notes
+                    begin as seedlings, grow into buddings, and finally reach an
+                    evergreen stage. Some of them go on to become essays if I
+                    feel I have a clear opinion on the topic. (could do a
+                    graphic of the lifestage process. some notes grow into
+                    essays, not all.)
+                </p>
             </Layout>
         </>
     );
