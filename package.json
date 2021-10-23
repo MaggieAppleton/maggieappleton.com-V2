@@ -17,6 +17,7 @@
     "feed": "^4.2.2",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.2",
+    "gsap": "^3.8.0",
     "lodash": "^4.17.21",
     "next": "latest",
     "next-mdx-remote": "^3.0.1",
