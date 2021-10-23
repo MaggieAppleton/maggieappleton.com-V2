@@ -42,17 +42,22 @@ const ProseWrapper = styled.article`
         font-weight: 400;
         margin: var(--space-24) 0 var(--space-16);
     }
-    ul {
+
+    // Ordered and unordered list styling
+    ul,
+    ol {
         padding: 0;
-        list-style: none;
         margin-top: 0;
     }
-    li {
+    ul {
+        list-style: none;
+    }
+    ul > li {
         margin-bottom: var(--space-16);
         line-height: var(--leading-looser);
         margin-left: 2.5rem;
     }
-    li::before {
+    ul > li::before {
         content: "";
         display: inline-block;
         width: 24px;
@@ -65,6 +70,11 @@ const ProseWrapper = styled.article`
         position: relative;
         top: 4px;
         right: 2.5rem;
+    }
+    ol > li {
+        margin-bottom: var(--space-16);
+        line-height: var(--leading-looser);
+        margin-left: 2.5rem;
     }
     hr {
         margin: var(--space-128) auto;
