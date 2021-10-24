@@ -7,7 +7,7 @@ export const Title1 = styled(motion.h1)`
     font-family: var(--font-serif);
     line-height: var(--leading-tighter);
     font-weight: ${(props) => props.fontWeight || "normal"};
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-24);
 `;
 
 export const Title2 = styled(motion.h2)`

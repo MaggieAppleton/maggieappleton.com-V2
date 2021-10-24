@@ -25,7 +25,7 @@ const StyledContainer = styled(motion.div)`
         font-family: var(--font-serif);
         line-height: var(--leading-tighter);
         font-weight: normal;
-        margin-bottom: var(--space-16);
+        margin-bottom: var(--space-24);
     }
 `;
 
