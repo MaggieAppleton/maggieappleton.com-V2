@@ -5,6 +5,7 @@ import path from "path";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
+import generateRSSFeed from "../utils/generateRSSFeed";
 // Components
 import { Spacer } from "../components/Spacer";
 import { Title1, Title2, SmallTitle2 } from "../components/Typography";
@@ -29,7 +30,12 @@ import {
 } from "../utils/mdxUtils";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
-export default function Index({ essays, notes, patterns, projects }) {
+export default function Index({
+    filteredEssays: essays,
+    sortedNotes: notes,
+    patterns,
+    sortedProjects: projects,
+}) {
     // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
 
     const collectionAnimation = {
@@ -453,10 +459,9 @@ export function getStaticProps() {
         .filter((essay) => essay.data.featured === true)
         .slice(0, 4);
     // Sort filtered essays by date
-    const sortedEssays = filteredEssays.sort((a, b) => {
-        return new Date(b.data.updated) - new Date(a.data.updated);
-    });
-    essays = filteredEssays;
+    // const sortedEssays = filteredEssays.sort((a, b) => {
+    //     return new Date(b.data.updated) - new Date(a.data.updated);
+    // });
 
     // Get all note posts
     let notes = noteFilePaths.map((filePath) => {
@@ -476,7 +481,6 @@ export function getStaticProps() {
     const sortedNotes = notes.sort((a, b) => {
         return new Date(b.data.updated) - new Date(a.data.updated);
     });
-    notes = sortedNotes;
 
     let patterns = patternFilePaths.map((filePath) => {
         const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
@@ -512,7 +516,11 @@ export function getStaticProps() {
     const sortedProjects = projects.slice(0, 4).sort((a, b) => {
         return new Date(b.data.updated) - new Date(a.data.updated);
     });
-    projects = sortedProjects;
 
-    return { props: { essays, notes, patterns, projects } };
+    const allPosts = [...essays, ...notes, ...patterns, ...projects];
+
+    // Generate RSS Feed
+    generateRSSFeed(allPosts);
+
+    return { props: { filteredEssays, sortedNotes, patterns, sortedProjects } };
 }

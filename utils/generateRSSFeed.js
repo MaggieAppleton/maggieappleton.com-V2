@@ -1,11 +1,12 @@
 import { Feed } from "feed";
+import fs from "fs";
 
-// ! This file is unfinished – no clue if it works, half-implemented
+// ? This file is unfinished – no clue if it works, half-implemented
 // Source: https://github.com/jpmonette/feed
 // https://ashleemboyer.com/how-i-added-an-rss-feed-to-my-nextjs-site
 // https://dev.to/sreetamdas/rss-feed-in-a-next-js-site-52d0
 
-const generateRSSFeed = (articles) => {
+export default function generateRSSFeed(posts) {
     const baseUrl = "https://maggieappleton.com";
     const author = {
         name: "Maggie Appleton",
@@ -17,7 +18,7 @@ const generateRSSFeed = (articles) => {
     const feed = new Feed({
         title: "Maggie Appleton",
         description:
-            "Maggie's digital garden filled with visual essays, loose research notes, and design patterns.",
+            "A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.",
         id: baseUrl,
         link: baseUrl,
         language: "en",
@@ -29,16 +30,17 @@ const generateRSSFeed = (articles) => {
 
     // Add each article to the feed
     posts.forEach((post) => {
+        const url = `${baseUrl}/${post.slug}`;
         feed.addItem({
             title: post.title,
             id: url,
             link: url,
-            content,
-            author: [author],
-            date: new Date(date),
+            content: post.content,
+            author: author,
+            date: new Date(post.data.updated),
         });
     });
 
     // Write the RSS output to a public file
     fs.writeFileSync("public/rss.xml", feed.rss2());
-};
+}
