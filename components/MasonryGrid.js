@@ -24,7 +24,7 @@ export default function MasonryGrid({
 const StyledMasonry = styled(Masonry)`
     display: flex;
     width: auto;
-    margin-top: var(--space-64);
+    margin-top: var(--space-32);
     & .masonry_grid_column + .masonry_grid_column {
         margin-left: ${(props) =>
             props.columnGapLeft ? props.columnGapLeft : "0"};

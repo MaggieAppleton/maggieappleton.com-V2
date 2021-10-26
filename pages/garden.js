@@ -31,7 +31,7 @@ export default function Garden({ essays, notes }) {
         <>
             <Header title="The Garden of Maggie Appleton" />
             <Layout>
-                <header>
+                <header style={{ marginBottom: "var(--space-80)" }}>
                     <TitleWithCount posts={concat(essays, notes)}>
                         The Garden
                     </TitleWithCount>
