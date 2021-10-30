@@ -13,6 +13,7 @@
     "@tippyjs/react": "^4.2.5",
     "algoliasearch": "^4.10.5",
     "babel-plugin-styled-components": "1.10.2",
+    "d3": "^7.1.1",
     "dotenv": "^10.0.0",
     "feed": "^4.2.2",
     "framer-motion": "^4.1.17",
