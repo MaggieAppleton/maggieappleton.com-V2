@@ -17,7 +17,7 @@ import {
     patternFilePaths,
     PATTERNS_PATH,
 } from "../utils/mdxUtils";
-import { bookData } from "../posts/books";
+import { bookData } from "../posts/data/books";
 import TitleWithCount from "../components/TitleWithCount";
 import { concat } from "lodash";
 
