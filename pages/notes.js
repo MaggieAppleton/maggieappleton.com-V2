@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
-import { Title1, Title2 } from "../components/Typography";
+import { Title2 } from "../components/Typography";
 import styled from "styled-components";
 import NoteCard from "../components/cards/NoteCard";
 import { noteFilePaths, NOTES_PATH } from "../utils/mdxUtils";

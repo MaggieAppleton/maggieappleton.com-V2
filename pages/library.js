@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import { Title2 } from "../components/Typography";
 import BookCard from "../components/cards/BookCard";
-import { bookData } from "../posts/books";
+import { bookData } from "../posts/data/books";
 import Header from "../components/Header";
 import Link from "next/link";
 import styled from "styled-components";

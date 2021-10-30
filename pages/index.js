@@ -12,7 +12,7 @@ import { Title1, Title2, SmallTitle2 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
-import { bookData } from "../posts/books";
+import { bookData } from "../posts/data/books";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -99,7 +99,7 @@ export default function Index({
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5, duration: 1 }}
                     >
-                        UX designer, illustrator, anthropologist, and mediocre
+                        Designer, illustrator, anthropologist, and mediocre
                         developer
                         <br />
                         Currently leading design at{" "}

@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { Title2 } from "../components/Typography";
 import { BookshelfGrid } from "./library";
 import BookCard from "../components/cards/BookCard";
-import { antiBookData } from "../posts/antibooks";
+import { antiBookData } from "../posts/data/antibooks";
 import Header from "../components/Header";
 import Link from "next/link";
 import styled from "styled-components";
