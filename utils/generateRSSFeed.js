@@ -1,5 +1,7 @@
 import { Feed } from "feed";
 import fs from "fs";
+import ReactDOMServer from "react-dom/server";
+import { MDXRemote } from "next-mdx-remote";
 
 // ? This file is unfinished – no clue if it works, half-implemented
 // Source: https://github.com/jpmonette/feed
@@ -32,10 +34,10 @@ export default function generateRSSFeed(posts) {
     posts.forEach((post) => {
         const url = `${baseUrl}/${post.slug}`;
         feed.addItem({
-            title: post.title,
+            title: post.data.title,
             id: url,
             link: url,
-            content: post.content,
+            content: post.data.description,
             author: author,
             date: new Date(post.data.updated),
         });

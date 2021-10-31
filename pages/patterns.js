@@ -6,7 +6,7 @@ import { Title1, Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import PatternCard from "../components/cards/PatternCard";
 import { patternFilePaths, PATTERNS_PATH } from "../utils/mdxUtils";
-import PostCount from "../components/PostCount";
+import TitleWithCount from "../components/TitleWithCount";
 import Header from "../components/Header";
 
 export default function Patterns({ patterns }) {
@@ -14,12 +14,14 @@ export default function Patterns({ patterns }) {
         <>
             <Header title="Pattern Library of Maggie Appleton" />
             <Layout>
-                <Title1>Pattern Catalogue</Title1>
+                <TitleWithCount posts={patterns}>
+                    Pattern Catalogue
+                </TitleWithCount>
                 <Title2>
                     A catalogue of design patterns gathered from my own
                     observations and research.
                 </Title2>
-                <PostCount postType="patterns" posts={patterns} />
+
                 <MasonryGrid largeGap>
                     {patterns.map((essay, i) => (
                         <PatternCard

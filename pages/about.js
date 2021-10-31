@@ -144,7 +144,6 @@ export default function About() {
                             objectFit="contain"
                         />
                     </section>
-                    {/* <Spacer /> */}
                     <Divider />
                     <section className="talks">
                         <Title2>Talks</Title2>
@@ -482,13 +481,13 @@ const StyledTalkCard = styled.div`
     &:hover {
         h3 {
             color: var(--color-bright-crimson);
-            transform: translateX(6px);
+            transform: translateX(8px);
         }
         span {
-            transform: translateX(6px);
+            transform: translateX(8px);
         }
         svg {
-            transform: scaleX(2.5) translateX(1px);
+            transform: scaleX(3.5) translateX(1px);
         }
     }
 `;

@@ -6,9 +6,8 @@ import Header from "../components/Header";
 import { Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
 import EssayCard from "../components/cards/EssayCard";
-// import BookCard from "../components/cards/BookCard";
 import NoteCard from "../components/cards/NoteCard";
-import PatternCard from "../components/cards/PatternCard";
+// import PatternCard from "../components/cards/PatternCard";
 import {
     essayFilePaths,
     ESSAYS_PATH,
@@ -17,7 +16,6 @@ import {
     patternFilePaths,
     PATTERNS_PATH,
 } from "../utils/mdxUtils";
-import { bookData } from "../posts/data/books";
 import TitleWithCount from "../components/TitleWithCount";
 import { concat } from "lodash";
 

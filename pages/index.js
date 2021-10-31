@@ -31,7 +31,7 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function Index({
-    filteredEssays: essays,
+    sortedEssays: essays,
     sortedNotes: notes,
     patterns,
     sortedProjects: projects,
@@ -459,9 +459,9 @@ export function getStaticProps() {
         .filter((essay) => essay.data.featured === true)
         .slice(0, 4);
     // Sort filtered essays by date
-    // const sortedEssays = filteredEssays.sort((a, b) => {
-    //     return new Date(b.data.updated) - new Date(a.data.updated);
-    // });
+    const sortedEssays = filteredEssays.sort((a, b) => {
+        return new Date(b.data.updated) - new Date(a.data.updated);
+    });
 
     // Get all note posts
     let notes = noteFilePaths.map((filePath) => {
@@ -522,5 +522,5 @@ export function getStaticProps() {
     // Generate RSS Feed
     generateRSSFeed(allPosts);
 
-    return { props: { filteredEssays, sortedNotes, patterns, sortedProjects } };
+    return { props: { sortedEssays, sortedNotes, patterns, sortedProjects } };
 }

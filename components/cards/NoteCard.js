@@ -14,7 +14,6 @@ export default function NoteCard({ slug, title, growthStage, date, key }) {
                     )}
                     <div>
                         <h3>{title}</h3>
-
                         <span>
                             <RelativeDate postDate={date} />
                         </span>

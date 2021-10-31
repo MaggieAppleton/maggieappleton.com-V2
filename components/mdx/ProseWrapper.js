@@ -78,13 +78,12 @@ const ProseWrapper = styled.article`
     }
     hr {
         margin: var(--space-128) auto;
-        height: 0;
-        color: transparent;
-        border: 1px solid var(--color-salmon);
-        border-radius: 100%;
+        height: 4px;
+        background-color: var(--color-salmon);
+        border: none;
         width: 40%;
         @media ${breakpoints.mediaSM} {
-            margin: var(--space-48) 0;
+            margin: var(--space-48) auto;
         }
     }
 `;
