@@ -14,23 +14,7 @@ export default function Alert({ children }) {
                 />
             </svg>
             <div>
-                <svg height={2}>
-                    <path
-                        d="M0,0 L400,0"
-                        stroke="var(--color-bright-crimson)"
-                        strokeWidth="2"
-                        strokeDasharray="12,8"
-                    />
-                </svg>
                 <p>{children}</p>
-                <svg height={2}>
-                    <path
-                        d="M0,0 L400,0"
-                        stroke="var(--color-bright-crimson)"
-                        strokeWidth="2"
-                        strokeDasharray="12,8"
-                    />
-                </svg>
             </div>
         </AlertContainer>
     );
@@ -52,16 +36,6 @@ const AlertContainer = styled.div`
         align-items: center;
         justify-content: center;
         align-content: center;
-        svg {
-            fill: var(--color-bright-crimson);
-            position: relative;
-            top: 5px;
-        }
-        h2 {
-            margin: 0;
-            font-weight: 300;
-            line-height: var(--leading-tighter);
-        }
     }
     p {
         font-family: var(--font-sans);
