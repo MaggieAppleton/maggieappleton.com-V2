@@ -60,7 +60,8 @@ export default function About() {
                                         illustrated essays
                                     </UnderlineHoverLink>
                                 </b>{" "}
-                                and visual explanations. I'm an advocate of{" "}
+                                and visual explanations about programming and
+                                culture. I'm an advocate of{" "}
                                 <b style={{ margin: "0 0.4rem 0 0" }}>
                                     <UnderlineHoverLink href="/garden-history">
                                         digital gardening
@@ -72,14 +73,19 @@ export default function About() {
                                         end-user programming
                                     </UnderlineHoverLink>
                                 </b>
-                                , and bringing{" "}
+                                , and expanding our use of{" "}
                                 <b style={{ margin: "0 0.4rem 0 0" }}>
                                     <UnderlineHoverLink href="https://en.wikipedia.org/wiki/Embodied_cognition">
                                         embodied cognition
                                     </UnderlineHoverLink>
                                 </b>{" "}
-                                and visual metaphors into our computational
-                                mediums.
+                                and{" "}
+                                <b style={{ margin: "0 0.4rem 0 0" }}>
+                                    <UnderlineHoverLink href="https://en.wikipedia.org/wiki/Conceptual_metaphor">
+                                        conceptual metaphors
+                                    </UnderlineHoverLink>
+                                </b>{" "}
+                                in digital interfaces.
                             </p>
                             <SmallCaps>A Little History</SmallCaps>
                             <p>
