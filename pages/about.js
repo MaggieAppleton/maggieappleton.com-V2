@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "../components/Header";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
+import { Spacer } from "../components/Spacer";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
 
 export default function About() {
@@ -29,6 +30,9 @@ export default function About() {
                                 at the core of everything I make. Combining them
                                 into a coherent career is a weird and ongoing
                                 challenge.
+                                {/* <br />
+                                If I had to invent a fake spectrum to visualise
+                                my skills on, we'd probably end up with this: */}
                             </p>
                             <p>
                                 I currently lead design at
@@ -44,14 +48,14 @@ export default function About() {
                             <p>
                                 Before that I spent five years as the art
                                 director and lead illustrator at{" "}
-                                <b style={{ margin: "0 0.4rem 0 0" }}>
+                                <b style={{ margin: "0 0.5rem 0 0" }}>
                                     <UnderlineHoverLink href="https://egghead.io">
                                         egghead
                                     </UnderlineHoverLink>
-                                </b>{" "}
-                                where I spent a lot of time thinking about how
-                                to visualise invisible programming concepts
-                                through metaphors and cultural symbols.
+                                </b>
+                                where I spent my time thinking about how to
+                                visualise invisible programming concepts through
+                                metaphors and cultural symbols.
                             </p>
                             <p>
                                 On the side I create{" "}
@@ -106,19 +110,21 @@ export default function About() {
                                 not terribly employable (unless you want to be
                                 an academic or a military advisor) and I
                                 promptly switched into freelance design and
-                                illustration to pay rent – skills I began
-                                developing at 13 when I first bootlegged a copy
-                                of Photoshop, but never realised you could get
-                                paid for.
+                                illustration to pay rent. I started developing
+                                my visual design skills at age 14 when I first
+                                bootlegged a copy of Photoshop to make my own
+                                icon sets, but never realised you could get paid
+                                for that.
                             </p>
                             <p>
-                                I spent my early twenties country-hopping and
+                                In my early twenties I country-hopped while
                                 working through the early, ugly, awkward phase
                                 of my design sensibilities. I worked with web
                                 developers in Vietnam, trained with feature film
                                 illustrators in Los Angeles, and learned
                                 typography and brand design at creative agencies
-                                in Prague.
+                                in Prague. I made a lot of hideous stuff, but
+                                figured out what I liked along the way.
                             </p>
                             <p>
                                 I eventually returned to London to become a more
@@ -135,8 +141,55 @@ export default function About() {
                             objectFit="contain"
                         />
                     </section>
+                    <Spacer />
                     <section className="talks">
                         <Title2>Talks</Title2>
+                        <p>
+                            I occassionally give talks. Some are about why we
+                            should use more visual explanations and intentional
+                            metaphors in programming. Others touch on cultural
+                            anthropology topics and the narratives we tell
+                            ourselves in the world of software.
+                        </p>
+                        {[
+                            {
+                                title: "A Picture Worth a Thousand Programmes",
+                                slug: "/programming-pictures",
+                                conferences: ["React Advanced London"],
+                                description: "",
+                                date: "October 2021",
+                            },
+                            {
+                                title: "Tools for Thought as Cultural Systems, Not Computational Software",
+                                slug: "/programming-pictures",
+                                conferences: ["React Advanced London"],
+                                description: "",
+                                date: "October 2021",
+                            },
+                            {
+                                title: "The Cultural Anthropology of React",
+                                slug: "/programming-pictures",
+                                conferences: ["React Advanced London"],
+                                description: "",
+                                date: "October 2021",
+                            },
+                            {
+                                title: "Drawing the Invisible: React Explained in Five Visual Metaphors",
+                                slug: "/programming-pictures",
+                                conferences: [
+                                    "Women of React",
+                                    "egghead Talks",
+                                ],
+                                description: "",
+                                date: ["July 2020", "September 2020"],
+                            },
+                        ].map(({ title, conferences, date, slug }, i) => (
+                            <div key={i}>
+                                {title}
+                                {conferences}
+                                {date}
+                            </div>
+                        ))}
                         <div className="images">
                             <Image
                                 src="/images/talks_1.jpg"
@@ -184,16 +237,19 @@ const StyledMain = styled.main`
     img {
         border-radius: 4px;
     }
+    h2 {
+        margin-bottom: var(--space-16);
+    }
+    p {
+        line-height: var(--leading-loose);
+        margin-bottom: var(--space-24);
+        max-width: 52ch;
+    }
     section.intro {
         display: grid;
         grid-template-columns: 3fr 2fr;
         gap: var(--space-48);
         align-items: flex-start;
-        p {
-            max-width: 50ch;
-            line-height: var(--leading-loose);
-            margin-bottom: var(--space-24);
-        }
         ${SmallCaps}:not(:first-of-type) {
             margin-top: var(--space-64);
             color: var(--color-gray-900);
@@ -206,6 +262,7 @@ const StyledMain = styled.main`
     }
     section.talks {
         div.images {
+            margin-top: var(--space-48);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, auto));
             gap: var(--space-24);
