@@ -3,7 +3,7 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import BackToTop from "../components/mdx/BackToTop";
 import { TwitterReply } from "../components/templates/TwitterReply";
-import EvergreenIcon from "../components/Icons/EvergreenIcon";
+import EvergreenIcon from "../components/icons/EvergreenIcon";
 import { Title1 } from "../components/Typography";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
