@@ -10,10 +10,12 @@ export default function Footer() {
             <FooterContent>
                 <RSSFeed>
                     <h3>Want to stay up to date?</h3>
-                    <button>
-                        <RssIcon width="20" height="20" />
-                        Subscribe via RSS Feed
-                    </button>
+                    <Link href="/rss.xml">
+                        <button>
+                            <RssIcon width="20" height="20" />
+                            Subscribe via RSS Feed
+                        </button>
+                    </Link>
                 </RSSFeed>
                 <SitemapList>
                     {[
@@ -66,8 +68,12 @@ const RSSFeed = styled.div`
         font-size: var(--font-size-sm);
         font-weight: 400;
         color: var(--color-gray-800);
+        transition: all 0.3s ease-in-out;
         &:hover {
             cursor: pointer;
+            color: var(--color-crimson);
+            border: 1px solid var(--color-sea-blue);
+            box-shadow: var(--box-shadow-sm);
         }
     }
 `;
