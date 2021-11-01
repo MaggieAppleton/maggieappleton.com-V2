@@ -7,7 +7,7 @@ import { RelativeDate } from "../templates/Dates";
 
 export default function Backlinks({ backlinks }) {
     return (
-        <StyledContainer>
+        <BacklinkContainer>
             <h3>{backlinks.length} Backlinks</h3>
             <div className="grid">
                 {backlinks.map((backlink) => {
@@ -16,31 +16,38 @@ export default function Backlinks({ backlinks }) {
                     );
                 })}
             </div>
-        </StyledContainer>
+        </BacklinkContainer>
     );
 }
 
-const StyledContainer = styled.section`
+const BacklinkContainer = styled.section`
+    width: 100%;
     grid-column: 1/4 !important;
-    padding: var(--space-64) var(--space-32) var(--space-80);
     border-top: 1px solid var(--color-tinted-cream);
     background: #fff;
     h3 {
         text-align: center;
-        margin-top: 0;
+        margin-top: var(--space-48);
         font-size: var(--font-size-md);
     }
     div.grid {
-        max-width: 100%;
-        margin: var(--space-32) auto 0;
+        margin: var(--space-32) auto var(--space-48);
         display: grid;
+        max-width: 1400px;
+        padding: 0 var(--space-48);
         grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
         word-break: break-word;
-        grid-gap: var(--space-16);
+        grid-gap: var(--space-8);
     }
 
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-32) var(--space-8);
+        padding: var(--space-24) var(--space-16);
+        div.grid {
+            padding: 0 var(--space-16);
+        }
+        h3 {
+            margin-top: var(--space-24);
+        }
     }
 `;
 
@@ -63,10 +70,8 @@ function BacklinkCard({ backlink }) {
 const StyledBacklinkCard = styled(motion.div)`
     display: flex;
     flex-direction: row;
-    padding: var(--space-16);
+    padding: 0 var(--space-16) var(--space-16) 0;
     margin: 0 var(--space-16) var(--space-16) 0;
-    border-radius: var(--border-radius-base);
-    border: 1px solid var(--color-cream);
     transition: all 0.3s ease-in-out;
     h4 {
         color: var(--color-gray-800);
@@ -75,6 +80,7 @@ const StyledBacklinkCard = styled(motion.div)`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
+        margin: 0;
         margin-left: var(--space-16);
         transition: all 0.3s ease-in-out;
     }
@@ -88,20 +94,15 @@ const StyledBacklinkCard = styled(motion.div)`
         flex-direction: column;
         span {
             font-family: var(--font-sans);
-            font-size: calc(var(--font-size-xs) / 1.08);
             color: var(--color-gray-600);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: var(--font-size-sm);
             font-weight: 400;
             margin: var(--space-8) 0 0 var(--space-16);
         }
     }
     &:hover {
-        transform: scale3d(1.02, 1.02, 1.02);
-        background: var(--color-light-cream);
-        box-shadow: var(--box-shadow-sm);
-        border: 1px solid var(--color-tinted-cream);
-        h3 {
+        cursor: pointer;
+        h4 {
             color: var(--color-crimson);
         }
     }
