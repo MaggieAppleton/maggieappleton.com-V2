@@ -1,11 +1,10 @@
 import styled from "styled-components";
+import BuddingIcon from "../icons/BuddingIcon";
 
 export default function ComingSoon() {
     return (
         <ComingSoonContainer>
-            <svg width={65} height={65}>
-                <circle cx={32} cy={32} r={30} fill="none" stroke="#000" />
-            </svg>
+            <BuddingIcon width="80" height="80" />
             <h1>Coming Soon</h1>
             <p>Feel free to bug me on twitter to finish writing this.</p>
         </ComingSoonContainer>
@@ -13,6 +12,7 @@ export default function ComingSoon() {
 }
 
 const ComingSoonContainer = styled.div`
+    margin: var(--space-s) 0;
     box-shadow: var(--box-shadow-lg);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--color-tinted-cream);
@@ -21,7 +21,7 @@ const ComingSoonContainer = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: var(--space-48) 0 var(--space-32);
+    padding: var(--space-l) 0 var(--space-m);
     h1 {
         margin: 0;
     }

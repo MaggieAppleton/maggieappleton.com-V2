@@ -14,9 +14,9 @@ const ReferencesContainer = styled.div`
     border-top: 1px solid var(--color-tinted-cream);
     flex-direction: column;
     justify-content: center;
-    margin: var(--space-48) 0 0;
+    margin: var(--space-l) 0 0;
     h3 {
-        margin-top: var(--space-32);
+        margin-top: var(--space-m);
         font-size: var(--font-size-md);
     }
 `;

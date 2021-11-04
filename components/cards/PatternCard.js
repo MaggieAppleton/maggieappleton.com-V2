@@ -22,8 +22,8 @@ export default function PatternCard({ slug, title, growthStage, key }) {
 }
 
 const StyledPatternCard = styled(motion.div)`
-    margin: 0 var(--space-16) var(--space-16) 0;
-    padding: var(--space-16);
+    margin: 0 var(--space-xs) var(--space-xs) 0;
+    padding: var(--space-xs);
     h3 {
         color: var(--color-gray-800);
         transition: all 0.3s ease-in-out;
@@ -41,14 +41,14 @@ const StyledPatternCard = styled(motion.div)`
         position: relative;
         top: 2px;
         background: var(--color-sea-blue);
-        margin-right: var(--space-12);
+        margin-right: var(--space-2xs);
         transition: all 0.3s ease-in-out;
     }
     h3:hover {
         transform: scale3d(1, 1.02, 1.02);
         color: var(--color-crimson);
         ::before {
-            width: var(--space-12);
+            width: var(--space-2xs);
         }
     }
 `;

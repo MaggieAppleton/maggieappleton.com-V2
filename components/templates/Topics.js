@@ -29,13 +29,13 @@ const StyledList = styled.ul`
     flex-wrap: wrap;
     max-width: 70%;
     padding: 0;
-    margin-top: var(--space-16);
+    margin-top: var(--space-xs);
 `;
 
 const StyledTag = styled.li`
     transition: all 0.3s ease-in-out;
-    margin-right: var(--space-16);
-    margin-bottom: var(--space-4);
+    margin-right: var(--space-xs);
+    margin-bottom: var(--space-3xs);
     font-family: var(--font-sans);
     font-size: var(--font-size-xs);
 `;

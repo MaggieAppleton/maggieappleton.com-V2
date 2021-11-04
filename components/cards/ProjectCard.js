@@ -47,7 +47,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
 const Metadata = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: var(--space-12);
+    margin-top: var(--space-2xs);
     h3 {
         text-align: center;
         transition: all 0.3s ease-in-out;
@@ -55,7 +55,7 @@ const Metadata = styled.div`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
-        margin-bottom: var(--space-8);
+        margin-bottom: var(--space-3xs);
     }
     div {
         display: flex;
@@ -72,7 +72,7 @@ const Metadata = styled.div`
             margin-top: 2px;
         }
         svg {
-            margin: 0 var(--space-8);
+            margin: 0 var(--space-3xs);
         }
     }
 `;
@@ -84,7 +84,7 @@ const StyledProjectCard = styled(motion.div)`
     background: var(--color-cream);
     transition: all 0.3s ease-in-out;
     color: var(--color-gray-800);
-    margin: 0 var(--space-16) var(--space-16) 0;
+    margin: 0 var(--space-xs) var(--space-xs) 0;
     img,
     div:first-child {
         border-radius: var(--border-radius-base);

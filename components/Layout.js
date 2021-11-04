@@ -23,14 +23,14 @@ export default function Layout({ children, type }) {
 
 const StyledLayout = styled(motion.main)`
     max-width: 1400px;
-    margin: var(--space-48) auto var(--space-128);
-    padding: 0 var(--space-48);
+    margin: var(--space-l) auto var(--space-128);
+    padding: 0 var(--space-l);
     @media (max-width: 768px) {
-        margin: var(--space-24) auto var(--space-80);
-        padding: 0 var(--space-32);
+        margin: var(--space-s) auto var(--space-2xl);
+        padding: 0 var(--space-m);
     }
     @media (max-width: 576px) {
-        margin: var(--space-16) auto var(--space-64);
-        padding: 0 var(--space-16);
+        margin: var(--space-xs) auto var(--space-xl);
+        padding: 0 var(--space-xs);
     }
 `;

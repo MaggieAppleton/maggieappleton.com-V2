@@ -104,14 +104,14 @@ const HeaderSection = styled.header`
     }
 
     @media ${breakpoints.mediaSM} {
-        padding: 0 var(--space-16);
+        padding: 0 var(--space-xs);
     }
 `;
 
 const Metadata = styled.div`
     justify-content: space-between;
     div {
-        margin-top: var(--space-16);
+        margin-top: var(--space-xs);
         display: flex;
         flex-direction: column;
         text-align: right;
@@ -119,13 +119,13 @@ const Metadata = styled.div`
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-16);
-    padding: var(--space-64) 0;
+    margin-top: var(--space-xs);
+    padding: var(--space-xl) 0;
     background: white;
     border-radius: var(--border-radius-sm);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-80) var(--space-16);
+        padding: var(--space-2xl) var(--space-xs);
     }
 `;

@@ -14,7 +14,7 @@ export default function Essays({ essays }) {
         <>
             <Header title="Essays by Maggie Appleton" />
             <Layout>
-                <header style={{ marginBottom: "var(--space-80)" }}>
+                <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={essays}>Essays</TitleWithCount>
                     <Title2>
                         Opinionated, longform narrative writing with an agenda.

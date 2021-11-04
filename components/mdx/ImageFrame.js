@@ -12,7 +12,7 @@ export default function ImageFrame({ src, alt, width, showalt }) {
 const Container = styled.figure`
     max-width: 100%;
     grid-column: 1 / 4 !important;
-    margin: var(--space-24) auto var(--space-48);
+    margin: var(--space-s) auto var(--space-l);
     text-align: center;
     figcaption {
         font-family: var(--font-sans);
@@ -26,5 +26,5 @@ const StyledImageFrame = styled.img`
     border-radius: var(--border-radius-base);
     border: 1px solid var(--color-tinted-cream);
     box-shadow: var(--box-shadow-lg);
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-s);
 `;

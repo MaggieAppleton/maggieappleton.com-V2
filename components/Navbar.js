@@ -107,12 +107,12 @@ const StyledNavbar = styled(motion.nav)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: var(--space-24) var(--space-32) var(--space-24) 1.3rem;
+    padding: var(--space-s) var(--space-m) var(--space-s) 1.3rem;
     .outside-dropdown {
         display: inline-block;
         a {
-            margin-left: var(--space-24);
-            padding-bottom: var(--space-4);
+            margin-left: var(--space-s);
+            padding-bottom: var(--space-3xs);
             text-decoration: none;
             font-size: var(--font-size-xs);
             font-family: var(--font-sans);
@@ -136,7 +136,7 @@ const DropdownLink = styled.a`
     font-family: var(--font-sans);
     border-bottom: 1px solid var(--color-tinted-cream);
     border-left: 2px solid var(--color-cream);
-    padding: var(--space-12) var(--space-32) var(--space-12) var(--space-16);
+    padding: var(--space-2xs) var(--space-m) var(--space-2xs) var(--space-xs);
     transition: all 0.3s ease-in-out;
     &:hover {
         background: var(--color-light-cream);
@@ -176,7 +176,7 @@ const HoverLink = styled.a`
         }
     }
     svg {
-        margin-left: var(--space-4);
+        margin-left: var(--space-3xs);
         position: relative;
         top: 1px;
     }

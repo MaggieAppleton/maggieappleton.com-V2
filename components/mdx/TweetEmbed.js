@@ -11,7 +11,7 @@ export default function TweetEmbed({ tweetId }) {
 
 const TweetContainer = styled.div`
     &.tweet {
-        margin: 0 auto var(--space-32);
+        margin: 0 auto var(--space-m);
         width: 550px;
         max-width: 100%;
     }

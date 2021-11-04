@@ -29,7 +29,7 @@ export default function Garden({ essays, notes }) {
         <>
             <Header title="The Garden of Maggie Appleton" />
             <Layout>
-                <header style={{ marginBottom: "var(--space-80)" }}>
+                <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={concat(essays, notes)}>
                         The Garden
                     </TitleWithCount>

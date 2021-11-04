@@ -23,8 +23,8 @@ const StyledTippy = styled(Tippy)`
     font-size: var(--font-size-sm);
     word-break: break-word;
     white-space: pre-wrap;
-    padding: var(--space-4);
-    margin-bottom: var(--space-4);
+    padding: var(--space-3xs);
+    margin-bottom: var(--space-3xs);
     background-color: var(--color-light-cream);
     color: var(--color-gray-800);
     box-shadow: var(--box-shadow-md);

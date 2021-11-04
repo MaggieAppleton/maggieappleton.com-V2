@@ -61,7 +61,7 @@ const ForwardHoverLink = styled.a`
 `;
 
 const ReferenceLinkContainer = styled.div`
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-2xs);
     transition: all 1s cubic-bezier(0.2, 1, 0.8, 1);
     svg.circle {
         position: relative;

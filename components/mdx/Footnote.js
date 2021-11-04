@@ -67,7 +67,7 @@ const FootnoteContainer = styled.aside`
         content: counter(footnote-counter);
         font-size: 0.9em;
         top: -0.3rem;
-        padding-right: var(--space-8);
+        padding-right: var(--space-3xs);
     }
     blockquote .footnote {
         margin-right: -82%;
@@ -76,7 +76,7 @@ const FootnoteContainer = styled.aside`
     }
     label.footnote-number {
         display: inline;
-        padding-right: var(--space-8);
+        padding-right: var(--space-3xs);
     }
     label.margin-toggle:not(.footnote-number) {
         display: none;

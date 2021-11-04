@@ -20,13 +20,13 @@ export default function Now() {
 }
 
 const StyledMain = styled.main`
-    margin-top: var(--space-80);
-    padding: var(--space-80) 0 var(--space-128);
+    margin-top: var(--space-2xl);
+    padding: var(--space-2xl) 0 var(--space-128);
     background: white;
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-80) var(--space-16);
+        padding: var(--space-2xl) var(--space-xs);
     }
 `;
 

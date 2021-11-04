@@ -7,7 +7,7 @@ const IntroParagraph = styled.p`
         font-size: 5.4rem;
         line-height: 3rem;
         font-weight: bold;
-        margin: 1.15rem var(--space-12) 0 0;
+        margin: 1.15rem var(--space-2xs) 0 0;
     }
     p {
         margin-bottom: 0;
@@ -18,7 +18,7 @@ const IntroParagraph = styled.p`
             font-size: 4.6rem;
             line-height: 2rem;
             font-weight: bold;
-            margin: 1.15rem var(--space-8) 0 0;
+            margin: 1.15rem var(--space-3xs) 0 0;
         }
     }
 `;

@@ -66,17 +66,17 @@ export default function ProjectTemplate({
 }
 
 const TitleContainer = styled.div`
-    padding: var(--space-16) 0 var(--space-8);
+    padding: var(--space-xs) 0 var(--space-3xs);
     p {
         font-size: var(--font-size-md);
-        margin: var(--space-24) 0 0 0;
+        margin: var(--space-s) 0 0 0;
         color: var(--color-gray-600);
     }
 `;
 
 const HeaderSection = styled.header`
     max-width: 800px;
-    margin: var(--space-24) auto 0;
+    margin: var(--space-l) auto 0;
     div.above-title {
         a,
         p {
@@ -86,10 +86,10 @@ const HeaderSection = styled.header`
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: bold;
-            padding-right: var(--space-16);
+            padding-right: var(--space-xs);
         }
         p {
-            padding-left: var(--space-12);
+            padding-left: var(--space-2xs);
         }
         svg {
             position: relative;
@@ -98,23 +98,23 @@ const HeaderSection = styled.header`
     }
 
     @media ${breakpoints.mediaSM} {
-        padding: 0 var(--space-16);
+        padding: 0 var(--space-xs);
     }
 `;
 
 const Metadata = styled.div`
     display: flex;
-    grid-gap: var(--space-8);
+    grid-gap: var(--space-3xs);
     align-items: center;
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-16);
-    padding: var(--space-64) 0;
+    margin-top: var(--space-xs);
+    padding: var(--space-xl) 0;
     background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-32) var(--space-16);
+        padding: var(--space-m) var(--space-xs);
     }
 `;

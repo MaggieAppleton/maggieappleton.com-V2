@@ -12,7 +12,7 @@ export default function BasicImage({ src, alt, width, showalt }) {
 const Container = styled.figure`
     max-width: 100%;
     grid-column: 1 / 4 !important;
-    margin: var(--space-48) auto var(--space-48);
+    margin: var(--space-l) auto var(--space-l);
     text-align: center;
     figcaption {
         font-family: var(--font-sans);
@@ -23,5 +23,5 @@ const Container = styled.figure`
 
 const StyledBasicImage = styled.img`
     width: ${(props) => props.width || "1100px"};
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-xs);
 `;

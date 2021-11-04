@@ -27,26 +27,27 @@ const BacklinkContainer = styled.section`
     background: #fff;
     h3 {
         text-align: center;
-        margin-top: var(--space-48);
+        margin-top: var(--space-xl);
         font-size: var(--font-size-md);
     }
     div.grid {
-        margin: var(--space-32) auto var(--space-48);
+        margin: var(--space-l) auto var(--space-xl);
         display: grid;
         max-width: 1400px;
-        padding: 0 var(--space-48);
+        padding: 0 var(--space-l);
         grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
         word-break: break-word;
-        grid-gap: var(--space-8);
+        grid-gap: var(--space-3xs);
     }
 
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-24) var(--space-16);
+        padding: var(--space-s) var(--space-xs);
         div.grid {
-            padding: 0 var(--space-16);
+            padding: 0 var(--space-xs);
+            margin: var(--space-m) auto var(--space-s);
         }
         h3 {
-            margin-top: var(--space-24);
+            margin-top: var(--space-m);
         }
     }
 `;
@@ -70,8 +71,8 @@ function BacklinkCard({ backlink }) {
 const StyledBacklinkCard = styled(motion.div)`
     display: flex;
     flex-direction: row;
-    padding: 0 var(--space-16) var(--space-16) 0;
-    margin: 0 var(--space-16) var(--space-16) 0;
+    padding: 0 var(--space-xs) var(--space-xs) 0;
+    margin: 0 var(--space-xs) var(--space-xs) 0;
     transition: all 0.3s ease-in-out;
     h4 {
         color: var(--color-gray-800);
@@ -81,7 +82,7 @@ const StyledBacklinkCard = styled(motion.div)`
         font-weight: 400;
         line-height: var(--leading-snug);
         margin: 0;
-        margin-left: var(--space-16);
+        margin-left: var(--space-xs);
         transition: all 0.3s ease-in-out;
     }
     svg {
@@ -97,7 +98,7 @@ const StyledBacklinkCard = styled(motion.div)`
             color: var(--color-gray-600);
             font-size: var(--font-size-sm);
             font-weight: 400;
-            margin: var(--space-8) 0 0 var(--space-16);
+            margin: var(--space-3xs) 0 0 var(--space-xs);
         }
     }
     &:hover {

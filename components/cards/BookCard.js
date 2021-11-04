@@ -35,11 +35,11 @@ const StyledBookCard = styled.div`
     display: flex;
     flex-direction: column;
     transition: all 0.4s ease-in-out;
-    margin: 0 var(--space-12) var(--space-12) 0;
+    margin: 0 var(--space-2xs) var(--space-2xs) 0;
     padding: ${(props) =>
         props.small
-            ? "0 0 var(--space-16) 0"
-            : "0 var(--space-4) var(--space-48) var(--space-4)"};
+            ? "0 0 var(--space-xs) 0"
+            : "0 var(--space-3xs) var(--space-l) var(--space-3xs)"};
     img {
         transition: all 0.4s ease-in-out;
         border-radius: var(--border-radius-base);
@@ -51,7 +51,7 @@ const StyledBookCard = styled.div`
     }
     div p {
         transition: all 0.4s ease-in-out;
-        margin: var(--space-12) 0 var(--space-8) 0;
+        margin: var(--space-2xs) 0 var(--space-3xs) 0;
         line-height: var(--leading-base);
         color: var(--color-black);
     }

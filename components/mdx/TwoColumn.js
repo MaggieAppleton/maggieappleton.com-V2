@@ -24,13 +24,13 @@ const TwoColumnContainer = styled.div`
     width: 100%;
     grid-column: 1 / 4 !important;
     max-width: ${(props) => props.maxWidth || "1400px"};
-    margin: var(--space-24) auto var(--space-48);
+    margin: var(--space-s) auto var(--space-l);
     display: grid;
     justify-content: center;
     grid-template-columns: ${(props) => props.gridTemplateColumns || "1fr 1fr"};
-    grid-gap: ${(props) => props.gridGap || "var(--space-16)"};
+    grid-gap: ${(props) => props.gridGap || "var(--space-xs)"};
     align-items: ${(props) => props.alignItems || "center"};
-    padding: 0 var(--space-8);
+    padding: 0 var(--space-3xs);
     @media ${breakpoints.mediaSM} {
         grid-template-columns: 1fr;
     }

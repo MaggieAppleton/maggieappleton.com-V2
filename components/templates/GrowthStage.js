@@ -32,5 +32,5 @@ const StyledGrowthStage = styled.p`
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: bold;
-    padding-right: var(--space-16);
+    padding-right: var(--space-xs);
 `;

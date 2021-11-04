@@ -24,7 +24,7 @@ export default function MasonryGrid({
 const StyledMasonry = styled(Masonry)`
     display: flex;
     width: auto;
-    margin-top: var(--space-32);
+    margin-top: var(--space-m);
     & .masonry_grid_column + .masonry_grid_column {
         margin-left: ${(props) =>
             props.columnGapLeft ? props.columnGapLeft : "0"};
@@ -32,7 +32,7 @@ const StyledMasonry = styled(Masonry)`
     }
     & .masonry_grid_column div:first-child {
         margin-bottom: ${(props) =>
-            props.columnGapBottom ? props.columnGapBottom : "var(--space-12)"};
+            props.columnGapBottom ? props.columnGapBottom : "var(--space-2xs)"};
     }
 `;
 

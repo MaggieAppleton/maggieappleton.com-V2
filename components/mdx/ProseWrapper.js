@@ -15,32 +15,32 @@ const ProseWrapper = styled.article`
     p {
         font-size: var(--font-size-base);
         line-height: var(--leading-looser);
-        margin-bottom: var(--space-32);
+        margin-bottom: var(--space-m);
     }
     h1 {
         font-size: var(--font-size-2xl);
-        margin: var(--space-80) 0 var(--space-32);
+        margin: var(--space-2xl) 0 var(--space-m);
         @media ${breakpoints.mediaSM} {
-            margin: var(--space-64) 0 var(--space-32);
+            margin: var(--space-xl) 0 var(--space-m);
         }
     }
     h2 {
         font-size: var(--font-size-xl);
-        margin: var(--space-64) 0 var(--space-32);
+        margin: var(--space-xl) 0 var(--space-m);
         line-height: var(--leading-base);
         @media ${breakpoints.mediaSM} {
-            margin: var(--space-48) 0 var(--space-24);
+            margin: var(--space-l) 0 var(--space-s);
         }
     }
     h3 {
         font-size: var(--font-size-lg);
         font-weight: 300;
-        margin: var(--space-32) 0 var(--space-24);
+        margin: var(--space-m) 0 var(--space-s);
     }
     h4 {
         font-size: var(--font-size-md);
         font-weight: 400;
-        margin: var(--space-24) 0 var(--space-16);
+        margin: var(--space-s) 0 var(--space-xs);
     }
 
     // Ordered and unordered list styling
@@ -53,7 +53,7 @@ const ProseWrapper = styled.article`
         list-style: none;
     }
     ul > li {
-        margin-bottom: var(--space-16);
+        margin-bottom: var(--space-xs);
         line-height: var(--leading-looser);
         margin-left: 2.5rem;
     }
@@ -72,19 +72,38 @@ const ProseWrapper = styled.article`
         right: 2.5rem;
     }
     ol > li {
-        margin-bottom: var(--space-16);
+        margin-bottom: var(--space-xs);
         line-height: var(--leading-looser);
         margin-left: 2.5rem;
     }
     hr {
-        margin: var(--space-128) auto;
-        height: 4px;
+        margin: var(--space-2xl) auto;
+        height: 2px;
         background-color: var(--color-salmon);
         border: none;
-        width: 40%;
+        width: 30%;
         @media ${breakpoints.mediaSM} {
-            margin: var(--space-48) auto;
+            margin: var(--space-l) auto;
         }
+    }
+    blockquote {
+        text-align: center;
+        & > p {
+            text-align: center;
+            margin: var(--space-m) auto;
+            font-size: var(--font-size-lg);
+            line-height: var(--leading-loose);
+            display: inline-block;
+        }
+        & ::before,
+        & ::after {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 3rem;
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+        }
+        padding: var(--space-m) 0rem var(--space-xl);
     }
 `;
 

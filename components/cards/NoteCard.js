@@ -27,8 +27,8 @@ export default function NoteCard({ slug, title, growthStage, date, key }) {
 const StyledNoteCard = styled(motion.div)`
     display: flex;
     flex-direction: row;
-    padding: var(--space-16);
-    margin: 0 var(--space-16) var(--space-16) 0;
+    padding: var(--space-xs);
+    margin: 0 var(--space-xs) var(--space-xs) 0;
     border-radius: var(--border-radius-base);
     border: 1px solid var(--color-cream);
     transition: all 0.3s ease-in-out;
@@ -39,7 +39,7 @@ const StyledNoteCard = styled(motion.div)`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
-        margin-left: var(--space-16);
+        margin-left: var(--space-xs);
         transition: all 0.3s ease-in-out;
     }
     svg {
@@ -57,7 +57,7 @@ const StyledNoteCard = styled(motion.div)`
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: 400;
-            margin: var(--space-8) 0 0 var(--space-16);
+            margin: var(--space-3xs) 0 0 var(--space-xs);
         }
     }
     &:hover {

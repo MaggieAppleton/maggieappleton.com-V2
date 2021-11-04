@@ -55,8 +55,8 @@ const StyledEssayCard = styled(motion.div)`
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid var(--color-tinted-cream);
-    padding: var(--space-24);
-    margin: 0 var(--space-12) var(--space-12) 0;
+    padding: var(--space-s);
+    margin: 0 var(--space-2xs) var(--space-2xs) 0;
     border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-sm);
     background: var(--color-light-cream);
@@ -68,7 +68,7 @@ const StyledEssayCard = styled(motion.div)`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
-        margin: var(--space-12) 0;
+        margin: var(--space-2xs) 0;
     }
     div {
         display: flex;
@@ -84,7 +84,7 @@ const StyledEssayCard = styled(motion.div)`
             margin-top: 2px;
         }
         svg {
-            margin: 0 var(--space-8);
+            margin: 0 var(--space-3xs);
         }
     }
     &:hover {

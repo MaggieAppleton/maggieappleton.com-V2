@@ -1,6 +1,7 @@
 import React from "react";
 import { TwitterShareButton } from "react-share";
 import styled from "styled-components";
+import { breakpoints } from "../../utils/breakpoints";
 
 export const TwitterReply = ({ title, url }) => {
     const twitterHandle = "mappletons";
@@ -33,17 +34,21 @@ export const TwitterReply = ({ title, url }) => {
 
 const StyledTweetReply = styled.section`
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     font-family: var(--font-sans);
-    padding: var(--space-64) 0 var(--space-128);
-    gap: var(--space-8);
+    padding: var(--space-s) 0 var(--space-3xl);
+    gap: var(--space-3xs);
     background: white;
     color: var(--color-gray-600);
+    @media ${breakpoints.mediaSM} {
+        flex-direction: column;
+    }
     svg {
         fill: var(--color-gray-600);
         transition: all 0.3s ease-in-out;
-        margin-right: var(--space-4);
+        margin-right: var(--space-3xs);
     }
     button {
         cursor: pointer;

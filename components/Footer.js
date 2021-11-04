@@ -54,25 +54,25 @@ const RSSFeed = styled.div`
         font-size: var(--font-size-md);
         font-family: var(--font-body);
         font-weight: 300;
-        margin-bottom: var(--space-24);
+        margin-bottom: var(--space-s);
     }
     button {
         display: inline-flex;
         align-items: center;
-        gap: var(--space-8);
-        padding: var(--space-8) 1.2rem;
+        gap: var(--space-3xs);
+        padding: var(--space-3xs) 1.2rem;
         background: none;
         border: 1px solid var(--color-tinted-cream);
         border-radius: 3rem;
         font-family: var(--font-sans);
         font-size: var(--font-size-sm);
         font-weight: 400;
-        color: var(--color-gray-800);
+        color: var(--color-gray-600);
         transition: all 0.3s ease-in-out;
         &:hover {
             cursor: pointer;
             color: var(--color-crimson);
-            border: 1px solid var(--color-sea-blue);
+            border: 1px solid var(--color-crimson);
             box-shadow: var(--box-shadow-sm);
         }
     }
@@ -82,7 +82,7 @@ const SitemapList = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr;
     list-style: none;
-    grid-gap: var(--space-4) var(--space-48);
+    grid-gap: var(--space-3xs) var(--space-l);
     padding-inline-start: 0;
     li span {
         color: var(--color-gray-600);
@@ -95,21 +95,21 @@ const FooterContent = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
     max-width: 1400px;
-    margin: var(--space-48) auto;
-    padding: 0 var(--space-48);
+    margin: var(--space-l) auto;
+    padding: 0 var(--space-l);
     @media ${breakpoints.mediaMD} {
-        margin: var(--space-32) auto;
-        padding: 0 var(--space-32);
+        margin: var(--space-m) auto;
+        padding: 0 var(--space-m);
         grid-template-columns: 1fr;
     }
     @media ${breakpoints.mediaSM} {
-        margin: var(--space-16) auto;
-        padding: 0 var(--space-16);
+        margin: var(--space-xs) auto;
+        padding: 0 var(--space-xs);
         grid-template-columns: 1fr;
     }
 `;
 
 const StyledFooter = styled.footer`
-    padding: var(--space-64) 0;
+    padding: var(--space-xl) 0;
     border-top: 1px solid var(--color-gray-300);
 `;

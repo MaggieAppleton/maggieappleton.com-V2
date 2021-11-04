@@ -5,7 +5,7 @@ const Podcastiframe = styled.iframe`
     width: 100%;
     height: auto;
     margin: 0 auto;
-    margin-top: var(--space-16);
+    margin-top: var(--space-xs);
     border: none;
     overflow: hidden;
 `;

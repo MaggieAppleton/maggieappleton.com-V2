@@ -24,7 +24,7 @@ export default function TopicPage({ topic, topics, postData }) {
         <>
             <Header title={`${topicName} posts by Maggie Appleton`} />
             <Layout>
-                <header style={{ marginBottom: "var(--space-80)" }}>
+                <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={postData}>
                         {topicName}
                     </TitleWithCount>

@@ -78,7 +78,7 @@ export default function Index({
                     style={{
                         display: "flex",
                         flexDirection: "column",
-                        gap: "var(--space-32)",
+                        gap: "var(--space-m)",
                     }}
                 >
                     <Title1
@@ -87,7 +87,7 @@ export default function Index({
                         transition={{ delay: 0.2, duration: 1 }}
                         style={{
                             maxWidth: "1200px",
-                            marginTop: "var(--space-32)",
+                            marginTop: "var(--space-m)",
                         }}
                     >
                         <b>Maggie </b>
@@ -157,7 +157,7 @@ export default function Index({
                                 display: "grid",
                                 gridTemplateColumns:
                                     "repeat(auto-fit, minmax(300px, 1fr))",
-                                gridGap: "var(--space-12)",
+                                gridGap: "var(--space-2xs)",
                             }}
                         >
                             {essays.map((essay, i) => (
@@ -244,7 +244,7 @@ export default function Index({
                                 display: "grid",
                                 gridTemplateColumns:
                                     "repeat(auto-fit, minmax(180px, 1fr))",
-                                gridGap: "var(--space-12)",
+                                gridGap: "var(--space-2xs)",
                             }}
                         >
                             {bookData.slice(0, 4).map((book, i) => (
@@ -280,7 +280,7 @@ export default function Index({
                             display: "grid",
                             gridTemplateColumns:
                                 "repeat(auto-fit, minmax(320px, 1fr))",
-                            gridGap: "var(--space-24)",
+                            gridGap: "var(--space-s)",
                         }}
                     >
                         {projects.slice(0, 3).map((project, i) => (
@@ -310,21 +310,21 @@ const ReadmoreLink = styled.a`
         transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
         position: relative;
         top: 1px;
-        margin-left: var(--space-8);
+        margin-left: var(--space-3xs);
     }
     &:hover {
         transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
         color: var(--color-bright-crimson);
         cursor: pointer;
         svg {
-            margin-left: var(--space-12);
+            margin-left: var(--space-2xs);
             color: var(--color-sea-blue);
         }
     }
 `;
 
 const IndexPatternCard = styled.div`
-    margin: var(--space-16) 0;
+    margin: var(--space-xs) 0;
     h3 {
         color: var(--color-gray-800);
         transition: all 0.3s ease-in-out;
@@ -342,14 +342,14 @@ const IndexPatternCard = styled.div`
         position: relative;
         top: 2px;
         background: var(--color-sea-blue);
-        margin-right: var(--space-12);
+        margin-right: var(--space-2xs);
         transition: all 0.3s ease-in-out;
     }
     h3:hover {
         color: var(--color-crimson);
         transform: scale3d(1, 1.03, 1.03);
         ::before {
-            width: var(--space-12);
+            width: var(--space-2xs);
         }
     }
     &:hover {
@@ -358,7 +358,7 @@ const IndexPatternCard = styled.div`
 
 const IndexNoteCard = styled.div`
     display: flex;
-    padding: var(--space-16) 0 1.2rem;
+    padding: var(--space-xs) 0 1.2rem;
     border-bottom: 1px solid var(--color-tinted-cream);
     transition: all 0.3s ease-in-out;
     svg {
@@ -373,7 +373,7 @@ const IndexNoteCard = styled.div`
         font-size: var(--font-size-base);
         font-weight: 400;
         line-height: var(--leading-snug);
-        margin-left: var(--space-16);
+        margin-left: var(--space-xs);
         transition: all 0.3s ease-in-out;
     }
     &:hover {
@@ -386,19 +386,20 @@ const IndexNoteCard = styled.div`
 `;
 
 const GardenSection = styled(motion.section)`
-    margin: var(--space-64) 0 var(--space-24);
+    margin: var(--space-xl) 0 var(--space-s);
     display: grid;
-    grid-gap: var(--space-80);
+    grid-gap: var(--space-2xl);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         "essays essays notes"
         "library library null";
     @media ${breakpoints.mediaMD} {
-        grid-gap: var(--space-24);
+        grid-gap: var(--space-s);
     }
     @media ${breakpoints.mediaSM} {
         grid-template-columns: 1fr;
+        grid-gap: var(--space-l);
         grid-template-rows: auto;
         grid-template-areas: "essays" "notes" "patterns" "library";
     }
@@ -411,19 +412,19 @@ const SectionHeader = styled.h3`
     color: var(--color-gray-800);
     display: flex;
     align-items: center;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3xs);
     svg {
         transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
         position: relative;
         top: 0px;
-        margin-left: var(--space-8);
+        margin-left: var(--space-3xs);
     }
     &:hover {
         transition: color 0.3s ease-in-out, margin-left 0.2s ease-in-out;
         color: var(--color-bright-crimson);
         cursor: pointer;
         svg {
-            margin-left: var(--space-12);
+            margin-left: var(--space-2xs);
             color: var(--color-sea-blue);
         }
     }
@@ -434,7 +435,7 @@ const Subheader = styled.p`
     font-size: var(--font-size-base);
     font-weight: 300;
     color: var(--color-gray-800);
-    margin-bottom: var(--space-32);
+    margin-bottom: var(--space-m);
 `;
 
 // Fetches the data for the page.

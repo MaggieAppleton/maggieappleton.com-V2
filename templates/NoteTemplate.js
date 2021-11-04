@@ -58,21 +58,21 @@ export default function NoteTemplate({
                 <BackToTop />
                 <ProseWrapper>
                     <MDXRemote {...source} components={components} />
-                    {backlinks.length ? (
-                        <Backlinks backlinks={backlinks} />
-                    ) : null}
                 </ProseWrapper>
             </StyledMain>
             <TwitterReply
                 url={`https://maggieappleton.com/${slug}/`}
                 title={frontMatter.title}
             />
+            <ProseWrapper>
+                {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
+            </ProseWrapper>
         </>
     );
 }
 
 const TitleContainer = styled.div`
-    padding: var(--space-24) 0 var(--space-48);
+    padding: var(--space-s) 0 var(--space-l);
     border-bottom: 1px solid var(--color-tinted-cream);
     h1 {
         font-size: var(--font-size-2xl);
@@ -80,14 +80,14 @@ const TitleContainer = styled.div`
     }
     p {
         font-size: var(--font-size-md);
-        margin: var(--space-24) 0 0 0;
+        margin: var(--space-s) 0 0 0;
         color: var(--color-gray-600);
     }
 `;
 
 const HeaderSection = styled.header`
     max-width: 800px;
-    margin: var(--space-24) auto 0;
+    margin: var(--space-l) auto 0;
     div.above-title {
         a,
         p {
@@ -97,10 +97,10 @@ const HeaderSection = styled.header`
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: bold;
-            padding-right: var(--space-16);
+            padding-right: var(--space-xs);
         }
         p {
-            padding-left: var(--space-12);
+            padding-left: var(--space-2xs);
         }
         svg {
             position: relative;
@@ -109,7 +109,7 @@ const HeaderSection = styled.header`
     }
 
     @media ${breakpoints.mediaSM} {
-        padding: 0 var(--space-16);
+        padding: 0 var(--space-xs);
     }
 `;
 
@@ -118,12 +118,12 @@ const Metadata = styled.div`
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-16);
-    padding: var(--space-64) 0;
+    margin-top: var(--space-xs);
+    padding: var(--space-xl) 0;
     background: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
-        padding: var(--space-80) var(--space-16);
+        padding: var(--space-2xl) var(--space-xs);
     }
 `;

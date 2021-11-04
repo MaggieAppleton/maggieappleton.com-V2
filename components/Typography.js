@@ -7,7 +7,11 @@ export const Title1 = styled(motion.h1)`
     font-family: var(--font-serif);
     line-height: var(--leading-tighter);
     font-weight: ${(props) => props.fontWeight || "normal"};
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-s);
+    @media ${breakpoints.mediaSM} {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--space-xs);
+    }
 `;
 
 export const Title2 = styled(motion.h2)`
@@ -16,8 +20,11 @@ export const Title2 = styled(motion.h2)`
     color: var(--color-gray-800);
     font-weight: 100;
     line-height: var(--leading-tight);
-    margin: var(--space-16) 0 var(--space-12);
+    margin: var(--space-xs) 0 var(--space-2xs);
     transition: all 0.3s ease-in-out;
+    @media ${breakpoints.mediaSM} {
+        font-size: var(--font-size-lg);
+    }
 `;
 
 export const SmallTitle2 = styled(motion.h2)`
@@ -56,5 +63,5 @@ export const Subtext = styled.aside`
     font-family: var(--font-sans);
     text-align: center;
     color: var(--color-gray-600);
-    margin-bottom: var(--space-32);
+    margin-bottom: var(--space-m);
 `;

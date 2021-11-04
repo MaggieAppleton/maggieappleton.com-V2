@@ -37,7 +37,7 @@ export default function Notes({ notes }) {
 const NotesGrid = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    margin: var(--space-80) 0;
+    margin: var(--space-2xl) 0;
 `;
 
 // Fetches the data for the page.
