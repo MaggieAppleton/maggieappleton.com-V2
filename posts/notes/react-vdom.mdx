@@ -9,8 +9,9 @@ type: "note"
 growthStage: "evergreen"
 ---
 
-<img
-    alt=""
+<BasicImage
+    width="550"
+    alt="A drawing of the react logo and two browser windows stacked on top of each other"
     src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_400/v1592834724/maggieappleton.com/egghead-course-notes/react-vdom/thumb_2x.png"
 />
 
@@ -28,21 +29,15 @@ The idea of the virtual DOM system helped clarify a few things for me. Primarily
 
 <Alert>
 
-<p aria-role="image">⚠️</p>
+This post is slightly dated, and the React team doesn't use the term **"Virtual DOM"** as a mental model for how React works under the hood.
 
-<h3> HOWEVER </h3>
+<TweetEmbed tweetId="1066328666341294080" />
 
-This post is slightly dated, and the React team isn't keen on the term **"Virtual DOM"** as a mental model for how React works under the hood.
-
-https://twitter.com/dan_abramov/status/1066328666341294080
-
-Instead Dan wrote up a nice long explanation on [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/) which clarifies the details how React updates the UI.
+Instead Dan wrote up a nice long explanation on <a href="https://overreacted.io/react-as-a-ui-runtime/">React as a UI Runtime</a> which clarifies the details how React updates the UI.
 
 They still have a section of the docs about the [Virtual DOM](https://reactjs.org/docs/faq-internals.html), but it's not an essential piece of the React ecosystem to learn about.
 
 The below explanation will still help you understand the basic concept that React figures out what needs to change on the DOM before changing it, but go to other sources if you want a more in-depth explanation.
-
-<br />
 
 </Alert>
 
