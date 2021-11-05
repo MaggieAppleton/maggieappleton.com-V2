@@ -12,7 +12,7 @@ export default function ImageFrame({ src, alt, width, showalt }) {
 const Container = styled.figure`
     max-width: 100%;
     grid-column: 1 / 4 !important;
-    margin: var(--space-s) auto var(--space-l);
+    margin: var(--space-s) auto var(--space-xl);
     text-align: center;
     figcaption {
         font-family: var(--font-sans);

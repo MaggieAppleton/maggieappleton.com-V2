@@ -92,7 +92,7 @@ const ProseWrapper = styled.article`
             text-align: center;
             margin: var(--space-m) auto;
             font-size: var(--font-size-lg);
-            line-height: var(--leading-loose);
+            line-height: var(--leading-base);
             display: inline-block;
         }
         & ::before,

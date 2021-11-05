@@ -23,7 +23,6 @@ export default function Backlinks({ backlinks }) {
 const BacklinkContainer = styled.section`
     width: 100%;
     grid-column: 1/4 !important;
-    border-top: 1px solid var(--color-tinted-cream);
     background: #fff;
     h3 {
         text-align: center;
@@ -33,9 +32,8 @@ const BacklinkContainer = styled.section`
     div.grid {
         margin: var(--space-l) auto var(--space-xl);
         display: grid;
-        max-width: 1400px;
-        padding: 0 var(--space-l);
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        max-width: 900px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         word-break: break-word;
         grid-gap: var(--space-3xs);
     }
@@ -98,7 +96,7 @@ const StyledBacklinkCard = styled(motion.div)`
             color: var(--color-gray-600);
             font-size: var(--font-size-sm);
             font-weight: 400;
-            margin: var(--space-3xs) 0 0 var(--space-xs);
+            margin: var(--space-2xs) 0 0 var(--space-xs);
         }
     }
     &:hover {
