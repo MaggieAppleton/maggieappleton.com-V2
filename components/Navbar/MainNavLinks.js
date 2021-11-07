@@ -99,6 +99,9 @@ const Main = styled.div`
     .dropdown-trigger {
         display: block;
     }
+    @media screen and (max-width: 550px) {
+        display: none;
+    } ;
 `;
 
 const DropdownLink = styled.a`

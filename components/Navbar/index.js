@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import Logo from "../visuals/Logo";
 import MainNavLinks from "./MainNavLinks";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
     return (
@@ -17,6 +18,7 @@ export default function Navbar() {
                 </a>
             </Link>
             <MainNavLinks />
+            <MobileMenu />
         </StyledNavbar>
     );
 }
