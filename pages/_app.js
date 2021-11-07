@@ -2,7 +2,7 @@ import { GlobalStyle } from "../components/GlobalStyle";
 // import { AnimatePresence } from "framer-motion";
 import "./_app.css";
 // import { DefaultSeo } from "next-seo";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/index.js";
 import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps, router }) {
