@@ -25,11 +25,11 @@ const StyledTippy = styled(Tippy)`
     white-space: pre-wrap;
     padding: var(--space-3xs);
     margin-bottom: var(--space-3xs);
-    background-color: var(--color-light-cream);
+    background-color: white;
     color: var(--color-gray-800);
     box-shadow: var(--box-shadow-md);
     .tippy-arrow {
-        color: var(--color-light-cream);
+        color: white;
     }
 `;
 

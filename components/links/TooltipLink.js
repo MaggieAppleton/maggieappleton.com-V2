@@ -3,23 +3,38 @@ import styled from "styled-components";
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 
 export default function TooltipLink({ href, children }) {
+    if (href.startsWith("http")) {
+        return <ExternalLink href={href}>{children}</ExternalLink>;
+    }
+    return <InternalLink href={href}>{children}</InternalLink>;
+}
+
+function InternalLink({ href, children }) {
+    return (
+        <Tooltip
+            content={<StyledExternalUrl href={href}>{href}</StyledExternalUrl>}
+        >
+            <StyledContainer>
+                <StyledLink internal href={href}>
+                    <span>{children}</span>
+                </StyledLink>
+            </StyledContainer>
+        </Tooltip>
+    );
+}
+
+function ExternalLink({ href, children }) {
     return (
         <Tooltip
             content={
-                <StyledUrl href={href}>
-                    {href.includes("http") ? (
-                        <span>
-                            {href}{" "}
-                            <ExternalLinkIcon
-                                width="18"
-                                height="18"
-                                style={{ position: "relative", top: "3px" }}
-                            />
-                        </span>
-                    ) : (
-                        <span>{children}</span>
-                    )}
-                </StyledUrl>
+                <StyledExternalUrl href={href}>
+                    {href}
+                    <ExternalLinkIcon
+                        width="18"
+                        height="18"
+                        style={{ position: "relative", top: "3px" }}
+                    />
+                </StyledExternalUrl>
             }
         >
             <StyledContainer>
@@ -31,7 +46,7 @@ export default function TooltipLink({ href, children }) {
     );
 }
 
-const StyledUrl = styled.a`
+const StyledExternalUrl = styled.a`
     color: var(--color-gray-600);
     transition: color 0.2s ease-in-out;
     text-align: center;
@@ -48,6 +63,7 @@ const StyledContainer = styled.div`
     left: 0px;
     top: 0px;
 `;
+
 const StyledLink = styled.a`
     cursor: pointer;
     position: relative;
@@ -58,7 +74,7 @@ const StyledLink = styled.a`
         @media (min-width: 550px) {
             content: "";
             transform-origin: 50% 100%;
-            background: var(--color-bright-crimson);
+            background: var(--color-gray-300);
             transition: clip-path 0.3s,
                 transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
             position: absolute;
@@ -83,8 +99,11 @@ const StyledLink = styled.a`
     }
     &:hover::before {
         @media (min-width: 550px) {
-            transform: translate3d(0, 3px, 0) scale3d(1.03, 2, 1);
-            background: var(--color-sea-blue);
+            transform: translate3d(0, 3px, 0) scale3d(1, 2, 1);
+            background: ${(props) =>
+                props.internal
+                    ? "var(--color-bright-crimson)"
+                    : "var(--color-sea-blue)"};
             clip-path: polygon(
                 0% 0%,
                 0% 100%,
@@ -104,7 +123,10 @@ const StyledLink = styled.a`
         white-space: normal;
         transition: all 0.5s cubic-bezier(0.2, 1, 0.8, 1);
         word-break: break-all;
-        color: var(--color-bright-crimson);
+        color: ${(props) =>
+            props.internal
+                ? "var(--color-medium-sea-blue)"
+                : "var(--color-bright-crimson)"};
         text-decoration: underline;
         @media (min-width: 550px) {
             text-decoration: none;
@@ -112,6 +134,9 @@ const StyledLink = styled.a`
     }
     &:hover span {
         transform: translate3d(0, -1px, 0);
-        color: var(--color-dark-crimson);
+        color: ${(props) =>
+            props.internal
+                ? "var(--color-dark-sea-blue)"
+                : "var(--color-crimson)"};
     }
 `;

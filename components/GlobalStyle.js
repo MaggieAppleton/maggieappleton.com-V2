@@ -30,7 +30,8 @@ export const GlobalStyle = createGlobalStyle`
 		--color-bright-crimson: #960462;
 		--color-crimson: #5F023E;
 		--color-sea-blue: #04A5BB;
-		--color-dark-sea-blue: #017989;
+		--color-medium-sea-blue: #008BA3;
+		--color-dark-sea-blue: #00758F;
 		--color-purple: #7558B2;
 		--color-salmon: #FD8370;
 
@@ -65,12 +66,12 @@ export const GlobalStyle = createGlobalStyle`
 	  	;
 
 		--box-shadow-md: 
-		1px 0.9px 2.3px -3px rgba(40, 10, 0, 0.02),
-		2.4px 2.2px 5.5px -3px rgba(40, 10, 0, 0.028),
-		4.5px 4.1px 10.4px -3px rgba(40, 10, 0, 0.035),
-		8px 7.4px 18.5px -3px rgba(40, 10, 0, 0.042),
-		15px 13.8px 34.7px -3px rgba(40, 10, 0, 0.05),
-		36px 33px 83px -3px rgba(40, 10, 0, 0.07)
+		1px 0.9px 2.3px -3px rgba(30, 10, 10, 0.04),
+		2.4px 2.2px 5.5px -3px rgba(30, 10, 10, 0.05),
+		4.5px 4.1px 10.4px -3px rgba(30, 10, 10, 0.06),
+		8px 7.4px 18.5px -3px rgba(30, 10, 10, 0.07),
+		15px 13.8px 34.7px -3px rgba(30, 10, 10, 0.08),
+		36px 33px 83px -3px rgba(30, 10, 10, 0.2)
 		;
 	  
 		--box-shadow-lg:
