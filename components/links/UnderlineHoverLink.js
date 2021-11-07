@@ -26,6 +26,10 @@ const StyledLink = styled.a`
     text-decoration: none;
     outline: none;
     padding-bottom: 0.25rem;
+    &:focus {
+        outline: 2px solid darkblue;
+        border-radius: 2px;
+    }
     &::before {
         content: "";
         transform-origin: 50% 100%;

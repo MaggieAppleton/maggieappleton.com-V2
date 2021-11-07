@@ -70,6 +70,10 @@ const StyledLink = styled.a`
     white-space: nowrap;
     outline: none;
     word-break: break-all;
+    &:focus {
+        outline: 2px solid darkblue;
+        border-radius: 2px;
+    }
     &::before {
         @media (min-width: 550px) {
             content: "";

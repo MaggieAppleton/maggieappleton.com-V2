@@ -130,9 +130,9 @@ export default function MobileMenu() {
 
 function LinkButton({ href, children, handleClick }) {
     return (
-        <button onClick={handleClick}>
-            <Link href={href}>{children}</Link>
-        </button>
+        <Link href={href}>
+            <button onClick={handleClick}>{children}</button>
+        </Link>
     );
 }
 
@@ -155,13 +155,12 @@ const LinkContainer = styled(motion.div)`
         border: none;
         background: none;
         cursor: pointer;
-    }
-    a {
+        color: var(--color-crimson);
         font-size: var(--font-size-lg);
         font-family: var(--font-serif);
         transition: all 0.3s ease-in-out;
     }
-    a:hover {
+    button:hover {
         color: var(--color-bright-crimson);
     }
 `;
