@@ -25,6 +25,7 @@ const StyledLink = styled.a`
     white-space: nowrap;
     text-decoration: none;
     outline: none;
+    padding-bottom: 0.25rem;
     &::before {
         content: "";
         transform-origin: 50% 100%;

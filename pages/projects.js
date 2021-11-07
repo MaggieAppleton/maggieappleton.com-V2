@@ -14,7 +14,7 @@ export default function Projects({ projects }) {
         <>
             <Header title="Projects by Maggie Appleton" />
             <Layout>
-                <header>
+                <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={projects}>Projects</TitleWithCount>
                     <Title2>In the past I have made things.</Title2>
                 </header>
@@ -37,7 +37,6 @@ export default function Projects({ projects }) {
 const ProjectGrid = styled.section`
     display: grid;
     grid-gap: var(--space-s);
-    margin: var(--space-2xl) 0;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 `;
 

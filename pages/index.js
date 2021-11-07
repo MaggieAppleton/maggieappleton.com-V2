@@ -247,7 +247,7 @@ export default function Index({
                                 gridGap: "var(--space-2xs)",
                             }}
                         >
-                            {bookData.slice(0, 4).map((book, i) => (
+                            {bookData.slice(0, 5).map((book, i) => (
                                 <BookCard
                                     small
                                     subtitle={book.subtitle}
@@ -393,7 +393,7 @@ const GardenSection = styled(motion.section)`
     grid-template-rows: auto;
     grid-template-areas:
         "essays essays notes"
-        "library library null";
+        "library library library";
     @media ${breakpoints.mediaMD} {
         grid-gap: var(--space-s);
     }

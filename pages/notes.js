@@ -14,11 +14,13 @@ export default function Notes({ notes }) {
         <>
             <Header title="Notes by Maggie Appleton" />
             <Layout>
-                <TitleWithCount posts={notes}>Notes</TitleWithCount>
-                <Title2>
-                    Loose, unopinionated notes on things I don’t entirely
-                    understand yet.
-                </Title2>
+                <header style={{ marginBottom: "var(--space-xl)" }}>
+                    <TitleWithCount posts={notes}>Notes</TitleWithCount>
+                    <Title2>
+                        Loose, unopinionated notes on things I don’t entirely
+                        understand yet.
+                    </Title2>
+                </header>
                 <NotesGrid>
                     {notes.map((note) => (
                         <NoteCard
@@ -37,7 +39,6 @@ export default function Notes({ notes }) {
 const NotesGrid = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    margin: var(--space-2xl) 0;
 `;
 
 // Fetches the data for the page.

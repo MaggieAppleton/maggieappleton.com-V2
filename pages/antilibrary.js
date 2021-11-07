@@ -13,7 +13,7 @@ export default function AntiLibrary() {
         <>
             <Header title="Antilibrary of Maggie Appleton" />
             <Layout>
-                <header>
+                <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={antiBookData}>
                         <Link href="/library">
                             <StyledLink>Library </StyledLink>

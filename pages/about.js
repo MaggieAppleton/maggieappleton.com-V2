@@ -229,8 +229,9 @@ export default function About() {
                         <Title2>Podcasts</Title2>
                         <p>
                             A handful of kind and interesting people have been
-                            gracious enough to let me ramble about programming
-                            metaphors on their podcasts.
+                            gracious enough to let me ramble about programming,
+                            metaphors, and/or programming metaphors on their
+                            podcasts.
                         </p>
                         <GridSection>
                             {[
@@ -327,9 +328,9 @@ const GridSection = styled.div`
 `;
 
 const HeaderSection = styled.header`
-    margin: var(--space-s) auto 0;
+    margin: var(--space-m) auto 0;
     ${SmallCaps} {
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-3xs);
         color: var(--color-gray-600);
     }
     h1 {
