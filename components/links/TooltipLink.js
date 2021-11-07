@@ -1,10 +1,27 @@
 import Tooltip from "../Tooltip";
 import styled from "styled-components";
-import { breakpoints } from "../../utils/breakpoints";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 
 export default function TooltipLink({ href, children }) {
     return (
-        <Tooltip content={<StyledUrl href={href}>{href}</StyledUrl>}>
+        <Tooltip
+            content={
+                <StyledUrl href={href}>
+                    {href.includes("http") ? (
+                        <span>
+                            {href}{" "}
+                            <ExternalLinkIcon
+                                width="18"
+                                height="18"
+                                style={{ position: "relative", top: "3px" }}
+                            />
+                        </span>
+                    ) : (
+                        <span>{children}</span>
+                    )}
+                </StyledUrl>
+            }
+        >
             <StyledContainer>
                 <StyledLink href={href}>
                     <span>{children}</span>
