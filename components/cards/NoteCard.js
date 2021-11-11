@@ -4,9 +4,9 @@ import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 import { RelativeDate } from "../templates/Dates";
 
-export default function NoteCard({ slug, title, growthStage, date, key }) {
+export default function NoteCard({ slug, title, growthStage, date }) {
     return (
-        <Link key={key} href={`/${slug}`}>
+        <Link href={`/${slug}`}>
             <a>
                 <StyledNoteCard>
                     {growthStage && (

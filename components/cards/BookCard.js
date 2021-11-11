@@ -7,11 +7,9 @@ export default function BookCard({
     subtitle,
     author,
     link,
-    key,
 }) {
     return (
         <a
-            key={key}
             style={{ cursor: "pointer" }}
             href={link}
             target="_blank"

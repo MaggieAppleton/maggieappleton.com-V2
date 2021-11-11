@@ -4,7 +4,7 @@ import styled from "styled-components";
 import EvergreenIcon from "../icons/EvergreenIcon";
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ slug, cover, title, date, topics, key }) {
+export default function ProjectCard({ slug, cover, title, date, topics }) {
     function formattedDate(date) {
         return new Date(date).toLocaleDateString("en-GB", {
             year: "numeric",
@@ -13,7 +13,7 @@ export default function ProjectCard({ slug, cover, title, date, topics, key }) {
     }
 
     return (
-        <Link key={key} href={`/${slug}`}>
+        <Link href={`/${slug}`}>
             <a>
                 <StyledProjectCard>
                     {cover ? (

@@ -13,10 +13,9 @@ export default function EssayCard({
     growthStage,
     date,
     variants,
-    key,
 }) {
     return (
-        <Link key={key} href={`/${slug}`}>
+        <Link href={`/${slug}`}>
             <a>
                 <StyledEssayCard variants={variants}>
                     {cover ? (

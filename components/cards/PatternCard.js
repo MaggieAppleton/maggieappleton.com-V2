@@ -3,9 +3,9 @@ import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 
-export default function PatternCard({ slug, title, growthStage, key }) {
+export default function PatternCard({ slug, title, growthStage }) {
     return (
-        <Link key={key} href={`/${slug}`}>
+        <Link href={`/${slug}`}>
             <a>
                 <StyledPatternCard>
                     <h3>{title}</h3>
