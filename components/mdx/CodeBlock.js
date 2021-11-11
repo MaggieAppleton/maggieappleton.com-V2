@@ -7,27 +7,31 @@ import { breakpoints } from "../../utils/breakpoints";
 // import Tippy from "@tippyjs/react";
 
 export default function CodeBlock({ children }) {
-    return <pre>{children}</pre>;
-    // return (
-    //     <Highlight
-    //         {...defaultProps}
-    //         theme={theme}
-    //         code={children}
-    //         language="js"
-    //     >
-    //         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-    //             <pre className={className} style={style}>
-    //                 {tokens.map((line, i) => (
-    //                     <div {...getLineProps({ line, key: i })}>
-    //                         {line.map((token, key) => (
-    //                             <span {...getTokenProps({ token, key })} />
-    //                         ))}
-    //                     </div>
-    //                 ))}
-    //             </pre>
-    //         )}
-    //     </Highlight>
-    // );
+    console.log(children.props.children);
+
+    const language = children.props.className.replace(/language-/, "");
+    return (
+        <Highlight
+            {...defaultProps}
+            theme={theme}
+            code={children.props.children.trim()}
+            language={language}
+        >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <StyledCodeWrapper>
+                    <StyledCodeBlock className={className} style={style}>
+                        {tokens.map((line, i) => (
+                            <div {...getLineProps({ line, key: i })}>
+                                {line.map((token, key) => (
+                                    <span {...getTokenProps({ token, key })} />
+                                ))}
+                            </div>
+                        ))}
+                    </StyledCodeBlock>
+                </StyledCodeWrapper>
+            )}
+        </Highlight>
+    );
 }
 
 const StyledCodeWrapper = styled.div`
@@ -35,25 +39,19 @@ const StyledCodeWrapper = styled.div`
 `;
 
 const StyledCodeBlock = styled.pre`
-    float: left;
-    width: 660px;
-    overflow: initial;
-    padding: 1.4em 1.8em;
+    width: 100%;
+    overflow: scroll;
+    font-family: IBM Plex Mono, Dank Mono, SF Mono, consolas;
+    padding: var(--space-24) var(--space-32);
     border-radius: 0.3em;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    font-family: "IBM Plex Mono";
-    @media ${breakpoints.mediaSM} {
-        width: 100%;
-    }
 `;
 
-const StyledNumberSpan = styled.span`
-    display: inline-block;
-    width: 2em;
-    user-select: none;
-    opacity: 0.3;
-`;
+// const StyledNumberSpan = styled.span`
+//     display: inline-block;
+//     width: 2em;
+//     user-select: none;
+//     opacity: 0.3;
+// `;
 
 // const CopyToClipboard = ({ code }) => {
 //     const [isCopied, setCopied] = useClipboard(code, { successDuration: 1000 });
