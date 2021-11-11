@@ -16,8 +16,8 @@ const StyledCard = styled.div`
     text-align: ${(props) => (props.alignLeft ? "" : "center")};
     padding: var(--space-m) var(--space-l);
     grid-column: 1/4 !important;
-    width: 860px;
-    max-width: 100%;
+    max-width: 860px;
+    width: 100%;
     h1,
     h2,
     h3,
