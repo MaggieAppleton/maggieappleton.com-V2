@@ -88,6 +88,9 @@ const components = {
     IntroParagraph: dynamic(() => import("../components/mdx/IntroParagraph"), {
         ssr: false,
     }),
+    SimpleCard: dynamic(() => import("../components/mdx/SimpleCard"), {
+        ssr: false,
+    }),
     FullWidthBackground: dynamic(
         () => import("../components/mdx/FullWidthBackground"),
         {

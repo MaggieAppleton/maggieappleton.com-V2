@@ -53,15 +53,11 @@ There's two essential React hooks we'll use to connect our React code to our Gre
 
 <br />
 
-<SimpleCard width="740px">
+<SimpleCard>
 
-#### **useRef** lets us access and directly target our DOM nodes
+**useRef** lets us access and directly target our DOM nodes
 
-</SimpleCard>
-
-<SimpleCard width="740px">
-
-#### **useEffect** lets us to perform side effects – any functions or data requests that we want to run _after_ rendering the component to the DOM
+**useEffect** lets us to perform side effects – any functions or data requests that we want to run _after_ rendering the component to the DOM
 
 </SimpleCard>
 
@@ -75,7 +71,7 @@ We first need to run `yarn install gsap` or `npm install gsap` into our React pr
 
 <br />
 
-<SimpleCard width="740px" center>
+<SimpleCard>
 
 Feel free to open up a Codesandbox project to work through the steps while you read. I've set one up for you with React and Greensock already installed:
 
@@ -98,7 +94,7 @@ Let's start by creating a React component called `<AnimatedBox/>` that is going 
 
 We'll need to import the Greensock library into our component with `import { gsap }from 'gsap'`, as well as React and our two hooks with `import React, { useRef, useEffect } from 'react'`
 
-```js
+```
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
@@ -147,7 +143,7 @@ We create a new reference by adding `const boxRef = useRef()` anywhere outside o
 
 We then add a `ref={boxRef}` attribute on our `<div>` element.
 
-```js
+```
 const Animation = () => {
     const boxRef = useRef();
 
@@ -174,7 +170,7 @@ Next we're going to add our **useEffect** hook, and write our GreenSock animatio
 
 If you're already familiar with greensock this will look fairly straightforward.
 
-```js
+```
 const Animation = () => {
     const boxRef = useRef();
 
@@ -202,13 +198,13 @@ We declare a normal `gsap.to()` tween, but instead of passing in an id or class 
 
 This means we want gsap to animate the `.current` property of our `boxRef` reference – which is the `<div>` element we put that reference on.
 
-```js
+```
 gsap.to([boxRef.current], {});
 ```
 
 We then pass in our variables object, which tells Greensock to move our div 400px along the _x_ axis over a duration of 2 seconds:
 
-```js
+```
 { x: 400px, duration: 2 }
 ```
 
