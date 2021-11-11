@@ -155,7 +155,7 @@ We're able to do this because when we use the double bracket or add a # to creat
 
 We can then target both of those attributes with a CSS selector that looks like this:
 
-```
+```css
 span.rm-page-ref[data-tag="Ideas"],
 span[data-link-title^="Tweet"] .rm-page-ref {
     color: #fcb815;
@@ -181,7 +181,7 @@ In my database I use this heavily when taking book notes to visually distinguish
 
 To style an entire block, and all its child elements, we use:
 
-```
+```css
 .roam-block-container[data-page-links*="Comment"] {
     // styles in here
 }
@@ -189,7 +189,7 @@ To style an entire block, and all its child elements, we use:
 
 To style only the child elements but not the parent, add `.rm-block-children` to the end use:
 
-```
+```css
 .roam-block-container[data-page-links*="Comment"] .rm-block-children {
     // styles in here
 }
@@ -197,7 +197,7 @@ To style only the child elements but not the parent, add `.rm-block-children` to
 
 To style just the block itself but none of the child elements, add `> div.rm-block-main` on:
 
-```
+```css
 .roam-block-container[data-page-links*="Comment"] > div.rm-block-main {
     // styles in here
 }
