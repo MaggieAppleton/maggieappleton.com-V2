@@ -7,9 +7,7 @@ import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
 import Img from "../components/mdx/Img";
 import ReferencesLink from "../components/mdx/ReferencesLink";
-import Center from "../components/mdx/Center";
 import Alert from "../components/mdx/Alert";
-import TooltipLink from "../components/links/TooltipLink";
 import { Spacer } from "../components/Spacer";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
@@ -54,10 +52,14 @@ const components = {
     img: Img,
     Alert: Alert,
     Spacer: Spacer,
-    Center: Center,
     ReferencesLink: ReferencesLink,
-    a: TooltipLink,
+    a: dynamic(() => import("../components/links/TooltipLink"), {
+        ssr: false,
+    }),
     pre: dynamic(() => import("../components/mdx/CodeBlock"), {
+        ssr: false,
+    }),
+    Center: dynamic(() => import("../components/mdx/Center"), {
         ssr: false,
     }),
     BasicImage: dynamic(() => import("../components/mdx/BasicImage"), {
