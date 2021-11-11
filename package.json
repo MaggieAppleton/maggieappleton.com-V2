@@ -1,5 +1,6 @@
 {
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./posts",
@@ -24,6 +25,7 @@
     "next-mdx-remote": "^3.0.1",
     "next-remote-watch": "1.0.0",
     "next-seo": "^4.28.1",
+    "prism-react-renderer": "^1.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.32.1",
