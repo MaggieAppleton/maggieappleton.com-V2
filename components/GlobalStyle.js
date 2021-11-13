@@ -336,4 +336,11 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: var(--font-sans);
 		color: var(--color-gray-600);
 	}
+
+	button {
+		background-color: var(---color-salmon);
+		border: none;
+		border-radius: var(---border-radius-sm);
+		padding: var(--space-12) var(--space-24);
+	}
 `;

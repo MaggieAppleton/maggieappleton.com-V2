@@ -46,6 +46,7 @@ const components = {
     Timeline: Timeline,
     PlayState: PlayState,
     Controls: Controls,
+    ButtonLink: dynamic(() => import("../components/links/ButtonLink")),
     Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
         ssr: false,
     }),
