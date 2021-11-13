@@ -35,12 +35,15 @@ export default function CodeBlock({ children }) {
 }
 
 const StyledCodeWrapper = styled.div`
-    overflow: scroll;
+    /* overflow: scroll; */
+    width: 100%;
+    padding: 0;
+    margin: 0;
 `;
 
 const StyledCodeBlock = styled.pre`
     width: 100%;
-    overflow: scroll;
+    /* overflow: scroll; */
     font-size: calc(var(--font-size-sm) * 1.3);
     line-height: var(--leading-loose);
     font-family: IBM Plex Mono, Dank Mono, SF Mono, consolas;

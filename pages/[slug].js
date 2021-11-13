@@ -5,16 +5,12 @@ import dynamic from "next/dynamic";
 import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
-import Img from "../components/mdx/Img";
-import ReferencesLink from "../components/mdx/ReferencesLink";
-import Alert from "../components/mdx/Alert";
 import { Spacer } from "../components/Spacer";
+import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
-import Podcastiframe from "../components/mdx/Podcastiframe";
-import Footnote from "../components/mdx/Footnote";
 import {
     Title1,
     Title2,
@@ -46,13 +42,27 @@ const components = {
     h2: Title2,
     h3: Title3,
     h4: Title4,
-    Podcastiframe: Podcastiframe,
+    Tween: Tween,
+    Timeline: Timeline,
+    PlayState: PlayState,
+    Controls: Controls,
+    Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
+        ssr: false,
+    }),
     Subtext: Subtext,
-    Footnote: Footnote,
-    img: Img,
-    Alert: Alert,
+    Footnote: dynamic(() => import("../components/mdx/Footnote"), {
+        ssr: false,
+    }),
+    img: dynamic(() => import("../components/mdx/Img"), {
+        ssr: false,
+    }),
+    Alert: dynamic(() => import("../components/mdx/Alert"), {
+        ssr: false,
+    }),
     Spacer: Spacer,
-    ReferencesLink: ReferencesLink,
+    ReferencesLink: dynamic(() => import("../components/mdx/ReferencesLink"), {
+        ssr: false,
+    }),
     a: dynamic(() => import("../components/links/TooltipLink"), {
         ssr: false,
     }),
