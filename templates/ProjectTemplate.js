@@ -111,7 +111,8 @@ const Metadata = styled.div`
 const StyledMain = styled.main`
     margin-top: var(--space-xs);
     padding: var(--space-xl) 0;
-    background: linear-gradient(var(--color-cream) 0, white 110px);
+    background-color: white;
+    background-image: linear-gradient(var(--color-cream) 0, white 110px);
     grid-column: 1/4 !important;
     width: 100%;
     @media ${breakpoints.mediaSM} {
