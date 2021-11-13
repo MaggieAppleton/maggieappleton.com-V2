@@ -117,6 +117,9 @@ const components = {
             ssr: false,
         }
     ),
+    GsapExplainer: dynamic(() => import("../components/unique/GsapExplainer"), {
+        ssr: false,
+    }),
 };
 
 export default function PostPage({ source, frontMatter, slug, backlinks }) {
