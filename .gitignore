@@ -20,6 +20,7 @@
 *.pem
 /posts/.drafts
 .vscode
+.drafts
 
 # debug
 npm-debug.log*
