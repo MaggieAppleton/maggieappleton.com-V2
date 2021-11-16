@@ -38,8 +38,8 @@ const ProseWrapper = styled.article`
         margin: var(--space-m) 0 var(--space-s);
     }
     h4 {
-        font-size: var(--font-size-md);
-        font-weight: 400;
+        font-size: var(--font-size-base);
+        font-weight: 700;
         margin: var(--space-s) 0 var(--space-xs);
     }
 
