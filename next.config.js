@@ -9,6 +9,7 @@ module.exports = {
             "i.gr-assets.com",
             "i.pinimg.com",
             "libcom.org",
+            "resonanceaudiodistro.files.wordpress.com",
         ],
     },
 };

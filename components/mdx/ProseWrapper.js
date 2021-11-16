@@ -78,10 +78,10 @@ const ProseWrapper = styled.article`
     }
     hr {
         margin: var(--space-2xl) auto;
-        height: 2px;
+        height: 3px;
         background-color: var(--color-salmon);
         border: none;
-        width: 30%;
+        width: 20%;
         @media ${breakpoints.mediaSM} {
             margin: var(--space-l) auto;
         }

@@ -69,13 +69,15 @@ const Metadata = styled.div`
         font-family: var(--font-body);
         font-size: var(--font-size-md);
         margin-bottom: var(--space-3xs);
-        max-width: 26ch;
+        width: 26ch;
+        max-width: 100%;
     }
     p {
         font-family: var(--font-sans);
         font-size: var(--font-size-sm);
         line-height: var(--leading-loose);
-        max-width: 45ch;
+        width: 45ch;
+        max-width: 100%;
         color: var(--color-gray-900);
     }
     svg {
