@@ -60,6 +60,12 @@ const components = {
     Alert: dynamic(() => import("../components/mdx/Alert"), {
         ssr: false,
     }),
+    ResourceBook: dynamic(() => import("../components/mdx/ResourceBook"), {
+        ssr: false,
+    }),
+    Video: dynamic(() => import("../components/mdx/Video"), {
+        ssr: false,
+    }),
     Spacer: Spacer,
     ReferencesLink: dynamic(() => import("../components/mdx/ReferencesLink"), {
         ssr: false,

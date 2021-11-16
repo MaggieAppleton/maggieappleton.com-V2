@@ -90,6 +90,7 @@ const ProseWrapper = styled.article`
         text-align: center;
         & > p {
             text-align: center;
+            max-width: 30ch;
             margin: var(--space-m) auto;
             font-size: var(--font-size-lg);
             line-height: var(--leading-base);
