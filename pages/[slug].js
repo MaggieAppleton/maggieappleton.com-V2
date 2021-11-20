@@ -127,6 +127,12 @@ const components = {
   MultipartIntro: dynamic(() => import("../components/unique/MultipartIntro"), {
     ssr: false,
   }),
+  InvisiblesFeature: dynamic(
+    () => import("../components/unique/InvisiblesFeature"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({ source, frontMatter, slug, backlinks }) {

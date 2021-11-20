@@ -41,7 +41,7 @@ const MultipartContainer = styled.div`
   justify-content: center;
   text-align: center;
   transition: 0.6s;
-  margin: var(--space-xl) auto 0;
+  margin: var(--space-xl) auto var(--space-s);
 `;
 
 const PartContainer = styled.div`
