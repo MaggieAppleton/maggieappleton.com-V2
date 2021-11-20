@@ -4,7 +4,7 @@ import { breakpoints } from "../utils/breakpoints";
 const handleSize = (size) => {
   switch (size) {
     case "small":
-      return "var(--space-m)";
+      return "var(--space-l)";
     case "large":
       return "var(--space-3xl)";
     default:
@@ -12,9 +12,11 @@ const handleSize = (size) => {
   }
 };
 
-export const Spacer = styled.div`
-  height: ${(props) => handleSize(props.size)};
+const Spacer = styled.div`
+  height: ${({ size }) => handleSize(size)};
   @media ${breakpoints.mediaSM} {
-    height: calc(${(size) => handleSize(size)} / 2);
+    height: ${({ size }) => handleSize(size) / 2};
   }
 `;
+
+export default Spacer;

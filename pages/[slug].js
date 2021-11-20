@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
-import { Spacer } from "../components/Spacer";
+import Spacer from "../components/Spacer";
 import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
@@ -45,6 +45,7 @@ const components = {
   Tween: Tween,
   Timeline: Timeline,
   PlayState: PlayState,
+  Spacer: Spacer,
   Controls: Controls,
   ButtonLink: dynamic(() => import("../components/links/ButtonLink")),
   Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
@@ -66,7 +67,6 @@ const components = {
   Video: dynamic(() => import("../components/mdx/Video"), {
     ssr: false,
   }),
-  Spacer: Spacer,
   ReferencesLink: dynamic(() => import("../components/mdx/ReferencesLink"), {
     ssr: false,
   }),
