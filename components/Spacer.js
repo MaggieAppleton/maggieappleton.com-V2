@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { breakpoints } from "../utils/breakpoints";
 
 const handleSize = (size) => {
   switch (size) {
@@ -14,7 +13,4 @@ const handleSize = (size) => {
 
 export const Spacer = styled.div`
   height: ${({ size }) => handleSize(size)};
-  @media ${breakpoints.mediaSM} {
-    height: ${({ size }) => handleSize(size) / 2};
-  }
 `;

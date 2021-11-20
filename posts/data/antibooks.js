@@ -1,5 +1,21 @@
 export const antiBookData = [
   {
+    title: "The Dawn of Everything",
+    subtitle: "A New History of Humanity",
+    author: "David Graeber",
+    cover:
+      "https://books.google.com/books?id=X8gZEAAAQBAJ&printsec=frontcover&img=1&zoom=3&source=gbs_api",
+    link: "https://www.google.com/books/edition/The_Dawn_of_Everything/X8gZEAAAQBAJ",
+  },
+  {
+    title: "Turing's Cathedral",
+    subtitle: "The Origins of the Digital Universe",
+    author: "George Dyson",
+    cover:
+      "https://books.google.com/books?id=dMK3P6B3WgcC&printsec=frontcover&img=1&zoom=3&source=gbs_api",
+    link: "https://www.google.com/books/edition/Turing's_Cathedral/dMK3P6B3WgcC",
+  },
+  {
     title: "New Dark Age",
     subtitle: "Technology, Knowledge and the End of the Future",
     author: "James Bridle",
