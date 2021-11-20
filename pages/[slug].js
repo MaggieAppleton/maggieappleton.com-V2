@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
-import Spacer from "../components/Spacer";
+import { Spacer } from "../components/Spacer";
 import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";

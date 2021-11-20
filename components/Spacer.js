@@ -12,11 +12,9 @@ const handleSize = (size) => {
   }
 };
 
-const Spacer = styled.div`
+export const Spacer = styled.div`
   height: ${({ size }) => handleSize(size)};
   @media ${breakpoints.mediaSM} {
     height: ${({ size }) => handleSize(size) / 2};
   }
 `;
-
-export default Spacer;
