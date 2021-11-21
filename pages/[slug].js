@@ -134,9 +134,36 @@ const components = {
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),
-  GsapExplainer: dynamic(() => import("../components/unique/GsapExplainer"), {
-    ssr: false,
-  }),
+  GsapScroller: dynamic(
+    () => import("../components/unique/gsap-basics/GsapScroller"),
+    {
+      ssr: false,
+    }
+  ),
+  TweenRedBigBox: dynamic(
+    () => import("../components/unique/gsap-basics/TweenRedBigBox"),
+    {
+      ssr: false,
+    }
+  ),
+  TweenSpinningBox: dynamic(
+    () => import("../components/unique/gsap-basics/TweenSpinningBox"),
+    {
+      ssr: false,
+    }
+  ),
+  TweenReverseSpinningBox: dynamic(
+    () => import("../components/unique/gsap-basics/TweenReverseSpinningBox"),
+    {
+      ssr: false,
+    }
+  ),
+  TweenBlueRedBox: dynamic(
+    () => import("../components/unique/gsap-basics/TweenBlueRedBox"),
+    {
+      ssr: false,
+    }
+  ),
   MultipartIntro: dynamic(() => import("../components/unique/MultipartIntro"), {
     ssr: false,
   }),
