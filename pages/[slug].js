@@ -12,6 +12,12 @@ import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
 import {
+  StaticCSSPosition,
+  RelativeCSSPosition,
+  AbsoluteCSSPosition,
+  FixedCSSPosition,
+} from "../components/unique/css-position/CSSPosition";
+import {
   Title1,
   Title2,
   Title3,
@@ -118,6 +124,10 @@ const components = {
   ),
 
   // Unique components – used in specific essays or notes
+  StaticCSSPosition: StaticCSSPosition,
+  RelativeCSSPosition: RelativeCSSPosition,
+  AbsoluteCSSPosition: AbsoluteCSSPosition,
+  FixedCSSPosition: FixedCSSPosition,
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),
