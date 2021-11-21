@@ -42,7 +42,7 @@ const StyledLinkCard = styled.div`
   p {
     font-family: var(--font-sans);
     font-size: calc(var(--font-size-sm));
-    line-height: var(--leading-loose);
+    line-height: var(--leading-base);
     margin: var(--space-3xs) 0;
     max-width: 46ch;
     color: var(--color-gray-600);
@@ -50,7 +50,7 @@ const StyledLinkCard = styled.div`
   &:hover {
     box-shadow: var(--box-shadow-lg);
     h3 {
-      color: var(--color-sea-blue);
+      color: var(--color-bright-crimson);
     }
   }
 `;

@@ -69,16 +69,17 @@ const Metadata = styled.div`
     margin: 0;
     font-family: var(--font-body);
   }
+  span {
+    color: var(--color-gray-600);
+  }
   h3 {
     font-family: var(--font-body);
     font-size: var(--font-size-md);
     margin-bottom: var(--space-3xs);
+    color: var(--color-gray-800);
     width: 26ch;
     max-width: 100%;
     transition: all 0.2s ease-in-out;
-    &:hover {
-      color: var(--color-sea-blue);
-    }
   }
   p {
     font-family: var(--font-sans);
@@ -86,12 +87,17 @@ const Metadata = styled.div`
     line-height: var(--leading-loose);
     width: 42ch;
     max-width: 100%;
-    color: var(--color-gray-900);
+    color: var(--color-gray-800);
   }
   svg {
     margin: var(--space-s) 0;
     @media (max-width: 768px) {
       margin: var(--space-s) auto;
+    }
+  }
+  &:hover {
+    h3 {
+      color: var(--color-bright-crimson);
     }
   }
 `;
