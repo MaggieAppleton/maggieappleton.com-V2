@@ -1,41 +1,33 @@
 ---
 title: "Illustrating Gatsby's Key Concepts"
 description: "Illustrated notes on the key concepts of how Gatsby.js works"
-updated: "2020-08-20"
+updated: "2021-11-20"
 startDate: "2020-08-20"
 type: "note"
 topics: ["Illustrated Notes", "Gatsby", "Web Development", "React"]
 growthStage: "evergreen"
 ---
 
-The site you're currently on is built in a JavaScript framework called [Gatsby.js](https://www.gatsbyjs.org/). It's one of a host of new website builders based around [static site-generation](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/) and [the JAMStack](https://jamstack.wtf/) <Footnote idName={1}>JAM stands for JavaScript, APIs, and Markup. It's a relatively new approach to building websites that's been gaining popularity over the last half decade.</Footnote>
+<IntroParagraph>
 
-If you've heard of Gatsby before but haven't wrapped your head around it yet, this might be for you.
+My previous website was built in a JavaScript framework called [Gatsby.js](https://www.gatsbyjs.org/). It's one of a host of new website builders based around [static site-generation](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/) and [the JAMStack](https://jamstack.wtf/) <Footnote idName={1}>JAM stands for JavaScript, APIs, and Markup. It's a relatively new approach to building websites that's been gaining popularity over the last half decade.</Footnote> If you've heard of Gatsby before but haven't wrapped your head around it yet, this might be for you.
+
+</IntroParagraph>
 
 I already have some illustrated notes up on using the [[JAMStack with Gatsby & Contentful]] and [[Building Gatsby Themes]], but they're a little more advanced.
 
-[Khaled Garbaya](https://khaledgarbaya.net/) just put out an egghead course on
+[Khaled Garbaya](https://khaledgarbaya.net/) put out an egghead course on
 [Getting Started with Gatsby](https://egghead.io/courses/get-started-with-gatsby) that's better suited to Gatsby beginners.
-
-<a noTip href="https://egghead.io/courses/get-started-with-gatsby">
-    <ImageFrame
-        width="90%"
-        alt="Course illustration of set of React-themed moving boxes and a road sign for Gatsby"
-        src="https://og-image-egghead-course.now.sh/get-started-with-gatsby"
-    />
-</a>
-
----
 
 ## Illustrating the Key Concepts
 
-I've been working on a set of illustrations that capture the _key concepts_ from Khaled's course. They don't summarise all the course content. They're just supporting material that help clarify the most important ideas.
+I made a set of illustrations that capture the _key concepts_ from Khaled's course. They don't summarise all the course content. They're just supporting material that help clarify the most important ideas.
 
 First up is a **big picture view** showing all the essential parts of a Gatsby site.
 
-<img
-    alt="Gatsby is a collection of tools for building static sites"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:best,w_1200/v1597741851/maggieappleton.com/egghead-course-notes/intro-gatsby/IntroGatsby_1_Small.png"
+<BasicImage
+  alt="Gatsby is a collection of tools for building static sites"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:best,w_1200/v1597741851/maggieappleton.com/egghead-course-notes/intro-gatsby/IntroGatsby_1_Small.png"
 />
 
 Gatsby sites are able to pull in data from multiple sources all at once. This includes REST API endpoints, classic content management systems like [Wordpress](https://www.gatsbyjs.com/guides/wordpress/) or [Contentful](https://www.gatsbyjs.com/blog/2018-1-25-building-a-site-with-react-and-contentful/), or just your local file system.
@@ -46,8 +38,6 @@ These are pulled in through [GraphQL](https://www.graphql.com/), which acts as a
 
 And finally [React](https://www.gatsbyjs.com/docs/glossary/react/) creates all the user interface elements.
 
----
-
 ### Page Queries vs. Static Queries
 
 Once people wrap their heads around the structure of a Gatsby project, GraphQL is usually one the first sticking points.
@@ -56,24 +46,22 @@ If you've never worked with it before, the syntax looks very odd and it's hard t
 
 It gets more confusing to learn there are _two types of queries_ - **page queries** and **static queries**
 
-<img
-    alt="Diagram of a pageQuery request inside a page, and a static query request inside a component"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1597741854/maggieappleton.com/egghead-course-notes/intro-gatsby/IntroGatsby_2_Small.png"
+<BasicImage
+  alt="Diagram of a pageQuery request inside a page, and a static query request inside a component"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1597741854/maggieappleton.com/egghead-course-notes/intro-gatsby/IntroGatsby_2_Small.png"
 />
 
 It only seems complex on the surface, but it's easy to distinguish these two. Most of your queries will be page queries – these live inside your page files like `blog.js` or `about.js`
 
 Static queries go inside individual component files like `Navbar.js` or `Footer.js`. There's also a handy React hook to handle these for us: [useStaticQuery](https://www.gatsbyjs.com/docs/use-static-query/)
 
----
-
 ### Progressive Enhancement
 
 One of the main benefits of a Gatsby site is it uses a technique called **Progressive Enhancement** to render pages.
 
-<img
-    alt="Animation of a page rendering static HTML elements first, then being updates with React afterwards"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1597741856/maggieappleton.com/egghead-course-notes/intro-gatsby/IntroGatsby_3_Animation.gif"
+<BasicImage
+  alt="Animation of a page rendering static HTML elements first, then being updates with React afterwards"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1597741856/maggieappleton.com/egghead-course-notes/intro-gatsby/IntroGatsby_3_Animation.gif"
 />
 
 This is what makes Gatsby page look like they load quickly. The lightweight static HTML version appears first, and then heavier files and interactive elements are layered on afterwards.
@@ -82,11 +70,7 @@ React handles any changes and user interactions. Once an element is clicked or c
 
 <br />
 
-<SimpleCard>
-
 These illustrations are part of the [egghead community notes](https://github.com/eggheadio/eggheadio-course-notes/tree/master/get-started-with-gatsby) on Khaled's [Get Started with Gatsby course](https://egghead.io/courses/migrate-from-create-react-app-to-gatsby).
 
 You can find more notes taken by people who have been through the course on there.
 If you take the course yourself, you can also add to them to the shared [github repo](https://github.com/eggheadio/eggheadio-course-notes/tree/master/get-started-with-gatsby).
-
-</SimpleCard>
