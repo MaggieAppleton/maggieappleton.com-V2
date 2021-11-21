@@ -25,7 +25,7 @@ export default function ImageLink({ href, children }) {
 
 const StyledExternalUrl = styled.a`
   color: var(--color-gray-600);
-  transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in-out;
   text-align: center;
   &:hover {
     color: var(--color-bright-crimson);
@@ -39,8 +39,4 @@ const StyledContainer = styled.div`
   position: relative;
   left: 0px;
   top: 0px;
-  img:hover {
-    transform: scale(1.01);
-    transition: transform 0.3s ease-in;
-  }
 `;
