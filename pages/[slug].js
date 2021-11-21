@@ -116,6 +116,9 @@ const components = {
   SimpleCard: dynamic(() => import("../components/mdx/SimpleCard"), {
     ssr: false,
   }),
+  LinkCard: dynamic(() => import("../components/mdx/LinkCard"), {
+    ssr: false,
+  }),
   FullWidthBackground: dynamic(
     () => import("../components/mdx/FullWidthBackground"),
     {

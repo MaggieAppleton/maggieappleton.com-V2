@@ -4,7 +4,14 @@ import Image from "next/image";
 export default function ResourceBook({ url, title, author, image, children }) {
   return (
     <StyledBookCard>
-      <div style={{ height: "319px", width: "220px", flexShrink: 0 }}>
+      <div
+        style={{
+          height: "319px",
+          width: "220px",
+          flexShrink: 0,
+          boxShadow: "var(--box-shadow-lg)",
+        }}
+      >
         <Image
           width={220}
           height={319}
@@ -39,6 +46,7 @@ const StyledBookCard = styled.div`
   justify-content: center;
   gap: var(--space-l);
   height: content-min;
+  cursor: pointer;
   img {
     border-radius: var(--border-radius-sm);
   }
@@ -67,6 +75,10 @@ const Metadata = styled.div`
     margin-bottom: var(--space-3xs);
     width: 26ch;
     max-width: 100%;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: var(--color-sea-blue);
+    }
   }
   p {
     font-family: var(--font-sans);
