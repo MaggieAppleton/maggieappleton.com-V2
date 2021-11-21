@@ -37,7 +37,7 @@ const ProseWrapper = styled.article`
     }
   }
   h3 {
-    font-size: var(--font-size-md);
+    font-size: calc(var(--font-size-lg) / 1.1);
     font-weight: 300;
     margin: var(--space-m) 0 var(--space-s);
   }
