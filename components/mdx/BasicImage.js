@@ -24,4 +24,5 @@ const Container = styled.figure`
 const StyledBasicImage = styled.img`
   width: ${(props) => props.width || "1100px"};
   margin-bottom: var(--space-xs);
+  border-radius: var(--border-radius-sm);
 `;
