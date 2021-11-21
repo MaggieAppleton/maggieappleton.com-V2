@@ -12,12 +12,15 @@ export default function BasicImage({ src, alt, width, showalt, margin }) {
 const Container = styled.figure`
   max-width: 100%;
   grid-column: 1 / 4 !important;
-  margin: ${(props) => props.margin || "var(--space-l) auto var(--space-l)"};
+  margin: ${(props) => props.margin || "var(--space-l) auto"};
   text-align: center;
   figcaption {
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     color: var(--color-gray-600);
+  }
+  @media (max-width: 768px) {
+    margin: var(--space-s) auto;
   }
 `;
 
