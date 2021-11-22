@@ -23,16 +23,13 @@ Thankfully, you do not have to brave the black hat darkness alone.
 
 [Mike Sherov](https://twitter.com/mikesherov) made an [egghead](https://egghead.io/courses/web-security-essentials-mitm-csrf-and-xss) course that covers a whole series of web security essentials
 
-<a
-    noTip
-    href="https://egghead.io/courses/web-security-essentials-mitm-csrf-and-xss"
->
-    <ImageFrame
-        width="800px"
-        alt="Course illustration of objects in 3D space"
-        src="https://og-image-egghead-course.now.sh/web-security-essentials-mitm-csrf-and-xss"
-    />
-</a>
+<ImageLink href="https://egghead.io/courses/web-security-essentials-mitm-csrf-and-xss">
+  <ImageFrame
+    width="800px"
+    alt="Course illustration of objects in 3D space"
+    src="https://og-image-egghead-course.now.sh/web-security-essentials-mitm-csrf-and-xss"
+  />
+</ImageLink>
 
 I am (thankfully) not responsible enough for anyone to put me in charge of security for an important website. But I was still curious.
 
@@ -40,47 +37,54 @@ I wanted to know what the current landscape of internet risk looks like. How, _e
 
 Here's my illustrated notes from Mike's course that should give you a big picture overview of what to should look out for.
 
-<img
-    alt="Web security essentials - Let's look at three common attacks"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_780/v1592262535/maggieappleton.com/egghead-course-notes/websecurity/web-security-1.png"
+<BasicImage
+  width="850px"
+  alt="Web security essentials - Let's look at three common attacks"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_780/v1592262535/maggieappleton.com/egghead-course-notes/websecurity/web-security-1.png"
 />
 
 Turns out there's a small set of fairly well-known and easy to defend attacks that we can protect ourselves from:
 
--   Man in the Middle (MITM)
--   Cross-Site Request Forgery (CSRF)
--   Cross-Site Scripting (XSS)
+- Man in the Middle (MITM)
+- Cross-Site Request Forgery (CSRF)
+- Cross-Site Scripting (XSS)
 
 Shielding yourself from these three is a great starting point. It's at least enough to keep the [script kiddies](https://en.wikipedia.org/wiki/Script_kiddie) out.
 
-<img
-    alt="First, man in the middle is a piece of software that intercepts data between a client and a server"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262537/maggieappleton.com/egghead-course-notes/websecurity/web-security-2.png"
+<BasicImage
+  width="1000px"
+  alt="First, man in the middle is a piece of software that intercepts data between a client and a server"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262537/maggieappleton.com/egghead-course-notes/websecurity/web-security-2.png"
 />
 
-<img
-    alt="If this connection is over HTTP all your data packets are readable cleartext. Anyone on the network can use a packet sniffer to see your data. Instead we use HTTPS to encrypt packets."
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262538/maggieappleton.com/egghead-course-notes/websecurity/web-security-6.png"
+<BasicImage
+  width="950px"
+  alt="If this connection is over HTTP all your data packets are readable cleartext. Anyone on the network can use a packet sniffer to see your data. Instead we use HTTPS to encrypt packets."
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262538/maggieappleton.com/egghead-course-notes/websecurity/web-security-6.png"
 />
 
-<img
-    alt="How to protect yourself. Use HSTS headers. Require HTTPS everywhere. Redirect HTTP to HTTPS"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262533/maggieappleton.com/egghead-course-notes/websecurity/web-security-7.png"
+<BasicImage
+  width="1000px"
+  alt="How to protect yourself. Use HSTS headers. Require HTTPS everywhere. Redirect HTTP to HTTPS"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262533/maggieappleton.com/egghead-course-notes/websecurity/web-security-7.png"
 />
 
-<img
-    alt="Cross-site request forgery is an attack that tricks the user into visiting a malicious site while they're already logged into a trusted site"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262538/maggieappleton.com/egghead-course-notes/websecurity/web-security-3.png"
+<BasicImage
+  width="1000px"
+  alt="Cross-site request forgery is an attack that tricks the user into visiting a malicious site while they're already logged into a trusted site"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262538/maggieappleton.com/egghead-course-notes/websecurity/web-security-3.png"
 />
 
-<img
-    alt="This is possible because browsers send cookies between sites by default. How to protect yourself. Cookies come with a 'sameSite' property that prevents them from being passed between sites. Set it to 'lax' or 'strict'"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262536/maggieappleton.com/egghead-course-notes/websecurity/web-security-4.png"
+<BasicImage
+  width="1000px"
+  alt="This is possible because browsers send cookies between sites by default. How to protect yourself. Cookies come with a 'sameSite' property that prevents them from being passed between sites. Set it to 'lax' or 'strict'"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262536/maggieappleton.com/egghead-course-notes/websecurity/web-security-4.png"
 />
 
-<img
-    alt="Cross-site scripting is an attack that injects malicious code into a trusted site. This can happen is the site allows user input to appear on the page without validating or encoding it. Protect yourself with a content security policy which manages which types of resources are allowed to load and where"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262536/maggieappleton.com/egghead-course-notes/websecurity/web-security-5.png"
+<BasicImage
+  width="1000px"
+  alt="Cross-site scripting is an attack that injects malicious code into a trusted site. This can happen is the site allows user input to appear on the page without validating or encoding it. Protect yourself with a content security policy which manages which types of resources are allowed to load and where"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262536/maggieappleton.com/egghead-course-notes/websecurity/web-security-5.png"
 />
 
 Keeping out this trio of attacks will go a long way.
@@ -91,9 +95,9 @@ Better safe than sorry. Especially when sorry means you end up on the front page
 
 <br />
 
-<img
-    alt="The fully illustrated notes on web security essentials"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262538/maggieappleton.com/egghead-course-notes/websecurity/web-security-final--small.png"
+<BasicImage
+  alt="The fully illustrated notes on web security essentials"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592262538/maggieappleton.com/egghead-course-notes/websecurity/web-security-final--small.png"
 />
 
 ---
