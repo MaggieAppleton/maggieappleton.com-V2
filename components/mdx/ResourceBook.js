@@ -1,20 +1,27 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export default function ResourceBook({ url, title, author, image, children }) {
+export default function ResourceBook({
+  url,
+  title,
+  author,
+  image,
+  small,
+  children,
+}) {
   return (
-    <StyledBookCard>
+    <StyledBookCard small={small}>
       <div
         style={{
-          height: "319px",
-          width: "220px",
+          height: small ? "199px" : "319px",
+          width: small ? "137px" : "220px",
           flexShrink: 0,
           boxShadow: "var(--box-shadow-lg)",
         }}
       >
         <Image
-          width={220}
-          height={319}
+          width={small ? 137 : 220}
+          height={small ? 199 : 319}
           alt={title}
           layout="responsive"
           src={image}
@@ -39,11 +46,12 @@ export default function ResourceBook({ url, title, author, image, children }) {
 }
 
 const StyledBookCard = styled.div`
-  margin: var(--space-l) auto var(--space-l);
+  margin: var(--space-l) auto;
   border-radius: var(--border-radius-lg);
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: ${(props) => (props.small ? "center" : "inherit")};
   gap: var(--space-l);
   height: content-min;
   cursor: pointer;
@@ -80,6 +88,7 @@ const Metadata = styled.div`
     width: 26ch;
     max-width: 100%;
     transition: all 0.2s ease-in-out;
+    line-height: var(--leading-tight);
   }
   p {
     font-family: var(--font-sans);
