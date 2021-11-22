@@ -20,6 +20,7 @@ const FootnoteContainer = styled.aside`
   display: inline;
   .footnote {
     float: right;
+    clear: both;
     margin-right: -38%;
     width: 33%;
     margin-top: 0;
