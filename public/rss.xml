@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Sat, 20 Nov 2021 17:20:40 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Nov 2021 07:29:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -121,11 +121,53 @@
             <content:encoded><![CDATA[Project Xanadu as a pattern language, rather than a failed software project]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[Illustrating Gatsby's Key Concepts]]></title>
+            <link>https://maggieappleton.com/illustrated-gatsby</link>
+            <guid>https://maggieappleton.com/illustrated-gatsby</guid>
+            <pubDate>Sat, 20 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Illustrated notes on the key concepts of how Gatsby.js works]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Pattern Languages in Programming and Interface Design]]></title>
+            <link>https://maggieappleton.com/pattern-languages</link>
+            <guid>https://maggieappleton.com/pattern-languages</guid>
+            <pubDate>Sat, 13 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Notes on pattern languages and Christopher Alexander's legacy on software programming]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Pink, Soft, Glittering Developers]]></title>
+            <link>https://maggieappleton.com/glitter-devs</link>
+            <guid>https://maggieappleton.com/glitter-devs</guid>
+            <pubDate>Wed, 10 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A collection of observations on the rise of soft, sparkly, baby pink aesthetics among developers]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[A Picture Worth a Thousand Programmes]]></title>
             <link>https://maggieappleton.com/programming-pictures</link>
             <guid>https://maggieappleton.com/programming-pictures</guid>
             <pubDate>Fri, 22 Oct 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[The written version of my talk about bringing visual explanations and embodied knowledge to programming tools]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[A Meta-Tour of This Site]]></title>
+            <link>https://maggieappleton.com/metatour</link>
+            <guid>https://maggieappleton.com/metatour</guid>
+            <pubDate>Wed, 20 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A video tour through how I build the old version of this site]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Tracking Humanity]]></title>
+            <link>https://maggieappleton.com/tracking-humanity</link>
+            <guid>https://maggieappleton.com/tracking-humanity</guid>
+            <pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[The introduction to my thesis on the Quantified Self movement and the culture of self-tracking]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[A Metaphorical Reading Collection]]></title>
+            <link>https://maggieappleton.com/metaphor-books</link>
+            <guid>https://maggieappleton.com/metaphor-books</guid>
+            <pubDate>Mon, 11 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A collection of my favourite books on conceptual metaphor theory]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[New Harvest & Illustrating the Cultivated Meat Podcast]]></title>
@@ -189,13 +231,6 @@
             <guid>https://maggieappleton.com/note-oppression</guid>
             <pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[What we lose when our digital notes remove the freedom to move]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Pink, Soft, Glittering Developers]]></title>
-            <link>https://maggieappleton.com/glitter-devs</link>
-            <guid>https://maggieappleton.com/glitter-devs</guid>
-            <pubDate>Wed, 17 Mar 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A collection of observations on the rise of soft, sparkly, baby pink aesthetics among developers]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Eponymous Laws of Programming]]></title>
@@ -268,13 +303,6 @@
             <content:encoded><![CDATA[Notes on the basics of the Greensock animation llibrary]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Illustrating Gatsby's Key Concepts]]></title>
-            <link>https://maggieappleton.com/illustrated-gatsby</link>
-            <guid>https://maggieappleton.com/illustrated-gatsby</guid>
-            <pubDate>Thu, 20 Aug 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Illustrated notes on the key concepts of how Gatsby.js works]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[The Cultural Anthropology of React]]></title>
             <link>https://maggieappleton.com/anthropology-react</link>
             <guid>https://maggieappleton.com/anthropology-react</guid>
@@ -294,13 +322,6 @@
             <guid>https://maggieappleton.com/synecdoche</guid>
             <pubDate>Tue, 28 Jul 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Notes on the metaphorical varieties of synecdoche and metonymy]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[A Meta-Tour of This Site]]></title>
-            <link>https://maggieappleton.com/metatour</link>
-            <guid>https://maggieappleton.com/metatour</guid>
-            <pubDate>Wed, 22 Jul 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A video tour through how I build the old version of this site]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[How to Become a Neo-Cartesian Cyborg]]></title>
@@ -338,13 +359,6 @@
             <content:encoded><![CDATA[Notes on the academic field of CSCL and major papers in the discipline]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Understanding by Design]]></title>
-            <link>https://maggieappleton.com/ubd</link>
-            <guid>https://maggieappleton.com/ubd</guid>
-            <pubDate>Tue, 23 Jun 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Notes on the educational framework of Understanding by Design]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Silent Synchronous Reading Sessions]]></title>
             <link>https://maggieappleton.com/silentsessions</link>
             <guid>https://maggieappleton.com/silentsessions</guid>
@@ -366,13 +380,6 @@
             <content:encoded><![CDATA[Some insights into how I collaborative with experts to create illustrated notes on technical topics]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Pattern Languages]]></title>
-            <link>https://maggieappleton.com/pattern-languages</link>
-            <guid>https://maggieappleton.com/pattern-languages</guid>
-            <pubDate>Wed, 03 Jun 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Notes on pattern languages and Christopher Alexander's legacy on software programming]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Building a Second Brain: The Illustrated Notes]]></title>
             <link>https://maggieappleton.com/basb</link>
             <guid>https://maggieappleton.com/basb</guid>
@@ -380,32 +387,11 @@
             <content:encoded><![CDATA[Illustrated notes on the Building A Second Brain course]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[A Metaphorical Reading Collection]]></title>
-            <link>https://maggieappleton.com/metaphor-books</link>
-            <guid>https://maggieappleton.com/metaphor-books</guid>
-            <pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A collection of my favourite books on conceptual metaphor theory]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Open Space Technology]]></title>
-            <link>https://maggieappleton.com/open-space-technology</link>
-            <guid>https://maggieappleton.com/open-space-technology</guid>
-            <pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Notes on Open Space Technology often used at unconferences]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Fixing Common Git Mistakes]]></title>
             <link>https://maggieappleton.com/git-mistakes</link>
             <guid>https://maggieappleton.com/git-mistakes</guid>
             <pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Illustrated notes on common mistakes people make in Git, and how to fix them]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Tracking Humanity]]></title>
-            <link>https://maggieappleton.com/tracking-humanity</link>
-            <guid>https://maggieappleton.com/tracking-humanity</guid>
-            <pubDate>Tue, 12 May 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[The introduction to my thesis on the Quantified Self movement and the culture of self-tracking]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Dark Forest and the Cozy Web]]></title>
