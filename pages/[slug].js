@@ -176,6 +176,12 @@ const components = {
       ssr: false,
     }
   ),
+  Tools: dynamic(() => import("../components/unique/apps/Tools"), {
+    ssr: false,
+  }),
+  Hardware: dynamic(() => import("../components/unique/apps/Hardware"), {
+    ssr: false,
+  }),
 };
 
 export default function PostPage({ source, frontMatter, slug, backlinks }) {

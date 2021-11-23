@@ -2,20 +2,28 @@ import Tooltip from "../Tooltip";
 import styled from "styled-components";
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 
-export default function TooltipLink({ href, children }) {
+export default function TooltipLink({ href, children, noStyling }) {
   if (href.startsWith("http")) {
-    return <ExternalLink href={href}>{children}</ExternalLink>;
+    return (
+      <ExternalLink href={href} noStyling={noStyling}>
+        {children}
+      </ExternalLink>
+    );
   }
-  return <InternalLink href={href}>{children}</InternalLink>;
+  return (
+    <InternalLink href={href} noStyling={noStyling}>
+      {children}
+    </InternalLink>
+  );
 }
 
-function InternalLink({ href, children }) {
+function InternalLink({ href, children, noStyling }) {
   return (
     <Tooltip
       content={<StyledExternalUrl href={href}>{href}</StyledExternalUrl>}
     >
       <StyledContainer>
-        <StyledLink internal href={href}>
+        <StyledLink internal noStyling={noStyling} href={href}>
           <span>{children}</span>
         </StyledLink>
       </StyledContainer>
@@ -23,7 +31,7 @@ function InternalLink({ href, children }) {
   );
 }
 
-function ExternalLink({ href, children }) {
+function ExternalLink({ href, children, noStyling }) {
   return (
     <Tooltip
       content={
@@ -38,7 +46,7 @@ function ExternalLink({ href, children }) {
       }
     >
       <StyledContainer>
-        <StyledLink href={href}>
+        <StyledLink noStyling={noStyling} href={href}>
           <span>{children}</span>
         </StyledLink>
       </StyledContainer>
@@ -80,6 +88,7 @@ const StyledLink = styled.a`
   &::before {
     @media (min-width: 550px) {
       content: "";
+      display: ${(props) => (props.noStyling ? "none" : "inline-block")};
       transform-origin: 50% 100%;
       background: var(--color-gray-300);
       transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
@@ -105,6 +114,7 @@ const StyledLink = styled.a`
   }
   &:hover::before {
     @media (min-width: 550px) {
+      display: ${(props) => (props.noStyling ? "none" : "inline-block")};
       transform: translate3d(0, 3px, 0) scale3d(1, 2, 1);
       background: ${(props) =>
         props.internal
@@ -133,7 +143,7 @@ const StyledLink = styled.a`
       props.internal
         ? "var(--color-medium-sea-blue)"
         : "var(--color-bright-crimson)"};
-    text-decoration: underline;
+    text-decoration: ${(props) => (props.noStyling ? "none" : "underline")};
     @media (min-width: 550px) {
       text-decoration: none;
     }
