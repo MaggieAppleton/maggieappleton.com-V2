@@ -176,6 +176,12 @@ const components = {
       ssr: false,
     }
   ),
+  MediumMaterialsMeat: dynamic(
+    () => import("../components/unique/MediumMaterialsMeat"),
+    {
+      ssr: false,
+    }
+  ),
   Tools: dynamic(() => import("../components/unique/apps/Tools"), {
     ssr: false,
   }),
