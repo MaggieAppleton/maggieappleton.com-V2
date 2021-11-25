@@ -50,7 +50,10 @@ const StyledBookCard = styled.div`
   border-radius: var(--border-radius-lg);
   display: flex;
   flex-direction: row;
+  flex-shrink: 1;
   justify-content: center;
+  width: 35ch;
+  max-width: 100%;
   align-items: ${(props) => (props.small ? "center" : "inherit")};
   gap: var(--space-l);
   height: content-min;
@@ -71,6 +74,9 @@ const StyledBookCard = styled.div`
 const Metadata = styled.div`
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
+  width: 36ch;
+  max-width: 100%;
   h3,
   p,
   span {
@@ -94,8 +100,6 @@ const Metadata = styled.div`
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     line-height: var(--leading-loose);
-    width: 42ch;
-    max-width: 100%;
     color: var(--color-gray-800);
   }
   svg {
