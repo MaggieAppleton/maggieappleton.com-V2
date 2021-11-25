@@ -1,34 +1,27 @@
 ---
 title: "Painting Roam Research with Custom CSS"
 description: "How to customise Roam Research with your own CSS themes"
-updated: "2020-12-15"
+updated: "2021-02-15"
 startDate: "2020-12-15"
 type: "note"
 topics: ["Roam", "Web Development"]
 growthStage: "evergreen"
 ---
 
-My [[Roam Garden]] is a place I spend between 2-4 hours puttering around in every day according to my <a href="https://www.rescuetime.com/">RescueTime</a> stats <Footnote idName={1}>RescueTime only tracks the time you're actively focused on a single window, so this measurement has some limitations but sets a nice baseline</Footnote>
+<IntroParagraph>
 
-<img
-  width="650px"
-  alt="A bar graph of the hours I've spent in Roam this week"
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_660/v1590188743/maggieappleton.com/notes/roamhours.png"
+My [[Roam Garden]] is a place I spend between 2-4 hours puttering around in every day according to my <a href="https://www.rescuetime.com/">RescueTime</a> stats. <Footnote idName={1}>RescueTime only tracks the time you're actively focused on a single window, so this measurement has some limitations but sets a nice baseline</Footnote> If I'm staring into something for over twenty hours a week, it better look and
+feel like beautiful home that fits my aesthetic tastes. As a maker of aesthetically pleasing things, I'm obviously biased towards the<a href="https://en.wikipedia.org/wiki/Aesthetic%E2%80%93usability_effect">
+Aesthetic Usability Effect</a>.
+
+</IntroParagraph>
+
+<BasicImage
+  showalt
+  width="580px"
+  alt="A bar graph of the hours I spend in Roam on a typical week"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_580/v1590188743/maggieappleton.com/notes/roamhours.png"
 />
-
-<p>
-  If I'm staring into something for over twenty hours a week, it better look and
-  feel like beautiful home that fits my aesthetic tastes.{" "}
-  <Footnote idName={2}>
-    As a maker of aesthetically pleasing things, I'm obviously biased towards
-    the{" "}
-    <a href="https://en.wikipedia.org/wiki/Aesthetic%E2%80%93usability_effect">
-      Aesthetic Usability Effect
-    </a>
-  </Footnote>
-</p>
-
----
 
 In that spirit, I've gone all-out on customising the CSS that controls how my Roam looks.
 
@@ -40,21 +33,17 @@ I've used colors and font weight to distinguished internal from external links, 
   src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_1720/v1590188713/maggieappleton.com/notes/roam_theme_maggie.png"
 />
 
-<br />
+## How to paint Roam your own colors
 
-<h2>How to Paint Roam Your Own colors</h2>
-
-<p>
-  Luckily, this is all fairly easy to do. Roam has a built-in system for
-  customising how your database looks.
-</p>
+Luckily, this is all fairly easy to do. Roam has a built-in system for
+customising how your database looks.
 
 You first need to create a new page called `roam/css`.
 
 <ImageFrame
   width="840px"
   alt="The roam search bar with roam/css entered"
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1607173029/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.47.43.png"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_840/v1607173029/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.47.43.png"
 />
 
 Once there, create a new code block by typing `/code` and selecting the block option.
@@ -62,7 +51,7 @@ Once there, create a new code block by typing `/code` and selecting the block op
 <ImageFrame
   width="840px"
   alt="Entering /code into the empty page"
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1607173035/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.48.46.png"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_840/v1607173035/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.48.46.png"
 />
 
 Once the code block appears, set the language to `css` from the right-hand drop down menu.
@@ -84,38 +73,22 @@ The title of your new page should change to a lovely shade of salmon.
   src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1607173750/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_13.09.01.png"
 />
 
----
-
 <SimpleCard>
 
 #### If you've not entirely sure what CSS is, or you've never written any, I strongly suggest you first work through this short course on Khan Academy
 
-<p>
-  <a
-    noTip
-    href="https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-css/pt/css-basics"
-  >
-    <button style={{ marginTop: "0.2em" }}>Intro to CSS on Khan Academy</button>{" "}
-  </a>
-</p>
+<ButtonLink href="https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-css/pt/css-basics">
+  Intro to CSS on Khan Academy
+</ButtonLink>
 
-<p>
-  It'll take 30 minutes and learning the basics will give you an enourmous
-  appreciation for how the web works (as well as how to control it for your own
-  benefit!)
-</p>
-
-<p>
-  After that, check out{" "}
-  <a href="https://developers.google.com/web/tools/chrome-devtools/css">
-    this Google guide
-  </a>{" "}
-  to how to look up CSS elements and selectors a live webpage.
-</p>
+It'll take 30 minutes and learning the basics will give you an enourmous
+appreciation for how the web works (as well as how to control it for your own
+benefit!). After that, check out <a href="https://developers.google.com/web/tools/chrome-devtools/css">
+this Google guide</a> to how to look up CSS elements and selectors a live webpage.
 
 </SimpleCard>
 
-## Pre-made Roam Themes
+### Pre-made Roam Themes
 
 For those of you entirely uninterested in learning CSS who just want to pop a pre-made theme in, Roam has a whole collection of [pre-made themes](https://roamresearch.com/#/app/help/page/fJRcVITNY) you can pick from.
 
@@ -123,13 +96,9 @@ Copy and paste any of them into your new `roam/css` page and the styles will be 
 
 If you want to use my theme **Leyendecker**, the most up-to-date version is avaliable this [Github repo](https://github.com/theianjones/roam-research-themes/blob/master/leyendecker.css). There's a older version listed on the [Roam database](https://roamresearch.com/#/app/help/page/fJRcVITNY).
 
----
+### Custom Styling Tags and Page Links
 
-## Custom Styling Tags and Page Links
-
-Another neat trick I love with CSS and Roam is creating specific styles for different page title and tags. <Footnote idName={3}>Shoutout to fellow Roam user <a href="https://malcolmocean.com/">Malcolm Ocean</a> who lobbied for this as an official feature of the Roam interface. I found out how to do it digging around in their impressively <a href="https://gist.github.com/malcolmocean/03d777a1c8f89be8c98e3d89d6821607">comprehensive CSS files</a></Footnote>
-
-I have a little workflow taxonomy going that covers different kinds of output and the stages they flow through
+Another neat trick I love with CSS and Roam is creating specific styles for different page title and tags. <Footnote idName={3}>Shoutout to fellow Roam user <a href="https://malcolmocean.com/">Malcolm Ocean</a> who lobbied for this as an official feature of the Roam interface. I found out how to do it digging around in their impressively <a href="https://gist.github.com/malcolmocean/03d777a1c8f89be8c98e3d89d6821607">comprehensive CSS files</a></Footnote>. I have a little workflow taxonomy going that covers different kinds of output and the stages they flow through
 
 <BasicImage
   width="880px"
@@ -169,13 +138,9 @@ It makes an enormous difference in your user experience to be able to quickly id
 
 If you just want to grab the tag and page styles from my theme , scroll down to the bottom of my <a href="https://github.com/theianjones/roam-research-themes/blob/master/leyendecker.css">CSS theme file</a> to find them.
 
----
+### Block Level Styling
 
-## Block Level Styling
-
-Roam also allows you to style whole blocks based on tags. <Footnote idName={4}>[Cato Minor](https://twitter.com/catominor3?lang=en) originally wrote a script for doing this in JavaScript, but now it's native to Roam's CSS.</Footnote>
-
-In my database I use this heavily when taking book notes to visually distinguish between claims, responses, questions, and evidence.
+Roam also allows you to style whole blocks based on tags. <Footnote idName={4}>[Cato Minor](https://twitter.com/catominor3?lang=en) originally wrote a script for doing this in JavaScript, but now it's native to Roam's CSS.</Footnote> In my database I use this heavily when taking book notes to visually distinguish between claims, responses, questions, and evidence.
 
 To style an entire block, and all its child elements, we use:
 
@@ -207,22 +172,12 @@ To style just the block itself but none of the child elements, add `> div.rm-blo
 
 If you don't want to use the native Roam CSS functionality, there's a way to apply custom CSS styles to any website using a browser plugin.
 
-This is especially useful if you're part of a **multi-player** Roam where everyone has their own styling preferences.
-
-<p>
-  <a href="https://github.com/openstyles/stylus/">Stylus</a> is a great choice
-  and has extensions for both{" "}
-  <a href="https://addons.mozilla.org/en-GB/firefox/addon/styl-us/">Firefox</a>{" "}
-  and{" "}
-  <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en">
-    Chrome
-  </a>
-</p>
+This is especially useful if you're part of a **multi-player** Roam where everyone has their own styling preferences. [Stylus](https://stylus-lang.com/) has extensions for both [Firefox](https://addons.mozilla.org/en-US/firefox/addon/stylus/) and [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) that allow you to write your own CSS styles in a browser.
 
 <ImageFrame
-  width="920px"
+  width="980px"
   alt="A screen capture of the stylus interface"
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_1720/v1590188865/maggieappleton.com/notes/stylus.png"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_980/v1590188865/maggieappleton.com/notes/stylus.png"
 />
 
 They also have <a href="https://github.com/openstyles/stylus/wiki/Editor">good documentation</a> that will walk you through how to use it.
