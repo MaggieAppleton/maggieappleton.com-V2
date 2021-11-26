@@ -7,6 +7,7 @@ export default function TwoColumn({
   alignItems,
   gridTemplateColumns,
   gridGap,
+  verticalGridGap,
   justifyItems,
 }) {
   return (
@@ -15,6 +16,7 @@ export default function TwoColumn({
       alignItems={alignItems}
       maxWidth={maxWidth}
       gridGap={gridGap}
+      verticalGridGap={verticalGridGap}
       justifyItems={justifyItems}
     >
       {children}
@@ -29,13 +31,15 @@ const TwoColumnContainer = styled.div`
   margin: var(--space-s) auto var(--space-l);
   display: grid;
   justify-items: ${(props) => props.justifyItems || "center"};
-  grid-template-columns: ${(props) => props.gridTemplateColumns || "1fr 1fr"};
+  grid-template-columns: ${(props) =>
+    props.gridTemplateColumns || "repeat(2, minmax(200px, 1fr))"};
   grid-gap: ${(props) => props.gridGap || "var(--space-xs)"};
   align-items: ${(props) => props.alignItems || "center"};
   padding: 0 var(--space-3xs);
-  @media ${breakpoints.mediaSM} {
+  @media screen and (max-width: 992px) {
     grid-template-columns: 1fr;
     align-items: start;
+    grid-gap: ${(props) => props.verticalGridGap || "var(--space-m)"};
     justify-items: center;
   }
   div,
