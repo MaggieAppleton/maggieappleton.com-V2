@@ -13,4 +13,13 @@ module.exports = {
       "resonanceaudiodistro.files.wordpress.com",
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/resources",
+        destination: "/illustration-resources",
+        permanent: true,
+      },
+    ];
+  },
 };
