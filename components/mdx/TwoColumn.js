@@ -32,15 +32,15 @@ const TwoColumnContainer = styled.div`
   display: grid;
   justify-items: ${(props) => props.justifyItems || "center"};
   grid-template-columns: ${(props) =>
-    props.gridTemplateColumns || "repeat(2, minmax(200px, 1fr))"};
+    props.gridTemplateColumns || "repeat(2, minmax(280px, 1fr))"};
   grid-gap: ${(props) => props.gridGap || "var(--space-xs)"};
   align-items: ${(props) => props.alignItems || "center"};
   padding: 0 var(--space-3xs);
-  @media screen and (max-width: 992px) {
-    grid-template-columns: 1fr;
+  @media ${breakpoints.mediaSM} {
     align-items: start;
     grid-gap: ${(props) => props.verticalGridGap || "var(--space-m)"};
     justify-items: center;
+    grid-template-columns: ${(props) => props.gridTemplateColumns || "1fr"};
   }
   div,
   img,

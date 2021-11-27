@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Image from "next/image";
 
+// A single book, or multiple books stacked on top of each other
+// To layout books in a 2 column grid, use the BookGrid component
+
 export default function ResourceBook({
   url,
   title,
@@ -13,15 +16,15 @@ export default function ResourceBook({
     <StyledBookCard small={small}>
       <div
         style={{
-          height: small ? "199px" : "319px",
-          width: small ? "137px" : "220px",
+          height: small ? "228px" : "319px",
+          width: small ? "158px" : "220px",
           flexShrink: 0,
           boxShadow: "var(--box-shadow-lg)",
         }}
       >
         <Image
-          width={small ? 137 : 220}
-          height={small ? 199 : 319}
+          width={small ? 158 : 220}
+          height={small ? 228 : 319}
           alt={title}
           layout="responsive"
           src={image}
@@ -52,8 +55,6 @@ const StyledBookCard = styled.div`
   flex-direction: row;
   flex-shrink: 1;
   justify-content: center;
-  width: 35ch;
-  max-width: 100%;
   align-items: ${(props) => (props.small ? "center" : "inherit")};
   gap: var(--space-l);
   height: content-min;
@@ -75,8 +76,12 @@ const Metadata = styled.div`
   display: flex;
   flex-direction: column;
   flex-shrink: 1;
-  width: 36ch;
-  max-width: 100%;
+  width: 34ch;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 36ch;
+  }
+  ,
   h3,
   p,
   span {
@@ -91,16 +96,16 @@ const Metadata = styled.div`
     font-size: var(--font-size-md);
     margin-bottom: var(--space-3xs);
     color: var(--color-gray-800);
-    width: 26ch;
-    max-width: 100%;
     transition: all 0.2s ease-in-out;
     line-height: var(--leading-tight);
+    flex-shrink: 1;
   }
   p {
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     line-height: var(--leading-loose);
     color: var(--color-gray-800);
+    flex-shrink: 1;
   }
   svg {
     margin: var(--space-s) 0;

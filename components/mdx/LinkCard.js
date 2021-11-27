@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export default function LinkCard({ children, url, title, author }) {
+export default function LinkCard({ children, url, title, author, image }) {
   return (
     <StyledLinkCard>
-      <a url={href}>
+      {image && <img src={image} alt={title} />}
+      <a href={url}>
         <h3>{title}</h3>
       </a>
       {author && <span>{author}</span>}
