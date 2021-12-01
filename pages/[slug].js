@@ -6,6 +6,7 @@ import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
 import { Spacer } from "../components/Spacer";
+import AssumedAudience from "../components/mdx/AssumedAudience";
 import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
@@ -50,6 +51,7 @@ const components = {
   h4: Title4,
   Tween: Tween,
   Timeline: Timeline,
+  AssumedAudience: AssumedAudience,
   PlayState: PlayState,
   Spacer: Spacer,
   Controls: Controls,
