@@ -32,7 +32,7 @@ const AssumedAudienceContainer = styled.div`
     margin-bottom: 0;
     flex-shrink: 0;
     font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     line-height: var(--leading-loose);
     text-transform: uppercase;
     letter-spacing: 0.05rem;
