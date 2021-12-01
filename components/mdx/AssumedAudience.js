@@ -40,5 +40,6 @@ const AssumedAudienceContainer = styled.div`
   @media (max-width: 768px) {
     margin: 0 0 var(--space-m) 0;
     flex-direction: column;
+    grid-gap: var(--space-3xs);
   }
 `;
