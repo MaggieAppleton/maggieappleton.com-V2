@@ -39,7 +39,7 @@ export default function EssayTemplate({
           <h1>{frontMatter.title}</h1>
           {frontMatter.description && <p>{frontMatter.description}</p>}
         </TitleContainer>
-        <Metadata style={{ display: "flex", flexDirection: "row" }}>
+        <Metadata>
           {frontMatter.topics && <Topics topics={frontMatter.topics} />}
           <Dates
             startDate={frontMatter.startDate}
