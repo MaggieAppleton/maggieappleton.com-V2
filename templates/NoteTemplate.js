@@ -39,7 +39,7 @@ export default function NoteTemplate({
           <h1>{frontMatter.title}</h1>
           {frontMatter.description && <p>{frontMatter.description}</p>}
         </TitleContainer>
-        <Metadata style={{ display: "flex", flexDirection: "row" }}>
+        <Metadata>
           {frontMatter.topics && <Topics topics={frontMatter.topics} />}
           <Dates
             startDate={frontMatter.startDate}
@@ -116,6 +116,13 @@ const HeaderSection = styled.header`
 
 const Metadata = styled.div`
   justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
 `;
 
 const StyledMain = styled.main`
@@ -124,7 +131,7 @@ const StyledMain = styled.main`
   background: linear-gradient(var(--color-cream) 0, white 110px);
   grid-column: 1/4 !important;
   width: 100%;
-  @media ${breakpoints.mediaSM} {
-    padding: var(--space-2xl) var(--space-xs);
+  @media (max-width: 768px) {
+    padding: var(--space-xl) var(--space-xs);
   }
 `;
