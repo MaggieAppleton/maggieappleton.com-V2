@@ -5,111 +5,111 @@ import UnderlineHoverLink from "./links/UnderlineHoverLink";
 import { RssIcon } from "@heroicons/react/solid";
 
 export default function Footer() {
-    return (
-        <StyledFooter>
-            <FooterContent>
-                <RSSFeed>
-                    <h3>Want to stay up to date?</h3>
-                    <Link href="/rss.xml">
-                        <button>
-                            <RssIcon width="20" height="20" />
-                            Subscribe via RSS Feed
-                        </button>
-                    </Link>
-                </RSSFeed>
-                <SitemapList>
-                    {[
-                        { text: "The Garden", slug: "/garden" },
-                        // { text: "Start Here", slug: "/start" },
-                        { text: "Essays", slug: "/essays" },
-                        { text: "About", slug: "/about" },
-                        { text: "Notes", slug: "/notes" },
-                        // { text: "Now", slug: "/now" },
-                        // { text: "Patterns", slug: "/patterns" },
-                        // { text: "Tools I Use", slug: "/uses" },
-                        { text: "Library", slug: "/library" },
-                        // { text: "Changelog", slug: "/changelog" },
-                        { text: "Projects", slug: "/projects" },
-                        // { text: "Colophon", slug: "/colophon" },
-                        // { text: "Illustration Resources", slug: "/resources" },
-                    ].map((link, i) => {
-                        return (
-                            <li key={i}>
-                                <Link href={link.slug}>
-                                    <UnderlineHoverLink href={link.slug}>
-                                        {link.text}
-                                    </UnderlineHoverLink>
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </SitemapList>
-            </FooterContent>
-        </StyledFooter>
-    );
+  return (
+    <StyledFooter>
+      <FooterContent>
+        <RSSFeed>
+          <h3>Want to stay up to date?</h3>
+          <Link href="/rss.xml">
+            <button>
+              <RssIcon width="20" height="20" />
+              Subscribe via RSS Feed
+            </button>
+          </Link>
+        </RSSFeed>
+        <SitemapList>
+          {[
+            { text: "The Garden", slug: "/garden" },
+            // { text: "Start Here", slug: "/start" },
+            { text: "Essays", slug: "/essays" },
+            { text: "About", slug: "/about" },
+            { text: "Notes", slug: "/notes" },
+            // { text: "Now", slug: "/now" },
+            // { text: "Patterns", slug: "/patterns" },
+            // { text: "Tools I Use", slug: "/uses" },
+            { text: "Library", slug: "/library" },
+            // { text: "Changelog", slug: "/changelog" },
+            { text: "Projects", slug: "/projects" },
+            { text: "Colophon", slug: "/colophon" },
+            // { text: "Illustration Resources", slug: "/resources" },
+          ].map((link, i) => {
+            return (
+              <li key={i}>
+                <Link href={link.slug}>
+                  <UnderlineHoverLink href={link.slug}>
+                    {link.text}
+                  </UnderlineHoverLink>
+                </Link>
+              </li>
+            );
+          })}
+        </SitemapList>
+      </FooterContent>
+    </StyledFooter>
+  );
 }
 
 const RSSFeed = styled.div`
-    h3 {
-        font-size: var(--font-size-md);
-        font-family: var(--font-body);
-        font-weight: 300;
-        margin-bottom: var(--space-s);
+  h3 {
+    font-size: var(--font-size-md);
+    font-family: var(--font-body);
+    font-weight: 300;
+    margin-bottom: var(--space-s);
+  }
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+    padding: var(--space-3xs) 1.2rem;
+    background: none;
+    border: 1px solid var(--color-tinted-cream);
+    border-radius: 3rem;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    color: var(--color-gray-600);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      color: var(--color-crimson);
+      border: 1px solid var(--color-crimson);
+      box-shadow: var(--box-shadow-sm);
     }
-    button {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-3xs);
-        padding: var(--space-3xs) 1.2rem;
-        background: none;
-        border: 1px solid var(--color-tinted-cream);
-        border-radius: 3rem;
-        font-family: var(--font-sans);
-        font-size: var(--font-size-sm);
-        font-weight: 400;
-        color: var(--color-gray-600);
-        transition: all 0.3s ease-in-out;
-        &:hover {
-            cursor: pointer;
-            color: var(--color-crimson);
-            border: 1px solid var(--color-crimson);
-            box-shadow: var(--box-shadow-sm);
-        }
-    }
+  }
 `;
 
 const SitemapList = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    list-style: none;
-    grid-gap: var(--space-3xs) var(--space-l);
-    padding-inline-start: 0;
-    li span {
-        color: var(--color-gray-600);
-        font-size: var(--font-size-sm);
-        font-family: var(--font-sans);
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  grid-gap: var(--space-3xs) var(--space-l);
+  padding-inline-start: 0;
+  li span {
+    color: var(--color-gray-600);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-sans);
+  }
 `;
 
 const FooterContent = styled.div`
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    max-width: 1400px;
-    margin: var(--space-l) auto;
-    padding: 0 var(--space-l);
-    @media ${breakpoints.mediaMD} {
-        margin: var(--space-m) auto;
-        padding: 0 var(--space-m);
-        grid-template-columns: 1fr;
-    }
-    @media ${breakpoints.mediaSM} {
-        margin: var(--space-xs) auto;
-        padding: 0 var(--space-xs);
-        grid-template-columns: 1fr;
-    }
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 1400px;
+  margin: var(--space-l) auto;
+  padding: 0 var(--space-l);
+  @media ${breakpoints.mediaMD} {
+    margin: var(--space-m) auto;
+    padding: 0 var(--space-m);
+    grid-template-columns: 1fr;
+  }
+  @media ${breakpoints.mediaSM} {
+    margin: var(--space-xs) auto;
+    padding: 0 var(--space-xs);
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledFooter = styled.footer`
-    padding: var(--space-xl) 0;
-    border-top: 1px solid var(--color-gray-300);
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-gray-300);
 `;
