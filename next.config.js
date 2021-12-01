@@ -6,8 +6,11 @@ module.exports = withPWA({
     domains: ["res.cloudinary.com"],
   },
   pwa: {
-    dest: "public",
+    disable: process.env.NODE_ENV === "development",
     register: true,
+    scope: "/app",
+    sw: "service-worker.js",
+    dest: "public",
     skipWaiting: true,
   },
   async redirects() {
