@@ -52,6 +52,6 @@ const ReferenceLinkContainer = styled.div`
     display: block;
     margin: 0;
     font-family: var(--font-sans);
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
   }
 `;

@@ -32,7 +32,6 @@ const FootnoteContainer = styled.aside`
     position: relative;
     border-left: 1px solid var(--color-gray-300);
     padding-left: 1em;
-    overflow: auto;
     a::before,
     a:hover::before,
     a {

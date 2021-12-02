@@ -55,12 +55,12 @@ const PartContainer = styled.div`
     transition: 0.6s;
     line-height: var(--leading-base);
     align-self: center;
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
     padding: var(--space-xs) 0;
     margin: 0;
   }
   span {
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
     align-self: start;
     font-family: sans-serif;
     font-size: var(--font-size-sm);

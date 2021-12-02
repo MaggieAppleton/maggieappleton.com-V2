@@ -3,6 +3,12 @@ import Link from "next/link";
 import { breakpoints } from "../utils/breakpoints";
 import UnderlineHoverLink from "./links/UnderlineHoverLink";
 import { RssIcon } from "@heroicons/react/solid";
+import {
+  GithubIcon,
+  TwitterIcon,
+  LinkedInIcon,
+  DribbbleIcon,
+} from "./icons/SocialMediaIcons";
 
 export default function Footer() {
   return (
@@ -16,6 +22,36 @@ export default function Footer() {
               Subscribe via RSS Feed
             </button>
           </Link>
+          <SocialMediaIcons>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/MaggieAppleton"
+            >
+              <GithubIcon />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://uk.linkedin.com/in/maggieappleton"
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://dribbble.com/mappleton"
+            >
+              <DribbbleIcon />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/Mappletons"
+            >
+              <TwitterIcon />
+            </a>
+          </SocialMediaIcons>
         </RSSFeed>
         <SitemapList>
           {[
@@ -49,6 +85,28 @@ export default function Footer() {
   );
 }
 
+const SocialMediaIcons = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-m);
+  grid-gap: var(--space-xs);
+  a {
+    color: var(--color-gray-400);
+    fill: currentColor;
+    padding: 0;
+    margin: 0;
+  }
+  svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease-in-out;
+    :hover {
+      cursor: pointer;
+      fill: var(--color-bright-crimson);
+    }
+  }
+`;
+
 const RSSFeed = styled.div`
   h3 {
     font-size: var(--font-size-md);
@@ -58,6 +116,7 @@ const RSSFeed = styled.div`
   }
   button {
     display: inline-flex;
+    margin-left: -0.1rem;
     align-items: center;
     gap: var(--space-3xs);
     padding: var(--space-3xs) 1.2rem;
