@@ -1,5 +1,26 @@
 export const antiBookData = [
   {
+    title: "Blockchain Chicken Farm",
+    subtitle: "And Other Stories of Tech in China's Countryside",
+    author: "Xiaowei Wang",
+    cover: "/images/books/blockchainchicken.jpg",
+    link: "https://www.librarything.com/work/24512017",
+  },
+  {
+    title: "Life in Code",
+    subtitle: "A Personal History of Technology",
+    author: "Ellen Ullman",
+    cover: "/images/books/lifecode.jpg",
+    link: "https://www.librarything.com/work/19608984",
+  },
+  {
+    title: "Subprime Attention Crisis",
+    subtitle: "Advertising and the Time Bomb at the Heart of the Internet",
+    author: "Tim Hwang",
+    cover: "/images/books/subprime.jpg",
+    link: "https://www.librarything.com/work/24848287/",
+  },
+  {
     title: "The Dawn of Everything",
     subtitle: "A New History of Humanity",
     author: "David Graeber",
