@@ -377,7 +377,7 @@ const IndexNoteCard = styled.div`
 const GardenSection = styled(motion.section)`
   margin: var(--space-xl) 0 var(--space-s);
   display: grid;
-  grid-gap: var(--space-2xl);
+  grid-gap: var(--space-xl);
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
