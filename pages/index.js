@@ -157,7 +157,7 @@ export default function Index({
             >
               {essays.map((essay, i) => (
                 <EssayCard
-                  key={i}
+                  id={essay.slug}
                   variants={itemAnimation}
                   slug={essay.slug}
                   cover={essay.data.cover}
