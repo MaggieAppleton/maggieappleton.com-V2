@@ -86,7 +86,6 @@ export default function Index({
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
             style={{
-              maxWidth: "1200px",
               marginTop: "var(--space-m)",
             }}
           >
