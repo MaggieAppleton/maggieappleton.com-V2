@@ -33,11 +33,11 @@ export default function MobileMenu() {
             }}
             animate={{
               opacity: 1,
-              transition: { duration: 0.6, ease: "easeInOut" },
+              transition: { duration: 0.3, ease: "easeInOut" },
             }}
             exit={{
               opacity: 0,
-              transition: { duration: 0.6, ease: "easeInOut" },
+              transition: { duration: 0.3, ease: "easeInOut" },
             }}
           >
             <LinkContainer>
