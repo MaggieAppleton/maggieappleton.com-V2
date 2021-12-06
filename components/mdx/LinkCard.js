@@ -8,10 +8,20 @@ export default function LinkCard({ children, url, title, author, image }) {
         <h3>{title}</h3>
       </a>
       {author && <span>{author}</span>}
-      <p>{children}</p>
+      <Children>{children}</Children>
     </StyledLinkCard>
   );
 }
+
+const Children = styled.div`
+  p {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    line-height: var(--leading-base);
+    margin: var(--space-3xs) 0;
+    color: var(--color-gray-600);
+  }
+`;
 
 const StyledLinkCard = styled.div`
   margin: var(--space-3xs) auto var(--space-m);
@@ -27,6 +37,9 @@ const StyledLinkCard = styled.div`
   width: 100%;
   color: var(--color-gray-800);
   transition: all 0.3s ease-in-out;
+  img {
+    width: 100%;
+  }
   span {
     font-family: var(--font-body);
     font-size: var(--font-size-base);
@@ -40,13 +53,6 @@ const StyledLinkCard = styled.div`
     margin: var(--space-3xs) 0;
     line-height: var(--leading-snug);
     font-size: calc(var(--font-size-md) * 0.9);
-  }
-  p {
-    font-family: var(--font-sans);
-    font-size: calc(var(--font-size-sm));
-    line-height: var(--leading-base);
-    margin: var(--space-3xs) 0;
-    color: var(--color-gray-600);
   }
   &:hover {
     box-shadow: var(--box-shadow-lg);
