@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { breakpoints } from "../../utils/breakpoints";
 
 export default function Alert({ children }) {
   return (
@@ -38,6 +37,10 @@ const AlertContainer = styled.div`
   border: 1px solid var(--color-gray-100);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow-lg);
+  h2,
+  h3 {
+    margin: var(--space-xs) auto var(--space-s);
+  }
   svg {
     margin: var(--space-m) auto var(--space-xs);
   }
@@ -45,11 +48,13 @@ const AlertContainer = styled.div`
     p {
       font-size: var(--font-size-base);
       color: var(--color-gray-800);
-      line-height: var(--line-height-base);
-      width: 650px;
-      max-width: 100%;
+      line-height: var(--leading-base);
+      max-width: 44ch;
       font-weight: 300;
       margin-top: var(--space-s);
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
     }
   }
 `;
