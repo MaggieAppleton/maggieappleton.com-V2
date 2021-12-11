@@ -1,7 +1,6 @@
 {
   "private": true,
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./posts",
@@ -14,7 +13,7 @@
     "@heroicons/react": "^1.0.4",
     "@reach/menu-button": "^0.16.1",
     "@tippyjs/react": "^4.2.5",
-    "algoliasearch": "^4.10.5",
+    "algoliasearch": "^4.11.0",
     "babel-plugin-styled-components": "1.10.2",
     "d3": "^7.1.1",
     "dotenv": "^10.0.0",
@@ -32,6 +31,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-gsap": "^3.2.1",
+    "react-instantsearch-dom": "^6.17.0",
     "react-intersection-observer": "^8.32.1",
     "react-masonry-css": "^1.0.16",
     "react-share": "^4.4.0",

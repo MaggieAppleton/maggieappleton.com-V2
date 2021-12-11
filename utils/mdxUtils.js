@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 // // Recursive function that calls itself to fetches all the files, including those in subdirectories
 // const getAllDirectoryFiles = function (dirPath, arrayOfFiles) {
@@ -25,24 +25,24 @@ import path from "path";
 export const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
 
 export const essayFilePaths = fs
-    .readdirSync(ESSAYS_PATH)
-    // Only include MDX files
-    .filter((path) => /\.mdx?$/.test(path));
+  .readdirSync(ESSAYS_PATH)
+  // Only include MDX files
+  .filter((path) => /\.mdx?$/.test(path));
 
 export const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
 
 export const noteFilePaths = fs
-    .readdirSync(NOTES_PATH)
-    .filter((path) => /\.mdx?$/.test(path));
+  .readdirSync(NOTES_PATH)
+  .filter((path) => /\.mdx?$/.test(path));
 
 export const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
 
 export const patternFilePaths = fs
-    .readdirSync(PATTERNS_PATH)
-    .filter((path) => /\.mdx?$/.test(path));
+  .readdirSync(PATTERNS_PATH)
+  .filter((path) => /\.mdx?$/.test(path));
 
 export const PROJECTS_PATH = path.join(process.cwd(), "posts", "projects");
 
 export const projectFilePaths = fs
-    .readdirSync(PROJECTS_PATH)
-    .filter((path) => /\.mdx?$/.test(path));
+  .readdirSync(PROJECTS_PATH)
+  .filter((path) => /\.mdx?$/.test(path));

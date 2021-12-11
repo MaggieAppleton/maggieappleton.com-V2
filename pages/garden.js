@@ -18,6 +18,7 @@ import {
 } from "../utils/mdxUtils";
 import TitleWithCount from "../components/TitleWithCount";
 import { concat } from "lodash";
+import { SearchFilters } from "../components/SearchFilters";
 
 export default function Garden({ essays, notes }) {
   const allPosts = essays.concat(notes);
@@ -38,6 +39,7 @@ export default function Garden({ essays, notes }) {
             always tending to.
           </Title2>
         </header>
+        <SearchFilters />
         <MasonryGrid>
           {sortedPosts.map((post, i) => {
             if (post.data.type === "essay") {

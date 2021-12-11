@@ -1,14 +1,11 @@
-import dotenv from "dotenv";
-import algoliasearch from "algoliasearch";
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
-import {
-  essayFilePaths,
-  ESSAYS_PATH,
-  noteFilePaths,
-  NOTES_PATH,
-} from "../utils/mdxUtils.js";
+const fs = require("fs");
+const path = require("path");
+const matter = require("gray-matter");
+const dotenv = require("dotenv");
+const algoliasearch = require("algoliasearch");
+const mdxUtils = require("../utils/mdxUtils");
+
+const { essayFilePaths, ESSAYS_PATH, noteFilePaths, NOTES_PATH } = mdxUtils;
 
 let essays = essayFilePaths.map((filePath) => {
   const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
