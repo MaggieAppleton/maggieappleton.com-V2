@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Tue, 23 Nov 2021 07:29:22 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Dec 2021 18:17:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -40,7 +40,7 @@
             <title><![CDATA[A Brief Introduction to Digital Anthropology]]></title>
             <link>https://maggieappleton.com/digital-anthropology</link>
             <guid>https://maggieappleton.com/digital-anthropology</guid>
-            <pubDate>Wed, 14 Oct 2020 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 14 Sep 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[A discipline at the intersection of cultural anthropology and binary logic]]></content:encoded>
         </item>
         <item>
@@ -75,7 +75,7 @@
             <title><![CDATA[Meat Planet: The Illustrated Notes]]></title>
             <link>https://maggieappleton.com/meat-planet</link>
             <guid>https://maggieappleton.com/meat-planet</guid>
-            <pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate>
+            <pubDate>Mon, 22 Feb 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Visualising the cultural narratives around cultured meat]]></content:encoded>
         </item>
         <item>
@@ -96,7 +96,7 @@
             <title><![CDATA[Problematic Proteins]]></title>
             <link>https://maggieappleton.com/problematic-proteins</link>
             <guid>https://maggieappleton.com/problematic-proteins</guid>
-            <pubDate>Mon, 10 Aug 2020 00:00:00 GMT</pubDate>
+            <pubDate>Wed, 10 Mar 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[How to offend everyone with boundary-crossing steak and nuggets]]></content:encoded>
         </item>
         <item>
@@ -121,11 +121,39 @@
             <content:encoded><![CDATA[Project Xanadu as a pattern language, rather than a failed software project]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Illustrating Gatsby's Key Concepts]]></title>
-            <link>https://maggieappleton.com/illustrated-gatsby</link>
-            <guid>https://maggieappleton.com/illustrated-gatsby</guid>
+            <title><![CDATA[A Picture Worth a Thousand Programmes]]></title>
+            <link>https://maggieappleton.com/programming-pictures</link>
+            <guid>https://maggieappleton.com/programming-pictures</guid>
+            <pubDate>Sat, 11 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[The written version of my talk about bringing visual explanations and embodied knowledge to programming tools]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Pink, Soft, Glittering Developers]]></title>
+            <link>https://maggieappleton.com/glitter-devs</link>
+            <guid>https://maggieappleton.com/glitter-devs</guid>
+            <pubDate>Sun, 05 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A collection of observations on the rise of soft, sparkly, baby pink aesthetics among developers]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Eponymous Laws of Programming]]></title>
+            <link>https://maggieappleton.com/eponymous-laws</link>
+            <guid>https://maggieappleton.com/eponymous-laws</guid>
+            <pubDate>Fri, 03 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A collection of laws named for specific people in the field of programming]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Best Illustration Books and Courses]]></title>
+            <link>https://maggieappleton.com/illustration-resources</link>
+            <guid>https://maggieappleton.com/illustration-resources</guid>
+            <pubDate>Fri, 03 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[My favourite resources for learning to draw and developing your visual thinking skills]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Tools for Thought as Cultural Systems, not Computational Objects]]></title>
+            <link>https://maggieappleton.com/tools-for-thought</link>
+            <guid>https://maggieappleton.com/tools-for-thought</guid>
             <pubDate>Sat, 20 Nov 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Illustrated notes on the key concepts of how Gatsby.js works]]></content:encoded>
+            <content:encoded><![CDATA[The written version of my talk on seeing tools for thought in historical perspective]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Pattern Languages in Programming and Interface Design]]></title>
@@ -133,20 +161,6 @@
             <guid>https://maggieappleton.com/pattern-languages</guid>
             <pubDate>Sat, 13 Nov 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Notes on pattern languages and Christopher Alexander's legacy on software programming]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Pink, Soft, Glittering Developers]]></title>
-            <link>https://maggieappleton.com/glitter-devs</link>
-            <guid>https://maggieappleton.com/glitter-devs</guid>
-            <pubDate>Wed, 10 Nov 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A collection of observations on the rise of soft, sparkly, baby pink aesthetics among developers]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[A Picture Worth a Thousand Programmes]]></title>
-            <link>https://maggieappleton.com/programming-pictures</link>
-            <guid>https://maggieappleton.com/programming-pictures</guid>
-            <pubDate>Fri, 22 Oct 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[The written version of my talk about bringing visual explanations and embodied knowledge to programming tools]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A Meta-Tour of This Site]]></title>
@@ -168,6 +182,13 @@
             <guid>https://maggieappleton.com/metaphor-books</guid>
             <pubDate>Mon, 11 Oct 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[A collection of my favourite books on conceptual metaphor theory]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Illustrating Gatsby's Key Concepts]]></title>
+            <link>https://maggieappleton.com/illustrated-gatsby</link>
+            <guid>https://maggieappleton.com/illustrated-gatsby</guid>
+            <pubDate>Mon, 20 Sep 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Illustrated notes on the key concepts of how Gatsby.js works]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[New Harvest & Illustrating the Cultivated Meat Podcast]]></title>
@@ -198,13 +219,6 @@
             <content:encoded><![CDATA[Why there is nothing natural about the idea of 'nature']]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Tools for Thought as Cultural Systems, not Computational Objects]]></title>
-            <link>https://maggieappleton.com/tools-for-thought</link>
-            <guid>https://maggieappleton.com/tools-for-thought</guid>
-            <pubDate>Thu, 29 Jul 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[The written version of my talk on seeing tools for thought in historical perspective]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Tending Evergreen Notes in Roam Research]]></title>
             <link>https://maggieappleton.com/roam-garden</link>
             <guid>https://maggieappleton.com/roam-garden</guid>
@@ -233,11 +247,18 @@
             <content:encoded><![CDATA[What we lose when our digital notes remove the freedom to move]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[The Eponymous Laws of Programming]]></title>
-            <link>https://maggieappleton.com/eponymous-laws</link>
-            <guid>https://maggieappleton.com/eponymous-laws</guid>
-            <pubDate>Sun, 17 Jan 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A collection of laws named for specific people in the field of programming]]></content:encoded>
+            <title><![CDATA[Frequently Asked Questions]]></title>
+            <link>https://maggieappleton.com/FAQ</link>
+            <guid>https://maggieappleton.com/FAQ</guid>
+            <pubDate>Tue, 27 Apr 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Questions I am often asked to answer]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Painting Roam Research with Custom CSS]]></title>
+            <link>https://maggieappleton.com/paintingroam</link>
+            <guid>https://maggieappleton.com/paintingroam</guid>
+            <pubDate>Mon, 15 Feb 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[How to customise Roam Research with your own CSS themes]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Are Data Unions the Future of Data?]]></title>
@@ -259,13 +280,6 @@
             <guid>https://maggieappleton.com/css-position</guid>
             <pubDate>Sat, 26 Dec 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Notes on how to use the position property in CSS to make scrollytelling stories]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Painting Roam Research with Custom CSS]]></title>
-            <link>https://maggieappleton.com/paintingroam</link>
-            <guid>https://maggieappleton.com/paintingroam</guid>
-            <pubDate>Tue, 15 Dec 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[How to customise Roam Research with your own CSS themes]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A History of Cyborgs]]></title>
@@ -343,13 +357,6 @@
             <guid>https://maggieappleton.com/knowledge-hydrant</guid>
             <pubDate>Sun, 28 Jun 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Illustrated notes on the Knowledge Hydrant guide to collaborative learning]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Frequently Asked Questions]]></title>
-            <link>https://maggieappleton.com/FAQ</link>
-            <guid>https://maggieappleton.com/FAQ</guid>
-            <pubDate>Sat, 27 Jun 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Questions I am often asked to answer]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A Naive Exploration of Computer-Supported Collaborative Learning]]></title>
@@ -629,7 +636,7 @@
             <content:encoded><![CDATA[A shirt design to celebrate React hitting 50,000 Github stars]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Testing Javascript]]></title>
+            <title><![CDATA[Testing JavaScript]]></title>
             <link>https://maggieappleton.com/testing-js</link>
             <guid>https://maggieappleton.com/testing-js</guid>
             <pubDate>Thu, 01 Aug 2019 00:00:00 GMT</pubDate>
