@@ -22,27 +22,38 @@ const path = require("path");
 // };
 
 // ESSAYS_PATH is useful when you want to get the path to a specific file
-export const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
+const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
 
-export const essayFilePaths = fs
+const essayFilePaths = fs
   .readdirSync(ESSAYS_PATH)
   // Only include MDX files
   .filter((path) => /\.mdx?$/.test(path));
 
-export const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
+const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
 
-export const noteFilePaths = fs
+const noteFilePaths = fs
   .readdirSync(NOTES_PATH)
   .filter((path) => /\.mdx?$/.test(path));
 
-export const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
+const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
 
-export const patternFilePaths = fs
+const patternFilePaths = fs
   .readdirSync(PATTERNS_PATH)
   .filter((path) => /\.mdx?$/.test(path));
 
-export const PROJECTS_PATH = path.join(process.cwd(), "posts", "projects");
+const PROJECTS_PATH = path.join(process.cwd(), "posts", "projects");
 
-export const projectFilePaths = fs
+const projectFilePaths = fs
   .readdirSync(PROJECTS_PATH)
   .filter((path) => /\.mdx?$/.test(path));
+
+module.exports = {
+  essayFilePaths,
+  noteFilePaths,
+  patternFilePaths,
+  projectFilePaths,
+  ESSAYS_PATH,
+  NOTES_PATH,
+  PATTERNS_PATH,
+  PROJECTS_PATH,
+};
