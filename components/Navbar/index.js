@@ -29,6 +29,7 @@ export default function Navbar() {
 
 const RightHandSide = styled.div`
   display: flex;
+
   align-items: center;
 `;
 
