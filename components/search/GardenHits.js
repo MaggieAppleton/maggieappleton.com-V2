@@ -11,8 +11,6 @@ function GardenHits({ hits, allPostData }) {
   });
   const filteredGardenHits = hitLength > 0 ? hits : sortedPosts;
 
-  console.log(hits);
-
   return (
     <MasonryGrid>
       {filteredGardenHits.map((post, i) => {
