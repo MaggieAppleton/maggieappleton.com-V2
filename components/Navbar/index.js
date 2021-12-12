@@ -4,7 +4,7 @@ import Link from "next/link";
 import Logo from "../visuals/Logo";
 import MainNavLinks from "./MainNavLinks";
 import MobileMenu from "./MobileMenu";
-import SearchBarAndResults from "../search/SearchBarAndResults";
+// import SearchBarAndResults from "../search/SearchBarAndResults";
 
 export default function Navbar() {
   return (
@@ -19,7 +19,7 @@ export default function Navbar() {
         </a>
       </Link>
       <RightHandSide>
-        <SearchBarAndResults />
+        {/* <SearchBarAndResults /> */}
         <MainNavLinks />
       </RightHandSide>
       <MobileMenu />
@@ -29,7 +29,6 @@ export default function Navbar() {
 
 const RightHandSide = styled.div`
   display: flex;
-
   align-items: center;
 `;
 

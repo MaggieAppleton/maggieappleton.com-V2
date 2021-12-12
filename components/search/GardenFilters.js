@@ -109,11 +109,11 @@ const TopicLabel = styled.div`
 `;
 
 const TopicsContainer = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   .ais-Menu {
-    display: flex;
-    flex-direction: row;
+    /* display: inline-flex; */
+    /* flex-direction: row; */
     align-items: start;
     transition: all 0.4s ease;
   }
@@ -165,13 +165,15 @@ const TopicsContainer = styled.div`
     flex-shrink: 0;
     margin: 0;
     padding: var(--space-3xs) var(--space-2xs);
-    border: 1px solid var(--color-gray-300);
     border-radius: var(--border-radius-base);
-    margin-left: var(--space-xs);
     color: var(--color-gray-700);
     transition: all 0.4s ease;
-    line-height: 1.5;
-    width: 100px;
+    line-height: 1.2;
+    margin-top: var(--space-3xs);
+    font-size: calc(var(--font-size-xs) / 1.2);
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+    color: var(--color-crimson);
     @media (max-width: 768px) {
       display: none;
     }
