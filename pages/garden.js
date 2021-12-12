@@ -4,14 +4,11 @@ import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import { Title2 } from "../components/Typography";
-// import PatternCard from "../components/cards/PatternCard";
 import {
   essayFilePaths,
   ESSAYS_PATH,
   noteFilePaths,
   NOTES_PATH,
-  patternFilePaths,
-  PATTERNS_PATH,
 } from "../utils/mdxUtils";
 import TitleWithCount from "../components/TitleWithCount";
 import { GardenFiltersAndHits } from "../components/search/GardenFiltersAndHits";
@@ -108,42 +105,6 @@ export function getStaticProps() {
     return new Date(b.updated) - new Date(a.updated);
   });
   notes = sortedNotes;
-
-  // Get all pattern posts
-  let patterns = patternFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
-    const { content, data } = matter(source);
-    const slug = filePath.replace(/\.mdx$/, "");
-
-    const {
-      title,
-      description,
-      growthStage,
-      startDate,
-      topics,
-      type,
-      updated,
-    } = data;
-
-    return {
-      content,
-      title,
-      description,
-      growthStage,
-      startDate,
-      topics,
-      type,
-      updated,
-      slug,
-      filePath,
-    };
-  });
-
-  // Sort patterns by date
-  const sortedPatterns = patterns.sort((a, b) => {
-    return new Date(b.updated) - new Date(a.updated);
-  });
-  patterns = sortedPatterns;
 
   const allPosts = essays.concat(notes);
 
