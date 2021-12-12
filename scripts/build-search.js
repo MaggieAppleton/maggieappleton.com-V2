@@ -46,6 +46,7 @@ function transformPostsToSearchObjects(posts) {
       description: post.data.description,
       startDate: post.data.startDate,
       updated: post.data.updated,
+      cover: post.data.cover,
       topics: post.data.topics,
       growthStage: post.data.growthStage,
       type: post.data.type,

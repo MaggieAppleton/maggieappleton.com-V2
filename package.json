@@ -21,6 +21,7 @@
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.2",
     "gsap": "^3.8.0",
+    "instantsearch.css": "^7.4.5",
     "lodash": "^4.17.21",
     "next": "latest",
     "next-mdx-remote": "^3.0.1",
@@ -38,5 +39,9 @@
     "react-twitter-embed": "^3.0.3",
     "react-use-clipboard": "^1.0.7",
     "styled-components": "4.4.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1"
   }
 }

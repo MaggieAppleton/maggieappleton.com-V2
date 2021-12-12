@@ -1,14 +1,13 @@
 import algoliasearch from "algoliasearch/lite";
-import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
+import { InstantSearch, Hits, SearchBox } from "react-instantsearch-dom";
 
 const searchClient = algoliasearch(
-  "GQGHO7AEBK",
-  "42beb410181f9e6c30d76646a3904a5d"
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY
 );
 
-export const SearchFilters = () => (
+export const SearchBar = () => (
   <InstantSearch searchClient={searchClient} indexName="garden-posts">
     <SearchBox />
-    <Hits />
   </InstantSearch>
 );
