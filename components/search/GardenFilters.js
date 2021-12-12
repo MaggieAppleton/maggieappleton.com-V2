@@ -34,7 +34,7 @@ export default function GardenFilters() {
           transformItems={(items) =>
             items.map((item) => ({
               ...item,
-              label: _.capitalize(item.label),
+              label: `${_.capitalize(item.label)}s`,
             }))
           }
           attribute="type"
