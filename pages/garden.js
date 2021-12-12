@@ -4,66 +4,28 @@ import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import { Title2 } from "../components/Typography";
-import MasonryGrid from "../components/MasonryGrid";
-import EssayCard from "../components/cards/EssayCard";
-import NoteCard from "../components/cards/NoteCard";
-// import PatternCard from "../components/cards/PatternCard";
 import {
   essayFilePaths,
   ESSAYS_PATH,
   noteFilePaths,
   NOTES_PATH,
-  patternFilePaths,
-  PATTERNS_PATH,
 } from "../utils/mdxUtils";
 import TitleWithCount from "../components/TitleWithCount";
-import { concat } from "lodash";
+import { GardenFiltersAndHits } from "../components/search/GardenFiltersAndHits";
 
-export default function Garden({ essays, notes }) {
-  const allPosts = essays.concat(notes);
-  const sortedPosts = allPosts.sort((a, b) => {
-    return new Date(b.data.updated) - new Date(a.data.updated);
-  });
-
+export default function Garden({ allPosts }) {
   return (
     <>
       <Header title="The Garden of Maggie Appleton" />
       <Layout>
         <header style={{ marginBottom: "var(--space-xl)" }}>
-          <TitleWithCount posts={concat(essays, notes)}>
-            The Garden
-          </TitleWithCount>
+          <TitleWithCount posts={allPosts}>The Garden</TitleWithCount>
           <Title2>
             A collection of essays, notes, and half-baked explorations I'm
             always tending to.
           </Title2>
         </header>
-        <MasonryGrid>
-          {sortedPosts.map((post, i) => {
-            if (post.data.type === "essay") {
-              return (
-                <EssayCard
-                  id={post.slug}
-                  slug={post.slug}
-                  cover={post.data.cover}
-                  title={post.data.title}
-                  growthStage={post.data.growthStage}
-                  date={post.data.updated}
-                />
-              );
-            } else {
-              return (
-                <NoteCard
-                  id={post.slug}
-                  slug={post.slug}
-                  title={post.data.title}
-                  growthStage={post.data.growthStage}
-                  date={post.data.updated}
-                />
-              );
-            }
-          })}
-        </MasonryGrid>
+        <GardenFiltersAndHits allPostData={allPosts} />
       </Layout>
     </>
   );
@@ -77,10 +39,27 @@ export function getStaticProps() {
     const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
+    const {
+      title,
+      description,
+      growthStage,
+      startDate,
+      topics,
+      type,
+      cover,
+      updated,
+    } = data;
 
     return {
       content,
-      data,
+      title,
+      cover,
+      description,
+      growthStage,
+      startDate,
+      topics,
+      type,
+      updated,
       slug,
       filePath,
     };
@@ -88,7 +67,7 @@ export function getStaticProps() {
 
   // Sort essays by date
   const sortedEssays = essays.sort((a, b) => {
-    return new Date(b.data.updated) - new Date(a.data.updated);
+    return new Date(b.updated) - new Date(a.updated);
   });
   essays = sortedEssays;
 
@@ -97,10 +76,25 @@ export function getStaticProps() {
     const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
+    const {
+      title,
+      description,
+      growthStage,
+      startDate,
+      topics,
+      type,
+      updated,
+    } = data;
 
     return {
       content,
-      data,
+      title,
+      description,
+      growthStage,
+      startDate,
+      topics,
+      type,
+      updated,
       slug,
       filePath,
     };
@@ -108,29 +102,11 @@ export function getStaticProps() {
 
   // Sort notes by date
   const sortedNotes = notes.sort((a, b) => {
-    return new Date(b.data.updated) - new Date(a.data.updated);
+    return new Date(b.updated) - new Date(a.updated);
   });
   notes = sortedNotes;
 
-  // Get all pattern posts
-  let patterns = patternFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
-    const { content, data } = matter(source);
-    const slug = filePath.replace(/\.mdx$/, "");
+  const allPosts = essays.concat(notes);
 
-    return {
-      content,
-      data,
-      slug,
-      filePath,
-    };
-  });
-
-  // Sort patterns by date
-  const sortedPatterns = patterns.sort((a, b) => {
-    return new Date(b.data.updated) - new Date(a.data.updated);
-  });
-  patterns = sortedPatterns;
-
-  return { props: { essays, notes, patterns } };
+  return { props: { allPosts } };
 }

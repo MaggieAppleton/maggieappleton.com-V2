@@ -23,8 +23,6 @@ import {
   ESSAYS_PATH,
   noteFilePaths,
   NOTES_PATH,
-  patternFilePaths,
-  PATTERNS_PATH,
   projectFilePaths,
   PROJECTS_PATH,
 } from "../utils/mdxUtils";
@@ -33,7 +31,6 @@ import { ArrowRightIcon } from "@heroicons/react/solid";
 export default function Index({
   sortedEssays: essays,
   sortedNotes: notes,
-  patterns,
   sortedProjects: projects,
 }) {
   // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
@@ -194,29 +191,6 @@ export default function Index({
               </Link>
             ))}
           </section>
-          {/* <section style={{ gridArea: "patterns" }}>
-                        <Link href="/patterns">
-                            <a href="/patterns">
-                                <SectionHeader>
-                                    Pattern Catalogue
-                                    <ArrowRightIcon width="18" height="18" />
-                                </SectionHeader>
-                            </a>
-                        </Link>
-                        <Subheader>
-                            A catalogue of design patterns gathered from my own
-                            observations and research.
-                        </Subheader>
-                        {patterns.map((pattern) => (
-                            <Link key={pattern.slug} href={`/${pattern.slug}`}>
-                                <a>
-                                    <IndexPatternCard>
-                                        <h3>{pattern.data.title}</h3>
-                                    </IndexPatternCard>
-                                </a>
-                            </Link>
-                        ))}
-                    </section> */}
           <section style={{ gridArea: "library" }}>
             <Link href="/library">
               <a href="/library">
@@ -471,19 +445,6 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
-  let patterns = patternFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
-    const { content, data } = matter(source);
-    const slug = filePath.replace(/\.mdx?$/, "");
-
-    return {
-      content,
-      data,
-      slug,
-      filePath,
-    };
-  });
-
   let projects = projectFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
     const { content, data } = matter(source);
@@ -506,10 +467,10 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
-  const allPosts = [...essays, ...notes, ...patterns, ...projects];
+  const allPosts = [...essays, ...notes, ...projects];
 
   // Generate RSS Feed
   generateRSSFeed(allPosts);
 
-  return { props: { sortedEssays, sortedNotes, patterns, sortedProjects } };
+  return { props: { sortedEssays, sortedNotes, sortedProjects } };
 }

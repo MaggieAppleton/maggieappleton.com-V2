@@ -1,40 +1,39 @@
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
-import { ESSAYS_PATH, NOTES_PATH, PATTERNS_PATH } from "./mdxUtils";
+import { ESSAYS_PATH, NOTES_PATH } from "./mdxUtils";
 import { slugifyTopic } from "./slugifyTopic";
 
 // Get the slug links for each post that matches a given topic
 export const getAllPostSlugsForTopic = (topic) => {
-    // For each directory, get the slug links for each post that matches the topic
-    const getSlugsForTopic = (dir) => {
-        const files = fs.readdirSync(dir);
-        const slugs = files
-            .map((file) => {
-                const filePath = path.join(dir, file);
-                const fileContents = fs.readFileSync(filePath, "utf8");
-                const { data } = matter(fileContents);
-                if (data.topics) {
-                    const slugifiedTopics = data.topics.map((topic) =>
-                        slugifyTopic(topic)
-                    );
-                    if (slugifiedTopics.includes(topic)) {
-                        return {
-                            slug: file.replace(".mdx", ""),
-                            topic: topic,
-                        };
-                    }
-                }
-                return null;
-            })
-            .filter((slug) => slug !== null);
-        return slugs;
-    };
+  // For each directory, get the slug links for each post that matches the topic
+  const getSlugsForTopic = (dir) => {
+    const files = fs.readdirSync(dir);
+    const slugs = files
+      .map((file) => {
+        const filePath = path.join(dir, file);
+        const fileContents = fs.readFileSync(filePath, "utf8");
+        const { data } = matter(fileContents);
+        if (data.topics) {
+          const slugifiedTopics = data.topics.map((topic) =>
+            slugifyTopic(topic)
+          );
+          if (slugifiedTopics.includes(topic)) {
+            return {
+              slug: file.replace(".mdx", ""),
+              topic: topic,
+            };
+          }
+        }
+        return null;
+      })
+      .filter((slug) => slug !== null);
+    return slugs;
+  };
 
-    const essaySlugs = getSlugsForTopic(ESSAYS_PATH);
-    const noteSlugs = getSlugsForTopic(NOTES_PATH);
-    const patternSlugs = getSlugsForTopic(PATTERNS_PATH);
-    return [...essaySlugs, ...noteSlugs, ...patternSlugs];
+  const essaySlugs = getSlugsForTopic(ESSAYS_PATH);
+  const noteSlugs = getSlugsForTopic(NOTES_PATH);
+  return [...essaySlugs, ...noteSlugs];
 };
 
 //     const postDirectory = ESSAYS_PATH;
@@ -60,31 +59,31 @@ export const getAllPostSlugsForTopic = (topic) => {
 // };
 
 /**
- * @returns {Array} - An array of objects containing the slugs for all topics in notes, patterns, and essays
+ * returns {Array} - An array of objects containing the slugs for all topics in notes, patterns, and essays
  */
 export const getAllTopics = () => {
-    let result = [];
-    [ESSAYS_PATH, NOTES_PATH, PATTERNS_PATH].forEach((dir) => {
-        const files = fs.readdirSync(dir);
-        files.forEach((file) => {
-            const filePath = path.join(dir, file);
-            const fileContents = fs.readFileSync(filePath, "utf8");
-            const { data } = matter(fileContents);
-            if (data.topics) {
-                data.topics.forEach((topic) => {
-                    const slugifiedTopic = slugifyTopic(topic);
-                    if (!result.includes({ params: { topic: slugifiedTopic } }))
-                        result.push({ params: { topic: slugifiedTopic } });
-                });
-            }
+  let result = [];
+  [ESSAYS_PATH, NOTES_PATH].forEach((dir) => {
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+      const filePath = path.join(dir, file);
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data } = matter(fileContents);
+      if (data.topics) {
+        data.topics.forEach((topic) => {
+          const slugifiedTopic = slugifyTopic(topic);
+          if (!result.includes({ params: { topic: slugifiedTopic } }))
+            result.push({ params: { topic: slugifiedTopic } });
         });
+      }
     });
+  });
 
-    return result;
+  return result;
 };
 
 // todo: this could be a blog post?
 export const getUniqueTopics = () => {
-    const topics = getAllTopics().map((obj) => obj.params.topic);
-    return Array.from(new Set(topics));
+  const topics = getAllTopics().map((obj) => obj.params.topic);
+  return Array.from(new Set(topics));
 };
