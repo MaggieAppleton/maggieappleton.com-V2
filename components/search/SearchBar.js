@@ -33,7 +33,12 @@ const SearchBarWrapper = styled.form`
     border-radius: 3rem;
     font-size: var(--font-size-sm);
     font-family: var(--font-sans);
-    width: min-content;
+    width: 40px;
+    height: 40px;
     background-color: var(--color-cream);
+    transition: all 0.3s ease;
+    :focus {
+      width: 400px;
+    }
   }
 `;
