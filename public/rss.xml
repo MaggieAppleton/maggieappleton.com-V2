@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Sat, 11 Dec 2021 18:17:45 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Dec 2021 21:54:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -553,54 +553,6 @@
             <guid>https://maggieappleton.com/spread</guid>
             <pubDate>Sun, 20 Jan 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Illustrated notes on how JavaScript's spread operator works]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Algorithmic Transparency]]></title>
-            <link>https://maggieappleton.com/algorithmic-transparency</link>
-            <guid>https://maggieappleton.com/algorithmic-transparency</guid>
-            <pubDate>Invalid Date</pubDate>
-            <content:encoded><![CDATA[Algorithms that make their reasoning visible]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Bidirectional Links]]></title>
-            <link>https://maggieappleton.com/bidirectional-links</link>
-            <guid>https://maggieappleton.com/bidirectional-links</guid>
-            <pubDate>Invalid Date</pubDate>
-            <content:encoded><![CDATA[Links that are aware of other content linked back to them.]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Chronological Stream]]></title>
-            <link>https://maggieappleton.com/chronological-stream</link>
-            <guid>https://maggieappleton.com/chronological-stream</guid>
-            <pubDate>Invalid Date</pubDate>
-            <content:encoded><![CDATA[Content presented in reverse chronoloigcal order in a constantly updating stream]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Community-driven Documention]]></title>
-            <link>https://maggieappleton.com/community-documentation</link>
-            <guid>https://maggieappleton.com/community-documentation</guid>
-            <pubDate>Invalid Date</pubDate>
-            <content:encoded><![CDATA[Documentation created by a community of users rather than the product team]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Epistemic Disclosure]]></title>
-            <link>https://maggieappleton.com/epistemic-disclosure</link>
-            <guid>https://maggieappleton.com/epistemic-disclosure</guid>
-            <pubDate>Invalid Date</pubDate>
-            <content:encoded><![CDATA[Providing clear metadata on the epistemic validity of content]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Multiplayer Presence]]></title>
-            <link>https://maggieappleton.com/multiplayer-presence</link>
-            <guid>https://maggieappleton.com/multiplayer-presence</guid>
-            <pubDate>Invalid Date</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Temporary Neighbourhood]]></title>
-            <link>https://maggieappleton.com/temporary-neighbourhood</link>
-            <guid>https://maggieappleton.com/temporary-neighbourhood</guid>
-            <pubDate>Invalid Date</pubDate>
-            <content:encoded><![CDATA[Temporary spaces created for people to gather around]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Egghead Courses]]></title>

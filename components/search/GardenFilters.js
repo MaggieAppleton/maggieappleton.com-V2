@@ -18,6 +18,7 @@ export default function GardenFilters() {
       <RightMenus>
         <MobileTopics>
           <MenuSelect
+            aria-label="Topics"
             limit={20}
             translations={{
               seeAllOption: "All Topics",
@@ -32,6 +33,7 @@ export default function GardenFilters() {
           />
         </MobileTopics>
         <MenuSelect
+          aria-label="Growth Stages"
           translations={{
             seeAllOption: "All Growth Stages",
           }}
@@ -44,6 +46,7 @@ export default function GardenFilters() {
           attribute="growthStage"
         />
         <MenuSelect
+          aria-label="Types"
           translations={{
             seeAllOption: "All Types",
           }}

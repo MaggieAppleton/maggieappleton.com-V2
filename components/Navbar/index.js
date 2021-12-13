@@ -14,7 +14,7 @@ export default function Navbar() {
       transition={{ duration: 1, delay: 0.1 }}
     >
       <Link href="/">
-        <a href="/">
+        <a aria-label="home" href="/">
           <Logo />
         </a>
       </Link>
