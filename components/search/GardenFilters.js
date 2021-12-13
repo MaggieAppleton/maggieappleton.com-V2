@@ -14,7 +14,23 @@ export default function GardenFilters() {
         </TopicLabel>
         <Menu facetOrdering attribute="topics" limit={7} showMore />
       </TopicsContainer>
+
       <RightMenus>
+        <MobileTopics>
+          <MenuSelect
+            limit={20}
+            translations={{
+              seeAllOption: "All Topics",
+            }}
+            transformItems={(items) =>
+              items.map((item) => ({
+                ...item,
+                label: _.capitalize(item.label),
+              }))
+            }
+            attribute="topics"
+          />
+        </MobileTopics>
         <MenuSelect
           translations={{
             seeAllOption: "All Growth Stages",
@@ -43,6 +59,13 @@ export default function GardenFilters() {
     </Container>
   );
 }
+
+const MobileTopics = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 
 const RightMenus = styled.div`
   display: flex;
@@ -111,6 +134,9 @@ const TopicLabel = styled.div`
 const TopicsContainer = styled.div`
   display: inline-flex;
   flex-direction: row;
+  @media (max-width: 768px) {
+    display: none;
+  }
   .ais-Menu {
     /* display: inline-flex; */
     /* flex-direction: row; */
