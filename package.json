@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.4",
     "@reach/menu-button": "^0.16.1",
     "@tippyjs/react": "^4.2.5",
