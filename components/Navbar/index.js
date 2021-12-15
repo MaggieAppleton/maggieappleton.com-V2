@@ -15,6 +15,7 @@ export default function Navbar() {
     >
       <Link href="/">
         <a aria-label="home" href="/">
+          <span className="visually-hidden">Home</span>
           <Logo />
         </a>
       </Link>
