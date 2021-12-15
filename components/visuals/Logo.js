@@ -15,7 +15,7 @@ export default function Logo() {
       transition: {
         when: "afterChildren",
         staggerChildren: 0.5,
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeInOut",
       },
     },
@@ -27,7 +27,7 @@ export default function Logo() {
       transition: {
         when: "afterChildren",
         staggerChildren: 0.5,
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeInOut",
       },
     },
@@ -35,10 +35,10 @@ export default function Logo() {
 
   const letterVariant = {
     animate: {
-      scale: [1, 0.95, 1.05, 1],
-      fill: ["#680040", "#04A4BA", "#680040"],
+      scale: [1, 0.9, 1],
+      fill: ["#680040", "#820050", "#680040"],
       transition: {
-        duration: 1.2,
+        duration: 0.75,
         ease: "easeInOut",
       },
     },
