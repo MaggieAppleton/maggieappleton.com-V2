@@ -1,6 +1,6 @@
 import { Menu, MenuSelect } from "react-instantsearch-dom";
-import { capitalize } from "lodash";
 import styled from "styled-components";
+import { capitalize } from "lodash";
 
 export default function GardenFilters() {
   return (

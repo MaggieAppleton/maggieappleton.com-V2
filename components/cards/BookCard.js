@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ExternalLinkIcon } from "@heroicons/react/solid";
+import Image from "next/image";
 
 export default function BookCard({
   small,
@@ -25,7 +26,15 @@ export default function BookCard({
             style={{ position: "relative", top: "3px" }}
           />
         </ExternalHoverLink>
-        <img src={cover} alt={title} />
+        {cover && (
+          <Image
+            src={cover}
+            alt={title}
+            width={200}
+            height={300}
+            layout="responsive"
+          />
+        )}
         <div>
           <p>
             {title}

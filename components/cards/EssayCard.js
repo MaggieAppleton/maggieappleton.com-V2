@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 // import { motion } from "framer-motion";
@@ -18,7 +18,15 @@ export default function EssayCard({
     <Link key={id} as={`/${slug}`} href={`/${slug}`}>
       <a>
         <StyledEssayCard variants={variants}>
-          {cover && <img src={cover} alt={title} />}
+          {cover && (
+            <Image
+              src={cover}
+              alt={title}
+              width={300}
+              height={300}
+              layout="responsive"
+            />
+          )}
           <h3>{title}</h3>
           <MetadataContainer>
             {growthStage && <span>{growthStage}</span>}
