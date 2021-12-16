@@ -5,14 +5,15 @@ updated: "2020-09-27"
 startDate: "2020-09-27"
 type: "note"
 topics:
-    [
-        "React",
-        "Scrollytelling",
-        "Design",
-        "JavaScript",
-        "Web Development",
-        "Greensock",
-    ]
+  [
+    "React",
+    "Scrollytelling",
+    "Design",
+    "JavaScript",
+    "Web Development",
+    "Greensock",
+    "Animation",
+  ]
 growthStage: "budding"
 ---
 
@@ -35,8 +36,8 @@ The issue with combining these two libraries is that React acts as a DOM interlo
 React builds it's own internal "tree" of DOM nodes based off our code, and only updates the actual DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}>The React team has gone off the term of the _virtual DOM_ and prefer to talk about the _render tree_. Potatoes, potataos. For more on how the virtual DOM works, I have an [illustrated guide](/react-vdom)</Footnote>
 
 <BasicImage
-    alt="A diagram of React generating all the DOM nodes for us"
-    src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:best,w_1400/v1600973172/maggieappleton.com/notes/gsap/react-greensock-2.png"
+  alt="A diagram of React generating all the DOM nodes for us"
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:best,w_1400/v1600973172/maggieappleton.com/notes/gsap/react-greensock-2.png"
 />
 
 Meanwhile, the GreenSock library usually works by directly animating our DOM elements. Perhaps you can sense the tension in the room...
@@ -68,7 +69,7 @@ We first need to run `yarn install gsap` or `npm install gsap` into our React pr
 Feel free to open up a Codesandbox project to work through the steps while you read. I've set one up for you with React and Greensock already installed:
 
 <ButtonLink href="https://codesandbox.io/s/reacthooks-greensock-demo-xjoti?file=/src/AnimatedBox.js">
-    Jump into CodeSandbox
+  Jump into CodeSandbox
 </ButtonLink>
 
 </SimpleCard>
@@ -86,15 +87,15 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
 const Animation = () => {
-    return (
-        <div
-            style={{
-                width: "160px",
-                height: "160px",
-                background: "salmon",
-            }}
-        />
-    );
+  return (
+    <div
+      style={{
+        width: "160px",
+        height: "160px",
+        background: "salmon",
+      }}
+    />
+  );
 };
 ```
 
@@ -102,15 +103,15 @@ I've set some basic width, height, and color CSS styles on our div to make
 it visible on the page.
 
 <p>
-    <div
-        style={{
-            margin: "2em auto",
-            width: "120px",
-            height: "120px",
-            background: "salmon",
-            borderRadius: "4px",
-        }}
-    />
+  <div
+    style={{
+      margin: "2em auto",
+      width: "120px",
+      height: "120px",
+      background: "salmon",
+      borderRadius: "4px",
+    }}
+  />
 </p>
 
 <Center>
@@ -131,18 +132,18 @@ We then add a `ref={boxRef}` attribute on our `<div>` element.
 
 ```js
 const Animation = () => {
-    const boxRef = useRef();
+  const boxRef = useRef();
 
-    return (
-        <div
-            ref={boxRef}
-            style={{
-                width: "120px",
-                height: "120px",
-                background: "salmon",
-            }}
-        />
-    );
+  return (
+    <div
+      ref={boxRef}
+      style={{
+        width: "120px",
+        height: "120px",
+        background: "salmon",
+      }}
+    />
+  );
 };
 ```
 
@@ -158,25 +159,25 @@ If you're already familiar with greensock this will look fairly straightforward.
 
 ```js
 const Animation = () => {
-    const boxRef = useRef();
+  const boxRef = useRef();
 
-    useEffect(() => {
-        gsap.to([boxRef.current], {
-            x: "400px",
-            duration: 2,
-        });
+  useEffect(() => {
+    gsap.to([boxRef.current], {
+      x: "400px",
+      duration: 2,
     });
+  });
 
-    return (
-        <div
-            ref={boxRef}
-            style={{
-                width: "120px",
-                height: "120px",
-                background: "salmon",
-            }}
-        />
-    );
+  return (
+    <div
+      ref={boxRef}
+      style={{
+        width: "120px",
+        height: "120px",
+        background: "salmon",
+      }}
+    />
+  );
 };
 ```
 
@@ -199,28 +200,28 @@ And thus, our div animates...
 <p>
 
 <Tween
-    to={{
-        scrollTrigger: {
-            trigger: "#boxRef",
-            start: "top 60%",
-            end: "+=500",
-            scrub: true,
-        },
-        x: "400%",
-    }}
-    duration={2}
-    ease="back.out(1.3)"
+  to={{
+    scrollTrigger: {
+      trigger: "#boxRef",
+      start: "top 60%",
+      end: "+=500",
+      scrub: true,
+    },
+    x: "400%",
+  }}
+  duration={2}
+  ease="back.out(1.3)"
 >
-    <div
-        id="boxRef"
-        style={{
-            margin: "2em",
-            width: "120px",
-            height: "120px",
-            background: "salmon",
-            borderRadius: "4px",
-        }}
-    />
+  <div
+    id="boxRef"
+    style={{
+      margin: "2em",
+      width: "120px",
+      height: "120px",
+      background: "salmon",
+      borderRadius: "4px",
+    }}
+  />
 </Tween>
 
 </p>
