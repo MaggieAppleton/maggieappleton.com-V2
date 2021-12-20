@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Video = ({ src, title }) => (
-  <StyledVideo>
+const Video = ({ src, title, ...props }) => (
+  <StyledVideo {...props}>
     <iframe
       width="853"
       height="480"

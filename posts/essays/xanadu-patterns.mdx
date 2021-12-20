@@ -2,7 +2,7 @@
 title: "The Pattern Language of Project Xanadu"
 description: "Project Xanadu as a pattern language, rather than a failed software project"
 aliases: ["Project Xanadu", "Pattern Language of Project Xanadu"]
-updated: "2021-12-19"
+updated: "2021-12-20"
 startDate: "2020-07-10"
 type: "essay"
 growthStage: "budding"
@@ -45,7 +45,7 @@ Yet these historical skirmishes and financial flops are also the least interesti
 
 They come from the land of architects: the software developers of the material world. Namely, the architect [Christopher Alexander](https://en.wikipedia.org/wiki/Christopher_Alexander), whose philosophy of constructing vibrant and humane living space escaped the confines of urban planning and infused the world of software design in the late 1980's.
 
-In the book [A Pattern Language](https://en.wikipedia.org/wiki/A_Pattern_Language) Alexander defined 253 architectural patterns for designing cities, towns, and homes. These became the example patterns for writing patterns. Each one is composed of a context, problem, example, and solution.
+In their book [A Pattern Language](https://en.wikipedia.org/wiki/A_Pattern_Language), Alexander defined 253 architectural patterns for designing cities, towns, and homes. These became the example patterns for writing patterns. Each one is composed of a context, problem, example, and solution.
 
 <ResourceBook
   url="https://en.wikipedia.org/wiki/A_Pattern_Language"
@@ -59,7 +59,7 @@ In the book [A Pattern Language](https://en.wikipedia.org/wiki/A_Pattern_Languag
 
 For example, the design pattern **A Place to Wait** asks that we create comfortable accommodation and ambient activity whenever someone needs to wait; benches, cafes, reading rooms, miniature playgrounds, three-reel slot machines (if we happen to be in the Las Vegas airport). This solves the problem of huddles of people awkwardly hovering in liminal space; near doorways, taking up sidewalks, anxiously waiting for delayed flights or dental operations or immigration investigations without anything to distract them from uncertain fates.
 
-Others like **Light on two sides of every room** and **Staircase as stage** are fairly self-explanatory.
+Others like **Light on Two Sides of Every Room** and **Staircase as Stage** are fairly self-explanatory.
 
 There's no single way to implement these design patterns. They are purposefully abstract enough to adapt to the situation at hand. Rules of thumb rather than sets of formulaic instructions.
 
@@ -75,7 +75,7 @@ Xanadu became a sad parable, when it should have been a piece of speculative des
 
 Curiously enough, there appear to be rogue seedlings sprouting around the web. A number of Xanadu's design patterns are showing up in modern manifestations. We're finding ways to backwards engineer the original spirit of Xanadu into the existing structures of the World Wide Web.
 
-# The Patterns
+<h1 style={{ marginBottom: "0.6rem" }}>The Patterns</h1>
 
 ### 1. Visible Links
 
@@ -143,13 +143,44 @@ Both hover previews and link unfurls give you a good sense of where you're heade
 
 Previews aren't quite the same as physical links between parts of a page though. You lose the fine-grained associations between specific paragraphs and lines. If we wanted to dial up the Xanadu-esque visibility, we could work on showing previews of the whole page and directing people to specific pieces of text within it.
 
-<Draft />
-
 ### 2. Parallel Documents
 
-Ted's proposal for visible links relied on another key Xanadu pattern: parallel documents arranged side-by-side.
+Ted's proposal for visible links relied on another key Xanadu pattern: **parallel documents arranged side-by-side**. This pattern allow us to see quotations in their original context, and quickly jump to the source material of documents.
 
-Arranging two windows side-by-side doesn't solve this. We can't select things from from one window and drag them into the next. The two windows don't know about each other and can't interact. Copying and pasting text, images, or objects it is a cumbersome workaround.
+It's also tricky to misquote someone and cherry-pick misleading excerpts when the reader has immediate, effortless access to the original.
+
+<BasicImage
+  width="900px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_900/v1614174747/maggieappleton.com/notes/xanadu/transclusion_6_shrink_sl0vcb.png"
+  alt="Three parallel documents with visible links between them"
+/>
+
+This sounds great in theory. Being able to lay multiple sheets of paper down side-by-side in meatspace is one of its shining qualities. Humans are very good at visually skimming information spread out in front of us – it allows us to quickly pattern-match by comparing and contrasting.
+
+Ideally our digital mediums would lean into our ability to survey a large visual field. But the limitations of LCD screen sizes lead to some unsatisfying compromises. Instead, we end up squishing columns of documents onto our tiny screens.
+
+The existing prototypes of Xanadu don't gracefully solve this problem in any way. Some of them – like the 2007 _XanaduSpace_ demo – suggest launching into the disorienting world of 3D paper where documents tower over you like skyscrapers.
+
+Here's Ted to give you an interactive tour:
+
+<Video
+  style={{ marginBottom: "2rem" }}
+  src="https://www.youtube.com/embed/cjXW5jKzjCA"
+/>
+
+Flying about in multiple dimensions feels slightly distracting when you're trying to write a detailed product spec or salvage your mediocre thesis.
+
+We have developed some slightly less nauseasting solutions to this problem.
+
+<Draft />
+
+Tabs and slide-over windows help us quickly move between documents, although they still fail at letting us see more than two at once.
+
+Many modern note-taking apps have popularised fat "sidebars" that are essentially second windows.
+
+Roam Research, Obsidian, Logseq, and Innos are all designed for parallel documents
+
+Arranging two windows side-by-side doesn't properly solve this problem. We can't select things from from one window and drag them into the next. The two windows don't know about each other and usually can't interact. They're connected to different data sources, possibly running in seperate applications. Copying and pasting text, images, or objects between the two is a cumbersome workaround.
 
 The mobile-first responsive web also makes this tricky. There is simply no space on a 320px-wide screen to consider viewing multiple windows at once. Although patterns like horizontal scroll and slide-over windows might help solve this.
 
