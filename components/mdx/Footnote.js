@@ -20,7 +20,9 @@ const FootnoteContainer = styled.aside`
   display: inline;
   .footnote {
     float: right;
-    clear: both;
+    height: 1rem;
+    overflow: visible;
+    clear: right;
     margin-right: -38%;
     width: 33%;
     margin-top: 0;
@@ -96,6 +98,7 @@ const FootnoteContainer = styled.aside`
       clear: both;
       width: 95%;
       margin: 1rem 0;
+      height: auto;
       position: relative;
     }
   }
