@@ -2,7 +2,7 @@
 title: "The Pattern Language of Project Xanadu"
 description: "Project Xanadu as a pattern language, rather than a failed software project"
 aliases: ["Project Xanadu", "Pattern Language of Project Xanadu"]
-updated: "2021-06-17"
+updated: "2021-12-19"
 startDate: "2020-07-10"
 type: "essay"
 growthStage: "budding"
@@ -26,9 +26,13 @@ And yet the idea of hypertext predates Berners-Lee by two decades. The term was 
 
 To talk about Xanadu, we need to put a pin in our current understanding of _hypertext_. Our preconceived notions of what a link is, how it works, and what digital text is capable of threatens to overwrite the alternate history we're about to explore.
 
-Ted hoped it would be a medium for "[serious electronic literature](https://xanadu.com.au/ted/XUsurvey/xuDation.html)" – a paradigm shift that would free us from the material constraints of paper. His vision was the first to meaningfully consider how storing information in digital bits could reconfigure the way we read, write, cite, and share words.
+Ted hoped Xanadu would be a medium for "[serious electronic literature](https://xanadu.com.au/ted/XUsurvey/xuDation.html)" – a paradigm shift that would free us from the material constraints of paper. His vision was the first to meaningfully consider how storing information in digital bits could reconfigure the way we read, write, cite, and share words.
 
-Xanadu's failure to mature into a widespread, useable commercial product is great fodder a [dramatic cover story](https://www.wired.com/1995/06/xanadu/). One fuelled by the noticeably combative language in Xanadu's [documentation](https://xanadu.com/). "The computer world is a continual war over software politics and paradigms" where "we fight on" for "vindication" and "the last laugh." One feels like the dinner guest who has stumbled into a raging martial argument over unwashed tea towels. You don't dare ask for context.
+Xanadu's failure to mature into a widespread, useable commercial product is great fodder a [dramatic cover story](https://www.wired.com/1995/06/xanadu/). One fuelled by the noticeably combative language in Xanadu's [documentation](https://xanadu.com/):
+
+> "The computer world is a continual war over software politics and paradigms" where "we fight on" for "vindication" and "the last laugh."
+
+One feels like the dinner guest who has stumbled into a raging martial argument over unwashed tea towels. You don't dare ask for context.
 
 Yet these historical skirmishes and financial flops are also the least interesting thing about Xanadu. The most interesting part is its **Pattern Language**.
 
@@ -41,9 +45,21 @@ Yet these historical skirmishes and financial flops are also the least interesti
 
 They come from the land of architects: the software developers of the material world. Namely, the architect [Christopher Alexander](https://en.wikipedia.org/wiki/Christopher_Alexander), whose philosophy of constructing vibrant and humane living space escaped the confines of urban planning and infused the world of software design in the late 1980's.
 
-Alexander defined 253 architectural patterns for designing cities, towns, and homes. These became the example patterns for writing patterns. Each one is composed of a context, problem, example, and solution.
+In the book [A Pattern Language](https://en.wikipedia.org/wiki/A_Pattern_Language) Alexander defined 253 architectural patterns for designing cities, towns, and homes. These became the example patterns for writing patterns. Each one is composed of a context, problem, example, and solution.
+
+<ResourceBook
+  url="https://en.wikipedia.org/wiki/A_Pattern_Language"
+  image="/images/books/patterns.jpeg"
+  title="A Pattern Language"
+  author="Christopher Alexander"
+>
+  The book outlined a number of solutions for architecture and urban planning
+  design, but the theory has since (appropriately) taken on a life of its own.
+</ResourceBook>
 
 For example, the design pattern **A Place to Wait** asks that we create comfortable accommodation and ambient activity whenever someone needs to wait; benches, cafes, reading rooms, miniature playgrounds, three-reel slot machines (if we happen to be in the Las Vegas airport). This solves the problem of huddles of people awkwardly hovering in liminal space; near doorways, taking up sidewalks, anxiously waiting for delayed flights or dental operations or immigration investigations without anything to distract them from uncertain fates.
+
+Others like **Light on two sides of every room** and **Staircase as stage** are fairly self-explanatory.
 
 There's no single way to implement these design patterns. They are purposefully abstract enough to adapt to the situation at hand. Rules of thumb rather than sets of formulaic instructions.
 
@@ -65,7 +81,7 @@ Curiously enough, there appear to be rogue seedlings sprouting around the web. A
 
 Ted Nelson has many gripes, and **jump links** are one of his biggest. They're the kind of links we all use around the web today. Clicking a hyperlink is a bit of a gamble. It _jumps_ you into somewhere unknown. You find out when you get there.
 
-We've found ways to adapt to this; Venkatesh Rao has a compelling exploration of the [rhetoric of hyperlinking](https://www.ribbonfarm.com/2009/07/01/the-rhetoric-of-the-hyperlink/) that we use to hint at where people are headed. Most browsers will show you a URL preview, but they tuck them into the far corner in tiny text:
+We've found ways to adapt to this; Venkatesh Rao has a compelling exploration of how we've developed a [rhetoric of hyperlinking](https://www.ribbonfarm.com/2009/07/01/the-rhetoric-of-the-hyperlink/) to hint at where people are headed. Most browsers will do this more explicitly by showing you a URL preview, but they tuck them into the far corner in tiny text:
 
 <BasicImage
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1623585337/maggieappleton.com/notes/xanadu/hover-preview-url_shrink_kxvwtp.png"
@@ -131,9 +147,11 @@ Previews aren't quite the same as physical links between parts of a page though.
 
 ### 2. Parallel Documents
 
-Side-by-side, interactive windows
+Ted's proposal for visible links relied on another key Xanadu pattern: parallel documents arranged side-by-side.
 
-Separate browser or application windows arranged side-by-side don't cut it
+Arranging two windows side-by-side doesn't solve this. We can't select things from from one window and drag them into the next. The two windows don't know about each other and can't interact. Copying and pasting text, images, or objects it is a cumbersome workaround.
+
+The mobile-first responsive web also makes this tricky. There is simply no space on a 320px-wide screen to consider viewing multiple windows at once. Although patterns like horizontal scroll and slide-over windows might help solve this.
 
 ### 3. Transpointing Windows
 
