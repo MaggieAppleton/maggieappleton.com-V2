@@ -355,4 +355,13 @@ export const GlobalStyle = createGlobalStyle`
 	white-space: nowrap;
 	width: 1px;
 	}
+
+	.small-caps {
+		font-size: var(--font-size-xs) !important;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-gray-800);
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+	}
 `;
