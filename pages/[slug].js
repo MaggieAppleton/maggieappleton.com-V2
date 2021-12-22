@@ -11,6 +11,7 @@ import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
+import PatternTemplate from "../templates/PatternTemplate";
 import {
   StaticCSSPosition,
   RelativeCSSPosition,
@@ -28,7 +29,9 @@ import {
   projectFilePaths,
   noteFilePaths,
   essayFilePaths,
+  patternFilePaths,
   ESSAYS_PATH,
+  PATTERNS_PATH,
   NOTES_PATH,
   PROJECTS_PATH,
 } from "../utils/mdxUtils";
@@ -219,6 +222,15 @@ export default function PostPage({ source, frontMatter, slug, backlinks }) {
         components={components}
       />
     );
+  } else if (frontMatter.type === "pattern") {
+    return (
+      <PatternTemplate
+        slug={slug}
+        source={source}
+        frontMatter={frontMatter}
+        components={components}
+      />
+    );
   }
 }
 
@@ -226,6 +238,7 @@ export const getStaticProps = async ({ params }) => {
   const essays = fs.readdirSync(ESSAYS_PATH);
   const notes = fs.readdirSync(NOTES_PATH);
   const projects = fs.readdirSync(PROJECTS_PATH);
+  const patterns = fs.readdirSync(PATTERNS_PATH);
 
   // const type = essays.find((e) => e.includes(params.slug)) ? "post" : "note";
 
@@ -237,6 +250,8 @@ export const getStaticProps = async ({ params }) => {
     type = "essay";
   } else if (notes.find((file) => file.includes(params.slug))) {
     type = "note";
+  } else if (patterns.find((file) => file.includes(params.slug))) {
+    type = "pattern";
   }
 
   // switch case statement to determine which file to load
@@ -250,6 +265,9 @@ export const getStaticProps = async ({ params }) => {
       break;
     case "project":
       filePath = path.join(PROJECTS_PATH, `${params.slug}.mdx`);
+      break;
+    case "pattern":
+      filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
       break;
   }
 
@@ -290,9 +308,10 @@ export const getStaticPaths = async () => {
   const notePaths = getSlugParams(noteFilePaths);
   const essayPaths = getSlugParams(essayFilePaths);
   const projectPaths = getSlugParams(projectFilePaths);
+  const patternPaths = getSlugParams(patternFilePaths);
 
   // Combine all paths into one array
-  const paths = notePaths.concat(essayPaths, projectPaths);
+  const paths = notePaths.concat(essayPaths, projectPaths, patternPaths);
 
   return {
     paths,

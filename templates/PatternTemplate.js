@@ -3,129 +3,131 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
-import Layout from "../components/Layout";
-import { Title1 } from "../components/Typography";
+import GrowthIcon from "../components/icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
+import Dates from "../components/templates/Dates";
+import GrowthStage from "../components/templates/GrowthStage";
+import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
+import BackToTop from "../components/mdx/BackToTop";
+import Backlinks from "../components/templates/Backlinks";
+import { TwitterReply } from "../components/templates/TwitterReply";
 
 export default function PatternTemplate({
-    source,
-    frontMatter,
-    components,
-    slug,
-    backlinks,
+  source,
+  frontMatter,
+  components,
+  slug,
+  backlinks,
 }) {
-    function formattedDate(date) {
-        return new Date(date).toLocaleDateString("en-GB", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-    }
+  return (
+    <>
+      <Header
+        title={frontMatter.title}
+        description={frontMatter.description}
+        keywords={frontMatter.topics}
+      />
+      <HeaderSection>
+        <div className="above-title">
+          <Link href="/patterns">
+            <BackHoverLink href="/patterns">Patterns</BackHoverLink>
+          </Link>
+          {frontMatter.growthStage && (
+            <>
+              <GrowthIcon size="16" growthStage={frontMatter.growthStage} />
+              <GrowthStage stage={frontMatter.growthStage} />
+            </>
+          )}
+        </div>
+        <TitleContainer>
+          <h1>{frontMatter.title}</h1>
+          {frontMatter.description && <p>{frontMatter.description}</p>}
+        </TitleContainer>
+      </HeaderSection>
+      <StyledMain>
+        <BackToTop />
+        <ProseWrapper>
+          <MDXRemote {...source} components={components} />
+        </ProseWrapper>
+      </StyledMain>
 
-    return (
-        <>
-            <Header
-                title={frontMatter.title}
-                description={frontMatter.description}
-            />
-            <Layout>
-                <HeaderSection>
-                    <div className="above-title">
-                        <Link href="/patterns">
-                            <BackHoverLink href="/patterns">
-                                Patterns
-                            </BackHoverLink>
-                        </Link>
-                    </div>
-                    <Title1>{frontMatter.title}</Title1>
-                    {frontMatter.description && (
-                        <p>{frontMatter.description}</p>
-                    )}
-                    <Metadata style={{ display: "flex", flexDirection: "row" }}>
-                        {frontMatter.topics && (
-                            <ul>
-                                {frontMatter.topics.map((topic) => (
-                                    <li key={topic}>
-                                        <Link href={`/topics/${topic}`}>
-                                            <a>{topic}</a>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                        <div className="metadata">
-                            {frontMatter.startDate && (
-                                <span>
-                                    Planted{" "}
-                                    {formattedDate(frontMatter.startDate)}
-                                </span>
-                            )}
-                            {frontMatter.updated && (
-                                <span>
-                                    Last tended{" "}
-                                    {formattedDate(frontMatter.updated)}
-                                </span>
-                            )}
-                        </div>
-                    </Metadata>
-                </HeaderSection>
-                <StyledMain>
-                    <ProseWrapper>
-                        <MDXRemote {...source} components={components} />
-                        {/* todo: replace this with a proper component */}
-                        {backlinks.length ? (
-                            <pre style={{ whiteSpace: "pre-wrap" }}>
-                                {JSON.stringify(backlinks, 4, null)}
-                            </pre>
-                        ) : null}
-                    </ProseWrapper>
-                </StyledMain>
-            </Layout>
-        </>
-    );
+      <ProseWrapper>
+        {backlinks && <Backlinks backlinks={backlinks} />}
+      </ProseWrapper>
+      <TwitterReply
+        url={`https://maggieappleton.com/${slug}/`}
+        title={frontMatter.title}
+      />
+    </>
+  );
 }
 
-const HeaderSection = styled.header`
-    max-width: 1400px;
-    margin: 0 auto;
-    div.above-title {
-        a {
-            font-family: var(--font-sans);
-            font-size: var(--font-size-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: bold;
-        }
+const TitleContainer = styled.div`
+  padding: var(--space-s) 0 var(--space-l);
+  border-bottom: 1px solid var(--color-tinted-cream);
+  h1 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--leading-tighter);
+    max-width: 100%;
+    @media screen and (max-width: 425px) {
+      font-size: var(--font-size-xl);
     }
-    h1 {
-        font-size: var(--font-size-3xl);
-        line-height: var(--leading-tight);
+  }
+  p {
+    font-size: var(--font-size-md);
+    margin: var(--space-s) 0 0 0;
+    color: var(--color-gray-600);
+    @media screen and (max-width: 425px) {
+      font-size: var(--font-size-base);
     }
+  }
+`;
 
-    @media ${breakpoints.mediaSM} {
-        padding: 0 var(--space-xs);
+const HeaderSection = styled.header`
+  max-width: 800px;
+  margin: var(--space-l) auto 0;
+  div.above-title {
+    a,
+    p {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+      padding-right: var(--space-xs);
     }
+    p {
+      padding-left: var(--space-2xs);
+    }
+    svg {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  @media ${breakpoints.mediaSM} {
+    padding: 0 var(--space-xs);
+  }
 `;
 
 const Metadata = styled.div`
-    justify-content: space-between;
-    div {
-        margin-top: var(--space-xs);
-        display: flex;
-        flex-direction: column;
-        text-align: right;
-    }
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
 `;
 
 const StyledMain = styled.main`
-    margin-top: var(--space-xs);
-    padding: var(--space-xl) 0;
-    background: white;
-    border-radius: var(--border-radius-sm);
-    grid-column: 1/4 !important;
-    width: 100%;
-    @media ${breakpoints.mediaSM} {
-        padding: var(--space-2xl) var(--space-xs);
-    }
+  padding: var(--space-xl) 0;
+  background: linear-gradient(var(--color-cream) 0, white 110px);
+  grid-column: 1/4 !important;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: var(--space-xl) var(--space-xs);
+  }
 `;

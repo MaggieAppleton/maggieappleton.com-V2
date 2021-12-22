@@ -5,7 +5,14 @@ const dotenv = require("dotenv");
 const algoliasearch = require("algoliasearch");
 const mdxUtils = require("../utils/mdxUtils");
 
-const { essayFilePaths, ESSAYS_PATH, noteFilePaths, NOTES_PATH } = mdxUtils;
+const {
+  essayFilePaths,
+  ESSAYS_PATH,
+  noteFilePaths,
+  NOTES_PATH,
+  patternFilePaths,
+  PATTERNS_PATH,
+} = mdxUtils;
 
 let essays = essayFilePaths.map((filePath) => {
   const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
@@ -33,7 +40,20 @@ let notes = noteFilePaths.map((filePath) => {
   };
 });
 
-const posts = [...essays, ...notes];
+let patterns = patternFilePaths.map((filePath) => {
+  const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
+  const { content, data } = matter(source);
+  const slug = filePath.replace(/\.mdx?$/, "");
+
+  return {
+    content,
+    data,
+    slug,
+    filePath,
+  };
+});
+
+const posts = [...essays, ...notes, ...patterns];
 
 function transformPostsToSearchObjects(posts) {
   const transformed = posts.map((post) => {
