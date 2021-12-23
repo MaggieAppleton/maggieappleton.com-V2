@@ -23,23 +23,6 @@ export default function Colophon() {
         </HeaderContainer>
         <MainSection>
           <ProseWrapper>
-            <Title3>Technologies</Title3>
-            <p>
-              <TooltipLink href="https://nextjs.org/">Next.js</TooltipLink> does
-              most of the heavy lifting on this site. It uses React, styled
-              components, and MDX.{" "}
-              <TooltipLink href="https://netlify.com/">Netlify</TooltipLink>{" "}
-              takes care of hosting. Animations are built with{" "}
-              <TooltipLink href="https://www.framer.com/motion/">
-                Framer Motion
-              </TooltipLink>
-              . My CMS is just a bunch of files and folders. Everything is open
-              souce and published on{" "}
-              <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">
-                Github
-              </TooltipLink>
-              .
-            </p>
             <Title3>Typography</Title3>
             <p>
               Headers are set in{" "}
@@ -54,7 +37,12 @@ export default function Colophon() {
               <TooltipLink href="https://commercialtype.com/">
                 Commercial Type
               </TooltipLink>
-              .<br /> Supporting sans-serif type is set in Lato.
+              . I love its semi-serifs and classical feel. Supporting sans-serif
+              type is set in{" "}
+              <TooltipLink href="https://fonts.google.com/specimen/Lato">
+                Lato
+              </TooltipLink>
+              .
             </p>
             <p>
               I use a{" "}
@@ -65,6 +53,38 @@ export default function Colophon() {
               <TooltipLink href="https://utopia.fyi/">Utopia</TooltipLink> ,
               which uses some wild CSS calculations to continuously adjust the
               font size relative to your browser's width.
+            </p>
+            <Title3>Technologies</Title3>
+            <p>
+              <TooltipLink href="https://nextjs.org/">Next.js</TooltipLink> does
+              most of the heavy lifting on this site – it's a static site
+              builder that takes care of a lot of otherwise cumbersome
+              optimsiations like server-side rendering, image loading, and
+              routing.
+            </p>
+            <p>
+              I used React and styled components to build and design the
+              interface. All the individual notes are written in{" "}
+              <TooltipLink href="https://github.com/mdx-js/mdx">
+                MDX
+              </TooltipLink>{" "}
+              – a souped-up version of markdown that makes it easy to design and
+              reuse custom components and interactive JavaScript elements.{" "}
+            </p>
+            <p>
+              <TooltipLink href="https://vercel.com/">Vercel</TooltipLink> takes
+              care of hosting. Animations are built with{" "}
+              <TooltipLink href="https://www.framer.com/motion/">
+                Framer Motion
+              </TooltipLink>
+              . My CMS is just a bunch of files and folders. Everything is open
+              souce and published on{" "}
+              <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">
+                Github
+              </TooltipLink>
+              . The whole thing is frankly overengineered for a personal
+              website, but playing with transient web technologies is an
+              indulgent hobby I don't want to relinquish.
             </p>
             <Title3>Growth Stages</Title3>
             <p>
@@ -91,6 +111,7 @@ export default function Colophon() {
             <p>
               There's an <i>assumed audience</i> component that I put at the top
               of some posts to make explicit who I'm writing for:
+              <br />
               <AssumedAudience>
                 People who care about how websites are built.
               </AssumedAudience>
