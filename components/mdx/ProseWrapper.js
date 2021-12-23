@@ -16,6 +16,9 @@ const ProseWrapper = styled.article`
     font-size: var(--font-size-base);
     line-height: var(--leading-looser);
     margin-bottom: var(--space-m);
+    @media (max-width: 767px) {
+      line-height: var(--leading-loose);
+    }
   }
   p.subtext {
     font-size: calc(var(--font-size-sm) * 1.1);
