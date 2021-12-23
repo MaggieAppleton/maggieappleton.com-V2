@@ -1,24 +1,32 @@
 export const antiBookData = [
   {
+    title: "Atlas of AI",
+    subtitle:
+      "Power, Politics, and the Planetary Costs of Artificial Intelligence",
+    author: "Kate Crawford",
+    cover: "/images/books/atlasai.jpeg",
+    link: "https://www.google.co.uk/books/edition/The_Atlas_of_AI/XvEdEAAAQBAJ?hl=en&gbpv=0",
+  },
+  {
     title: "Blockchain Chicken Farm",
     subtitle: "And Other Stories of Tech in China's Countryside",
     author: "Xiaowei Wang",
     cover: "/images/books/blockchainchicken.jpg",
-    link: "https://www.librarything.com/work/24512017",
+    link: "https://www.google.co.uk/books/edition/Blockchain_Chicken_Farm/sCPQDwAAQBAJ?hl=en&gbpv=0",
   },
   {
     title: "Life in Code",
     subtitle: "A Personal History of Technology",
     author: "Ellen Ullman",
     cover: "/images/books/lifecode.jpg",
-    link: "https://www.librarything.com/work/19608984",
+    link: "https://www.google.co.uk/books/edition/Life_in_Code/rPTtDQAAQBAJ?hl=en",
   },
   {
     title: "Subprime Attention Crisis",
     subtitle: "Advertising and the Time Bomb at the Heart of the Internet",
     author: "Tim Hwang",
     cover: "/images/books/subprime.jpg",
-    link: "https://www.librarything.com/work/24848287/",
+    link: "https://www.google.co.uk/books/edition/Subprime_Attention_Crisis/iyPQDwAAQBAJ?hl=en&gbpv=0",
   },
   {
     title: "The Dawn of Everything",
