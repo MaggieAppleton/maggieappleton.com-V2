@@ -11,6 +11,7 @@ import TitleWithCount from "../../components/TitleWithCount";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import DynamicPostsGrid from "../../components/DynamicPostsGrid";
+import { motion } from "framer-motion";
 
 // ? Possibly useful for reference: https://github.com/inadeqtfuturs/garden/blob/b8b98f4931e204cbb34fa0bcc11fab75b24c0df1/src/pages/tags/%5Bslug%5D.js
 
@@ -24,10 +25,10 @@ export default function TopicPage({ topic, topics, postData }) {
     <>
       <Header title={`${topicName} posts by Maggie Appleton`} />
       <Layout>
-        <header style={{ marginBottom: "var(--space-2xl)" }}>
+        <motion.header style={{ marginBottom: "var(--space-2xl)" }}>
           <TitleWithCount posts={postData}>{topicName}</TitleWithCount>
           <Title2>Essays, notes, and patterns related to {topicName}</Title2>
-        </header>
+        </motion.header>
         <DynamicPostsGrid postsToShow={postData} />
       </Layout>
     </>

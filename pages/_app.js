@@ -1,5 +1,5 @@
 import { GlobalStyle } from "../components/GlobalStyle";
-// import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import "./_app.css";
 import { DefaultSeo } from "next-seo";
 import Navbar from "../components/Navbar/index.js";
@@ -25,13 +25,13 @@ function MyApp({ Component, pageProps, router }) {
           }}
         />
         <Navbar />
-        {/* <AnimatePresence
-                    exitBeforeEnter
-                    initial={false}
-                    onExitComplete={() => window.scrollTo(0, 0)}
-                > */}
-        <Component {...pageProps} key={router.route} />
-        {/* </AnimatePresence> */}
+        <AnimatePresence
+          exitBeforeEnter
+          initial={false}
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
         <Footer />
       </container>
     </>

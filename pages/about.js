@@ -9,6 +9,7 @@ import { Spacer } from "../components/Spacer";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
 import LeafIcon from "../components/icons/LeafIcon";
 import { RelativeDate } from "../components/templates/Dates";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -303,14 +304,14 @@ const Divider = styled.hr`
   }
 `;
 
-const GridSection = styled.div`
+const GridSection = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: var(--space-m);
   margin: var(--space-xl) 0;
 `;
 
-const HeaderSection = styled.header`
+const HeaderSection = styled(motion.header)`
   margin: var(--space-m) auto 0;
   ${SmallCaps} {
     margin-bottom: var(--space-3xs);
@@ -324,7 +325,7 @@ const HeaderSection = styled.header`
   }
 `;
 
-const StyledMain = styled.main`
+const StyledMain = styled(motion.main)`
   margin-top: var(--space-xs);
   padding: var(--space-xl) 0;
   width: 100%;
@@ -418,7 +419,7 @@ function TalkCard({ title, host, date, url, key }) {
   );
 }
 
-const StyledTalkCard = styled.div`
+const StyledTalkCard = styled(motion.div)`
   display: flex;
   flex-direction: row;
   border-radius: var(--border-radius-base);

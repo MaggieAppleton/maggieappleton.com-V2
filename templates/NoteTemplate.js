@@ -12,6 +12,8 @@ import Header from "../components/Header";
 import BackToTop from "../components/mdx/BackToTop";
 import Backlinks from "../components/templates/Backlinks";
 import { TwitterReply } from "../components/templates/TwitterReply";
+import AnimatedContainer from "../components/templates/AnimatedContainer";
+import { motion } from "framer-motion";
 
 export default function NoteTemplate({
   source,
@@ -27,32 +29,34 @@ export default function NoteTemplate({
         description={frontMatter.description}
         keywords={frontMatter.topics}
       />
-      <HeaderSection>
-        <div className="above-title">
-          <Link href="/notes">
-            <BackHoverLink href="/notes">notes</BackHoverLink>
-          </Link>
-          <GrowthIcon size="16" growthStage={frontMatter.growthStage} />
-          <GrowthStage stage={frontMatter.growthStage} />
-        </div>
-        <TitleContainer>
-          <h1>{frontMatter.title}</h1>
-          {frontMatter.description && <p>{frontMatter.description}</p>}
-        </TitleContainer>
-        <Metadata>
-          {frontMatter.topics && <Topics topics={frontMatter.topics} />}
-          <Dates
-            startDate={frontMatter.startDate}
-            updated={frontMatter.updated}
-          />
-        </Metadata>
-      </HeaderSection>
-      <StyledMain>
-        <BackToTop />
-        <ProseWrapper>
-          <MDXRemote {...source} components={components} />
-        </ProseWrapper>
-      </StyledMain>
+      <AnimatedContainer>
+        <HeaderSection>
+          <div className="above-title">
+            <Link href="/notes">
+              <BackHoverLink href="/notes">notes</BackHoverLink>
+            </Link>
+            <GrowthIcon size="16" growthStage={frontMatter.growthStage} />
+            <GrowthStage stage={frontMatter.growthStage} />
+          </div>
+          <TitleContainer>
+            <h1>{frontMatter.title}</h1>
+            {frontMatter.description && <p>{frontMatter.description}</p>}
+          </TitleContainer>
+          <Metadata>
+            {frontMatter.topics && <Topics topics={frontMatter.topics} />}
+            <Dates
+              startDate={frontMatter.startDate}
+              updated={frontMatter.updated}
+            />
+          </Metadata>
+        </HeaderSection>
+        <StyledMain>
+          <BackToTop />
+          <ProseWrapper>
+            <MDXRemote {...source} components={components} />
+          </ProseWrapper>
+        </StyledMain>
+      </AnimatedContainer>
 
       <ProseWrapper>
         {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
@@ -65,7 +69,7 @@ export default function NoteTemplate({
   );
 }
 
-const TitleContainer = styled.div`
+const TitleContainer = styled(motion.div)`
   padding: var(--space-s) 0 var(--space-l);
   border-bottom: 1px solid var(--color-tinted-cream);
   h1 {
@@ -86,7 +90,7 @@ const TitleContainer = styled.div`
   }
 `;
 
-const HeaderSection = styled.header`
+const HeaderSection = styled(motion.header)`
   max-width: 800px;
   margin: var(--space-l) auto 0;
   div.above-title {
@@ -114,7 +118,7 @@ const HeaderSection = styled.header`
   }
 `;
 
-const Metadata = styled.div`
+const Metadata = styled(motion.div)`
   justify-content: space-between;
   display: flex;
   flex-direction: row;
@@ -125,7 +129,7 @@ const Metadata = styled.div`
   }
 `;
 
-const StyledMain = styled.main`
+const StyledMain = styled(motion.main)`
   margin-top: var(--space-xs);
   padding: var(--space-xl) 0;
   background: linear-gradient(var(--color-cream) 0, white 110px);
