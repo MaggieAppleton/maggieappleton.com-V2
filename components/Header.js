@@ -1,10 +1,16 @@
-import Head from "next/head";
+// import Head from "next/head";
 import { NextSeo } from "next-seo";
 
 //https://github.com/garmeeh/next-seo
 
-export default function Header({ title, description, keywords }) {
+export default function Header({ title, description, keywords, ogImage }) {
   return (
+    // <Head>
+    //   <meta {...ogImage} />
+    //   <title>{title}</title>
+    //   <meta name="description" content={description} />
+    //   <meta name="keywords" content={keywords} />
+    // </Head>
     <NextSeo
       title={title}
       description={description}
@@ -12,24 +18,14 @@ export default function Header({ title, description, keywords }) {
         url: "https://maggieappleton.com",
         title: title,
         description: description,
-
         // images: [
         //   {
-        //     url: "https://www.example.ie/og-image-01.jpg",
-        //     width: 800,
-        //     height: 600,
-        //     alt: "Og Image Alt",
-        //     type: "image/jpeg",
+        //     url: ogImage ? ogImage : "https://maggieappleton.com/og.png",
+        //     width: 1200,
+        //     height: 630,
+        //     alt: `${title}`,
+        //     type: "image/png",
         //   },
-        //   {
-        //     url: "https://www.example.ie/og-image-02.jpg",
-        //     width: 900,
-        //     height: 800,
-        //     alt: "Og Image Alt Second",
-        //     type: "image/jpeg",
-        //   },
-        //   { url: "https://www.example.ie/og-image-03.jpg" },
-        //   { url: "https://www.example.ie/og-image-04.jpg" },
         // ],
         site_name: "Maggie Appleton",
       }}
