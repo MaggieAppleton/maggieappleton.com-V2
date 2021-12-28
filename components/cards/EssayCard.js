@@ -19,13 +19,15 @@ export default function EssayCard({
       <a>
         <StyledEssayCard variants={variants}>
           {cover && (
-            <Image
-              src={cover}
-              alt={title}
-              width={300}
-              height={300}
-              layout="responsive"
-            />
+            <div style={{ maxWidth: "450px", maxHeight: "450px" }}>
+              <Image
+                src={cover}
+                alt={title}
+                width={300}
+                height={300}
+                layout="responsive"
+              />
+            </div>
           )}
           <h3>{title}</h3>
           <MetadataContainer>

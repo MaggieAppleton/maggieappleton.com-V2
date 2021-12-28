@@ -266,6 +266,8 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   });
+
+  // Get backlinks
   const backlinks =
     PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks || [];
 

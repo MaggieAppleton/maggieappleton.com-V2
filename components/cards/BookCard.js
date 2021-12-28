@@ -27,13 +27,15 @@ export default function BookCard({
           />
         </ExternalHoverLink>
         {cover && (
-          <Image
-            src={cover}
-            alt={title}
-            width={200}
-            height={300}
-            layout="responsive"
-          />
+          <div style={{ maxWidth: "300px", maxHeight: "450px" }}>
+            <Image
+              src={cover}
+              alt={title}
+              width={200}
+              height={300}
+              layout="responsive"
+            />
+          </div>
         )}
         <div>
           <p>
