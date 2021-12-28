@@ -36,6 +36,16 @@ const ProseWrapper = styled.article`
       margin: var(--space-l) 0 var(--space-s);
     }
   }
+  h2.micro {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    color: var(--color-bright-crimson);
+    margin: 0 0 var(--space-s);
+    line-height: var(--leading-base);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+  }
   h3 {
     font-size: calc(var(--font-size-lg) / 1.1);
     font-weight: 300;
