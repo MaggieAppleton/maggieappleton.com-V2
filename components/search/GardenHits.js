@@ -2,6 +2,7 @@ import { connectInfiniteHits } from "react-instantsearch-dom";
 import MasonryGrid from "../MasonryGrid";
 import EssayCard from "../cards/EssayCard";
 import NoteCard from "../cards/NoteCard";
+import PatternCard from "../cards/PatternCard";
 import styled from "styled-components";
 
 function GardenHits({ hits, allPostData }) {
@@ -25,9 +26,19 @@ function GardenHits({ hits, allPostData }) {
               date={post.updated}
             />
           );
-        } else {
+        } else if (post.type === "note") {
           return (
             <NoteCard
+              id={post.slug}
+              slug={post.slug}
+              title={post.title}
+              growthStage={post.growthStage}
+              date={post.updated}
+            />
+          );
+        } else if (post.type === "pattern") {
+          return (
+            <PatternCard
               id={post.slug}
               slug={post.slug}
               title={post.title}
