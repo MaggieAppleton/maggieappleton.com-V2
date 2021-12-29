@@ -78,12 +78,14 @@ export function getStaticProps() {
     const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
-    const { title, description, type } = data;
+    const { title, description, type, startDate, updated } = data;
 
     return {
       content,
       title,
       description,
+      startDate,
+      updated,
       type,
       slug,
       filePath,
