@@ -28,6 +28,7 @@ export default function Patterns({ patterns }) {
               slug={pattern.slug}
               title={pattern.data.title}
               growthStage={pattern.data.growthStage}
+              date={pattern.data.updated}
             />
           ))}
         </PatternGrid>
