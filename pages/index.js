@@ -12,6 +12,7 @@ import { Title1, Title2, SmallTitle2 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
+import PatternCard from "../components/cards/PatternCard";
 import { bookData } from "../posts/data/books";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
@@ -23,6 +24,8 @@ import {
   ESSAYS_PATH,
   noteFilePaths,
   NOTES_PATH,
+  patternFilePaths,
+  PATTERNS_PATH,
   projectFilePaths,
   PROJECTS_PATH,
 } from "../utils/mdxUtils";
@@ -32,6 +35,7 @@ export default function Index({
   sortedEssays: essays,
   sortedNotes: notes,
   sortedProjects: projects,
+  sortedPatterns: patterns,
 }) {
   // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
 
@@ -191,6 +195,30 @@ export default function Index({
               </Link>
             ))}
           </section>
+          <section style={{ gridArea: "patterns" }}>
+            <Link href="/patterns">
+              <a href="/patterns">
+                <SectionHeader>
+                  Patterns
+                  <ArrowRightIcon width="18" height="18" />
+                </SectionHeader>
+              </a>
+            </Link>
+            <Subheader>
+              Design patterns gathered from my own observations and research.
+            </Subheader>
+            <div style={{ marginLeft: "-1.4rem" }}>
+              {patterns.map((pattern) => (
+                <PatternCard
+                  key={pattern.slug}
+                  slug={pattern.slug}
+                  title={pattern.data.title}
+                  growthStage={pattern.data.growthStage}
+                  date={pattern.data.updated}
+                />
+              ))}
+            </div>
+          </section>
           <section style={{ gridArea: "library" }}>
             <Link href="/library">
               <a href="/library">
@@ -210,7 +238,7 @@ export default function Index({
                 gridGap: "var(--space-2xs)",
               }}
             >
-              {bookData.slice(0, 5).map((book, i) => (
+              {bookData.slice(0, 8).map((book, i) => (
                 <BookCard
                   small
                   subtitle={book.subtitle}
@@ -285,39 +313,6 @@ const ReadmoreLink = styled.a`
   }
 `;
 
-const IndexPatternCard = styled.div`
-  margin: var(--space-xs) 0;
-  h3 {
-    color: var(--color-gray-800);
-    transition: all 0.3s ease-in-out;
-    font-family: var(--font-body);
-    font-size: var(--font-size-base);
-    font-weight: 400;
-    line-height: var(--leading-snug);
-    transition: all 0.3s ease-in-out;
-  }
-  h3::before {
-    content: "";
-    display: inline-block;
-    width: 2px;
-    height: 1.2rem;
-    position: relative;
-    top: 2px;
-    background: var(--color-sea-blue);
-    margin-right: var(--space-2xs);
-    transition: all 0.3s ease-in-out;
-  }
-  h3:hover {
-    color: var(--color-crimson);
-    transform: scale3d(1, 1.03, 1.03);
-    ::before {
-      width: var(--space-2xs);
-    }
-  }
-  &:hover {
-  }
-`;
-
 const IndexNoteCard = styled.div`
   display: flex;
   padding: var(--space-xs) 0 1.2rem;
@@ -355,7 +350,7 @@ const GardenSection = styled(motion.section)`
   grid-template-rows: auto;
   grid-template-areas:
     "essays essays notes"
-    "library library library";
+    "patterns library library";
   @media ${breakpoints.mediaMD} {
     grid-gap: var(--space-s);
   }
@@ -458,6 +453,24 @@ export function getStaticProps() {
     };
   });
 
+  // Get all pattern posts
+  let patterns = patternFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
+    const { content, data } = matter(source);
+    const slug = filePath.replace(/\.mdx?$/, "");
+
+    return {
+      content,
+      data,
+      slug,
+      filePath,
+    };
+  });
+  // Sort patterns by date
+  const sortedPatterns = patterns.sort((a, b) => {
+    return new Date(b.data.updated) - new Date(a.data.updated);
+  });
+
   // Filter projects for featured property
   // const filteredProjects = projects
   //     .filter((project) => project.data.featured === true)
@@ -467,10 +480,12 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
-  const allPosts = [...essays, ...notes, ...projects];
+  const allPosts = [...essays, ...notes, ...projects, ...patterns];
 
   // Generate RSS Feed
   generateRSSFeed(allPosts);
 
-  return { props: { sortedEssays, sortedNotes, sortedProjects } };
+  return {
+    props: { sortedEssays, sortedNotes, sortedProjects, sortedPatterns },
+  };
 }

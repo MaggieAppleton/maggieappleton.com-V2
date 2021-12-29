@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
+import { RelativeDate } from "../templates/Dates";
 
 const Leaves = () => {
   const leftLeaf = {
@@ -62,7 +63,7 @@ const Leaves = () => {
   );
 };
 
-export default function PatternCard({ slug, title, growthStage, id }) {
+export default function PatternCard({ slug, date, title, growthStage, id }) {
   return (
     <Link key={id} as={`/${slug}`} href={`/${slug}`}>
       <a>
@@ -70,21 +71,41 @@ export default function PatternCard({ slug, title, growthStage, id }) {
           <Leaves />
           <div>
             <h3>{title}</h3>
-            <span>
+            <MetadataContainer>
+              <span>Pattern</span>
               {growthStage && (
-                <>
-                  {growthStage}
-                  <GrowthIcon size="14" growthStage={growthStage} />{" "}
-                </>
-              )}{" "}
-              Pattern
-            </span>
+                <GrowthIcon size="14" growthStage={growthStage} />
+              )}
+              <span>
+                <RelativeDate postDate={date} />
+              </span>
+            </MetadataContainer>
           </div>
         </StyledPatternCard>
       </a>
     </Link>
   );
 }
+
+const MetadataContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: var(--space-xs);
+  margin-top: var(--space-2xs);
+  span {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: calc(var(--font-size-xs) / 1.08);
+    color: var(--color-gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+  svg {
+    margin: 0 var(--space-3xs);
+    margin-top: -4px;
+  }
+`;
 
 const StyledPatternCard = styled(motion.div)`
   display: flex;
@@ -109,24 +130,6 @@ const StyledPatternCard = styled(motion.div)`
     position: relative;
     top: 1px;
     flex-shrink: 0;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    span {
-      font-family: var(--font-sans);
-      font-size: calc(var(--font-size-xs) / 1.08);
-      color: var(--color-gray-600);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 400;
-      margin: var(--space-3xs) 0 0 var(--space-xs);
-      svg {
-        margin: 0 6px;
-        position: relative;
-        top: 2px;
-      }
-    }
   }
   &:hover {
     transform: scale3d(1.02, 1.02, 1.02);
