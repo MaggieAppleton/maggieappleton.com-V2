@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
-import { ESSAYS_PATH, NOTES_PATH } from "./mdxUtils";
+import { ESSAYS_PATH, NOTES_PATH, PATTERNS_PATH } from "./mdxUtils";
 import { slugifyTopic } from "./slugifyTopic";
 
 // Get the slug links for each post that matches a given topic
@@ -33,7 +33,8 @@ export const getAllPostSlugsForTopic = (topic) => {
 
   const essaySlugs = getSlugsForTopic(ESSAYS_PATH);
   const noteSlugs = getSlugsForTopic(NOTES_PATH);
-  return [...essaySlugs, ...noteSlugs];
+  const patternSlugs = getSlugsForTopic(PATTERNS_PATH);
+  return [...essaySlugs, ...noteSlugs, ...patternSlugs];
 };
 
 //     const postDirectory = ESSAYS_PATH;
@@ -63,7 +64,7 @@ export const getAllPostSlugsForTopic = (topic) => {
  */
 export const getAllTopics = () => {
   let result = [];
-  [ESSAYS_PATH, NOTES_PATH].forEach((dir) => {
+  [ESSAYS_PATH, NOTES_PATH, PATTERNS_PATH].forEach((dir) => {
     const files = fs.readdirSync(dir);
     files.forEach((file) => {
       const filePath = path.join(dir, file);

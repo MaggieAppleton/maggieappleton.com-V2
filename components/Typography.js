@@ -60,6 +60,7 @@ export const SmallCaps = styled.p`
   text-transform: uppercase;
   letter-spacing: 0.06rem;
 `;
+
 export const Subtext = styled.aside`
   font-size: var(--font-size-sm);
   font-family: var(--font-sans);
