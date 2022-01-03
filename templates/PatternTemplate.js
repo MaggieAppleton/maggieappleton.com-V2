@@ -43,6 +43,13 @@ export default function PatternTemplate({
           <h1>{frontMatter.title}</h1>
           {frontMatter.description && <p>{frontMatter.description}</p>}
         </TitleContainer>
+        <Metadata>
+          {frontMatter.topics && <Topics topics={frontMatter.topics} />}
+          <Dates
+            startDate={frontMatter.startDate}
+            updated={frontMatter.updated}
+          />
+        </Metadata>
       </HeaderSection>
       <StyledMain>
         <BackToTop />

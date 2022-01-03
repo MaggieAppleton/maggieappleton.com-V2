@@ -34,7 +34,7 @@ const StyledDates = styled.div`
   margin-top: var(--space-xs);
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: left;
   span {
     display: inline-block;
     font-family: var(--font-sans);
