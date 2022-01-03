@@ -44,7 +44,11 @@ export default function PatternTemplate({
           {frontMatter.description && <p>{frontMatter.description}</p>}
         </TitleContainer>
         <Metadata>
-          {frontMatter.topics && <Topics topics={frontMatter.topics} />}
+          {frontMatter.topics ? (
+            <Topics topics={frontMatter.topics} />
+          ) : (
+            <div />
+          )}
           <Dates
             startDate={frontMatter.startDate}
             updated={frontMatter.updated}
