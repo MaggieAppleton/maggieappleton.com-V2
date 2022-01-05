@@ -46,7 +46,11 @@ export default function About() {
                 improve the way we structure knowledge on the web.
               </p>
               <p>
-                Before that I spent five years as the art director and lead
+                I'm not currently avaliable for any contract work, side
+                projects, or full-time roles.
+              </p>
+              <p>
+                Before HASH I spent five years as the art director and lead
                 illustrator at{" "}
                 <b style={{ margin: "0 0.5rem 0 0" }}>
                   <UnderlineHoverLink href="https://egghead.io">
