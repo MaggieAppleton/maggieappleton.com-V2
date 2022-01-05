@@ -2,10 +2,10 @@
 title: "Metaphors We Web By"
 description: "A history of our metaphorical understanding of the web"
 startDate: "2021-12-24"
-updated: "2021-12-24"
+updated: "2022-01-05"
 type: "note"
 topics: ["The Web", "Design", "Metaphors", "Linguistics"]
-growthStage: "seedling"
+growthStage: "budding"
 ---
 
 <IntroParagraph>
@@ -22,6 +22,14 @@ This way of thinking about computer interfaces as physical office rooms naturall
 
 The page you're reading this on still mimics paper. We still call it a _page_ or an HTML _document_. It follows the same typographic rules and conventions – black text on white backgrounds and a top-to-bottom / left-to-right heirarchical structure.
 
+### The Static Nature of Paper
+
+This metaphor of _the-web-as-paper_ works quite well. The otherwise immaterial and abstract nature of the web becomes understandable, familiar, and (most importantly) _usable_ through the paper metaphor.
+
+However, it's important to point out that websites and paper do not share any _inherent_ qualities. We purposefully designed webpages to look like paper, but it wasn't some inevitable metaphorical fate.
+
+Trying on different metaphorical lenses changes what we think the web is made of, what we think it can do, it's affordances, risks, and restrictions.
+
 ## Escaping Paper
 
 Despite the persistent metaphor of the paper-based web, we've framed this system in many other ways since its creation. We called it a [series of tubes](https://en.wikipedia.org/wiki/Series_of_tubes), an information superhighway, a surf-able ocean of information, a global village, a town square, and a zero-gravity parallel universe known as _cyberspace_.
@@ -30,17 +38,21 @@ Out of all of these metaphors, the two most enduring are paper and physical spac
 
 This is obvious in the way we speak about the web. Our words describe the web as a sprawling expanse of place-based pages – each piece has in it's own location we step into when we **visit** a **homepage**. We **go to** web**sites**. They have a permanent **address** – each URL (uniform resource **locator**) marks its place in digital space. We **follow** links and end up **on** a page, and go **back** to the previous page.
 
-Despite the common folklore that we shouldn't mix metaphors, we have no problem seeing the web as both paper and place at the same time. It's a classic example of **conceptual blending** – the mind's ability to combine multiple metaphors at once and from them produce emergent meaning. – we've seamlessly combined the two to create an emergent notion of location-based pages.
+<BasicImage
+  width="900px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_900/v1641414096/maggieappleton.com/notes/metaphors-we-web-by/linkedpages_wjh9lh.jpg"
+  alt="Paper documents behind web browsers with IP locations posted above them"
+/>
 
-As George Lakoff and Mark Johnson made clear in their touchstone book Metaphors We Live By, metaphors are the basis of all human thought and reasoning. The metaphors we use to speak about the web are not simply linguistic trivia – they determine how we understand it on a fundamental level. It determines what we think the web is capable of, what risks, opportunities, and challenges it poses. Which means the metaphors we use to think about the web **profoundly influence** what we think the web is, what we think we can do with it, and how we might change or evolve it.
+Despite the common folklore that we shouldn't mix metaphors, we have no problem seeing the web as both paper and place at the same time. It's a classic example of [**conceptual blending**](https://en.wikipedia.org/wiki/Conceptual_blending) <Footnote idName={1}>For more on Conceptual Blending, see Turner and Fauconnier's <a href="https://www.librarything.com/work/249581">The Way We Think</a></Footnote> – the mind's ability to combine multiple metaphors at once and from them produce emergent meaning. – we've seamlessly combined the two to create an emergent notion of location-based pages.
 
-## The Static Nature of Paper
+As George Lakoff and Mark Johnson made clear in their touchstone book [Metaphors We Live By](https://en.wikipedia.org/wiki/Metaphors_We_Live_By), metaphors are the basis of all human thought and reasoning. The metaphors we use to speak about the web are not simply linguistic trivia – they determine how we understand it on a fundamental level. It determines what we think the web is capable of, what risks, opportunities, and challenges it poses. Which means the metaphors we use to think about the web **profoundly influence** what we think the web is, what we think we can do with it, and how we might change or evolve it.
 
-This metaphor of _the-web-as-paper_ works quite well. The otherwise immaterial and abstract nature of the web becomes understandable, familiar, and (most importantly) _usable_ through the paper metaphor.
+## Thinking in Geological Layers
 
-However, it's important to point out that websites and paper do not share any _inherent_ qualities. We purposefully designed webpages to look like paper, but it wasn't some inevitable metaphorical fate.
+The paper metaphor of the web hides almost everything about how the web works. Paper is a presentation layer. A flat object showing off the final result. Our shiny graphical interfaces offer us a limited range of options pre-selected by designers. They reveal none of the technical processes that cascade across the web when you press seemingly simple buttons like 'Submit', 'Send', or 'Submit PR Request.' This is both a feature and a bug.
 
-Trying on different metaphorical lenses changes what we think the web is made of, what we think it can do, it's affordances, risks, and restrictions.
+What if our presentation paper web is only one way of seeing this system?
 
 Rather than seeing the web as a flat, inert object we passively read, what if we saw the web as an interactive topology made up of various layers?
 
@@ -48,4 +60,20 @@ If you know anything about how our current web infrastructure came into existenc
 
 Each piece of the modern web was built seperately. Unrelated individuals and teams of developers added layer upon layer. Each one building on top of existing systems, protocols, and standards.
 
+This geological stack that began with Vincent Cern and Robert Kahn establishing the TCP/IP protocol in 1973, aka. the birth of the internet. That foundation slowly amassed layers like URLs, HTTP, HTML, SMTP, FTP, IMAP, DNS, SSH, REST, and 99 other acronymns. This layered understanding is closer to how developers see a website – as a set of systems they use, connect to, and expand off.
+
+<BasicImage
+  width="700px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_700/v1641414096/maggieappleton.com/notes/metaphors-we-web-by/weblayers_bcrfzz.jpg"
+  alt="The web represented as a series of technological layers"
+/>
+
+When you're building a webpage, you're patching together a set of features and affordances. Do you want to add the ability to login? Do you want to integrate the Facebook like button? Do you want to let people enter text and save it to a database in the cloud? All of these options touch on different infrastructure layers of the web.
+
+There's a data layer. There's a security layer. There's a visual design layer. There's a hypertext layer that links to other locations. There's an authentication layer. There's an algorithmic layer.
+
+Almost all of these layers are completely invisible to "end users" of the web. They just see a flat static page. There is no topography. There is no transparency to how this website is structured or built. You don't know what other websites it's connected it, or where it's pulling data in from. The amount of technical literacy you need to even begin to see these layers is non-trivial.
+
 <ComingSoon />
+
+<!-- End notes thanking citizens of hypertext folks for discussions -->
