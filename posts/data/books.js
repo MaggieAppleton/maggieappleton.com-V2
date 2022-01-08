@@ -1,5 +1,24 @@
 export const bookData = [
   {
+    title: "Computers as Theatre",
+    author: "Brenda Laurel",
+    cover: "/images/books/theatre.jpg",
+    link: "https://www.google.co.uk/books/edition/Computers_as_Theatre/NedQAAAAMAAJ",
+  },
+  {
+    title: "Everything, All the Time, Everywhere",
+    subtitle: "How We Became Postmodern",
+    author: "Stuart Jeffries",
+    cover: "/images/books/everything.jpg",
+    link: "https://www.google.co.uk/books/edition/Everything_All_the_Time_Everywhere/pchGEAAAQBAJ",
+  },
+  {
+    title: "The Design of Everyday Things",
+    author: "Don Norman",
+    cover: "/images/books/designthings.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Design_of_Everyday_Things/heCtnQEACAAJ",
+  },
+  {
     title: "From Bacteria to Bach and Back",
     subtitle: "The Evolution of Minds",
     author: "Daniel C. Dennett",

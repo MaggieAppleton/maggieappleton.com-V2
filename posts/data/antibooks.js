@@ -1,5 +1,11 @@
 export const antiBookData = [
   {
+    title: "The New Media Reader",
+    author: "Nick Montfort and Noah Wardrip-Fruin (ed.)",
+    cover: "/images/books/newmedia.jpeg",
+    link: "https://www.google.co.uk/books/edition/The_New_Media_Reader/DQYXoRx9CcEC",
+  },
+  {
     title: "Atlas of AI",
     subtitle:
       "Power, Politics, and the Planetary Costs of Artificial Intelligence",
