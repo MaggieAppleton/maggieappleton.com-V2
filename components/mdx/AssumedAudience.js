@@ -19,6 +19,8 @@ const AssumedAudienceContainer = styled.div`
   grid-gap: var(--space-s);
   flex-direction: row;
   align-items: baseline;
+  font-family: var(--font-body);
+  font-size: calc(var(--font-size-base) / 1.2);
   div p {
     font-weight: 400;
     margin: 0;
