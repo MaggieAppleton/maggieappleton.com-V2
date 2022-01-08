@@ -1,5 +1,12 @@
 export const antiBookData = [
   {
+    title: "Orality and Literacy",
+    subtitle: "The Technologizing of the World",
+    author: "Walter Ong",
+    cover: "/images/books/orality.jpeg",
+    link: "https://www.google.co.uk/books/edition/Orality_and_Literacy/37Ikbo9P4M8C",
+  },
+  {
     title: "The New Media Reader",
     author: "Nick Montfort and Noah Wardrip-Fruin (ed.)",
     cover: "/images/books/newmedia.jpeg",
