@@ -21,13 +21,13 @@ const OgImage = () => {
           {postType} <GrowthIcon growthStage={growthStage} /> {growthStage}
         </Metadata>
       ) : null}
-      <div style={{ display: 'flex' }}>
+      <Flex>
         <Titles>
           <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
+          {subtitle && <Subtitle>{subtitle}</Subtitle>}
         </Titles>
         {cover ? <Cover><img src={cover} /></Cover> : null}
-      </div>
+      </Flex>
       <div>
         <span>maggieappleton.com</span>
         <Logo />
@@ -35,6 +35,10 @@ const OgImage = () => {
     </OGCard>
   );
 };
+
+const Flex = styled.div`
+  display: flex;
+`;
 
 const OGCard = styled.div`
   width: 1200px;
