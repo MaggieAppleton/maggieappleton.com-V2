@@ -16,7 +16,7 @@ async function getOgImage(path, title) {
   const browser = await playwright.launchChromium({ headless: true });
   const ogImageDir = `./public/images/og`;
   const imagePath = `${ogImageDir}/${hash}.png`;
-  const publicPath = `${process.env.BASE_URL}/images/og/${hash}.png`;
+  const publicPath = `${process.env.VERCEL_URL}/images/og/${hash}.png`;
 
   try {
     fs.statSync(imagePath);
