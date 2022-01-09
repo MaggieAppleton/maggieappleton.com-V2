@@ -29,7 +29,6 @@ async function getOgImage(path, title) {
   const page = await browser.newPage();
   await page.setViewportSize({ width: 1200, height: 630 });
   await page.goto(url, { waitUntil: 'networkidle' });
-  await page.goto(url);
   const buffer = await page.screenshot({ type: 'png' });
   await browser.close();
 
