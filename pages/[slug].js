@@ -4,7 +4,6 @@ import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
 import { linkify } from "../utils/linkify";
-import getOgImage from '../utils/getOgImage';
 import PostLinks from "../links.json";
 import { Spacer } from "../components/Spacer";
 import AssumedAudience from "../components/mdx/AssumedAudience";
@@ -193,7 +192,7 @@ const components = {
   }),
 };
 
-export default function PostPage({ source, frontMatter, slug, backlinks, ogImage }) {
+export default function PostPage({ source, frontMatter, slug, backlinks }) {
   if (frontMatter.type === "note") {
     return (
       <NoteTemplate
@@ -202,7 +201,6 @@ export default function PostPage({ source, frontMatter, slug, backlinks, ogImage
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
-        ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "essay") {
@@ -213,7 +211,6 @@ export default function PostPage({ source, frontMatter, slug, backlinks, ogImage
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
-        ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "project") {
@@ -223,7 +220,6 @@ export default function PostPage({ source, frontMatter, slug, backlinks, ogImage
         source={source}
         frontMatter={frontMatter}
         components={components}
-        ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "pattern") {
@@ -233,20 +229,9 @@ export default function PostPage({ source, frontMatter, slug, backlinks, ogImage
         source={source}
         frontMatter={frontMatter}
         components={components}
-        ogImage={ogImage}
       />
     );
   }
-}
-
-const getOgImagePath = ( properties ) => {
-  let url = '/og-image?';
-  Object.keys(properties).forEach( ( property ) => {
-    if (properties[property]) {
-      url += `${property}=${encodeURIComponent(properties[property])}&`;
-    }
-  });
-  return url;
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -289,17 +274,6 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(filePath);
 
   const { content, data } = matter(source);
-
-  const ogObject = {
-    title: data.title,
-    subtitle: data.description,
-    postType: data.type,
-    growthStage: data.growthStage,
-    cover: data.cover
-  };
-  const ogImagePath = getOgImagePath(ogObject);
-  const ogImage = await getOgImage(ogImagePath, data.title);
-
   const contentWithBidirectionalLinks = linkify(content, data.title);
 
   const mdxSource = await serialize(contentWithBidirectionalLinks, {
@@ -321,7 +295,6 @@ export const getStaticProps = async ({ params }) => {
       frontMatter: data,
       slug: params.slug,
       backlinks,
-      ogImage
     },
   };
 };
