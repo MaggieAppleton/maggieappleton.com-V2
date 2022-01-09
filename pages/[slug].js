@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
 import { linkify } from "../utils/linkify";
+import getOgImage from '../utils/getOgImage';
 import PostLinks from "../links.json";
 import { Spacer } from "../components/Spacer";
 import AssumedAudience from "../components/mdx/AssumedAudience";
@@ -234,6 +235,16 @@ export default function PostPage({ source, frontMatter, slug, backlinks }) {
   }
 }
 
+const getOgImagePath = ( properties ) => {
+  let url = '/og-image?';
+  Object.keys(properties).forEach( ( property ) => {
+    if (properties[property]) {
+      url += `${property}=${encodeURIComponent(properties[property])}&`;
+    }
+  });
+  return url;
+}
+
 export const getStaticProps = async ({ params }) => {
   const essays = fs.readdirSync(ESSAYS_PATH);
   const notes = fs.readdirSync(NOTES_PATH);
@@ -274,6 +285,17 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(filePath);
 
   const { content, data } = matter(source);
+
+  const ogObject = {
+    title: data.title,
+    subtitle: data.description,
+    postType: data.type,
+    growthStage: data.growthStage,
+    cover: data.cover
+  };
+  const ogImagePath = getOgImagePath(ogObject);
+  const ogImage = await getOgImage(ogImagePath);
+
   const contentWithBidirectionalLinks = linkify(content, data.title);
 
   const mdxSource = await serialize(contentWithBidirectionalLinks, {
@@ -295,6 +317,7 @@ export const getStaticProps = async ({ params }) => {
       frontMatter: data,
       slug: params.slug,
       backlinks,
+      ogImage
     },
   };
 };

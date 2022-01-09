@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import GrowthIcon from "../components/icons/GrowthIcon";
 import Logo from "../components/visuals/Logo";
 
@@ -15,63 +14,39 @@ const OgImage = () => {
   const cover = searchParams.get("cover");
 
   return (
-    <OGCard>
+    <div style={{ width: 1200, height: 630, padding: '46px 64px'}}>
       {postType && growthStage ? (
-        <Metadata>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           {postType} <GrowthIcon growthStage={growthStage} /> {growthStage}
-        </Metadata>
+        </div>
       ) : null}
-      <Flex>
-        <Titles>
-          <Title>{title}</Title>
-          {subtitle && <Subtitle>{subtitle}</Subtitle>}
-        </Titles>
-        {cover ? <Cover><img src={cover} /></Cover> : null}
-      </Flex>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: cover ? '50%' : '100%' }}>
+          <h1
+            style={{
+              fontSize: 'var(--font-size-2xl)',
+              lineHeight: 'var(--leading-tighter)',
+              wordWrap: 'break-word'
+            }}>{title}</h1>
+          {subtitle &&
+            <h2
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontWeight: '300',
+                fontSize: 'var(--font-size-lg)',
+                lineHeight: 'var(--leading-tighter)',
+                color: 'var(--color-gray-800)',
+                wordWrap: 'break-word'
+              }}>{subtitle}</h2>}
+        </div>
+        {cover ? <div style={{ width: '475px' }}><img src={cover} /></div> : null}
+      </div>
       <div>
         <span>maggieappleton.com</span>
         <Logo />
       </div>
-    </OGCard>
+    </div>
   );
 };
-
-const Flex = styled.div`
-  display: flex;
-`;
-
-const OGCard = styled.div`
-  width: 1200px;
-  height: 630px;
-  padding: 46px 64px;
-`
-
-const Metadata = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Titles = styled.div`
-  width: 50%;
-`;
-
-const Title = styled.h1`
-  font-size: var(--font-size-2xl);
-  line-height: var(--leading-tighter);
-  word-wrap: break-word;
-`;
-
-const Subtitle = styled.h2`
-  font-family: var(--font-body);
-  font-weight: 100;
-  font-size: var(--font-size-lg);
-  line-height: var(--leading-tighter);
-  color: var(--color-gray-800);
-  word-wrap: break-word;
-`;
-
-const Cover = styled.div`
-  width: 475px;
-`;
 
 export default OgImage;

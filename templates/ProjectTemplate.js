@@ -15,6 +15,7 @@ export default function ProjectTemplate({
   frontMatter,
   components,
   slug,
+  ogImage
 }) {
   function formattedDate(date) {
     return new Date(date).toLocaleDateString("en-GB", {
@@ -25,7 +26,7 @@ export default function ProjectTemplate({
 
   return (
     <>
-      <Header title={frontMatter.title} description={frontMatter.description} />
+      <Header title={frontMatter.title} description={frontMatter.description} ogImage={ogImage} />
 
       <HeaderSection>
         <div className="above-title">
