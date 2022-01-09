@@ -193,7 +193,7 @@ const components = {
   }),
 };
 
-export default function PostPage({ source, frontMatter, slug, backlinks }) {
+export default function PostPage({ source, frontMatter, slug, backlinks, ogImage }) {
   if (frontMatter.type === "note") {
     return (
       <NoteTemplate
@@ -202,6 +202,7 @@ export default function PostPage({ source, frontMatter, slug, backlinks }) {
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
+        ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "essay") {
@@ -212,6 +213,7 @@ export default function PostPage({ source, frontMatter, slug, backlinks }) {
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
+        ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "project") {
@@ -221,6 +223,7 @@ export default function PostPage({ source, frontMatter, slug, backlinks }) {
         source={source}
         frontMatter={frontMatter}
         components={components}
+        ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "pattern") {
@@ -230,6 +233,7 @@ export default function PostPage({ source, frontMatter, slug, backlinks }) {
         source={source}
         frontMatter={frontMatter}
         components={components}
+        ogImage={ogImage}
       />
     );
   }
@@ -294,7 +298,7 @@ export const getStaticProps = async ({ params }) => {
     cover: data.cover
   };
   const ogImagePath = getOgImagePath(ogObject);
-  const ogImage = await getOgImage(ogImagePath);
+  const ogImage = await getOgImage(ogImagePath, data.title);
 
   const contentWithBidirectionalLinks = linkify(content, data.title);
 

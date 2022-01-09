@@ -2,7 +2,10 @@ const playwright = require('playwright-aws-lambda');
 const { createHash } = require('crypto');
 const fs = require('fs');
 
-async function getOgImage(path) {
+/**
+ * title is only passed in for logging purposes
+ */
+async function getOgImage(path, title) {
   if (process.env.NODE_ENV === 'development') {
     return 'og image will be generated in production';
   }
@@ -22,6 +25,7 @@ async function getOgImage(path) {
     // file does not exists, so we create it
   }
 
+  console.log('generating og image for', title);
   const page = await browser.newPage();
   await page.setViewportSize({ width: 1200, height: 630 });
   await page.goto(url, { waitUntil: 'networkidle' });
