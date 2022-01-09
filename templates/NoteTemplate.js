@@ -19,7 +19,6 @@ export default function NoteTemplate({
   components,
   slug,
   backlinks,
-  ogImage
 }) {
   return (
     <>
@@ -27,7 +26,6 @@ export default function NoteTemplate({
         title={frontMatter.title}
         description={frontMatter.description}
         keywords={frontMatter.topics}
-        ogImage={ogImage}
       />
       <HeaderSection>
         <div className="above-title">

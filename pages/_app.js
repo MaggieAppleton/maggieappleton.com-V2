@@ -6,16 +6,6 @@ import Navbar from "../components/Navbar/index.js";
 import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps, router }) {
-  // Don't include navbar and footer when generating open graph images
-  if (router.pathname === "/og-image") {
-    return (
-      <>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </>
-    );
-  }
-
   return (
     <>
       <GlobalStyle />
