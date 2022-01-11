@@ -18,12 +18,12 @@ async function getOgImage(path, title) {
   const imagePath = `${ogImageDir}/${hash}.png`;
   const publicPath = `${process.env.VERCEL_URL}/images/og/${hash}.png`;
 
-  try {
-    fs.statSync(imagePath);
-    return publicPath;
-  } catch (error) {
-    // file does not exist, so we create it
-  }
+  // try {
+  //   fs.statSync(imagePath);
+  //   return publicPath;
+  // } catch (error) {
+  //   // file does not exist, so we create it
+  // }
 
   console.log("generating og image for", title);
   const page = await browser.newPage();
