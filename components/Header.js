@@ -18,15 +18,15 @@ export default function Header({ title, description, keywords, ogImage }) {
         url: "https://maggieappleton.com",
         title: title,
         description: description,
-        // images: [
-        //   {
-        //     url: ogImage ? ogImage : "https://maggieappleton.com/og.png",
-        //     width: 1200,
-        //     height: 630,
-        //     alt: `${title}`,
-        //     type: "image/png",
-        //   },
-        // ],
+        images: [
+          {
+            url: ogImage ? ogImage : "https://maggieappleton.com/og.png",
+            width: 1200,
+            height: 630,
+            alt: `${title}`,
+            type: "image/png",
+          },
+        ],
         site_name: "Maggie Appleton",
       }}
       twitter={{

@@ -1,8 +1,12 @@
 import { useRouter } from "next/router";
 import GrowthIcon from "../components/icons/GrowthIcon";
 import Logo from "../components/visuals/Logo";
+import styled from "styled-components";
 
 // Example URL: http://localhost:3000/og-image?title=A%20Brief%20History%20of%20the%20Digital%20Garden&subtitle=A%20newly%20revived%20philosophy%20for%20publishing%20personal%20knowledge%20on%20the%20web&postType=essay&growthStage=evergreen&cover=/images/covers/garden-cover@2x.png
+
+// Example URL: http://localhost:3000/og-image?title=A%20Brief%20History%20of%20the%20Digital%20Garden&subtitle=A%20newly%20revived%20philosophy%20for%20publishing%20personal%20knowledge%20on%20the%20web&postType=essay&growthStage=evergreen
+
 const OgImage = () => {
   const router = useRouter();
   const searchParams = new URLSearchParams(router.asPath.split(/\?/)[1]);
@@ -14,35 +18,122 @@ const OgImage = () => {
   const cover = searchParams.get("cover");
 
   return (
-    <div style={{ width: 1200, height: 630, padding: '46px 64px'}}>
+    <div
+      style={{
+        width: 1200,
+        height: 630,
+        padding: "var(--space-xl)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
       {postType && growthStage ? (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          {postType} <GrowthIcon growthStage={growthStage} /> {growthStage}
+        <div
+          style={{
+            marginBottom: "var(--space-s)",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "min-content",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              fontFamily: "var(--font-sans)",
+              fontSize: "var(--font-size-xs)",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+              fontWeight: "bold",
+              paddingRight: "var(--space-xs)",
+              color: "var(--color-bright-crimson)",
+            }}
+          >
+            {postType}
+          </span>{" "}
+          <GrowthIcon size={18} growthStage={growthStage} />{" "}
+          <p
+            style={{
+              display: "inline-block",
+              cursor: "pointer",
+              fontFamily: "var(--font-sans)",
+              fontSize: "var(--font-size-xs)",
+              color: "var(--color-gray-800)",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+              fontWeight: "bold",
+              paddingLeft: "var(--space-xs)",
+            }}
+          >
+            {growthStage}
+          </p>
         </div>
       ) : null}
-      <div style={{ display: 'flex' }}>
-        <div style={{ width: cover ? '50%' : '100%' }}>
-          <h1
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div>
+          <div
             style={{
-              fontSize: 'var(--font-size-2xl)',
-              lineHeight: 'var(--leading-tighter)',
-              wordWrap: 'break-word'
-            }}>{title}</h1>
-          {subtitle &&
-            <h2
+              marginBottom: `${cover ? "var(--space-l)" : "var(--space-xl)"}`,
+            }}
+          >
+            <h1
               style={{
-                fontFamily: 'var(--font-body)',
-                fontWeight: '300',
-                fontSize: 'var(--font-size-lg)',
-                lineHeight: 'var(--leading-tighter)',
-                color: 'var(--color-gray-800)',
-                wordWrap: 'break-word'
-              }}>{subtitle}</h2>}
+                fontFamily: "var(--font-serif)",
+                lineHeight: "var(--leading-tighter)",
+                marginTop: "0",
+                fontSize: `${
+                  cover
+                    ? "calc(var(--font-size-3xl) / 1.3)"
+                    : "var(--font-size-3xl)"
+                }`,
+              }}
+            >
+              {title}
+            </h1>
+            {subtitle && (
+              <h2
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  margin: "var(--space-s) 0 0 0",
+                  color: "var(--color-gray-800)",
+                  fontWeight: "100",
+                  lineHeight: "var(--leading-tight)",
+                  maxWidth: "80%",
+                  fontSize: `${
+                    cover
+                      ? "calc(var(--font-size-lg) / 1.1)"
+                      : "var(--font-size-lg)"
+                  }`,
+                }}
+              >
+                {subtitle}
+              </h2>
+            )}
+          </div>
         </div>
-        {cover ? <div style={{ width: '475px' }}><img src={cover} /></div> : null}
+        {cover ? (
+          <div style={{ width: "750px", paddingLeft: "var(--space-s)" }}>
+            <img src={cover} />
+          </div>
+        ) : null}
       </div>
-      <div>
-        <span>maggieappleton.com</span>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontWeight: "300",
+            fontSize: "var(--font-size-md)",
+            color: "var(--color-crimson)",
+          }}
+        >
+          maggieappleton.com
+        </p>
         <Logo />
       </div>
     </div>
