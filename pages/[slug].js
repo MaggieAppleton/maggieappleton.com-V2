@@ -41,7 +41,7 @@ import {
 // to handle import statements. Instead, you must include components in scope
 // here.
 
-const components = {
+export const components = {
   // a: CustomLink,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
@@ -131,6 +131,9 @@ const components = {
       ssr: false,
     }
   ),
+  NowSection: dynamic(() => import("../components/mdx/NowSection"), {
+    ssr: false,
+  }),
 
   // Unique components – used in specific essays or notes
   StaticCSSPosition: StaticCSSPosition,
