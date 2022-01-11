@@ -25,7 +25,7 @@ const OgImage = () => {
         padding: "var(--space-xl)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
+        justifyContent: "center",
       }}
     >
       {postType && growthStage ? (
@@ -82,6 +82,7 @@ const OgImage = () => {
                 fontFamily: "var(--font-serif)",
                 lineHeight: "var(--leading-tighter)",
                 marginTop: "0",
+                maxWidth: "85%",
                 fontSize: `${
                   cover
                     ? "calc(var(--font-size-3xl) / 1.3)"
