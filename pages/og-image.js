@@ -124,18 +124,20 @@ const OgImage = () => {
           justifyContent: "space-between",
         }}
       >
-        <StyledSiteURL>maggieappleton.com</StyledSiteURL>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontWeight: "300",
+            fontSize: "var(--font-size-md)",
+            color: "var(--color-crimson)",
+          }}
+        >
+          maggieappleton.com
+        </p>
         <Logo />
       </div>
     </div>
   );
 };
-
-const StyledSiteURL = styled.p`
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: var(--font-size-md);
-  color: var(--color-crimson);
-`;
 
 export default OgImage;
