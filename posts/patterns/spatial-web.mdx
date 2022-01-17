@@ -1,0 +1,66 @@
+---
+title: "Spatial Web Browsing"
+description: "Adding spatial affordances to the experience of browsing the web"
+startDate: "2022-01-16"
+updated: "2022-01-16"
+type: "note"
+topics: ["The Web", "Design"]
+growthStage: "budding"
+---
+
+<h2 className="micro">The Context</h2>
+
+Our web browsing experience has't changed much over the last three decades.
+
+Here's Mosaic, the first browser that made the web popular outside niche academic circles. Built in 1993, it's _"killer feature"_ was inline images.<Footnote idName={1}>As opposed to images you had to download and open in a seperate window</Footnote>
+
+<ImageFrame
+  width="900px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_900/v1642358019/maggieappleton.com/patterns/moasic_fxat9i.png"
+  alt="The Mosaic web browser interface in 1993"
+/>
+
+And here's Chrome, currently the most widely used browser, 29 years later:
+
+<ImageFrame
+  width="900px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_900/v1642358018/maggieappleton.com/patterns/chrome_wbjk5d.png"
+  alt="The Chrome browser interface from 2019"
+/>
+
+On the surface, not much has changed. The layouts, icons, and button arrangement haven't moved. Address bar at the top. Arrow icons to move between pages. Access to the same basic controls; print, refresh, save, and search.
+
+Modern Chrome certainly gained the veneer of minimalist modern design; we've reduced the interface to a low-contrast sea of whitespace. It's also vastly more powerful; 1993 Moasic certainly couldn't load 20 tabs running WebGL animations.
+
+But from a user's perspective, the core browsing experience isn't different. Enter URL, load the page, click on links, move forwards and backwards in brower history.
+
+This historical consistency is impressive. Perhaps it means we nailed it the first time. Or perhaps it means building browsers is an enourmously complex challenge, and the only companies with enough engineering resources to dedicate towards it aren't going to muck about with experimental interface patterns. They're too busy keeping up with W3C web standards and negotiating cross-compatability concerns.
+
+The major players of Chrome, Firefox, Safari, Opera, and Internet Explorer/Edge are all much of a muchness.
+
+This isn't for lack of want. There have been plenty of calls to _"reinvent"_ the browser. Places like [The Browser Company](https://thebrowser.company/) make a lot of noise about it (but we've yet to see a product demo).
+
+I see a steady stream of ideas and speculative sketches floating around Twitter that ask good questions:
+
+<TweetEmbed tweetId="1418749070336684034" />
+
+There are some interesting new apps appearing that seem to escape the problem of building an entire browser, but still manage to experiment with alternate ways of browsing the web.
+
+<Spacer size="small" />
+
+<h2 className="micro">The Pattern</h2>
+
+Through the use of `<iframe>` embeds (or sometimes darker magic like live-updating screenshots in `<img>` tags), some web apps are creating a form of web inception; allowing us to embed tiny browser windows inside a larger canvas.
+
+This opens up the possibility of spatial arrangement and annotation. Multiple windows viewable side by side. Arranged in chains. With sidenotes.
+
+[Sprout place](https://sprout.place/)
+
+[Kosmik](https://lithium.paris/)
+
+[Nette](https://www.nette.io/)
+
+<References>
+  <ReferencesLink title="Spatial Interfaces" href="" author="John Palmer" />
+  <ReferencesLink title="Spatial Software" href="" author="John Palmer" />
+</References>
