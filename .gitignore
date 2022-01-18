@@ -18,7 +18,6 @@
 # misc
 .DS_Store
 *.pem
-/posts/.drafts
 .vscode
 /public/rss.xml
 rss.xml
