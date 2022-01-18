@@ -1,0 +1,67 @@
+---
+title: 'Nested Timelines in Greensock'
+slug: greensock-nested-timelines
+updated: 2020-10-18
+published: true
+type: ['note']
+topics: ['Greensock', 'Animation']
+growthStage: 'Seedling'
+---
+
+<IntroParagraph>
+
+Timelines are one of Greensock's power features. It turns you into an animation timelord. You could build out an animation made up of hundred of Tweens, and still have complete control and flexibility over the sequence, speed, and pacing.
+
+Try doing that with CSS keyframes.
+
+</IntroParagraph>
+
+You can imagine my excitement when I discovered *nested timelines.* That's right, **timeline inception**.
+
+You can put a timeline inside a timeline inside a timeline, and then hook them all up to a boss timeline. And then adjust the timing from the top down. We could even run the whole thing in reverse slow-motion.
+
+## Building Timelines
+
+The main method we'll need to combine timelines is `.add()`.
+
+Let's say you have three mini timelines defined that you want to string together onto a main timeline:
+`partOne`, `partTwo`, and `partThree`
+
+We can add these onto a `mainTimeline` by using
+`mainTimeline.add(partOne, partTwo, partThree)`
+
+Not rocket science, right?  
+
+They're added in sequential order, so we could swap these mini timelines around with `mainTimeline.add(partThree, partOne, partTwo)`
+
+Which really opens up the web animation medium for some experimental arthouse cinema non-linear narratives. We've clearly been missing out.
+
+## The Position Parameter
+
+Becoming a Greensock timelord requires you appreciate the power of the `position` parameter.
+
+It allows us to control the start time of our tweens in the timeline.
+
+It goes inside the Tween method, right after our target and variable object:
+
+`gsap.to(target, variables, position)`
+
+For example, my tomato Animation here will first turn this tomato to the colour plum. Then it will leave a 2 second gap
+
+```js
+const tomatoAnimation = gsap.timeline()
+
+tomatoAnimation
+.to("#tomato", { color: 'plum', duration: 1 })
+.to("#tomato", { color: 'tomato' }, "+=2")
+```
+
+That's a _relative_ position.
+
+We can also make it at the same time as the previous tween. This will play both of these tweens at the same time.
+
+```js
+tomatoAnimation
+.to("#tomato", { color: 'plum', duration: 1 })
+.to("#tomato", { x: '100px' }, "<")
+```

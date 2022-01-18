@@ -5,9 +5,10 @@ import dynamic from "next/dynamic";
 import path from "path";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
-import getOgImage from '../utils/getOgImage';
+import getOgImage from "../utils/getOgImage";
 import { Spacer } from "../components/Spacer";
 import AssumedAudience from "../components/mdx/AssumedAudience";
+import Disclaimer from "../components/mdx/Disclaimer";
 import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
@@ -53,6 +54,7 @@ export const components = {
   Tween: Tween,
   Timeline: Timeline,
   AssumedAudience: AssumedAudience,
+  Disclaimer: Disclaimer,
   PlayState: PlayState,
   Spacer: Spacer,
   Controls: Controls,
@@ -196,7 +198,13 @@ export const components = {
   }),
 };
 
-export default function PostPage({ source, frontMatter, slug, backlinks, ogImage }) {
+export default function PostPage({
+  source,
+  frontMatter,
+  slug,
+  backlinks,
+  ogImage,
+}) {
   if (frontMatter.type === "note") {
     return (
       <NoteTemplate
@@ -242,15 +250,15 @@ export default function PostPage({ source, frontMatter, slug, backlinks, ogImage
   }
 }
 
-const getOgImagePath = ( properties ) => {
-  let url = '/og-image?';
-  Object.keys(properties).forEach( ( property ) => {
+const getOgImagePath = (properties) => {
+  let url = "/og-image?";
+  Object.keys(properties).forEach((property) => {
     if (properties[property]) {
       url += `${property}=${encodeURIComponent(properties[property])}&`;
     }
   });
   return url;
-}
+};
 
 export const getStaticProps = async ({ params }) => {
   const essays = fs.readdirSync(ESSAYS_PATH);
@@ -297,7 +305,7 @@ export const getStaticProps = async ({ params }) => {
     subtitle: data.description,
     postType: data.type,
     growthStage: data.growthStage,
-    cover: data.cover
+    cover: data.cover,
   };
   const ogImagePath = getOgImagePath(ogObject);
   const ogImage = await getOgImage(ogImagePath, data.title);
@@ -323,7 +331,7 @@ export const getStaticProps = async ({ params }) => {
       frontMatter: data,
       slug: params.slug,
       backlinks,
-      ogImage
+      ogImage,
     },
   };
 };
