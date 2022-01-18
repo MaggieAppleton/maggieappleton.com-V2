@@ -1,5 +1,13 @@
 # Maggie's Digital Garden
 
+This is the source code for [maggieappleton.com](https://maggieappleton.com), a digital garden filled with growing notes, essays, and design patterns.
+
+It's open source to let people poke around and get ideas for their own garden. However, I'd rather you didn't fork it wholesale in order to build you own garden. First because my code is a hot mess (I am a developer by necessity, not by profession or choice), and second because I designed it according to my own aesthetic preferences, and functional needs / desires. Yours won't be the same.
+
+It's also awkward when I stumble on someone else's website that is an exact expression of my own design taste and identity. Like walking in on someone wearing your clothing. That said, you can do what you like on the web and I'm not going to make a huge fuss about it.
+
+However, I strongly encourage you to build your own garden! I keep a [curated list of tools and resources](https://github.com/MaggieAppleton/digital-gardeners) that can help you do so.
+
 ### The Stack
 
 - Next.js
