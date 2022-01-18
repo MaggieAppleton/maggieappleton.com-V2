@@ -1,8 +1,8 @@
 ---
 title: "Spatial Web Browsing"
 description: "Adding spatial affordances to the experience of browsing the web"
-startDate: "2022-01-16"
-updated: "2022-01-16"
+startDate: "2022-01-14"
+updated: "2022-01-18"
 type: "note"
 topics: ["The Web", "Design"]
 growthStage: "budding"
@@ -32,35 +32,82 @@ On the surface, not much has changed. The layouts, icons, and button arrangement
 
 Modern Chrome certainly gained the veneer of minimalist modern design; we've reduced the interface to a low-contrast sea of whitespace. It's also vastly more powerful; 1993 Moasic certainly couldn't load 20 tabs running WebGL animations.
 
-But from a user's perspective, the core browsing experience isn't different. Enter URL, load the page, click on links, move forwards and backwards in brower history.
+But from a user's perspective, the core browsing experience isn't different. Enter URL, load the page, click on links, move forwards and backwards in brower history. We can only see one website at a time, or max two if we stack our browser windows in columns.
 
 Chrome and Mosaic are not uniquely similar. All the major characters in this browser drama – Firefox, Safari, Opera, and Internet Explorer/Edge – feel like they're wearing the same outfit.
 
-This historical consistency is impressive. Perhaps it means we nailed this interface pattern on the first try. Or perhaps it means building browsers is an enourmously complex challenge, and the only companies with enough engineering resources to dedicate towards it aren't going to muck about with experimental interface patterns. They're too busy keeping up with W3C web standards and negotiating cross-compatability concerns.
+This historical consistency is impressive. Perhaps it means we nailed this interface pattern on the first try. Or perhaps it means building browsers is an enourmously complex challenge, and the only companies with enough engineering resources to dedicate towards it aren't interested in mucking about. They're too busy keeping up with W3C web standards and negotiating cross-compatability concerns, leaving little room for experimental interface patterns.
 
-This isn't for lack of want. There have been plenty of calls to _"reinvent"_ the browser. Places like [The Browser Company](https://thebrowser.company/) make a lot of noise about it (but we've yet to see a product demo).
+This isn't for lack of want though. There have been plenty of calls to _"reinvent"_ the browser. Places like [The Browser Company](https://thebrowser.company/) make a lot of noise about it (but we've yet to see a product demo).
 
-I see a steady stream of ideas and speculative sketches floating around Twitter that prompt us to reconsider our browsery assumptions and ask good design questions:
+There's a steady stream of ideas and speculative sketches floating around Twitter that prompt us to reconsider our browsery assumptions and ask good design questions:
 
 <TweetEmbed tweetId="1418749070336684034" />
 
-<Spacer size="small" />
+<TweetEmbed tweetId="1450479522609090562" />
+
+<TweetEmbed tweetId="1256317316452810755" />
+
+The dreams in some of these speculative suggestions are starting to materialise.
+
+<Spacer />
 
 <h2 className="micro">The Pattern</h2>
 
-There are some interesting new apps appearing that seem to escape the problem of building an entire browser, but still manage to experiment with alternate ways of browsing the web.
+There are some new apps appearing that offer alternative ways of browsing the web, but sidestep the problem of needing to build an entire browser.
 
-Through the use of `<iframe>` embeds (or sometimes darker magic like live-updating screenshots in `<img>` tags), some web apps are creating a form of web inception; allowing us to embed tiny browser windows inside a larger canvas. <Footnote idName={2}>This is a tricky feat as many websites deny access if they're embedded inside other webpages. This isn't out of malice; they're trying to protect themselves from cross-site scripting attacks</Footnote>
+Through the use of `<iframe>` embeds (or sometimes darker magic like live-updating screenshots in `<img>` tags), these apps are creating a form of web inception; allowing us to embed tiny browser windows inside a larger canvas. <Footnote idName={2}>This is a tricky as many websites deny access if they're embedded inside other webpages. This isn't out of malice; they're trying to protect themselves from cross-site scripting attacks</Footnote>
 
-This opens up the possibility of spatial arrangement and annotation. Multiple windows viewable side by side. Arranged in chains. With sidenotes.
+This canvas-based approach adds _spatial_ dimension to the web browsing experience; they allow us to arrange browser windows above, below, to the left, and right of other browser windows.
 
-[Sprout place](https://sprout.place/)
+The same way we're able to put an open book next to a piece of paper and below a row of sticky notes in meatspace. Arranging objects in space to create groupings, indicate relationships, and build heirarchies is one of those classical human skills that never goes out of style.
 
-[Kosmik](https://lithium.paris/)
+[Nette](https://www.nette.io/) is a browsing app designed for researchers that allows you to open multiple browser windows, draw physical connections between frames, pull out key concepts, and write markdown notes directly into your canvas.
 
-[Nette](https://www.nette.io/)
+<ImageFrame
+  width="1200px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642543667/maggieappleton.com/patterns/nette_kjqsgj.jpg"
+  alt=""
+/>
+
+[Sprout place](https://sprout.place/) is designed with social interaction in mind – an open, multiplayer canvas where you can video/voice chat, write notes, and browse webpages together. It cleverly sidesteps the issue of cross-site blocking by using screenshots in `<img>` tags instead of true `<iframe>` elements.
+
+<ImageFrame
+  width="1200px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642543667/maggieappleton.com/patterns/sprout_ffcyrn.jpg"
+  alt=""
+/>
+
+[Kosmik](https://lithium.paris/) is a canvas-based note-taking app for iOS and Mac app that includes frames for web browsing. It's still in early development, but as a native app it doesn't seem to have the same cross-site blocking issues as web apps.
+
+<ImageFrame width="" src="" alt="" />
+
+[Natto.dev](https://natto.dev/) isn't designed to be a browsing or knowledge management app, but inadvertendly implements this pattern. It's a spatial canvas for programming that happens to allow HTML elements, such as `<iframe>`:
+
+<ImageFrame
+  width="1200px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642543667/maggieappleton.com/patterns/natto_cfqkov.jpg"
+  alt=""
+/>
+
+Ironically, there are whole engineering teams focused on making the web "spatial" by sticking web browsers on [3D walls within AR/VR](https://venturebeat.com/2021/05/13/spatial-unveils-web-browser-collaboration-in-3d-workspace-and-nft-virtual-galleries/) environments. That feels like putting the cart before the poorly rendered, nausea-inducing horse given we haven't even built tools to properly browse the web in 2D space yet.
+
+We're so close. Here's to hoping we make it within the next year or two.
 
 <References>
-  <ReferencesLink title="Spatial Interfaces" href="" author="John Palmer" />
-  <ReferencesLink title="Spatial Software" href="" author="John Palmer" />
+  <ReferencesLink
+    title="Browser.html speculative research"
+    href="http://patrykadas.com/browser.html"
+    author="Patryk Adas"
+  />
+  <ReferencesLink
+    title="Spatial Interfaces"
+    href="https://darkblueheaven.com/spatialinterfaces/"
+    author="John Palmer"
+  />
+  <ReferencesLink
+    title="Spatial Software"
+    href="https://darkblueheaven.com/spatialsoftware"
+    author="John Palmer"
+  />
 </References>
