@@ -38,7 +38,7 @@ Chrome and Mosaic are not uniquely similar. All the major characters in this bro
 
 This historical consistency is impressive. Perhaps it means we nailed this interface pattern on the first try. Or perhaps it means building browsers is an enourmously complex challenge, and the only companies with enough engineering resources to dedicate towards it aren't interested in mucking about. They're too busy keeping up with W3C web standards and negotiating cross-compatability concerns, leaving little room for experimental interface patterns.
 
-This isn't for lack of want though. There have been plenty of calls to _"reinvent"_ the browser. Places like [The Browser Company](https://thebrowser.company/) make a lot of noise about it (but we've yet to see a product demo).
+This isn't for lack of want though. There have been plenty of calls to _"reinvent"_ the browser. Places like [The Browser Company](https://thebrowser.company/) make a lot of noise about it (but we've yet to see a product demo). Foundations like Mozilla have funded extensive [experimental explorations](http://patrykadas.com/browser.html) of alternative browsers.
 
 There's a steady stream of ideas and speculative sketches floating around Twitter that prompt us to reconsider our browsery assumptions and ask good design questions:
 
@@ -62,33 +62,41 @@ This canvas-based approach adds _spatial_ dimension to the web browsing experien
 
 The same way we're able to put an open book next to a piece of paper and below a row of sticky notes in meatspace. Arranging objects in space to create groupings, indicate relationships, and build heirarchies is one of those classical human skills that never goes out of style.
 
-[Nette](https://www.nette.io/) is a browsing app designed for researchers that allows you to open multiple browser windows, draw physical connections between frames, pull out key concepts, and write markdown notes directly into your canvas.
+#### Spatial Browsing Apps
+
+1. [Kosmik](https://lithium.paris/) is a canvas-based note-taking app for iOS and Mac app that includes frames for web browsing. It's still in early development, but as a native app it doesn't seem to have the same cross-site blocking issues as web apps.
+
+<ImageFrame
+  width="1200px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642582738/maggieappleton.com/patterns/kosmik_rm0rpy.jpg"
+  alt="A Kosmik canvas with three open browsers arranged next to one another"
+/>
+
+2. [Nette](https://www.nette.io/) is a browsing app designed for researchers that allows you to open multiple browser windows, draw physical connections between frames, pull out key concepts, and write markdown notes directly into your canvas. <Footnote idName={3}>Still pre-release but looking promising</Footnote>
 
 <ImageFrame
   width="1200px"
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642543667/maggieappleton.com/patterns/nette_kjqsgj.jpg"
-  alt=""
+  alt="A Nette canvas with open browsers, diagrams, and notes arranged next to one another"
 />
 
-[Sprout place](https://sprout.place/) is designed with social interaction in mind – an open, multiplayer canvas where you can video/voice chat, write notes, and browse webpages together. It cleverly sidesteps the issue of cross-site blocking by using screenshots in `<img>` tags instead of true `<iframe>` elements.
+3. [Sprout](https://sprout.place/) is designed with social interaction in mind – an open, multiplayer canvas where you can video/voice chat, write notes, and browse webpages together. It cleverly sidesteps the issue of cross-site blocking by using screenshots in `<img>` tags instead of true `<iframe>` elements.
 
 <ImageFrame
   width="1200px"
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642543667/maggieappleton.com/patterns/sprout_ffcyrn.jpg"
-  alt=""
+  alt="A Sprout canvas with two open browsers arranged next to one another"
 />
 
-[Kosmik](https://lithium.paris/) is a canvas-based note-taking app for iOS and Mac app that includes frames for web browsing. It's still in early development, but as a native app it doesn't seem to have the same cross-site blocking issues as web apps.
-
-<ImageFrame width="" src="" alt="" />
-
-[Natto.dev](https://natto.dev/) isn't designed to be a browsing or knowledge management app, but inadvertendly implements this pattern. It's a spatial canvas for programming that happens to allow HTML elements, such as `<iframe>`:
+4. [Natto.dev](https://natto.dev/) isn't designed to be a browsing or knowledge management app, but inadvertendly implements this pattern. It's a spatial canvas for programming that happens to allow HTML elements, such as `<iframe>`:
 
 <ImageFrame
   width="1200px"
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1642543667/maggieappleton.com/patterns/natto_cfqkov.jpg"
-  alt=""
+  alt="A Natto canvas with three open browsers arranged next to one another"
 />
+
+All of these examples allow you to add different blocks and elements to your canvas other than simply browsers. This turns the interface into a true research space. You can add notes, images, and links connected to these browsers – pulling out information in order to arrange it in ways that make sense to you.
 
 Ironically, there are whole engineering teams focused on making the web "spatial" by sticking web browsers on [3D walls within AR/VR](https://venturebeat.com/2021/05/13/spatial-unveils-web-browser-collaboration-in-3d-workspace-and-nft-virtual-galleries/) environments. That feels like putting the cart before the poorly rendered, nausea-inducing horse given we haven't even built tools to properly browse the web in 2D space yet.
 
