@@ -72,10 +72,12 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
           <div>
             <h3>{title}</h3>
             <MetadataContainer>
-              <span>Pattern</span>
-              {growthStage && (
-                <GrowthIcon size="14" growthStage={growthStage} />
-              )}
+              <span>
+                <span>Pattern</span>
+                {growthStage && (
+                  <GrowthIcon size="14" growthStage={growthStage} />
+                )}
+              </span>
               <span>
                 <RelativeDate postDate={date} />
               </span>
@@ -89,6 +91,7 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
 
 const MetadataContainer = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
   margin-left: var(--space-xs);
   margin-top: var(--space-2xs);
@@ -104,6 +107,10 @@ const MetadataContainer = styled.div`
   svg {
     margin: 0 var(--space-3xs);
     margin-top: -4px;
+  }
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: start;
   }
 `;
 
