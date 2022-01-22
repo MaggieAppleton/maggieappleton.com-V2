@@ -30,30 +30,115 @@ The **block** – a rectangular section of your document that looks and acts a c
 
 What used to be a page of styled text has now become a set of typed blocks:
 
-{Add side by side visual of styled linear text next to a set of blocks of the same type}
+<TwoColumn maxWidth="1200px" alignItems="top" gridGap="2rem">
+  <div
+    style={{
+      border: "1px solid var(--color-tinted-cream)",
+      boxShadow: "var(--box-shadow-sm)",
+      borderRadius: "6px",
+      padding: "var(--space-12) var(--space-32)"
+    }}
+  >
+    <h3 style={{ opacity: "80%", fontSize: "2rem", marginTop: "1rem" }}>
+      A History of Shrubbery
+    </h3>
+    <p
+      style={{
+        opacity: "80%",
+        fontSize: "80%",
+        lineHeight: "160%",
+        marginBottom: "1rem",
+      }}
+    >
+      The word shrubbery is first recorded by the OED in a letter of 1748 by
+      Henrietta Knight, Lady Luxborough to the fanatical gardener William
+      Shenstone: "Nature has been so remarkably kind this last Autumn to adorn
+      my Shrubbery with the flowers that usually blow at Whitsuntide".
+    </p>
+    <p
+      style={{
+        opacity: "80%",
+        fontSize: "80%",
+        marginBottom: "0",
+        fontWeight: 600,
+      }}
+    >
+      Types of Shrubbery
+    </p>
+    <ol style={{ opacity: "80%", fontSize: "80%" }}>
+      <li style={{ marginBottom: "0" }}>Winter Creeper</li>
+      <li style={{ marginBottom: "0" }}>Azalea</li>
+      <li>Siberian Carpet Cypress</li>
+    </ol>
+  </div>
+  <div>
+    <div
+      style={{
+        border: "1px solid var(--color-tinted-cream)",
+        boxShadow: "var(--box-shadow-sm)",
+        borderRadius: "6px",
+        padding: "var(--space-12) var(--space-32)",
+        width: "100%",
+        marginBottom: "var(--space-16)"
+      }}
+    >
+      <h3 style={{ opacity: "80%", fontSize: "2rem", marginTop: "1rem" }}>
+        A History of Shrubbery
+      </h3>
+    </div>
+    <div
+      style={{
+        border: "1px solid var(--color-tinted-cream)",
+        boxShadow: "var(--box-shadow-sm)",
+        borderRadius: "6px",
+        padding: "var(--space-16) var(--space-32) var(--space-8)",
+        width: "100%",
+        marginBottom: "var(--space-16)"
+      }}
+    >
+      <p
+        style={{
+          opacity: "80%",
+          fontSize: "80%",
+          lineHeight: "160%",
+          marginBottom: "1rem",
+        }}
+      >
+        The word shrubbery is first recorded by the OED in a letter of 1748 by
+        Henrietta Knight, Lady Luxborough to the fanatical gardener William
+        Shenstone: "Nature has been so remarkably kind this last Autumn to adorn
+        my Shrubbery with the flowers that usually blow at Whitsuntide".
+      </p>
+    </div>
+    <div
+      style={{
+        border: "1px solid var(--color-tinted-cream)",
+        boxShadow: "var(--box-shadow-sm)",
+        borderRadius: "6px",
+        padding: "var(--space-12) var(--space-32)",
+        width: "100%",
+        marginBottom: "var(--space-16)"
+      }}
+    >
+      <p
+        style={{
+          opacity: "80%",
+          fontSize: "80%",
+          marginBottom: "0",
+          fontWeight: 600,
+        }}
+      >
+        Types of Shrubbery
+      </p>
+      <ol style={{ opacity: "80%", fontSize: "80%" }}>
+        <li style={{ marginBottom: "0" }}>Winter Creeper</li>
+        <li style={{ marginBottom: "0" }}>Azalea</li>
+        <li>Siberian Carpet Cypress</li>
+      </ol>
+    </div>
 
-<SimpleCard>
-  <h3>We have header blocks</h3>
-</SimpleCard>
-
-<SimpleCard>
-  <p>Paragraph blocks</p>
-</SimpleCard>
-
-<SimpleCard>
-  <ul>
-    <li>checklist</li>
-    <li>blocks</li>
-  </ul>
-</SimpleCard>
-
-<SimpleCard>
-  <table>
-    <tr>And</tr>
-    <tr>table</tr>
-    <tr>blocks</tr>
-  </table>
-</SimpleCard>
+  </div>
+</TwoColumn>
 
 We are shifting from a conceptual model where documents are made up of lines of text, to one where a document is a stack of blocks.
 
