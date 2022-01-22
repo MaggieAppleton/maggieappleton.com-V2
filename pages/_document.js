@@ -40,6 +40,12 @@ class MyDocument extends Document {
             rel="apple-touch-icon"
             href="/images/favicon/apple-touch-icon.png"
           />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="/rss.xml"
+            title="Main RSS Feed"
+          />
           <meta name="theme-color" content="#960462" />
         </Head>
         <body>
