@@ -1,7 +1,7 @@
 ---
 title: "A Brave New Block-Based Web"
 description: "The possibilities of blocks as the basic unit of the web"
-updated: "2022-01-18"
+updated: "2022-01-22"
 startDate: "2022-01-18"
 type: "note"
 topics: ["Design", "The Web"]
@@ -10,22 +10,96 @@ growthStage: "seedling"
 
 <Disclaimer>
 
-This essay has nothing to do with the blockchain or the Web3 movement and will not be available for purchase as an NFT
+This essay has nothing to do with the blockchain or the Web3 movement and will not be available for purchase as an NFT. It's not that kind of block.
 
 </Disclaimer>
 
 <AssumedAudience>
 
-People involved in designing and building The Web who have at least some passing familiarity with the history of web development.
+People who design and build websites, apps, and interfaces. Likely ones related to the fields of "tools for thought", knowledge management, and collaborative work.
 
 </AssumedAudience>
 
 <IntroParagraph>
 
-The web was born as a text-first medium. Tim Berners Lee designed it to mimic text documents. Specifically, long, linear research documents shared among scientists and academics as pieces of paper. Ever since then we've been negotiating its paper-like qualities.
+Over the last five years, our digital documents and pages have taken on a strange shape. They have become distinctly _blocky_.
 
 </IntroParagraph>
 
-The text-first, document-based model comes with a lot of design implications. It presumes the document or page is the basic meaningful unit of the web. We store our metadata at the level of the page, usually in the `<head>` tag. We link at the page level, rather than at the word, paragraph, or section level. <Footnote idName={1}>This has improved slightly with #header-level links, but the vast majority of links are still to entire pages, not granular lines or sections within a page.</Footnote>
+The **block** – a rectangular section of your document that looks and acts a certain way, depending on its type – is our new hot interface pattern<Footnote idName={1}>Take "new" lightly here. The concept of blocks is an exceptionally old idea in software design, but we will cover that ground later.</Footnote>. The way swipeable cards were all the rage in 2014.
+
+What used to be a page of styled text has now become a set of typed blocks:
+
+{Add side by side visual of styled linear text next to a set of blocks of the same type}
+
+<SimpleCard>
+  <h3>We have header blocks</h3>
+</SimpleCard>
+
+<SimpleCard>
+  <p>Paragraph blocks</p>
+</SimpleCard>
+
+<SimpleCard>
+  <ul>
+    <li>checklist</li>
+    <li>blocks</li>
+  </ul>
+</SimpleCard>
+
+<SimpleCard>
+  <table>
+    <tr>And</tr>
+    <tr>table</tr>
+    <tr>blocks</tr>
+  </table>
+</SimpleCard>
+
+We are shifting from a conceptual model where documents are made up of lines of text, to one where a document is a stack of blocks.
+
+{visual of a text-based document and a fully block-based document}
+
+The places where we create these blocks have been christened _block-based editors_. You have seen and very likely used one of these. Most document and webpage editors are now block-based. Or at the very least, block-accepting.
+
+Most editors are somewhere in the middle of this spectrum, blending linear text editing with embedded blocks. Trying to get to best of both worlds, but fully committing to neither.
+
+{visual of a hybrid text-block document}
+
+The interface pattern for how these editors work has become impressive consistent. You begin in a document, type the key `/` <Footnote idName={2}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote> or click a floating + icon nearby, and a selection menu appears with a set of block choices:
+
+<SimpleCard>Paragraph, Header, Table, Image, Checklist.</SimpleCard>
+
+{graphic of the block picker across 6-8 apps with labels on each of the apps – Notion. Roam. Observable. Google docs. Coda. Observable. }
+
+You pick the block you want, and watch it manifest before you. You can change your mind and swap the block type out. Or click and drag the block into another position in the document.
+
+{annotated diagram of swapping blocks and dragging and dropping blocks}
+
+Some editors include more advanced blocks – Google Maps, Figma designs, image galleries, live coding environments, fully decked-out spreadsheets that function as relational databases. These become competitive advantages in an increasingly monoblock landscape.
+
+Everywhere you look, another block editor springs up out of the web.
+These systems are sometimes belitted as _Notion clones_, although Notion was not the first or last platform to implement the conceptual model of documents composed of blocks. Nevertheless, it has become the touchstone reference point – a software category in its own right. Like _Uber for X_, we now have _Notion, but with Y feature_
+
+Hardcore editors hook their blocks up to robust data structures on the backend, making it possible to relate blocks to one another through connections, referencing, and programmatic logic.
+
+For example, Roam allows you to embed blocks inside one another and see the backlinks between them. Coda takes this a step further and turns blocks into a simple interface for a full programmatic environment.
+
+## What _exactly_ is a block?
+
+We all love a good definitional debate, and I am not one to rob us of this opportunity.
+
+I offered a concise definition above: "A block is a rectangular section of your document that looks and acts a certain way, depending on its type."
+
+I think it's pretty good summary of the situation, but one that leaks in a hundred ways. According to this, the website navigation bar, the sidebar submenu, and the obnoxious customer support chat widget that won't stop audibly alerting you to a message from a bot, could all be mistaken for blocks.
+
+Let's try again, wearing our pedantic engineering hat;
+
+A block is the basic semantic unit of a block-based document. Each block has a unique type that determines what kind of data the block will accept, and how it will visually present that data. Blocks also encapsulate a set of functionality that define how it will create and modify the data within it.
+
+## Blocking out the web
+
+The web was born as a text-first medium. Tim Berners Lee designed it to mimic text documents. Specifically, long, linear research documents shared among scientists and academics as pieces of paper. Ever since then we've been negotiating its paper-like qualities.
+
+The text-first, document-based model comes with a lot of design implications. It presumes the document or page is the basic unit of the web. We store our metadata at the level of the page, usually in the `<head>` tag. We link at the page level, rather than at the word, paragraph, or section level. <Footnote idName={1}>This has improved slightly with #header-level links, but the vast majority of links are still to entire pages, not granular lines or sections within a page.</Footnote>
 
 <ComingSoon />
