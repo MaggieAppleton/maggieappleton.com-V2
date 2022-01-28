@@ -133,6 +133,12 @@ export const components = {
       ssr: false,
     }
   ),
+  FullWidthSection: dynamic(
+    () => import("../components/mdx/FullWidthSection"),
+    {
+      ssr: false,
+    }
+  ),
   NowSection: dynamic(() => import("../components/mdx/NowSection"), {
     ssr: false,
   }),
@@ -196,6 +202,12 @@ export const components = {
   Hardware: dynamic(() => import("../components/unique/apps/Hardware"), {
     ssr: false,
   }),
+  TextvBlocks: dynamic(
+    () => import("../components/unique/blocks/TextvBlocks"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({
