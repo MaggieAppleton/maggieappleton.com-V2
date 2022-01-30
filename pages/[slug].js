@@ -190,6 +190,12 @@ export const components = {
       ssr: false,
     }
   ),
+  HackyFormatting: dynamic(
+    () => import("../components/unique/HackyFormatting"),
+    {
+      ssr: false,
+    }
+  ),
   MediumMaterialsMeat: dynamic(
     () => import("../components/unique/MediumMaterialsMeat"),
     {
@@ -204,6 +210,24 @@ export const components = {
   }),
   TextvBlocks: dynamic(
     () => import("../components/unique/blocks/TextvBlocks"),
+    {
+      ssr: false,
+    }
+  ),
+  DemoBlock1: dynamic(() => import("../components/unique/blocks/DemoBlock1"), {
+    ssr: false,
+  }),
+  DemoBlock2: dynamic(() => import("../components/unique/blocks/DemoBlock2"), {
+    ssr: false,
+  }),
+  DemoBlock3: dynamic(() => import("../components/unique/blocks/DemoBlock3"), {
+    ssr: false,
+  }),
+  DemoBlock4: dynamic(() => import("../components/unique/blocks/DemoBlock4"), {
+    ssr: false,
+  }),
+  LinearChars: dynamic(
+    () => import("../components/unique/blocks/LinearChars"),
     {
       ssr: false,
     }
