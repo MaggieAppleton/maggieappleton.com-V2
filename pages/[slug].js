@@ -232,8 +232,8 @@ export const components = {
       ssr: false,
     }
   ),
-  BlockTimeline: dynamic(
-    () => import("../components/unique/blocks/BlockTimeline"),
+  Blocktimeline: dynamic(
+    () => import("../components/unique/blocks/Blocktimeline"),
     {
       ssr: false,
     }

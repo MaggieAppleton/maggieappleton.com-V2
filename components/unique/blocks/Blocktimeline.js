@@ -1,4 +1,4 @@
-const BlockTimeline = () => {
+const Blocktimeline = () => {
   return (
     <svg
       width="100%"
@@ -157,4 +157,4 @@ const BlockTimeline = () => {
   );
 };
 
-export default BlockTimeline;
+export default Blocktimeline;
