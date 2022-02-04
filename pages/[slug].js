@@ -232,6 +232,12 @@ export const components = {
       ssr: false,
     }
   ),
+  BlockTimeline: dynamic(
+    () => import("../components/unique/blocks/BlockTimeline"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({

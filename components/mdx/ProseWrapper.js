@@ -52,6 +52,7 @@ const ProseWrapper = styled.article`
   h3 {
     font-size: calc(var(--font-size-lg) / 1.1);
     font-weight: 300;
+    line-height: var(--leading-base);
     margin: var(--space-m) 0 var(--space-s);
   }
   h4 {
