@@ -1,4 +1,4 @@
-const BlockTimeline = (props) => {
+const BlockTimeline = () => {
   return (
     <svg
       width="100%"
