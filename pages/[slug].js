@@ -238,6 +238,12 @@ export const components = {
       ssr: false,
     }
   ),
+  BlockEditorList: dynamic(
+    () => import("../components/unique/blocks/BlockEditorList"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({

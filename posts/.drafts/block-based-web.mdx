@@ -49,7 +49,11 @@ You have almost certainly seen and used these blocks. They come in an array of f
 
 <Spacer size="small" />
 
-The places where we create these blocks have been christened _block-based editors_. Rather than treating documents as strings of styled text, these editors treat it as a stack of types blocks; each with their own formatting conventions and unique affordances:
+The places where we create these blocks have been christened _block-based editors_. Over the last few years, we've seen a cambrian explosion of these editors across the web. Everywhere you look another block-based editor bubbles up from the evolutionary soup, promising to organise and structure your content in neat little blocks.
+
+At last count I found 23 block-editors in active development, and I've certainly missed some. Despite serving a range of audiences and use caes, they've congregated on an impressively consistent set of interface patterns.
+
+Rather than treating documents as strings of styled text, these editors treat it as a stack of types blocks; each with their own formatting conventions and unique affordances:
 
 <FullWidthSection width="1100px">
 
@@ -57,7 +61,7 @@ The places where we create these blocks have been christened _block-based editor
 
 </FullWidthSection>
 
-The interface pattern for how these editors work has become impressive consistent. You begin in a document, type the key `/` <Footnote idName={2}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote> or click a floating + icon nearby, and a selection menu appears with a set of block choices:
+You begin in what looks like a classic document, type the key `/` <Footnote idName={2}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote> or click a floating + icon nearby, and a selection menu appears with a set of block choices:
 
 <ThreeColumn gridGap="0">
 
@@ -95,11 +99,17 @@ The interface pattern for how these editors work has become impressive consisten
 
 </ThreeColumn>
 
-You can drag and drop to move them around.
+You pick a block and start typing content. If you decide you want a different block, you swap it out and the content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
 
-You can swap a block type for another – the content adapts to its new format.
+Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={3}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
 
-It's easy to copy, paste, and duplicate blocks.
+{visual for swapping blocks}
+
+Blocks are easy to copy, paste, and duplicate. Using direct manipulation you can drag and drop them into new positions, making it quick to restructure a document without faffing about with precise text selection.
+
+{visual for drag and drop}
+
+We seem to have settled on a core set of block types that
 
 Blocks come in a wide range of formats, from simple presentational formatting to wildly complex; enough to be a standalone app in its own right.
 
@@ -111,11 +121,13 @@ Some editors include more advanced blocks – Google Maps, Figma designs, image 
 
 ### What _exactly_ is a block?
 
+We've now seen all the general shape and interface patterns of blocks, but what _precisely_ defines a block?
+
 We all love a good definitional debate, and I am not one to rob us of this opportunity. I offered a concise definition above: "A block is a rectangular section of your document that looks and acts a certain way, depending on its type."
 
 I think it's pretty good summary of the situation, but one that leaks in a hundred ways. According to this, the website navigation bar, the sidebar submenu, and the obnoxious customer support chat widget that won't stop audibly alerting you to a message from a bot, could all be mistaken for blocks.
 
-Let's try again, wearing our pedantic engineering hat;
+Let's try again, wearing our persnickety pedant hat: <Footnote idName={4}>This is a good faith best effort, which I'm certainly open to revising if and when more intelligent and experienced people point out its flaws on Twitter. At least be polite when you do :)</Footnote>
 
 <SimpleCard>
 
@@ -203,6 +215,8 @@ These systems are sometimes belitted as _Notion clones_, although Notion was not
 As of early 2022 here's a brief list of all the block-based editors on the market.
 
 { grid graphic of all the logos with links to the product and titles below them }
+
+<BlockEditorList />
 
 By lumping these under apps one categorical title, I don't mean to diminish their distinct strengths and features. Every startup is a unique and special snowflake.
 
