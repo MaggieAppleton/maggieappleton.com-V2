@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
-export default function ImageFrame({ src, alt, width, showalt, ...props }) {
+export default function ImageFrame({
+  src,
+  alt,
+  width,
+  margin,
+  showalt,
+  ...props
+}) {
   return (
-    <Container {...props}>
+    <Container margin={margin} {...props}>
       <StyledImageFrame src={src} alt={alt} width={width || "100%"} />
       {showalt && <figcaption>{alt}</figcaption>}
     </Container>
@@ -12,7 +19,7 @@ export default function ImageFrame({ src, alt, width, showalt, ...props }) {
 const Container = styled.figure`
   max-width: 100%;
   grid-column: 1 / 4 !important;
-  margin: var(--space-s) auto var(--space-xl);
+  margin: ${(props) => props.margin || "var(--space-s) auto var(--space-xl)"};
   text-align: center;
   figcaption {
     font-family: var(--font-sans);
