@@ -49,11 +49,11 @@ You have almost certainly seen and used these blocks. They come in an array of f
 
 <Spacer size="small" />
 
-The places where we create these blocks have been christened _block-based editors_. Over the last few years, we've seen a cambrian explosion of these editors across the web. Everywhere you look another block-based editor bubbles up from the evolutionary soup, promising to organise and structure your content in neat little blocks.
+The places where we create these blocks have been christened _block-based editors_. Over the last few years, we've seen a cambrian explosion of these editors across the web. Everywhere you look another block-based editor pops up, promising to organise and structure your content into neat little blocks.
 
-At last count I found 23 block-editors in active development, and I've certainly missed some. Despite serving a range of audiences and use caes, they've congregated on an impressively consistent set of interface patterns.
+At last count I found 23 block-editors in active development, and I've certainly missed some. <Footnote idName={2}>A sampling: Notion, Coda, Craft, Clover, Wordpress Gutenberg, Roam Research, Almanac, Google Docs, Logseq, Remnote, Kosmik, Innos Notes, and Observable</Footnote> Despite serving a range of audiences and use cases, they've congregated on an impressively consistent set of interface patterns.
 
-Rather than treating documents as strings of styled text, these editors treat it as a stack of types blocks; each with their own formatting conventions and unique affordances:
+Rather than treating documents as strings of styled text, these editors treat it as a stack of types blocks:
 
 <FullWidthSection width="1100px">
 
@@ -61,7 +61,7 @@ Rather than treating documents as strings of styled text, these editors treat it
 
 </FullWidthSection>
 
-You begin in what looks like a classic document, type the key `/` <Footnote idName={2}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote> or click a floating + icon nearby, and a selection menu appears with a set of block choices:
+You begin in what looks like a classic text document, type the key `/` <Footnote idName={3}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote> or click a floating + icon nearby, and a selection menu appears with a set of block choices:
 
 <ThreeColumn gridGap="0">
 
@@ -99,9 +99,13 @@ You begin in what looks like a classic document, type the key `/` <Footnote idNa
 
 </ThreeColumn>
 
-You pick a block and start typing content. If you decide you want a different block, you swap it out and the content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
+Each block has its own formatting conventions and unique affordances. You pick a block and it renders in place – usually presenting a few input fields and prompts for the kind of content it accepts. Image blocks have upload buttons, tables have titles and column names, callouts let you pick colours and emojis, embeds accept URLs.
 
-Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={3}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
+It's like writing HTML without worrying whether you closed the `<angle>` brackets or fighting with flexbox. A user-friendly interface for composing rich web components. From a web development perspective, blocks are reusable components that end users can use.
+
+If you decide you want a different block, you swap it out and the content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
+
+Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={4}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
 
 {visual for swapping blocks}
 
