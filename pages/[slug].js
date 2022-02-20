@@ -9,6 +9,7 @@ import getOgImage from "../utils/getOgImage";
 import { Spacer } from "../components/Spacer";
 import AssumedAudience from "../components/mdx/AssumedAudience";
 import Disclaimer from "../components/mdx/Disclaimer";
+import EditRed from "../components/mdx/EditRed";
 import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
@@ -58,6 +59,7 @@ export const components = {
   PlayState: PlayState,
   Spacer: Spacer,
   Controls: Controls,
+  EditRed: EditRed,
   ButtonLink: dynamic(() => import("../components/links/ButtonLink")),
   Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
     ssr: false,
