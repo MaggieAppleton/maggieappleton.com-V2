@@ -18,9 +18,7 @@ export default function About() {
         <HeaderSection>
           <SmallCaps>About</SmallCaps>
           <Title1>Maggie Appleton</Title1>
-          <Title2>
-            Designer, anthropologist, illustrator, and mediocre developer.
-          </Title2>
+          <Title2>Designer, anthropologist, and mediocre developer.</Title2>
         </HeaderSection>
         <StyledMain>
           <section className="intro">
@@ -31,9 +29,13 @@ export default function About() {
                 programming. These three are at the core of everything I make.
                 Combining them into a coherent career is a weird and ongoing
                 challenge.
-                {/* <br />
-                                If I had to invent a fake spectrum to visualise
-                                my skills on, we'd probably end up with this: */}
+              </p>
+              <p>
+                Titles and disciplines are fickle and fleeting. But my work fits
+                under the umbrellas of UX design, interface design, HCI, DX
+                (developer experience), and interaction design. With some
+                cultural analysis, writing, and visual illustration sprinkled on
+                top.
               </p>
               <p>
                 I currently lead design at
@@ -50,15 +52,18 @@ export default function About() {
                 projects, or full-time roles.
               </p>
               <p>
-                Before HASH I spent five years as the art director and lead
-                illustrator at{" "}
+                Before HASH I spent five years at the developer education
+                company{" "}
                 <b style={{ margin: "0 0.5rem 0 0" }}>
                   <UnderlineHoverLink href="https://egghead.io">
                     egghead
                   </UnderlineHoverLink>
                 </b>
-                where I spent my time thinking about how to visualise invisible
-                programming concepts through metaphors and cultural symbols.
+                . First as the art director and lead illustrator where I spent
+                my time figuring out how to visualise invisible programming
+                concepts through metaphors and cultural symbols. Then as a UX
+                designer exploring pragmatic ways to improve the interface for
+                learners.
               </p>
               <p>
                 On the side I create{" "}
