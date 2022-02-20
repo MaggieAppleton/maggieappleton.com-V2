@@ -23,32 +23,16 @@ export default function Footer() {
             </button>
           </Link>
           <SocialMediaIcons>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/MaggieAppleton"
-            >
+            <a rel="me" href="https://github.com/MaggieAppleton">
               <GithubIcon />
             </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://uk.linkedin.com/in/maggieappleton"
-            >
+            <a rel="me" href="https://uk.linkedin.com/in/maggieappleton">
               <LinkedInIcon />
             </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://dribbble.com/mappleton"
-            >
+            <a rel="me" href="https://dribbble.com/mappleton">
               <DribbbleIcon />
             </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/Mappletons"
-            >
+            <a rel="me" href="https://twitter.com/Mappletons">
               <TwitterIcon />
             </a>
           </SocialMediaIcons>
