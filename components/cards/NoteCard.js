@@ -12,15 +12,36 @@ export default function NoteCard({ slug, title, growthStage, date, id }) {
           {growthStage && <GrowthIcon size="24" growthStage={growthStage} />}
           <div>
             <h3>{title}</h3>
-            <span>
+            <MetadataContainer>
+              <span>Note</span>
+              <svg width="6px" height="14px">
+                <circle r="3" cx="3" cy="3" fill="var(--color-gray-400)" />
+              </svg>
               <RelativeDate postDate={date} />
-            </span>
+            </MetadataContainer>
           </div>
         </StyledNoteCard>
       </a>
     </Link>
   );
 }
+
+const MetadataContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: var(--space-xs);
+  margin-top: var(--space-2xs);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-xs) / 1.08);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  svg {
+    margin: 0 0.4rem;
+  }
+`;
 
 const StyledNoteCard = styled(motion.div)`
   display: flex;
@@ -44,19 +65,6 @@ const StyledNoteCard = styled(motion.div)`
     position: relative;
     top: 4px;
     flex-shrink: 0;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    span {
-      font-family: var(--font-sans);
-      font-size: calc(var(--font-size-xs) / 1.08);
-      color: var(--color-gray-600);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 400;
-      margin: var(--space-3xs) 0 0 var(--space-xs);
-    }
   }
   &:hover {
     transform: scale3d(1.02, 1.02, 1.02);

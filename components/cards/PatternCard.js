@@ -33,8 +33,8 @@ const Leaves = () => {
 
   return (
     <motion.svg
-      height="55"
-      width="55"
+      height="45"
+      width="45"
       fill="none"
       viewBox="0 0 67 65"
       xmlns="http://www.w3.org/2000/svg"
@@ -72,15 +72,11 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
           <div>
             <h3>{title}</h3>
             <MetadataContainer>
-              <span>
-                <span>Pattern</span>
-                {growthStage && (
-                  <GrowthIcon size="14" growthStage={growthStage} />
-                )}
-              </span>
-              <span>
-                <RelativeDate postDate={date} />
-              </span>
+              <span>Pattern</span>
+              <svg width="6px" height="8px">
+                <circle r="3" cx="3" cy="3" fill="var(--color-gray-400)" />
+              </svg>
+              <RelativeDate postDate={date} />
             </MetadataContainer>
           </div>
         </StyledPatternCard>
@@ -95,22 +91,14 @@ const MetadataContainer = styled.div`
   align-items: center;
   margin-left: var(--space-xs);
   margin-top: var(--space-2xs);
-  span {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: calc(var(--font-size-xs) / 1.08);
-    color: var(--color-gray-600);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 400;
-  }
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-xs) / 1.08);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 400;
   svg {
-    margin: 0 var(--space-3xs);
-    margin-top: -4px;
-  }
-  @media (max-width: 1100px) {
-    flex-direction: column;
-    align-items: start;
+    margin: 0 0.4rem;
   }
 `;
 
