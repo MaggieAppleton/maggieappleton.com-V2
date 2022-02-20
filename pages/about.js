@@ -61,7 +61,7 @@ export default function About() {
                 </b>
                 . First as the art director and lead illustrator where I spent
                 my time figuring out how to visualise invisible programming
-                concepts through metaphors and cultural symbols. Then as a UX
+                concepts through metaphors and cultural symbols. Then as the UX
                 designer exploring pragmatic ways to improve the interface for
                 learners.
               </p>
