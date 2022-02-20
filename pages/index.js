@@ -98,7 +98,7 @@ export default function Index({
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Designer, illustrator, anthropologist, and mediocre developer
+            Designer, anthropologist, and mediocre developer
             <br />
             Currently leading design at{" "}
             <UnderlineHoverLink href="https://hash.ai">
