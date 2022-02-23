@@ -20,6 +20,11 @@ module.exports = withPWA({
         destination: "/illustration-resources",
         permanent: true,
       },
+      {
+        source: "/bookshelf",
+        destination: "/library",
+        permanent: true,
+      },
     ];
   },
 });
