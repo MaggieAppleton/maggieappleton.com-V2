@@ -41,7 +41,7 @@ const StyledCodeWrapper = styled.div`
 const StyledCodeBlock = styled.pre`
   width: 100%;
   overflow: scroll;
-  font-size: calc(var(--font-size-sm) * 1.3);
+  font-size: calc(var(--font-size-sm) * 1.1);
   line-height: var(--leading-loose);
   font-family: IBM Plex Mono, Dank Mono, SF Mono, consolas;
   padding: var(--space-24) var(--space-32);

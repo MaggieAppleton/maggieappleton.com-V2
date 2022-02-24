@@ -3,7 +3,11 @@ import styled from "styled-components";
 export default function Disclaimer({ children, title }) {
   return (
     <DisclaimerContainer>
-      {title ? <span>{title}</span> : <span>Disclaimer</span>}
+      {title ? (
+        <span className="title">{title}</span>
+      ) : (
+        <span className="title">Disclaimer</span>
+      )}
       <div>{children}</div>
     </DisclaimerContainer>
   );
@@ -29,7 +33,7 @@ const DisclaimerContainer = styled.div`
     flex-shrink: unset;
     color: var(--color-gray-800);
   }
-  span {
+  span.title {
     color: var(--color-bright-crimson);
     margin-bottom: 0;
     flex-shrink: 0;
