@@ -240,6 +240,9 @@ export const components = {
       ssr: false,
     }
   ),
+  BlockAges: dynamic(() => import("../components/unique/blocks/BlockAges"), {
+    ssr: false,
+  }),
   BlockEditorList: dynamic(
     () => import("../components/unique/blocks/BlockEditorList"),
     {

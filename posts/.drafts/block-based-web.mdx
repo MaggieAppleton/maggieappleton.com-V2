@@ -49,11 +49,11 @@ You have almost certainly seen and used these blocks. They come in an array of f
 
 <Spacer size="small" />
 
-These blocks don't look terribly different to what you see on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them on the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote>
+These blocks don't look terribly different to what you see on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them to the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote> They are a syntax-free, user-friendly way to create dynamic, complex documents and pages on the web.
 
-They tend to show up in two environments: tools for authoring documents, including wikis and note-taking applications. And "no-code" website builders that give you a graphical user interface to create webpages. We've christened these user-friendly, syntax-free environments _block-based editors_.
+The places where we create these blocks have been christened _block-based editors_. And they fall into two major categories; apps for authoring documents, including collaborative wikis and note-taking applications. And "no-code" website builders that help people create blog posts and simple websites.
 
-We're in the middle of a Cambrian explosion of these editors on the web. Almost every document editor and no-code website builder uses the concept of blocks in their interface; Notion, Wordpress Gutenberg, Google Docs, Squarespace, Coda, Craft, Clover, Roam Research, Almanac, Logseq, Remnote, Observable, the list goes on.
+We're now in the middle of a Cambrian explosion of these editors. Almost every document editor and no-code website builder is based around the concept of blocks; Notion, Wordpress Gutenberg, Google Docs, Squarespace, Coda, Craft, Clover, Roam Research, Almanac, Logseq, Remnote, Clarity, the list goes on.
 
 At last count I found 23 block-editors in active development, and I've certainly missed some. Two more will get seed funding while you're reading this.
 
@@ -69,9 +69,10 @@ Here's the plan; we'll start with a quick tour through the popular interface pat
 
 ## The Conventional Patterns of Block-Editors
 
-Despite serving a wide range of audiences and use cases, block-editors have converged on an impressively consistent set of interface patterns.
+At the moment we don't have a strict definition of what counts as a _block-based editor_, but our current ones all follow an impressively consistent set of interface patterns:
 
-Documents made with block-editors look suspiciously similar to traditional documents, but are built around a different conceptual model. Rather than treating documents as strings and paragraphs of styled text, these editors treat them as a stack of types blocks:
+1. **Blocks are first-class citizens**  
+   Documents made with block-editors look suspiciously similar to traditional documents, but are built around a different conceptual model. Rather than treating documents as strings and paragraphs of styled text, these editors treat them as a stack of types blocks:
 
 <FullWidthSection width="1100px">
 
@@ -79,9 +80,11 @@ Documents made with block-editors look suspiciously similar to traditional docum
 
 </FullWidthSection>
 
-It's a mindset shift from a text-first environment to a block-first environment. We used to add special objects like images and tables to documents where text was the default format. In block-editors, text isn't treated any differently to the image or table – it's just another block.
+It's a mindset shift from a text-first environment to a block-first environment.
+In classic documents where text is the default format, you can sometimes add special elements like images or tables, but they're treated as exceptions. In block-editors, text isn't treated any differently to the image or table – it's just another block. Blocks are the primary unit, not lines of text.
 
-Most block-editors still begin with text input though. To add a block you type the slash `/` key <Footnote idName={3}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote> or click a floating + icon nearby, and a selection menu appears with a set of block choices:
+2. **Quick selection menus to create blocks**  
+   All block-based editors allow you to quickly add a block to a document by typing a hotkey – usually the slash `/` key <Footnote idName={3}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote>. Sometimes you can also click a floating + icon nearby. Either way, a selection menu appears with a set of block choices:
 
 <ThreeColumn gridGap="0">
 
@@ -119,7 +122,11 @@ Most block-editors still begin with text input though. To add a block you type t
 
 </ThreeColumn>
 
-You pick a block and it renders in place – usually presenting a few input fields and prompts for the kind of content it accepts. Each block type has its own formatting conventions and unique affordances.
+You pick a block type and it appears inline. Depending on the type you can then add content to the block, or continue adding blocks below.
+
+3. **Blocks come in a set of unique, pre-formatted types**  
+   Each block type has its own formatting conventions and unique affordances.
+   On first render they present a few input fields and prompts for the kind of content it accepts.
 
 Checklist blocks let you mark items as done, assign people to tasks, and add due dates.
 
@@ -156,27 +163,35 @@ Every block editor adds on a range of extended functionality.
 
 Some editors include more advanced blocks – Google Maps, Figma designs, image galleries, live coding environments, fully decked-out spreadsheets that function as relational databases. These become competitive advantages in an increasingly monoblock landscape.
 
-Hardcore editors hook their blocks up to robust data structures on the backend, making it possible to relate blocks to one another through connections, referencing, and programmatic logic.
-
-For example, Roam allows you to embed blocks inside one another and see the backlinks between them. Coda takes this a step further and turns blocks into a simple interface for a full programmatic environment.
-
 <img width="" src="https://via.placeholder.com/600x300" alt="" />
 
 {spectrum of simple to complex blocks}
 
-### Swapping and Moving Blocks
+4. **Data can be shared between blocks**  
+   Blocks are an interface element that allows users to input complex data. They would be fairly limited if that data was contained to a single block.
 
-If you decide you want a different block, you can easily swap it out. The content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
+One of the features that makes our current block-based editors exceptionally powerful is being able to query and reference data held in other blocks.
+
+Notion's "database"-type blocks are one of its most popular features.
+
+Coda is pushing hard in the direction of complex, programmatic systems presented in blocks
+
+Hardcore editors hook their blocks up to robust data structures on the backend, making it possible to relate blocks to one another through connections, referencing, and programmatic logic.
+
+For example, Roam allows you to embed blocks inside one another and see the backlinks between them. Coda takes this a step further and turns blocks into a simple interface for a full programmatic environment.
+
+5. **Blocks are interchangeable and swappable**  
+   If you decide you want a different block, you can easily swap it out. The content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
 
 Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={4}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
 
 {visual for swapping blocks}
 
-Blocks are easy to copy, paste, and duplicate. Using direct manipulation you can drag and drop them into new positions, making it quick to restructure a document without faffing about with precise text selection.
+6. **Blocks are directly manipulatable**  
+   If you want to change a block, you click just to the left, or you click directly on it to drag and drop it into a new position. You are directly touching the thing you want to change, rather than typing instructions decribing the thing you want to change into a command line.
+   Blocks are easy to copy, paste, and duplicate. Using direct manipulation you can drag and drop them into new positions, making it quick to restructure a document without faffing about with precise text selection.
 
 {visual for drag and drop}
-
-There's a core set of block types that most of these editors provide:
 
 ---
 
@@ -188,7 +203,7 @@ We've now seen the general shape and interface patterns of blocks, but what _pre
 
 We all love a good definitional debate, and I am not one to rob us of this opportunity. I offered a concise definition above: "A block is a rectangular section of your document that looks and acts a certain way, depending on its type."
 
-I think it's pretty good summary of the situation, but one that leaks in a hundred ways. According to this, the navigation bar, sidebar submenu, and obnoxious chat widget that won't stop audibly alerting you to a message from a bot could all be mistaken for blocks.
+I think it's pretty good summary of the situation, but one that leaks in a hundred ways. According to this, the navigation bar, the block-selector dropdown menu, and obnoxious chat widget that won't stop audibly alerting you to a message from a bot could all be mistaken for blocks.
 
 Let's try again, wearing our technological pedant hat: <Footnote idName={5}>This is a good faith best effort, which I'm certainly open to revising if and when more intelligent and experienced people point out its flaws on Twitter. At least be polite when you do :)</Footnote>
 
@@ -197,6 +212,8 @@ Let's try again, wearing our technological pedant hat: <Footnote idName={5}>This
 A block is the basic semantic unit of a block-based document. Each block has a unique type that determines what kind of data the block will accept, and how it will visually present that data. Blocks also encapsulate a set of functionality that define how it will create and modify the data within it.
 
 </SimpleCard>
+
+Blocks can also contain other blocks
 
 #### What Blocks are Not
 
@@ -207,15 +224,38 @@ To reduce any confusion, let's also make clear what blocks are _not_. Within the
 
 {cartoon sketch of a block as a higher interface concept, possibly implemented in WC/React/etc, but not concerned with implementation. And nothing to do with the blockchain}
 
-The blocks I am talking about here are a pure interface pattern. How that pattern is implemented is beyond the scope of this article and my limited knowledge as a pseudo-engineer. I'm interested in blocks from a user and interface designer perspective. <Footnote idName={6}>There is plenty to be said about the technical challenges of how we could/should build interoperable blocks built on solid web standards, but I'll leave that to someone else. Perhaps you?</Footnote>
+The blocks I am talking about here are an interface pattern. How that pattern is implemented is beyond the scope of this article and my limited knowledge as a pseudo-engineer. I'm interested in blocks from a user and interface designer perspective, rather than a web infrastructure perspective. <Footnote idName={6}>There is plenty to be said about the technical challenges of how we could/should build interoperable blocks built on solid web standards, but I'll leave that to someone else. Perhaps you?</Footnote>
 
 ## What Blocks Give Us
 
-As with every shiny new interface pattern, we should sit down seriously consider whether blocks are truly improving our computational lives. What have block-based editors allowed us to do that we weren't able to do before?
+As with every shiny new interface pattern, we should question it. Even if the benefits of blocks seem obvious on the surface, it's worth asking what ways of working blocks have made possible. And what ways of working they've made harder or entirely impossible.
 
-### Evolving from Text to Blocks
+Block-based editors have changed the way we do two major types of work:
 
-How are block-based editors different to the document editors we've had so far?
+- Creating simple website and blog posts
+- Creating documents in wikis and note-taking apps
+
+Let's look at each of these in turn.
+
+### Blogging Before Blocks
+
+Before they came along, creating a website or blog post of _the same level of complexity_ avaliable in block editors would have required writing HTML, CSS, and JS by hand.
+
+### Blocks as end-user programming for the web
+
+It is unsurprising the standard list of block types maps fairly tightly to the [basic text tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content) in HTML; `<h1>`, `<img>`, `<ul>`, `<blockquote>`, etc. The web was originally designed as a medium to author and share academic documents, and these basic primitives are still serving us well.
+
+We might be tempted to think blocks are just a way to reuse pre-made snippets of HTML with a GUI stuck on top. This could be true for very basic blocks that simply format text. But many blocks offered by these editors included advanced functionality like uploading files, running calculations, external data integrations, state management, dynamic views, and the ability to filter, sort, and search for data.
+
+We're so used to having access to this type of advanced formatting and functionality on the web we barely think twice about it.
+
+But before these block-editors showed up you would need to know a non-trivial amount of HTML, CSS, and JavaScript if you wanted to add something this complex to a document on the web.
+
+Figuring out how to stick some text in a `<p>` tag is one thing, but building a dynamic table with sorting and filtering is way beyond the programming capabilities of most of us. Blocks provide a user-friendly interface for creating rich, complex web components that previously only developers has access to. They shift power – even if only slightly – from developers to end users.
+
+Even document editors that aren't _officially_ webpage creators end up inadvertendly playing the role. Notion is designed as a wiki for teams, but so many people have reappropriated it as a platform for building personal websites, whole side industries have emerged to support it.
+
+### Documents Before Blocks
 
 Before these atomic, interactive blocks started appearing, our documents were predominately made up of simple text. A linear string of characters, spaces, and new lines breaks were the basic units of any digital document.
 
@@ -236,6 +276,8 @@ These presentational annotations certainly add semantic meaning – big, orange,
 But the formatting options available to us in classic rich text editing only manipulate the visual style of a set of characters. They rarely add meaningful semantic or functional structure to the document that the computer can understand.
 
 Blocks, on the other hand, combine visual formatting with semantic structure. A Header block is significant both visually and as a type the computer understands.
+
+In the case of documents in wikis and notes, we simply couldn't have created docs as complex with our previous tools.
 
 ### Block-based and Block-accepting Editors
 
@@ -276,20 +318,6 @@ A block can be dragged and dropped into a new position on the page. It can be sw
 
 Blocks open up a world of flexibility and interactive power within a scoped area. They're easier to move around – a key quality for anyone working with ideas who needs to arrange and rearrange information in relationships to find the right groupings and sequences – which is to say, all of us doing knowledge work.
 
-### Blocks as end-user programming for the web
-
-It is unsurprising the standard list of block types maps fairly tightly to the [basic text tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content) in HTML; `<h1>`, `<img>`, `<ul>`, `<blockquote>`, etc. The web was originally designed as a medium to author and share academic documents, and these basic primitives are still serving us well.
-
-We might be tempted to think blocks are just a way to reuse pre-made snippets of HTML with a GUI stuck on top. This could be true for very basic blocks that simply format text. But many blocks offered by these editors included advanced functionality like uploading files, running calculations, external data integrations, state management, dynamic views, and the ability to filter, sort, and search for data.
-
-We're so used to having access to this type of advanced formatting and functionality on the web we barely think twice about it.
-
-But before these block-editors showed up you would need to know a non-trivial amount of HTML, CSS, and JavaScript if you wanted to add something this complex to a document on the web.
-
-Figuring out how to stick some text in a `<p>` tag is one thing, but building a dynamic table with sorting and filtering is way beyond the programming capabilities of most of us. Blocks provide a user-friendly interface for creating rich, complex web components that previously only developers has access to. They shift power – even if only slightly – from developers to end users.
-
-Even document editors that aren't _officially_ webpage creators end up inadvertendly playing the role. Notion is designed as a wiki for teams, but so many people have reappropriated it as a platform for building personal websites, whole side industries have emerged to support it.
-
 ---
 
 ## A History of Blocks
@@ -298,29 +326,27 @@ If I asked you to guess when blocks and block-based editors first appeared, I'd 
 
 <Blocktimeline />
 
-To prove this point, I ran a quick Twitter poll to gauge the level of historical awareness around block-editors within a small audience of fairly well-informed programmers and interface nerds <Footnote idName={3}>I don't have hard stats on the demographics of my twitter followers, I'd summarise the group as tools for thought enthusiasts, interface designers, and web developers</Footnote>:
+To prove this point, I ran a quick Twitter poll to gauge the level of historical awareness around block-editors within a small audience of fairly well-informed programmers and interface nerds <Footnote idName={8}>I don't have hard stats on the demographics of my twitter followers, but I'd summarise the group as web developers, tools for thought enthusiasts, and interface designers. In that order.</Footnote>:
 
 <TweetEmbed tweetId="1486694395583901709" />
 
 Let's first acknowledge my poll is fundamentally flawed given that it offers my predicted answers by default, and requires people go to the effort of replying if they have an alternate view.
 
-Reply answers included [HyperCard](https://en.wikipedia.org/wiki/HyperCard), Douglas Engelbart's [NLS System](<https://en.wikipedia.org/wiki/NLS_(computer_system)>), [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson), and the [Pygmalion](http://acypher.com/wwid/Chapters/01Pygmalion.html) visual programming language.
-
 The question itself was also duplicitous. Trying to pin-point a single "invention moment" by one person or project in history is a fool's errand. Especially in the field of interface design where every new creation is a bric-a-brac recompilation of existing conventions and standards.
 
 But we all make compromises to run reductive, ad-hoc twitter polls.
 
-I wasn't surprised to find most people attribute the interface pattern to Notion. Notion was certainly not the first or last block editor, but it's easily the most visible and widely used to date. It predecessors are not immediately obvious, and do a poor job of self-promotion. This is compounded by the fact the web development and design industry is reasonably oblivious to historical precedent. This isn't out of laziness or ambivalence. Access to holistic histories of programming, interface design, and HCI is poor and much of this knowledge is held within elite institutions and academic journals.
+There were plenty of write-in replies that included [HyperCard](https://en.wikipedia.org/wiki/HyperCard), Douglas Engelbart's [NLS System](<https://en.wikipedia.org/wiki/NLS_(computer_system)>), [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson), and the [Pygmalion](http://acypher.com/wwid/Chapters/01Pygmalion.html) visual programming language. All of whom I'd agree played a role in the development of block-based interfaces. Many of them described or implemented software patterns that could easily be interpreted as block-like. We'll take a closer look at these in a minute.
 
-I'd heartily agree all of these people and projects contributed significant ideas that moved us closer to blocks and block-based editors. Many of them described or implemented software patterns that could easily be interpreted as block-like.
+I wasn't surprised to find most people attribute the interface pattern to Notion. Notion was certainly not the first or last block editor, but it's easily the most visible and widely used to date. It predecessors are not immediately obvious, and do a poor job of self-promotion.
+
+This is compounded by the fact the web development and design industry is reasonably oblivious to historical precedent. This isn't out of laziness or ambivalence. We're not an industry with well-established intellectual centres, academic legacies, or official degrees yet. None of us were required to take Web History 101 before FTP-ing up our weird Flash sites.
+
+In my experience, most of the people with holistic, comprehensive understandings of computing and interface design history belong to 🤑 elite 🤑 institutions and spend their time writing academic PDFs to one another, rather than advising interface designers and product strategy teams. But I digress.
 
 To make sense of this historical trajectory, I've split the evolution of blocks into three distinct ages:
 
-{graphic of the three ages on a timeline}
-
-1. The first age – 1965-1975
-2. The second age – 1994-1997
-3. The third age – 2018-present
+<BlockAges />
 
 Each of these time frames saw a surge in projects that explored the qualities that led block-based interfaces and work that addressed pragmatic issues like UX usability and hardware capacity.
 
