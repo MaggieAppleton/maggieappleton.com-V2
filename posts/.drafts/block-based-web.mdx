@@ -49,7 +49,7 @@ You have almost certainly seen and used these blocks. They come in an array of f
 
 <Spacer size="small" />
 
-These blocks don't look terribly different to what you see on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them to the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote> They are a syntax-free, user-friendly way to create dynamic, complex documents and pages on the web.
+These blocks don't look drastically different to what you see on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them to the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote> They are a syntax-free, user-friendly way to create dynamic, complex documents and pages on the web.
 
 The places where we create these blocks have been christened _block-based editors_. And they fall into two major categories; apps for authoring documents, including collaborative wikis and note-taking applications. And "no-code" website builders that help people create blog posts and simple websites.
 
@@ -72,7 +72,7 @@ Here's the plan; we'll start with a quick tour through the popular interface pat
 At the moment we don't have a strict definition of what counts as a _block-based editor_, but our current ones all follow an impressively consistent set of interface patterns:
 
 1. **Blocks are first-class citizens**  
-   Documents made with block-editors look suspiciously similar to traditional documents, but are built around a different conceptual model. Rather than treating documents as strings and paragraphs of styled text, these editors treat them as a stack of types blocks:
+   Documents made with blocks look suspiciously similar to traditional documents, but are built around a different conceptual model. Rather than treating documents as strings and paragraphs of styled text, these editors treat them as a stack of types blocks:
 
 <FullWidthSection width="1100px">
 
@@ -122,13 +122,13 @@ In classic documents where text is the default format, you can sometimes add spe
 
 </ThreeColumn>
 
-You pick a block type and it appears inline. Depending on the type you can then add content to the block, or continue adding blocks below.
+You pick a block type and it appears inline. You can then add content to the block, or continue adding blocks below.
 
 3. **Blocks come in a set of unique, pre-formatted types**  
    Each block type has its own formatting conventions and unique affordances.
-   On first render they present a few input fields and prompts for the kind of content it accepts.
+   When you create a new block it presents a few input fields and prompts for the kind of content it accepts.
 
-Checklist blocks let you mark items as done, assign people to tasks, and add due dates.
+Checklist blocks let you type in text, tap the checkbox to items as done, assign people to tasks, and add due dates.
 
 <ImageFrame
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1200/v1645048968/maggieappleton.com/essays/block-editors/Checklist_gadznt.png"
@@ -167,8 +167,27 @@ Some editors include more advanced blocks – Google Maps, Figma designs, image 
 
 {spectrum of simple to complex blocks}
 
-4. **Data can be shared between blocks**  
-   Blocks are an interface element that allows users to input complex data. They would be fairly limited if that data was contained to a single block.
+4.**Blocks are directly manipulatable**  
+ If you want to change a block, you click just to the left, or you click directly on it to drag and drop it into a new position. You are directly touching the thing you want to change, rather than typing instructions decribing the thing you want to change into a command line.
+Blocks are easy to copy, paste, and duplicate. Using direct manipulation you can drag and drop them into new positions, making it quick to restructure a document without faffing about with precise text selection.
+
+{visual for drag and drop}
+
+5. **Content and display formatting are separated; blocks are interchangeable**  
+   The content a block holds and the way it displays that data isn't firmly tied together.
+
+{diagram of content and view being separated}
+
+If you decide you want a different block, you can easily swap it out. The content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
+
+Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={4}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
+
+{visual for swapping blocks}
+
+6.  **Data can be shared between blocks**  
+    The content we put into a block isn't necessarily constrained to that block. In most of the more advanced block-editors, blocks can reference data held inside other blocks.
+
+Blocks are an interface element that allows users to input complex data. They would be fairly limited if that data was contained to a single block.
 
 One of the features that makes our current block-based editors exceptionally powerful is being able to query and reference data held in other blocks.
 
@@ -179,19 +198,6 @@ Coda is pushing hard in the direction of complex, programmatic systems presented
 Hardcore editors hook their blocks up to robust data structures on the backend, making it possible to relate blocks to one another through connections, referencing, and programmatic logic.
 
 For example, Roam allows you to embed blocks inside one another and see the backlinks between them. Coda takes this a step further and turns blocks into a simple interface for a full programmatic environment.
-
-5. **Blocks are interchangeable and swappable**  
-   If you decide you want a different block, you can easily swap it out. The content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data.
-
-Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={4}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
-
-{visual for swapping blocks}
-
-6. **Blocks are directly manipulatable**  
-   If you want to change a block, you click just to the left, or you click directly on it to drag and drop it into a new position. You are directly touching the thing you want to change, rather than typing instructions decribing the thing you want to change into a command line.
-   Blocks are easy to copy, paste, and duplicate. Using direct manipulation you can drag and drop them into new positions, making it quick to restructure a document without faffing about with precise text selection.
-
-{visual for drag and drop}
 
 ---
 
@@ -402,6 +408,31 @@ It is exceptionally ironic that when Micrososoft announced their new project "Mi
 These editors are sometimes belittled as "Notion clones", although Notion was not the first or last platform to implement the conceptual model of documents composed of blocks. Nevertheless, it became a touchstone reference point – a software category in its own right. Like _Uber for X_, we now have _Notion, but with Y feature_.
 
 ## Blocks of the Future
+
+### Future patterns
+
+1. Composable blocks  
+   Blocks can contain other blocks
+
+2. Independent Block development  
+   This was the original dream of OpenDoc. The people who build block-editors don't necessarily have to be the same people who build blocks.
+
+Coda's maker marketplace is one of the recent signs we're moving in this direct.
+
+We've already been moving swiftly in this direction in the larger context of front-end web development. Modular components built by a wide variety of other engineers is the name of the game. We all rely upon open collective efforts like MUI, Chakra, Radix, Reach UI, etc.
+
+The same will happen with blocks, which are a simply a very specific type of component – one designed for authoring documents on the web.
+
+A big disclaimer on this one. I lead design at HASH, where one of our projects is the Block Protocol – a standardised way for blocks to communicate with their embedding applications (aka. block-editors)
+
+{ diagram }
+
+I certainly have a vested interest in the block ecosystem diversifying and maturing.
+
+3. Blocks as end-user programming  
+   The biggest hope I have for blocks is as an entry point into front-end development for people who can't currently code.
+
+Standing up a whole website has moved far beyond the capacities of most people. Sandboxed environments like Observable and Jupyter notebook give people the ability to write code and execute it without also needing to learn the command line, Webpack, DNS redirects, etc. etc.
 
 The web was born as a text-first medium. Tim Berners Lee designed it to mimic text documents. Specifically, long, linear research documents shared among scientists and academics as pieces of paper. Ever since then we've been negotiating its paper-like qualities.
 

@@ -1,0 +1,62 @@
+---
+title: "Direct Manipulation"
+description: "Designing digital objects to be directly manipulable in the same way physical objects are"
+startDate: "2022-03-06"
+updated: "2022-03-06"
+type: "pattern"
+growthStage: "seedling"
+---
+
+<h2 className="micro">The Context</h2>
+
+When we want to do something to a physical object – a door, a kettle, or a book – we reach out and touch it with our hands. To move, manipulate, or change the state of the object, we have to be in physical contact with it. It is very hard to do things to physical objects without touching them. Doing so looks like a form or magic or trickery.
+
+Try telling a toaster <Footnote idName={1}>A regular one, not a wifi-enabled, hackable one generating and selling off data about your toasting habits.</Footnote> to start toasting on while you and the toaster are in seperate countries. Then tell it to delay to toasting process until next Wednesday. Tricky.
+
+Switch toasting toast for sending a tweet and this would be no problem for us.
+
+One of the core problems with designing digital objects – a problem every big-wig interface designer throughout history has written about extensively<Footnote idName={2}>See Norman (1998), Dourish (2001), many of Alan Kay's talks</Footnote> – is that they are detached from physical reality in ways that break what we percieve as the fundamental logic of manipulation.
+
+A digital object can be created, manipulated, or deleted without us directly touching it. We can change digital objects across time and space, from contexts very far away from where the thing appears to 'live' in our interface.
+
+Try creating, completing, and deleting a few items from this to-do list:
+
+<TodoApp />
+
+This probably looks and behaves like many of the todo lists you’ve encountered before. To mark an item complete, you click directly on the checkmark button. To delete it, you click directly on the X button.
+
+Controls for changing or deleting each todo item are located on the object itself – or rather, "on" the real estate of this screen you have mentally designated as "where this todo list item exists."
+
+But there's nothing stopped me from designing a todo list where the delete and complete buttons are detached from the things they effect. Like this one:
+
+<DetatchedTodoApp />
+
+This is a silly design demonstration of an oversimplified example, but the fact this is possible – and not exceptionally difficult to do – is where the trouble begins. This happens in real interfaces.
+
+The controls that act upon an object float away from the objects they're manipulating.
+
+{real world examples of buttons divorced from the thing they're acting upon}
+
+As our interfaces grow in complexity, the tempation to tap into the power of computing – of manipulating objects en masse, from remote locations, in abstracted contexts – grows stronger.
+
+We want to give people ways to create, manipulate, and delete objects from multiple screens across the app. We want to allow them to bulk edit 122 items without clicking 244 times.
+
+We want to give them APIs that can send a POST reqeust to delete a todo list item from a CLI command on someone else's machine.
+
+We want to give them ways to create progrmmatic rules; like automatically archiving any todo list item that is more than 4 weeks past due, and isn't tagged as priorty level 1.
+
+It's difficult to close this cognitive gap between the generous, flexible affordances of the digital world, and the limitations of the physical world that we take as universal laws.
+
+Placing objects far away from the controls that act upon them is exceptionally hard to do in the physical world. It is a pain in the butt to design a lamp where the on/off switch lives in your neighbour's house two doors down, connected by 25 metres of tangled wiring.
+
+It is nearly effortless to do it in the digital world. A function runs somewhere in the cloud. Data is passed between servers. A todo list item silently updates, and no one knows which button changed it.
+
+---
+
+The magic illusion at the heart of computing is that it allows us to construct abstractions. We can construct cyberworlds that are not limited in the same ways meatspace is. A physical folder can comfortably hold 50 paper documents. A digitial folder can comfortably hold 50,000.
+
+There are certainly still limitations, but the scale of those limitations is profoundly different. Terrabytes that cost a few dollars, instead of m2 of storage space that costs hundreds.
+
+> "Computers use of symbols, like the use of symbols in language and mathematics, is sufficiently disconnected from the real world to enable them to create splendid nonsense."
+
+<Subtext>Alan Kay, as quoted in Dealers of Lightning (85)</Subtext>

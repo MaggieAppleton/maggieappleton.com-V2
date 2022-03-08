@@ -249,6 +249,18 @@ export const components = {
       ssr: false,
     }
   ),
+  TodoApp: dynamic(
+    () => import("../components/unique/direct-manipulation/TodoApp"),
+    {
+      ssr: false,
+    }
+  ),
+  DetatchedTodoApp: dynamic(
+    () => import("../components/unique/direct-manipulation/DetatchedTodoApp"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({

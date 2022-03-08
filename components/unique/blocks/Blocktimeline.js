@@ -15,7 +15,6 @@ const Blocktimeline = () => {
       <rect height="54" width="1" fill="#04A5BB" x="12" y="227" />
       <rect height="20" width="1" fill="#04A5BB" x="126" y="261" />
       <rect height="20" width="1" fill="#04A5BB" x="473" y="261" />
-      <rect height="1" width="104" fill="#E6E3E1" x="306" y="89" />
       <g>
         <rect height="98" width="282" fill="white" rx="6" x="8" y="40" />
         <rect
@@ -63,6 +62,10 @@ const Blocktimeline = () => {
           </tspan>
         </text>
       </g>
+      <path
+        d="M305.646 88.6464C305.451 88.8417 305.451 89.1583 305.646 89.3536L308.828 92.5355C309.024 92.7308 309.34 92.7308 309.536 92.5355C309.731 92.3403 309.731 92.0237 309.536 91.8284L306.707 89L309.536 86.1716C309.731 85.9763 309.731 85.6597 309.536 85.4645C309.34 85.2692 309.024 85.2692 308.828 85.4645L305.646 88.6464ZM410.354 89.3536C410.549 89.1583 410.549 88.8417 410.354 88.6464L407.172 85.4645C406.976 85.2692 406.66 85.2692 406.464 85.4645C406.269 85.6597 406.269 85.9763 406.464 86.1716L409.293 89L406.464 91.8284C406.269 92.0237 406.269 92.3403 406.464 92.5355C406.66 92.7308 406.976 92.7308 407.172 92.5355L410.354 89.3536ZM306 89.5H410V88.5H306V89.5Z"
+        fill="#D3D3D1"
+      />
       <text
         style={{ whiteSpace: "pre" }}
         fill="#4A4A46"
@@ -86,12 +89,11 @@ const Blocktimeline = () => {
         </tspan>
       </text>
       <text
-        style={{ whiteSpace: "pre" }}
-        fill="#777472"
+        style={{ whiteSpace: "pre", letterSpacing: "0.05rem" }}
+        fill="var(--color-gray-400)"
         fontFamily="Lato"
         fontSize="12"
         xmlSpace="preserve"
-        letter-spacing="0.7"
       >
         <tspan x="450" y="313.644">
           DATED TO FIRST PUBLIC RELEASE
@@ -132,7 +134,7 @@ const Blocktimeline = () => {
       </text>
       <text
         style={{ whiteSpace: "pre" }}
-        fill="#9C9592"
+        fill="var(--color-gray-400)"
         fontFamily="Lato"
         fontSize="12"
         xmlSpace="preserve"
