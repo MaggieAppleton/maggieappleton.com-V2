@@ -53,7 +53,9 @@ These blocks don't look drastically different to what you see on the web every d
 
 The places where we create these blocks have been christened _block-based editors_. And they fall into two major categories; apps for authoring documents, including collaborative wikis and note-taking applications. And "no-code" website builders that help people create blog posts and simple websites.
 
-We're now in the middle of a Cambrian explosion of these editors. Almost every document editor and no-code website builder is based around the concept of blocks; Notion, Wordpress Gutenberg, Google Docs, Squarespace, Coda, Craft, Clover, Roam Research, Almanac, Logseq, Remnote, Clarity, the list goes on.
+{graphic of blocks inside a document and a no code builder}
+
+We're now in the middle of a Cambrian explosion of these editors. Almost every document editor and no-code website builder is based around the concept of blocks; [Notion](), [Wordpress Gutenberg](), [Google Docs](), [Squarespace](), [Coda](), [ClickUp](), [Craft](), [Clover](), [Roam Research](), [Almanac](), [Logseq](), [Remnote](), [Clarity](), the list goes on.
 
 At last count I found 23 block-editors in active development, and I've certainly missed some. Two more will get seed funding while you're reading this.
 
@@ -84,7 +86,7 @@ It's a mindset shift from a text-first environment to a block-first environment.
 In classic documents where text is the default format, you can sometimes add special elements like images or tables, but they're treated as exceptions. In block-editors, text isn't treated any differently to the image or table – it's just another block. Blocks are the primary unit, not lines of text.
 
 2. **Quick selection menus to create blocks**  
-   All block-based editors allow you to quickly add a block to a document by typing a hotkey – usually the slash `/` key <Footnote idName={3}>Or rarely `@` if an app is feeling particularly spicy and innovative</Footnote>. Sometimes you can also click a floating + icon nearby. Either way, a selection menu appears with a set of block choices:
+   All block-based editors allow you to quickly add a block to a document by typing a hotkey – usually the slash `/` key <Footnote idName={3}>Or rarely `@` if an app is feeling particularly spicy and innovative. Sometimes you can also click a floating + icon nearby.</Footnote>. This triggers a selection menu with a set of block choices:
 
 <ThreeColumn gridGap="0">
 
@@ -158,6 +160,26 @@ Table blocks let you arrange data in spreadsheets where you can name columns, ad
 There is no univerally agreed-upon list of block types, but these editors all have a common set of basics: text, header, image, checklist, bullet list, numbered list, callout, table, blockquote, embed, code block, divider, video, and file.
 
 Beyond that, it's open season. Blocks come in a wide range of formats, from simple presentational formatting to wildly complex; enough to be a standalone app in its own right.
+
+<FullWidthSection width="1400px">
+
+<iframe
+  class="airtable-embed"
+  src="https://airtable.com/embed/shrV7vmx46aNt9Xog?backgroundColor=teal&viewControls=on"
+  frameborder="0"
+  onmousewheel=""
+  width="100%"
+  height="533"
+  style={{
+    background: "transparent",
+    border: "1px solid var(--color-gray-300)",
+    borderRadius: "4px",
+    boxShadow: "var(--box-shadow-lg)",
+    marginBottom: "2rem",
+  }}
+></iframe>
+
+</FullWidthSection>
 
 Every block editor adds on a range of extended functionality.
 
@@ -348,23 +370,37 @@ I wasn't surprised to find most people attribute the interface pattern to Notion
 
 This is compounded by the fact the web development and design industry is reasonably oblivious to historical precedent. This isn't out of laziness or ambivalence. We're not an industry with well-established intellectual centres, academic legacies, or official degrees yet. None of us were required to take Web History 101 before FTP-ing up our weird Flash sites.
 
-In my experience, most of the people with holistic, comprehensive understandings of computing and interface design history belong to 🤑 elite 🤑 institutions and spend their time writing academic PDFs to one another, rather than advising interface designers and product strategy teams. But I digress.
+In my experience, most of the people with holistic, comprehensive understandings of computing and interface design history belong to 🤑 elite 🤑 institutions and spend their time writing academic PDFs to one another, rather than openly teaching online, or advising interface designers and product strategy teams. But I digress.
 
 To make sense of this historical trajectory, I've split the evolution of blocks into three distinct ages:
 
 <BlockAges />
 
-Each of these time frames saw a surge in projects that explored the qualities that led block-based interfaces and work that addressed pragmatic issues like UX usability and hardware capacity.
+Each of these time frames saw a surge in projects that explored the qualities that led to block-based interfaces. These early efforts addressed pragmatic issues like ecosystem integration, UX usability, and hardware capacity.
 
 ### The First Age of Blocks – Xanadu, NLS, and Hypercard
 
-<h5 style={{ marginTop: "-0.6rem" }}>1965-1975</h5>
+<h5 style={{ marginTop: "-0.6rem" }}>1965-1987</h5>
 
-I would consider projects like Xanadu, Engelbert's NLS, and Hypercard spiritual predecesors in this story. The interfaces patterns they established moved us closer to thinking in blocks.
+Frankly, the history of any modern interface pattern has to start in California in the late 1960's and early 70's with the work of Ted Nelson, Douglas Engelbart, and Xerox PARC. The interface waters we currently swim in – of desktop metaphors, click-and-point interactions, and direct manipulation – all lead back to the same river. Blocks are no exception.
 
-Like countless other concepts we rely upon in modern computing, Ted Nelson is behind this one. In 1965 his Computer Lib / Dream Machines book outlined "-----"
+And as with most things, Ted Nelson said it first. In 1974 Nelson wrote Computer Lib / Dream Machines, where he laid out elaborate plans for [[Project Xanadu]] – a hypertext system designed for writing "serious electronic literature."
 
-A working prototype is worth a million words.
+That system involved documents made up of 'parts', which could be any data type, and could be freely moved around a document. Being able to insert a part into multiple documents, link parts to one another, and easily rearrange parts within a document were all essential to the concept.
+
+{image of xanadu's parts}
+
+While Nelson is infamous for being the first to coin concepts, his projects are also infamous for never manifesting into real software. Xanadu was never built, which makes it difficult to evaluate whether its elaborate architecture was truly feasible.
+
+Working in the same realm as Nelson was Douglas Engelbart. In 1969 Engelbart gave [the mother of all demos]() showcasing a graphical interface, hyperlinks, point and click interactions, and live video conferencing all at once. His NLS - oNLine System – used flexible parts of a document that could be rearranged. This feels tangentially related to the way blocks work now, but still set the precedent for flexible data structures and dynamic documents.
+
+{image of NLS}
+
+The last meaningful project in this period was Hypercard which came out of Apple in 1987.
+
+{image of hypercard}
+
+These projects are all spiritual predecesors in this story. The interfaces patterns they established moved us closer to thinking in blocks.
 
 ### The Second Age of Blocks – Microsoft OLE and Open Doc
 
@@ -402,6 +438,12 @@ In this context, despite being the most visible and widely used block-editor to 
 It's undeniable Notion has been the most influential platform championing and pushing the boundaries of block-based editing in recent years.
 
 But Notion certainly didn't come up with blocks.
+
+Tumblr - {original tumblr interface}
+
+Wordpress started work on Gutenberg in 2012(?) and released its first version in 2014(?).
+
+Notion's first release in 2018 kicked things into high gear here. While Wordpress Gutenberg has been out for X years, it served a small use case; writing blog posts. Notion reframed the block editor as an everyday tool – a place to write collaborative documents for your team, or even just yourself. It turned it into an editor you live in, rather than a publishing tool for a specific purpose.
 
 It is exceptionally ironic that when Micrososoft announced their new project "Microsoft Loop" in X, it was lambasted across Twitter as a "shameless Notion clone."
 
