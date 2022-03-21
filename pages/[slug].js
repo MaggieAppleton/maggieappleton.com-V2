@@ -261,6 +261,18 @@ export const components = {
       ssr: false,
     }
   ),
+  NoteAction: dynamic(
+    () => import("../components/unique/programmatic-notes/NoteAction"),
+    {
+      ssr: false,
+    }
+  ),
+  NoteTrigger: dynamic(
+    () => import("../components/unique/programmatic-notes/NoteTrigger"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({
