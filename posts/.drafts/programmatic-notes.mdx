@@ -1,22 +1,162 @@
 ---
-title: "Programmatic Notes"
-description: "Agent-based notetaking systems that can prompt and facilitate personal workflows"
+title: "Programmable Notes"
+description: "Agent-based note-taking systems that can prompt and facilitate custom workflows"
 type: "pattern"
-growthStage: "seedling"
+growthStage: "budding"
 startDate: "2022-03-18"
 updated: "2022-03-18"
 ---
 
 <h2 className="micro">The Context</h2>
 
-Most "note-taking" or "knowledge management" software acts as a passive storage container. You write notes in, and they sit there until you actively go searching for them. If you never go searching for them, you never see those ideas again.
+Most "note-taking" or "knowledge management" software acts as a passive storage container. You create notes, shuffle them around into folders, add a few tags, and then they sit there. Waiting. Until you actively remember go looking for them.
 
-This warehouse approach to notes requires us – the human agent in the system – to do a **lot** of cognitive labour. We have to remember what kind of information we put into the warehouse in the first place. We have to know what keywords will allow us to find it again. We have to develop practices that force us to go looking for material. We have to prompt ourselves to expand our notes, combine them, synthesise them into new realisations, and critique our own conclusions.
+This warehouse approach to notes requires us – the human agent in the system – to do a **lot** of cognitive labour if we want to actively _use_ our notes. And _using_ our notes is the entire point of any note-taking enterprise.
 
-There are plenty of cultural practices around knowledge management that help us do this kind of difficult cognitive work; the [Zettelkasten method](), [[Evergreen Notes]], [knowledge synthesis](), regularly writing for an engaged and critical public audience, signing up for expensive master's degrees.
+Most of us have an ulterior motive beyond writing notes – we want to remember, understand, synthesise ideas, come to confident conclusions, generate new ideas informed by historical and social events, write coherent essays, or work through difficult problems.
 
-But we've yet to see many of these practices enabled by software.
+Getting to any of these outcomes requires far more work than typing words into a storage container and retrieving them again. Most note-taking software doesn't guide us towards any particular workflows or ways of thinking with our notes. We have develop them ourselves.
+
+We have to remember what kind of information we saved in the first place. We have to know what keywords or search methods will allow us to find it again. We have develop ways to integrate old ideas with new ones. We have to prompt ourselves to expand on our notes, combine them, synthesise them into new realisations, and critique our own conclusions.
+
+Thankfully, there's a long history of people finding ways to makes these cognitive tasks easier. We can draw on well-established cultural practices and techniques; we can write [[Evergreen Notes]] and build [Zettelkastens](https://zettelkasten.de/posts/overview/). We can practice [knowledge synthesis](https://oasislab.pubpub.org/pub/54t0y9mk/release/3) and [critical thinking](https://en.wikipedia.org/wiki/Critical_thinking). We can use [spaced repetition](https://notes.andymatuschak.org/z7iCjRziX6V6unNWL81yc2dJicpRw2Cpp9MfQ?stackedNotes=z2gqazXUkf9qyFjMQg4W3dw6yegnAJszvDywN) to regularly resurface old ideas. We can write for an engaged and discerning public audience. We can even sign up for expensive masters degrees that will force us to ask hard questions and conjure up defensible answers.
+
+These practices are what turns notes into understandings, conclusions, informed opinions, new ideas, and original creations. But we've yet to see note-taking software that **actively facilitates and encourages** these kind of workflows. They are, for the most part, still behaving like storage boxes.
+
+What if we started to think about note-taking systems as active agents, rather than receptacles?
+
+Agents can prompt you to do specific activities in a sequence. They can ask you questions. They can suggest relevant material based on what you've already written. They can periodically resurface old ideas to ask if they still ring true. They can prompt you to connect two disparate ideas together. They can mimic conversational partners who debate the strengths and weaknesses of a point – naive partners perhaps, but still better than no partner at all.
+
+"Agents" here are simply programmes<Footnote idName={1}>Or "algorithms" if you're trying to convince someone this programme is more complex than a list of instructions. It's not. But it does sound better.</Footnote>; pre-written sequences of instructions that facilitate standardised cultural practices and repeatable ways of relating to the world.
+
+We could, in essence, run automated programmes and algorithms over our notes. Programmes that we have the agency to write as users.
 
 <Spacer size="small" />
 
 <h2 className="micro">The Pattern</h2>
+
+Programmable notes are note-taking systems that allow you to write programmatic rules that facilitate particular ways of working with your notes.
+
+Based on triggers (specific conditions are met, input from the user, time of day), they kick off a sequence of actions. Actions might be prompts for the user to answer, transformations on the notes themselves, or requests to external websites and data sources for information.
+
+We're floating into the land of computational abstraction so let's make this tangible with some examples:
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>I open my note-taking app first thing in the morning</NoteTrigger><NoteAction>ask what I'm currently thinking about. Once I've marked this complete, show me what I said yesterday, 3 days ago, and last week.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>I create a note related to a specific book</NoteTrigger><NoteAction> pull in the author, cover, and publication date from the Google Books API.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>a week has passed since I've written notes on a book</NoteTrigger><NoteAction>ask me everything I remember about it off the top of my head. Put this into the summary section of my notes as a first draft.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>a month has passed since I last touched a note marked as an essay draft</NoteTrigger><NoteAction>gently prompt me to read through it again and write down why I'm stuck.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>I state a claim</NoteTrigger><NoteAction>ask what evidence I have to back it up and what other notes, books, or academic articles I want to mark as sources for this claim.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-xs)">
+
+When <NoteTrigger>I mark an essay draft as complete</NoteTrigger><NoteAction>ask me all the questions my favourite writing professor would ask.</NoteAction>
+
+- Do you actually have a point and have you made it?
+- Does your introduction present a compelling problem?
+- Are you assuming the audience is thicker than a brick?
+- Is this littered with passive voice (to be, is, was, were...) and evasive language?
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>I write a note that shares many of the same keywords and phrases as an existing note</NoteTrigger><NoteAction>show them to me side by side and ask if I want to combine them.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>I mark a note as [[Evergreen]]</NoteTrigger><NoteAction>ask me what other Evergreen notes I want to link it to, and offer suggestions based on ones with similar keywords, tags, and references.</NoteAction>
+
+</SimpleCard>
+
+<SimpleCard alignLeft padding="var(--space-s) var(--space-l) var(--space-m)">
+
+When <NoteTrigger>I say I'm stuck for new ideas</NoteTrigger><NoteAction>select a few random notes from my database and ask me to expand upon them using prompts from generative frameworks like [SCAMPER](https://en.wikipedia.org/wiki/SCAMPER) or [oblique strategies](https://en.wikipedia.org/wiki/Oblique_Strategies).</NoteAction>
+
+</SimpleCard>
+
+I could go on, but I'll spare you from my other 99 mediocre programmatic note ideas. It's hopefully clear that the goal of these is to encourage practices like reflection, synthesis, connection, and serendipity. The goal is not to simply amass notes.
+
+None of the automations I've suggested above are impractically complex or technologically impossible. They all follow a reasonably simple _if this, then that_ structure that most of us will find familiar. Many are perfectly possible and actively being used in existing platforms.
+
+The [Smartblocks](https://roamjs.com/extensions/roam42/smartblocks) plug-in for [Roam Research](https://roamresearch.com/) is the system I personally use to build these types of workflows. It offers a set of triggers, variables, and commands you can chain together into fairly readable statements like: `<%SET:topOfMindToday,<%INPUT:What's on your mind today?%>%>` or `<%RANDOMBLOCKFROM:Writing Ideas%>`.
+
+Even with limited programming knowledge, many people in the community have been able to fashion their own Smartblock flows. Plenty of them have [published](https://github.com/dvargas92495/SmartBlocks/issues?q=is%3Aopen+is%3Aissue+label%3ASmartBlock) their workflows to the community Github for others to use. These include [sentiment analysis](https://github.com/dvargas92495/SmartBlocks/issues/171) over a selection of text, pulling data [from wikipedia](https://github.com/dvargas92495/SmartBlocks/issues/42) into your notes, and a [decision making](https://github.com/dvargas92495/SmartBlocks/issues/88) flow walking you through the benefits, risks, and costs of all your options.
+
+Roam is not alone in enabling users to write their own programmable notes. There are a wide range of user-created plug-ins for [Obsidian](https://obsidian.md/plugins) and [Logseq](https://logseqweekly.com/plugins/) that enable some of these same workflows.
+
+[Coda](https://coda.io/) is another app that allows users to build fairly complex programmatic systems within documents. You can create buttons that trigger actions and write automation scripts with conditional logic.
+
+<ImageFrame
+  width="1200"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1647715244/maggieappleton.com/patterns/coda-2_wtvyeo.jpg"
+  alt="The Coda interface with customisable buttons and an open sidebar for creating automation rules"
+/>
+
+Another project I'm watching closely is [Gordon Brander](https://gordonbrander.com/)'s app [Subconscious](https://subconscious.substack.com/p/launching-subconscious-alpha-1?s=r) (currently in alpha) that promises to feature _"geists"_ – "little scripts that find connections between notes, and use procedural generators to construct algorithmic provocations." <Footnote idName={2}>From Gordon's Subconcious newsletter: [SCAMPER and procedural idea generation](https://subconscious.substack.com/p/scamper?s=r)</Footnote>
+
+These trends all bode well for programmable notes. They prove that – given enough agency – users will enthusiastically write their own programmes that facilitate the particular note-taking practices and techniques they find valuable.
+
+This is [End-user programming](https://www.inkandswitch.com/end-user-programming/) in action. The developers and designers of note-taking apps will never be able to create systems that suit the needs of everyone's particular knowledge management workflows. Enabling users to design and share their own is the only way to give people...
+
+#### But what about AI???
+
+It is impossible to propose agentive computational systems that are designed to help us think better without bringing up **THE AI**. Let's first point out the term "AI" is a nebulous and finicky cultural narrative that is used in all sorts of ways depending on the political agenda of the speaker.
+
+In this context, I'm using _AI_ to refer to systems that use natural language processing, neural networks, and machine learning to respond to people in seemingly 'intelligent' ways. These will play an enourmous role in the future of programmable notes.
+
+We've yet to see note-taking platforms meaningfully add _AI_ affordances into their systems, but there are hints at how they could in other platforms.
+
+The most impressive and promising I've seen is [Elicit](https://elicit.org/), a research tool that helps academics and students find relevant papers and data based on natural language inputs. You can ask it a question like "What's the point of note-taking?" and recieve a list of research papers that are likely to hold the answer. Even better, Elicit creates a one sentence summary of the paper's main finding and presents it in the results.
+
+<ImageFrame
+  width="1200"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1647728451/maggieappleton.com/patterns/elicit3_1_whsaop.png"
+  alt="Elicit search results showing summaries and titles of relevant papers"
+  showalt
+/>
+
+Finding relevant research papers is critical for academics and researchers, but isn't a large part of everyone's writing and sense-making process.
+
+Elicit has an alternative suite of tools that I find much more intruiging for our use case. Using the same NLP technology you can run requests like "Clarify a concept", "Suggest similar search terms", "Brainstorm possible counter arguments", "Rephrase a sentence", and "Help me be more specific".
+
+<ImageFrame
+  margin="var(--space-s) auto var(--space-s)"
+  width="1200"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1647850074/maggieappleton.com/patterns/elicit4_g1q0zz.png"
+  alt="Elicit suggesting possible counterarguments to a provided claim"
+/>
+
+<ImageFrame
+  width="1200"
+  margin="0 auto var(--space-xl)"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1647726850/maggieappleton.com/patterns/elicit1_1_lcwpel.png"
+  alt="Elicit suggesting ways to rephrase a sentence"
+/>
+
+This doesn't mean intelligent computational agents will be writing social criticism essays for us anytime soon.
