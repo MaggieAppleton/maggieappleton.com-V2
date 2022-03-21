@@ -325,14 +325,26 @@ export const GlobalStyle = createGlobalStyle`
 	h3, h4, h5, h6 {
 		font-family: var(--font-sans);
 	}
+
 	p, ul, ol {
 		font-family: var(--font-body);
 		font-size: var(--font-size-base);
 	}
+
 	a {
 		text-decoration: none;
 		color: var(--color-crimson);
 	}
+
+	code {
+		background: var(--color-cream);
+		padding: var(--space-8) var(--space-12);
+		border-radius: var(--border-radius-sm);
+		font-size: var(--font-size-base);
+		line-height: var(--leading-base);
+		font-family: IBM Plex Mono, Dank Mono, SF Mono, consolas;
+	}
+
 	.metadata span, span.metadata {
 		font-size: var(--font-size-sm);
 		font-family: var(--font-sans);
