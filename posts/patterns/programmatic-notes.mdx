@@ -4,18 +4,18 @@ description: "Agent-based note-taking systems that can prompt and facilitate cus
 type: "pattern"
 growthStage: "budding"
 startDate: "2022-03-18"
-updated: "2022-03-25"
+updated: "2022-03-27"
 ---
 
 <h2 className="micro">The Context</h2>
 
-Most "note-taking" or "knowledge management" software acts as a passive storage container. You create notes, shuffle them around into folders, add a few tags, and then they sit there. Waiting. Until you actively remember go looking for them.
+Most "note-taking" or "knowledge management" software acts as a passive storage container. You create notes, shuffle them around into folders, add a few tags, and then they sit there. Waiting. Until you consciously remember go looking for them.
 
-This warehouse approach to notes requires us – the human agent in the system – to do a **lot** of cognitive labour if we want to actively _use_ our notes. And _using_ our notes is the entire point of any note-taking enterprise.
+This warehouse approach to notes requires us – the human agent in the system – to do a **lot** of cognitive labour if we want to _use_ our notes. And _using_ our notes is the entire point of any note-taking enterprise.
 
 Most of us have an ulterior motive beyond writing notes – we want to remember, understand, synthesise ideas, come to confident conclusions, generate new ideas informed by historical and social events, write coherent essays, or work through difficult problems.
 
-Getting to any of these outcomes requires far more work than typing words into a storage container and retrieving them again. Most note-taking software doesn't guide us towards any particular workflows or ways of thinking with our notes. We have develop them ourselves.
+Getting to any of these outcomes requires far more work than typing words into a storage container and retrieving them again. Most note-taking software doesn't guide us towards any particular workflows or ways of thinking with our notes. We have to develop them ourselves.
 
 We have to remember what kind of information we saved in the first place. We have to know what keywords or search methods will allow us to find it again. We have develop ways to integrate old ideas with new ones. We have to prompt ourselves to expand on our notes, combine them, synthesise them into new realisations, and critique our own conclusions.
 
@@ -102,13 +102,13 @@ When <NoteTrigger>I say I'm stuck for new ideas</NoteTrigger><NoteAction>select 
 
 I could go on, but I'll spare you from my other 99 mediocre programmatic note ideas. It's hopefully clear that the goal of these is to encourage practices like reflection, synthesis, connection, and serendipity. The goal is not to simply amass notes.
 
-None of the automations I've suggested above are impractically complex or technologically impossible. They all follow a reasonably simple _if this, then that_ structure that most of us will find familiar. Many are perfectly possible and actively being used in existing platforms.
+None of the automations I've suggested above are impractically complex or technologically impossible. They all follow a reasonably simple _if this, then that_ structure that most of us will find familiar. Many are perfectly possible and currently used in existing platforms.
 
 The [Smartblocks](https://roamjs.com/extensions/roam42/smartblocks) plug-in for [Roam Research](https://roamresearch.com/) is the system I personally use to build these types of workflows. It offers a set of triggers, variables, and commands you can chain together into fairly readable statements like: `<%SET:topOfMindToday,<%INPUT:What's on your mind today?%>%>` or `<%RANDOMBLOCKFROM:Writing Ideas%>`.
 
 Even with limited programming knowledge, many people in the community have been able to fashion their own Smartblock flows. Plenty of them have [published](https://github.com/dvargas92495/SmartBlocks/issues?q=is%3Aopen+is%3Aissue+label%3ASmartBlock) their workflows to the community Github for others to use. These include [sentiment analysis](https://github.com/dvargas92495/SmartBlocks/issues/171) over a selection of text, pulling data [from wikipedia](https://github.com/dvargas92495/SmartBlocks/issues/42) into your notes, and a [decision making](https://github.com/dvargas92495/SmartBlocks/issues/88) flow walking you through the benefits, risks, and costs of all your options.
 
-The UX of both Smartblocks and Roam is still pretty rough. But they're pointing towards something promising. They're also not alone in enabling users to write their own programmable notes. There are a wide range of user-created plug-ins for smiliar platforms like [Obsidian](https://obsidian.md/plugins) and [Logseq](https://logseqweekly.com/plugins/) that enable some of these same workflows.
+The UX of both Smartblocks and Roam is still pretty rough. But they're pointing towards something promising. They're also not alone in enabling users to write their own programmable notes. There are a wide range of user-created plug-ins for similar platforms like [Obsidian](https://obsidian.md/plugins) and [Logseq](https://logseqweekly.com/plugins/) that enable some of these same workflows.
 
 [Coda](https://coda.io/) is another app that allows users to build fairly complex programmatic systems within documents. You can create buttons that trigger actions and write automation scripts with conditional logic.
 
@@ -126,7 +126,7 @@ This is [end-user programming](https://www.inkandswitch.com/end-user-programming
 
 #### But what about AI???
 
-It is impossible to propose agentive computational systems that are designed to help us think better without bringing up **THE AI**. Let's first point out the term "AI" is a nebulous and finicky cultural narrative that is used in all sorts of ways depending on the political agenda of the speaker.
+It is impossible to propose agentive computational systems designed to help us think better without bringing up **THE AI**. Let's first point out the term "AI" is a nebulous and finicky cultural narrative. People use it in all sorts of ways depending on the political agenda of the speaker.
 
 In this context, I'm using _AI_ to refer to systems that use natural language processing, neural networks, and machine learning to respond to people in seemingly 'intelligent' ways. These will play an enourmous role in the future of programmable notes.
 
@@ -143,7 +143,7 @@ The most impressive and promising I've seen is [Elicit](https://elicit.org/), a 
 
 Finding relevant research papers is critical for academics and researchers, but isn't a large part of everyone's writing and sense-making process. <Footnote idName={3}>Although tools like Elicit will hopefully play a role in making academic research less intimidating and more accessible to everyday knowledge workers. You don't need a degree to do a quick literative review when you're trying to solve a well-defined problem.</Footnote>
 
-Elicit has an alternative suite of tools that I find much more intruiging for our use case. Using the same NLP technology you can run requests like:
+Elicit has an alternative suite of tools that I find much more intriguing for our use case. Using the same NLP technology you can run requests like:
 
 - Clarify a concept
 - Suggest similar search terms
@@ -170,3 +170,16 @@ These simple linguistic transformations and generative prompts don't require a h
 To address the slippery-slope argument, I think it's pointless to worry about these systems doing too much of our thinking for us. Rephrasing a sentence is a far cry from writing an informed and insightful social criticism essay.
 
 They certainly might prompt us to think in novel and unfamiliar ways though. [Augmenting human cognition](https://www.dougengelbart.org/content/view/138/) is still the end goal here. Let's hope we see more of it.
+
+<References>
+  <ReferencesLink
+    title="True Algorithms of Thought Have Arrived"
+    href="https://www.cortexfutura.com/algorithms-of-thought-have-arrived/"
+    author="Cortex Futura"
+  />
+  <ReferencesLink
+    title="Spaced repetition systems to program attention"
+    href="https://notes.andymatuschak.org/Spaced_repetition_systems_can_be_used_to_program_attention"
+    author="Andy Matuschak"
+  />
+</References>
