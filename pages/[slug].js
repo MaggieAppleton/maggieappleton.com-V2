@@ -243,12 +243,9 @@ export const components = {
   BlockAges: dynamic(() => import("../components/unique/blocks/BlockAges"), {
     ssr: false,
   }),
-  BlockEditorList: dynamic(
-    () => import("../components/unique/blocks/BlockEditorList"),
-    {
-      ssr: false,
-    }
-  ),
+  BlockLogos: dynamic(() => import("../components/unique/blocks/BlockLogos"), {
+    ssr: false,
+  }),
   TodoApp: dynamic(
     () => import("../components/unique/direct-manipulation/TodoApp"),
     {
