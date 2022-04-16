@@ -90,20 +90,15 @@ export default function Index({
               marginTop: "var(--space-m)",
             }}
           >
-            <b>Maggie </b>
-            makes visual essays about programming, design, and anthropology.
+            <b>Harvey </b>
+            writes posts about ups and downs, failures and mistakes.
           </Title1>
           <SmallTitle2
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Designer, anthropologist, and mediocre developer
-            <br />
-            Currently leading design at{" "}
-            <UnderlineHoverLink href="https://hash.ai">
-              <b>HASH</b>
-            </UnderlineHoverLink>{" "}
+            Currently Law School Student
           </SmallTitle2>
         </header>
         <Spacer size="large" />
@@ -196,16 +191,16 @@ export default function Index({
             ))}
           </section>
           <section style={{ gridArea: "patterns" }}>
-            <Link href="/patterns">
-              <a href="/patterns">
+            <Link href="/diaries">
+              <a href="/diaries">
                 <SectionHeader>
-                  Patterns
+                  Diaries
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
               </a>
             </Link>
             <Subheader>
-              Design patterns gathered from my own observations and research.
+              My Diaries
             </Subheader>
             <div style={{ marginLeft: "-1.4rem" }}>
               {patterns.map((pattern) => (
