@@ -47,6 +47,10 @@ class MyDocument extends Document {
             title="Main RSS Feed"
           />
           <meta name="theme-color" content="#960462" />
+          <meta
+            name="google-site-verification"
+            content="DQjzoQ_jeforeKNzt5jAvs0u0_gxGJKYoaYfpGdXt2A"
+          />
         </Head>
         <body>
           <Main />
