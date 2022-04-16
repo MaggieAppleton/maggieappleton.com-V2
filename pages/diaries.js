@@ -12,13 +12,12 @@ import TitleWithCount from "../components/TitleWithCount";
 export default function Diaries({ diaries }) {
   return (
     <>
-      <Header title="Notes by Maggie Appleton" />
+      <Header title="Diaries by Harvey Qiu" />
       <Layout>
         <header style={{ marginBottom: "var(--space-xl)" }}>
-          <TitleWithCount posts={diaries}>Notes</TitleWithCount>
+          <TitleWithCount posts={diaries}>Diaries</TitleWithCount>
           <Title2>
-            Loose, unopinionated notes on things I don’t entirely understand
-            yet.
+            Harvey's Personal Summary
           </Title2>
         </header>
         <NotesGrid>
@@ -29,6 +28,7 @@ export default function Diaries({ diaries }) {
               title={note.data.title}
               growthStage={note.data.growthStage}
               date={note.data.updated}
+              key={note.slug}
             />
           ))}
         </NotesGrid>
