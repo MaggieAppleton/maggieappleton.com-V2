@@ -35,6 +35,12 @@ const noteFilePaths = fs
   .readdirSync(NOTES_PATH)
   .filter((path) => /\.mdx?$/.test(path));
 
+const DIARIES_PATH = path.join(process.cwd(), "posts", "diaries");
+
+const diaryFilePaths = fs
+  .readdirSync(DIARIES_PATH)
+  .filter((path) => /\.mdx?$/.test(path));
+
 const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
 
 const patternFilePaths = fs
@@ -52,8 +58,10 @@ module.exports = {
   noteFilePaths,
   projectFilePaths,
   patternFilePaths,
+  diaryFilePaths,
   PATTERNS_PATH,
   ESSAYS_PATH,
   NOTES_PATH,
   PROJECTS_PATH,
+  DIARIES_PATH,
 };
