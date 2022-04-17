@@ -17,13 +17,13 @@ export default function ProjectCard({ slug, cover, title, date, topics }) {
       <a>
         <StyledProjectCard>
           <div style={{ maxWidth: "450", maxHeight: "338" }}>
-            <Image
+            {cover &&  <Image
               src={cover}
               alt={title}
               width={300}
               height={225}
               layout="responsive"
-            />
+            />}
           </div>
           <Metadata>
             <h3>{title}</h3>
