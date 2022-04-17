@@ -14,9 +14,9 @@ export default function Qzone({ source }) {
   return (
     <Layout>
       <HeaderContainer>
-        <Title1>My Qzone Memory</Title1>
+        <Title1>我的QQ空间</Title1>
         <Title2>
-            过去那么多年我在QQ空间发了哪些段子？
+            高中3年我在QQ空间发了哪些内容（精选）
         </Title2>
       </HeaderContainer>
       <MainSection>
