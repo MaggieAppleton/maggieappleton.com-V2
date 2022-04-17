@@ -59,10 +59,6 @@ export default function NoteTemplate({
       <ProseWrapper>
         {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
       </ProseWrapper>
-      <TwitterReply
-        url={`https://maggieappleton.com/${slug}/`}
-        title={frontMatter.title}
-      />
     </>
   );
 }

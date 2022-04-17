@@ -55,10 +55,6 @@ export default function ProjectTemplate({
           <MDXRemote {...source} components={components} />
         </ProseWrapper>
       </StyledMain>
-      <TwitterReply
-        url={`https://maggieappleton.com/${slug}/`}
-        title={frontMatter.title}
-      />
     </>
   );
 }

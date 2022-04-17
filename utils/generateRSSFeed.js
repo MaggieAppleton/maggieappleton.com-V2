@@ -9,18 +9,18 @@ import { MDXRemote } from "next-mdx-remote";
 // https://dev.to/sreetamdas/rss-feed-in-a-next-js-site-52d0
 
 export default function generateRSSFeed(posts) {
-    const baseUrl = "https://maggieappleton.com";
+    const baseUrl = "https://garden.harveyqiu.xyz";
     const author = {
         name: "Harvey Qiu",
-        email: "hello@maggieappleton.com",
-        link: "https://twitter.com/mappletons",
+        email: "harveyqiu1110@outlook.com",
+        link: "https://github.com/harveyqiu",
     };
 
     // Construct a new Feed object
     const feed = new Feed({
         title: "Harvey Qiu",
         description:
-            "A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.",
+            "A digital garden",
         id: baseUrl,
         link: baseUrl,
         language: "en",
