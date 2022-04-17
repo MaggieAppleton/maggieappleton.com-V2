@@ -73,7 +73,7 @@ export default function Index({
   return (
     // <NextSeo>
     <>
-      <Header title="Maggie Appleton" />
+      <Header title="Harvey Qiu" />
       <Layout>
         <header
           style={{

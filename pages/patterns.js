@@ -12,7 +12,7 @@ import TitleWithCount from "../components/TitleWithCount";
 export default function Patterns({ patterns }) {
   return (
     <>
-      <Header title="Patterns by Maggie Appleton" />
+      <Header title="Patterns by Harvey Qiu" />
       <Layout>
         <header style={{ marginBottom: "var(--space-xl)" }}>
           <TitleWithCount posts={patterns}>Pattern Catalogue</TitleWithCount>

@@ -1,300 +1,31 @@
 import Layout from "../components/Layout";
 import { Title1, Title2, SmallCaps } from "../components/Typography";
-import Link from "next/link";
-import Image from "next/image";
 import Header from "../components/Header";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
-import { Spacer } from "../components/Spacer";
-import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
-import LeafIcon from "../components/icons/LeafIcon";
 import { RelativeDate } from "../components/templates/Dates";
 
 export default function About() {
   return (
     <>
-      <Header title="About Maggie Appleton" />
+      <Header title="About Harvey Qiu" />
       <Layout>
         <HeaderSection>
           <SmallCaps>About</SmallCaps>
-          <Title1>Maggie Appleton</Title1>
-          <Title2>Designer, anthropologist, and mediocre developer.</Title2>
+          <Title1>Harvey Qiu</Title1>
+          <Title2>Currently Law School Student, Tech hobbist</Title2>
         </HeaderSection>
         <StyledMain>
           <section className="intro">
             <div>
               <SmallCaps>A Little Context</SmallCaps>
-              <p>
-                I sit at the intersection of design, anthropology, and
-                programming. These three are at the core of everything I make.
-                Combining them into a coherent career is a weird and ongoing
-                challenge.
-              </p>
-              <p>
-                Titles and disciplines are fickle and fleeting. But my work fits
-                under the umbrellas of UX design, interface design, HCI, DX
-                (developer experience), and interaction design. With some
-                cultural analysis, writing, and visual illustration sprinkled on
-                top.
-              </p>
-              <p>
-                I currently lead design at
-                <b style={{ margin: "0 0.6rem 0 0.3rem" }}>
-                  <UnderlineHoverLink href="https://hash.ai">
-                    HASH
-                  </UnderlineHoverLink>
-                </b>
-                where we're developing open-source, interoperable systems to
-                improve the way we structure knowledge on the web.
-              </p>
-              <p>
-                I'm not currently avaliable for any contract work, side
-                projects, or full-time roles.
-              </p>
-              <p>
-                Before HASH I spent five years at the developer education
-                company{" "}
-                <b style={{ margin: "0 0.5rem 0 0" }}>
-                  <UnderlineHoverLink href="https://egghead.io">
-                    egghead
-                  </UnderlineHoverLink>
-                </b>
-                . First as the art director and lead illustrator where I spent
-                my time figuring out how to visualise invisible programming
-                concepts through metaphors and cultural symbols. Then as the UX
-                designer exploring pragmatic ways to improve the interface for
-                learners.
-              </p>
-              <p>
-                On the side I create{" "}
-                <b style={{ margin: "0 0.4rem 0 0" }}>
-                  <UnderlineHoverLink href="/essays">
-                    illustrated essays
-                  </UnderlineHoverLink>
-                </b>{" "}
-                and visual explanations about programming and culture. I'm an
-                advocate of{" "}
-                <b style={{ margin: "0 0.4rem 0 0" }}>
-                  <UnderlineHoverLink href="/garden-history">
-                    digital gardening
-                  </UnderlineHoverLink>
-                </b>
-                ,{" "}
-                <b style={{ margin: "0 0.4rem 0 0" }}>
-                  <UnderlineHoverLink href="https://en.wikipedia.org/wiki/End-user_development">
-                    end-user programming
-                  </UnderlineHoverLink>
-                </b>
-                , and expanding our use of{" "}
-                <b style={{ margin: "0 0.4rem 0 0" }}>
-                  <UnderlineHoverLink href="https://en.wikipedia.org/wiki/Embodied_cognition">
-                    embodied cognition
-                  </UnderlineHoverLink>
-                </b>{" "}
-                and{" "}
-                <b style={{ margin: "0 0.4rem 0 0" }}>
-                  <UnderlineHoverLink href="https://en.wikipedia.org/wiki/Conceptual_metaphor">
-                    conceptual metaphors
-                  </UnderlineHoverLink>
-                </b>{" "}
-                in digital interfaces.
-              </p>
+              <p>Currently Law School Student</p>
+
               <SmallCaps>A Little History</SmallCaps>
-              <p>
-                I'm originally from London but grew up in international schools
-                in Hong Kong, Vietnam, Thailand, and Singapore.
-              </p>
-              <p>
-                {" "}
-                I earned my undergraduate degree in{" "}
-                <b style={{ margin: "0 0.4rem 0 0" }}>
-                  <UnderlineHoverLink href="https://en.wikipedia.org/wiki/Cultural_anthropology">
-                    cultural anthropology
-                  </UnderlineHoverLink>
-                </b>{" "}
-                at a small, hippie, liberal arts college in the United States.
-                While I adore anthropology, it's not terribly employable (unless
-                you want to be an academic or a military advisor) and I promptly
-                switched into freelance design and illustration to pay rent. I
-                started developing my visual design skills at age 14 when I
-                first bootlegged a copy of Photoshop to make my own icon sets,
-                but never realised you could get paid for that.
-              </p>
-              <p>
-                In my early twenties I country-hopped while working through the
-                early, ugly, awkward phase of my design sensibilities. I worked
-                with web developers in Vietnam, trained with feature film
-                illustrators in Los Angeles, and learned typography and brand
-                design at creative agencies in Prague. I made a lot of hideous
-                stuff, but figured out what I liked along the way.
-              </p>
-              <p>
-                I eventually returned to London to become a more settled,
-                "normal" adult, and have come to love the dull stability of
-                home.
-              </p>
+              <p>History</p>
             </div>
-            <Image
-              src="/images/profile_bw_800.png"
-              alt="a photo of maggie appleton"
-              width={800 / 1.5}
-              height={1141 / 1.5}
-              layout="responsive"
-              objectFit="contain"
-            />
           </section>
           <Divider />
-          <section className="talks">
-            <Title2>Talks</Title2>
-            <p>
-              I occassionally give talks. Some are about why we should use more
-              visual explanations and intentional metaphors in programming.
-              Others touch on cultural anthropology topics and the narratives we
-              tell ourselves in the world of software.
-            </p>
-            <GridSection>
-              {[
-                {
-                  title: "A Picture Worth a Thousand Programmes",
-                  slug: "/programming-pictures",
-                  conferences: "React Advanced London",
-
-                  date: "October 2021",
-                },
-                {
-                  title:
-                    "Tools for Thought as Cultural Systems, Not Computational Objects",
-                  slug: "/tools-for-thought",
-                  conferences: "Augmented Minds Unconference",
-
-                  date: "July 2021",
-                },
-                {
-                  title: "The Cultural Anthropology of React",
-                  slug: "/anthropology-react",
-                  conferences: "React Rally",
-
-                  date: "August 2020",
-                },
-                {
-                  title: "How to Become a Neo-Cartesian Cyborg",
-                  slug: "neocyborgs",
-                  conferences: "BASB London",
-                  date: "May 2020",
-                },
-                {
-                  title: "Evergreen Notes and Digital Gardens",
-                  slug: "https://www.youtube.com/watch?v=RXXXHN516qc",
-                  conferences: "Roam Research Tours",
-
-                  date: "May 2020",
-                },
-                {
-                  title:
-                    "Drawing the Invisible: React Explained in Five Visual Metaphors",
-                  slug: "/reactpotato",
-                  conferences: "Women of React",
-
-                  date: "May 2020",
-                },
-              ].map(({ title, conferences, date, slug }, i) => (
-                <TalkCard
-                  key={i}
-                  title={title}
-                  host={conferences}
-                  date={date}
-                  url={slug}
-                />
-              ))}
-            </GridSection>
-            <div className="images">
-              <Image
-                src="/images/talks_1.jpg"
-                alt="a photo of maggie speaking on stage"
-                width={1600 / 3}
-                height={1104 / 3}
-                layout="responsive"
-              />
-              <Image
-                src="/images/talks_2.jpg"
-                alt="a photo of maggie answering questions after a talk"
-                width={1600 / 3}
-                height={1104 / 3}
-                layout="responsive"
-              />
-            </div>
-          </section>
-          <Spacer />
-          <section className="podcasts">
-            <Title2>Podcasts</Title2>
-            <p>
-              A handful of kind and interesting people have been gracious enough
-              to let me ramble about programming, metaphors, and/or programming
-              metaphors on their podcasts.
-            </p>
-            <GridSection>
-              {[
-                {
-                  podcastName: "Frontend Heroes",
-                  episodeName: "Fortress of Solitude",
-                  date: "August 10, 2021",
-                  url: "https://frontendheroes.transistor.fm/episodes/fortress-of-solitude-w-maggie-appleton",
-                },
-                {
-                  podcastName: "Metamuse",
-                  episodeName: "Visual Programming",
-                  date: "August 5, 2021",
-                  url: "https://museapp.com/podcast/37-visual-programming/",
-                },
-                {
-                  podcastName: "The Swyx Mixtape",
-                  episodeName: "Growing Digital Gardens and Tending the Web",
-                  date: "February 13 2021",
-                  url: "https://podcasts.apple.com/us/podcast/weekend-drop-digital-gardening-w-maggie-appleton/id1549059398?i=1000508923478",
-                },
-                {
-                  podcastName: "RoamFM",
-                  episodeName:
-                    "Digital Anthropology, Digital Gardens and Illustrated Notes",
-                  date: "July 25 2020",
-                  url: "https://thatsthenorm.com/maggie-appleton-transcript/",
-                },
-                {
-                  podcastName: "Maintainers Anonymous",
-                  episodeName: "Embodiment Through Metaphors",
-                  date: "May 13 2020",
-                  url: "https://maintainersanonymous.com/metaphor/",
-                },
-                {
-                  podcastName: "egghead.io Podcast",
-                  episodeName:
-                    "Turning Technical Concepts into Approachable Illustrated Metaphors",
-                  date: "May 3, 2019",
-                  url: "https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton",
-                },
-                {
-                  podcastName: "Maintainers Anonymous",
-                  episodeName: "Open Source as a Gift Economy",
-                  date: "March 5 2020",
-                  url: "https://maintainersanonymous.com/gift/",
-                },
-                {
-                  podcastName: "React Podcast",
-                  episodeName: "The Power of Mental Models",
-                  date: "March 3, 2020",
-                  url: "https://reactpodcast.simplecast.com/episodes/86",
-                },
-              ].map(({ podcastName, episodeName, date, url }, i) => (
-                <TalkCard
-                  key={i}
-                  title={podcastName}
-                  host={episodeName}
-                  date={date}
-                  url={url}
-                />
-              ))}
-            </GridSection>
-          </section>
         </StyledMain>
       </Layout>
     </>

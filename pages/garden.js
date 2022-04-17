@@ -18,7 +18,7 @@ import { GardenFiltersAndHits } from "../components/search/GardenFiltersAndHits"
 export default function Garden({ allPosts }) {
   return (
     <>
-      <Header title="The Garden of Maggie Appleton" />
+      <Header title="The Garden of Harvey Qiu" />
       <Layout>
         <header style={{ marginBottom: "var(--space-xl)" }}>
           <TitleWithCount posts={allPosts}>The Garden</TitleWithCount>

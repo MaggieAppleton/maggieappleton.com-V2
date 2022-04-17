@@ -5,7 +5,7 @@ import Header from "../components/Header";
 export default function Illustration() {
     return (
         <>
-            <Header title="Illustrations by Maggie Appleton" />
+            <Header title="Illustrations by Harvey Qiu" />
             <Layout>
                 <Title1>Illustrations</Title1>
                 <Title2>Welcome</Title2>

@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 export default function Topics() {
     return (
         <>
-            <Header title="Topics by Maggie Appleton" />
+            <Header title="Topics by Harvey Qiu" />
             <Layout>
                 <header>
                     <Title1>Topics</Title1>

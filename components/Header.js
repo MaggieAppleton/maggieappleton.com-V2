@@ -15,23 +15,19 @@ export default function Header({ title, description, keywords, ogImage }) {
       title={title}
       description={description}
       openGraph={{
-        url: "https://maggieappleton.com",
+        url: "https://garden.harveyqiu.xyz",
         title: title,
         description: description,
         images: [
           {
-            url: ogImage ? ogImage : "https://maggieappleton.com/og.png",
+            url: ogImage ? ogImage : "https://garden.harveyqiu.xyz/og.png",
             width: 1200,
             height: 630,
             alt: `${title}`,
             type: "image/png",
           },
         ],
-        site_name: "Maggie Appleton",
-      }}
-      twitter={{
-        handle: "@mappletons",
-        cardType: "summary_large_image",
+        site_name: "HarveyQiu's Lab",
       }}
     />
   );

@@ -21,13 +21,13 @@ function MyApp({ Component, pageProps, router }) {
       <GlobalStyle />
       <container>
         <DefaultSeo
-          title="Maggie Appleton's digital garden"
+          title="Harvey Qiu's digital garden"
           description="Maggie's digital garden filled with visual essays on programming, design, and anthropology"
           openGraph={{
             type: "website",
             locale: "en_GB",
             url: "https://www.maggieappleton.com/",
-            site_name: "Maggie Appleton",
+            site_name: "Harvey Qiu",
           }}
           twitter={{
             handle: "@mappletons",

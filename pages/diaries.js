@@ -17,7 +17,7 @@ export default function Diaries({ diaries }) {
         <header style={{ marginBottom: "var(--space-xl)" }}>
           <TitleWithCount posts={diaries}>Diaries</TitleWithCount>
           <Title2>
-            Harvey's Personal Summary
+            Harvey's Personal Life Summary
           </Title2>
         </header>
         <NotesGrid>

@@ -10,22 +10,11 @@ import TitleWithCount from "../components/TitleWithCount";
 export default function Library() {
     return (
         <>
-            <Header title="Library of Maggie Appleton" />
+            <Header title="Library of Harvey Qiu" />
             <Layout>
                 <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={bookData}>
                         Library{" "}
-                        <div
-                            style={{
-                                color: "var(--color-gray-300)",
-                                display: "inline-block",
-                            }}
-                        >
-                            |
-                        </div>
-                        <Link href="/antilibrary">
-                            <StyledLink> Antilibrary</StyledLink>
-                        </Link>
                     </TitleWithCount>
                     <Title2>Books I’ve read.</Title2>
                 </header>

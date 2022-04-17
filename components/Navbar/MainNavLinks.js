@@ -39,14 +39,8 @@ function GardenPopoverLinks() {
           <Link href="/notes">
             <DropdownLink href="/notes">Notes</DropdownLink>
           </Link>
-          <Link href="/patterns">
-            <DropdownLink href="/library">Patterns</DropdownLink>
-          </Link>
           <Link href="/library">
             <DropdownLink href="/library">Library</DropdownLink>
-          </Link>
-          <Link href="/antilibrary">
-            <DropdownLink href="/antilibrary">Antilibrary</DropdownLink>
           </Link>
         </Dropdown>
       </Popover.Panel>

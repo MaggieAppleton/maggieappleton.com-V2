@@ -12,7 +12,7 @@ import Alert from "../components/mdx/Alert";
 export default function Colophon() {
   return (
     <>
-      <Header title="Colophon of Maggie Appleton" />
+      <Header title="Colophon of Harvey Qiu" />
       <Layout>
         <HeaderContainer>
           <Title1>Colophon</Title1>
@@ -79,7 +79,7 @@ export default function Colophon() {
               </TooltipLink>
               . My CMS is just a bunch of files and folders. Everything is open
               souce and published on{" "}
-              <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">
+              <TooltipLink href="https://github.com/harveyqiu/digital-garden">
                 Github
               </TooltipLink>
               . The whole thing is frankly overengineered for a personal

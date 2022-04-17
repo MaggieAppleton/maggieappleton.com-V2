@@ -11,14 +11,14 @@ import { MDXRemote } from "next-mdx-remote";
 export default function generateRSSFeed(posts) {
     const baseUrl = "https://maggieappleton.com";
     const author = {
-        name: "Maggie Appleton",
+        name: "Harvey Qiu",
         email: "hello@maggieappleton.com",
         link: "https://twitter.com/mappletons",
     };
 
     // Construct a new Feed object
     const feed = new Feed({
-        title: "Maggie Appleton",
+        title: "Harvey Qiu",
         description:
             "A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.",
         id: baseUrl,

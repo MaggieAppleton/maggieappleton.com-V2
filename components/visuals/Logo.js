@@ -48,7 +48,7 @@ export default function Logo() {
     <motion.svg
       variants={parentVariant}
       whileHover="animate"
-      alt="Logo for Maggie Appleton"
+      alt="Logo for Harvey Qiu"
       width="84"
       height="26"
       viewBox="0 0 84 26"

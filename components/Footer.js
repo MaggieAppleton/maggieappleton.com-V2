@@ -4,10 +4,7 @@ import { breakpoints } from "../utils/breakpoints";
 import UnderlineHoverLink from "./links/UnderlineHoverLink";
 import { RssIcon } from "@heroicons/react/solid";
 import {
-  GithubIcon,
-  TwitterIcon,
-  LinkedInIcon,
-  DribbbleIcon,
+  GithubIcon
 } from "./icons/SocialMediaIcons";
 
 export default function Footer() {
@@ -23,17 +20,8 @@ export default function Footer() {
             </button>
           </Link>
           <SocialMediaIcons>
-            <a rel="me" href="https://github.com/MaggieAppleton">
+            <a rel="me" href="https://github.com/harveyqiu">
               <GithubIcon />
-            </a>
-            <a rel="me" href="https://uk.linkedin.com/in/maggieappleton">
-              <LinkedInIcon />
-            </a>
-            <a rel="me" href="https://dribbble.com/mappleton">
-              <DribbbleIcon />
-            </a>
-            <a rel="me" href="https://twitter.com/Mappletons">
-              <TwitterIcon />
             </a>
           </SocialMediaIcons>
         </RSSFeed>

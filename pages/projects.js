@@ -12,7 +12,7 @@ import TitleWithCount from "../components/TitleWithCount";
 export default function Projects({ projects }) {
     return (
         <>
-            <Header title="Projects by Maggie Appleton" />
+            <Header title="Projects by Harvey Qiu" />
             <Layout>
                 <header style={{ marginBottom: "var(--space-2xl)" }}>
                     <TitleWithCount posts={projects}>Projects</TitleWithCount>
