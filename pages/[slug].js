@@ -17,12 +17,6 @@ import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
 import DiaryTemplate from "../templates/DiaryTemplate";
 import {
-  StaticCSSPosition,
-  RelativeCSSPosition,
-  AbsoluteCSSPosition,
-  FixedCSSPosition,
-} from "../components/unique/css-position/CSSPosition";
-import {
   Title1,
   Title2,
   Title3,
@@ -147,132 +141,9 @@ export const components = {
   NowSection: dynamic(() => import("../components/mdx/NowSection"), {
     ssr: false,
   }),
-
-  // Unique components – used in specific essays or notes
-  StaticCSSPosition: StaticCSSPosition,
-  RelativeCSSPosition: RelativeCSSPosition,
-  AbsoluteCSSPosition: AbsoluteCSSPosition,
-  FixedCSSPosition: FixedCSSPosition,
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),
-  GsapScroller: dynamic(
-    () => import("../components/unique/gsap-basics/GsapScroller"),
-    {
-      ssr: false,
-    }
-  ),
-  TweenRedBigBox: dynamic(
-    () => import("../components/unique/gsap-basics/TweenRedBigBox"),
-    {
-      ssr: false,
-    }
-  ),
-  TweenSpinningBox: dynamic(
-    () => import("../components/unique/gsap-basics/TweenSpinningBox"),
-    {
-      ssr: false,
-    }
-  ),
-  TweenReverseSpinningBox: dynamic(
-    () => import("../components/unique/gsap-basics/TweenReverseSpinningBox"),
-    {
-      ssr: false,
-    }
-  ),
-  TweenBlueRedBox: dynamic(
-    () => import("../components/unique/gsap-basics/TweenBlueRedBox"),
-    {
-      ssr: false,
-    }
-  ),
-  MultipartIntro: dynamic(() => import("../components/unique/MultipartIntro"), {
-    ssr: false,
-  }),
-  InvisiblesFeature: dynamic(
-    () => import("../components/unique/InvisiblesFeature"),
-    {
-      ssr: false,
-    }
-  ),
-  HackyFormatting: dynamic(
-    () => import("../components/unique/HackyFormatting"),
-    {
-      ssr: false,
-    }
-  ),
-  MediumMaterialsMeat: dynamic(
-    () => import("../components/unique/MediumMaterialsMeat"),
-    {
-      ssr: false,
-    }
-  ),
-  Tools: dynamic(() => import("../components/unique/apps/Tools"), {
-    ssr: false,
-  }),
-  Hardware: dynamic(() => import("../components/unique/apps/Hardware"), {
-    ssr: false,
-  }),
-  TextvBlocks: dynamic(
-    () => import("../components/unique/blocks/TextvBlocks"),
-    {
-      ssr: false,
-    }
-  ),
-  DemoBlock1: dynamic(() => import("../components/unique/blocks/DemoBlock1"), {
-    ssr: false,
-  }),
-  DemoBlock2: dynamic(() => import("../components/unique/blocks/DemoBlock2"), {
-    ssr: false,
-  }),
-  DemoBlock3: dynamic(() => import("../components/unique/blocks/DemoBlock3"), {
-    ssr: false,
-  }),
-  DemoBlock4: dynamic(() => import("../components/unique/blocks/DemoBlock4"), {
-    ssr: false,
-  }),
-  LinearChars: dynamic(
-    () => import("../components/unique/blocks/LinearChars"),
-    {
-      ssr: false,
-    }
-  ),
-  Blocktimeline: dynamic(
-    () => import("../components/unique/blocks/Blocktimeline"),
-    {
-      ssr: false,
-    }
-  ),
-  BlockAges: dynamic(() => import("../components/unique/blocks/BlockAges"), {
-    ssr: false,
-  }),
-  BlockLogos: dynamic(() => import("../components/unique/blocks/BlockLogos"), {
-    ssr: false,
-  }),
-  TodoApp: dynamic(
-    () => import("../components/unique/direct-manipulation/TodoApp"),
-    {
-      ssr: false,
-    }
-  ),
-  DetatchedTodoApp: dynamic(
-    () => import("../components/unique/direct-manipulation/DetatchedTodoApp"),
-    {
-      ssr: false,
-    }
-  ),
-  NoteAction: dynamic(
-    () => import("../components/unique/programmatic-notes/NoteAction"),
-    {
-      ssr: false,
-    }
-  ),
-  NoteTrigger: dynamic(
-    () => import("../components/unique/programmatic-notes/NoteTrigger"),
-    {
-      ssr: false,
-    }
-  ),
 };
 
 export default function PostPage({
