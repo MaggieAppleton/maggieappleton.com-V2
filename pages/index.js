@@ -22,6 +22,8 @@ import {
   essayFilePaths,
   ESSAYS_PATH,
   noteFilePaths,
+  diaryFilePaths,
+  DIARIES_PATH,
   NOTES_PATH,
   projectFilePaths,
   PROJECTS_PATH,
@@ -149,6 +151,7 @@ export default function Index({
             >
               {essays.map((essay, i) => (
                 <EssayCard
+                  key={essay.slug}
                   id={essay.slug}
                   variants={itemAnimation}
                   slug={essay.slug}
@@ -420,6 +423,19 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
+  let diaries = diaryFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(DIARIES_PATH, filePath));
+    const { content, data } = matter(source);
+    const slug = filePath.replace(/\.mdx?$/, "");
+
+    return {
+      content,
+      data,
+      slug,
+      filePath,
+    };
+  })
+
   let projects = projectFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
     const { content, data } = matter(source);
@@ -433,6 +449,7 @@ export function getStaticProps() {
     };
   });
 
+
   // Filter projects for featured property
   // const filteredProjects = projects
   //     .filter((project) => project.data.featured === true)
@@ -442,7 +459,7 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
-  const allPosts = [...essays, ...notes, ...projects];
+  const allPosts = [...essays, ...notes, ...projects, ...diaries];
 
   // Generate RSS Feed
   generateRSSFeed(allPosts);
