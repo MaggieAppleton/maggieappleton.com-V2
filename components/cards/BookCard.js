@@ -19,7 +19,7 @@ export default function BookCard({
     >
       <StyledBookCard small={small}>
         <ExternalHoverLink small={small}>
-          View on Google Books{" "}
+          View{" "}
           <ExternalLinkIcon
             width="18"
             height="18"
