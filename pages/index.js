@@ -12,7 +12,6 @@ import { Title1, Title2, SmallTitle2 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
-import PatternCard from "../components/cards/PatternCard";
 import { bookData } from "../posts/data/books";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
@@ -24,8 +23,6 @@ import {
   ESSAYS_PATH,
   noteFilePaths,
   NOTES_PATH,
-  patternFilePaths,
-  PATTERNS_PATH,
   projectFilePaths,
   PROJECTS_PATH,
 } from "../utils/mdxUtils";
@@ -35,7 +32,6 @@ export default function Index({
   sortedEssays: essays,
   sortedNotes: notes,
   sortedProjects: projects,
-  sortedPatterns: patterns,
 }) {
   // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
 
@@ -190,7 +186,7 @@ export default function Index({
               </Link>
             ))}
           </section>
-          <section style={{ gridArea: "patterns" }}>
+          <section style={{ gridArea: "diaries" }}>
             <Link href="/diaries">
               <a href="/diaries">
                 <SectionHeader>
@@ -202,17 +198,6 @@ export default function Index({
             <Subheader>
               My Diaries
             </Subheader>
-            <div style={{ marginLeft: "-1.4rem" }}>
-              {patterns.map((pattern) => (
-                <PatternCard
-                  key={pattern.slug}
-                  slug={pattern.slug}
-                  title={pattern.data.title}
-                  growthStage={pattern.data.growthStage}
-                  date={pattern.data.updated}
-                />
-              ))}
-            </div>
           </section>
           <section style={{ gridArea: "library" }}>
             <Link href="/library">
@@ -345,7 +330,7 @@ const GardenSection = styled(motion.section)`
   grid-template-rows: auto;
   grid-template-areas:
     "essays essays notes"
-    "patterns library library";
+    "diaries library library";
   @media ${breakpoints.mediaMD} {
     grid-gap: var(--space-s);
   }
@@ -353,7 +338,7 @@ const GardenSection = styled(motion.section)`
     grid-template-columns: 1fr;
     grid-gap: var(--space-l);
     grid-template-rows: auto;
-    grid-template-areas: "essays" "notes" "patterns" "library";
+    grid-template-areas: "essays" "notes" "diaries" "library";
   }
 `;
 
@@ -448,24 +433,6 @@ export function getStaticProps() {
     };
   });
 
-  // Get all pattern posts
-  let patterns = patternFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
-    const { content, data } = matter(source);
-    const slug = filePath.replace(/\.mdx?$/, "");
-
-    return {
-      content,
-      data,
-      slug,
-      filePath,
-    };
-  });
-  // Sort patterns by date
-  const sortedPatterns = patterns.sort((a, b) => {
-    return new Date(b.data.updated) - new Date(a.data.updated);
-  });
-
   // Filter projects for featured property
   // const filteredProjects = projects
   //     .filter((project) => project.data.featured === true)
@@ -475,12 +442,12 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
-  const allPosts = [...essays, ...notes, ...projects, ...patterns];
+  const allPosts = [...essays, ...notes, ...projects];
 
   // Generate RSS Feed
   generateRSSFeed(allPosts);
 
   return {
-    props: { sortedEssays, sortedNotes, sortedProjects, sortedPatterns },
+    props: { sortedEssays, sortedNotes, sortedProjects},
   };
 }

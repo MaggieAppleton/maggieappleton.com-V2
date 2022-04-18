@@ -26,7 +26,7 @@ export default function TopicPage({ topic, topics, postData }) {
       <Layout>
         <header style={{ marginBottom: "var(--space-2xl)" }}>
           <TitleWithCount posts={postData}>{topicName}</TitleWithCount>
-          <Title2>Essays, notes, and patterns related to {topicName}</Title2>
+          <Title2>Essays, notes related to {topicName}</Title2>
         </header>
         <DynamicPostsGrid postsToShow={postData} />
       </Layout>

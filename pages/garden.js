@@ -9,8 +9,6 @@ import {
   ESSAYS_PATH,
   noteFilePaths,
   NOTES_PATH,
-  patternFilePaths,
-  PATTERNS_PATH,
 } from "../utils/mdxUtils";
 import TitleWithCount from "../components/TitleWithCount";
 import { GardenFiltersAndHits } from "../components/search/GardenFiltersAndHits";
@@ -73,25 +71,6 @@ export function getStaticProps() {
   });
   essays = sortedEssays;
 
-  // Get all pattern posts
-  let patterns = patternFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
-    const { content, data } = matter(source);
-    const slug = filePath.replace(/\.mdx$/, "");
-    const { title, description, type, startDate, updated } = data;
-
-    return {
-      content,
-      title,
-      description,
-      startDate,
-      updated,
-      type,
-      slug,
-      filePath,
-    };
-  });
-
   // Get all note posts
   let notes = noteFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
@@ -127,7 +106,7 @@ export function getStaticProps() {
   });
   notes = sortedNotes;
 
-  const allPosts = essays.concat(notes, patterns);
+  const allPosts = essays.concat(notes);
 
   return { props: { allPosts } };
 }
