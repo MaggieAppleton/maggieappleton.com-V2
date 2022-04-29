@@ -97,28 +97,28 @@ function GsapScroller() {
         <Img
           topImage
           alt="Greensock animation changes DOM nodes"
-          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg"
+          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg"
         />
         <Img
           childImage
           zIndex={2}
           ref={img2}
           alt="Greensock animation changes DOM nodes"
-          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-2.jpg"
+          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-2.jpg"
         />
         <Img
           childImage
           zIndex={3}
           ref={img3}
           alt="Greensock animation changes DOM nodes"
-          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-3.jpg"
+          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-3.jpg"
         />
         <Img
           childImage
           zIndex={4}
           ref={img4}
           alt="Greensock animation changes DOM nodes"
-          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599595798/maggieappleton.com/notes/gsap/GSAP-DOM-4.jpg"
+          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1599595798/maggieappleton.com/notes/gsap/GSAP-DOM-4.jpg"
         />
       </TriggerDiv>
     </Container>
