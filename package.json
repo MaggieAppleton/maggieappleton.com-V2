@@ -2,7 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
+    "dev": "next",
     "dev:watch": "next-remote-watch ./posts",
     "build:backlinks": "node ./scripts/post-links",
     "build": "npm run build:backlinks && npx playwright install && next build && npm run postbuild",
@@ -19,6 +19,7 @@
     "chrome-aws-lambda": "^10.1.0",
     "crypto": "^1.0.1",
     "d3": "^7.1.1",
+    "date-fns": "^2.28.0",
     "dotenv": "^10.0.0",
     "feed": "^4.2.2",
     "framer-motion": "^4.1.17",
