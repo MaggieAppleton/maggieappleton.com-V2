@@ -51,6 +51,14 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="DQjzoQ_jeforeKNzt5jAvs0u0_gxGJKYoaYfpGdXt2A"
           />
+          <link
+            rel="webmention"
+            href="https://webmention.io/maggieappleton.com/webmention"
+          />
+          <link
+            rel="pingback"
+            href="https://webmention.io/maggieappleton.com/xmlrpc"
+          />
         </Head>
         <body>
           <Main />

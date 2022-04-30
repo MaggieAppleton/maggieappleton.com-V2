@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import { parse, formatDistanceToNow, differenceInDays } from "date-fns";
 
 export default function Dates({ startDate, updated }) {
-  const relativeStart = roundDatesToWeek(startDate);
-  const relativeUpdated = roundDatesToWeek(updated);
+  const relativeStartDate = parse(startDate, "yyyy-MM-dd", new Date());
+  const relativeUpdatedDate = parse(updated, "yyyy-MM-dd", new Date());
 
-  if (relativeStart === relativeUpdated || relativeUpdated > 4) {
+  const dateDifference = differenceInDays(
+    relativeUpdatedDate,
+    relativeStartDate
+  );
+
+  if (dateDifference < 3) {
     return (
       <StyledDates>
         <span>
@@ -57,21 +63,10 @@ function roundDatesToWeek(postDate) {
 }
 
 export function RelativeDate({ postDate }) {
-  const date = new Date(postDate);
-  const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
-  const deltaWeeks = deltaDays / 7;
-  const deltaMonths = deltaDays / 30;
-  const deltaYears = deltaDays / 365;
-  const remainderMonths = (deltaDays % 365) / 30;
-  let result;
-  if (deltaDays < 7) {
-    result = `${Math.round(deltaDays)} days ago`;
-  } else if (deltaWeeks < 4) {
-    result = `${Math.round(deltaWeeks)} weeks ago`;
-  } else if (deltaMonths < 18) {
-    result = `${Math.round(deltaMonths)} months ago`;
-  } else {
-    result = `${Math.round(deltaYears)} years ago`;
-  }
-  return result;
+  const date = parse(postDate, "yyyy-MM-dd", new Date());
+  const relativeDate = formatDistanceToNow(date, {
+    includeSeconds: true,
+    addSuffix: true,
+  });
+  return relativeDate;
 }
