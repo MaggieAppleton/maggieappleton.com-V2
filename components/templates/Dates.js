@@ -55,13 +55,6 @@ const StyledDates = styled.div`
   }
 `;
 
-function roundDatesToWeek(postDate) {
-  const date = new Date(postDate);
-  const deltaDays = -(date.getTime() - Date.now()) / (1000 * 3600 * 24);
-  const deltaWeeks = deltaDays / 7;
-  return Math.round(deltaWeeks);
-}
-
 export function RelativeDate({ postDate }) {
   const date = parse(postDate, "yyyy-MM-dd", new Date());
   const relativeDate = formatDistanceToNow(date, {
