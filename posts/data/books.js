@@ -1,5 +1,23 @@
 export const bookData = [
   {
+    title: "Human-Machine Reconfigurations: Plans and Situated Actions",
+    author: "Lucy Suchman",
+    cover: "/images/books/humanmachine.jpeg",
+    link: "https://www.google.co.uk/books/edition/Human_Machine_Reconfigurations/VwKMDV-Gv1MC",
+  },
+  {
+    title: "The Ministry for the Future",
+    author: "Kim Stanley Robinson",
+    cover: "/images/books/ministry.jpeg",
+    link: "https://www.google.co.uk/books/edition/The_Ministry_for_the_Future/KnS0DwAAQBAJ",
+  },
+  {
+    title: "The Utopia of Rules",
+    author: "David Graeber",
+    cover: "/images/books/utopia.jpeg",
+    link: "https://www.google.co.uk/books/edition/The_Utopia_of_Rules/HFtABAAAQBAJ",
+  },
+  {
     title: "Computers as Theatre",
     author: "Brenda Laurel",
     cover: "/images/books/theatre.jpg",
