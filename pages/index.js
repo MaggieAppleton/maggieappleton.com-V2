@@ -252,7 +252,7 @@ export default function Index({
             </div>
           </section>
         </GardenSection>
-        <Spacer />
+        {/* <Spacer />
         <section>
           <Link href="/projects">
             <a href="/projects">
@@ -284,7 +284,7 @@ export default function Index({
               />
             ))}
           </div>
-        </section>
+        </section> */}
       </Layout>
     </>
   );

@@ -106,7 +106,7 @@ const StyledPatternCard = styled(motion.div)`
   display: flex;
   flex-direction: row;
   padding: var(--space-xs);
-  margin: 0 var(--space-xs) var(--space-xs) 0;
+  margin: 0 var(--space-xs) 0 0;
   border-radius: var(--border-radius-base);
   border: 1px solid var(--color-cream);
   transition: all 0.3s ease-in-out;
