@@ -64,6 +64,9 @@ export const components = {
   Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
     ssr: false,
   }),
+  BlockquoteCitation: dynamic(() =>
+    import("../components/mdx/BlockquoteCitation")
+  ),
   Subtext: Subtext,
   Footnote: dynamic(() => import("../components/mdx/Footnote"), {
     ssr: false,
