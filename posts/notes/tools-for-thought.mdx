@@ -2,7 +2,7 @@
 title: "Tools for Thought as Cultural Practices, not Computational Objects"
 description: "On seeing tools for thought through a historical and anthropological lens"
 startDate: "2021-07-29"
-updated: "2022-04-30"
+updated: "2022-05-02"
 type: "note"
 topics: ["Talks", "Tools for Thought", "Roam", "Design", "Anthropology"]
 growthStage: "budding"
@@ -78,7 +78,7 @@ We can, however, get a rough estimation by looking at descriptions from some of 
 
 <BlockquoteCitation
   author="Andy Matuschak & Michael Neilson"
-  title="How can we develop transformative tools for thought?"
+  title="How can we develop transformative tools for thought? (2019)"
   url="https://numinous.productions/ttft/"
 >
   “A context in which the user can have new kinds of thought, thoughts that were
@@ -87,7 +87,7 @@ We can, however, get a rough estimation by looking at descriptions from some of 
 
 <BlockquoteCitation
   author="Douglas Englebart"
-  title="Augmenting Human Intellect"
+  title="Augmenting Human Intellect (1962)"
   url="https://www.dougengelbart.org/content/view/138"
 >
   “A means of increasing the capability of a man to approach a complex problem
@@ -97,7 +97,7 @@ We can, however, get a rough estimation by looking at descriptions from some of 
 
 <BlockquoteCitation
   author="Alan Kay"
-  title="User Interface: A Personal View"
+  title="User Interface: A Personal View (1989)"
   url="http://worrydream.com/refs/Kay%20-%20User%20Interface,%20a%20Personal%20View.pdf"
 >
   “The very use of [a tool for thought] would actually change the thought
@@ -106,21 +106,308 @@ We can, however, get a rough estimation by looking at descriptions from some of 
 
 Looking a these, it's easy to think of plenty of examples from human history of _tools for thought_ that fit the bill. Here's a brief list:
 
-- Written language
-- Maps and diagrams
-- Hindu-arabic numerals
-- Songs and poems as oral history
-- The socratic method
-- The scientific method
-- Cartesian coordinates
-- Spreadsheets
-- Data visualisation
+<ol
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gridGap: "2rem",
+    gridColumn: "1/4 !important",
+    maxWidth: "880px",
+    margin: "var(--space-xs) auto var(--space-l)",
+  }}
+>
+  <li>
+    <b>Written language</b> – <i>3200 BCE</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Hard to overstate this one. Allows us to precisely record and communicate
+      our ideas across vast amounts of time and areas of space. Both to
+      ourselves and to others.
+      <BasicImage
+        src="https://live.staticflickr.com/8621/16401549471_24905d23e3_b.jpg"
+        alt="A cuneiform tablet – the earliest form of writing"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Drawing</b> – <i>~73,000 years ago</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Drawing feels so fundamental it's hard to think about it as a tool people
+      developed. But at some point a person painted the first animal on a cave
+      wall. Since then it's been one of the primary ways we represent thought
+      and communicate meaning through spatial relationships and symbols. It did
+      all the heavy lifting before written language emerged.
+      <BasicImage
+        src="https://www.arthipo.com/artblog/wp-content/uploads/2021/09/Altamira_bisons-cave-magarasi-Magara-Resimleri-Anlamlari-Nicin-Yapiliyordu.jpg"
+        alt="Bison paintings in the Cave of Altamira in Spain"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Maps</b> – <i>700 BCE</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      <p>
+        Visual maps showing routes through landscapes and layouts of cities
+        enabled us to form mental models of physical spaces we had never been to
+        or seen with our own eyes. Shifts us from an “egocentric” view of the
+        world to an “allocentric” bird's eye view. Take a look at Barbara
+        Tversky's{" "}
+        <a href="http://gjgreenberg.bol.ucla.edu/docs/rpp/04_tversky.pdf">
+          research
+        </a>{" "}
+        for more on visual explanations and maps as tools for thought.
+      </p>
+      <BasicImage
+        src="https://www.geographyrealm.com/wp-content/uploads/2014/11/Baylonianmaps.jpg"
+        alt="Oldest known map of the world; carved into a Babylonian clay tablet"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Hindu-arabic numerals</b> – <i>400 BCE</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      The 0-9 numerals we use for all numerial notation. Allows us to switch to
+      caluclating on paper rather than using an abacus. Enabled us to store,
+      share, reference, and calculate precise amounts. Great for record keeping
+      and bureaucracy.
+      <BasicImage
+        src="https://www.gutenberg.org/files/22599/22599-h/images/029a.png"
+        alt="Early notational symbols found in southern India"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Epic poetry as oral history</b> – <i>~2000 BCE</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Epic poetry used techniques of metrics and rhythm to commit long stories
+      and myths to memory. Bards passed these to many people as they travelled
+      through song. The most famous examples being the Epic of Gilgamesh and The
+      Mahabhrata which survived long enough to be written down.
+      <BasicImage
+        src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781683839200/mahabharata-9781683839200_hr.jpg"
+        alt="Modern printed version of the Mahabhrata epic"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>The socratic method</b> – <i>500 BCE</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Socrates' classial inquiry method of engaging in cooperative dialogue and
+      responding to everything with a question. Enabled critical thinking and
+      skepticism of every possible assumption and presupposition in an argument.
+      <BasicImage
+        src="https://upload.wikimedia.org/wikipedia/commons/7/73/The_Debate_Of_Socrates_And_Aspasia_%282%29.jpg"
+        alt="Monsiaux's painting; 'The Debate of Socrates and Aspasia'"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>The scientific method</b> – <i>1000~1400 BCE</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Another classic. Hypothesis, empirical observation, experiments, and
+      shared cummulative facts fundamentally changed our ability to understand
+      the physical world around us. Allowed us to harness that information in
+      the service of disciplines like engineering and medicine.
+      <BasicImage
+        src="https://nbi.ku.dk/hhh/videnskaben_i_kunsten/kapitler/barokken/astronomen750.jpg"
+        alt="Vermeer's 'The Astronomer'"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Cartesian coordinates</b> – <i>1637</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Rene Descartes' system of assigning numbers to points on an X - Y - Z
+      axis. Allows us to model and map areas of 3D space using precise
+      measurements. Enabled us to draw up plans for objects and structures that
+      don't yet exist. Also enabled mapping latitude and longitude points on
+      earth, and eventually GPS
+      <BasicImage
+        src="https://mathinsight.org/media/applet/image/large/cartesian_coordinate_axes_3d.png"
+        alt="The X, Y, Z axes of the cartesian mapping system"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Zettelkastens</b> – <i>1500s</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      An information management system based around linked index cards. Each
+      card holds a single belief or succinct statement, a unique number or code,
+      and links to its source references and any related cards. The system
+      allows researchers to collect and organise large amounts of information,
+      and create many flexible 'chains' of cards to synthesise into original
+      arguments.
+      <BasicImage
+        src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_600/v1651423819/maggieappleton.com/notes/tools-for-thought/Screenshot_-_2022-05-01_17.49.35_sq18zi.png"
+        alt="A single index card from Niklas Luhmann's Zettelkasten"
+        width="400px"
+        showalt
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Aboriginal songlines</b> – <i>~60,000 years ago</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      <p>
+        Songlines are physical paths through the Australian landscape that
+        Aborigianal people have used for tens of thousands of years as mnemonic
+        devices. They have songs they sing that correlate to specific paths and
+        encode information about the land, political and social rules, and
+        cultural knowledge. Similar to{" "}
+        <a href="https://en.wikipedia.org/wiki/Method_of_loci">
+          method of loci
+        </a>
+        , but shown to be more effective in memorising vast quantities of information.
+      </p>
+      <BasicImage
+        src="https://live.staticflickr.com/2020/2215146239_134cd88113_b.jpg"
+        alt="Aboriginal art painting"
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Spreadsheets</b>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Paper spreadsheets (also called ledgers) were used for accounting; the
+      column and row format allowed bookkeepers to to track and calculate large
+      volumes of income, costs, taxes, etc. The power of spreadsheets undeniably
+      exploded when they made the jump to digital mediums, but the base format
+      has been around for hundreds of years.
+      <BasicImage
+        src="https://ils.unc.edu/courses/2017_spring/inls161_002/site/assets/files/1068/hg142395_alt1.jpg"
+        alt="A paper notebook spreadsheet"
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+  <li>
+    <b>Data visualisation</b> – <i>1785</i>
+    <TwoColumn
+      gridTemplateColumns="3fr 2fr"
+      margin="0"
+      alignItems="top"
+      gridGap="var(--space-m)"
+    >
+      Mapping quantitative data onto shapes, lines, colour, and spatial
+      relationships in visual images. Allows us to visually compare, contrast,
+      and see patterns in large amount of data.
+      <BasicImage
+        src="https://upload.wikimedia.org/wikipedia/commons/5/52/Playfair_TimeSeries-2.png"
+        alt="The first data visualisation; William Playfair mapped the bank of England's baance over time"
+        showalt
+        width="400px"
+      />
+    </TwoColumn>
+  </li>
+</ol>
 
-Most of these things pre-date digital computers by at least a few thousand years.
+We can debate the _degree_ to which each of these examples fits our understanding of a “tool for thought”. But I'd argue they each profoundly transform the kinds of thoughts humans are able to think. They expand our cognitive abilities and allow us to solve problems that would otherwise be unsolvable.
 
-## The Computational Roots of TFT
+It might feel strange to call some of these things “tools”. The scientific and socratic methods seem more like _techniques_ for problem-solving. While drawing and writing are surely _mediums_ or _representations_ of ideas rather than “tools”?
 
-The phrase was first used by Kenneth Iverson in his research work throughout the 1950s and 60s.<Footnote idName={1}>Andy Matuschak and Michael Neilson, "<a href="https://numinous.productions/ttft/">How can we develop transformative tools for thought?</a>" (2019)</Footnote> The first public mention I've found is Iveson's 1979 paper [Notation as a Tool for Thought](https://www.eecg.utoronto.ca/~jzhu/csc326/readings/iverson.pdf) published by the ACM<Footnote idName={2}>The Association for Computing Machinery; the institutional big wigs of academic computer science</Footnote>. Howard Rheingold picked it as the title of their 1985 book [Tools for Thought](https://mitpress.mit.edu/books/tools-thought) – a speculative history of how computing might unfold throughout the 1990's.
+Part of this discomfort is a limitation of language. “Tool” is a tricky category that we most often associate with physical objects. But it can encompass everything from fire to a whittling knife to software development kits to democratic voting systems. We could spend time splitting hairs and trying to eliminate things from the category. Or we could choose to be generous in our definition and accept any object, cultural practice, technique, or medium that expands humans abilities as a _tool_.
+
+Which gives us a mental model that looks something like this:
+
+<BasicImage
+  margin="0 auto"
+  width="800px"
+  alt="A diagram of the category of tools encompassing cultural practices, techniques, objects, and mediums"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1100/v1651435199/maggieappleton.com/notes/tools-for-thought/Screenshot_-_2022-05-01_20.59.49_yrudfj.png"
+/>
+<Subtext>
+  Don't assign too much semantic meaning to the overlapping circles of the
+  subcategories. I can think of examples that sit at the intersection of a few
+  of these (or at least are deeply intertwined), but this is not an Exact
+  Diagram™️
+</Subtext>
+
+Of all the examples I listed above, I would put most of them in the “cultural practice and techniques” category. They certainly aren't objects. Some are certainly mediums; forms of representation such as writing and images. But mediums also require technique – you must be taught _how_ to write before you can use the medium of written language.
+
+I believe they are primary **ways of doing**. Most of our significant tools for thought are practices that people pass down to generation after generation through culture. They are specific ways of thinking and acting that result in greater cognitive abilities.
+
+Every one of these also pre-dates digital computers by at least a few hundred years, if not thousands or tens of thousands.
+
+Given that framing, it's time to return to the question of how computation, software objects, and note-taking apps fits into this narrative.
+
+## The Computational Roots of Tools for Thought
+
+Every person who has written about and extensively used the term “tools for thought” in their work is a computer programmer of some variety.
+
+The phrase was first used by Kenneth Iverson in his research work throughout the 1950s and 60s.<Footnote idName={1}>Andy Matuschak and Michael Neilson, "<a href="https://numinous.productions/ttft/">How can we develop transformative tools for thought?</a>" (2019)</Footnote> The first public mention I've found is Iveson's 1970 paper [Notation as a Tool for Thought](https://www.eecg.utoronto.ca/~jzhu/csc326/readings/iverson.pdf) published by the ACM<Footnote idName={2}>The Association for Computing Machinery; the institutional big wigs of academic computer science</Footnote>.
+
+Howard Rheingold picked it as the title of their 1985 book [Tools for Thought](https://mitpress.mit.edu/books/tools-thought) – a speculative history of how computing might unfold throughout the 1990's.
 
 <ResourceBook
   url="https://www.librarything.com/work/2127253"
@@ -164,6 +451,11 @@ The phrase was first used by Kenneth Iverson in his research work throughout the
     title="Media for Thinking the Unthinkable"
     href="https://www.youtube.com/watch?v=oUaOucZRlmE"
     author="Bret Victor"
+  />
+  <ReferencesLink
+    title="The Cognitive Design of Tools of Thought"
+    href="http://gjgreenberg.bol.ucla.edu/docs/rpp/04_tversky.pdf"
+    author="Barbara Tversky"
   />
   <ReferencesLink
     title="Dave Winer's thoughts on the new TFT hype"

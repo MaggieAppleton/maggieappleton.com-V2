@@ -6,18 +6,22 @@ export default function TwoColumn({
   maxWidth,
   alignItems,
   gridTemplateColumns,
+  gridTemplateColumnsMobile,
   gridGap,
   verticalGridGap,
   justifyItems,
+  margin,
 }) {
   return (
     <TwoColumnContainer
       gridTemplateColumns={gridTemplateColumns}
+      gridTemplateColumnsMobile={gridTemplateColumnsMobile}
       alignItems={alignItems}
       maxWidth={maxWidth}
       gridGap={gridGap}
       verticalGridGap={verticalGridGap}
       justifyItems={justifyItems}
+      margin={margin}
     >
       {children}
     </TwoColumnContainer>
@@ -28,7 +32,7 @@ const TwoColumnContainer = styled.div`
   width: 100%;
   grid-column: 1 / 4 !important;
   max-width: ${(props) => props.maxWidth || "1400px"};
-  margin: var(--space-s) auto var(--space-l);
+  margin: ${(props) => props.margin || "var(--space-s) auto var(--space-l)"};
   display: grid;
   justify-items: ${(props) => props.justifyItems || "center"};
   grid-template-columns: ${(props) =>
@@ -40,7 +44,8 @@ const TwoColumnContainer = styled.div`
     align-items: start;
     grid-gap: ${(props) => props.verticalGridGap || "var(--space-m)"};
     justify-items: center;
-    grid-template-columns: ${(props) => props.gridTemplateColumns || "1fr"};
+    grid-template-columns: ${(props) =>
+      props.gridTemplateColumnsMobile || "1fr"};
   }
   div,
   img,
@@ -50,6 +55,6 @@ const TwoColumnContainer = styled.div`
     border-radius: var(--border-radius-base);
   }
   img {
-    margin: var(--space-s) auto;
+    margin: var(--space-s) auto 0;
   }
 `;

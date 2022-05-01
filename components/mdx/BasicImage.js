@@ -18,6 +18,9 @@ const Container = styled.figure`
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     color: var(--color-gray-600);
+    line-height: 1.5;
+    width: ${(props) => props.width || "100%"};
+    margin-top: var(--space-xs);
   }
   @media (max-width: 768px) {
     margin: var(--space-s) auto;
@@ -26,6 +29,6 @@ const Container = styled.figure`
 
 const StyledBasicImage = styled.img`
   width: ${(props) => props.width || "1100px"};
-  margin-bottom: var(--space-xs);
+  margin: 0 auto var(--space-xs);
   border-radius: var(--border-radius-sm);
 `;
