@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { parse, formatDistanceToNow, differenceInDays } from "date-fns";
+import {
+  parse,
+  formatDistanceToNow,
+  differenceInDays,
+  isMatch,
+} from "date-fns";
 
 export default function Dates({ startDate, updated }) {
   const relativeStartDate = parse(startDate, "yyyy-MM-dd", new Date());
@@ -56,10 +61,11 @@ const StyledDates = styled.div`
 `;
 
 export function RelativeDate({ postDate }) {
-  const date = parse(postDate, "yyyy-MM-dd", new Date());
-  const relativeDate = formatDistanceToNow(date, {
-    includeSeconds: true,
-    addSuffix: true,
-  });
-  return relativeDate;
+  if (isMatch(postDate, "yyyy-MM-dd")) {
+    const date = parse(postDate, "yyyy-MM-dd", new Date());
+    const relativeDate = formatDistanceToNow(date, {
+      addSuffix: true,
+    });
+    return relativeDate;
+  }
 }

@@ -158,44 +158,39 @@ export default function About() {
                   title: "A Picture Worth a Thousand Programmes",
                   slug: "/programming-pictures",
                   conferences: "React Advanced London",
-
-                  date: "October 2021",
+                  date: "2021-10-22",
                 },
                 {
                   title:
                     "Tools for Thought as Cultural Systems, Not Computational Objects",
                   slug: "/tools-for-thought",
                   conferences: "Augmented Minds Unconference",
-
-                  date: "July 2021",
+                  date: "2021-07-01",
                 },
                 {
                   title: "The Cultural Anthropology of React",
                   slug: "/anthropology-react",
                   conferences: "React Rally",
-
-                  date: "August 2020",
+                  date: "2021-08-01",
                 },
                 {
                   title: "How to Become a Neo-Cartesian Cyborg",
                   slug: "neocyborgs",
                   conferences: "BASB London",
-                  date: "May 2020",
+                  date: "2020-03-01",
                 },
                 {
                   title: "Evergreen Notes and Digital Gardens",
                   slug: "https://www.youtube.com/watch?v=RXXXHN516qc",
                   conferences: "Roam Research Tours",
-
-                  date: "May 2020",
+                  date: "2020-05-01",
                 },
                 {
                   title:
                     "Drawing the Invisible: React Explained in Five Visual Metaphors",
                   slug: "/reactpotato",
                   conferences: "Women of React",
-
-                  date: "May 2020",
+                  date: "2020-05-01",
                 },
               ].map(({ title, conferences, date, slug }, i) => (
                 <TalkCard
@@ -237,51 +232,51 @@ export default function About() {
                 {
                   podcastName: "Frontend Heroes",
                   episodeName: "Fortress of Solitude",
-                  date: "August 10, 2021",
+                  date: "2021-08-10",
                   url: "https://frontendheroes.transistor.fm/episodes/fortress-of-solitude-w-maggie-appleton",
                 },
                 {
                   podcastName: "Metamuse",
                   episodeName: "Visual Programming",
-                  date: "August 5, 2021",
+                  date: "2021-08-05",
                   url: "https://museapp.com/podcast/37-visual-programming/",
                 },
                 {
                   podcastName: "The Swyx Mixtape",
                   episodeName: "Growing Digital Gardens and Tending the Web",
-                  date: "February 13 2021",
+                  date: "2021-02-13",
                   url: "https://podcasts.apple.com/us/podcast/weekend-drop-digital-gardening-w-maggie-appleton/id1549059398?i=1000508923478",
                 },
                 {
                   podcastName: "RoamFM",
                   episodeName:
                     "Digital Anthropology, Digital Gardens and Illustrated Notes",
-                  date: "July 25 2020",
+                  date: "2020-07-25",
                   url: "https://thatsthenorm.com/maggie-appleton-transcript/",
                 },
                 {
                   podcastName: "Maintainers Anonymous",
                   episodeName: "Embodiment Through Metaphors",
-                  date: "May 13 2020",
+                  date: "2020-05-13",
                   url: "https://maintainersanonymous.com/metaphor/",
                 },
                 {
                   podcastName: "egghead.io Podcast",
                   episodeName:
                     "Turning Technical Concepts into Approachable Illustrated Metaphors",
-                  date: "May 3, 2019",
+                  date: "2019-05-03",
                   url: "https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton",
                 },
                 {
                   podcastName: "Maintainers Anonymous",
                   episodeName: "Open Source as a Gift Economy",
-                  date: "March 5 2020",
+                  date: "2020-05-03",
                   url: "https://maintainersanonymous.com/gift/",
                 },
                 {
                   podcastName: "React Podcast",
                   episodeName: "The Power of Mental Models",
-                  date: "March 3, 2020",
+                  date: "2020-03-03",
                   url: "https://reactpodcast.simplecast.com/episodes/86",
                 },
               ].map(({ podcastName, episodeName, date, url }, i) => (
