@@ -69,7 +69,7 @@ At last count I found 25 block-editors in active development, and I've certainly
 
 Given this popular burst, it's a fine time to ask some clarifying questions:
 
-- What _exactly_ is a "block"?
+- What _exactly_ is a “block”?
 - Why are blocks such a popular and widely used interface pattern?
 - What common standards and best practices are we congregating around for how blocks work?
 - What historical threads led us to block-based interfaces?
@@ -449,7 +449,7 @@ Blocks are an interface element that allows users to input complex data. They wo
 
 One of the features that makes our current block-based editors exceptionally powerful is being able to query and reference data held in other blocks.
 
-Notion's "database"-type blocks are one of its most popular features.
+Notion's “database"-type blocks are one of its most popular features.
 
 Coda is pushing hard in the direction of complex, programmatic systems presented in blocks
 
@@ -465,7 +465,7 @@ Like all good software designers, the people creating these new editors are foll
 
 We've now seen the general shape and interface patterns of blocks, but what _precisely_ defines a block?
 
-We all love a good definitional debate, and I am not one to rob us of this opportunity. I offered a concise definition above: "A block is a rectangular section of your document that looks and acts a certain way, depending on its type."
+We all love a good definitional debate, and I am not one to rob us of this opportunity. I offered a concise definition above: “A block is a rectangular section of your document that looks and acts a certain way, depending on its type."
 
 I think it's pretty good summary of the situation, but one that leaks in a hundred ways. According to this, the navigation bar, the block-selector dropdown menu, and obnoxious chat widget that won't stop audibly alerting you to a message from a bot could all be mistaken for blocks.
 
@@ -534,7 +534,7 @@ Before these atomic, interactive blocks started appearing, our documents were pr
 
 String enough of these lines together, and you have a document.
 
-Simple text didn't stay simple for long. Starting in the 1980's, we added on _rich text editing_ – text marked up with formatting like **bold**, _italics_, ~~strikethroughs~~, <u>underlines</u>, <mark>highlights</mark> and the like. Souped up text editors dave us even more formatting options like making the <br /><span style={{ fontSize: "2rem" }}>font size huge <span style={{ color: "#DB552C" }}>and orange</span></span> <img src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1643619446/maggieappleton.com/essays/block-editors/wordart_1_qtghbu.png" alt="The words 'and 3D' styled in a giant, orange 3D text effect" style={{ display: "inline-block", margin: "0", width: "220px", position: "relative", top: "30px", marginTop: "-25px" }} />
+Simple text didn't stay simple for long. Starting in the 1980's, we added on _rich text editing_ – text marked up with formatting like **bold**, _italics_, ~~strikethroughs~~, <u>underlines</u>, <mark>highlights</mark> and the like. Souped up text editors dave us even more formatting options like making the <br /><span style={{ fontSize: "2rem" }}>font size huge <span style={{ color: "#DB552C" }}>and orange</span></span> <img src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1643619446/maggieappleton.com/essays/block-editors/wordart_1_qtghbu.png" alt="The words 'and 3D' styled in a giant, orange 3D text effect” style={{ display: "inline-block", margin: "0", width: "220px", position: "relative", top: "30px", marginTop: "-25px" }} />
 
 <Spacer size="small" />
 
@@ -559,7 +559,7 @@ On the surface level, a page of linear text and a page of blocks seem identical.
 - Swapping block types without changing the content; able to easily view the same data multiple ways
 - Interactive and reactive documents; dynamic data on a page you can see in multiple ways, transform, and edit.
 
-All of these presentational annotations expand what we're able to express and communicate through the medium of digital documents. But they're mostly surface level. Stylistic annotations change the visual display of our information, without applying any structural changes to the data. When we make text big and orange, the programme does not encode that as "this text is important" or "this text is a headline." It has no semantic structure.
+All of these presentational annotations expand what we're able to express and communicate through the medium of digital documents. But they're mostly surface level. Stylistic annotations change the visual display of our information, without applying any structural changes to the data. When we make text big and orange, the programme does not encode that as “this text is important” or “this text is a headline.” It has no semantic structure.
 
 Formatting at the character level gives us an enormous amount of granular control – enough to hang ourselves with.
 
@@ -625,7 +625,7 @@ Throughout the early 1960s he wrote a series of papers proposing a hypothetical 
 
 And as with most things, Ted Nelson said it first. In 1965 Ted Nelson published a paper in the ACM called **[Complex Information Processing](https://dl.acm.org/doi/10.1145/800197.806036): A File Structure for the Complex, the Changing, and the Indeterminate.** Here he coined the term hypertext, and laid out a structure for file management on machines that would influence the way we structure information for many decades.
 
-In 1974 Nelson wrote Computer Lib / Dream Machines, where he laid out elaborate plans for [[Project Xanadu]] – a hypertext system designed for writing "serious electronic literature.”
+In 1974 Nelson wrote Computer Lib / Dream Machines, where he laid out elaborate plans for [[Project Xanadu]] – a hypertext system designed for writing “serious electronic literature.”
 
 That system involved documents made up of 'parts', which could be any data type, and could be freely moved around a document. Being able to insert a part into multiple documents, link parts to one another, and easily rearrange parts within a document were all essential to the concept.
 
@@ -651,15 +651,15 @@ The first meaningful project in this period was Hypercard which .
 
 The idea of creating stacks of uniquely typed blocks inside documents first emerged in the early 1990's.
 
-Microsoft developed a system that allowed users to select an "object" created in one Microsoft application and embed it in another. This **Object Linking and Embedding (OLE)** technology meant you could select a set of cells in Microsoft Excel, copy it, and then paste it into a Microsoft Word document. 'Embedding' the Excel object into Word.
+Microsoft developed a system that allowed users to select an “object” created in one Microsoft application and embed it in another. This **Object Linking and Embedding (OLE)** technology meant you could select a set of cells in Microsoft Excel, copy it, and then paste it into a Microsoft Word document. 'Embedding' the Excel object into Word.
 
 {OLE diagram}
 
-In the parlance of the time, these were called "compound documents"
+In the parlance of the time, these were called “compound documents"
 
 Microsoft's OLE was the first implementation that made block-based documents possible. Despite this big pragmatic leap, they let their imaginations stop short. OLE didn't seem to spur any dreams beyond copying and pasting bits of Microsoft applications into one another.
 
-Apple stepped up with a vision that aimed to compete with OLE, but took the idea to its full potential. OpenDoc was a programme that flipped the concept of how applications worked on its head. It proposed a compound document made up of multiple small applications, things it called "parts" – similar to our modern day blocks, but more ambitious.
+Apple stepped up with a vision that aimed to compete with OLE, but took the idea to its full potential. OpenDoc was a programme that flipped the concept of how applications worked on its head. It proposed a compound document made up of multiple small applications, things it called “parts” – similar to our modern day blocks, but more ambitious.
 
 {OpenDoc diagram}
 
@@ -683,7 +683,7 @@ Starting in 2016 we entered the third age of the block.
 
 These are two useful landmarks to pay attention to, but it would be insincere to say blocks weren't already brewing on the web before this point.
 
-From the start of "Web 2.0" in the mid-2000s block-like objects began to appear on our newly invented _web apps_ – websites that allowed users to dynamically interact with the page without refreshing or reloading it.
+From the start of “Web 2.0” in the mid-2000s block-like objects began to appear on our newly invented _web apps_ – websites that allowed users to dynamically interact with the page without refreshing or reloading it.
 
 Tumblr is worth mentioning here.
 
@@ -696,9 +696,9 @@ Wordpress started work on Gutenberg in 2017(?) and released its first version in
 
 Notion's first release in 2018 kicked things into high gear here. While Wordpress Gutenberg has been out for X years, it served a small use case; writing blog posts. Notion reframed the block editor as an everyday tool – a place to write collaborative documents for your team, or even just yourself. It turned it into an editor you live in, rather than a publishing tool for a specific purpose.
 
-It is exceptionally ironic that when Micrososoft announced their new project "Microsoft Loop" in X, it was lambasted across Twitter as a "shameless Notion clone."
+It is exceptionally ironic that when Micrososoft announced their new project "Microsoft Loop” in X, it was lambasted across Twitter as a “shameless Notion clone."
 
-These editors are sometimes belittled as "Notion clones", although Notion was not the first or last platform to implement the conceptual model of documents composed of blocks. Nevertheless, it became a touchstone reference point – a software category in its own right. Like _Uber for X_, we now have _Notion, but with Y feature_.
+These editors are sometimes belittled as “Notion clones", although Notion was not the first or last platform to implement the conceptual model of documents composed of blocks. Nevertheless, it became a touchstone reference point – a software category in its own right. Like _Uber for X_, we now have _Notion, but with Y feature_.
 
 ## Blocks of the Future
 
@@ -734,7 +734,7 @@ Button blocks on Coda and Retool are big indicators of this.
 
 5. Improved open, indie web publishing tooling
 
-Enabling users to write rich content to the independent, open web. Web 2.0 enabled users to write to the web... within limitations. They can only write to "platforms" - FB, twitter. The platform owners control and own the content.
+Enabling users to write rich content to the independent, open web. Web 2.0 enabled users to write to the web... within limitations. They can only write to “platforms” - FB, twitter. The platform owners control and own the content.
 
 6. The Modular Web
 
