@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Mon, 13 Dec 2021 21:54:13 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 May 2022 06:50:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -44,13 +44,6 @@
             <content:encoded><![CDATA[A discipline at the intersection of cultural anthropology and binary logic]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Douglas, Dirt, and Matter Out of Place]]></title>
-            <link>https://maggieappleton.com/dirt</link>
-            <guid>https://maggieappleton.com/dirt</guid>
-            <pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Mary Douglas defined dirt as matter out of place – the crossing of boundaries]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[How to Draw Invisible Programming Concepts: Part I]]></title>
             <link>https://maggieappleton.com/drawinginvisibles1</link>
             <guid>https://maggieappleton.com/drawinginvisibles1</guid>
@@ -77,6 +70,13 @@
             <guid>https://maggieappleton.com/meat-planet</guid>
             <pubDate>Mon, 22 Feb 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Visualising the cultural narratives around cultured meat]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Metaphors We Web By]]></title>
+            <link>https://maggieappleton.com/metaphors-web</link>
+            <guid>https://maggieappleton.com/metaphors-web</guid>
+            <pubDate>Fri, 04 Feb 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A history of our metaphorical understanding of the web]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Digital Gardening for Non-Technical Folks]]></title>
@@ -117,8 +117,57 @@
             <title><![CDATA[The Pattern Language of Project Xanadu]]></title>
             <link>https://maggieappleton.com/xanadu-patterns</link>
             <guid>https://maggieappleton.com/xanadu-patterns</guid>
-            <pubDate>Thu, 17 Jun 2021 00:00:00 GMT</pubDate>
+            <pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Project Xanadu as a pattern language, rather than a failed software project]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Tools for Thought as Cultural Practices, not Computational Objects]]></title>
+            <link>https://maggieappleton.com/tools-for-thought</link>
+            <guid>https://maggieappleton.com/tools-for-thought</guid>
+            <pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[On seeing tools for thought through a historical and anthropological lens]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Building a Second Brain: The Illustrated Notes]]></title>
+            <link>https://maggieappleton.com/basb</link>
+            <guid>https://maggieappleton.com/basb</guid>
+            <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Illustrated notes on the Building A Second Brain course]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Interoperable Personal Libraries and Ad Hoc Reading Groups]]></title>
+            <link>https://maggieappleton.com/interoperable-libraries</link>
+            <guid>https://maggieappleton.com/interoperable-libraries</guid>
+            <pubDate>Sat, 26 Feb 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Exploring ways to build social infrastructure around books and reading on the open web]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Eponymous Laws of Programming]]></title>
+            <link>https://maggieappleton.com/eponymous-laws</link>
+            <guid>https://maggieappleton.com/eponymous-laws</guid>
+            <pubDate>Wed, 05 Jan 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A collection of laws named for specific people in the field of programming]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Neologisms]]></title>
+            <link>https://maggieappleton.com/neologisms</link>
+            <guid>https://maggieappleton.com/neologisms</guid>
+            <pubDate>Thu, 23 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A collection of interesting words that have recently been coined]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Frequently Asked Questions]]></title>
+            <link>https://maggieappleton.com/FAQ</link>
+            <guid>https://maggieappleton.com/FAQ</guid>
+            <pubDate>Wed, 22 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Questions I am often asked to answer]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Finest Narrative Non-Fiction Essays]]></title>
+            <link>https://maggieappleton.com/narrative-essays</link>
+            <guid>https://maggieappleton.com/narrative-essays</guid>
+            <pubDate>Wed, 22 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Narrative essays that I consider ideal models of the medium]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A Picture Worth a Thousand Programmes]]></title>
@@ -135,13 +184,6 @@
             <content:encoded><![CDATA[A collection of observations on the rise of soft, sparkly, baby pink aesthetics among developers]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[The Eponymous Laws of Programming]]></title>
-            <link>https://maggieappleton.com/eponymous-laws</link>
-            <guid>https://maggieappleton.com/eponymous-laws</guid>
-            <pubDate>Fri, 03 Dec 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A collection of laws named for specific people in the field of programming]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[The Best Illustration Books and Courses]]></title>
             <link>https://maggieappleton.com/illustration-resources</link>
             <guid>https://maggieappleton.com/illustration-resources</guid>
@@ -149,18 +191,18 @@
             <content:encoded><![CDATA[My favourite resources for learning to draw and developing your visual thinking skills]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Tools for Thought as Cultural Systems, not Computational Objects]]></title>
-            <link>https://maggieappleton.com/tools-for-thought</link>
-            <guid>https://maggieappleton.com/tools-for-thought</guid>
-            <pubDate>Sat, 20 Nov 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[The written version of my talk on seeing tools for thought in historical perspective]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Pattern Languages in Programming and Interface Design]]></title>
             <link>https://maggieappleton.com/pattern-languages</link>
             <guid>https://maggieappleton.com/pattern-languages</guid>
             <pubDate>Sat, 13 Nov 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Notes on pattern languages and Christopher Alexander's legacy on software programming]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Cultural Anthropology of React]]></title>
+            <link>https://maggieappleton.com/anthropology-react</link>
+            <guid>https://maggieappleton.com/anthropology-react</guid>
+            <pubDate>Thu, 11 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A cultural analysis of the native behaviour of React developers]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A Meta-Tour of This Site]]></title>
@@ -205,7 +247,7 @@
             <content:encoded><![CDATA[What's wrong with linear, static programming mediums and how might we improve them?]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Plebian Programming with Keyboard Maestro]]></title>
+            <title><![CDATA[Plebeian Programming with Keyboard Maestro]]></title>
             <link>https://maggieappleton.com/keyboard-maestro</link>
             <guid>https://maggieappleton.com/keyboard-maestro</guid>
             <pubDate>Sat, 04 Sep 2021 00:00:00 GMT</pubDate>
@@ -247,11 +289,11 @@
             <content:encoded><![CDATA[What we lose when our digital notes remove the freedom to move]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Frequently Asked Questions]]></title>
-            <link>https://maggieappleton.com/FAQ</link>
-            <guid>https://maggieappleton.com/FAQ</guid>
-            <pubDate>Tue, 27 Apr 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Questions I am often asked to answer]]></content:encoded>
+            <title><![CDATA[Douglas, Dirt, and Matter Out of Place]]></title>
+            <link>https://maggieappleton.com/dirt</link>
+            <guid>https://maggieappleton.com/dirt</guid>
+            <pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Mary Douglas defined dirt as matter out of place – the crossing of boundaries]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Painting Roam Research with Custom CSS]]></title>
@@ -266,13 +308,6 @@
             <guid>https://maggieappleton.com/data-unions</guid>
             <pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Illustrated notes on how data unions work and what problems they might solve]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Neologisms]]></title>
-            <link>https://maggieappleton.com/neologisms</link>
-            <guid>https://maggieappleton.com/neologisms</guid>
-            <pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A collection of interesting words that have recently been coined]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Positioning Elements & Scrollytelling in CSS]]></title>
@@ -315,13 +350,6 @@
             <guid>https://maggieappleton.com/greensock-essentials</guid>
             <pubDate>Tue, 08 Sep 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Notes on the basics of the Greensock animation llibrary]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[The Cultural Anthropology of React]]></title>
-            <link>https://maggieappleton.com/anthropology-react</link>
-            <guid>https://maggieappleton.com/anthropology-react</guid>
-            <pubDate>Tue, 18 Aug 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A cultural analysis of the native behaviour of React developers]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Gift Economy]]></title>
@@ -385,13 +413,6 @@
             <guid>https://maggieappleton.com/visual-aws</guid>
             <pubDate>Tue, 16 Jun 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Some insights into how I collaborative with experts to create illustrated notes on technical topics]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Building a Second Brain: The Illustrated Notes]]></title>
-            <link>https://maggieappleton.com/basb</link>
-            <guid>https://maggieappleton.com/basb</guid>
-            <pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Illustrated notes on the Building A Second Brain course]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Fixing Common Git Mistakes]]></title>
@@ -598,6 +619,76 @@
             <link>https://maggieappleton.com/uxlondon2019</link>
             <guid>https://maggieappleton.com/uxlondon2019</guid>
             <pubDate>Wed, 01 May 2019 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Daily Notes Pages]]></title>
+            <link>https://maggieappleton.com/daily-notes</link>
+            <guid>https://maggieappleton.com/daily-notes</guid>
+            <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Daily notes as a frictionless default input for personal knowledge management systems]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Composable Interfaces]]></title>
+            <link>https://maggieappleton.com/composable-interfaces</link>
+            <guid>https://maggieappleton.com/composable-interfaces</guid>
+            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[...]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Programming Portals]]></title>
+            <link>https://maggieappleton.com/programming-portals</link>
+            <guid>https://maggieappleton.com/programming-portals</guid>
+            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[...]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Visual Expression Editors]]></title>
+            <link>https://maggieappleton.com/visual-expressions</link>
+            <guid>https://maggieappleton.com/visual-expressions</guid>
+            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[...]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Node and Wire Programming]]></title>
+            <link>https://maggieappleton.com/node-wire</link>
+            <guid>https://maggieappleton.com/node-wire</guid>
+            <pubDate>Sat, 30 Apr 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Programming interfaces designed around spatial canvases, direct manipulation, and visible connections]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Programmable Notes]]></title>
+            <link>https://maggieappleton.com/programmatic-notes</link>
+            <guid>https://maggieappleton.com/programmatic-notes</guid>
+            <pubDate>Sun, 27 Mar 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Agent-based note-taking systems that can prompt and facilitate custom workflows]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Spatial Web Browsing]]></title>
+            <link>https://maggieappleton.com/spatial-web</link>
+            <guid>https://maggieappleton.com/spatial-web</guid>
+            <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Adding spatial affordances to the experience of browsing the web]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Assumed Audiences]]></title>
+            <link>https://maggieappleton.com/assumed-audience</link>
+            <guid>https://maggieappleton.com/assumed-audience</guid>
+            <pubDate>Sat, 08 Jan 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Naming your invisible audiences to free yourself from unspoken obligations]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Epistemic Disclosure]]></title>
+            <link>https://maggieappleton.com/epistemic-disclosure</link>
+            <guid>https://maggieappleton.com/epistemic-disclosure</guid>
+            <pubDate>Sun, 02 Jan 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Providing clear metadata on the epistemic validity of content]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Algorithmic Transparency]]></title>
+            <link>https://maggieappleton.com/algorithmic-transparency</link>
+            <guid>https://maggieappleton.com/algorithmic-transparency</guid>
+            <pubDate>Tue, 28 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Algorithms that make their reasoning visible]]></content:encoded>
         </item>
     </channel>
 </rss>
