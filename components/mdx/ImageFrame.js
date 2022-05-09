@@ -6,12 +6,22 @@ export default function ImageFrame({
   width,
   margin,
   showalt,
+  sourceUrl,
+  sourceTitle,
   ...props
 }) {
   return (
     <Container margin={margin} {...props}>
       <StyledImageFrame src={src} alt={alt} width={width || "100%"} />
-      {showalt && <figcaption>{alt}</figcaption>}
+      {showalt ? (
+        sourceUrl ? (
+          <figcaption>
+            {alt} by <a href={sourceUrl}>{sourceTitle}</a>
+          </figcaption>
+        ) : (
+          <figcaption>{alt}</figcaption>
+        )
+      ) : null}
     </Container>
   );
 }

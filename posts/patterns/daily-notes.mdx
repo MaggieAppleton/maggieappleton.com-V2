@@ -1,0 +1,97 @@
+---
+title: "Daily Notes Pages"
+description: "Daily notes as a frictionless default input for personal knowledge management systems"
+type: "pattern"
+growthStage: "budding"
+startDate: "2022-05-04"
+updated: "2022-05-09"
+---
+
+<h2 className="micro">The Context</h2>
+
+Being able to quickly capture a new idea, a loose piece of information, or a vaguely formed thought is a critical feature of any worthwhile knowledge management system.<Footnote idName={1}>Also known as a note-taking system, but with a bit more emphasis on creating _personal knowledge_ rather than just creating _notes_</Footnote>
+
+When you need to get an idea down, you want to get into an open text input as fast as possible. Ideally within a single click or keystroke. You don't want to think about what to name the page it will live on, where it fits into your existing information architecture, or what other ideas it should be linked to.
+
+Half the time I begin typing something, I'm not even sure what I'm writing yet. Writing it out is an essential part of thinking it out. Once I've captured it, re-read it, and probably rewritten it, I can then worry about what to label it, what it connects to, and where it should 'live' in my system.
+
+And sometimes (perhaps often), I stare at the written note and I'm _still_ not sure where to put it. It connects to many other bits of information and themes. It doesn't neatly fit into a single labelled folder. I have to think hard about _when_ I want to see this idea again. I have to make it findable for future me.
+
+This organising work takes a non-trivial amount of mental effort, and there are plenty of moments when I can't be bothered. And I am not alone in this.
+
+Sometimes we need to capture ideas and then let them sit for a while. Before we shift to organising and synthesising them. They need to hang out in limbo, uncategorised, in a place we can still find and revisit them. These could be inboxes or scrap piles; the equivalent of post-it notes left scattered around a desk.
+
+This presents a problem for designers of these systems; how do we give people open, free-flowing, and unstructured inputs... that allow them to consistently rediscover, revisit, and organise their loose ideas and snippets?
+
+<Spacer size="small" />
+
+<h2 className="micro">The Pattern</h2>
+
+The Daily Notes Page (colloquially, the DNP) is one of the most popular solutions to the problem of balancing frictionless input with future discoverability.
+
+Many note-taking and knowledge management apps now have one. The DNP is usually an entry point – you begin there by default when you open the app. Every day, a fresh blank page appears with today's date at the top. And you are free to begin writing in it.
+
+<ImageFrame
+  width="1100"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1800/v1650355782/maggieappleton.com/patterns/dailynotes_1_pgidin.png"
+  alt="The daily notes page in Remnote"
+  showalt
+/>
+
+<ImageFrame
+  width="1100"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1800/v1650355782/maggieappleton.com/patterns/dailynotes_3_mbs19s.png"
+  alt="The daily notes page in Roam Reserch"
+  showalt
+/>
+
+<ImageFrame
+  width="1100"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1800/v1650355782/maggieappleton.com/patterns/dailynotes_2_gnjo0n.png"
+  alt="The 'unsorted' daily notes page in Craft App"
+  showalt
+/>
+
+If you want to see previous day's entries, you simply scroll down.
+
+Each day becomes a reference point. When you encounter a bit of writing in the future, you know exactly when you captured it. You can look at what else you wrote on the days surrounding it. This extra context makes it easier to know what it relates to and where it should eventually live.
+
+You might decide it doesn't need to ‘live’ anywhere at all. It can just stay on the DNP. This absolves you of the need to find a suitable home for every piece of information. As long as you can find it again via search and tags, why go to the trouble of filing everything away?
+
+The DNP doesn't demand any particular rigor, format, or formality. As an unopinonated dumping ground, people seem to find it freeing. Being able to write out strange thoughts, misguided ideas, and half-baked theories without any obligation to immediately resolve them is arguably necessary to arriving at higher quality ideas. There's little risk of cluttering up your database, as tomorrow the page will automatically be swept away into the archives. The passage of time acts as a natural way to clear out old notes; new day, new page.
+
+### Daily Templates
+
+Setting up templates that auto-fill your DNP has become popular in many of the newer knowledge management apps. Users of apps like Obsidian, Roam, and Logseq share [their](https://www.reddit.com/r/ObsidianMD/comments/pjp8d1/daily_note_templates_please_share/) [personal](https://matthewweeks.medium.com/the-daily-notes-template-i-use-in-roam-research-after-1-year-of-daily-use-and-refinement-fa8ffb85849d) [templates](https://nesslabs.com/9-useful-templates-for-roam-research) in [spades](https://www.youtube.com/watch?v=JCIdJBZGQLQ).
+
+These commonly include journaling prompts such as “How are you feeling?”, “What's on your mind?”, or “What's the most important thing you need to work on today?”.
+Others have designated areas for task lists, time tracking logs, and capturing ideas.
+
+Rather than simply being static prompts, many of these include dynamic queries and buttons connected to programming scripts. They can fetch unfinished todo items, show you yesterday's journal entires, start and stop timers, or calculate word counts. For more on these type of flows, see [[Programmable Notes]]
+
+<ImageFrame
+  width="800px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1100/v1652083037/maggieappleton.com/patterns/dailynote_roam_qgr7ej.png"
+  alt="An example of a daily note template in Roam Research"
+  sourceUrl="https://www.youtube.com/watch?v=5YsbNKkEoJs"
+  sourceTitle="Jeffery Webber"
+  showalt
+/>
+
+These templates work as a kind of [programmable attention](https://notes.andymatuschak.org/zJrfPCbY7GcpV9asEc8NTVzXTAV4TvRFMuY6). You are directed to answer specific questions each morning, log certain kinds of thoughts, record daily activites, or track your habits. Many people find them helpful as a way to structure their working days, and encourage self-reflection and metacognition. This turns the DNP into more of a workflow management tool, rather than a place to capture information.
+
+### Potential Problems and Consequences
+
+The DNP solves a tricky problem, but like all design solutions, comes with costs. The daily cadence of a DNP frames the system as a kind of personal diary. Which we may not necessarily _want_ in a personal knowledge base.
+
+Mixing up your notes on Heidegger's _“The Question Concerning Technology”_ and your reflections on whether your mother is gaslighting you might lead to uncomfortable context collapse. It could easily be distracting when search results turn up both academic claims and uncharitable rants about your significant other. Don't shit where you need to critically think, as the old saying goes.
+
+There's also a good chance the DNP encourages people to spend non-significant amounts of time journaling and writing notes they never look back. This would be hard to measure in any ‘objective’ sense, but we should question whether this type of rote daily journaling has a significant effect on metacognitive awareness or meaningful knowledge work.
+
+<References>
+  <ReferencesLink
+    title="A great Twitter thread on DNPs"
+    href="https://twitter.com/TfTHacker/status/1494933522242539522?s=20&t=Fn7-OXIsT79Xj1cdIDwFIA"
+    author="@TfTHacker"
+  />
+</References>
