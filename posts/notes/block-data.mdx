@@ -1,8 +1,8 @@
 ---
 title: "The Block-Paved Path to Structured Data"
-description: "How block-based interfaces can help create more structured data on the web"
+description: "How block-based interfaces can help us create more structured data on the web"
 startDate: "2022-05-23"
-updated: "2022-05-23"
+updated: "2022-06-01"
 type: "note"
 topics: ["Talks", "Data", "The Web", "Web Development"]
 growthStage: "budding"
@@ -10,567 +10,633 @@ growthStage: "budding"
 
 <AssumedAudience>
 
-Content managers, developers, and designers intersted in structured content and structured data.
+Developers, designers, and product people intersted in structured content and structured data.
 
 </AssumedAudience>
 
 <IntroParagraph>
 
-Slides from my conference talk given at Sanity's [Structured Content Conference](https://structuredcontent.live/) in May of 2022
+This is a talk I first presented at Sanity's [Structured Content Conference](https://structuredcontent.live/) in San Fransisco, May 2022.
 
 </IntroParagraph>
 
+It's about the dream of creating more structured data on the web, the rise of block-based interfaces, and how those two intertwine. After covering a bit of history on structured data, I discuss the costs and benefits of block-based interfaces, and finally I introduce a new protocol we've been working on at [HASH](https://hash.ai). It's called the [Block Protocol](https://blockprotocol.org) (nothing to do with Web3, the blockchain, or NFTs) and it hopes to solve a number of issues with both structured data on the web and block-based editors.
+
+Here's the original video recording. You can also read the full written version and see slides below.
+
 <Center>
 
-## Slides
+### Video
+
+</Center>
+
+<Video
+  src="https://www.youtube.com/embed/AHblHPLoKKE"
+  title="The Block-paved Path to Structured Data"
+  style={{ marginBottom: "3rem" }}
+/>
+
+<Center>
+
+### Transcript and Slides
 
 </Center>
 
 <BasicImage
-  margin="0 auto"
-  width="900"
+  width="900px"
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415099/maggieappleton.com/notes/block-data/block-data-1_n8bku0.jpg"
-  alt=""
+  margin="1rem auto"
 />
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415109/maggieappleton.com/notes/block-data/block-data-4_tndnxv.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415109/maggieappleton.com/notes/block-data/block-data-4_tndnxv.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415120/maggieappleton.com/notes/block-data/block-data-5_itjpbg.jpg"
-  alt=""
-/>
+I like the give the punchline away early in my talks. I'm here to convince you of a thesis – that block-based interfaces can help us create _more_ structured data on the web.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415123/maggieappleton.com/notes/block-data/block-data-6_mt4aok.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415140/maggieappleton.com/notes/block-data/block-data-7_fdmgh0.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415120/maggieappleton.com/notes/block-data/block-data-5_itjpbg.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415152/maggieappleton.com/notes/block-data/block-data-8_szhwdl.jpg"
-  alt=""
-/>
+We're going to tackle this in four parts; we'll first clarify _why_ we should care about structured data at all. We'll then look at the rise of **block-based interfaces** – a design pattern that's become incredibly popular over the last 5 years. We'll then consider some of the current problems with block-based interfaces. And finally we'll explore a [protocol](https://blockprotocol.org) that we've been working on at [HASH](https://hash.ai). The goal of it is to address many of these problems both with blocks and structured data.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415154/maggieappleton.com/notes/block-data/block-data-9_ifcfyz.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415156/maggieappleton.com/notes/block-data/block-data-10_shos2b.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415123/maggieappleton.com/notes/block-data/block-data-6_mt4aok.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415159/maggieappleton.com/notes/block-data/block-data-11_dbmo8h.jpg"
-  alt=""
-/>
+First, why is it worth dreaming about a world where we have _more_ structured data than right now?
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415160/maggieappleton.com/notes/block-data/block-data-12_hovbek.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415171/maggieappleton.com/notes/block-data/block-data-13_ysdsye.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415140/maggieappleton.com/notes/block-data/block-data-7_fdmgh0.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415178/maggieappleton.com/notes/block-data/block-data-14_b9eqty.jpg"
-  alt=""
-/>
+“Structured data” means different things in different contexts, but here I'm specifically going to be talking about structured data on the web in this talk.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415180/maggieappleton.com/notes/block-data/block-data-15_nqgsgj.jpg"
-  alt=""
-/>
+The web is filled with content – blog posts, descriptions, images, headlines, videos, and all the rest of it. But for the most part, our computers have no clue what that content is about. That's because it's _unstructured_. Meaning we haven't labelled the content in a way that makes sense to computers. In short, this content doesn't have good metadata.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415183/maggieappleton.com/notes/block-data/block-data-16_iaudhy.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415204/maggieappleton.com/notes/block-data/block-data-17_rcmfnr.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415152/maggieappleton.com/notes/block-data/block-data-8_szhwdl.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415205/maggieappleton.com/notes/block-data/block-data-18_uaojs7.jpg"
-  alt=""
-/>
+So if I wanted to search the web for content on Ted Chiang's book [Exhalation](https://en.wikipedia.org/wiki/Exhalation:_Stories) (a great read, by the way)...
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415205/maggieappleton.com/notes/block-data/block-data-19_auycdd.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-20_jlaudh.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415154/maggieappleton.com/notes/block-data/block-data-9_ifcfyz.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-21_y19gvo.jpg"
-  alt=""
-/>
+And I do a standard text search for “exhalation”, I'll get _some_ results about the book. But I'm just as likely to get results about breathing techniques or medical issues. The computer doesn't know the difference between Exhalation the book, and exhalation the biological concept. But we can fix this...
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-22_xs3qqw.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-23_mk6zve.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415156/maggieappleton.com/notes/block-data/block-data-10_shos2b.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-24_aazqtv.jpg"
-  alt=""
-/>
+...by adding structured data.
+Which simply means labelling this content in a way computers can understand. We can programatically declare a type on it.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-25_j8hzy2.jpg"
-  alt=""
-/>
+In this case, we would declare the type “book” and declare it's properties and thier expected types. So we would expect a book to have a _title_ which is going to be a text string. And an _ISBN number_, which is going to be a number.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-26_b0j2kx.jpg"
-  alt=""
-/>
+We typically call this type of structure a _schema_ – it's a data format describing a human concept (such as Book, Person, Movie, Recipe) that declares a set of expected properties and their types.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-27_rh3ste.jpg"
-  alt=""
-/>
+Some of these propeties will be types that have their own properties. For examples, the _author_ which is of the type _Person_. Person is going to have properties like a name, a birthday, a job title. Similarly, the propety _publisher_ is going to be of the type _Company_.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-28_m4jhd7.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-29_cl95ex.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415159/maggieappleton.com/notes/block-data/block-data-11_dbmo8h.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-30_rjmqly.jpg"
-  alt=""
-/>
+To give you a practical example of what this looks like, this is what unstructured data might look like for a website about this conference. We have the title in an `<h1>` tag and the desciption, times, and location in `<p>` tags.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-31_vwgy0a.jpg"
-  alt=""
-/>
+As far as the computer knows, this content is a bunch of mystery nonsense. It's human readable but not machine readable.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-32_gpzcay.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-33_xgfffh.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415160/maggieappleton.com/notes/block-data/block-data-12_hovbek.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-34_rcbzi2.jpg"
-  alt=""
-/>
+In contrast, this is what it would look like as structured data. This is the same event written up in JSON-LD (JSON Linked Data), which is currently the most popular and widely used format across the web.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-35_anqzil.jpg"
-  alt=""
-/>
+We can see it delcares that this thing is of the type _Event_, and has properties like a start date and an end date. It also has a location which is of the type _Place_, which in turn has an _Address_.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-36_zmgcoy.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-37_gutn96.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415171/maggieappleton.com/notes/block-data/block-data-13_ysdsye.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-38_iwgjur.jpg"
-  alt=""
-/>
+At this point, some people are thinking this all sounds very familiar. What I'm describing is the semantic web.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-39_qlhmtc.jpg"
-  alt=""
-/>
+The semantic web is a dream that began over 20 years ago when Tim Berners-Lee wrote [an article](https://www.researchgate.net/publication/225070375_The_Semantic_Web_A_New_Form_of_Web_Content_That_is_Meaningful_to_Computers_Will_Unleash_a_Revolution_of_New_Possibilities) describing the possibilities of a web that could be read by machines.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-40_yuw7wq.jpg"
-  alt=""
-/>
+This dream, that the whole web would become interoperable structured data, promised a bright future of frictionless automation and rich user experiences.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415252/maggieappleton.com/notes/block-data/block-data-41_ee5eyc.jpg"
-  alt=""
-/>
+It's a beautiful dream, but to put it lightly, it's become complicated. The dream is enourmously ambitious. And its run into a number of problems since the original proposition.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415293/maggieappleton.com/notes/block-data/block-data-42_hqkc7z.jpg"
-  alt=""
-/>
+At this point I'll say I'm _not_ a semantic web expect, and this is a very touchy area, so I'll tread lightly. But there are a number of well known issues most people agree upon...
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-44_lmlej2.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-45_ufwbj5.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653747640/maggieappleton.com/notes/block-data/block-data-84_nbfyv2.jpg"
+>
+ 
+<p>
+First, ontologies – meaning the schemas we define for types like “Person” or “Book” – are always culturally relative and subjective. There is no universal single set of properties we can all agree upon. This is because human culture is inherently pluralistic. That's perhaps the whole point of human culture. It's a mechanism to create wildly diverse ways of seeing and being in the world. So diverse it makes it impossible to agree on fundamental categories and propeties for what exists around us.
+</p>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-46_mapaxa.jpg"
-  alt=""
-/>
+Take the type “Person” for example. On [schema.org](https://schema.org), the
+largest and widely used repository of schemas (maintained by Google), a
+_Person_ has the properties _first name_ and _last name_. But in a great many
+cultures, people do not have first and last names. That's not how they name
+people. People may have multiple personal names, family names, and clan names
+that change depending on who is addressing them and in what context. None of
+these fit neatly into two boxes on a form.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-47_vceg1j.jpg"
-  alt=""
-/>
+Similarly, the type _Postal Address_ might seem like something with a rigid
+structure. In places like the United Kingdom, we have strict formats for house
+numbers, street names, and postal codes. But in some places, street addresses
+have not been standardised and formalised by their governments. Someone's
+address might be “go 200 meters past the temple and its the fourth house on
+the left.” Try putting that into your schema.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-48_djteby.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415305/maggieappleton.com/notes/block-data/block-data-49_povv3i.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653747640/maggieappleton.com/notes/block-data/block-data-85_pg0ypo.jpg"
+>
+ 
+<p>The second issue is competing formats. Over the years people have proposed many different ways to implement structured data on the web. There's <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> and RDFa, <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a>, and <a href="https://en.wikipedia.org/wiki/Microformat">Microformats</a></p>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-50_wgxc0k.jpg"
-  alt=""
-/>
+Then there are all the annotation frameworks, query languages, and vocabularies that interact with these formats like [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language), [FOAF](<https://en.wikipedia.org/wiki/FOAF_(ontology)>), [SPARQL](https://en.wikipedia.org/wiki/SPARQL), [Turtle](<https://en.wikipedia.org/wiki/Turtle_(syntax)>), and more.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-51_kmfrfo.jpg"
-  alt=""
-/>
+You are probably overwhelmed by that list, and so are all the developers who are supposed to use them to make the dream of the semantic web come to life. It's not surprising most developers don't bother adding structured data to their sites.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-52_df4uha.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-53_q0cxdl.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653747640/maggieappleton.com/notes/block-data/block-data-86_nchcdq.jpg"
+>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-54_pfeg1o.jpg"
-  alt=""
-/>
+Third, there are incentive issues. It take a lot of developer labour to add semantic markup to a website, and doesn't offer immediate benefits in return. Structured data can certainly improve SEO and content discovery, but beyond that we haven't found enough compelling use cases for it.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-55_r98d9x.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-57_cgr1cm.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415178/maggieappleton.com/notes/block-data/block-data-14_b9eqty.jpg"
+>
+ 
+<p>Lastly, all of the above problems are compounded by the ambitious scale of the semantic web. Trying to structure data across the <i>entire web</i> leads to issues of complexity.</p>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-58_agaokt.jpg"
-  alt=""
-/>
+All these problems have made a lot of people skepticla about the feasability of the semantic web. They're quite keen to throw the baby out with the bathwater.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-59_hq22zu.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-60_tnuksm.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415180/maggieappleton.com/notes/block-data/block-data-15_nqgsgj.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-61_ezuhhs.jpg"
-  alt=""
-/>
+The debate about the semantic web has devolved into an unhelpful binary.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415383/maggieappleton.com/notes/block-data/block-data-62_yxdrsd.jpg"
-  alt=""
-/>
+On one side we have people insisting that structured data on the web has failed and will never work.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415392/maggieappleton.com/notes/block-data/block-data-64_tuel3c.jpg"
-  alt=""
-/>
+And on the other side we have people who are adament that we need to fulfill the dream of a fully semantic web.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415394/maggieappleton.com/notes/block-data/block-data-65_qeclqe.jpg"
-  alt=""
-/>
+This conversation doesn't leave a lot of room for nuance.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415397/maggieappleton.com/notes/block-data/block-data-66_nn0ctp.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415400/maggieappleton.com/notes/block-data/block-data-67_lecmbn.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415183/maggieappleton.com/notes/block-data/block-data-16_iaudhy.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415402/maggieappleton.com/notes/block-data/block-data-68_c3qm9o.jpg"
-  alt=""
-/>
+What's we're missing here is the sensible middle ground of opportunity. There's plenty of value in pursuing structured data at a smaller scale. It's much easier to agree upon and maintain ontologies within companies, sets of companies, academic institutions, and communities.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415428/maggieappleton.com/notes/block-data/block-data-69_evpdsa.jpg"
-  alt=""
-/>
+The original idea wasn't the problem, only the scale of it.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415425/maggieappleton.com/notes/block-data/block-data-70_svbws9.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415423/maggieappleton.com/notes/block-data/block-data-71_sqoqil.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415204/maggieappleton.com/notes/block-data/block-data-17_rcmfnr.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-72_ddmtbq.jpg"
-  alt=""
-/>
+Structured data is clearly useful. In fact, it's already actively used and useful across the web now. The most common use case you've likely heard of is around enabling SEO and “rich results” in search engines.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-73_rvfepe.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-74_gbsnzv.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415205/maggieappleton.com/notes/block-data/block-data-18_uaojs7.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-75_yz2dsb.jpg"
-  alt=""
-/>
+If I search for a recipe like “carrot cake” on the search engine Bing, I get a page filled with useful information like images, ratings, keywords, and wikipedia data. All without neededing to navigate to individual results pages. This is a much better experience than seeing a wall of text.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-76_qeyxil.jpg"
-  alt=""
-/>
+Bing knows which sites contain carrot cake recipes and can surface details from those recipes because they contain structued data.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-77_z3mzp3.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-78_slbtws.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415205/maggieappleton.com/notes/block-data/block-data-19_auycdd.jpg">
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-79_zi4f24.jpg"
-  alt=""
-/>
+Similarly, if I search for the book “The Dawn of Everything” on Google, I get page showing me key information about the book. But I also get a row of options for where to buy this book and how much it costs.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-80_shsciy.jpg"
-  alt=""
-/>
+Which means Google knows the difference between sites that are simply mentioning or reviewing this book, versus which ones are selling it as a product. This distinction is only possible because of structured data.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-81_wzdywu.jpg"
-  alt=""
-/>
+Search results are perhaps our best modern success story of leveraging structured data in user interfaces.
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-82_amfyan.jpg"
-  alt=""
-/>
+</TalkSlide>
 
-<BasicImage
-  margin="0 auto"
-  width="900"
-  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-83_hj9yb9.jpg"
-  alt=""
-/>
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-20_jlaudh.jpg">
+
+Second, structured data can help us manage content in a way that leads to adaptable, more sophisticated UX. This use case is what most of the people at this conference are focused on.
+
+Structuring content just within a single company can lead to enourmous benefits. Tools like [Sanity](https://www.sanity.io/) are one way to do this. It allows us to adapt and reuse content within many contexts.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-21_y19gvo.jpg">
+
+This is an example of a content model from the book [Designing Connected Content](https://learning.oreilly.com/library/view/designing-connected-content/9780134764061/). It shows a set of entities, properties, and relationships related to an Event type. This sort of structured content modelling allows us to create interfaces that provide users with a clear [mental model](https://www.nngroup.com/articles/mental-models/) of the things they're interacting with. It also makes it easy to define these pieces of data in one central place and flexibly reuse them across devices, platforms, and contexts.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-22_xs3qqw.jpg">
+
+Lastly, structured data makes life much easier for data scientists and academics. Data scientists in particular have trouble getting good quality data off the web. They often have to scrape websites, download messy data files, then manually clean, label, and format the data before they can work with it. Structured data eliminates much of that work.
+
+There's also a lot of interest from the academic community around “knowledge graphs”, which are structured ontologies they use to share knowledge within specific domains.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-23_mk6zve.jpg">
+
+Let's jump back to our structured data binary for a moment. Right now we're about here on the spectrum of no structured data to all structured data. A very small percentage of content on the web is encoded with structured data.
+
+We also don't have a lot of accessible, high-quality software that helps us create and publish more structured data.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415214/maggieappleton.com/notes/block-data/block-data-24_aazqtv.jpg">
+
+I think a practical question we should all be asking is how do we get _here_? Rather than trying to make the _whole_ web structured data, how do we simply nudge this arrow slightly further along to the right?
+
+The goal is _more_ structured data, not _all_ structured data.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-25_j8hzy2.jpg">
+
+One of the major barriers to this goal is that almost all our existing tools related to structured data are designed to serve developers.
+
+Most of the focus of the semantic web movement has gone into creating syntax formats like RDF, OWL, and JSON-LD. There's also been a lot of effort put into convincing developers to join the cause. Rather than other people who are involved in making content on the web, like designers, product people, and content strategists.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-26_b0j2kx.jpg">
+
+And _this_ is a really rough user interface to work in. And it's certainly not accessible to most people.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-27_rh3ste.jpg">
+
+Which brings us to a prescient question: how do we make it easier for everyone to create structured data?
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-28_m4jhd7.jpg">
+
+Or put more specifically, what type of interfaces might enable non-developers to create structured data?
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-29_cl95ex.jpg">
+
+So, I have a hypothesis for this question. And you can probably guess what it is... blocks!
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-30_rjmqly.jpg">
+
+I now want to talk to you about the huge surge in blocks and composable interfaces we've seen over the last five years.
+
+But first, what exactly do I mean by a “_block_”?
+
+Well, you have almost certainly seen and used a block.
+
+</TalkSlide>
+
+<TalkSlide video imgSrc="https://res.cloudinary.com/dxj9qr5gj/video/upload/ac_none,q_auto:best/v1654118527/maggieappleton.com/notes/block-data/notion_dah06m.mp4">
+
+_This is a video - click play on the slide_
+
+Most of you will have encountered blocks in an app like [Notion](https://notion.so), which is arguably responsible for the huge popularity boom in blocks.
+
+This is what the interface looks like. You begin on a page, type the slash command, and a menu appears where you can select a block from a list of pre-made formats. Such as a header, bullet point list, or a table. You can then enter data into that block and change the state of it. You can drag and drop these blocks around to arrange them however you like, including in side-by-side columns.
+
+You're essentially able to create very powerful layouts and formats with a very simple set of interface patterns.
+
+</TalkSlide>
+
+<TalkSlide video imgSrc="https://res.cloudinary.com/dxj9qr5gj/video/upload/ac_none,q_auto:best/v1654118525/maggieappleton.com/notes/block-data/coda_rwocpi.mp4">
+
+_This is a video - click play on the slide_
+
+To show another example, this is [Coda](https://coda.io) which is one of the more advanced block-based editors. You can see here they have quite a long list of block types to pick from.
+
+I can embed rich media like tweets, or query an external API like the Unsplash image libary. All from within a friendly set of user interface components, and without writing any code.
+
+This would all be _very_ difficult to do if we were working in native web languages like HTML, CSS, and JS. For people who don't know how to code, these types of interfaces give them to power to author rich media documents and publish them to the web in a couple of clicks.
+
+We've become slightly jaded about these now. WYSIWYG direct manipulation interfaces are taken for granted. But creating something like this would have been prohibitively complex just 5 years ago.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-31_vwgy0a.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-32_gpzcay.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-33_xgfffh.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-34_rcbzi2.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-35_anqzil.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-36_zmgcoy.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-37_gutn96.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-38_iwgjur.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-39_qlhmtc.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-40_yuw7wq.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415252/maggieappleton.com/notes/block-data/block-data-41_ee5eyc.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415293/maggieappleton.com/notes/block-data/block-data-42_hqkc7z.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-44_lmlej2.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-45_ufwbj5.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-46_mapaxa.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-47_vceg1j.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-48_djteby.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415305/maggieappleton.com/notes/block-data/block-data-49_povv3i.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-50_wgxc0k.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-51_kmfrfo.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-52_df4uha.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-53_q0cxdl.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-54_pfeg1o.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415343/maggieappleton.com/notes/block-data/block-data-55_r98d9x.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-57_cgr1cm.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-58_agaokt.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-59_hq22zu.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-60_tnuksm.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-61_ezuhhs.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415383/maggieappleton.com/notes/block-data/block-data-62_yxdrsd.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415392/maggieappleton.com/notes/block-data/block-data-64_tuel3c.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415394/maggieappleton.com/notes/block-data/block-data-65_qeclqe.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415397/maggieappleton.com/notes/block-data/block-data-66_nn0ctp.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415400/maggieappleton.com/notes/block-data/block-data-67_lecmbn.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415402/maggieappleton.com/notes/block-data/block-data-68_c3qm9o.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415428/maggieappleton.com/notes/block-data/block-data-69_evpdsa.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415425/maggieappleton.com/notes/block-data/block-data-70_svbws9.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415423/maggieappleton.com/notes/block-data/block-data-71_sqoqil.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-72_ddmtbq.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-73_rvfepe.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-74_gbsnzv.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-75_yz2dsb.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-76_qeyxil.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-77_z3mzp3.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-78_slbtws.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-79_zi4f24.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-80_shsciy.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-81_wzdywu.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-82_amfyan.jpg">
+
+.....
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-83_hj9yb9.jpg">
+
+.....
+
+</TalkSlide>
 
 ## Links and References
 
