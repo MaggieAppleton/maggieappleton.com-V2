@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Video = ({ src, title, ...props }) => (
+const Video = ({ src, title, width, height, ...props }) => (
   <StyledVideo {...props}>
     <iframe
       width="853"
@@ -25,6 +25,9 @@ const StyledVideo = styled.div`
     height: 100%;
     width: 100%;
     position: absolute;
+    @media (max-width: 724px) {
+      max-width: 100%;
+    }
   }
 `;
 
