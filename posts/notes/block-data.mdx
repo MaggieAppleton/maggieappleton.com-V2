@@ -332,63 +332,69 @@ To show another example, this is [Coda](https://coda.io) which is one of the mor
 
 I can embed rich media like tweets, or query an external API like the Unsplash image libary. All from within a friendly set of user interface components, and without writing any code.
 
-This would all be _very_ difficult to do if we were working in native web languages like HTML, CSS, and JS. For people who don't know how to code, these types of interfaces give them to power to author rich media documents and publish them to the web in a couple of clicks.
+This might not seem that impressive to you. We've become slightly jaded about these type of interfaces; WYSIWYG direct manipulation interfaces are taken for granted. But creating something like this would have been prohibitively complex just 5 years ago.
 
-We've become slightly jaded about these now. WYSIWYG direct manipulation interfaces are taken for granted. But creating something like this would have been prohibitively complex just 5 years ago.
+This is all _very_ difficult to do if you're working in native web languages like HTML, CSS, and JS. For people who don't know how to code, block-based interfaces allow them to author rich media documents and publish them to the web in a couple of clicks. They're a huge leap forward in democratising web publishing.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-31_vwgy0a.jpg">
 
-.....
+The interface patterns in block-based editors have already become quite consistent and standardised. In most of them you can type `/` and get a dropdown list of block options.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-32_gpzcay.jpg">
 
-.....
+In some of the more complex ones, block choices are presented in a sidebar or configuration panel. But generally everyone has converged on a standardised format for how these editors work. Which is great for users who don't have to relearn the patterns for every new app.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-33_xgfffh.jpg">
 
-.....
+So now that we've seen a couple of examples of block-based interfaces, I want to give you a more concise definining of a “block”
+
+I define it as a single unit of content...
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-34_rcbzi2.jpg">
 
-.....
+...within a document or canvas...
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-35_anqzil.jpg">
 
-.....
+...that can be flexibly composed and rearranged...
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-36_zmgcoy.jpg">
 
-.....
+...and has a _type_ that determines how it displays data.
+
+So a table obviously lays data out in rows and columns...
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-37_gutn96.jpg">
 
-.....
+...while a kanban lays it out in a set of cards.
+
+Another key feature of blocks is you can _change that type_ while the data inside the block stays the same. This means we have a separation of the data from the view. So a set of kanban cards could become...
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-38_iwgjur.jpg">
 
-.....
+...an image gallery.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-39_qlhmtc.jpg">
 
-.....
+...
 
 </TalkSlide>
 
