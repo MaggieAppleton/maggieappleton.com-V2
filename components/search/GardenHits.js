@@ -18,6 +18,7 @@ function GardenHits({ hits, allPostData }) {
         if (post.type === "essay") {
           return (
             <EssayCard
+              key={i}
               id={post.slug}
               slug={post.slug}
               cover={post.cover}
@@ -29,6 +30,7 @@ function GardenHits({ hits, allPostData }) {
         } else if (post.type === "note") {
           return (
             <NoteCard
+              key={i}
               id={post.slug}
               slug={post.slug}
               title={post.title}
@@ -39,6 +41,7 @@ function GardenHits({ hits, allPostData }) {
         } else if (post.type === "pattern") {
           return (
             <PatternCard
+              key={i}
               id={post.slug}
               slug={post.slug}
               title={post.title}
