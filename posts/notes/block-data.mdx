@@ -10,13 +10,13 @@ growthStage: "budding"
 
 <AssumedAudience>
 
-Developers, designers, and product people intersted in structured content and structured data.
+Developers, designers, and product people interested in structured content and structured data.
 
 </AssumedAudience>
 
 <IntroParagraph>
 
-This is a talk I first presented at Sanity's [Structured Content Conference](https://structuredcontent.live/) in San Fransisco, May 2022.
+This is a talk I first presented at Sanity's [Structured Content Conference](https://structuredcontent.live/) in San Francisco, May 2022.
 
 </IntroParagraph>
 
@@ -56,7 +56,7 @@ I like the give the punchline away early in my talks. I'm here to convince you o
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415120/maggieappleton.com/notes/block-data/block-data-5_itjpbg.jpg">
 
-We're going to tackle this in four parts; we'll first clarify _why_ we should care about structured data at all. We'll then look at the rise of **block-based interfaces** – a design pattern that's become incredibly popular over the last 5 years. We'll then consider some of the current problems with block-based interfaces. And finally we'll explore a [protocol](https://blockprotocol.org) that we've been working on at [HASH](https://hash.ai). The goal of it is to address many of these problems both with blocks and structured data.
+We're going to tackle this in four parts; we'll first clarify _why_ we should care about structured data at all. We'll then look at the rise of **block-based interfaces** – a design pattern that's become incredibly popular over the last 5 years. We'll then consider some current problems with block-based interfaces. And finally we'll explore a [protocol](https://blockprotocol.org) that we've been working on at [HASH](https://hash.ai). The goal of it is to address many of these problems both with blocks and structured data.
 
 </TalkSlide>
 
@@ -94,22 +94,22 @@ And I do a standard text search for “exhalation”, I'll get _some_ results ab
 >
 
 ...by adding structured data.
-Which simply means labelling this content in a way computers can understand. We can programatically declare a type on it.
+This simply means labelling this content in a way computers can understand. We can programmatically declare a type on it.
 
-In this case, we would declare the type “book” and declare it's properties and thier expected types. So we would expect a book to have a _title_ which is going to be a text string. And an _ISBN number_, which is going to be a number.
+In this case, we would declare the type “book” and declare it's properties and their expected types. So we would expect a book to have a _title_ which is going to be a text string. And an _ISBN number_, which is going to be a number.
 
 We typically call this type of structure a _schema_ – it's a data format describing a human concept (such as Book, Person, Movie, Recipe) that declares a set of expected properties and their types.
 
-Some of these propeties will be types that have their own properties. For examples, the _author_ which is of the type _Person_. Person is going to have properties like a name, a birthday, a job title. Similarly, the propety _publisher_ is going to be of the type _Company_.
+Some of these properties will be types that have their own properties. For examples, the _author_ which is of the type _Person_. Person is going to have properties like a name, a birthday, a job title. Similarly, the property _publisher_ is going to be of the type _Company_.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415159/maggieappleton.com/notes/block-data/block-data-11_dbmo8h.jpg"
 >
 
-To give you a practical example of what this looks like, this is what unstructured data might look like for a website about this conference. We have the title in an `<h1>` tag and the desciption, times, and location in `<p>` tags.
+To give you a practical example of what this looks like, this is what unstructured data might look like for a website about this conference. We have the title in an `<h1>` tag and the description, times, and location in `<p>` tags.
 
-As far as the computer knows, this content is a bunch of mystery nonsense. It's human readable but not machine readable.
+As far as the computer knows, this content is a bunch of mystery nonsense. It's human-readable but not machine-readable.
 
 </TalkSlide>
 
@@ -118,7 +118,7 @@ As far as the computer knows, this content is a bunch of mystery nonsense. It's 
 
 In contrast, this is what it would look like as structured data. This is the same event written up in JSON-LD (JSON Linked Data), which is currently the most popular and widely used format across the web.
 
-We can see it delcares that this thing is of the type _Event_, and has properties like a start date and an end date. It also has a location which is of the type _Place_, which in turn has an _Address_.
+We can see it declares that this thing is of the type _Event_, and has properties like a start date and an end date. It also has a location which is of the type _Place_, which in turn has an _Address_.
 
 </TalkSlide>
 
@@ -131,7 +131,7 @@ The semantic web is a dream that began over 20 years ago when Tim Berners-Lee wr
 
 This dream, that the whole web would become interoperable structured data, promised a bright future of frictionless automation and rich user experiences.
 
-It's a beautiful dream, but to put it lightly, it's become complicated. The dream is enourmously ambitious. And its run into a number of problems since the original proposition.
+It's a beautiful dream, but to put it lightly, it's become complicated. The dream is enormously ambitious. And it's run into a number of problems since the original proposition.
 
 At this point I'll say I'm _not_ a semantic web expect, and this is a very touchy area, so I'll tread lightly. But there are a number of well known issues most people agree upon...
 
@@ -141,7 +141,7 @@ At this point I'll say I'm _not_ a semantic web expect, and this is a very touch
 >
  
 <p>
-First, ontologies – meaning the schemas we define for types like “Person” or “Book” – are always culturally relative and subjective. There is no universal single set of properties we can all agree upon. This is because human culture is inherently pluralistic. That's perhaps the whole point of human culture. It's a mechanism to create wildly diverse ways of seeing and being in the world. So diverse it makes it impossible to agree on fundamental categories and propeties for what exists around us.
+First, ontologies – meaning the schemas we define for types like “Person” or “Book” – are always culturally relative and subjective. There is no universal single set of properties we can all agree upon. This is because human culture is inherently pluralistic. That's perhaps the whole point of human culture. It's a mechanism to create wildly diverse ways of seeing and being in the world. So diverse it makes it impossible to agree on fundamental categories and properties for what exists around us.
 </p>
 
 Take the type “Person” for example. On [schema.org](https://schema.org), the
@@ -156,7 +156,7 @@ Similarly, the type _Postal Address_ might seem like something with a rigid
 structure. In places like the United Kingdom, we have strict formats for house
 numbers, street names, and postal codes. But in some places, street addresses
 have not been standardised and formalised by their governments. Someone's
-address might be “go 200 meters past the temple and its the fourth house on
+address might be “go 200 meters past the temple and it's the fourth house on
 the left.” Try putting that into your schema.
 
 </TalkSlide>
@@ -175,16 +175,16 @@ You are probably overwhelmed by that list, and so are all the developers who are
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653747640/maggieappleton.com/notes/block-data/block-data-86_nchcdq.jpg"
 >
 
-Third, there are incentive issues. It take a lot of developer labour to add semantic markup to a website, and doesn't offer immediate benefits in return. Structured data can certainly improve SEO and content discovery, but beyond that we haven't found enough compelling use cases for it.
+Third, there are incentive issues. It takes a lot of developer labour to add semantic markup to a website, and doesn't offer immediate benefits in return. Structured data can certainly improve SEO and content discovery, but beyond that we haven't found enough compelling use cases for it.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415178/maggieappleton.com/notes/block-data/block-data-14_b9eqty.jpg"
 >
  
-<p>Lastly, all of the above problems are compounded by the ambitious scale of the semantic web. Trying to structure data across the <i>entire web</i> leads to issues of complexity.</p>
+<p>Lastly, the ambitious scale of the semantic web compounds all the above problems. Trying to structure data across the <i>entire web</i> leads to issues of complexity.</p>
 
-All these problems have made a lot of people skepticla about the feasability of the semantic web. They're quite keen to throw the baby out with the bathwater.
+All these problems have made a lot of people skeptical about the feasibility of the semantic web. They're quite keen to throw the baby out with the bathwater.
 
 </TalkSlide>
 
@@ -194,7 +194,7 @@ The debate about the semantic web has devolved into an unhelpful binary.
 
 On one side we have people insisting that structured data on the web has failed and will never work.
 
-And on the other side we have people who are adament that we need to fulfill the dream of a fully semantic web.
+And on the other side we have people who are adamant that we need to fulfil the dream of a fully semantic web.
 
 This conversation doesn't leave a lot of room for nuance.
 
@@ -216,9 +216,9 @@ Structured data is clearly useful. In fact, it's already actively used and usefu
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415205/maggieappleton.com/notes/block-data/block-data-18_uaojs7.jpg">
 
-If I search for a recipe like “carrot cake” on the search engine Bing, I get a page filled with useful information like images, ratings, keywords, and wikipedia data. All without neededing to navigate to individual results pages. This is a much better experience than seeing a wall of text.
+If I search for a recipe like “carrot cake” on the search engine Bing, I get a page filled with useful information like images, ratings, keywords, and Wikipedia data. All without needing to navigate to individual results pages. This is a much better experience than seeing a wall of text.
 
-Bing knows which sites contain carrot cake recipes and can surface details from those recipes because they contain structued data.
+Bing knows which sites contain carrot cake recipes and can surface details from those recipes because they contain structured data.
 
 </TalkSlide>
 
@@ -236,7 +236,7 @@ Search results are perhaps our best modern success story of leveraging structure
 
 Second, structured data can help us manage content in a way that leads to adaptable, more sophisticated UX. This use case is what most of the people at this conference are focused on.
 
-Structuring content just within a single company can lead to enourmous benefits. Tools like [Sanity](https://www.sanity.io/) are one way to do this. It allows us to adapt and reuse content within many contexts.
+Structuring content just within a single company can lead to enormous benefits. Tools like [Sanity](https://www.sanity.io/) are one way to do this. It allows us to adapt and reuse content within many contexts.
 
 </TalkSlide>
 
@@ -330,7 +330,7 @@ _This is a video - click play on the slide_
 
 To show another example, this is [Coda](https://coda.io) which is one of the more advanced block-based editors. You can see here they have quite a long list of block types to pick from.
 
-I can embed rich media like tweets, or query an external API like the Unsplash image libary. All from within a friendly set of user interface components, and without writing any code.
+I can embed rich media like tweets, or query an external API like the Unsplash image library. All from within a friendly set of user interface components, and without writing any code.
 
 This might not seem that impressive to you. We've become slightly jaded about these type of interfaces; WYSIWYG direct manipulation interfaces are taken for granted. But creating something like this would have been prohibitively complex just 5 years ago.
 
@@ -346,13 +346,13 @@ The interface patterns in block-based editors have already become quite consiste
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415251/maggieappleton.com/notes/block-data/block-data-32_gpzcay.jpg">
 
-In some of the more complex ones, block choices are presented in a sidebar or configuration panel. But generally everyone has converged on a standardised format for how these editors work. Which is great for users who don't have to relearn the patterns for every new app.
+In some of the more complex ones, they present blocks in a sidebar or configuration panel. But generally everyone has converged on a standardised format for how these editors work. Which is great for users who don't have to relearn the patterns for every new app.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415250/maggieappleton.com/notes/block-data/block-data-33_xgfffh.jpg">
 
-So now that we've seen a couple of examples of block-based interfaces, I want to give you a more concise definining of a “block”
+So now that we've seen a couple of examples of block-based interfaces, I want to give you a more concise definition of a “block”
 
 I define it as a single unit of content...
 
@@ -424,7 +424,7 @@ And I think block-based apps are becoming the meta-medium for horizontal apps. T
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-44_lmlej2.jpg">
 
-Unsurprisingly, block-based apps have started popping up everywhere. And there's three main categories they fall into.
+Unsurprisingly, block-based apps have started popping up everywhere. There are three main categories they fall into.
 
 First is documents, wikis, and knowledge management systems. The kinds of apps people use for note-taking or team communications. This is the most popular use case at the moment.
 
@@ -432,13 +432,13 @@ First is documents, wikis, and knowledge management systems. The kinds of apps p
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-45_ufwbj5.jpg">
 
-Second is WYSIWYG website builders and web publishing platforms. This include platforms like Wordpress' Gutenberg editor, Squarespace, and Webflow. They're explicitly designed to help you create standard web designs like landing pages, contact forms, and blogs.
+Second is WYSIWYG website builders and web publishing platforms. This includes platforms like WordPress's Gutenberg editor, Squarespace, and Webflow. They're explicitly designed to help you create standard web designs like landing pages, contact forms, and blogs.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415304/maggieappleton.com/notes/block-data/block-data-46_mapaxa.jpg">
 
-The third category that's just starting to take shape is what I'm calling “Do-it-Yourself SaaS tooling.” These apps give users to ability to create their own interfaces with a lot more programmatic functionality baked in. You can usually query a seperate data source, add if this/then that logic to elements, and define more advanced block functionality like filterable lists and dropdown selectors.
+The third category that's just starting to take shape is what I'm calling “Do-it-Yourself SaaS tooling.” These apps give users to ability to create their own interfaces with a lot more programmatic functionality baked in. You can usually query a separate data source, add if this/then that logic to elements, and define more advanced block functionality like filterable lists and dropdown selectors.
 
 Rather than subscribing to 10 different SaaS services, these apps are beginning to let you build your own solutions.
 
