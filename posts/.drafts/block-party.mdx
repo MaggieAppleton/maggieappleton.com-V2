@@ -50,13 +50,17 @@ You have almost certainly seen and used these blocks. They come in an array of f
 
 <Spacer size="small" />
 
-These blocks don't look drastically different to what you see on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them to the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote> They are a syntax-free, user-friendly way to create dynamic, complex documents and pages on the web.
+These blocks don't look drastically different to what you see on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them to the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote> They are a syntax-free, user-friendly way to create dynamic, complex documents, sites, and even apps on the web.
 
-The places where we create these blocks have been christened _block-based editors_. They fall into two major categories; apps for creating personal and collaborative documents, including team wikis and note-taking applications. And “no-code” website builders that help people create blog posts and simple webpages. They're starting to replace to both classical word processors and syntax-based code files.
+The places where we create these blocks have been christened _block-based editors_. They fall into three major categories;
+
+1. Personal and collaborative documents, including team wikis and note-taking applications
+2. “No-code” website builders that help people create blog posts and simple webpages. They're starting to replace to both classical word processors and syntax-based code files.
+3. Do it yourself app builders
 
 {graphic of blocks inside a document and a no code builder}
 
-We're now in the middle of a Cambrian explosion of these editors. Blocks are a core concept in almost every modern document editor and no-code website builder; [Notion](https://www.notion.so/), [Wordpress Gutenberg](https://wordpress.org/gutenberg/), [Coda](https://coda.io/), [ClickUp](https://clickup.com/), [Craft](https://www.craft.do/), [Clover](https://cloverapp.co/), [Almanac](https://almanac.io/), [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop?ms.url=microsoftcommicrosoft-loop), [Google Docs](https://docs.google.com/), [Kosmik](https://www.kosmik.app/), [Roam Research](https://roamresearch.com/), [Logseq](https://logseq.com/), [Remnote](https://www.remnote.com/), [Thunknotes](https://www.thunknotes.com/), [Clarity](https://www.clarity.so/), the list goes on.
+We're now in the middle of a Cambrian explosion of these editors. Blocks are a core concept in almost every modern document editor and no-code website builder; [Notion](https://www.notion.so/), [Wordpress Gutenberg](https://wordpress.org/gutenberg/), [Coda](https://coda.io/), [Craft](https://www.craft.do/), [Clover](https://cloverapp.co/), [Almanac](https://almanac.io/), [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop?ms.url=microsoftcommicrosoft-loop), [ClickUp](https://clickup.com/), [Google Docs](https://docs.google.com/), [Kosmik](https://www.kosmik.app/), [Retool](), [Glide](), [Roam Research](https://roamresearch.com/), [Logseq](https://logseq.com/), [Remnote](https://www.remnote.com/), [Thunknotes](https://www.thunknotes.com/), [Clarity](https://www.clarity.so/), the list goes on.
 
 <BasicImage
   width="960px"
@@ -65,7 +69,7 @@ We're now in the middle of a Cambrian explosion of these editors. Blocks are a c
   margin="0 auto 1rem"
 />
 
-At last count I found 25 block-editors in active development, and I've certainly missed some. Two more will get seed funding while you're reading this.
+At last count I found 30 block-editors in active development, and I've certainly missed some. Two more will get seed funding while you're reading this.
 
 Given this popular burst, it's a fine time to ask some clarifying questions:
 
@@ -206,6 +210,8 @@ All block-based editors allow you to quickly add a block to a document by typing
 You pick a block type and it appears inline. You can then add content to the block, or continue adding blocks below.
 
 This interaction pattern allows you to quickly browse and select blocks without moving your hands off the keyboard. It helps keep you in the flow of writing like a traditional text editor would. Only with a far greater range of mediums and formatting options available at your fingertips.
+
+Some applications also have sidebars that give users a way to browse avaliable blocks in a larger area. (Coda, Retool, Wordpress Gutenberg)
 
 <div style={{display: "inline-block", marginTop: "3rem"}}>
 
@@ -471,7 +477,7 @@ I think it's pretty good summary of the situation, but one that leaks in a hundr
 
 Let's try again, wearing our technological pedant hat: <Footnote idName={5}>This is a good faith best effort, which I'm certainly open to revising if and when more intelligent and experienced people point out its flaws on Twitter. At least be polite when you do :)</Footnote>
 
-<SimpleCard>
+<SimpleCard alignLeft>
 
 A block is the basic semantic unit of a block-based interface. It is one of many blocks that can be flexibly arranged and interlinked within a document or canvas.
 Each block is:
@@ -534,7 +540,7 @@ Before these atomic, interactive blocks started appearing, our documents were pr
 
 String enough of these lines together, and you have a document.
 
-Simple text didn't stay simple for long. Starting in the 1980's, we added on _rich text editing_ – text marked up with formatting like **bold**, _italics_, ~~strikethroughs~~, <u>underlines</u>, <mark>highlights</mark> and the like. Souped up text editors dave us even more formatting options like making the <br /><span style={{ fontSize: "2rem" }}>font size huge <span style={{ color: "#DB552C" }}>and orange</span></span> <img src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1643619446/maggieappleton.com/essays/block-editors/wordart_1_qtghbu.png" alt="The words 'and 3D' styled in a giant, orange 3D text effect” style={{ display: "inline-block", margin: "0", width: "220px", position: "relative", top: "30px", marginTop: "-25px" }} />
+Simple text didn't stay simple for long. Starting in the 1980's, we added on _rich text editing_ – text marked up with formatting like **bold**, _italics_, ~~strikethroughs~~, <u>underlines</u>, <mark>highlights</mark> and the like. Souped up text editors dave us even more formatting options like making the <br /><span style={{ fontSize: "2rem" }}>font size huge <span style={{ color: "#DB552C" }}>and orange</span></span> <img src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1643619446/maggieappleton.com/essays/block-editors/wordart_1_qtghbu.png" alt="The words 'and 3D' styled in a giant, orange 3D text effect" style={{ display: "inline-block", margin: "0", width: "220px", position: "relative", top: "30px", marginTop: "-25px" }} />
 
 <Spacer size="small" />
 
