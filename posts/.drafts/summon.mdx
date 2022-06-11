@@ -1,0 +1,64 @@
+---
+title: "Summon: A GPT-3 Spirit for Reflective Notes"
+description: "An exploratory prototype of generative AI assistants for personal notes"
+updated: "2022-06-04"
+startDate: "2022-06-04"
+type: "note"
+topics:
+  [
+    "Machine Learning",
+    "Design",
+    "Artificial Intelligence",
+    "Tools for Thought",
+    "Personal Knowledge",
+  ]
+growthStage: "budding"
+---
+
+<IntroParagraph>
+
+I spent last weekend summoning spirits. Not the supernatural kind. But the algorithmic kind. At a prototypical remote cabin out in the California woods, a small group of us gathered around a cluster of Macbook Pros and built a thing.
+
+</IntroParagraph>
+
+We called it **Summon**.<Footnote idName={1}>We originally named it “Kevin,” but eventually decided that didn't have the right branding vibes. “Summon” is a handy acronymn for its full name: <b>Summon Unlimited Machine Magic on Notes</b></Footnote> Summon is a place where you can write notes. Every note has a litte spirit inside it (or “agent” if you like more traditional AI terminology). This spirit is like a moderately intelligent human who has read your note. When you summon a spirit, it can tell you all about the note it lives in.
+
+It can summarise its contents in a few words.
+
+It can answer questions about it.
+
+It can rephrase what you've written in a different tone of voice.
+
+Or a different language.
+
+It can write more about your topic.
+
+It can point our flaws in your argument.
+
+Or challenge your claims.
+
+Spirits can also read other notes in your system. This gives them more context to answer your questions and generate ideas. You can ask the spirit in your **Medieval food** note to read your **Favourite recipes** note, then recommend some 16th-century-themed meals you might enjoy.
+
+Above all, the spirits are meant to help you _reflect_ on your thoughts. They're assistants for thinking. They certainly cannot think _for_ you. And the level of sophistication in these systems is still reasonably low. You have to approach them with a bit of lateral thinking to get interesting results.
+
+Asking a spirit to “write a 1000 word essay about quantum computing”
+
+I'm clearly being coy and flippant with my supernatural language. To clarify, a “spirit” is an instance of a GPT-3 request. You type an instruction in natural language, and we fire off a request to [GPT-3 Instruct](); an API provided by the [OpenAI]() foundation.
+
+## The backstory
+
+We were all interested in overlapping topics; research workflows, personal and collaborative knowledge, the evolution of “note-taking”, machine learning, and natural language processing.
+
+I had previously written about the emerging pattern of [[Programmable Notes]] – note-taking systems that allow users to define their own programmatic logic and algorithmic interactivity.
+
+[Linus](https://thesephist.com/) had written about [AI as a collaborator](https://thesephist.com/posts/ai-collaborator/) and [notational representations](https://thesephist.com/posts/notation/) for dynamic systems. [Paul](https://paulbricman.com/) had built [Dual](https://paulbricman.com/thoughtware/dual): a GPT-3 plugin for the Obsidian note-taking ecosystem. [David](https://twitter.com/dmdohan) had been [thinking about](https://youtu.be/Oxbv9EnhSuk?t=202) using NLP as “a natural language IDE for thought”. And the whole team at [Ought](https://ought.org) – our generous hosts for the event – have been [building tools](https://elicit.org/search) to improve open-ended reasoning for researchers using ML / NLP.
+
+---
+
+Thanks to the [Ought](https://ought.org) team for organising and host the retreat. [Paul Bricman](), [Linus Lee](), [David]()
+
+I explored this idea in [[Programmable Notes]] – a reflection on the emerging pattern of note-taking apps that allow users to add programmatic logic into their systems.
+
+We built a prototype of an AI assistant that can help you write reflective notes. We call it Summon. It uses the GPT-3 Instruct API to generate text based on your input.
+
+Yes, many parts of this post were written by the Summon spirits, and not me. I doubt you can tell the difference. Welcome to the age of human-AI co-authorship.

@@ -147,6 +147,9 @@ export const components = {
   NowSection: dynamic(() => import("../components/mdx/NowSection"), {
     ssr: false,
   }),
+  TalkSlide: dynamic(() => import("../components/mdx/TalkSlide"), {
+    ssr: false,
+  }),
 
   // Unique components – used in specific essays or notes
   StaticCSSPosition: StaticCSSPosition,
