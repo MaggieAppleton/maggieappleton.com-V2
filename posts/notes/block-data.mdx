@@ -516,65 +516,93 @@ The next issue is that users only get access to a limited range of blocks.
 
 Users are given between 30-70 blocks in each of these applications, and usually on the lower end of that range.
 
+Here's the block picker dropdown in an app [Clover](https://cloverapp.com/) with a fairly typical list of options.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1655287368/maggieappleton.com/notes/block-data/react_component_-_npm_search_fg9sue.png">
+
+Compare this to what your everyday React developer has access to. If I hop onto npm and search for “react components” I get over 64,000 results to pick from. Obviously, not all of these components are going to be block-like things. Many will be utilities or helpers.
+
+But this still shows there is an _enourmous_ discrepancy between the power and choice developers have when constructing an interface compared to users.
+
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-57_cgr1cm.jpg">
 
-...
+The final and biggest problem with proprietary blocks is that there's no structured data behind these blocks. Which in turns leads to poor data interoperability between platforms.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-58_agaokt.jpg">
 
-.....
+A table in Wordpress Gutenberg and a table in Notion appear to have the same data structure on the surface. They both have values stored in rows are columns. But they're built differently on the back-end. They're not _designed_ to be shareable. Which means we can't easily pass data from a Gutenberg table into a Notion table.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-59_hq22zu.jpg">
 
-.....
+Which brings me to our last section: The Block Protocol!
+
+The [Block Protocol](https://blockprotocol.org) is a project by [HASH](https://hash.ai) that hopes to address some of these problems.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-60_tnuksm.jpg">
 
-.....
+It's a standardised way for any block to communicate with any block-based application
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415344/maggieappleton.com/notes/block-data/block-data-61_ezuhhs.jpg">
 
-.....
+But rather than these two systems talking directly to one another, they instead both talk to the protocol. It's like a medium that negotiates between the two parties. A bit like a set of rules about what you can say and how you should say it.
+
+Any block that talks to this protocol can talk to any application that talks to it, and vice versa.
 
 </TalkSlide>
 
-<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415383/maggieappleton.com/notes/block-data/block-data-62_yxdrsd.jpg">
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1655296364/maggieappleton.com/notes/block-data/block-data-62_xnoncm.jpg">
 
-.....
+This makes it possible to embed blocks that follow the protocol into any app that also follows the protocol.
 
-</TalkSlide>
-
-<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415392/maggieappleton.com/notes/block-data/block-data-64_tuel3c.jpg">
-
-.....
+The developers of the block and the application don't have to know anything about one another, or co-ordinate their efforts. But they can make their software compatible through the protocol.
 
 </TalkSlide>
 
-<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415394/maggieappleton.com/notes/block-data/block-data-65_qeclqe.jpg">
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1655297473/maggieappleton.com/notes/block-data/block-data.001_x4vw74.jpg">
 
-.....
+Embedding is great, but what we really want here is _data exchange_.
+
+Our app has a data store that it controls. And our block wants to create new data. Let's say we've made a table block and typed some information into it.
+
+Using the protocol, our block can send that data to the app's data store. It can then do all the standard operations you would expect. It can create new data, update existing data, delete data, and read data from the app.
+
+Obviously, the block can only make these changes with the _permission_ of the app. There are certainly security implications here we're anicipating and building accomodations for.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1655297473/maggieappleton.com/notes/block-data/block-data.002_nalvgm.jpg">
+
+Blocks can also send data to one another, which leads to some dynamic interactivity between them.
+
+I like to think of these as [oEmbeds](https://en.wikipedia.org/wiki/OEmbed) or [iframes](https://en.wikipedia.org/wiki/HTML_element#Frames) with CRUD operations built-in.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415397/maggieappleton.com/notes/block-data/block-data-66_nn0ctp.jpg">
 
-.....
+Well, **so what?**
+
+Why do we care that all this embedding, data exchange, and interactivity is possible?
+
+First of all, it means that any independent developer can build a block. Then anyone else can put that block into their application. And _it'll work_ without requiring extra dev work. As long as they both use the protocol.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415400/maggieappleton.com/notes/block-data/block-data-67_lecmbn.jpg">
 
-.....
+But really, **so what?**
 
 </TalkSlide>
 
