@@ -2,7 +2,7 @@
 title: "The Block-Paved Path to Structured Data"
 description: "How block-based interfaces can help us create more structured data on the web"
 startDate: "2022-05-23"
-updated: "2022-06-10"
+updated: "2022-06-15"
 type: "note"
 topics: ["Talks", "Data", "The Web", "Web Development"]
 growthStage: "budding"
@@ -602,102 +602,118 @@ First of all, it means that any independent developer can build a block. Then an
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415400/maggieappleton.com/notes/block-data/block-data-67_lecmbn.jpg">
 
-But really, **so what?**
+But really, **so what?** What does this mean in terms of practical user benefits?
+
+Well, in this hopeful world, users would be able to pick from a much wider variety of blocks.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415402/maggieappleton.com/notes/block-data/block-data-68_c3qm9o.jpg">
 
-.....
+At the moment users get this limited list of 30 or so basic blocks.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415428/maggieappleton.com/notes/block-data/block-data-69_evpdsa.jpg">
 
-.....
+But we would love to make it possible for users to have hundreds or thousands of specialised blocks to pick from. They should have a much wider variety of types avaliable in their apps. People be able to pick from weirder, niche blocks like recipe creators, data visualisation displays, flight path trackers, or financial planners.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415425/maggieappleton.com/notes/block-data/block-data-70_svbws9.jpg">
 
-.....
+Secondly, applications would get access to this wider range of blocks for little or no extra developer work.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415423/maggieappleton.com/notes/block-data/block-data-71_sqoqil.jpg">
 
-.....
+Each app would be able to make this infinite list of block options available. Which saves the developers building those apps from having to make all these block types themselves, or rebuild a table block for the 100th time.
+
+It also offers their end-users a much better experience. Which is the whole point of their company.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-72_ddmtbq.jpg">
 
-.....
+Lastly, this protocol makes it easier to create structured data and encourages more data interopability.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-73_rvfepe.jpg">
 
-.....
+Blocks that follow the protocol must declare a schema – an expected data structure.
+
+So a to-do list block would expect to reviece a set of `Task` items
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-74_gbsnzv.jpg">
 
-.....
+And that `Task` will have an expected list of properties like a `title`, `description`, `status`, and `dueDate`. We declare these in a JSON object and valiadate them with [JSON schema](https://json-schema.org/).
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-75_yz2dsb.jpg">
 
-.....
+This means that blocks can be designed to fit specific data structures, rather than all being generic formats.
+
+We could have very specialised block types like a Flight Map block that takes in a `Flight` data structure, or a Movie Review block that takes in a `Movie` data structure.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-76_qeyxil.jpg">
 
-.....
+This gives us an interesting new interplay of data and views. We can start with structured data – with specific concepts – and then find a block that's specifically designed to display it.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-77_z3mzp3.jpg">
 
-.....
+The power of this can best be explained by a quote from the late, great Christopher Alexander: “Design is finding a form to fit a context”
+
+Structured data is a kind of context, and blocks give us the flexibility to find the right form for it.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-78_slbtws.jpg">
 
-.....
+There's also another layer to this. We can go the other direction and use blocks to _create_ structured data.
+
+We can start with a block which has a user-friendly interface to input and edit data. And once we've typed values into it, the block can create the structured data for us, because it already has a schema defined. And this is all a much better user experience than writing JDON-LD or RDF code syntax.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-79_zi4f24.jpg">
 
-.....
+So this is all a lovely idea, but I'm sure many of you are already thinking of all the horrendous ways this could go wrong.
+
+There are plenty of challenges and problems with trying to build this protocol, and we're actively working on them in public. The current [specification](https://blockprotocol.org/spec) of the protocol is an early alpha draft that we're looking for feedback on.
+
+A few of the major challenges we have draft solutions for are security and sandboxing for untusted blocks, maintaining consistent UX and styling across blocks, and handling schema divergence.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415420/maggieappleton.com/notes/block-data/block-data-80_shsciy.jpg">
 
-.....
+There's many more of these. We have an [FAQ](https://blockprotocol.org/faq) page with extensive answers written for each of these. We're always looking to add more so feel free to [get in touch](https://blockprotocol.org/contact) if your question isn't answered.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-81_wzdywu.jpg">
 
-.....
+The bigger picture goal of this whole project is to create a virtous cycle. We want people to create blocks, so that blocks can create structured data, so that people have access to more structured data to reuse in blocks.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415422/maggieappleton.com/notes/block-data/block-data-82_amfyan.jpg">
 
-.....
+In turn, we hope this leads to better user experiences, better data science, and eventually better decision-making tools.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1653415421/maggieappleton.com/notes/block-data/block-data-83_hj9yb9.jpg">
 
-.....
+That's all I have! Thank you for reading.
 
 </TalkSlide>
