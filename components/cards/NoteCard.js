@@ -13,7 +13,7 @@ export default function NoteCard({ slug, title, growthStage, date, id }) {
           <div>
             <h3>{title}</h3>
             <MetadataContainer>
-              <span>Note</span>
+              <span>{growthStage} Note</span>
               <svg width="6px" height="14px">
                 <circle r="3" cx="3" cy="3" fill="var(--color-gray-400)" />
               </svg>
@@ -29,6 +29,7 @@ export default function NoteCard({ slug, title, growthStage, date, id }) {
 const MetadataContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin-left: var(--space-xs);
   margin-top: var(--space-2xs);

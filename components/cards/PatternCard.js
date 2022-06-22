@@ -88,6 +88,7 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
 const MetadataContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin-left: var(--space-xs);
   margin-top: var(--space-2xs);
