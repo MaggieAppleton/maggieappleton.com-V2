@@ -155,10 +155,17 @@ export default function About() {
             <GridSection>
               {[
                 {
+                  title: "The Block-paved Path to Structured Data",
+                  slug: "/block-data",
+                  conferences: "Structured Content Conference",
+                  date: "2022-05-25",
+                },
+                {
                   title: "A Picture Worth a Thousand Programmes",
                   slug: "/programming-pictures",
-                  conferences: "React Advanced London",
-                  date: "2021-10-22",
+                  conferences:
+                    "React Live Amsterdam, CityJS London, and React Advanced London",
+                  date: "2022-04-01",
                 },
                 {
                   title:
@@ -217,6 +224,13 @@ export default function About() {
                 height={1104 / 3}
                 layout="responsive"
               />
+              <Image
+                src="/images/talks_3.jpg"
+                alt="a photo of maggie in front of a large presentation slide"
+                width={1600 / 3}
+                height={1104 / 3}
+                layout="responsive"
+              />
             </div>
           </section>
           <Spacer />
@@ -230,6 +244,19 @@ export default function About() {
             <GridSection>
               {[
                 {
+                  podcastName: "The Stack Overflow Podcast",
+                  episodeName:
+                    "Want to be Great at UX Research? Take a Cue from Cultural Anthropology",
+                  date: "2022-05-09",
+                  url: "https://stackoverflow.blog/2022/06/10/want-to-be-great-at-ux-research-take-a-cue-from-cultural-anthropology-ep-451/",
+                },
+                {
+                  podcastName: "Reverb",
+                  episodeName: "On Digital Gardening",
+                  date: "2022-04-13",
+                  url: "https://anchor.fm/reverbbysane/episodes/EP-09-Maggie-Appleton-on-digital-gardening-e1hrec7",
+                },
+                {
                   podcastName: "Frontend Heroes",
                   episodeName: "Fortress of Solitude",
                   date: "2021-08-10",
@@ -240,6 +267,18 @@ export default function About() {
                   episodeName: "Visual Programming",
                   date: "2021-08-05",
                   url: "https://museapp.com/podcast/37-visual-programming/",
+                },
+                {
+                  podcastName: "Hope in Source",
+                  episodeName: "Digital Disembodiment",
+                  date: "2021-04-05",
+                  url: "https://hopeinsource.com/disembodiment/",
+                },
+                {
+                  podcastName: "She's in Tech",
+                  episodeName: "Unique Roles of a Developer",
+                  date: "2021-03-23",
+                  url: "https://topenddevs.com/podcasts/she-s-in-tech/episodes/episode-5-unique-roles-of-a-developer-she-s-in-tech-004",
                 },
                 {
                   podcastName: "The Swyx Mixtape",
@@ -255,10 +294,34 @@ export default function About() {
                   url: "https://thatsthenorm.com/maggie-appleton-transcript/",
                 },
                 {
-                  podcastName: "Maintainers Anonymous",
-                  episodeName: "Embodiment Through Metaphors",
+                  podcastName: "Hope in Source",
+                  episodeName: "Technology as Process",
+                  date: "2020-11-02",
+                  url: "https://hopeinsource.com/process/",
+                },
+                {
+                  podcastName: "Hope in Source",
+                  episodeName: "Embodied Knowledge - Part 2",
+                  date: "2020-11-02",
+                  url: "https://hopeinsource.com/embodied/",
+                },
+                {
+                  podcastName: "Hope in Source",
+                  episodeName: "Embodied Knowledge - Part 1",
                   date: "2020-05-13",
-                  url: "https://maintainersanonymous.com/metaphor/",
+                  url: "https://hopeinsource.com/metaphor/",
+                },
+                {
+                  podcastName: "Hope in Source",
+                  episodeName: "Open Source as a Gift Economy",
+                  date: "2020-05-03",
+                  url: "https://hopeinsource.com/gift/",
+                },
+                {
+                  podcastName: "React Podcast",
+                  episodeName: "The Power of Mental Models",
+                  date: "2020-03-03",
+                  url: "https://reactpodcast.simplecast.com/episodes/86",
                 },
                 {
                   podcastName: "egghead.io Podcast",
@@ -267,23 +330,11 @@ export default function About() {
                   date: "2019-05-03",
                   url: "https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton",
                 },
-                {
-                  podcastName: "Maintainers Anonymous",
-                  episodeName: "Open Source as a Gift Economy",
-                  date: "2020-05-03",
-                  url: "https://maintainersanonymous.com/gift/",
-                },
-                {
-                  podcastName: "React Podcast",
-                  episodeName: "The Power of Mental Models",
-                  date: "2020-03-03",
-                  url: "https://reactpodcast.simplecast.com/episodes/86",
-                },
               ].map(({ podcastName, episodeName, date, url }, i) => (
                 <TalkCard
                   key={i}
-                  title={podcastName}
-                  host={episodeName}
+                  title={episodeName}
+                  host={podcastName}
                   date={date}
                   url={url}
                 />
@@ -309,7 +360,7 @@ const Divider = styled.hr`
 
 const GridSection = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(320px, auto));
   gap: var(--space-m);
   margin: var(--space-xl) 0;
 `;
@@ -381,7 +432,7 @@ const StyledMain = styled.main`
     div.images {
       margin-top: var(--space-l);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+      grid-template-columns: repeat(auto-fit, minmax(500px, auto));
       gap: var(--space-s);
     }
   }
