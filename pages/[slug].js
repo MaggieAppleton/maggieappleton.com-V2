@@ -150,6 +150,9 @@ export const components = {
   TalkSlide: dynamic(() => import("../components/mdx/TalkSlide"), {
     ssr: false,
   }),
+  ListNumber: dynamic(() => import("../components/mdx/ListNumber"), {
+    ssr: false,
+  }),
 
   // Unique components – used in specific essays or notes
   StaticCSSPosition: StaticCSSPosition,
