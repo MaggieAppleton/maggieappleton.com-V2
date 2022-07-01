@@ -44,6 +44,8 @@
     "react-share": "^4.4.0",
     "react-twitter-embed": "^3.0.3",
     "react-use-clipboard": "^1.0.7",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
     "styled-components": "4.4.1"
   },
   "devDependencies": {
