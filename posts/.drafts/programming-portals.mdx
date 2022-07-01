@@ -1,13 +1,19 @@
 ---
 title: "Programming Portals"
-description: "..."
-growthStage: "seedling"
-startDate: "2022-05-06"
-updated: "2022-05-06"
+description: "Allowing users to customise parts of an application through scoped programmatic logic"
+growthStage: "budding"
+startDate: "2022-06-30"
+updated: "2022-06-30"
 type: "pattern"
 ---
 
 <h2 className="micro">The Context</h2>
+
+One of the core tensions in any piece of software is the balance between what the user wants to do, and what the developers and designers of that app want them to do. Or rather, what they have _predicted_ users want to do.
+
+This tension is less apparent when an application has a very specific and focused purpose, such as the checking out at a grocery store, or filing a tax return.
+
+---
 
 Since the 1980's, GUI's <Footnote idName={1}>Graphical user interfaces</Footnote> have been the primary interface paradigm for personal computers. Every app presents users with a set of familiar graphical objects: windows, sidebars, modals, popovers, cards, sliders, and buttons. We use these to create, edit, and delete the abstract things in our digital systems – our todo items, photos, emails, documents, and the like.
 
@@ -20,3 +26,17 @@ But every design choice has its costs. Despite improving computer usability for 
 <Spacer size="small" />
 
 <h2 className="micro">The Pattern</h2>
+
+Programming portals are small, scoped areas within a graphical interface that give users access to programmatic logic. They let users control a specific object or feature of the application.
+
+Rather than doing this through elaborate settings panels or visual interface elements, users can write some form of linear syntax that is open ended and flexible.
+
+It's rarely a fully fledged programming language like Python or JavaScript. But instead a simplified language or limited set of commands designed specifically for this context. It might allow users to define and reuse variables, write and call functions, or create chains of if-then logic.
+
+It doesn't give users access to rewrite the actual source code of the application. They simply have access to a limited programatic interface that gives them more control over how it works.
+
+HyperCard
+
+Excel formulas
+
+Fermat
