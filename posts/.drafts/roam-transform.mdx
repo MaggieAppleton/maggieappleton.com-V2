@@ -1,0 +1,52 @@
+---
+title: "Transforming JSON from Roam Research"
+description: "How to run find and replace scripts over a JSON export from Roam Research"
+startDate: "2022-07-01"
+updated: "2022-07-01"
+type: "note"
+topics: ["Roam", "Personal Knowledge"]
+growthStage: "seedling"
+---
+
+<AssumedAudience>
+
+People who use Roam Research as their primarily knowledge base and have some familiarly with JavaScript and programming
+
+</AssumedAudience>
+
+<IntroParagraph>
+
+There's a critical missing feature in [Roam Research](https://roamresearch.com) that I've always found frustrating: find and replace. What I want is the ability to search for any string or pattern in my database, and transform it in some way.
+
+</IntroParagraph>
+
+I've been using Roam since the end of 2019 – 945 days to be precise – and the way I format and manage knowledge has inevitably changed over that period.
+
+When I first started using Roam, I didn't have a strong set of conventions or templates for how I was capturing information. The only way to develop them was to start dumping data in. Then through trial and error I figured out what kinds of structures and links would help me organise and discover information when I needed to.
+
+I could never have pre-emptively discovered those structures before starting to use Roam. Entering data in the "wrong format" was a necessary part of learning how to use it.
+
+For example, articles from the web are currently entered into my database like this:
+
+<ImageFrame
+  margin="0 auto 1rem"
+  width="600px"
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_800/v1656688074/maggieappleton.com/notes/transform-roam/roam-article-format_dufiw1.png"
+  alt=""
+/>
+
+I use the format `{{[TODO]]}} [Article title](https://articlelink.com) #Article #[[Media Inbox]] [[Author]] [[Related tags]]` as the top-level node. I then nest any notes about the article underneath.
+
+Is this the best possible structure for Articles in Roam? No, probably not. I'm not making use of attributes to properly encode data like the author and related tags. But I found it helpful to keep everything contained witin a single top-level node and I can still query these later on. For example, I can write `{{[[query]]: {and: [[Article]] [[Scratch]]}}}` and have articles related to MIT's [Scratch](https://scratch.mit.edu/) projects show up.
+
+## JSON Transformations
+
+One of the selling points of knowledge bases like Roam is that the data is all stored as JSON you can export. [JSON](https://en.wikipedia.org/wiki/JSON) stands for JavaScript Object Notation – a widely used data format on the web. This means its interoperable. Meaning you can import your Roam graph into similar apps like [Logseq](https://logseq.com/) or [Obsidian](https://obsidian.md/) via the JSON file.
+
+We can do more than simply import and export the raw JSON though. Because JSON is designed to work with JavaScript, we can easily run programmatic scripts over it to transform it. It's an escape hatch that lets us do whatever we want with our knowledge graph<Footnote idName={1}>While accepting the risks of doing so – with great programming power comes great responsibility to not corrupt your entire knowledge base. Only run transformations on copies with backups!</Footnote>
+
+## Why we need accessible data transformation tools
+
+**Personal knowledge bases should have data transformation tools built-in.** They should assume their users' data structures will evolve over time. Because they will. Change is the only constant.
+
+Having these transformation tools easily avaliable will also help cut down on the anxiety people have about "getting it wrong" when they first start using a new knowledge management tool or system. There are hundred of YouTube videos on "How to setup your knowledge base in {every app}".
