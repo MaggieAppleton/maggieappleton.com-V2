@@ -1,65 +1,82 @@
-import React, { useRef, useEffect } from "react";
+/**
+ * Requirements:
+ *
+ * 1. Takes an arbitrary amount of images as children
+ * 1b Verifies that all children are image tags?
+ * 2. Calculates the appropriate height for triggering based on image heights
+ * 3. Mobile responsive!
+ */
+import React, { useRef, useEffect, createRef } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { breakpoints } from "../../../utils/breakpoints";
 
 if (typeof window !== `undefined`) {
+  // No harm in registering a plugin multiple times, so this component
+  // can safely be used multiple times on the same page
   gsap.registerPlugin(ScrollTrigger);
   gsap.core.globals("ScrollTrigger", ScrollTrigger);
 }
 
-function GsapScroller() {
-  const pinDiv = useRef(null);
-  const img2 = useRef(null);
-  const img3 = useRef(null);
-  const img4 = useRef(null);
+function ScrollMultiImage({ children }) {
+  const triggerDiv = useRef(null);
+  // const img2 = useRef(null);
+  // const img3 = useRef(null);
+  // const img4 = useRef(null);
+
+  const [imageRefs, setImageRefs] = React.useState([]);
+
+  useEffect(() => {
+    // add or remove refs
+    setImageRefs((elRefs) =>
+      Array(children.length)
+        .fill()
+        .map((_, i) => elRefs[i] || createRef())
+    );
+  }, [arrLength]);
 
   useEffect(() => {
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: [pinDiv.current],
+        pin: true,
+        trigger: triggerDiv.current,
         start: "top top",
-        end: "+=800px",
+        end: "+=1000px", // Image height + a bit?
         scrub: 1,
       },
     });
 
-    timeline
-      .to([img2.current], {
-        opacity: 1,
-      })
-      .to([img3.current], {
-        opacity: 1,
-      })
-      .to([img4.current], {
+    imageRefs.forEach((imageRef) => {
+      timeline.to([imageRef.current], {
         opacity: 1,
       });
+    });
+
+    // timeline
+    //   .to([img2.current], {
+    //     opacity: 1,
+    //   })
+    //   .to([img3.current], {
+    //     opacity: 1,
+    //   })
+    //   .to([img4.current], {
+    //     opacity: 1,
+    //   });
   }, []);
 
   const Container = styled.div`
-    height: 1800px;
+    height: 1900px; // Needs to be the height of the whole distance to scroll
     margin: 0 0 var(--space-80);
-    position: static;
-    display: block;
-    @media ${breakpoints.mediaSM} {
-      height: auto;
-      margin-bottom: 0;
-    }
   `;
 
+  // Work out how much of this styling is necessary. Position sticky?
   const TriggerDiv = styled.div`
-    position: sticky;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     top: 0;
     height: auto;
     margin-bottom: 600px;
-    @media ${breakpoints.mediaSM} {
-      position: static;
-      margin-bottom: 0;
-    }
   `;
 
   const Img = styled.img`
@@ -76,8 +93,8 @@ function GsapScroller() {
 
   return (
     <Container>
-      <TriggerDiv ref={pinDiv}>
-        <div>
+      <TriggerDiv ref={triggerDiv}>
+        {/* <div>
           <h3>Greensock in Plain English</h3>
           <p>
             Greensock is a JavaScript library that changes DOM nodes directly.
@@ -86,9 +103,14 @@ function GsapScroller() {
             paragraphs, and images. Greensock then manipulates those nodes to
             create our animations.
           </p>
-        </div>
+        </div> */}
+
+        {children.map((el, i) => {
+          const zIndex = i + 1;
+          const childProp = i === 0 ? "" : "childImage";
+        })}
+
         <Img
-          topImage
           alt="Greensock animation changes DOM nodes"
           src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg"
         />
@@ -118,4 +140,4 @@ function GsapScroller() {
   );
 }
 
-export default GsapScroller;
+export default ScrollMultiImage;
