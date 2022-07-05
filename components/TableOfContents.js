@@ -9,7 +9,7 @@ export default function TableOfContents({ headings }) {
 
   return (
     <StyledContainer>
-      <Summary>Table of Contents</Summary>
+      <h4>Table of Contents</h4>
 
       {headings.length > 0 &&
         headings.map(({ text, level }) => {
@@ -29,21 +29,20 @@ export default function TableOfContents({ headings }) {
   );
 }
 
-const StyledContainer = styled(motion.details)`
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-lg);
-`;
-
-const Summary = styled.summary`
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-sm);
+const StyledContainer = styled(motion.div)`
+  padding: 1rem;
+  position: relative;
+  h4 {
+    font-size: var(--text-sm);
+  }
 `;
 
 const A = styled.a`
   display: block;
+  font-family: var(--font-sans);
   position: relative;
   margin-left: ${(props) =>
     props.level === 2 ? 0 : `${(props.level - 2) * 32}px`};
   font-size: var(--text-sm);
-  margin-bottom: var(--space-xs);
+  margin-top: ${(props) => (props.level === 2 ? "1rem" : "0.5rem")};
 `;
