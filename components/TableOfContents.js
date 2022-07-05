@@ -32,15 +32,17 @@ export default function TableOfContents({ headings }) {
 const StyledContainer = styled(motion.div)`
   padding: 1rem;
   position: relative;
+  display: inline-block;
+  max-width: 300px;
+  right: 0;
   h4 {
     font-size: var(--text-sm);
   }
 `;
 
 const A = styled.a`
-  display: block;
   font-family: var(--font-sans);
-  position: relative;
+  display: block;
   margin-left: ${(props) =>
     props.level === 2 ? 0 : `${(props.level - 2) * 32}px`};
   font-size: var(--text-sm);
