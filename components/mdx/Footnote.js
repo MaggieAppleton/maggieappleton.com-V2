@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { breakpoints } from "../../utils/breakpoints";
 
 // TODO
@@ -7,7 +7,7 @@ import { breakpoints } from "../../utils/breakpoints";
 
 const Footnote = ({ idName, children, isClosed }) => {
   return (
-    <FootnoteContainer>
+    <FootnoteContainer isClosed={isClosed}>
       <label htmlFor={idName} className="margin-toggle footnote-number"></label>
       <input type="checkbox" id={idName} className="margin-toggle" />
       <span className="footnote">{children}</span>
@@ -15,7 +15,6 @@ const Footnote = ({ idName, children, isClosed }) => {
   );
 };
 
-// todo: clean this up
 const FootnoteContainer = styled.aside`
   display: inline;
   .footnote {
@@ -78,11 +77,26 @@ const FootnoteContainer = styled.aside`
     padding-right: var(--space-3xs);
   }
   label.margin-toggle:not(.footnote-number) {
-    display: none;
+    display: ${({ isClosed }) => (isClosed ? "inline" : "none")};
   }
   input.margin-toggle {
     display: none;
   }
+  .footnote,
+  .marginnote {
+    display: ${({ isClosed }) => (isClosed ? "none" : "unset")};
+  }
+  .margin-toggle:checked + .footnote {
+    display: ${({ isClosed }) => (isClosed ? "block" : "unset")};
+    float: ${({ isClosed }) => (isClosed ? "left" : "unset")};
+    left: ${({ isClosed }) => (isClosed ? "0" : "unset")};
+    clear: ${({ isClosed }) => (isClosed ? "both" : "unset")};
+    width: ${({ isClosed }) => (isClosed ? "95%" : "unset")};
+    margin: ${({ isClosed }) => (isClosed ? "1rem 0" : "unset")};
+    height: ${({ isClosed }) => (isClosed ? "auto" : "unset")};
+    position: ${({ isClosed }) => (isClosed ? "relative" : "unset")};
+  }
+
   @media (max-width: 1420px) {
     label.margin-toggle:not(.footnote-number) {
       display: inline;

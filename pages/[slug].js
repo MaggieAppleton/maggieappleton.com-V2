@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
+import { getHeadings } from "../utils/getHeadings";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
 import getOgImage from "../utils/getOgImage";
@@ -46,10 +47,18 @@ import {
 export const components = {
   // a: CustomLink,
   // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
+  // useful for conditionally components for certain routes.
   // See the notes in README.md for more details.
-  h1: Title1,
-  h2: Title2,
+  h1: (props) => (
+    <a href={`#${props.id}`}>
+      <Title1 {...props} />
+    </a>
+  ),
+  h2: (props) => (
+    <a href={`#${props.id}`}>
+      <Title2 {...props} />
+    </a>
+  ),
   h3: Title3,
   h4: Title4,
   Tween: Tween,
@@ -285,7 +294,9 @@ export default function PostPage({
   source,
   frontMatter,
   slug,
+  headings,
   backlinks,
+  toc,
   ogImage,
 }) {
   if (frontMatter.type === "note") {
@@ -296,6 +307,7 @@ export default function PostPage({
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
+        headings={headings}
         ogImage={ogImage}
       />
     );
@@ -304,9 +316,11 @@ export default function PostPage({
       <EssayTemplate
         slug={slug}
         source={source}
+        toc={toc}
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
+        headings={headings}
         ogImage={ogImage}
       />
     );
@@ -383,6 +397,10 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(filePath);
   const { content, data } = matter(source);
 
+  const toc = data?.toc || null;
+
+  const headings = await getHeadings(content);
+
   const ogObject = {
     title: data.title,
     subtitle: data.description,
@@ -399,7 +417,10 @@ export const getStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
-      rehypePlugins: [],
+      rehypePlugins: [
+        require("rehype-slug"),
+        // require("rehype-autolink-headings"),
+      ],
     },
     scope: data,
   });
@@ -408,11 +429,15 @@ export const getStaticProps = async ({ params }) => {
   const backlinks =
     PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks || [];
 
+  console.log({ toc, headings });
+
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      headings,
       slug: params.slug,
+      toc,
       backlinks,
       ogImage,
     },

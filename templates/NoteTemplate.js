@@ -6,6 +6,7 @@ import { breakpoints } from "../utils/breakpoints";
 import GrowthIcon from "../components/icons/GrowthIcon";
 import BackHoverLink from "../components/links/BackHoverLink";
 import Dates from "../components/templates/Dates";
+// import TableOfContents from "../components/TableOfContents";
 import GrowthStage from "../components/templates/GrowthStage";
 import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
@@ -18,8 +19,9 @@ export default function NoteTemplate({
   frontMatter,
   components,
   slug,
+  // headings,
   backlinks,
-  ogImage
+  ogImage,
 }) {
   return (
     <>
@@ -52,6 +54,7 @@ export default function NoteTemplate({
       <StyledMain>
         <BackToTop />
         <ProseWrapper>
+          {/* <TableOfContents headings={headings} /> */}
           <MDXRemote {...source} components={components} />
         </ProseWrapper>
       </StyledMain>
