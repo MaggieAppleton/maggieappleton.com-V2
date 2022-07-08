@@ -397,7 +397,7 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(filePath);
   const { content, data } = matter(source);
 
-  const toc = data.toc || null;
+  const toc = data?.toc || null;
 
   const headings = await getHeadings(content);
 
@@ -428,6 +428,8 @@ export const getStaticProps = async ({ params }) => {
   // Get backlinks
   const backlinks =
     PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks || [];
+
+  console.log({ toc, headings });
 
   return {
     props: {
