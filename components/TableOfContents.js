@@ -115,7 +115,7 @@ const DesktopContainer = styled(motion.div)`
   grid-column: 3;
   height: 0;
   max-width: 300px;
-  margin-left: var(--space-m);
+  margin-left: var(--space-l);
   h4 {
     margin: 0;
     font-size: 0.96rem;

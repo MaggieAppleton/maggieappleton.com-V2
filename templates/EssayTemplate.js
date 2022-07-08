@@ -20,6 +20,7 @@ export default function EssayTemplate({
   components,
   slug,
   headings,
+  toc,
   backlinks,
   ogImage,
 }) {
@@ -54,7 +55,7 @@ export default function EssayTemplate({
       <StyledMain>
         <BackToTop />
         <ProseWrapper>
-          <TableOfContents headings={headings} />
+          {toc && <TableOfContents headings={headings} />}
           <MDXRemote {...source} components={components} />
         </ProseWrapper>
       </StyledMain>

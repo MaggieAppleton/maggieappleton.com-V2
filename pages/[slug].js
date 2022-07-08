@@ -47,7 +47,7 @@ import {
 export const components = {
   // a: CustomLink,
   // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
+  // useful for conditionally components for certain routes.
   // See the notes in README.md for more details.
   h1: (props) => (
     <a href={`#${props.id}`}>
@@ -296,6 +296,7 @@ export default function PostPage({
   slug,
   headings,
   backlinks,
+  toc,
   ogImage,
 }) {
   if (frontMatter.type === "note") {
@@ -315,6 +316,7 @@ export default function PostPage({
       <EssayTemplate
         slug={slug}
         source={source}
+        toc={toc}
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
@@ -395,6 +397,8 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(filePath);
   const { content, data } = matter(source);
 
+  const toc = data.toc || null;
+
   const headings = await getHeadings(content);
 
   const ogObject = {
@@ -431,6 +435,7 @@ export const getStaticProps = async ({ params }) => {
       frontMatter: data,
       headings,
       slug: params.slug,
+      toc,
       backlinks,
       ogImage,
     },
