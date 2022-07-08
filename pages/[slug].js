@@ -397,7 +397,7 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync(filePath);
   const { content, data } = matter(source);
 
-  const toc = data.toc || false;
+  const toc = data.toc || null;
 
   const headings = await getHeadings(content);
 
