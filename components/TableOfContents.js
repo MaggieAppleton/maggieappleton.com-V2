@@ -23,7 +23,7 @@ export default function TableOfContents({ headings }) {
           headings.map(({ text, level }) => {
             const link = text
               .toLowerCase()
-              .replaceAll(" ", "-")
+              .replace(/\s/g, "-")
               .replace(/[.,?()]/gim, "");
             const href = `${route}#${link}`;
 
