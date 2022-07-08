@@ -52,13 +52,12 @@ export default function EssayTemplate({
         </Metadata>
       </HeaderSection>
       <StyledMain>
-        <TableOfContents headings={headings} />
         <BackToTop />
         <ProseWrapper>
+          <TableOfContents headings={headings} />
           <MDXRemote {...source} components={components} />
         </ProseWrapper>
       </StyledMain>
-
       <ProseWrapper>
         {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
       </ProseWrapper>
