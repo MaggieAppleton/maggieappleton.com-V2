@@ -3,6 +3,7 @@ import { breakpoints } from "../../utils/breakpoints";
 
 const ProseWrapper = styled.article`
   display: grid;
+  grid-auto-flow: columns;
   grid-template-columns:
     1fr
     min(72ch, 100%)

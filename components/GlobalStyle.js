@@ -256,7 +256,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	/* Set core root defaults */
-	html:focus-within {
+	html {
 		scroll-behavior: smooth;
 	}
 
@@ -265,6 +265,7 @@ export const GlobalStyle = createGlobalStyle`
 		min-height: 100vh;
 		text-rendering: optimizeSpeed;
 		line-height: 1.5;
+		/* scroll-behavior: smooth; */
 	}
 
 	/* A elements that don't have a class get default styles */
