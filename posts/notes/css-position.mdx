@@ -1,7 +1,7 @@
 ---
 title: "Positioning Elements & Scrollytelling in CSS"
 description: "Notes on how to use the position property in CSS to make scrollytelling stories"
-updated: "2020-12-26"
+updated: "2022-07-08"
 startDate: "2020-12-26"
 type: "note"
 topics: ["The Web", "CSS", "Web Development"]
@@ -32,7 +32,7 @@ The `position` property determines where an element appears on the page. Sounds 
 
 `relative` keeps the element in the normal document flow, but allows us to use placement properties. This means we can move the element up, down, left or right, relative to where it would have been in the normal document flow.
 
-For example, if we nudge this box `-10px` up, and `-10px` to the left, it moves to here:
+For example, if we nudge this box `-20px` up, and `-20px` to the left, it moves to here:
 
 <Center>
 
@@ -45,7 +45,7 @@ For example, if we nudge this box `-10px` up, and `-10px` to the left, it moves 
 In our CSS we would just need to declare a `relative` property on our box, then add `top` and `left` properties:
 
 ```css
-.redBox {
+.tealBox {
   position: relative;
   top: -10px;
   left: -10px;
@@ -60,7 +60,7 @@ In our CSS we would just need to declare a `relative` property on our box, then 
 
 The position of the parent has no influence on where the child shows up. Placement values like `top` and `left` are calculated relative to the document.
 
-Declaring `position: absolute`, `left: 10px` and `bottom: 20px` on this `.redBox` element would position it 10 pixels from the left and 10px from the bottom of the document.
+Declaring `position: absolute`, `left: 10px` and `bottom: 20px` on this `.tealBox` element would position it 10 pixels from the left and 10px from the bottom of the document.
 
 <Center>
 
@@ -80,7 +80,7 @@ This is useful for creating overlapping elements.
 
 ### 4. Fixed
 
-`fixed` is similar to absolute, but sticks itself to the viewport rather than the document. Fixed elements don't move when you scroll down the page - they are always visible.
+`fixed` is similar to absolute, but sticks itself to the viewport (the browser window) rather than the document. Fixed elements don't move when you scroll down the page - they are always visible.
 
 Fixed is useful for persistent elements like navigation bars or menus.
 
@@ -102,7 +102,7 @@ If any parent element has a `transform: translate()` property declared on it, `f
 
 ### 5. Sticky
 
-`sticky` makes an element "stick" to the viewport when it reaches a certain point – usually when the top of the viewport hits the top of the element.
+`sticky` makes an element "stick" to the viewport (the browser window) when it reaches a certain point – usually when the top of the viewport hits the top of the element.
 
 It behaves like a `relative` element until it hits the sticking point, and then becomes `fixed`.
 
