@@ -10,6 +10,7 @@ import getOgImage from "../utils/getOgImage";
 import { Spacer } from "../components/Spacer";
 import AssumedAudience from "../components/mdx/AssumedAudience";
 import Disclaimer from "../components/mdx/Disclaimer";
+import InternalTooltipLink from "../components/links/InternalTooltipLink";
 import EditRed from "../components/mdx/EditRed";
 import { Tween, Timeline, PlayState, Controls } from "react-gsap";
 import EssayTemplate from "../templates/EssayTemplate";
@@ -61,6 +62,7 @@ export const components = {
   ),
   h3: Title3,
   h4: Title4,
+  InternalTooltipLink: InternalTooltipLink,
   Tween: Tween,
   Timeline: Timeline,
   AssumedAudience: AssumedAudience,
@@ -428,8 +430,6 @@ export const getStaticProps = async ({ params }) => {
   // Get backlinks
   const backlinks =
     PostLinks.find((post) => post.ids[0] === data.title)?.inboundLinks || [];
-
-  console.log({ toc, headings });
 
   return {
     props: {

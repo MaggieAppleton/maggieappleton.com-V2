@@ -37,7 +37,7 @@ const stripExcerpt = (str) =>
 const getExcerpt = (str) => {
   if (!str) return "";
   const stripped = stripExcerpt(str);
-  return `${stripped.substring(0, 280).trimEnd()}...`;
+  return `${stripped.substring(0, 230).trimEnd()}...`;
 };
 
 const getDataForBacklinks = (fileNames, filePath) =>
