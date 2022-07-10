@@ -26,6 +26,14 @@ The `position` property determines where an element appears on the page. Sounds 
 
 </Center>
 
+This would be the equivalent code, but we never need to explicitly declare it since all elements are static by default.
+
+```css
+.tealBox {
+  position: static;
+}
+```
+
 <Spacer />
 
 ### 2. Relative
@@ -60,7 +68,7 @@ In our CSS we would just need to declare a `relative` property on our box, then 
 
 The position of the parent has no influence on where the child shows up. Placement values like `top` and `left` are calculated relative to the document.
 
-Declaring `position: absolute`, `left: 10px` and `bottom: 20px` on this `.tealBox` element would position it 10 pixels from the left and 10px from the bottom of the document.
+Declaring `position: absolute`, `left: 20px` and `bottom: 20px` on this `.tealBox` element would position it 20 pixels from the left and 20px from the bottom of the document.
 
 <Center>
 
@@ -68,13 +76,36 @@ Declaring `position: absolute`, `left: 10px` and `bottom: 20px` on this `.tealBo
 
 </Center>
 
-<Spacer />
+```css
+.tealBox {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+```
 
-#### **Relative Parents and Absolute children**
+<Spacer size="small" />
+
+<SimpleCard alignLeft>
+
+#### Relative Parents and Absolute children
 
 If you declare `position: relative` on the parent element, and `position: absolute` on the child, it now positions itself relative to the parent.
 
 This is useful for creating overlapping elements.
+
+```css
+.parent {
+  position: relative;
+}
+.tealBox {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+```
+
+</SimpleCard>
 
 <Spacer />
 
@@ -84,7 +115,7 @@ This is useful for creating overlapping elements.
 
 Fixed is useful for persistent elements like navigation bars or menus.
 
-Declaring `position: fixed;`, `top: 10px;` and `right: 10px` on an element will position it 10 px from the top and right-hand side of the browser viewport. The rest of the document scrolls behind it.
+Declaring `position: fixed;`, `top: 20px;` and `right: 20px` on an element will position it 20 px from the top and right-hand side of the browser viewport. The rest of the document scrolls behind it.
 
 <Center>
 
@@ -92,13 +123,21 @@ Declaring `position: fixed;`, `top: 10px;` and `right: 10px` on an element will 
 
 </Center>
 
-<Spacer size="small" />
+```css
+.tealBox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+```
 
-#### **Annoying Transform Quirk**
+<Alert>
+
+#### **An Annoying Transform Quirk**
 
 If any parent element has a `transform: translate()` property declared on it, `fixed` won't work.
 
-<Spacer />
+</Alert>
 
 ### 5. Sticky
 
