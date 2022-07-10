@@ -4,6 +4,7 @@ description: "Notes on how to use the position property in CSS to make scrollyte
 updated: "2022-07-08"
 startDate: "2020-12-26"
 type: "note"
+toc: true
 topics: ["The Web", "CSS", "Web Development"]
 growthStage: "budding"
 ---
@@ -14,7 +15,7 @@ Having control over where elements are positioned on a webpage is essential for 
 
 The `position` property determines where an element appears on the page. Sounds simple. But it also includes how an element relates to its parent element, the browser window, how it behaves on scroll, and whether placement properties like `top`, `right`, `bottom`, `left` and `z-index` will have any effect.
 
-## **Position** can have six possible values
+## Position has six possible values
 
 ### 1. Static
 
@@ -133,7 +134,7 @@ Declaring `position: fixed;`, `top: 20px;` and `right: 20px` on an element will 
 
 <Alert>
 
-#### **An Annoying Transform Quirk**
+#### An Annoying Transform Quirk
 
 If any parent element has a `transform: translate()` property declared on it, `fixed` won't work.
 
