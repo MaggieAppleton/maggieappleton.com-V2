@@ -22,6 +22,7 @@ import {
   RelativeCSSPosition,
   AbsoluteCSSPosition,
   FixedCSSPosition,
+  StickyPosition,
 } from "../components/unique/css-position/CSSPosition";
 import {
   Title1,
@@ -306,6 +307,7 @@ export default function PostPage({
       <NoteTemplate
         slug={slug}
         source={source}
+        toc={toc}
         frontMatter={frontMatter}
         components={components}
         backlinks={backlinks}
