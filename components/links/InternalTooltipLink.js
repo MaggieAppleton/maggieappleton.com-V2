@@ -1,12 +1,12 @@
 import Tooltip from "../Tooltip";
 import styled from "styled-components";
 
-function TooltipContent({ title, description, excerpt }) {
+function TooltipContent({ title, description }) {
   return (
     <PostContent>
       <h4>{title}</h4>
       <span className="description">{description}</span>
-      <span className="excerpt">{excerpt}</span>
+      {/* <span className="excerpt">{excerpt}</span> */}
     </PostContent>
   );
 }
@@ -14,25 +14,24 @@ function TooltipContent({ title, description, excerpt }) {
 const PostContent = styled.div`
   padding: var(--space-3xs);
   h4 {
-    margin: var(--space-3xs) 0;
-    font-family: var(--font-sans);
-    font-weight: 600;
-    line-height: var(--leading-tight);
+    margin: 0 0 var(--space-3xs);
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    font-size: var(--font-size-base);
   }
   span.description {
     display: block;
-    padding-bottom: var(--space-xs);
-    margin: 0 0 var(--space-xs);
+    margin: var(--space-2xs) 0 var(--space-3xs);
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
-    border-bottom: 1px solid var(--color-gray-300);
   }
-  span.excerpt {
+  /* span.excerpt {
     display: block;
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
     margin-bottom: var(--space-2xs);
-  }
+  } */
 `;
 
 export default function InternalTooltipLink({

@@ -42,12 +42,19 @@ export function linkify(content, title) {
         slug,
         title: matchedTitle,
         description: matchedDescription,
-        excerpt,
+        // excerpt,
       } = matchedOutboundLink;
+
+      //   console.log(`Excerpt: ${excerpt}`);
+
+      //   const regEx = /<|>|\/|<.*>|SimpleCard|IntroParagraph|\*\*|_/g;
+      //   const filteredExcerpt = excerpt.replace(regEx, "");
+
+      //   console.log(`Filtered excerpt: ${filteredExcerpt}`);
 
       // todo: replace ordinary anchor tag for customised tooltip and internal next Link combo
       result += content.substring(previousIndex, opening - 1); // append content up to link
-      result += `<InternalTooltipLink title={"${matchedTitle}"} description={"${matchedDescription}"}  href={"/${slug}"} excerpt={"${excerpt}"}>`; // append JSX opening tags
+      result += `<InternalTooltipLink title={"${matchedTitle}"} description={"${matchedDescription}"}  href={"/${slug}"}>`; // append JSX opening tags
       result += foundLinkText; // skip opening brackets, then append link content (referenced post title or alias)
       result += "</InternalTooltipLink>"; // append JSX closing tags
     } else {
