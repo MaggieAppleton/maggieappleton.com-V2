@@ -4,9 +4,10 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/shift-away.css";
 
-const Tooltip = forwardRef(({ content, children }, ref) => {
+const Tooltip = forwardRef(({ content, children, maxWidth }, ref) => {
   return (
     <StyledTippy
+      maxWidth={maxWidth || "320"}
       duration="500"
       arrow={true}
       interactive={true}
