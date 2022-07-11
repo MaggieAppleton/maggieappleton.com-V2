@@ -171,6 +171,7 @@ export const components = {
   RelativeCSSPosition: RelativeCSSPosition,
   AbsoluteCSSPosition: AbsoluteCSSPosition,
   FixedCSSPosition: FixedCSSPosition,
+  StickyPosition: StickyPosition,
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),

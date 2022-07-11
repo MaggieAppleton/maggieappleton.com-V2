@@ -146,7 +146,20 @@ If any parent element has a `transform: translate()` property declared on it, `f
 
 It behaves like a `relative` element until it hits the sticking point, and then becomes `fixed`.
 
+<StickyPosition />
+
 For sticky to work, the parent element needs to have the `relative` property declared.
+
+```css
+.parent {
+  position: relative;
+}
+.tealBox {
+  position: sticky;
+  top: 150px; /* Box becomes sticky when the top of
+  the viewport is 150px away from the top of the box  */
+}
+```
 
 <Spacer />
 
