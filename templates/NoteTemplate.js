@@ -19,6 +19,7 @@ export default function NoteTemplate({
   frontMatter,
   components,
   slug,
+  toc,
   headings,
   backlinks,
   ogImage,
