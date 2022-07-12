@@ -54,7 +54,7 @@ export default function NoteTemplate({
       <StyledMain>
         <BackToTop />
         <ProseWrapper>
-          <TableOfContents headings={headings} />
+          {toc && <TableOfContents headings={headings} />}
           <MDXRemote {...source} components={components} />
         </ProseWrapper>
       </StyledMain>
