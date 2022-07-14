@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Thu, 14 Jul 2022 02:37:31 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 14 Jul 2022 21:25:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -107,6 +107,13 @@
             <content:encoded><![CDATA[The failure of drawing materials without mediums and meat]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[Tools for Thought as Cultural Practices, not Computational Objects]]></title>
+            <link>https://maggieappleton.com/tools-for-thought</link>
+            <guid>https://maggieappleton.com/tools-for-thought</guid>
+            <pubDate>Wed, 13 Jul 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[On seeing tools for thought through a historical and anthropological lens]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[Transclusion and Transcopyright Dreams]]></title>
             <link>https://maggieappleton.com/transcopyright-dreams</link>
             <guid>https://maggieappleton.com/transcopyright-dreams</guid>
@@ -133,13 +140,6 @@
             <guid>https://maggieappleton.com/block-data</guid>
             <pubDate>Wed, 15 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[How block-based interfaces can help us create more structured data on the web]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Tools for Thought as Cultural Practices, not Computational Objects]]></title>
-            <link>https://maggieappleton.com/tools-for-thought</link>
-            <guid>https://maggieappleton.com/tools-for-thought</guid>
-            <pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[On seeing tools for thought through a historical and anthropological lens]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Building a Second Brain: The Illustrated Notes]]></title>
