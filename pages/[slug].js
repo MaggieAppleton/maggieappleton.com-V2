@@ -18,13 +18,6 @@ import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
 import {
-  StaticCSSPosition,
-  RelativeCSSPosition,
-  AbsoluteCSSPosition,
-  FixedCSSPosition,
-  StickyPosition,
-} from "../components/unique/css-position/CSSPosition";
-import {
   Title1,
   Title2,
   Title3,
@@ -167,11 +160,21 @@ export const components = {
   }),
 
   // Unique components – used in specific essays or notes
-  StaticCSSPosition: StaticCSSPosition,
-  RelativeCSSPosition: RelativeCSSPosition,
-  AbsoluteCSSPosition: AbsoluteCSSPosition,
-  FixedCSSPosition: FixedCSSPosition,
-  StickyPosition: StickyPosition,
+  StickyPosition: dynamic(() => import("../components/unique/css-position/StickyPosition"), {
+    ssr: false,
+  }),
+  RelativeCSSPosition: dynamic(() => import("../components/unique/css-position/RelativeCSSPosition"), {
+    ssr: false,
+  }),
+  AbsoluteCSSPosition: dynamic(() => import("../components/unique/css-position/AbsoluteCSSPosition"), {
+    ssr: false,
+  }),
+  FixedCSSPosition: dynamic(() => import("../components/unique/css-position/FixedCSSPosition"), {
+    ssr: false,
+  }),
+  StaticCSSPosition: dynamic(() => import("../components/unique/css-position/StaticCSSPosition"), {
+    ssr: false,
+  }),
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),
