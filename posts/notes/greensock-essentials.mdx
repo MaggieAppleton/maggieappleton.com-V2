@@ -15,51 +15,43 @@ When it comes to web animation libraries, [Greensock](https://greensock.com/) is
 
 </IntroParagraph>
 
-<p>It's also been on my learning wish list for too long. I assumed it would be too complex. Everyone talks about how powerful the library is.
+It's also been on my learning wish list for too long. I assumed it would be too complex. Everyone talks about how powerful the library is.
 
 It's usually safe to assume powerful === complex.
 
 But once I started digging in I realised the core of the library was actually quite easy to get the hang of. There's plenty of advanced mechanisms and complexity to get wrapped up in if you want to. But they're entirely optional.
 
 This is a **one-scoop-plain-vanilla introduction to Greensock**.  
-Without any sprinkles, nuts, or advanced functionality.</p>
+Without any sprinkles, nuts, or advanced functionality.
 
 <GsapScroller />
 
-<h3>Tweens</h3>
+### Tweens
 
-<p>
 Tweens are the basic building blocks of a Greensock animation. A tween is a single transition – an element changing from state A to state B.
 
 To create a tween, we target an _element_ (this can be any HTML element like a `<div>, <p>, or <svg>`) and pass in _variables_.
 Variables define how the element should change over the course of the animation - whether it should move, change opacity or color, grow big or small – you get it.
 
-Let's say we want to make a box go from navy blue to red, move 40% of the way across the screen <Footnote id={1}>I've used `40vw` units in this example which tells the browser to calculate 40% of the **view width**. `vw` is a handy unit for responsive design to make this work on little screens as well as big</Footnote> on the X axis (horizontal), and grow in scale by 1.4 times the original:
+Let's say we want to make a box go from navy blue to red, move 40% of the way across the screen <Footnote id={1}>I've used `20vw` units in this example which tells the browser to calculate 40% of the **view width**. `vw` is a handy unit for responsive design to make this work on little screens as well as big</Footnote> on the X axis (horizontal), and grow in scale by 1.4 times the original:
 
-</p>
 
-<Center>
-
-<TweenRedBigBox />
-
-</Center>
+<Center><TweenRedBigBox /></Center>
 
 Here's the code to do that in Greensock:
 
 ```js
 <div class="giantRedBox" background="navyblue" width="100px" height="100px" />;
 
-gsap.to(".giantRedBox", 2, { x: 40vw, scale: 1.4, background: "red" });
+gsap.to(".giantRedBox", 2, { x: 20vw, scale: 1.4, background: "red" });
 ```
 
-<p>
 
 First we target the element using it's classname: `giantRedBox`.  
 We then pass in a _duration_ that defines how long it should take the animation to move from state A to state B – here it's 2 seconds.  
 Finally we pass in an object that contains our animation _variables_:  
-`{ x: 40vw, scale: 1.4, background: 'red' }`
+`{ x: 20vw, scale: 1.4, background: 'red' }`
 
-</p>
 
 ---
 
@@ -68,9 +60,9 @@ Finally we pass in an object that contains our animation _variables_:
 There's three types of tweens:
 
 <ul>
-  <li>to</li>
-  <li>from</li>
-  <li>fromTo</li>
+<li>to</li>
+<li>from</li>
+<li>fromTo</li>
 </ul>
 
 In _to_ we define the final state of the animation – what it looks like by the end.
@@ -79,28 +71,20 @@ It begins in the position defined in our HTML & CSS, and moves _to_ the state we
 ```js
 <div class="spinningBox" background="navyblue" width="100px" height="100px" />;
 
-gsap.to(".spinningBox", 3, { x: 40vw, rotation: 360 });
+gsap.to(".spinningBox", 3, { x: 20vw, rotation: 360 });
 ```
 
-<Center>
-
-<TweenSpinningBox />
-
-</Center>
+<Center><TweenSpinningBox /></Center>
 
 <Spacer />
 
 In _from_ we define the beginning state of the animation, and it moves back to it's state defined in the HTML & CSS
 
 ```js
-gsap.from(".reverseSpinningBox", 3, { x: 40vw, rotation: 360 });
+gsap.from(".reverseSpinningBox", 3, { x: 20vw, rotation: 360 });
 ```
 
-<Center>
-
-<TweenReverseSpinningBox />
-
-</Center>
+<Center><TweenReverseSpinningBox /></Center>
 
 <Spacer />
 
@@ -110,11 +94,7 @@ In _fromTo_ we declare two states we want the animation to move between.
 gsap.fromTo(".hotBox", 3, { background: "#93D0D9" }, { background: "#D93654" });
 ```
 
-<Center>
-
-<TweenBlueRedBox />
-
-</Center>
+<Center><TweenBlueRedBox /></Center>
 
 ---
 
@@ -140,4 +120,3 @@ You may see references around to multiple varieties of tweening and timelines ca
 
 In late 2019 GSAP [updated to version 3](https://greensock.com/3-release-notes) and got rid of the all lite / max varieties so feel free to ignore that distinction in older code examples or.
 
-<br />

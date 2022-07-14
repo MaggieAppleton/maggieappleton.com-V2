@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Mon, 09 May 2022 06:50:20 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 14 Jul 2022 02:37:31 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -121,6 +121,20 @@
             <content:encoded><![CDATA[Project Xanadu as a pattern language, rather than a failed software project]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[Positioning Elements & Scrollytelling in CSS]]></title>
+            <link>https://maggieappleton.com/css-position</link>
+            <guid>https://maggieappleton.com/css-position</guid>
+            <pubDate>Sun, 10 Jul 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Notes on how to use the position property in CSS to make scrollytelling stories]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Block-Paved Path to Structured Data]]></title>
+            <link>https://maggieappleton.com/block-data</link>
+            <guid>https://maggieappleton.com/block-data</guid>
+            <pubDate>Wed, 15 Jun 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[How block-based interfaces can help us create more structured data on the web]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[Tools for Thought as Cultural Practices, not Computational Objects]]></title>
             <link>https://maggieappleton.com/tools-for-thought</link>
             <guid>https://maggieappleton.com/tools-for-thought</guid>
@@ -202,7 +216,7 @@
             <link>https://maggieappleton.com/anthropology-react</link>
             <guid>https://maggieappleton.com/anthropology-react</guid>
             <pubDate>Thu, 11 Nov 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[A cultural analysis of the native behaviour of React developers]]></content:encoded>
+            <content:encoded><![CDATA[An anthropological look at the cultural norms of the React community]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A Meta-Tour of This Site]]></title>
@@ -308,13 +322,6 @@
             <guid>https://maggieappleton.com/data-unions</guid>
             <pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Illustrated notes on how data unions work and what problems they might solve]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Positioning Elements & Scrollytelling in CSS]]></title>
-            <link>https://maggieappleton.com/css-position</link>
-            <guid>https://maggieappleton.com/css-position</guid>
-            <pubDate>Sat, 26 Dec 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Notes on how to use the position property in CSS to make scrollytelling stories]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[A History of Cyborgs]]></title>
@@ -626,34 +633,6 @@
             <guid>https://maggieappleton.com/daily-notes</guid>
             <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Daily notes as a frictionless default input for personal knowledge management systems]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Composable Interfaces]]></title>
-            <link>https://maggieappleton.com/composable-interfaces</link>
-            <guid>https://maggieappleton.com/composable-interfaces</guid>
-            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[...]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Programming Portals]]></title>
-            <link>https://maggieappleton.com/programming-portals</link>
-            <guid>https://maggieappleton.com/programming-portals</guid>
-            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[...]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Visual Expression Editors]]></title>
-            <link>https://maggieappleton.com/visual-expressions</link>
-            <guid>https://maggieappleton.com/visual-expressions</guid>
-            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[...]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Node and Wire Programming]]></title>
-            <link>https://maggieappleton.com/node-wire</link>
-            <guid>https://maggieappleton.com/node-wire</guid>
-            <pubDate>Sat, 30 Apr 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Programming interfaces designed around spatial canvases, direct manipulation, and visible connections]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Programmable Notes]]></title>

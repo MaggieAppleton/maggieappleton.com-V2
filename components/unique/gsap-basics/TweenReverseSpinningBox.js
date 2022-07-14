@@ -12,7 +12,7 @@ const TweenReverseSpinningBox = () => {
         end: "bottom 15%",
         scrub: true,
       },
-      x: "+=40vw",
+      x: "+=20vw",
       rotation: 360,
     });
   });

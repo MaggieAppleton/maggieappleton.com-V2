@@ -12,7 +12,7 @@ const TweenRedBigBox = () => {
         end: "bottom 15%",
         scrub: true,
       },
-      x: "+=40vw",
+      x: "+=20vw",
       scale: 1.4,
       background: "#E73C67",
     });
