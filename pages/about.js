@@ -32,38 +32,37 @@ export default function About() {
               </p>
               <p>
                 Titles and disciplines are fickle and fleeting. But my work fits
-                under the umbrellas of UX design, interface design, HCI, DX
-                (developer experience), and interaction design. With some
+                under the umbrellas of UX design, visual interface design, and DX
+                (developer experience). With some
                 cultural analysis, writing, and visual illustration sprinkled on
                 top.
               </p>
               <p>
                 I currently lead design at
                 <b style={{ margin: "0 0.6rem 0 0.3rem" }}>
-                  <UnderlineHoverLink href="https://hash.ai">
-                    HASH
+                  <UnderlineHoverLink href="https://ought.org">
+                    Ought
                   </UnderlineHoverLink>
                 </b>
-                where we're developing open-source, interoperable systems to
-                improve the way we structure knowledge on the web.
+                where we're creating tools ...
               </p>
               <p>
                 I'm not currently avaliable for any contract work, side
                 projects, or full-time roles.
               </p>
               <p>
-                Before HASH I spent five years at the developer education
+                Before Ought I was head of design at <b style={{ margin: "0 0.5rem 0 0" }}>
+                  <UnderlineHoverLink href="https://hash.ai">HASH</UnderlineHoverLink>
+                </b>, a company developing open-source, interoperable systems to improve the way we structure knowledge on the web.</p>
+                <p>Before that I spent five years at the developer education
                 company{" "}
                 <b style={{ margin: "0 0.5rem 0 0" }}>
                   <UnderlineHoverLink href="https://egghead.io">
                     egghead
                   </UnderlineHoverLink>
                 </b>
-                . First as the art director and lead illustrator where I spent
-                my time figuring out how to visualise invisible programming
-                concepts through metaphors and cultural symbols. Then as the UX
-                designer exploring pragmatic ways to improve the interface for
-                learners.
+                as an art director, lead illustrator, and UX designer. It was there that I developed a system for visualising programming
+                concepts through metaphors and cultural symbols.
               </p>
               <p>
                 On the side I create{" "}

@@ -101,8 +101,8 @@ export default function Index({
             Designer, anthropologist, and mediocre developer
             <br />
             Currently leading design at{" "}
-            <UnderlineHoverLink href="https://hash.ai">
-              <b>HASH</b>
+            <UnderlineHoverLink href="https://ought.org">
+              <b>Ought</b>
             </UnderlineHoverLink>{" "}
           </SmallTitle2>
         </header>
