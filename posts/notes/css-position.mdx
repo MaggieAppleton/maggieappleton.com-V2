@@ -21,11 +21,7 @@ The `position` property determines where an element appears on the page. Sounds 
 
 `static` is the default value for elements. They stick to the normal page flow and placement properties (top, left, z-index, etc.) don't have any effect.
 
-<Center>
-
 <StaticCSSPosition />
-
-</Center>
 
 This would be the equivalent code, but we never need to explicitly declare it since all elements are static by default.
 
@@ -43,11 +39,7 @@ This would be the equivalent code, but we never need to explicitly declare it si
 
 For example, if we nudge this box `-20px` up, and `-20px` to the left, it moves to here:
 
-<Center>
-
 <RelativeCSSPosition />
-
-</Center>
 
 <Spacer size="small" />
 
@@ -71,11 +63,7 @@ The position of the parent has no influence on where the child shows up. Placeme
 
 Declaring `position: absolute`, `left: 20px` and `bottom: 20px` on this `.tealBox` element would position it 20 pixels from the left and 20px from the bottom of the document.
 
-<Center>
-
 <AbsoluteCSSPosition />
-
-</Center>
 
 ```css
 .tealBox {
@@ -118,11 +106,7 @@ Fixed is useful for persistent elements like navigation bars or menus.
 
 Declaring `position: fixed;`, `top: 20px;` and `right: 20px` on an element will position it 20 px from the top and right-hand side of the browser viewport. The rest of the document scrolls behind it.
 
-<Center>
-
 <FixedCSSPosition />
-
-</Center>
 
 ```css
 .tealBox {
