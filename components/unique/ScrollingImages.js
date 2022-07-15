@@ -69,6 +69,7 @@ function ScrollingImages({ data, title }) {
     position: relative;
     top: 0;
     display: block;
+    zIndex: 4;
   `;
 
   const TriggerDiv = styled.div`
@@ -115,7 +116,7 @@ function ScrollingImages({ data, title }) {
         {data.map((img, i) => (
           <Img
             childImage
-            zIndex={i}
+            zIndex={i+5}
             ref={refsArray[i]}
             alt={img.alt}
             src={img.src}
