@@ -24,7 +24,7 @@ function ScrollingImages({ data, title }) {
   useEffect(() => {
     ScrollTrigger.matchMedia({
       // desktop
-      "(min-width: 768px)": function() {
+      "(min-width: 770px)": function() {
         const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: [triggerDiv.current],
@@ -72,15 +72,17 @@ function ScrollingImages({ data, title }) {
     display: flex;
     flex-direction: column;
     margin: 0 auto var(--space-m);
-    height: 95vh;
-    @media (max-width: 768px) {
+    padding: 0 1rem;
+    height: 860px;
+    @media (max-width: 770px) {
       height: calc(100vw/1.25);
     }
   `;
 
   const Img = styled.img`
     width: 1300px;
-    max-width: 100%;
+    max-width: 80%;
+    max-height: auto;
     border: 1px solid var(--color-gray-100);
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow-sm);
@@ -92,6 +94,12 @@ function ScrollingImages({ data, title }) {
     opacity: ${({ childImage }) => (childImage ? 0 : 1)};
     z-index: ${(props) => props.zIndex};
     display: ${({ topImage }) => (topImage ? "inline-block" : "")};
+    @media (max-width: 770px) {
+      display: block;
+      position: static;
+      top: 0;
+      max-width: 100%;
+    }
   `;
 
   const Title = styled.span`
@@ -102,6 +110,9 @@ function ScrollingImages({ data, title }) {
     font-weight: 400;
     text-align: center;
     margin: var(--space-l) auto;
+    @media (max-width: 770px) {
+      margin: 0 auto;
+    }
   `;
 
   return (
