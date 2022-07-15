@@ -178,6 +178,12 @@ export const components = {
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),
+  ScrollingImages: dynamic(
+    () => import("../components/unique/ScrollingImages"),
+    {
+      ssr: false,
+    }
+  ),
   GsapScroller: dynamic(
     () => import("../components/unique/gsap-basics/GsapScroller"),
     {
