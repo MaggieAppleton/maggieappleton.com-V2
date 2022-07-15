@@ -17,9 +17,9 @@ function ScrollingImages({ data, title }) {
   const img2 = useRef(null);
   const img3 = useRef(null);
   const img4 = useRef(null);
-  const img5 = useRef(null);
 
-  const refsArray = [img1, img2, img3, img4, img5];
+
+  const refsArray = [img1, img2, img3, img4];
 
   useEffect(() => {
     ScrollTrigger.matchMedia({
@@ -51,10 +51,6 @@ function ScrollingImages({ data, title }) {
             duration: 1,
           })
           .to([img4.current], {
-            opacity: 1,
-            duration: 1,
-          })
-          .to([img5.current], {
             opacity: 1,
             duration: 1.5,
           });
