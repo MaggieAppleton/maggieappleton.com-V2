@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { breakpoints } from "../../utils/breakpoints";
+// import { breakpoints } from "../../utils/breakpoints";
+
 
 if (typeof window !== `undefined`) {
   gsap.registerPlugin(ScrollTrigger);
@@ -21,64 +22,62 @@ function ScrollingImages({ data, title }) {
   const refsArray = [img1, img2, img3, img4, img5];
 
   useEffect(() => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: [triggerDiv.current],
-        start: "top top",
-        end: "+=3000px",
-        scrub: 1,
-        toggleActions: "restart none none reverse",
-      },
+    ScrollTrigger.matchMedia({
+      // desktop
+      "(min-width: 768px)": function() {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: [triggerDiv.current],
+            start: "top top",
+            end: "250%",
+            scrub: 1,
+            pin: [triggerDiv.current],
+            toggleActions: "restart none none reverse",
+          },
+        });
+    
+        // autogenerate timeline based on length of input array
+        timeline
+          .to([img1.current], {
+            opacity: 1,
+            duration: 0.25,
+          })
+          .to([img2.current], {
+            opacity: 1,
+            duration: 1,
+          })
+          .to([img3.current], {
+            opacity: 1,
+            duration: 1,
+          })
+          .to([img4.current], {
+            opacity: 1,
+            duration: 1,
+          })
+          .to([img5.current], {
+            opacity: 1,
+            duration: 1.5,
+          });
+      }, 
+      
     });
-
-    // autogenerate timeline based on length of input array
-    timeline
-      .to([img1.current], {
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to([img2.current], {
-        opacity: 1,
-        duration: 1,
-      })
-      .to([img3.current], {
-        opacity: 1,
-        duration: 1,
-      })
-      .to([img4.current], {
-        opacity: 1,
-        duration: 1,
-      })
-      .to([img5.current], {
-        opacity: 1,
-        duration: 1.5,
-      });
   }, []);
 
   const Container = styled.div`
-    height: 3800px;
     grid-column: 1/4 !important;
-    margin: var(--space-16) 0 var(--space-64);
-    position: static;
+    margin: var(--space-16) 0;
+    position: relative;
+    top: 0;
     display: block;
-    @media ${breakpoints.mediaMD} {
-      height: 2600px;
-    }
-    @media ${breakpoints.mediaSM} {
-      height: 1600px;
-    }
   `;
 
   const TriggerDiv = styled.div`
-    position: sticky;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    top: 5%;
-    margin-bottom: 840px;
-    @media ${breakpoints.mediaSM} {
-      top: 25%;
-      margin-bottom: 300px;
+    margin: 0 auto var(--space-m);
+    height: 92vh;
+    @media (max-width: 768px) {
+      height: calc(100vw/1.25);
     }
   `;
 
@@ -88,9 +87,9 @@ function ScrollingImages({ data, title }) {
     border: 1px solid var(--color-gray-100);
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow-sm);
-    margin: 0 auto;
+    margin: var(--space-m) auto;
     position: absolute;
-    top: 48px;
+    top: 64px;
     left: 0;
     right: 0;
     opacity: ${({ childImage }) => (childImage ? 0 : 1)};
@@ -105,14 +104,14 @@ function ScrollingImages({ data, title }) {
     color: var(--color-gray-800);
     font-weight: 400;
     text-align: center;
-    margin: 0 auto var(--space-s);
+    margin: var(--space-l) auto;
   `;
 
   return (
     <Container>
       <TriggerDiv ref={triggerDiv}>
         <Title>{title}</Title>
-        <Img topImage alt={data[0].alt} src={data[0].src} />
+        <Img id="image" topImage alt={data[0].alt} src={data[0].src} />
         {data.map((img, i) => (
           <Img
             childImage
