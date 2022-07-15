@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Thu, 14 Jul 2022 21:25:13 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Jul 2022 15:56:21 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -126,6 +126,13 @@
             <guid>https://maggieappleton.com/xanadu-patterns</guid>
             <pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Project Xanadu as a pattern language, rather than a failed software project]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Joining Ought]]></title>
+            <link>https://maggieappleton.com/joining-ought</link>
+            <guid>https://maggieappleton.com/joining-ought</guid>
+            <pubDate>Fri, 15 Jul 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[A new role at an AI research lab working on tools for open-ended reasoning]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Positioning Elements & Scrollytelling in CSS]]></title>
