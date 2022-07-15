@@ -73,9 +73,15 @@ function ScrollingImages({ data, title }) {
     flex-direction: column;
     margin: 0 auto var(--space-m);
     padding: 0 1rem;
-    height: 860px;
-    @media (max-width: 770px) {
-      height: calc(100vw/1.25);
+    height: 960px;
+    @media (max-width: 1200px) {
+      height: 580px;
+    }
+    @media (max-width: 1400px) {
+      height: 820px;
+    }
+    @media (max-width: 800px) {
+      height: 520px;
     }
   `;
 
