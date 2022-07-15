@@ -44,7 +44,7 @@ export default function About() {
                     Ought
                   </UnderlineHoverLink>
                 </b>
-                where we're creating tools ...
+                where we're exploring how machine learning can help researchers with open-ended reasoning.
               </p>
               <p>
                 I'm not currently avaliable for any contract work, side
@@ -53,7 +53,7 @@ export default function About() {
               <p>
                 Before Ought I was head of design at <b style={{ margin: "0 0.5rem 0 0" }}>
                   <UnderlineHoverLink href="https://hash.ai">HASH</UnderlineHoverLink>
-                </b>, a company developing open-source, interoperable systems to improve the way we structure knowledge on the web.</p>
+                </b> – a company developing an open-source platform to improve the way we structure knowledge on the web.</p>
                 <p>Before that I spent five years at the developer education
                 company{" "}
                 <b style={{ margin: "0 0.5rem 0 0" }}>
@@ -61,7 +61,7 @@ export default function About() {
                     egghead
                   </UnderlineHoverLink>
                 </b>
-                as an art director, lead illustrator, and UX designer. It was there that I developed a system for visualising programming
+                as the art director and UX designer. It was there that I developed a system for visualising programming
                 concepts through metaphors and cultural symbols.
               </p>
               <p>
