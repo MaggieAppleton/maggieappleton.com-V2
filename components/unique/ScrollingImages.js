@@ -72,7 +72,7 @@ function ScrollingImages({ data, title }) {
     display: flex;
     flex-direction: column;
     margin: 0 auto var(--space-m);
-    height: 92vh;
+    height: 95vh;
     @media (max-width: 768px) {
       height: calc(100vw/1.25);
     }
