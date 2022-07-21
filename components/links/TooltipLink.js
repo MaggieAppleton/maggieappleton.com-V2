@@ -20,6 +20,7 @@ export default function TooltipLink({ href, children, noStyling }) {
 function InternalLink({ href, children, noStyling }) {
   return (
     <Tooltip
+    maxWidth={420}
       content={<StyledExternalUrl href={href}>{href}</StyledExternalUrl>}
     >
       <StyledContainer>
@@ -34,6 +35,7 @@ function InternalLink({ href, children, noStyling }) {
 function ExternalLink({ href, children, noStyling }) {
   return (
     <Tooltip
+    maxWidth={420}
       content={
         <StyledExternalUrl href={href}>
           {href}
@@ -58,6 +60,8 @@ const StyledExternalUrl = styled.a`
   color: var(--color-gray-600);
   transition: color 0.2s ease-in-out;
   text-align: center;
+  word-break: break-all;
+  max-width: 420px;
   svg {
     margin: 0 !important;
   }
