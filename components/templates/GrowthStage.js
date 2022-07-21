@@ -4,19 +4,19 @@ import styled from "styled-components";
 export default function GrowthStage({ stage }) {
     if (stage === "evergreen") {
         return (
-            <Tooltip content="Evergreens are ideas I've invested significant time into. They are refined, edited, and won't significantly change – aside from the occassional trimming.">
+            <Tooltip maxWidth={300} content="Evergreens are ideas I've invested significant time into. They are refined, edited, and won't significantly change – aside from the occassional trimming.">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
             </Tooltip>
         );
     } else if (stage === "budding") {
         return (
-            <Tooltip content="Buddings are ideas I've revised and worked on a bit. They're starting to grow, but still need refinement.">
+            <Tooltip maxWidth={300} content="Buddings are ideas I've revised and worked on a bit. They're starting to grow, but still need refinement.">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
             </Tooltip>
         );
     } else if (stage === "seedling") {
         return (
-            <Tooltip content="Seedlings are ideas I've just started that are rough, unrefined, and need some time to grow.">
+            <Tooltip maxWidth={300} content="Seedlings are ideas I've just started that are rough, unrefined, and need some time to grow.">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
             </Tooltip>
         );
