@@ -27,10 +27,12 @@ export default function TableOfContents({ headings }) {
               .replace(/[.,?()]/gim, "")
               .replace(/\*\*|__/g, "");
             const href = `${route}#${link}`;
+            const filteredText = text
+              .replace(/[\*_]/gim, "")
 
             return (
               <A key={text} href={href} level={level}>
-                {text}
+                {filteredText}
               </A>
             );
           })}
@@ -53,10 +55,12 @@ export default function TableOfContents({ headings }) {
                   .replace(/\s/g, "-")
                   .replace(/[.,?()]/gim, "");
                 const href = `${route}#${link}`;
+                const filteredText = text
+                  .replace(/[\*_]/gim, "")
 
                 return (
                   <A key={text} href={href} level={level}>
-                    {text}
+                    {filteredText}
                   </A>
                 );
               })}
@@ -116,7 +120,7 @@ const DesktopContainer = styled(motion.div)`
   grid-column: 3;
   height: 0;
   max-width: 300px;
-  margin-left: var(--space-l);
+  margin-left: var(--space-xl);
   h4 {
     margin: 0;
     font-size: 0.96rem;
