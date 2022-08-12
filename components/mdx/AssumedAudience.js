@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function AssumedAudience({ children }) {
   return (
     <AssumedAudienceContainer>
-      <span>Assumed Audience</span>
+      <span className="label">Assumed Audience</span>
       <div>{children}</div>
     </AssumedAudienceContainer>
   );
@@ -14,7 +14,7 @@ const AssumedAudienceContainer = styled.div`
   border-radius: var(--border-radius-base);
   box-shadow: var(--box-shadow-sm);
   border: 1px solid var(--color-gray-100);
-  margin: 0 -1.6rem var(--space-l) -1.6rem;
+  margin: 0 -1.6rem var(--space-xs) -1.6rem;
   display: flex;
   grid-gap: var(--space-s);
   flex-direction: row;
@@ -29,7 +29,7 @@ const AssumedAudienceContainer = styled.div`
     flex-shrink: unset;
     color: var(--color-gray-800);
   }
-  span {
+  span.label {
     color: var(--color-medium-sea-blue);
     margin-bottom: 0;
     flex-shrink: 0;

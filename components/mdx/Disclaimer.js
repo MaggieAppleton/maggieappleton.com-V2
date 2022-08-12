@@ -18,7 +18,7 @@ const DisclaimerContainer = styled.div`
   border-radius: var(--border-radius-base);
   box-shadow: var(--box-shadow-sm);
   border: 1px solid var(--color-gray-100);
-  margin: 0 -1.6rem var(--space-xs) -1.6rem;
+  margin: 0 -1.6rem var(--space-l) -1.6rem;
   display: flex;
   grid-gap: var(--space-s);
   flex-direction: row;
