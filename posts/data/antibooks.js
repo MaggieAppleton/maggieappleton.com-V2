@@ -21,13 +21,6 @@ export const antiBookData = [
     link: "https://www.google.co.uk/books/edition/The_Atlas_of_AI/XvEdEAAAQBAJ?hl=en&gbpv=0",
   },
   {
-    title: "Blockchain Chicken Farm",
-    subtitle: "And Other Stories of Tech in China's Countryside",
-    author: "Xiaowei Wang",
-    cover: "/images/books/blockchainchicken.jpg",
-    link: "https://www.google.co.uk/books/edition/Blockchain_Chicken_Farm/sCPQDwAAQBAJ?hl=en&gbpv=0",
-  },
-  {
     title: "Life in Code",
     subtitle: "A Personal History of Technology",
     author: "Ellen Ullman",

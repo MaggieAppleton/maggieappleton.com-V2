@@ -1,5 +1,26 @@
 export const bookData = [
   {
+    title: "Blockchain Chicken Farm",
+    subtitle: "And Other Stories of Tech in China's Countryside",
+    author: "Xiaowei Wang",
+    cover: "/images/books/blockchainchicken.jpg",
+    link: "https://www.google.co.uk/books/edition/Blockchain_Chicken_Farm/sCPQDwAAQBAJ?hl=en&gbpv=0",
+  },
+  {
+    title: "Don't Sleep There are Snakes",
+    subtitle: "Life and Language in the Amazonian Jungle",
+    author: "Daniel Everett",
+    cover: "/images/books/dontsleep.jpeg",
+    link: "https://www.google.co.uk/books/edition/Don_t_Sleep_There_are_Snakes/iQV9l-s7y2IC?hl=en&gbpv=0",
+  },
+  {
+    title: "The Essence of Software",
+    subtitle: "Why Concepts Matter for Great Design",
+    author: "Daniel Jackson",
+    cover: "/images/books/essence.jpg",
+    link: "https://press.princeton.edu/books/hardcover/9780691225388/the-essence-of-software",
+  },
+  {
     title: "Human-Machine Reconfigurations: Plans and Situated Actions",
     author: "Lucy Suchman",
     cover: "/images/books/humanmachine.jpeg",
