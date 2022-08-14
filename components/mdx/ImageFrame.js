@@ -16,7 +16,7 @@ export default function ImageFrame({
       {showalt ? (
         sourceUrl ? (
           <figcaption>
-            {alt} by <a href={sourceUrl}>{sourceTitle}</a>
+            {alt} – Source: <a href={sourceUrl}>{sourceTitle}</a>
           </figcaption>
         ) : (
           <figcaption>{alt}</figcaption>

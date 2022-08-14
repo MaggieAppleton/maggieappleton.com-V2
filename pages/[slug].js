@@ -23,6 +23,7 @@ import {
   Title3,
   Title4,
   Subtext,
+  SmallCaps
 } from "../components/Typography";
 import {
   projectFilePaths,
@@ -56,6 +57,7 @@ export const components = {
   ),
   h3: Title3,
   h4: Title4,
+  SmallCaps: SmallCaps,
   InternalTooltipLink: InternalTooltipLink,
   Tween: Tween,
   Timeline: Timeline,

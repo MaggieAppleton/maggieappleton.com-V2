@@ -1,10 +1,27 @@
 import styled from "styled-components";
 
-export default function BasicImage({ src, alt, width, showalt, margin }) {
+export default function BasicImage({
+  src,
+  alt,
+  width,
+  showalt,
+  margin,
+  sourceUrl,
+  sourceTitle,
+  ...props
+}) {
   return (
-    <Container margin={margin}>
-      <StyledBasicImage src={src} alt={alt} width={width} />
-      {showalt && <figcaption>{alt}</figcaption>}
+    <Container margin={margin} {...props}>
+      <StyledBasicImage src={src} alt={alt} width={width || "100%"} />
+      {showalt ? (
+        sourceUrl ? (
+          <figcaption>
+            {alt} – Source: <a href={sourceUrl}>{sourceTitle}</a>
+          </figcaption>
+        ) : (
+          <figcaption>{alt}</figcaption>
+        )
+      ) : null}
     </Container>
   );
 }
