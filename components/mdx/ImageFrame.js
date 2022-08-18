@@ -32,6 +32,7 @@ const Container = styled.figure`
   margin: ${(props) => props.margin || "var(--space-s) auto var(--space-xl)"};
   text-align: center;
   figcaption {
+    margin-top: var(--space-xs);
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     color: var(--color-gray-600);
