@@ -1,0 +1,44 @@
+---
+title: "Ambient Notifications"
+description: "How do we quietly, subtly communicate change and progress in multiplayer workspaces?"
+startDate: "2022-08-12"
+updated: "2022-08-12"
+type:  "note"
+topics: ["Design", "Artifical Intelligence"]
+growthStage: "draft"
+---
+
+<h2 className="micro">The Context</h2>
+
+Notifications are constantly _pushed_ onto us in visually loud and unceremonious ways. Our digital spaces all have tiny dinner bells hanging in the corner, incessantly ringing to tell us someone has left a comment, approved our changes, requested a review, completed a task, or reacted with a <span role="img">😬</span> emoji.
+
+Some of these events are genuinely important. We need to know when collaborators contribute to a project or review our proposal.
+
+
+
+The notification bell, number count, and dropdown list summarising what's new in a workspace is the most common pattern currently in use. Almost always located in the global navigation bar
+
+[ notifications in almanac ]
+
+[ notifications in notion ]
+
+[ notifications in linear ]
+
+How do you softly inform someone about a change or update to a system without making it an <span style={{padding: "0.5rem 0.75rem", border: "1px solid var(--color-bright-crimson)", borderRadius: "4px", margin: "0 0.5rem", fontFamily: "var(--font-sans)", textTransform: "uppercase", letterSpacing: "0.04rem", color: "var(--color-bright-crimson)", background: "white", boxShadow: "var(--box-shadow-lg)"}}><span role="img">🚨 </span>obtrusive alert<span role="img"> 🚨</span></span>? How can we move away from the passive aggression of the red number circles affixed to every application?
+
+<BasicImage margin="0 auto 2rem" width="450px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660303205/notifs-bar_apdfpd.png" alt="My passive aggressive desktop toolbar" showalt />
+
+
+This is especially tricky to navigate in non-linear interfaces like [spatial canvases](#). Because the elements of the system can't be easily sorted into a list of 'most recent' changes, surveying the landscape to figure out what's new becomes very tricky.  
+
+As a designer, I feel this acutely while collaborating in Figma. We work across timezones. Things happen in our absence. Frames are updated. New comments are written. Components are moved or adjusted. Sometimes by the tens or hundreds. Giving me a list describing the changes physically disconnected from the actual changes is a poor solution.
+
+While we're increasingly noticing this issue in massive multiplayer workspaces, there's a second domain we need to solve it for: workspaces with non-human intelligent-ish agents.
+
+The rise of "AI assistants"
+
+<Spacer size="small" />
+
+<h2 className="micro">The Pattern</h2>
+
+In the spirit of Mark X's [Calm Technology](#) principles

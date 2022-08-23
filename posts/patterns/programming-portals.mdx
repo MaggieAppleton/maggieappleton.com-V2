@@ -1,0 +1,133 @@
+---
+title: "Programming Portals"
+description: "Small, scoped areas within a graphical interface that allow users to write high-level programmes"
+growthStage: "draft"
+startDate: "2022-08-20"
+updated: "2022-08-20"
+type: "pattern"
+---
+
+<h2 className="micro">The Context</h2>
+
+In the mid 1980's the world of computer interfaces cracked in two, leaving a gaping divide between two opposing paradigms.
+
+<TwoColumn maxWidth="1200px" gridGap="3rem">
+
+<ImageFrame width="700px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1661064082/Programming%20Portals/msdos_igqxdj.jpg" showalt alt="MS-DOS CLI interface" sourceTitle="Betawiki" sourceUrl="https://betawiki.net/wiki/MS-DOS_1.25" /> 
+
+On one side of the divide sat the CLI, or **command line interface**. This was a blank, black input screen where you typed a set of memorised commands and keywords to make the computer do things for you. Commands like `mkdir my_project && touch plans.txt && open plans.txt` did the work of the “Create New Folder”, “New Document”, and "Open" buttons. Everything was made of text and navigated with a keyboard.
+
+</TwoColumn>
+
+<TwoColumn maxWidth="1200px" gridGap="3rem">
+
+<ImageFrame width="700px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1661029242/Programming%20Portals/mac_gn7syi.gif" alt="Apple Macintosh GUI" sourceUrl="http://toastytech.com/guis/macos1.html" showalt sourceTitle="Toasty Tech" />
+
+On the other side was the brand new world of the GUI or **graphical user interface**. A place where every available feature was visibly laid out before you in selectable menus and hierarchical sets of buttons. Real-world metaphors gave physical shapes to abstract functions. Users no longer had to memorise long lists of commands. You could literally _see_ all the functions a programme was capable of without reading the manual. 
+
+</TwoColumn>
+
+Most of us consider GUIs as an enormous leap forward for computing accessibility and usability. Design patterns like direct manipulation, point and click interactions, visibility of system status, wizards, and windows all made computers far easier to use and drove the rise of personal computing throughout the rest of 80's and 90's. <Footnote idName={1}>The history of this is too long and detailed to get into, but [this video](https://www.youtube.com/watch?v=XIGSJshYb90) from Crash Course is beautifully done and will hit all the major highlights for you</Footnote>
+
+Scroll forward a few decades and we now live in an overwhelmingly GUI world. At least most of us do. That crack in the interface world wasn't a division in time, with CLIs in the past and GUIs in the future. It was a crack in the population of computer users. It created two distinct categories: “end users” and “programmers”.
+
+End users are the 99%. They're all the non-computery folks who only interact with computers through the carefully designed GUI applications built for them by teams by designers, developers, and product managers. 
+
+Programmers are the elite and tiny subsection of the population who control what computers can do.<Footnote idName={2}>To add some nuance to this, there are other parties controlling what the computers can do: VC's doling out cash, C-suite leaders and product managers directing the vision, and designers orchestrating the user experience. But if the programmers refuse to build it, it's not going to exist. They are the final touch point and nexus of control between the power of the computing machines and the rest of the world.</Footnote> They stayed behind in the world of CLIs and text editors. And they had good reason to. While GUIs gave us many gifts, they come with a set of tradeoffs. Ones that are particularly troublesome for the type of work programmers do.
+
+First, it's slower to physically navigate a cursor through stacks of panels and windows and drop downs to call a command, rather than simply typing a few keystrokes. Second, programmers need access to an enourmous range of commands and flexible primitives – too many to fit on a single screen if they had to visually represent them.
+
+In programming the number of possible keywords, functions, and combinations is exponential. When you're working in programmatic code you have a wide range of flexibility. You can write your own scripts to do anything you wish. Programmers need access to those powerful, lower level abstractions with fewer constraints to create software.
+
+Written language is simply a better medium for the task of programming.
+
+But this isn't about whether GUIs or CLIs are the superior interface choice. It's about that gaping divide. When we confined end users to the GUIs and hid the command line away from them, we took away access to powerful primitives and the flexibility to write custom code the way programmers can. Their experience of how a computer works and what it can do diverged dramatically. They have no control over how the system works or what functions are avaliable <Footnote idName={2}>Outside of emailing customer support or stacking one more feature requests onto the overstuffed list</Footnote>. There is very little opportunity to built novel, customised systems.
+
+If a regular “end-user” in 1980 wanted to try their hand at writing a small programme to automate part of their workflow, the tools to do so were ready at hand. If someone wants to try that nowadays, they're in rough awakening. You'll need to download an IDE, open the strange and unfamiliar terminal, install homebrew, install git, install python, install node. 
+
+We've yet to come full circle and find ways to integrate the benefits of command line interfaces back into graphical interfaces. We're starting to see hints of it though. Some GUI interfaces are finding ways to integrate CLIs. A number of patterns are appearing that try to bridge the gap. One of them I'm calling programming portals.
+
+
+
+
+---
+
+<h2 className="micro">The Pattern</h2>
+
+Programming portals are small, scoped areas within a graphical interface that give users access to programmatic logic. They let users control a specific piece of data, object, or feature of the application. They open a small window into the underlying functionality of an interface.
+
+Rather than doing this through elaborate settings panels or visual interface elements, users can write some form of linear syntax that is open ended and flexible.
+
+It's rarely a fully fledged programming language like Python or JavaScript. But instead a simplified language or limited set of commands designed specifically for this context. It might allow users to define and reuse variables, write and call functions, or create chains of if-then logic.
+
+- Reference objects within the environment
+- Run functions that change the data or display of those objects
+- Run calculations with that data
+
+It doesn't give users access to rewrite the actual source code of the application. They simply have access to a limited programatic interface that gives them more control over how it works.
+
+
+[Hypercard](https://en.wikipedia.org/wiki/HyperCard) is the grand OG example of programming portals. Developed by Bill Atkinson at Apple in 1987, its interface married all the accessibility of simple, graphical user interfaces with the power of writing progrmmatic logic. Its core concepts were the card and the stack.
+
+[ image of card stacks ]
+
+The remarkable thing about Hypercard is it gave users an enourmous range of control and flexibility. It came with a high-level, built-in programming language called [Hypertalk](https://en.wikipedia.org/wiki/HyperTalk). 
+
+Take a look at this demo showing how users could easily view and edit the script that controlled each element on a card:
+
+<Video src="https://www.youtube.com/embed/FquNpWdf9vg?start=574" />
+
+The Hypertalk language tried to closely mimic natural written English. It's command were simple; `find`, `calculate`, and `go to`. These could be built up into sentences like `go to next card` or `put 2*6 into theValue` or `set the location of card button x to pos`. It's not too different to today's [AppleScript](https://en.wikipedia.org/wiki/AppleScript) which allows MacOS users to automate small processes.
+
+<ImageFrame width="900px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660810219/Programming%20Portals/hc1_iykxf7.jpg" alt="The scripting interface in Hypercard" sourceUrl="https://wiki.xxiivv.com/site/hypertalk.html" sourceTitle="Devine Lu Linvega" showalt  />
+
+It's unsurprising many people in the interface design and computer science field are still nostalgic for Hypercard. 
+
+
+
+[Fermat](https://fermat.ws)
+
+Excel formulas
+
+Notion formulas
+
+Expressions in After Effects
+
+Source: https://www.youtube.com/watch?v=VdaGqq4I0qM&list=RDCMUCAhdxqdrDN3gWJkaUFl9G-Q&index=3
+
+AppleScript via Automator
+
+Raycast
+
+Keyboard Maestro
+ 
+One common critique of end-user programming is that giving users access to programmatic interfaces will lead to terrible user experiences, confusion, overwhelm, security breaches, and accidental destruction.
+
+----
+
+## Crap extra notes
+
+If you squint at powerful horizontal applications, they begin to look like a very high level programming language.
+
+When the primitives are flexible enough, they begin to give users an experience that isn't wildly different to programming.
+
+The world of CLI's had plenty of issues. People had to memorise . Findability, discoverability, and feedback were lacking. (cite). The direct manipulation and familiarity of the GUI vastly improved the usability of computers. (cite)
+
+But every design choice has its costs.
+
+Advocating for programming portals
+
+Many people will say this narrow range of possibilities is the whole point. Too much freedom and flexibility often leads to chaos and destruction – you cannot `sudo rm -rf` from within the friendly Mac finder window.  
+
+<References>
+  <ReferencesLink
+    title="Hypercard"
+    href="http://basalgangster.macgui.com/RetroMacComputing/The_Long_View/Entries/2010/10/23_HyperCard.html"
+    author="The Long View"
+  />
+  <ReferencesLink
+    title="CLUI: Building a Graphical Command Line"
+    href="https://blog.replit.com/clui"
+    author="Tyler Angert and Moudy Elkammash"
+  />
+</References>

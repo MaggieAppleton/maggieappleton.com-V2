@@ -20,6 +20,12 @@ export default function GrowthStage({ stage }) {
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
             </Tooltip>
         );
+    } else if (stage === "draft") {
+        return (
+            <Tooltip maxWidth={300} content="Unpublished nonsense">
+                <StyledGrowthStage>{stage}</StyledGrowthStage>
+            </Tooltip>
+        );
     }
 }
 

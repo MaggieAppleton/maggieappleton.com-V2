@@ -1,0 +1,123 @@
+---
+title: "Block to the Future"
+description: "Emerging patterns and premonitions in the realm of block-based editors"
+updated: "2022-08-19"
+startDate: "2022-08-19"
+type: "essay"
+cover: "/images/covers/databases-cover@2x.png"
+topics: ["Design", "The Web"]
+featured: true
+toc: true
+growthStage: "draft"
+---
+
+<AssumedAudience>
+
+People who have already read my [[Cambrian Blocks]] piece and are open to some playful speculation on the role of blocks in future interfaces.
+
+</AssumedAudience>
+
+<Disclaimer>
+
+I used to work at HASH, a company building infrastructure for block-based editors. This essay and all the research associated with it is my own personal work and opinion, and no one else at the company was involved in its creation. It has no ulterior motive, other than to share my predictions on the block-based landscape. Feel free to take it all with a grain of salt anyway.
+
+</Disclaimer>
+
+
+<Spacer size="small" />
+
+We're here to chuck around some irresponsibly speculative ideas on how the block landscape might evolve in the coming years.
+
+In [[Cambrian Blocks]] we worked through our blocky past and present
+Which brings us to the part everyone clamours for. _But what is the future?_ What is the point of reciting history, if not to try and find patterns that point to what happens next? Let's march forwards with our rear-view mirror in hand.
+
+I've outlined a set of 'bets' I would make about how block interfaces will develop over the next 5 years.
+
+
+<Spacer size="xs" />
+
+<ListNumber number="1" title="Diversifying block types">
+
+As blocks become a more standardised interface approach, we should expect to see a wider diversity of block types.
+
+Current React developers have access to 60,000+ components. Users of block systems have access to an average of 30 blocks.
+
+We should be creating and supporting niche blocks – recipe cards, flight maps, [at least 6 more suggestions in here]
+
+I should point out here I'm advocating for a proliferation of _block types_ but not a proliferation of block interfaces and standards.
+
+### Standardisation of block editors
+
+Like all good software designers, the people creating these new editors are following [Jakob's Law](https://www.nngroup.com/videos/jakobs-law-internet-ux/) of internet user experience; people spend 99% of their time on websites _other than yours_. You'll make their lives far easier if you use design patterns they're already familiar with. While many will grumble the similarities between block-editors speaks to a lack of “innovation”, <Footnote idName={3}> “Innovate” | ˈɪnəveɪt | verb. To flagrantly disregard previous historical work and established conventions that have survived the test of time. Results may vary. </Footnote> the industry converging around a set of standards is a net gain for both users and creators.
+
+</ListNumber>
+
+<ListNumber number="2" title="Independent block development">
+
+This was the original dream of OpenDoc. The people who build block-editors don't necessarily have to be the same people who build blocks.
+
+This is currently manifesting as plugin marketplaces. Coda's maker marketplace is one of the recent signs we're moving in this direction. Roam's plugin marketplace. Figma's plugin marketplace.
+
+We've already been moving swiftly in this direction in the larger context of front-end web development. Modular components built by a wide variety of other engineers is the name of the game. We all rely upon open collective efforts like MUI, Chakra, Radix, Reach UI, etc.
+
+The same will happen with blocks, which are a simply a very specific type of component – one designed for authoring documents on the web.
+
+[ diagram ]
+
+</ListNumber>
+
+<ListNumber number="3" title="Ontology-backed blocks">
+
+Blocks connected to ontologicals structures.
+
+- Notion's 'databases'
+- Palantir
+- Fibery
+- Anytype
+
+</ListNumber>
+
+<ListNumber number="4" title="Blocks enabling end-user programming">
+
+Blocks that specifically focus on giving end-users the kind of power programmers have. Setting state. Defining functions and calling them at the click of a button. Defining hover states. 
+
+[Needs a better name]
+
+The biggest hope I have for blocks is as an entry point into front-end development for people who can't currently code.
+
+Button blocks on Coda and Retool are big indicators of this.
+
+</ListNumber>
+
+<ListNumber number="5" title="Improved open, indie web publishing tooling">
+
+I might as well have called this one 'blocks for digital gardening'
+
+Blocks designed for garden-esque structures on the web: reply blocks, academic citation blocks, questions, books, 
+
+As an advocate of [[Digital Gardening]], this one comes from my own biases
+
+Enabling users to write rich content to the independent, open web. Web 2.0 enabled users to write to the web... within limitations. They can only write to “platforms” - FB, twitter. The platform owners control and own the content.
+
+Because blocks are inependent chunks of content, they could have their own addressable URLs. This would allow a block to be 'passed around' a community. Not unlike the way we pass around tweets
+
+The [Quotebacks]() tool that X and Y built is a good premonition of how this could work. A section of a length blogpost can be pulled out and referenced, while maintaing a consistent link back to the source.
+
+I touched on the possibilities of this kinds of persistent backlinking in [[Transclusion and Transcopyright Dreams]]
+
+</ListNumber>
+
+<ListNumber number="6" title="The modular web">
+
+Standing up a whole website has moved far beyond the capacities of most people. Sandboxed environments like Observable and Jupyter notebook give people the ability to write code and execute it without also needing to learn the command line, Webpack, DNS redirects, etc. etc.
+
+The web was born as a text-first medium. Tim Berners Lee designed it to mimic text documents. Specifically, long, linear research documents shared among scientists and academics as pieces of paper. Ever since then we've been negotiating its paper-like qualities.
+
+The text-first, document-based model comes with a lot of design implications. It presumes the document or page is the basic unit of the web. We store our metadata at the level of the page, usually in the `<head>` tag. We link at the page level, rather than at the word, paragraph, or section level. <Footnote idName={1}>This has improved slightly with #header-level links, but the vast majority of links are still to entire pages, not granular lines or sections within a page.</Footnote>
+
+Being able to link to specific blocks or sets of blocks. Tied up with the dream of [[Transclusions]]. Lalallal
+
+</ListNumber>
+
+
+Lalalallala

@@ -59,5 +59,13 @@ export function getStaticProps() {
     };
   });
 
+  const completePatterns = patterns.filter((pattern) => pattern.data.growthStage !== 'draft')
+  // Sort patterns by date
+  const sortedPatterns = completePatterns.sort((a, b) => {
+    return new Date(b.data.updated) - new Date(a.data.updated);
+  });
+  patterns = sortedPatterns
+
+
   return { props: { patterns } };
 }

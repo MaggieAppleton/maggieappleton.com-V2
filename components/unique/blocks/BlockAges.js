@@ -5,45 +5,27 @@ const BlockAges = (props) => {
     <svg
       width="100%"
       fill="none"
-      viewBox="0 0 665 145"
+      viewBox="0 0 666 99"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect height="145" width="665" fill="white" />
-      <rect height="8" width="601" fill="#F6F5F1" x="29" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="29" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="39" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="49" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="59" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="280" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="290" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="300" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="310" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="320" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="330" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="340" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="340" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="350" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="541" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="551" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="561" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="571" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="581" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="591" y="68" />
-      <rect height="8" width="10" fill="#04A5BB" x="601" y="68" />
-      <rect height="17" width="1" fill="#04A5BB" x="28" y="59" />
-      <rect height="17" width="1" fill="#04A5BB" x="280" y="59" />
-      <rect height="17" width="1" fill="#04A5BB" x="69" y="59" />
-      <rect height="17" width="1" fill="#04A5BB" x="360" y="59" />
-      <rect height="17" width="1" fill="#04A5BB" x="541" y="59" />
-      <rect height="17" width="1" fill="#04A5BB" x="611" y="59" />
+      <rect height="8" width="601" fill="#F6F5F1" x="34" y="46" />
+      <rect height="8" width="46" fill="#04A5BB" x="34" y="46" />
+      <rect height="8" width="89" fill="#04A5BB" x="276" y="46" />
+      <rect height="8" width="69" fill="#04A5BB" x="566" y="46" />
+      <rect height="17" width="1" fill="#04A5BB" x="33" y="37" />
+      <rect height="17" width="1" fill="#04A5BB" x="275" y="37" />
+      <rect height="17" width="1" fill="#04A5BB" x="80" y="37" />
+      <rect height="17" width="1" fill="#04A5BB" x="365" y="37" />
+      <rect height="17" width="1" fill="#04A5BB" x="565" y="37" />
+      <rect height="17" width="1" fill="#04A5BB" x="635" y="37" />
       <text
         style={{ whiteSpace: "pre" }}
         fill="#04A5BB"
         fontFamily="Lato"
-        fontSize="14"
+        fontSize="16"
         xmlSpace="preserve"
       >
-        <tspan x="10" y="49.6547">
+        <tspan x="14" y="27.692">
           1965
         </tspan>
       </text>
@@ -51,21 +33,21 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#04A5BB"
         fontFamily="Lato"
-        fontSize="14"
+        fontSize="16"
         xmlSpace="preserve"
       >
-        <tspan x="275.375" y="49.6547">
-          1990
+        <tspan x="257.375" y="27.692">
+          1987
         </tspan>
       </text>
       <text
         style={{ whiteSpace: "pre" }}
         fill="#04A5BB"
         fontFamily="Lato"
-        fontSize="14"
+        fontSize="16"
         xmlSpace="preserve"
       >
-        <tspan x="536.041" y="49.6547">
+        <tspan x="548.041" y="27.692">
           2016
         </tspan>
       </text>
@@ -73,10 +55,10 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#04A5BB"
         fontFamily="Lato"
-        fontSize="14"
+        fontSize="16"
         xmlSpace="preserve"
       >
-        <tspan x="605" y="49.6547">
+        <tspan x="616" y="27.692">
           NOW
         </tspan>
       </text>
@@ -84,10 +66,10 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#04A5BB"
         fontFamily="Lato"
-        fontSize="14"
+        fontSize="16"
         xmlSpace="preserve"
       >
-        <tspan x="355.141" y="49.6547">
+        <tspan x="347.141" y="27.692">
           1997
         </tspan>
       </text>
@@ -95,10 +77,10 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#04A5BB"
         fontFamily="Lato"
-        fontSize="14"
+        fontSize="16"
         xmlSpace="preserve"
       >
-        <tspan x="64.8477" y="49.6547">
+        <tspan x="61.8477" y="27.692">
           1968
         </tspan>
       </text>
@@ -106,10 +88,10 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#4A4A46"
         fontFamily="Lato"
-        fontSize="16"
+        fontSize="18"
         xmlSpace="preserve"
       >
-        <tspan x="26" y="102.966">
+        <tspan x="8" y="82.966">
           The first age
         </tspan>
       </text>
@@ -117,10 +99,10 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#4A4A46"
         fontFamily="Lato"
-        fontSize="16"
+        fontSize="18"
         xmlSpace="preserve"
       >
-        <tspan x="280" y="106.966">
+        <tspan x="259" y="82.966">
           The second age
         </tspan>
       </text>
@@ -128,10 +110,10 @@ const BlockAges = (props) => {
         style={{ whiteSpace: "pre" }}
         fill="#4A4A46"
         fontFamily="Lato"
-        fontSize="16"
+        fontSize="18"
         xmlSpace="preserve"
       >
-        <tspan x="541" y="106.966">
+        <tspan x="548" y="82.966">
           The third age
         </tspan>
       </text>

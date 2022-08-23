@@ -12,8 +12,8 @@ function NumberSVG({ number }) {
         style={{
           float: "left",
           display: "inline-block",
-          marginRight: "1rem",
-          top: "0.7rem",
+          marginRight: "1.15rem",
+          top: "0.9rem",
           position: "relative",
         }}
       >
@@ -42,8 +42,8 @@ function NumberSVG({ number }) {
         style={{
           float: "left",
           display: "inline-block",
-          marginRight: "1rem",
-          top: "0.7rem",
+          marginRight: "1.15rem",
+          top: "0.9rem",
           position: "relative",
         }}
       >
@@ -72,8 +72,8 @@ function NumberSVG({ number }) {
         style={{
           float: "left",
           display: "inline-block",
-          marginRight: "1rem",
-          top: "0.7rem",
+          marginRight: "1.15rem",
+          top: "0.9rem",
           position: "relative",
         }}
       >
@@ -100,7 +100,7 @@ export default function ListNumber({ number, title, children }) {
   return (
     <ListContainer>
       <NumberSVG number={number} />
-      <h3 style={{ margin: "0.25rem 0 0.5rem" }}>{title}</h3>
+      <h3 style={{ margin: "0.5rem 0" }}>{title}</h3>
       {children}
     </ListContainer>
   );
@@ -108,4 +108,5 @@ export default function ListNumber({ number, title, children }) {
 
 const ListContainer = styled.div`
   display: inline-block;
+  margin: var(--space-xs) 0;
 `;

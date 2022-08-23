@@ -67,8 +67,9 @@ export function getStaticProps() {
     };
   });
 
+  const completeEssays = essays.filter((essay) => essay.growthStage !== 'draft')
   // Sort essays by date
-  const sortedEssays = essays.sort((a, b) => {
+  const sortedEssays = completeEssays.sort((a, b) => {
     return new Date(b.updated) - new Date(a.updated);
   });
   essays = sortedEssays;
@@ -78,7 +79,7 @@ export function getStaticProps() {
     const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
-    const { title, description, type, startDate, updated } = data;
+    const { title, description, type, startDate, growthStage, updated } = data;
 
     return {
       content,
@@ -86,11 +87,19 @@ export function getStaticProps() {
       description,
       startDate,
       updated,
+      growthStage,
       type,
       slug,
       filePath,
     };
   });
+
+  const completePatterns = patterns.filter((pattern) => pattern.growthStage !== 'draft')
+  // Sort patterns by date
+  const sortedPatterns = completePatterns.sort((a, b) => {
+    return new Date(b.updated) - new Date(a.updated);
+  });
+  patterns = sortedPatterns;
 
   // Get all note posts
   let notes = noteFilePaths.map((filePath) => {
@@ -121,8 +130,11 @@ export function getStaticProps() {
     };
   });
 
+  
+
+  const completeNotes = notes.filter((note) => note.growthStage !== 'draft')
   // Sort notes by date
-  const sortedNotes = notes.sort((a, b) => {
+  const sortedNotes = completeNotes.sort((a, b) => {
     return new Date(b.updated) - new Date(a.updated);
   });
   notes = sortedNotes;

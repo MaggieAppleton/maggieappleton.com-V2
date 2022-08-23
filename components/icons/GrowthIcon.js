@@ -22,5 +22,12 @@ export default function GrowthIcon({ growthStage, size }) {
                 height={size ? size : "22"}
             />
         );
+    } else if (growthStage === "draft") {
+        return (
+            <SeedlingIcon
+                width={size ? size : "22"}
+                height={size ? size : "22"}
+            />
+        );
     }
 }

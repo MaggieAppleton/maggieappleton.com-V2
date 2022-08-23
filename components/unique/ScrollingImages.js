@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRect } from "../../utils/useRect"
 // import { breakpoints } from "../../utils/breakpoints";
 
 
@@ -11,13 +12,21 @@ if (typeof window !== `undefined`) {
 }
 
 function ScrollingImages({ data, title }) {
+
+  console.log(data.length)
+
+  // need to wrap this in use memo
+  const imageRefs = Array(data.length).fill(0).map(i => React.createRef())
+
   const triggerDiv = useRef(null);
   // autogenerate number of refs based on length of input array
-  const img1 = useRef(null);
+  const img1 = useRef(null)
   const img2 = useRef(null);
   const img3 = useRef(null);
   const img4 = useRef(null);
+  const [rect, measureRef] = useRect();
 
+  console.log({rect})
 
   const refsArray = [img1, img2, img3, img4];
 

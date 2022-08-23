@@ -59,8 +59,9 @@ export function getStaticProps() {
     };
   });
 
+  const completeNotes = notes.filter((note) => note.data.growthStage !== 'draft')
   // Sort notes by date
-  const sortedNotes = notes.sort((a, b) => {
+  const sortedNotes = completeNotes.sort((a, b) => {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
   notes = sortedNotes;

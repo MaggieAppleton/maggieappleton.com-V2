@@ -412,8 +412,9 @@ export function getStaticProps() {
     };
   });
 
+  const completeEssays = essays.filter((essay) => essay.data.growthStage !== 'draft')
   // Filter essays for featured property
-  const filteredEssays = essays
+  const filteredEssays = completeEssays
     .filter((essay) => essay.data.featured === true)
     .slice(0, 4);
   // Sort filtered essays by date
@@ -435,8 +436,9 @@ export function getStaticProps() {
     };
   });
 
+  const completeNotes = notes.filter((note) => note.data.growthStage !== 'draft')
   // Sort notes in reverse order by date
-  const sortedNotes = notes.sort((a, b) => {
+  const sortedNotes = completeNotes.sort((a, b) => {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
@@ -466,8 +468,10 @@ export function getStaticProps() {
       filePath,
     };
   });
+
+  const completePatterns = patterns.filter((pattern) => pattern.data.growthStage !== 'draft')
   // Sort patterns by date
-  const sortedPatterns = patterns.sort((a, b) => {
+  const sortedPatterns = completePatterns.sort((a, b) => {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
@@ -480,7 +484,7 @@ export function getStaticProps() {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
 
-  const allPosts = [...essays, ...notes, ...projects, ...patterns];
+  const allPosts = [...completeEssays, ...completeNotes, ...projects, ...completePatterns];
 
   // Generate RSS Feed
   generateRSSFeed(allPosts);

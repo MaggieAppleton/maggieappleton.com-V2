@@ -1,7 +1,5 @@
 import { Feed } from "feed";
 import fs from "fs";
-import ReactDOMServer from "react-dom/server";
-import { MDXRemote } from "next-mdx-remote";
 
 // ? This file is unfinished – no clue if it works, half-implemented
 // Source: https://github.com/jpmonette/feed

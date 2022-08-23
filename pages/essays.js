@@ -55,8 +55,9 @@ export function getStaticProps() {
     };
   });
 
+  const completeEssays = essays.filter((essay) => essay.data.growthStage !== 'draft')
   // Sort essays by date
-  const sortedEssays = essays.sort((a, b) => {
+  const sortedEssays = completeEssays.sort((a, b) => {
     return new Date(b.data.updated) - new Date(a.data.updated);
   });
   essays = sortedEssays;

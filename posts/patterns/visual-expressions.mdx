@@ -1,0 +1,87 @@
+---
+title: "Visual Expression Editors"
+description: "..."
+growthStage: "draft"
+startDate: "2022-07-29"
+updated: "2022-08-03"
+type: "pattern"
+---
+
+<h2 className="micro">The Context</h2>
+
+As the line between the command line and graphical user interfaces continues to blur, ...
+
+The _low and no code_ application movement started gathering speed [x years ago]. Some of us might call these visual programming or end-user programming.
+
+We've begun to move beyond the simple point and click guided applications of the 2010's. Applications are allowing users to do the slightly more complex things we traditionally use programming languages for: writing conditional statements, referencing variables, and calling functions. But they're embedding these within graphical interfaces. They're being given [programmatic portals]. 
+
+When users can enter a value that may be calculated from other variables and formulas in the systems.
+
+<Spacer size="small" />
+
+<h2 className="micro">The Pattern</h2>
+
+Structure the formula to split areas into labelled sections. Sometimes with autocomplete and dropdown menus to improve discoverability and visibility.
+
+Improves discoverability. Users are able to search and browse within a limited scope. Only valid functions and arguments are shown in the inline dropdown menus
+
+[Need examples and screenshots in each of these apps]
+
+Coda
+
+Enso
+
+Apple Numbers
+
+Causal
+
+
+
+
+<Spacer size="small" />
+
+<h2 className="micro">Postscript: The Name</h2>
+
+I waffled for a while on what to name this. There's no industry-standard term, and there's a few ways we might interpret what's important about the pattern.
+
+<TweetEmbed tweetId="1522641287404572672"/>
+
+
+Folks on Twitter suggested terms like 'illuminated formulas' and 'visual query language'
+
+Ideas were all some combination of...
+Adjectives: Visual, Dynamic, Reactive, Structured, Intelligent, Assisted, Interactive
+Nouns: Builder, Query, Formula, Expression, Editor, Input, Language
+
+I settled on **“visual expression editors”** because it felt like it captured the important aspects:
+
+_Visual_ to emphasise that the pattern relies on graphical and spatial qualities to define various parts of the expression.
+
+_Expression_ is techically the correct term for the actual thing people are writing here. To cite the Wikipedia official definition:
+
+<BlockquoteCitation
+  author="Wikipedia"
+  title="Expressions (Computer Science)"
+  url="https://en.wikipedia.org/wiki/Expression_(computer_science)"
+>
+  "A syntactic entity in a programming language that may be evaluated to
+  determine its value. It is a combination of one or more constants, variables,
+  functions, and operators that the programming language interprets"
+</BlockquoteCitation>
+
+The other options were to call it a “formula” or “query” which are similar concepts, but not quite as accurate. Expressions can contain formulas. Expressions may end up being queries to a database, but they themselves are not the query.
+
+_Editor_ captured the fact these are things you can dynamically edit as an end-user, rather than simply being static representations.
+
+<References>
+  <ReferencesLink
+    title="UI Breakthrough-Command Line Interfaces"
+    href="https://jnd.org/ui_breakthrough-command_line_interfaces/"
+    author="Don Norman"
+  />
+  <ReferencesLink
+    title="CLUI: Building a Graphical Command Line"
+    href="https://blog.replit.com/clui"
+    author="Tyler Angert and Moudy Elkammash"
+  />
+</References>
