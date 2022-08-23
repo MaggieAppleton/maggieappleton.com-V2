@@ -100,7 +100,7 @@ export default function ListNumber({ number, title, children }) {
   return (
     <ListContainer>
       <NumberSVG number={number} />
-      <h3 style={{ margin: "0.25rem 0 0.5rem" }}>{title}</h3>
+      <h3 style={{ margin: "0.25rem 0 0.75rem" }}>{title}</h3>
       {children}
     </ListContainer>
   );
@@ -108,4 +108,5 @@ export default function ListNumber({ number, title, children }) {
 
 const ListContainer = styled.div`
   display: inline-block;
+  margin-top: 1.5rem;
 `;
