@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { breakpoints } from "../../utils/breakpoints";
 
-export default function ThreeColumn({ children, maxWidth, gridGap }) {
+export default function ThreeColumn({ children, maxWidth, gridGap, margin }) {
   return (
-    <ThreeColumnContainer gridGap={gridGap} maxWidth={maxWidth}>
+    <ThreeColumnContainer margin={margin} gridGap={gridGap} maxWidth={maxWidth}>
       {children}
     </ThreeColumnContainer>
   );
@@ -13,7 +13,7 @@ const ThreeColumnContainer = styled.div`
   width: 100%;
   grid-column: 1 / 4 !important;
   max-width: ${(props) => props.maxWidth || "1400px"};
-  margin: var(--space-s) auto var(--space-l);
+  margin: ${(props) => props.margin || "var(--space-s) auto var(--space-l)"};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: ${(props) => props.gridGap || "var(--space-s)"};
