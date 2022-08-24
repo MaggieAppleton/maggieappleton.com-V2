@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Fri, 15 Jul 2022 15:56:21 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Aug 2022 17:00:23 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -58,13 +58,6 @@
             <content:encoded><![CDATA[A newly revived philosophy for publishing personal knowledge on the web]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Fetishism & Mechanical Keyboards]]></title>
-            <link>https://maggieappleton.com/keyboard-fetishism</link>
-            <guid>https://maggieappleton.com/keyboard-fetishism</guid>
-            <pubDate>Thu, 25 Feb 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Developer self-expression through coloured switches, keystroke actuation, and LED light displays]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Meat Planet: The Illustrated Notes]]></title>
             <link>https://maggieappleton.com/meat-planet</link>
             <guid>https://maggieappleton.com/meat-planet</guid>
@@ -110,7 +103,7 @@
             <title><![CDATA[Tools for Thought as Cultural Practices, not Computational Objects]]></title>
             <link>https://maggieappleton.com/tools-for-thought</link>
             <guid>https://maggieappleton.com/tools-for-thought</guid>
-            <pubDate>Wed, 13 Jul 2022 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[On seeing tools for thought through a historical and anthropological lens]]></content:encoded>
         </item>
         <item>
@@ -315,6 +308,13 @@
             <guid>https://maggieappleton.com/dirt</guid>
             <pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Mary Douglas defined dirt as matter out of place – the crossing of boundaries]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Fetishism & Mechanical Keyboards]]></title>
+            <link>https://maggieappleton.com/keyboard-fetishism</link>
+            <guid>https://maggieappleton.com/keyboard-fetishism</guid>
+            <pubDate>Thu, 25 Feb 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Developer self-expression through coloured switches, keystroke actuation, and LED light displays]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Painting Roam Research with Custom CSS]]></title>
@@ -633,6 +633,20 @@
             <link>https://maggieappleton.com/uxlondon2019</link>
             <guid>https://maggieappleton.com/uxlondon2019</guid>
             <pubDate>Wed, 01 May 2019 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Folk Interfaces]]></title>
+            <link>https://maggieappleton.com/folk-interfaces</link>
+            <guid>https://maggieappleton.com/folk-interfaces</guid>
+            <pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[People reappropriating existing software to solve their own unique problems]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Programming Portals]]></title>
+            <link>https://maggieappleton.com/programming-portals</link>
+            <guid>https://maggieappleton.com/programming-portals</guid>
+            <pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Small, scoped areas within a graphical interface that allow users to write high-level programmes]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Daily Notes Pages]]></title>
