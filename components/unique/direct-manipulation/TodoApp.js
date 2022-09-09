@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { XIcon, CheckIcon } from "@heroicons/react/solid";
+import { XIcon, CheckIcon } from "@heroicons/react/20/solid";
 
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (

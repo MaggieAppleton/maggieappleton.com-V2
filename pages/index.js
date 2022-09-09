@@ -29,7 +29,7 @@ import {
   projectFilePaths,
   PROJECTS_PATH,
 } from "../utils/mdxUtils";
-import { ArrowRightIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Index({
   sortedEssays: essays,

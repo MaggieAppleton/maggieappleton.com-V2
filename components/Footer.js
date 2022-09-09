@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { breakpoints } from "../utils/breakpoints";
 import UnderlineHoverLink from "./links/UnderlineHoverLink";
-import { RssIcon } from "@heroicons/react/solid";
+import { RssIcon } from "@heroicons/react/20/solid";
 import {
   GithubIcon,
   TwitterIcon,

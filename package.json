@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
-    "@heroicons/react": "^1.0.4",
+    "@heroicons/react": "^2.0.10",
     "@reach/menu-button": "^0.16.1",
     "@tippyjs/react": "^4.2.5",
     "algoliasearch": "^4.11.0",

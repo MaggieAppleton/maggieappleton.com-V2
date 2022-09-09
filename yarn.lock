@@ -1166,10 +1166,10 @@
   resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.4.2.tgz"
   integrity sha512-N8tv7kLhg9qGKBkVdtg572BvKvWhmiudmeEpOCyNwzOsZHCXBtl8AazGikIfUS+vBoub20Fse3BjawXDVPPdug==
 
-"@heroicons/react@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@heroicons/react/-/react-1.0.4.tgz"
-  integrity sha512-3kOrTmo8+Z8o6AL0rzN82MOf8J5CuxhRLFhpI8mrn+3OqekA6d5eb1GYO3EYYo1Vn6mYQSMNTzCWbEwUInb0cQ==
+"@heroicons/react@^2.0.10":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.10.tgz#191a305aa2dc2271903f027c9f4700ca3dfa9e7b"
+  integrity sha512-Ufr+pgAElNiRCSklnHGOR10bXb02BLlosvbDK7sCRUMOcQ3R/HCXTfXs4BUkYZ4dKpx6l5dUD06VSW1dTpTEDw==
 
 "@mdx-js/mdx@^2.0.0":
   version "2.1.2"

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import useCollapse from "react-collapsed";
-import { ArrowRightIcon, ArrowDownIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon, ArrowDownIcon } from "@heroicons/react/20/solid";
 
 export default function TableOfContents({ headings }) {
   const route = useRouter().asPath;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ArrowLeftIcon } from "@heroicons/react/solid";
+import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 
 export default function BackHoverLink({ href, children }) {
     return (

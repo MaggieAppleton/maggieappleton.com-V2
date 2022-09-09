@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ChevronUpIcon } from "@heroicons/react/solid";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 export default function BackToTop() {
     return (

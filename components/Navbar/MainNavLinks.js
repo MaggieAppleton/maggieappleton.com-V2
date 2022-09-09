@@ -3,7 +3,7 @@ import useOnClickOutside from "../../utils/onclickOutside";
 import styled from "styled-components";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import UnderlineHoverLink from "../links/UnderlineHoverLink";
 import { Popover } from "@headlessui/react";
 

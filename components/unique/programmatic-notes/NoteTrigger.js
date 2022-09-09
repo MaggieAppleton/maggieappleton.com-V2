@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ArrowRightIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 const NoteTrigger = ({ children }) => {
   return (

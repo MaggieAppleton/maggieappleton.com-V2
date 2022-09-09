@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { XIcon, CheckIcon, RefreshIcon } from "@heroicons/react/solid";
+import { XIcon, CheckIcon, RefreshIcon } from "@heroicons/react/20/solid";
 import { useInView } from "react-intersection-observer";
 
 function DetatchedTodo({ todo, index, completeTodo, removeTodo }) {

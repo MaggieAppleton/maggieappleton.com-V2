@@ -1,6 +1,6 @@
 import Tooltip from "../Tooltip";
 import styled from "styled-components";
-import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 
 export default function ButtonLink({ href, children }) {
     return (
@@ -8,7 +8,7 @@ export default function ButtonLink({ href, children }) {
             content={
                 <StyledExternalUrl href={href}>
                     {href}
-                    <ExternalLinkIcon
+                    <ArrowTopRightOnSquareIcon
                         width="18"
                         height="18"
                         style={{ position: "relative", top: "3px" }}
