@@ -67,10 +67,12 @@ export default function PatternTemplate({
       <ProseWrapper>
         {backlinks && <Backlinks backlinks={backlinks} />}
       </ProseWrapper>
+      <FooterActions>
       <TwitterReply
         url={`https://maggieappleton.com/${slug}/`}
         title={frontMatter.title}
       />
+      </FooterActions>
     </>
   );
 }
@@ -144,3 +146,18 @@ const StyledMain = styled.main`
     padding: var(--space-xl) var(--space-xs);
   }
 `;
+
+const FooterActions = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    padding: var(--space-s) 0 var(--space-3xl);
+    gap: var(--space-3xs);
+    background: white;
+    color: var(--color-gray-600);
+    @media ${breakpoints.mediaSM} {
+    flex-direction: column;
+}
+`

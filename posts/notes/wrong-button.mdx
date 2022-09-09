@@ -1,0 +1,93 @@
+---
+title: "Designing an “I Think You're Wrong” Button"
+description: "Exploring ways to enable feedback, corrections, and constructive criticism on personal websites"
+startDate: "2022-09-07"
+updated: "2022-09-07"
+type: "note"
+topics:
+  ["Design", "The Web", "Digital Gardening", "Personal Knowledge"]
+growthStage: "budding"
+---
+
+<IntroParagraph>
+
+I am often wrong on this website. There are various ways I'm wrong. The most common is that I spell things incorrectly, or type inaccurately. Leaving incoherent gaps sentences. 
+
+</IntroParagraph>
+
+For every post I put up I get somewhere in the range of 2-8 Twitter DM's or emails pointing out typos, corrections, and grammatical missteps. I appreciate people who take the time to point these mistakes out. But if I'm honest, I don't always fix them. I have a hard time willing myself to care enough if the error doesn't prevent people from understanding my main point.
+
+I started reflecting on how to setup a system that would satisfy both my laziness _and_ the people who really want the words they read to be Correct. What if they could click a button to submit a correction?
+
+That's not too hard to make! There's a fairly simple way to do this with GitHub pull requests. This website is [open source](https://github.com/MaggieAppleton/maggieappleton.com-V2) and hosted on GitHub. Anyone can submit a PR to change what's written here. Great! I started prototyping a 1-click typo fixer.
+
+But then I started thinking about all the other ways I'm wrong.
+
+I'm not just wrong about small things like tpyos. I am sometimes factually wrong. In the past I've provided the wrong year for a historical event, failed to mention a major contributor on a project, and said a [piece of artwork](/folk-interfaces) was Czech when it was actually Slovak.
+
+I care much more about these type of mistakes. Not actively misleading people is fairly high on my list of goals for this [[garden]]. This typo-fixer button would have to cover situations that required larger factual revisions.
+
+Factual errors are still fairly small fish though. There's a much larger level of wrongness I started to consider: my opinions and conclusions are sometimes wrong.
+
+The word “wrong” can begin to feel a bit dicey once we start talking about matters of opinion and debate. So it's helpful to point out the specific kinds of wrongness I'm thinking about here:
+- I sometimes fail to support my arguments with sufficient evidence.
+- I sometimes use ambigious, imprecise language rather than making clear and simple statements.
+- I sometimes lack an understand of the larger historical context my arguments live within.
+- I sometimes don't know about an important piece of history, intellectual tradition, or body of work that would alter my conclusions.
+- I sometimes fail to consider important counter-arguments and give them sufficient weight.
+- I fall prey to classic [cognitive biases](https://en.wikipedia.org/wiki/Cognitive_bias) and [fallacies](https://en.wikipedia.org/wiki/Informal_fallacy) like [confirmation bias](https://en.wikipedia.org/wiki/Confirmation_bias)  and setting up [strawman](https://en.wikipedia.org/wiki/Straw_man) counter arguments.
+
+These are all cases where I most certainly _want_ to be told when I'm wrong. But like all people, I want to be told in a manner that feels well-intentioned rather than antagonistic. I love being challenged by people in ways that encourage me to change my position on a topic, rather than dig my heels in.
+
+Perhaps I could encourage people who want to tell me I'm wrong to follow the guidelines laid on the [Change My View](https://www.reddit.com/r/changemyview/) subreddit. For the uninitiated, r/changemyview is a Reddit community where people earnestly try to change each other's minds. You're rewarded with “_deltas_”<Footnote idName={1}>These are community points. There are delta leader boards for each week, month, etc. And your points appear by your name every time you post – they act as highly visible social cred.</Footnote> for changing both your own mind and other people's. For the most part it leads to civil discussion, compelling rhetoric, and genuine incentives to adjust your opinion on controvertial topics. And they have a pretty great [anti-delta guide](https://www.reddit.com/r/changemyview/wiki/antidelta/#wiki_anti-delta_approach) that outlines all the ways _not_ to change someone's mind.<Footnote idName={2}>Which unsurprisingly includes using hostile sarcasm, questioning their education or cognitive abilities, and declaring that you're "done responding" several times over.</Footnote>
+
+<NextImage src="/images/posts/cmv-reddit.jpg" width="1033" height="1376" alt="The rules and an example post from r/ChangeMyView" showalt />
+
+<Spacer size="small"/>
+
+The Change My View spirit is worth exploring here. Because the entire _point_ of an elaborately designed [[garden]] is to engage in meaningful intellectual exploration in public.<Footnote idName={3}>That already feels trite and uncomfortably earnest to type out loud, but I'm attempting to be a bit less cynical these days.</Footnote> It's a conduit to serious research, well-formed and articulated opinions, and [friend catching](https://www.swyx.io/friendcatchers).
+
+A large part of that is tricking readers who have more experience and expertise than you do to correct your wayward ideas. People are more than happy to recommend relevant resources, provide reams of examples, and point you towards more enlightened ways of thinking if you give them an opportunity to. And I'd love to encourage that.
+
+This leads us to a well-defined design challenge: **how can I design a way for readers to help correct the full spectrum of mistakes I make on this site?** From small technical details all the way up to logical, rhetorical, and philosophical flaws in my arguments.
+
+There are some hard constraints on this challenge. I'm not a very good developer and I don't want to spend more than an afternoon duct-taping it together. I will not be coding up an interactive, inline commenting and suggestions feature. A well-designed button will suffice.
+
+So let's dig into designing an "I think you're wrong" button.
+
+I started by making a couple of quick mockups to consider how this could work. Each post needs a button that readers can click to point out a mistake. I figured the footer felt appropriate – not too obtrusive, but still discoverable. I already had a "Tell Twitter about it" call to action at the end of every post which it could live alongside.
+
+I started out trying to phrase it as “You've made a mistake.” Telling the author they've made a mistake feels less aggressive and more accurate than saying they're simply _wrong_.
+
+<NextImage src="/images/posts/mistake-frames-1.jpg" width="926" height="466" showalt alt="Testing out different text for the button" />
+
+Once people click the button, I want them to clarify what type of mistake they've noticed. I decided to put these in a simple modal as a set of choices. Each one would guide users towards a different flow. 
+
+<NextImage src="/images/posts/modal-mockup.jpg" width="919" height="650" alt="A mockup of possible ways the present the three options" showalt />
+
+People who noticed typos would be directed to an editable page on Github where they could submit a PR.
+
+People who noticed factual mistakes would be directed to open an issue on Github. Factual mistakes might require a bit more nuanced explanation and discussion than typos, so I wanted to create space for that.
+
+People who think I've made philosophical, logical, or rhetorical mistakes are the more interesting case here. I wanted to give them a few options for how to engage which I'll discuss more below.
+
+In the spirit of quick user feedback I asked Twitter for thoughts on the language used in these mocks.
+
+<TweetEmbed tweetId="1566922229459271680" />
+
+People immediately pointed out some obvious flaws. The use of _you_ and _I_ in text like "I think you've made a mistake" made it ambigious who had made a mistake. Was the reader declaring their own mistake?
+
+Using the phrase “report” and the flag icon made it seem like the button would report me to some higher authority.
+
+[Brandel Zachernuk](https://twitter.com/zachernuk/status/1566939299769028608?s=20&t=ZLqmk4KUfn1_d68GUyR49Q) helpfully suggested reframing it from a negative judgement to a positive, constructive action. Rather than _report_ or _flag_, why not _fix_ or _suggest_?
+
+I settled on "Suggest an edit" for the button text, then added "See a mistake?" as a contextual question ahead of it. This feels like it gives users a better sense of why this button exists – to allow them to point out mistakes, then take an active role in suggesting edits.
+
+<NextImage src="/images/posts/mistake-frame-2.jpg" width="924" height="161" showalt alt="The revised button text with 'Suggest an edit'" />
+
+This still isn't perfect but I'm running with it for the moment. 
+
+
+<Disclaimer title="Postscript">
+Any typos and misspellings you find in this piece exist for trollish humour and narrative emphasis. 😉 No need to report them.
+</Disclaimer>

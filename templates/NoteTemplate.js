@@ -8,6 +8,7 @@ import BackHoverLink from "../components/links/BackHoverLink";
 import Dates from "../components/templates/Dates";
 import TableOfContents from "../components/TableOfContents";
 import GrowthStage from "../components/templates/GrowthStage";
+import MistakeButton from "../components/templates/MistakeButton";
 import Topics from "../components/templates/Topics";
 import Header from "../components/Header";
 import BackToTop from "../components/mdx/BackToTop";
@@ -63,10 +64,15 @@ export default function NoteTemplate({
       <ProseWrapper>
         {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
       </ProseWrapper>
-      <TwitterReply
-        url={`https://maggieappleton.com/${slug}/`}
-        title={frontMatter.title}
-      />
+      <FooterActions>
+        <div className="innerContainer">
+          <TwitterReply
+            url={`https://maggieappleton.com/${slug}/`}
+            title={frontMatter.title}
+          />
+          <MistakeButton slug={slug} />
+        </div>
+      </FooterActions>
     </>
   );
 }
@@ -141,3 +147,24 @@ const StyledMain = styled.main`
     padding: var(--space-xl) var(--space-xs);
   }
 `;
+
+const FooterActions = styled.section`
+    padding: var(--space-s) 0 var(--space-3xl);
+    background: white;
+    color: var(--color-gray-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div.innerContainer {
+      width: 800px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      @media ${breakpoints.mediaSM} {
+        flex-direction: column;
+      }
+    }
+`

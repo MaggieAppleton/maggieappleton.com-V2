@@ -32,16 +32,12 @@ export const TwitterReply = ({ title, url }) => {
     );
 };
 
-const StyledTweetReply = styled.section`
+const StyledTweetReply = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-sans);
-    padding: var(--space-s) 0 var(--space-3xl);
-    gap: var(--space-3xs);
-    background: white;
-    color: var(--color-gray-600);
+    grid-gap: var(--space-3xs);
     @media ${breakpoints.mediaSM} {
         flex-direction: column;
     }
@@ -49,6 +45,8 @@ const StyledTweetReply = styled.section`
         fill: var(--color-gray-600);
         transition: all 0.3s ease-in-out;
         margin-right: var(--space-3xs);
+        position: relative;
+        top: 2px;
     }
     button {
         cursor: pointer;

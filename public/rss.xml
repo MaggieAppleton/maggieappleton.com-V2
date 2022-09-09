@@ -4,7 +4,7 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Wed, 24 Aug 2022 17:00:23 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Sep 2022 03:34:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -119,6 +119,13 @@
             <guid>https://maggieappleton.com/xanadu-patterns</guid>
             <pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Project Xanadu as a pattern language, rather than a failed software project]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Designing an “I Think You're Wrong” Button]]></title>
+            <link>https://maggieappleton.com/wrong-button</link>
+            <guid>https://maggieappleton.com/wrong-button</guid>
+            <pubDate>Mon, 05 Sep 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Exploring ways to enable feedback, corrections, and constructive criticism on personal websites]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Joining Ought]]></title>
@@ -640,13 +647,6 @@
             <guid>https://maggieappleton.com/folk-interfaces</guid>
             <pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[People reappropriating existing software to solve their own unique problems]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Programming Portals]]></title>
-            <link>https://maggieappleton.com/programming-portals</link>
-            <guid>https://maggieappleton.com/programming-portals</guid>
-            <pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Small, scoped areas within a graphical interface that allow users to write high-level programmes]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Daily Notes Pages]]></title>
