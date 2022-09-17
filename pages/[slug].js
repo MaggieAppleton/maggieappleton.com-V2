@@ -81,6 +81,9 @@ export const components = {
   img: dynamic(() => import("../components/mdx/Img"), {
     ssr: false,
   }),
+  NextImage: dynamic(() => import("../components/mdx/NextImage"), {
+    ssr: false,
+  }),
   Alert: dynamic(() => import("../components/mdx/Alert"), {
     ssr: false,
   }),
