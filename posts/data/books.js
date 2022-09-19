@@ -1,5 +1,26 @@
 export const bookData = [
   {
+    title: "A Small Matter of Programming",
+    subtitle: "Perspectives on End User Computing",
+    author: "Bonnie Nardi",
+    cover: "/images/books/smallprog.jpeg",
+    link: "https://www.google.com/books/edition/A_Small_Matter_of_Programming/0drDRT370eoC",
+  },
+  {
+    title: "Dancing Skeletons",
+    subtitle: "Life and Death in West Africa",
+    author: "Katherine Dettwyler",
+    cover: "/images/books/dancing-skeletons.jpg",
+    link: "https://www.google.co.uk/books/edition/Dancing_Skeletons/cQVhAQAAQBAJ?hl=en&gbpv=0",
+  },
+  {
+    title: "Ethnography #9",
+    subtitle: "Capitalism, Ghosts, and Numbers in Northern Thailand",
+    author: "Alan Klima",
+    cover: "/images/books/ethnography9.jpg",
+    link: "https://www.google.co.uk/books/edition/Ethnography_9/sz6-DwAAQBAJ?hl=en&gbpv=0",
+  },
+  {
     title: "Blockchain Chicken Farm",
     subtitle: "And Other Stories of Tech in China's Countryside",
     author: "Xiaowei Wang",

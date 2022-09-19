@@ -1,5 +1,12 @@
 export const antiBookData = [
   {
+    title: "Death Without Weeping",
+    subtitle: "The Violence of Everyday Life in Brazil",
+    author: "Nancy Scheper-Hughes",
+    cover: "/images/books/death-weeping.jpg",
+    link: "https://www.google.co.uk/books/edition/Death_Without_Weeping/PYcb7KImjbQC?hl=en&gbpv=0",
+  },
+  {
     title: "Orality and Literacy",
     subtitle: "The Technologizing of the World",
     author: "Walter Ong",
@@ -67,13 +74,6 @@ export const antiBookData = [
     author: "Joy Lisi Rankin",
     cover: "/images/books/peoplehistory.jpeg",
     link: "https://www.google.com/books/edition/A_People's_History_of_Computing_in_the_United_States/WnhyDwAAQBAJ",
-  },
-  {
-    title: "A Small Matter of Programming",
-    subtitle: "Perspectives on End User Computing",
-    author: "Bonnie Nardi",
-    cover: "/images/books/smallprog.jpeg",
-    link: "https://www.google.com/books/edition/A_Small_Matter_of_Programming/0drDRT370eoC",
   },
   {
     title: "Supersizing the Mind",
