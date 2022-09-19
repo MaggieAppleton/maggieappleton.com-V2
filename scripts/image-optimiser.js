@@ -1,19 +1,33 @@
-// api: node scripts/image-optimiser.js [postName]
+// https://www.npmjs.com/package/imagemagick
 
-// make an array of config objects
-// each object will have: an output name postfix, a width, (quality level?)
-// Also have a standard config object for common transformations: "strip"
+/**
+ * Run me with "node scripts/image-optimiser.js [post-directory-name]"
+ */
 
-// find the public/images/posts/[postName] directory
-// require imageMagick
-// loop through config objects
-// call im.convert() for each config and pass it the command line args:
-// - path to input image
-// - "-strip"
-// - "-resize" "[width]"
-// - "-quality" "[quality]"
-// - path to output
+const im = require('imagemagick');
+const fs = require('fs');
+const path = require('path');
 
-// OR USE THE .resize() api instead...
+const widths = [440, 800, 1100, 1300, 1800];
+const postName = process.argv.slice(2)[0];
 
-//https://www.npmjs.com/package/imagemagick
+const pathPrefix = "public/images/posts"
+const pathToPostImages = path.join(pathPrefix, postName);
+
+const imagesFileNames = fs.readdirSync(pathToPostImages);
+
+imagesFileNames.forEach((fileName) => {
+    widths.forEach((width) => {
+        const { name, ext } = path.parse(fileName);
+        const destinationFileName = `${name}-${width}.jpg`;
+
+        im.resize({
+            srcPath: path.join(pathToPostImages, fileName),
+            dstPath: path.join(pathToPostImages, destinationFileName),
+            width,
+            quality: 100,
+            format: 'jpg',
+            strip: true,
+        })
+    })
+})
