@@ -77,9 +77,9 @@ export default function MobileMenu() {
                 handleClick={() => {
                   setMenuOpen(false);
                 }}
-                href="/projects"
+                href="/now"
               >
-                Projects
+                Now
               </LinkButton>
               <LinkButton
                 handleClick={() => {

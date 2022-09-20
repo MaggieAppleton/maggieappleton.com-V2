@@ -62,7 +62,7 @@ export default function MainNavLinks() {
       </AnimatePresence>
       <div className="outside-dropdown">
         <Link href="/now">
-          <UnderlineHoverLink href="/projects">Now</UnderlineHoverLink>
+          <UnderlineHoverLink href="/now">Now</UnderlineHoverLink>
         </Link>
         <Link href="/about">
           <UnderlineHoverLink href="/about">About</UnderlineHoverLink>
