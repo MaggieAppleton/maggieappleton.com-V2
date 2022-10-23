@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const Video = ({ src, title, width, height, ...props }) => (
-  <StyledVideo {...props}>
+const Video = ({ src, title, width, height, margin, ...props }) => (
+  <StyledVideo margin={margin} {...props}>
     <iframe
-      width="853"
-      height="480"
+      width={ width ? width : "853"}
+      height={ height ? height : "480"}
       src={src}
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -19,6 +19,7 @@ const StyledVideo = styled.div`
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
+  margin: ${(props) => {props.margin || null}};
   iframe {
     left: 0;
     top: 0;
