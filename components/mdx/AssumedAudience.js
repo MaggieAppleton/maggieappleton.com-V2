@@ -21,11 +21,11 @@ const AssumedAudienceContainer = styled.div`
   align-items: baseline;
   font-family: var(--font-body);
   font-size: calc(var(--font-size-base) / 1.2);
-  div p {
+  div {
     font-weight: 400;
     margin: 0;
     font-size: calc(var(--font-size-base) / 1.2);
-    line-height: var(--leading-loose);
+    line-height: 1.6;
     flex-shrink: unset;
     color: var(--color-gray-800);
   }

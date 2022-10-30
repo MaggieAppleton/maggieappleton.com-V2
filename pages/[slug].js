@@ -75,6 +75,9 @@ export const components = {
     import("../components/mdx/BlockquoteCitation")
   ),
   Subtext: Subtext,
+  Accordion: dynamic(() =>
+    import("../components/mdx/Accordion")
+  ),
   Footnote: dynamic(() => import("../components/mdx/Footnote"), {
     ssr: false,
   }),
