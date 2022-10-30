@@ -47,7 +47,7 @@ export default function About() {
                 where we're exploring how machine learning can help researchers with open-ended reasoning.
               </p>
               <p>
-                I'm not currently avaliable for any contract work, side
+                I'm not currently available for any contract work, side
                 projects, or full-time roles.
               </p>
               <p>
