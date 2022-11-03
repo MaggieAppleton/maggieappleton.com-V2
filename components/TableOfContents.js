@@ -9,6 +9,8 @@ export default function TableOfContents({ headings }) {
 
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
+  console.log(headings)
+
   return (
     <>
       <DesktopContainer>
@@ -29,7 +31,7 @@ export default function TableOfContents({ headings }) {
             const href = `${route}#${link}`;
             const filteredText = text
               .replace(/[\*_]/gim, "")
-
+              .replace(/<[^>]+>/g, "")
             return (
               <A key={text} href={href} level={level}>
                 {filteredText}
@@ -57,7 +59,7 @@ export default function TableOfContents({ headings }) {
                 const href = `${route}#${link}`;
                 const filteredText = text
                   .replace(/[\*_]/gim, "")
-
+                  .replace(/<[^>]+>/g, "")
                 return (
                   <A key={text} href={href} level={level}>
                     {filteredText}
