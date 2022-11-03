@@ -27,11 +27,12 @@ export default function TableOfContents({ headings }) {
               .toLowerCase()
               .replace(/\s/g, "-")
               .replace(/[.,?()]/gim, "")
-              .replace(/\*\*|__/g, "");
+              .replace(/\*\*|__/g, "")
+              .replace(/<[^>]+>/g, "");
             const href = `${route}#${link}`;
             const filteredText = text
               .replace(/[\*_]/gim, "")
-              .replace(/<[^>]+>/g, "")
+              .replace(/<[^>]+>/g, "");
             return (
               <A key={text} href={href} level={level}>
                 {filteredText}
@@ -55,11 +56,12 @@ export default function TableOfContents({ headings }) {
                 const link = text
                   .toLowerCase()
                   .replace(/\s/g, "-")
-                  .replace(/[.,?()]/gim, "");
+                  .replace(/[.,?()]/gim, "")
+                  .replace(/<[^>]+>/g, "");
                 const href = `${route}#${link}`;
                 const filteredText = text
                   .replace(/[\*_]/gim, "")
-                  .replace(/<[^>]+>/g, "")
+                  .replace(/<[^>]+>/g, "");
                 return (
                   <A key={text} href={href} level={level}>
                     {filteredText}
