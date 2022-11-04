@@ -9,8 +9,6 @@ export default function TableOfContents({ headings }) {
 
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
-  console.log(headings)
-
   return (
     <>
       <DesktopContainer>
