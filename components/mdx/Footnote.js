@@ -56,16 +56,29 @@ const FootnoteContainer = styled.aside`
   }
   .footnote-number:after {
     content: counter(footnote-counter);
-    font-size: 0.8em;
-    top: -0.5rem;
-    left: 0.1em;
-    padding-right: 0px;
+    padding: 0.15rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-sea-blue);
+    font-weight: 600;
+    line-height: 0;
+    position: relative;
+    top: -6px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.25s ease-in-out;
   }
   .footnote:before {
     content: counter(footnote-counter);
-    font-size: 0.9em;
-    top: -0.3rem;
-    padding-right: var(--space-3xs);
+    font-size: 1rem;
+    top: -0.1rem;
+    font-weight: 600;
+    padding-right: var(--space-2xs);
+    color: var(--color-sea-blue);
+    font-family: var(--font-sans);
   }
   blockquote .footnote {
     margin-right: -82%;
@@ -91,7 +104,7 @@ const FootnoteContainer = styled.aside`
     float: ${({ isClosed }) => (isClosed ? "left" : "unset")};
     left: ${({ isClosed }) => (isClosed ? "0" : "unset")};
     clear: ${({ isClosed }) => (isClosed ? "both" : "unset")};
-    width: ${({ isClosed }) => (isClosed ? "95%" : "unset")};
+    width: ${({ isClosed }) => (isClosed ? "99%" : "unset")};
     margin: ${({ isClosed }) => (isClosed ? "1rem 0" : "unset")};
     height: ${({ isClosed }) => (isClosed ? "auto" : "unset")};
     position: ${({ isClosed }) => (isClosed ? "relative" : "unset")};
@@ -110,8 +123,8 @@ const FootnoteContainer = styled.aside`
       float: left;
       left: 0;
       clear: both;
-      width: 95%;
-      margin: 1rem 0;
+      width: 99%;
+      margin: 1rem;
       height: auto;
       position: relative;
     }
