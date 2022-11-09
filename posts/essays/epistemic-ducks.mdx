@@ -90,7 +90,7 @@ Other independent researchers have tested GPT-3 on a few additional benchmarks:
 - The [CommonsenseQA](https://openreview.net/pdf?id=qF7FlUT5dxa) covers 14,343 yes/no questions about everyday common sense knowledge
 - The [TruthfulQA](https://arxiv.org/pdf/2109.07958.pdf) benchmark asks 817 questions that some humans are known to have false beliefs and misconceptions around. Such as health, law, politics, and conspiracy theories.
 
-Before we jump to the results you should know the prompt you give a language model [significantly affects](https://arxiv.org/pdf/2102.07350.pdf) how well it performs. [Few-shot prompting](https://www.youtube.com/watch?v=v2gD8BHOaX4) consistently improves the model's accuracy compared to zero-shot prompting.<Footnote idName={1}>Few-shot prompting is including two or three examples of correct question/answer pairs within the prompt. Zero-shot prompting is just asking the question without providing any examples.</Footnote> Telling the model to act like a knowledgable, helpful and truthful person within the prompt also improves performance.
+Before we jump to the results you should know the prompt you give a language model [significantly affects](https://arxiv.org/pdf/2102.07350.pdf) how well it performs. [Few-shot prompting](https://www.youtube.com/watch?v=v2gD8BHOaX4) consistently improves the model's accuracy compared to zero-shot prompting.<Footnote idName={4}>Few-shot prompting is including two or three examples of correct question/answer pairs within the prompt. Zero-shot prompting is just asking the question without providing any examples.</Footnote> Telling the model to act like a knowledgable, helpful and truthful person within the prompt also improves performance.
 
 Here's a breakdown of what percentage of questions GPT-3 answered correctly on each benchmark. I've included both zero- and few-shot prompts, and the percentage that humans got right on the same questions:
 
@@ -190,12 +190,12 @@ Here's a breakdown of what percentage of questions GPT-3 answered correctly on e
 Sorry for the wall of numbers. Here's the long and short of it:
 
 - It performs worst on the most common questions people ask online, getting **only 14-15% correct** in a zero-shot prompt.
-- On questions known to elicit false beliefs or misconceptions from people, **it got only 20% right**.<Footnote idName={1}>With additional prompt engineering, such as telling the model to be helpful and truthful, they got this number up to 58%.</Footnote> For comparison, people usually get 94% of these correct.
+- On questions known to elicit false beliefs or misconceptions from people, **it got only 20% right**.<Footnote idName={5}>With additional prompt engineering, such as telling the model to be helpful and truthful, they got this number up to 58%.</Footnote> For comparison, people usually get 94% of these correct.
 - It performs best on trivia questions, but still only **gets 64 ~ 71% of these correct**.
 
 While GPT-3 scored “well” on these benchmarks by machine learning standards, the results as still _way_ below what most people expect.
 
-This wouldn't be a problem if people fully understood GPT-3 limited abilities. And yet we're already seeing people turn to GPT-3 for reliable answers and guidance. People are using it in lieu of Google and Wikipedia. Or even substituting it for legal counsel. <Footnote idName={5}>To be fair to the tweeters I've highlighted here, they heeded the outpouring of concern in replies and caveat they (now) double-check its answers.</Footnote>  
+This wouldn't be a problem if people fully understood GPT-3 limited abilities. And yet we're already seeing people turn to GPT-3 for reliable answers and guidance. People are using it in lieu of Google and Wikipedia. Or even substituting it for legal counsel. <Footnote idName={6}>To be fair to the tweeters I've highlighted here, they heeded the outpouring of concern in replies and caveat they (now) double-check its answers.</Footnote>  
 
 <TweetEmbed tweetId="1583341896666996738" />
 
@@ -228,7 +228,7 @@ Riff is doing some prompt engineering behind the scenes and fetching extra infor
 
 At first this seems pretty good! The "Hockings" it's telling me about is [Paul Hockings](https://en.wikipedia.org/wiki/Paul_Hockings), a real British anthropologist and professor emeritus at the University of Illinois. **But** he hasn't done any work in digital anthropology, and certainly hasn't written a book called “Digital Anthropology.” This blend of truth and fiction might be more dangerous than fiction alone. I might check one or two facts, find they're right, and assume the rest is also valid.
 
-Framing the model as a character in an informative conversation does help mitigate this though. It feels more like talking to a person – one you can easily talk back to, question, and challenge. When _other people_ recite a fact or make a claim, we don't automatically accept it as true. We question them. “How are you so sure?” “Where did you read that?” “Really?? Let me google it.”<Footnote idName={4}>It is of course similarly problematic that the top ~3 results on Google are the arbiter of truth in our society, but we can't pretend that's not the current situation</Footnote>
+Framing the model as a character in an informative conversation does help mitigate this though. It feels more like talking to a person – one you can easily talk back to, question, and challenge. When _other people_ recite a fact or make a claim, we don't automatically accept it as true. We question them. “How are you so sure?” “Where did you read that?” “Really?? Let me google it.”<Footnote idName={7}>It is of course similarly problematic that the top ~3 results on Google are the arbiter of truth in our society, but we can't pretend that's not the current situation</Footnote>
 
 Our model of humans is that they're flawed pattern matching machines that pick up impressions of the world from a wide variety of questionable and contradictory sources. We should assume the same of language models trained on questionable and contradictory text humans have published to the web.
 
@@ -280,7 +280,7 @@ The problem is less that these models frequently return outright falsehoods or m
 
 [Karpathy says language models should be thought of as oracles]
 
-<BasicImage src="/images/posts/epistemic-ducks/oracle3.png" width="800px" alt="A friendly AI oracle. Made with Midjourney" showalt />
+<BasicImage src="/images/posts/epistemic-ducks/oracle3.png" width="800px" alt="A friendly, helpful AI oracle. Made with Midjourney" showalt />
 
 
 
@@ -304,7 +304,7 @@ Rubber ducking is the practice of having a friend or colleague sit and listen wh
 
 [image of back and forth discussion with a rubber duck]
 
-The term comes [from programming](https://en.wikipedia.org/wiki/Rubber_duck_debugging) where you're frequently faced with poorly defined problems that require a bit of thinking out loud.<Footnote idName={6}>Originally coined from a story in [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) where one programmer carried around a literal rubber duck to talk through their code with</Footnote> Simply answering the question "what am I trying to do here?" is often enough to get started on a solution.
+The term comes [from programming](https://en.wikipedia.org/wiki/Rubber_duck_debugging) where you're frequently faced with poorly defined problems that require a bit of thinking out loud.<Footnote idName={8}>Originally coined from a story in [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) where one programmer carried around a literal rubber duck to talk through their code with</Footnote> Simply answering the question "what am I trying to do here?" is often enough to get started on a solution.
 
 **Language models are well suited to rubber ducking.** Their mimicry makes them good reflective thinking partners, not independent sources of truth. 
 
@@ -316,7 +316,7 @@ And not just any rubber ducking...
 
 Epistemology is the study of how we know what we know, also called “theory of knowledge.” It deals with issues like how valid a claim is, how strong its claims and counter-arguments are, whether the evidence came from a reliable source, and whether cognitive biases might be warping our opinions.
 
-Epistemic rubber ducking, then, is talking through an idea, claim, or opinion you hold, with a partner who helps you think through the epistemological dimensions of your thoughts. This isn't simply a devil's advocate incessantly pointing out all the ways you're wrong. <Footnote idName={7}>No one would tolerate that for long, which is why Effective Altruism is such an exhausting community to interact with.</Footnote>
+Epistemic rubber ducking, then, is talking through an idea, claim, or opinion you hold, with a partner who helps you think through the epistemological dimensions of your thoughts. This isn't simply a devil's advocate incessantly pointing out all the ways you're wrong. <Footnote idName={9}>No one would tolerate that for long, which is why Effective Altruism is such an exhausting community to interact with.</Footnote>
 
 A useful epistemic duck would need to be supportive and helpful. It would need to simply ask questions and suggest ideas, none of which you're required to accept or integrate, but are there if you want them. It could certainly prod and critique, but in a way that helps you understand the other side of the coin, and realise the gaps and flaws in your arguments.
 
@@ -351,7 +351,7 @@ Kate Darling argues we should look to our history with animals to help guide our
 
 </ResourceBook>
 
-At the moment the analogy floating around is “aliens.” A lot of AI researchers talk about ML systems as [alien intelligences](#). Given our cultural narratives around aliens as parasitic killers that are prone to exploding out of your chest, I'm pretty adverse to the metaphor. Having an alien intelligence in my system sounds threatening. It certainly doesn't sound like a helpful collaborative thinking partner. <Footnote idName={2}>This might be a good thing if it helps motivate us to take AI alignment seriously.</Footnote>
+At the moment the analogy floating around is “aliens.” A lot of AI researchers talk about ML systems as [alien intelligences](#). Given our cultural narratives around aliens as parasitic killers that are prone to exploding out of your chest, I'm pretty adverse to the metaphor. Having an alien intelligence in my system sounds threatening. It certainly doesn't sound like a helpful collaborative thinking partner. <Footnote idName={10}>This might be a good thing if it helps motivate us to take AI alignment seriously.</Footnote>
 
 <TwoColumn maxWidth="950px" alignItems="top">
 
