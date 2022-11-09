@@ -87,7 +87,7 @@ In the [original paper](https://arxiv.org/pdf/2005.14165.pdf) presenting GPT-3, 
 
 Other independent researchers have tested GPT-3 on a few additional benchmarks:
 
-- The [CommonsenseQA](https://openreview.net/pdf?id=qF7FlUT5dxa) covers 14,343 yes/no questions about everyday commonsense knowledge such as “What kind of driving leads to accidents?”
+- The [CommonsenseQA](https://openreview.net/pdf?id=qF7FlUT5dxa) covers 14,343 yes/no questions about everyday common sense knowledge
 - The [TruthfulQA](https://arxiv.org/pdf/2109.07958.pdf) benchmark asks 817 questions that some humans are known to have false beliefs and misconceptions around. Such as health, law, politics, and conspiracy theories.
 
 Before we jump to the results you should know the prompt you give a language model [significantly affects](https://arxiv.org/pdf/2102.07350.pdf) how well it performs. [Few-shot prompting](https://www.youtube.com/watch?v=v2gD8BHOaX4) consistently improves the model's accuracy compared to zero-shot prompting.<Footnote idName={1}>Few-shot prompting is including two or three examples of correct question/answer pairs within the prompt. Zero-shot prompting is just asking the question without providing any examples.</Footnote> Telling the model to act like a knowledgable, helpful and truthful person within the prompt also improves performance.
@@ -195,7 +195,7 @@ Sorry for the wall of numbers. Here's the long and short of it:
 
 While GPT-3 scored “well” on these benchmarks by machine learning standards, the results as still _way_ below what most people expect.
 
-This wouldn't be a problem if people fully understood GPT-3 limited abilities. And yet we're already seeing people turn to GPT-3 for reliable answers and guidance. People are using it in lieu of Google and Wikipedia. Or even substituting it for legal counsel. <Footnote idName={5}>To be fair to the tweeters I've highlighted here, they heeded the outpouring of concern in replies and caveated they (now) double-check its answers.</Footnote>  
+This wouldn't be a problem if people fully understood GPT-3 limited abilities. And yet we're already seeing people turn to GPT-3 for reliable answers and guidance. People are using it in lieu of Google and Wikipedia. Or even substituting it for legal counsel. <Footnote idName={5}>To be fair to the tweeters I've highlighted here, they heeded the outpouring of concern in replies and caveat they (now) double-check its answers.</Footnote>  
 
 <TweetEmbed tweetId="1583341896666996738" />
 
@@ -205,7 +205,12 @@ This wouldn't be a problem if people fully understood GPT-3 limited abilities. A
 
 Based on our benchmark data above, many of the answers these people get back will be wrong. Especially since most people ask GPT-3 questions without additional prompt engineering or few-shot examples.
 
-The problem isn't limited to people directly asking GPT-3 questions within the OpenAI playground. More and more people are being exposed to language models like GPT-3 via other products. Ones that implicitly frame the models as a source of truth.
+[The problem isn't these people. They came to an interface that looked like it provided reliable answers. There were no disclaimers or accuracy stats or ways to investigate an answer. One of the major issues with language models is they _seem_ so confident and capable, we desperately want them to work.]
+
+
+## GPT-3 beyond the playground
+
+The problem isn't limited to people directly asking GPT-3 questions within the OpenAI playground. More and more people are being exposed to language models like GPT-3 via other products. Ones that either implicitly or explicitly frame the models as a source of truth.
 
 [Riff](https://riff.quest/) is a chatbot-style app that mimics office hours with a professor. You put in a specific subject and GPT-3 replies with answers to your questions.
 
@@ -217,15 +222,19 @@ The problem isn't limited to people directly asking GPT-3 questions within the O
 
 </TwoColumn>
 
-Riff is doing some prompt engineering behind the scenes and fetching extra information from the web and Wikipedia to make these answers more reliable. But in test-driving it still hallucinated. Here I've asked it for books on [[digital anthropology]] since I know the field well and have my own [[list of books]] I'd recommend:
+Riff is doing some prompt engineering behind the scenes and fetching extra information from the web and Wikipedia to make these answers more reliable. But in test-driving it still hallucinated. Here I've asked it for books on [[digital anthropology]] since I know the field well and have my own [[list of books]] I recommend to people:
 
 <ImageFrame margin="0.5rem auto 2rem" width="900px" src="/images/posts/epistemic-ducks/riff-chat.jpg" alt="" />
 
 At first this seems pretty good! The "Hockings" it's telling me about is [Paul Hockings](https://en.wikipedia.org/wiki/Paul_Hockings), a real British anthropologist and professor emeritus at the University of Illinois. **But** he hasn't done any work in digital anthropology, and certainly hasn't written a book called “Digital Anthropology.” This blend of truth and fiction might be more dangerous than fiction alone. I might check one or two facts, find they're right, and assume the rest is also valid.
 
-Apps that frame interactions with language models as conversations seem less concerning than ones that treat the model as an original creator. Over the last few months a [slew](https://app.gomoonbeam.com/) [of GPT-3](https://app.copy.ai/) [powered](https://www.jasper.ai/) copywriting apps have been released.
+Framing the model as a character in an informative conversation does help mitigate this though. It feels more like talking to a person – one you can easily talk back to, question, and challenge. When _other people_ recite a fact or make a claim, we don't automatically accept it as true. We question them. “How are you so sure?” “Where did you read that?” “Really?? Let me google it.”<Footnote idName={4}>It is of course similarly problematic that the top ~3 results on Google are the arbiter of truth in our society, but we can't pretend that's not the current situation</Footnote>
 
-<p>All of them promise to help you pump out essays, emails, and blog posts based on only a few bullet points and keywords. They do what I'm calling the<button style={{padding:"0px 12px 2px", fontFamily: "var(--font-sans)", background: "linear-gradient(to bottom, #15cf5b, #0ebe50)", color: "white", borderRadius: "8px", margin: "0 8px", display: "inline-block"}}> big green button </button> approach where you type in a few key points, then click a big green button that “magically” generates a full ream of text for you. </p>
+Our model of humans is that they're flawed pattern matching machines that pick up impressions of the world from a wide variety of questionable and contradictory sources. We should assume the same of language models trained on questionable and contradictory text humans have published to the web.
+
+There's a different, and perhaps more troublesome, framing that I'm seeing pop up. Mainly from the [slew](https://app.gomoonbeam.com/) [of GPT-3](https://app.copy.ai/) [powered](https://www.jasper.ai/) copywriting apps have been released over the last few months. This is language-model-as-insta-creator.
+
+<p>These writing apps want to help you pump out essays, emails, landing pages, and blog posts based on only a few bullet points and keywords. They do what I'm calling the<button style={{padding:"0px 12px 2px", fontFamily: "var(--font-sans)", background: "linear-gradient(to bottom, #15cf5b, #0ebe50)", color: "white", borderRadius: "8px", margin: "0 8px", display: "inline-block"}}> big green button </button> approach where you type in a few key points, then click a big green button that “magically” generates a full ream of text for you. </p>
 
 Here's an essay I “wrote” in [Moonbeam](https://app.gomoonbeam.com/) by typing in the title “Chinese Economic Influence” and then proceeding to click a series of big green buttons:
 
@@ -242,18 +251,18 @@ Here's me putting the same level of input into [Copy.ai](https://app.copy.ai/), 
 
 Again, the output seems sensible and coherent. But with no sources or references to back these statements up, what value do they have? _Who_ believes these things about China's economy? What information do they have access to? **How do we know any of this is valid?**
 
+Now is the moment to disclose I have a *lot* of skin in this game. I'm the product designer for [Elicit](https://elicit.org), a research assistant that helps summarise academic papers and speed up the literature review process.
 
-## Spoiling the Truthfulness Soup
-
-The problem is one rotten answer spoils the soup. If you can't trust _all_ of what a language model says, you can't completely trust any of it. 90 correct answers out of 100 leaves you with 10 outright falsities, but you have no way of knowing which ones. 
-
-<Draft />
+But it means I also understand the key difference between a tool like Elicit and plain, vanilla GPT-3. Which is to say, the difference between asking zero-shot questions on the GPT-3 playground, and using a tool designed to achieve high accuracy scores on specific tasks by fine-tuning multiple language models.
 
 
-The problem is less that these models frequently return outright falsehoods or misleading answers, but that we expect anything else from them. The decades-long [cultural]() [narrative]() [we've been]() [weaving]() about the all-knowing, dangerously super-intelligent machine that can absorb and resurface the collective wisdom of humanity has come back to bite us in the epistemic butt.
+## Spoiling the truthfulness soup
 
-When _other people_ recite a fact or make a claim, we don't automatically accept it as true. We question them. “How are you so sure?” “Where did you read that?” “Really?? Let me google it.”<Footnote idName={4}>It is of course similarly problematic that the top ~3 results on Google are the arbiter of truth in our society, but we can't pretend that's not the current situation</Footnote> Our model of humans is that they're flawed pattern matching machines that pick up impressions of the world from a wide variety of questionable and contradictory sources.
+It's clear I find our current use of language models “problematic.” What are the issues? There's a few.
 
+1. One rotten answer spoils the soup. If you can't trust _all_ of what a language model says, you can't completely trust any of it. 90 correct answers out of 100 leaves you with 10 outright falsities, but you have no way of knowing which ones. 
+
+2. They lack situated knowledge. They role play.
 One critical problem with language models we're going to have to repeatedly reckon with is their lack of positionality. All knowledge is situated. In time and place, in culture, in specific identities and lived realities. There is no such thing as “the view from nowhere.”
 
 And yet language models don't present knowledge from a fixed point in reality. They shift between identities. They role play and take on characters based on the prompt. It can tell you an in-depth story about what it's like to be a squirrel in one moment, and not know what a squirrel is in another.
@@ -262,30 +271,30 @@ If I tell it it's a very clever mathematician and ask it X, it gives the correct
 
 If I tell it it's bad at maths and ask again, it suddenly doesn't know the answer.
 
-We're in the very early days of generative transformers and language models. Only X years to be precise. 
-
-Now is the moment to disclose I have a *lot* of skin in this game. I'm the product designer for [Elicit](https://elicit.org), a research assistant that helps summarise academic papers and speed up the literature review process.
-
-But it means I also understand the key difference between a tool like Elicit and plain, vanilla GPT-3. Which is to say, the difference between asking zero-shot questions on the GPT-3 playground, and using a tool designed to achieve high accuracy scores on specific tasks by fine-tuning multiple language models.
+3. We've already come to expect omniscience from them.
+The problem is less that these models frequently return outright falsehoods or misleading answers, but that we expect anything else from them. The decades-long [cultural]() [narrative]() [we've been]() [weaving]() about the all-knowing, dangerously super-intelligent machine that can absorb and resurface the collective wisdom of humanity has come back to bite us in the epistemic butt.
 
 [Karpathy says language models should be thought of as oracles]
 
-<BasicImage src="/images/posts/epistemic-ducks/oracle3.png" width="800px" alt="A fairly ominous oracle – made with Midjourney" showalt />
+<BasicImage src="/images/posts/epistemic-ducks/oracle3.png" width="800px" alt="A friendly AI oracle. Made with Midjourney" showalt />
 
 
-The lesson here is simply that until language models get a _lot_ better, we have to exercise a _lot_ of discernment and critical thinking.
-
-The problem isn't these people. They came to an interface that looked like it provided reliable answers. There were no disclaimers or accuracy stats or ways to investigate an answer.
 
 The problem isn't the current state of GPTs. The problem is we're trying to make them generate original thoughts, rather than help us reflect on our own thoughts.
 
+We're in the very early days of generative transformers and language models. Only X years to be precise. 
+
+The lesson here is simply that until language models get a _lot_ better, we have to exercise a _lot_ of discernment and critical thinking.
+
 Until we develop more robust language models, and interfaces that are transparent about their reasoning and confidence level, we need to change our framing of them. We should not be thinking and talking about these systems as superintelligent, trustworthy oracles. At least, not right now.
+
+
 
 We should instead think of them as rubber ducks.
 
 <BasicImage src="/images/posts/epistemic-ducks/duck1.jpg" width="550px" margin="2rem auto 0" />
 
-## Epistemic Rubber Ducking 
+## Epistemic rubber ducking 
 
 Rubber ducking is the practice of having a friend or colleague sit and listen while you work through a problem. They aren't there to tell you the solution to the problem, or help actively solve it. They might prompt you with questions and occasionally make affirmational sounds. But their primary job is to help you solve their problem yourself. They're like a rubber duck, quietly listening, while you talk yourself out of a hole. 
 
@@ -307,7 +316,7 @@ Epistemic rubber ducking, then, is talking through an idea, claim, or opinion yo
 
 A useful epistemic duck would need to be supportive and helpful. It would need to simply ask questions and suggest ideas, none of which you're required to accept or integrate, but are there if you want them. It could certainly prod and critique, but in a way that helps you understand the other side of the coin, and realise the gaps and flaws in your arguments.
 
-## Some Speculative Prototypes
+## A collection of speculative prototypes
 
 What would this look like in practice?
 
@@ -319,7 +328,7 @@ What would this look like in practice?
 
 ---
 
-## From Anthropomorphism to Animals
+## From anthropomorphism to animals
 
 There's a side quest I promised myself I wouldn't go down in this piece, but I'll briefly touch on it. I think we should take the **duck-ness** of language models as rubber ducks seriously. Meaning that conceiving of language models as ducks – an animal species with some capacity for intelligence – is better than conceiving of them as human-like agents.
 
@@ -347,6 +356,6 @@ At the moment the analogy floating around is “aliens.” A lot of AI researche
 
 </TwoColumn>
 
-<Subtext>A few friendly, helpful thinking partners – made with Midjourney</Subtext>
+<Subtext>A few friendly, helpful thinking partners. Made with Midjourney</Subtext>
 
 I think there's a lot more to explore here around the metaphors we use to talk about language models and AI systems, but I'll save it for another post.
