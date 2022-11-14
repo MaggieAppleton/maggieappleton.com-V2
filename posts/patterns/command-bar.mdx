@@ -1,0 +1,154 @@
+---
+title: "Command K Bars"
+description: "Command line bars you can quickly summon with a keyboard shortcut"
+growthStage: "budding"
+startDate: "2022-11-14"
+updated: "2022-11-14"
+type: "pattern"
+aliases: ["Command K bars"]
+---
+
+<h2 className="micro">The Context</h2>
+
+Graphical user interfaces (GUIs) have been the bread and butter of user interface design since the mid 1980s. Having all your computational objects and actions laid out in little pixelated boxes, icons, toggles, and buttons makes it easy to understand what you can do with a computer. They make the affordances _visible_, as we say in nob-designer-land.
+
+<BasicImage margin="0.5rem auto" src="/images/posts/command-bar/gui-buttons.png" width="700px" alt="A set of buttons, toggles, and sliders" />
+
+Before GUIs, every computer interface was a command-line interface (CLI). You typed memorised text-based commands into an input. This certainly kept the screen free of clutter but had several downsides. It was difficult to remember what commands were available. You couldn't see the current state of the system. Everything was hidden away behind that blinking cursor.
+
+
+<svg viewBox="0 0 671 96" fill="none" style={{margin: "1rem auto 3rem", width: "671px", maxWidth: "100%"}} xmlns="http://www.w3.org/2000/svg">
+<rect width="671" height="96" rx="10" fill="#1D2B37"/>
+<rect x="418" y="32" width="19" height="31" fill="#61E24B"/>
+<path d="M49.14 53H51.14V55H49.14V53ZM43.14 55H49.14V57H43.14V55ZM41.14 41H43.14V55H41.14V41ZM43.14 39H49.14V41H43.14V39ZM49.14 41H51.14V43H49.14V41ZM61.06 43H63.06V45H61.06V43ZM61.06 55H63.06V57H61.06V55ZM80.98 39H82.98V55H80.98V39ZM74.98 55H80.98V57H74.98V55ZM72.98 39H74.98V55H72.98V39ZM88.9 45H90.9V49H88.9V45ZM96.9 51H98.9V55H96.9V51ZM90.9 55H96.9V57H90.9V55ZM88.9 53H90.9V55H88.9V53ZM90.9 49H96.9V51H90.9V49ZM96.9 45H98.9V47H96.9V45ZM90.9 43H96.9V45H90.9V43ZM112.82 53H114.82V55H112.82V53ZM106.82 55H112.82V57H106.82V55ZM104.82 45H106.82V49H112.82V45H114.82V51H106.82V55H104.82V45ZM106.82 43H112.82V45H106.82V43ZM126.74 43H130.74V45H126.74V43ZM124.74 45H126.74V47H124.74V45ZM120.74 43H122.74V47H124.74V49H122.74V57H120.74V43ZM136.66 45H138.66V49H136.66V45ZM144.66 51H146.66V55H144.66V51ZM138.66 55H144.66V57H138.66V55ZM136.66 53H138.66V55H136.66V53ZM138.66 49H144.66V51H138.66V49ZM144.66 45H146.66V47H144.66V45ZM138.66 43H144.66V45H138.66V43ZM156.58 45H158.58V51H156.58V45ZM158.58 51H160.58V57H158.58V51ZM154.58 39H156.58V45H154.58V39ZM178.5 39H180.5V57H178.5V45H176.5V43H178.5V39ZM174.5 45H176.5V47H174.5V45ZM172.5 47H174.5V49H172.5V47ZM170.5 45H172.5V47H170.5V45ZM166.5 39H168.5V43H170.5V45H168.5V57H166.5V39ZM188.42 45H190.42V51H188.42V45ZM190.42 51H192.42V57H190.42V51ZM186.42 39H188.42V45H186.42V39ZM208.34 41H210.34V55H208.34V41ZM200.34 39H208.34V41H202.34V55H208.34V57H200.34V39ZM224.26 53H226.26V55H224.26V53ZM218.26 55H224.26V57H218.26V55ZM216.26 45H218.26V49H224.26V45H226.26V51H218.26V55H216.26V45ZM218.26 43H224.26V45H218.26V43ZM232.18 45H234.18V49H232.18V45ZM240.18 51H242.18V55H240.18V51ZM234.18 55H240.18V57H234.18V55ZM232.18 53H234.18V55H232.18V53ZM234.18 49H240.18V51H234.18V49ZM240.18 45H242.18V47H240.18V45ZM234.18 43H240.18V45H234.18V43ZM256.1 55H258.1V57H256.1V55ZM254.1 53H256.1V55H254.1V53ZM252.1 51H254.1V53H252.1V51ZM248.1 39H250.1V49H252.1V51H250.1V57H248.1V39ZM252.1 47H254.1V49H252.1V47ZM254.1 45H256.1V47H254.1V45ZM256.1 43H258.1V45H256.1V43ZM266.02 41H268.02V43H272.02V45H268.02V55H266.02V45H264.02V43H266.02V41ZM268.02 55H274.02V57H268.02V55ZM287.94 45H289.94V55H287.94V45ZM281.94 55H287.94V57H281.94V55ZM279.94 45H281.94V55H279.94V45ZM281.94 43H287.94V45H281.94V43ZM303.86 45H305.86V55H303.86V45ZM295.86 43H303.86V45H297.86V55H303.86V57H297.86V61H295.86V43Z" fill="#61E24B"/>
+<path d="M344.16 45H346.16V57H344.16V45ZM340.16 43H344.16V45H340.16V43ZM338.16 45H340.16V53H338.16V45ZM332.16 43H338.16V45H334.16V57H332.16V43ZM358.08 55H360.08V57H358.08V55ZM356.08 53H358.08V55H356.08V53ZM354.08 51H356.08V53H354.08V51ZM350.08 39H352.08V49H354.08V51H352.08V57H350.08V39ZM354.08 47H356.08V49H354.08V47ZM356.08 45H358.08V47H356.08V45ZM358.08 43H360.08V45H358.08V43ZM366 45H368V55H366V45ZM374 39H376V57H368V55H374V45H368V43H374V39ZM385.92 43H387.92V57H385.92V43ZM385.92 39H387.92V41H385.92V39ZM403.84 43H407.84V45H403.84V43ZM401.84 45H403.84V47H401.84V45ZM397.84 43H399.84V47H401.84V49H399.84V57H397.84V43Z" fill="#61E24B"/>
+</svg>
+
+
+I explored this history and trade-offs between these two interface paradigms in [[Programming Portals]] so I won't delve as deeply into them here. The important tensions we're going to focus on are the trade-offs between pixel real estate, cognitive load, and complexity.
+
+Well-designed GUIs make interfaces easier for new users to learn, improve discoverability, and are better suited to multi-tasking workflows. But they don't scale very well to complex systems with hundreds of commands – especially if those commands can be combined to create emergent complexity. GUIs rely on representing computational objects and functions visually. As in, graphical shapes and text that use up the precious commodity of screen space.
+
+Here's a series of screenshots from Cinema 4D, a popular 3D modelling and animation app:
+
+<ImageFrame margin="0 auto" src="/images/posts/command-bar/cinema4d3.png" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
+
+<ImageFrame margin="0 auto" src="/images/posts/command-bar/cinema4d2.png" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
+
+<ImageFrame margin="0 auto 2rem" src="/images/posts/command-bar/cinema4d4.png" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
+
+You absolutely could not do 3D modelling without a graphical interface. Defining 3D objects in text without being able to see them would be laborious, error-prone, and absurd. And yet _look_ at the number of icons, panels, and toolbar options in these screenshots!
+
+The dropdown menus have submenus. Every pane has multiple tabs. There are numerous pop-over panels that contain enough functions to be apps in themselves. From personal experience I can tell you finding anything in here is a wild goose chase. People spend hundreds of hours learning to use this interface.
+
+This is not a rag on Cinema 4D. Professional 3D modelling involves a _lot_ of inherent complexity. People need fine-grained control over their creations. And Cinema 4D gives them access to an array of tools that profoundly expand what they're capable of making. But simply _finding_ what's available in this dizzying UI becomes a challenge.
+
+This issue isn't limited to unusually complex applications like Cinema 4D. Think of all times you've gone hunting through a settings panel trying to track down functionality you know exists, but can't quite locate. Even in much simpler apps, finding the tiny toggle button that will make them stop emailing you every day is a genuine challenge.
+
+We usually rely on a mix of spatial memory and well-written labels to find what we need in this kind of interface. But that only goes so far. At some point, we have to find ways to help users navigate apps outside of graphical menu bars, mystery icons in toolbars, and tabbed settings panels.
+
+
+<Spacer size="small" />
+
+<h2 className="micro">The Pattern</h2>
+
+Command bars are command-line bars that pop up in the middle of the screen when you hit a keyboard shortcut. Traditionally `⌘ + K`, hence the moniker “Command K bars.”
+
+They typically look like this:
+
+<ImageFrame src="/images/posts/command-bar/linear-cmd.jpg" width="1100px" alt="The command K bar in Linear" showalt />
+
+This one is from [Linear](https://linear.app/) - an issue-tracking app for product teams. Bars like this let users search through all the available commands in an application. Rather than remembering which sub-sub-sub menu a function lives in, users need only remember its name. 
+
+They don't even have to remember its exact name. Fuzzy search can help them find it by simply typing in similar names or related keywords. For example, if I type “make” into a command bar, it's likely to show me any actions related to creating new items. Even if “make” isn't part of the action name.
+
+<ImageFrame src="/images/posts/command-bar/fuzzysearch.jpg" width="1100px" alt="Fuzzy search in Linear lets you find actions without needing the exact name" showalt />
+
+This makes it much faster and easier to find things. If you're in the middle of writing something, you don't even have to take your hands off the keyboard. A few quick finger strokes and you can find the action you need and run it. Far faster than navigating a small cursor through a series of menu mazes.
+
+These bars also do double duty as universal search bars. You're not only searching through the available actions in an app. You can also search through content like documents, file names, and tasks.
+
+By stashing infrequently-used items in a command bar like this, you can clear up a lot of screen real estate. You don't need to add that extra toolbar or layer of menu items. Keeping the interface clear of options helps reduce the number of things users need to pay attention to at any one time. Which means they're less likely to be overwhelmed and confused by irrelevant features.
+
+I first saw a command bar show up in a GUI ~5 years ago. The plugin [Sketch runner](https://sketchrunner.com/) added a CLI experience on top of the once-popular design platform [Sketch](https://www.sketch.com/).
+
+<ImageFrame src="/images/posts/command-bar/sketch.jpg" width="1100px" alt="The sketch runner command bar" showalt />
+
+We've come a long way since then and command bars are proliferating. I now check `⌘ + K` in most apps just to see what pops up.
+
+You know an interface pattern is catching on when whole SaaS applications and community open-source projects spring up around it. [Command bar](https://www.commandbar.com/) is a paid-for service that gives applications a plug-n-play solution. Or teams can opt to use the open-source projects [cmdk](https://cmdk.paco.me/) and [kbar](https://kbar.vercel.app/) to easily add command bars into their app.
+
+These pre-built bars stuff an enormous amount of sophisticated UI functionality into their little rectangles. They can give you tabs, filters on searches, recommended actions, inline forms, pop-up menus, grid displays, dark mode, and more.<Footnote idName={1}>I promise I'm not shilling for any of these libraries. Two of them are free. I'm just saying they've built some (ridiculously) advanced stuff into what seems like a simple UI component.</Footnote> 
+
+This lack of friction means it's easy for product teams to pop one of these in without thinking too much about it. Here's just a few of these bars in action:
+
+### Todoist
+
+[Todoist](https://todoist.com/) is a popular task manager that puts a lot of emphasis on quick actions via keyboard shortcuts. You can see in their bar they're using the space on the right-hand side of each action to remind users of keyboard combos.
+
+<ImageFrame src="/images/posts/command-bar/todoist.jpg" width="1100px" />
+
+### Framer
+
+[Framer](https://www.framer.com/) is a design & prototyping tool. You can search for both actions and components, and it fittingly gives you a nice big visual preview. Their command bar is more graphical than most with colourful icons and buttons embedded inside it.
+
+<ImageFrame src="/images/posts/command-bar/framer-cmd.jpg" width="1100px" />
+
+### Tana
+
+[Tana](https://tana.inc/) is a new knowledge management app that puts a lot of focus on dynamic views and flexible data. Their command bar lets users access a _huge_ range of advanced functionality you could never fit into a classic UI (without it turning into a C4D situation).
+
+Here's a demo of me using the command bar to quickly write a search query for all the books in my database, filtered for only ones marked “Unread”
+
+
+<Video width="1000px" height="900px" src="/images/posts/command-bar/tana.mp4" />
+
+<Spacer size="small" />
+
+
+This is a good example of how users can chain multiple actions together in command bars. Each selection in the bar moves you onto the next set of available choices.
+
+### Raycast
+
+[Raycast](https://www.raycast.com/) takes the concept of a command-bar-as-universal-interface to the extreme. The whole app is just a command bar. But it has access to your full desktop environment and integrates with most major applications.
+
+<ImageFrame src="/images/posts/command-bar/raycast1.jpg" width="1000px" margin="1rem auto" />
+
+Think of Apple's [Spotlight](https://support.apple.com/en-gb/guide/mac-help/mchlp1008/mac) feature, but if search actually worked and it could tap into all your other applications – Slack messages, Google drive files, Github PR, Figma files, etc. Raycast very cleverly designed the system to be extensible. Any developer can build a new extension for it, meaning there's no ceiling to the number of actions potentially available in it.
+
+Here's a quick demo of me accessing Wikipedia, Spotify, Google, and even querying GPT-3 without leaving the app:
+
+<Video src="/images/posts/command-bar/raycast.mp4" width="1000px" height="800px" />
+
+<Spacer size="small" />
+
+
+### Lazy
+
+[Lazy](https://lazy.so/) is following the spirit of Raycast, but specifically for information capture and knowledge management. It's a bar you can pull up in any context – twitter, an article, a youtube video, email – and natively capture key information into a personal database.
+
+<ImageFrame src="/images/posts/command-bar/lazy1.jpg" width="900px" margin="1rem auto 0" />
+<ImageFrame src="/images/posts/command-bar/lazy3.jpg" width="900px" margin="0 auto 2rem" />
+
+<TweetEmbed tweetId="1589633050107080704" />
+ 
+The landing page sure looks fancy and they made a slightly ridiculous [hype video](https://twitter.com/demtzu/status/1589633050107080704?s=20&t=CPWHr4kP7OrDcKq0-WmYTA). But it's also pre-release so everything could just be a slick animation prototype <span role="img">😉</span>. We'll have to wait and see.
+
+<References>
+  <ReferencesLink
+    title="UI Breakthrough-Command Line Interfaces
+"
+    href="https://jnd.org/ui_breakthrough-command_line_interfaces/"
+    author="Don Norman"
+  />
+  <ReferencesLink
+    title="CLUI: Building a Graphical Command Line"
+    href="https://blog.replit.com/clui"
+    author="Tyler Angert and Moudy Elkammash"
+  />
+  <ReferencesLink
+    title="Graphical User Interface History"
+    href="https://www.youtube.com/watch?v=XIGSJshYb90"
+    author="Crash Course"
+  />
+</References>
