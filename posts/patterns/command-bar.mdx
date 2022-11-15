@@ -3,7 +3,7 @@ title: "Command K Bars"
 description: "Command line bars you can quickly summon with a keyboard shortcut"
 growthStage: "budding"
 startDate: "2022-11-14"
-updated: "2022-11-14"
+updated: "2022-11-15"
 type: "pattern"
 aliases: ["Command K bars"]
 ---
@@ -52,7 +52,7 @@ We usually rely on a mix of spatial memory and well-written labels to find what 
 
 <h2 className="micro">The Pattern</h2>
 
-Command bars are command-line bars that pop up in the middle of the screen when you hit a keyboard shortcut. Traditionally `⌘ + K`, hence the moniker “Command K bars.”
+Command bars are command-line bars that pop up in the middle of the screen when you hit a certain keyboard shortcut.<Footnote idName={1}>They're also known as 'command palettes', 'command launchers', or 'omniboxes'</Footnote> Traditionally `CMD + K`, hence the moniker “Command K bars.” But `CMD + E` and `CMD + /` have also been strong shortcut contenders.
 
 They typically look like this:
 
@@ -74,11 +74,11 @@ I first saw a command bar show up in a GUI ~5 years ago. The plugin [Sketch runn
 
 <ImageFrame src="/images/posts/command-bar/sketch.jpg" width="1100px" alt="The sketch runner command bar" showalt />
 
-We've come a long way since then and command bars are proliferating. I now check `⌘ + K` in most apps just to see what pops up.
+Initially, they were confined to text editors for programming and universal desktop access. But they've slowly crept into more specialised SaaS platforms. They're proliferating. I now check `⌘ + K` in most apps just to see what pops up.
 
-You know an interface pattern is catching on when whole SaaS applications and community open-source projects spring up around it. [Command bar](https://www.commandbar.com/) is a paid-for service that gives applications a plug-n-play solution. Or teams can opt to use the open-source projects [cmdk](https://cmdk.paco.me/) and [kbar](https://kbar.vercel.app/) to easily add command bars into their app.
+You know an interface pattern is catching on when whole SaaS applications and community open-source projects spring up around it. [Command bar](https://www.commandbar.com/) is a paid-for service that gives applications a plug-n-play solution. Or teams can opt to use the open-source projects [cmdk](https://cmdk.paco.me/) and [kbar](https://kbar.vercel.app/) to easily add command bars to their app.
 
-These pre-built bars stuff an enormous amount of sophisticated UI functionality into their little rectangles. They can give you tabs, filters on searches, recommended actions, inline forms, pop-up menus, grid displays, dark mode, and more.<Footnote idName={1}>I promise I'm not shilling for any of these libraries. Two of them are free. I'm just saying they've built some (ridiculously) advanced stuff into what seems like a simple UI component.</Footnote> 
+These pre-built bars stuff an enormous amount of sophisticated UI functionality into their little rectangles. They can give you tabs, filters on searches, recommended actions, inline forms, pop-up menus, grid displays, dark mode, and more.<Footnote idName={2}>I promise I'm not shilling for any of these libraries. Two of them are free. I'm just saying they've built some (ridiculously) advanced stuff into what seems like a simple UI component.</Footnote> 
 
 This lack of friction means it's easy for product teams to pop one of these in without thinking too much about it. Here's just a few of these bars in action:
 
@@ -116,7 +116,7 @@ This is a good example of how users can chain multiple actions together in comma
 
 Think of Apple's [Spotlight](https://support.apple.com/en-gb/guide/mac-help/mchlp1008/mac) feature, but if search actually worked and it could tap into all your other applications – Slack messages, Google drive files, Github PR, Figma files, etc. Raycast very cleverly designed the system to be extensible. Any developer can build a new extension for it, meaning there's no ceiling to the number of actions potentially available in it.
 
-Here's a quick demo of me accessing Wikipedia, Spotify, Google, and even querying GPT-3 without leaving the app:
+Here's a quick demo of me accessing Wikipedia, Spotify, Google, and even querying GPT-3 from the unified interface:
 
 <Video src="/images/posts/command-bar/raycast.mp4" width="1000px" height="800px" />
 
@@ -132,12 +132,26 @@ Here's a quick demo of me accessing Wikipedia, Spotify, Google, and even queryin
 
 <TweetEmbed tweetId="1589633050107080704" />
  
-The landing page sure looks fancy and they made a slightly ridiculous [hype video](https://twitter.com/demtzu/status/1589633050107080704?s=20&t=CPWHr4kP7OrDcKq0-WmYTA). But it's also pre-release so everything could just be a slick animation prototype <span role="img">😉</span>. We'll have to wait and see.
+They're still pre-release so you'll have to settle for the fancy landing page and [hype video](https://twitter.com/demtzu/status/1589633050107080704?s=20&t=CPWHr4kP7OrDcKq0-WmYTA).
 
 <References>
   <ReferencesLink
-    title="UI Breakthrough-Command Line Interfaces
-"
+    title="The History of Command Palettes: How Typing Commands Became The Norm Again"
+    href="https://capiche.com/e/consumer-dev-tools-command-palette"
+    author="Matthew Guay"
+  />
+  <ReferencesLink
+    title="How to build a remarkable command palette"
+    href="https://blog.superhuman.com/how-to-build-a-remarkable-command-palette/"
+    author="Tim Boucher"
+  />
+  <ReferencesLink
+    title="The Command Line Comeback"
+    href="https://gabygoldberg.medium.com/the-command-line-comeback-9857b49c7423"
+    author="Gaby Goldberg"
+  />
+  <ReferencesLink
+    title="UI Breakthrough-Command Line Interfaces"
     href="https://jnd.org/ui_breakthrough-command_line_interfaces/"
     author="Don Norman"
   />
@@ -145,10 +159,5 @@ The landing page sure looks fancy and they made a slightly ridiculous [hype vide
     title="CLUI: Building a Graphical Command Line"
     href="https://blog.replit.com/clui"
     author="Tyler Angert and Moudy Elkammash"
-  />
-  <ReferencesLink
-    title="Graphical User Interface History"
-    href="https://www.youtube.com/watch?v=XIGSJshYb90"
-    author="Crash Course"
   />
 </References>
