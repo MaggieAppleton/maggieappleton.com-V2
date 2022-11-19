@@ -20,14 +20,13 @@ const AssumedAudienceContainer = styled.div`
   flex-direction: row;
   align-items: baseline;
   font-family: var(--font-body);
-  font-size: calc(var(--font-size-base) / 1.2);
-  div {
+  div p {
     font-weight: 400;
     margin: 0;
-    font-size: calc(var(--font-size-base) / 1.2);
-    line-height: 1.6;
     flex-shrink: unset;
     color: var(--color-gray-800);
+    font-size: calc(var(--font-size-base) / 1.2);
+    line-height: 1.6;
   }
   span.label {
     color: var(--color-medium-sea-blue);
