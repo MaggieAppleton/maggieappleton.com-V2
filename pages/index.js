@@ -79,7 +79,7 @@ export default function Index({
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "var(--space-m)",
+            gap: "var(--space-2xs)",
           }}
         >
           <Title1
@@ -88,6 +88,7 @@ export default function Index({
             transition={{ delay: 0.2, duration: 1 }}
             style={{
               marginTop: "var(--space-m)",
+              maxWidth: "1100px"
             }}
           >
             <b>Maggie </b>
@@ -106,7 +107,7 @@ export default function Index({
             </UnderlineHoverLink>{" "}
           </SmallTitle2>
         </header>
-        <Spacer size="large" />
+        <Spacer size="medium" />
         <motion.section
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}

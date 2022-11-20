@@ -185,42 +185,42 @@ export const GlobalStyle = createGlobalStyle`
 			);
 		
 			--f-1-min: 25.00;
-			--f-1-max: 29.33;
+			--f-1-max: 28.6;
 			--font-size-md: calc(
 			((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
 				var(--fluid-bp)
 			);
 		
 			--f-2-min: 31.25;
-			--f-2-max: 39.09;
+			--f-2-max: 37.18;
 			--font-size-lg: calc(
 			((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
 				var(--fluid-bp)
 			);
 		
 			--f-3-min: 39.06;
-			--f-3-max: 52.11;
+			--f-3-max: 48.33;
 			--font-size-xl: calc(
 			((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
 				var(--fluid-bp)
 			);
 		
-			--f-4-min: 48.83;
-			--f-4-max: 71;
+			--f-4-min: 46.87;
+			--f-4-max: 62.83;
 			--font-size-2xl: calc(
 			((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
 				var(--fluid-bp)
 			);
 		
-			--f-5-min: 61.04;
-			--f-5-max: 92.59;
+			--f-5-min: 57.6;
+			--f-5-max: 81.8;
 			--font-size-3xl: calc(
 			((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
 				var(--fluid-bp)
 			);
 		
 			--f-6-min: 76.29;
-			--f-6-max: 123.43;
+			--f-6-max: 106.34;
 			--font-size-4xl: calc(
 			((var(--f-6-min) / 16) * 1rem) + (var(--f-6-max) - var(--f-6-min)) *
 				var(--fluid-bp)
