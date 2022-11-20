@@ -8,6 +8,7 @@ import {
   TwitterIcon,
   LinkedInIcon,
   DribbbleIcon,
+  MastodonIcon
 } from "./icons/SocialMediaIcons";
 
 export default function Footer() {
@@ -34,6 +35,9 @@ export default function Footer() {
             </a>
             <a rel="me" href="https://twitter.com/Mappletons">
               <TwitterIcon />
+            </a>
+            <a rel="me" href="https://indieweb.social/@maggie">
+              <MastodonIcon />
             </a>
           </SocialMediaIcons>
         </RSSFeed>
