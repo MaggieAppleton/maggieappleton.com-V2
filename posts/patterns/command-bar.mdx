@@ -1,16 +1,16 @@
 ---
 title: "Command K Bars"
 description: "Command line bars you can quickly summon with a keyboard shortcut"
-growthStage: "budding"
+growthStage: "evergreen"
 startDate: "2022-11-14"
-updated: "2022-11-15"
+updated: "2022-11-22"
 type: "pattern"
 aliases: ["Command K bars"]
 ---
 
 <h2 className="micro">The Context</h2>
 
-Graphical user interfaces (GUIs) have been the bread and butter of user interface design since the mid 1980s. Having all your computational objects and actions laid out in little pixelated boxes, icons, toggles, and buttons makes it easy to understand what you can do with a computer. They make the affordances _visible_, as we say in nob-designer-land.
+Graphical user interfaces (GUIs) have been the bread and butter of user interface design since the mid-1980s. Having all your computational objects and actions laid out in little pixelated boxes, icons, toggles, and buttons make it easy to understand what you can do with a computer. They make the affordances _visible_, as we say in nob-designer-land.
 
 <BasicImage margin="0.5rem auto" src="/images/posts/command-bar/gui-buttons.png" width="700px" alt="A set of buttons, toggles, and sliders" />
 
@@ -39,7 +39,7 @@ Here's a series of screenshots from Cinema 4D, a popular 3D modelling and animat
 
 You absolutely could not do 3D modelling without a graphical interface. Defining 3D objects in text without being able to see them would be laborious, error-prone, and absurd. And yet _look_ at the number of icons, panels, and toolbar options in these screenshots!
 
-The dropdown menus have submenus. Every pane has multiple tabs. There are numerous pop-over panels that contain enough functions to be apps in themselves. From personal experience I can tell you finding anything in here is a wild goose chase. People spend hundreds of hours learning to use this interface.
+The dropdown menus have submenus. Every pane has multiple tabs. Numerous pop-over panels contain enough functions to be apps in themselves. From personal experience I can tell you finding anything in here is a wild goose chase. People spend hundreds of hours learning to use this interface.
 
 This is not a rag on Cinema 4D. Professional 3D modelling involves a _lot_ of inherent complexity. People need fine-grained control over their creations. And Cinema 4D gives them access to an array of tools that profoundly expand what they're capable of making. But simply _finding_ what's available in this dizzying UI becomes a challenge.
 
@@ -70,17 +70,11 @@ These bars also do double duty as universal search bars. You're not only searchi
 
 By stashing infrequently-used items in a command bar like this, you can clear up a lot of screen real estate. You don't need to add that extra toolbar or layer of menu items. Keeping the interface clear of options helps reduce the number of things users need to pay attention to at any one time. Which means they're less likely to be overwhelmed and confused by irrelevant features.
 
-I first saw a command bar show up in a GUI ~5 years ago. The plugin [Sketch runner](https://sketchrunner.com/) added a CLI experience on top of the once-popular design platform [Sketch](https://www.sketch.com/).
-
-<ImageFrame src="/images/posts/command-bar/sketch.jpg" width="1100px" alt="The sketch runner command bar" showalt />
-
-Initially, they were confined to text editors for programming and universal desktop access. But they've slowly crept into more specialised SaaS platforms. They're proliferating. I now check `⌘ + K` in most apps just to see what pops up.
-
-You know an interface pattern is catching on when whole SaaS applications and community open-source projects spring up around it. [Command bar](https://www.commandbar.com/) is a paid-for service that gives applications a plug-n-play solution. Or teams can opt to use the open-source projects [cmdk](https://cmdk.paco.me/) and [kbar](https://kbar.vercel.app/) to easily add command bars to their app.
+Unsurprisingly, they're now proliferating. You know an interface pattern is catching on when whole SaaS applications and community open-source projects spring up around it. [Command bar](https://www.commandbar.com/) is a paid-for service that gives applications a plug-n-play solution. Or teams can opt to use the open-source projects [cmdk](https://cmdk.paco.me/) and [kbar](https://kbar.vercel.app/) to easily add command bars to their app.
 
 These pre-built bars stuff an enormous amount of sophisticated UI functionality into their little rectangles. They can give you tabs, filters on searches, recommended actions, inline forms, pop-up menus, grid displays, dark mode, and more.<Footnote idName={2}>I promise I'm not shilling for any of these libraries. Two of them are free. I'm just saying they've built some (ridiculously) advanced stuff into what seems like a simple UI component.</Footnote> 
 
-This lack of friction means it's easy for product teams to pop one of these in without thinking too much about it. Here's just a few of these bars in action:
+This lack of friction means it's easy for product teams to pop one of these in without thinking too much about it. Here are just a few of these bars in action:
 
 ### Todoist
 
@@ -133,6 +127,39 @@ Here's a quick demo of me accessing Wikipedia, Spotify, Google, and even queryin
 <TweetEmbed tweetId="1589633050107080704" />
  
 They're still pre-release so you'll have to settle for the fancy landing page and [hype video](https://twitter.com/demtzu/status/1589633050107080704?s=20&t=CPWHr4kP7OrDcKq0-WmYTA).
+
+<Spacer size="small" />
+
+<h2 className="micro">The History</h2>
+
+The origins of command bars go back to 2005 when Apple released their [Spotlight feature](https://www.anandtech.com/show/1671/6) in MacOS 10.4 X Tiger. The update introduced a universal search bar you could launch by hitting `CMD + Space`. As part of the native operating system, it had access to every kind of file and function: documents, email messages, photos, settings, etc.
+
+<BasicImage src="/images/posts/command-bar/mac-spotlight.jpeg" width="400px" margin="1rem auto 3rem" alt="Spotlight in MacOS Tiger" sourceUrl="https://www.anandtech.com/show/1671/6" sourceTitle="Anand Tech" showalt />
+
+Spotlight is still a core feature of Mac today and set many of the standards for other command bars to copy.
+
+<BasicImage src="/images/posts/command-bar/spotlight1.jpg" width="800px" margin="0 auto" />
+<BasicImage src="/images/posts/command-bar/spotlight2.jpg" width="800px" margin="0 auto 2rem" showalt alt="Spotlight on MacOS Monterey (2022)" />
+
+Independent developers swooped in to build advanced versions of Spotlight and application launchers for Mac. [Quicksilver](https://qsapp.com/) was one of the earliest ones 
+
+
+{/* "It's a mixture of the command line and finder and lets you get at information you wouldn't normally be able to see" */}
+
+{/* https://9to5mac.com/2013/03/26/ten-years-in-tasklauncher-app-quicksilver-finally-reaches-version-1-0/ */}
+
+{/* https://www.youtube.com/watch?v=P_WOPkT-9EI&t=562s */}
+
+{/* The pattern caught on and other applications popped up: [Bulter](), [Alfred](), and [LaunchBar]() were other popular mac apps. */}
+
+
+{/* After their success within operating system and desktop functionality, command bars slowly started appearing within specialised applications. [Sublime Text]() is a text editor for programmers that added a `k` bar in XXX. */}
+
+The plugin [Sketch runner](https://sketchrunner.com/) added a CLI experience on top of the once-popular design platform [Sketch](https://www.sketch.com/).
+
+<ImageFrame src="/images/posts/command-bar/sketch.jpg" width="1100px" alt="The sketch runner command bar" showalt />
+
+
 
 <References>
   <ReferencesLink
