@@ -1,5 +1,18 @@
 export const bookData = [
   {
+    title: "The New Media Reader",
+    author: "Nick Montfort and Noah Wardrip-Fruin (ed.)",
+    cover: "/images/books/newmedia.jpeg",
+    link: "https://www.google.co.uk/books/edition/The_New_Media_Reader/DQYXoRx9CcEC",
+  },
+  {
+    title: "The Dawn of Everything",
+    subtitle: "A New History of Humanity",
+    author: "David Graeber",
+    cover: "/images/books/dawn.jpeg",
+    link: "https://www.google.com/books/edition/The_Dawn_of_Everything/X8gZEAAAQBAJ",
+  },
+  {
     title: "A Small Matter of Programming",
     subtitle: "Perspectives on End User Computing",
     author: "Bonnie Nardi",

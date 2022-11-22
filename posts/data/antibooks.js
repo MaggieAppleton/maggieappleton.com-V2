@@ -14,12 +14,6 @@ export const antiBookData = [
     link: "https://www.google.co.uk/books/edition/Orality_and_Literacy/37Ikbo9P4M8C",
   },
   {
-    title: "The New Media Reader",
-    author: "Nick Montfort and Noah Wardrip-Fruin (ed.)",
-    cover: "/images/books/newmedia.jpeg",
-    link: "https://www.google.co.uk/books/edition/The_New_Media_Reader/DQYXoRx9CcEC",
-  },
-  {
     title: "Atlas of AI",
     subtitle:
       "Power, Politics, and the Planetary Costs of Artificial Intelligence",
@@ -40,13 +34,6 @@ export const antiBookData = [
     author: "Tim Hwang",
     cover: "/images/books/subprime.jpg",
     link: "https://www.google.co.uk/books/edition/Subprime_Attention_Crisis/iyPQDwAAQBAJ?hl=en&gbpv=0",
-  },
-  {
-    title: "The Dawn of Everything",
-    subtitle: "A New History of Humanity",
-    author: "David Graeber",
-    cover: "/images/books/dawn.jpeg",
-    link: "https://www.google.com/books/edition/The_Dawn_of_Everything/X8gZEAAAQBAJ",
   },
   {
     title: "Turing's Cathedral",
