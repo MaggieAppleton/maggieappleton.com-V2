@@ -1,8 +1,8 @@
 ---
 title: "Language Models as Epistemic Rubber Ducks"
 description: "Using large language models for reflective thinking and metacognition, rather than generating facts or final outputs"
-startDate: "2022-11-09"
-updated: "2022-11-09"
+startDate: "2022-11-20"
+updated: "2022-11-23"
 type: "essay"
 topics:
   [
@@ -16,7 +16,7 @@ growthStage: "budding"
 toc: true
 ---
 
-<AssumedAudience>People who have heard plenty of chatter about GPT-3 and large language models, but don't know the technical details of how they work or what they're capable of. Before reading this you should play with GPT-3 on OpenAI's [playground](https://beta.openai.com/playground). If you're unsure what GPT-3 is, [this](https://medium.com/sciforce/what-is-gpt-3-how-does-it-work-and-what-does-it-actually-do-9f721d69e5c1) is a good primer</AssumedAudience>
+<AssumedAudience>People who have heard plenty of chatter about large language models like GPT-3, but don't know the technical details of how they work or what they're capable of. Before reading this you should play with GPT-3 on OpenAI's [playground](https://beta.openai.com/playground). If you're unsure what GPT-3 is, [this](https://medium.com/sciforce/what-is-gpt-3-how-does-it-work-and-what-does-it-actually-do-9f721d69e5c1) is a good primer</AssumedAudience>
 
 <Spacer size="small" />
 
@@ -30,7 +30,7 @@ If I ask GPT-3 who the current prime minister of the UK is, it says Theresa May.
 
 <BasicImage margin="0 auto 2rem" src="/images/posts/epistemic-ducks/gpt3-may.jpg" width="820px" alt="GPT-3 responding that the current prime minister of the UK is Theresa May" />
 
-I'll admit this is a challenging question. Our most recent PM Liz Truss was outlived by a [now infamous lettuce](https://www.theguardian.com/politics/2022/oct/20/iceberg-lettuce-in-blonde-wig-outlasts-liz-truss), and we've barely sworn in the new Rishi Sunak. But it proves the point that GPT-3 is not a reliable source of up-to-date information. Even if we ask something that doesn't require keeping up with the fly-by-night incompetence of the UK government, it's pretty unreliable.
+I'll admit this is a challenging question. Our most recent PM Liz Truss was outlived by a [now infamous lettuce](https://www.theguardian.com/politics/2022/oct/20/iceberg-lettuce-in-blonde-wig-outlasts-liz-truss), and we've only just sworn in the new Rishi Sunak. But it proves the point that GPT-3 is not a reliable source of up-to-date information. Even if we ask something that doesn't require keeping up with the fly-by-night incompetence of the UK government, it's pretty unreliable.
 
 It regularly fails at basic maths questions:
 
@@ -50,13 +50,13 @@ The model is not being intentionally bad or wrong or immoral. It's simply [makin
 
 <BasicImage width="1100px" margin="0 auto 2rem" src="/images/posts/epistemic-ducks/prediction.jpg" alt="..." />
 
-These predictions are overwhelmingly based on what it's learned from reading text on the web – all our social media posts, blogs, comments, and Reddit threads were used to train the model.<Footnote idName={2}>Over 80% of GPT-3's training data comes from two sources: The [CommonCrawl](https://paperswithcode.com/dataset/common-crawl) dataset and [WebText2](https://paperswithcode.com/dataset/webtext). These were developed by scraping massive amounts of text from the web. WebText2 in particular is the text from outbound links in Reddit threads.</Footnote>
+These predictions are overwhelmingly based on what it's learned from reading text on the web. The model was trained on a large corpus of social media posts, blogs, comments, and Reddit threads written before 2020. <Footnote idName={2}>Over 80% of GPT-3's training data comes from two sources: The [CommonCrawl](https://paperswithcode.com/dataset/common-crawl) dataset and [WebText2](https://paperswithcode.com/dataset/webtext). These were developed by scraping massive amounts of text from the web. WebText2 in particular is the text from outbound links in Reddit threads.</Footnote>
 
 This becomes apparent as soon as you ask it to complete a sentence on a political topic. It returns the statistical median of all the political opinions and hot takes encountered during training. 
 
 <BasicImage width="820px" margin="0 auto 4rem" src="/images/posts/epistemic-ducks/gpt3-prediction.jpg" alt="GPT-3's word-by-word prediction scores when asked to complete a sentence about universal basic income" showalt />
 
-GPT-3 is not the only large language model plagued by incorrect facts and strong political views. But I'm going to focus on it in this discussion because it's currently the most widely used and freely available by a significant margin. Many people who aren't part of the machine learning and AI industry are using it. Perhaps without fully understanding how it works and what it's capable of.
+GPT-3 is not the only large language model plagued by incorrect facts and strong political views.<Footnote idName={3}>Other large language models like BLOOM, T5, and BERT have the same issues</Footnote> But I'm going to focus on it in this discussion because it's currently the most widely used and well-known. Many people who aren't part of the machine learning and AI industry are using it. Perhaps without fully understanding how it works and what it's capable of.
 
 ## How much should we trust <span style={{background: "hsl(105, 86%, 89%)"}}>the little green text?</span>
 
@@ -79,7 +79,7 @@ A model is given a score based on how closely its generates answers that match t
 
 </Accordion>
 
-In the [original paper](https://arxiv.org/pdf/2005.14165.pdf) presenting GPT-3, the OpenAI team measured it on three general knowledge benchmarks<Footnote idName={3}>Language Models are Few-Shot Learners ([2020](https://arxiv.org/pdf/2005.14165.pdf)). Pages 13-14</Footnote>:
+In the [original paper](https://arxiv.org/pdf/2005.14165.pdf) presenting GPT-3, the OpenAI team measured it on three general knowledge benchmarks<Footnote idName={4}>Language Models are Few-Shot Learners ([2020](https://arxiv.org/pdf/2005.14165.pdf)). Pages 13-14</Footnote>:
 
 - The [Natural Questions](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00276/43518/Natural-Questions-A-Benchmark-for-Question) benchmark measures how well a model can provide both long and short answers to 300,000+ questions that people frequently type into Google
 - The [WebQuestions](https://paperswithcode.com/dataset/webquestions) benchmark similarly measures how well it can answer 6,000 of the most common questions asked on the web
@@ -90,7 +90,7 @@ Other independent researchers have tested GPT-3 on a few additional benchmarks:
 - The [CommonsenseQA](https://openreview.net/pdf?id=qF7FlUT5dxa) covers 14,343 yes/no questions about everyday common sense knowledge
 - The [TruthfulQA](https://arxiv.org/pdf/2109.07958.pdf) benchmark asks 817 questions that some humans are known to have false beliefs and misconceptions about. Such as health, law, politics, and conspiracy theories.
 
-Before we jump to the results you should know the prompt you give a language model [significantly affects](https://arxiv.org/pdf/2102.07350.pdf) how well it performs. [Few-shot prompting](https://www.youtube.com/watch?v=v2gD8BHOaX4) consistently improves the model's accuracy compared to zero-shot prompting.<Footnote idName={4}>Few-shot prompting is including two or three examples of correct question/answer pairs within the prompt. Zero-shot prompting is just asking the question without providing any examples.</Footnote> Telling the model to act like a knowledgeable, helpful and truthful person within the prompt also improves performance.
+Before we jump to the results you should know the prompt you give a language model [significantly affects](https://arxiv.org/pdf/2102.07350.pdf) how well it performs. [Few-shot prompting](https://www.youtube.com/watch?v=v2gD8BHOaX4) consistently improves the model's accuracy compared to zero-shot prompting.<Footnote idName={5}>Few-shot prompting is including two or three examples of correct question/answer pairs within the prompt. Zero-shot prompting is just asking the question without providing any examples.</Footnote> Telling the model to act like a knowledgeable, helpful and truthful person within the prompt also improves performance.
 
 Here's a breakdown of what percentage of questions GPT-3 answered correctly on each benchmark. I've included both zero- and few-shot prompts, and the percentage that humans got right on the same questions:
 
@@ -195,16 +195,20 @@ Sorry for the wall of numbers. Here's the long and short of it:
 
 While GPT-3 scored “well” on these benchmarks by machine learning standards, the results as still _way_ below what most people expect.
 
-This wouldn't be a problem if people fully understood GPT-3 limited abilities. And yet we're already seeing people turn to GPT-3 for reliable answers and guidance. People are using it instead of Google and Wikipedia. Or even substituting it for legal counsel. <Footnote idName={6}>To be fair to the tweeters I've highlighted here, they heeded the outpouring of concern in replies and caveat they (now) double-check its answers.</Footnote>  
+This wouldn't be a problem if people fully understood GPT-3 limited abilities. And yet we're already seeing people turn to GPT-3 for reliable answers and guidance. People are using it instead of Google and Wikipedia. Or as legal counsel. Or for writing educational essays. <Footnote idName={6}>To be fair to the tweeters I've highlighted here, most heeded the outpouring of concern in replies and caveat they (now) double-check its answers.</Footnote>  
 
 <TweetEmbed tweetId="1583341896666996738" />
 
-<TweetEmbed tweetId="1586015833347670017" />
+<TweetEmbed tweetId="1593731844612059136" />
 
 <TweetEmbed tweetId="1588704703554019328" />
 
-Based on our benchmark data above, many of the answers these people get back will be wrong. Especially since most people ask GPT-3 questions without additional prompt engineering or few-shot examples.
+<TweetEmbed tweetId="1586015833347670017" />
 
+<TweetEmbed tweetId="1290096236293492741" />
+
+
+Based on our benchmark data above, many of the answers these people get back will be wrong. Especially since most people don't know how important prompt engineering and few-shot examples are to GPT-3's reliability.
 
 ## GPT-3 beyond the playground
 
@@ -254,40 +258,28 @@ Again, the output seems sensible and coherent. But with no sources or references
 
 Okay, perhaps not 99. There are four I find particularly important:
 
-1. Trust is an all-or-nothing game. One rotten answer spoils the soup. If you can't trust _all_ of what a language model says, you can't completely trust any of it. 90 correct answers out of 100 leave you with 10 outright falsities, but you have no way of knowing which ones. 
+1. **Trust is an all-or-nothing game.**   
+If you can't trust _all_ of what a language model says, you can't completely trust any of it. 90 correct answers out of 100 leave you with 10 outright falsities, but you have no way of knowing which ones. This might not matter too much for low-stakes personal queries like “should I invest in double-glazed windows?,” but becomes a deal-breaker for anything remotely more important. Legal, medical, political, engineering, and policy questions all need fail-safe answers.
 
-2. They lack situated knowledge. They role play.
-One critical problem with language models we're going to have to repeatedly reckon with is their lack of positionality. All knowledge is situated. In time and place, in culture, in specific identities and lived realities. There is no such thing as “the view from nowhere.” 
+2. **Models lack stable, situated knowledge.**  
+One critical problem with language models we're going to have to repeatedly reckon with is their lack of _positionality_. They don't have fixed identities or social contexts in the way people do. Every conversation with a language model is a role-playing game. They take on characters based on the prompt. GPT-3 can [pretend to be a squirrel](https://www.aiweirdness.com/interview-with-a-squirrel/) in one moment, and not know what a squirrel is in the next.  
+There are ways we can use this to our advantage. If I tell GPT-3 it's a great mathematician, it gets much better at maths! But this quality makes it especially troublesome to treat LLMs as sources of knowledge. Because **all human knowledge is situated**. It's situated in times and places, in cultures, in histories, in social institutions, in disciplines, in specific identities, and in lived realities. There is no such thing as “the view from nowhere.”<Footnote idName={9}>If you find this statement confusing, see all of [postmodermism](https://en.wikipedia.org/wiki/Postmodernism)</Footnote> The only question is _whose_ knowledge an LLM is presenting at a given moment.
 
-And yet language models don't present knowledge from a fixed point in reality. They shift between identities. They role-play and take on characters based on the prompt. It can tell you an in-depth story about what it's like to be a squirrel in one moment, and not know what a squirrel is in another.
+3. **Our interfaces are black boxes**  
+The people trying to use these models as sources of truth are not the ones at fault. They arrived at an interface that told them they could ask any questions they liked into the little text box, and it would respond with answers that _sounded_ convincing and true. Plenty of them probably _were_ true. But the interface presented few or no disclaimers, accuracy stats, or ways to investigate their answer. It didn't explain how it arrived at that answer, or what data it used to get there. This is primarily because the creators of these interfaces and models _don't know_ how it arrives at an answer. Most language models are [black boxes](https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/8?from=1893&to=2341). It's a bit complex to explain why but Grant Sanderson's video series on how [neural networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) learn will help.
 
-If I tell it it's a very clever mathematician and ask it X, it gives the correct answer Y.
+4. **Our cultural narratives frame AIs as all-knowing oracles**  
+The core problem is less that these models return outright falsehoods or misleading answers, but that we expect anything else from them. The decades-long [cultural](https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies) [narrative](https://en.wikipedia.org/wiki/Life_3.0) [we've been](https://www.theverge.com/2021/10/20/22734215/ai-ask-delphi-moral-ethical-judgement-demo) [weaving](https://www.wired.com/story/lamda-sentient-ai-bias-google-blake-lemoine/) about the all-knowing, dangerously super-intelligent machine that can absorb and resurface the collective wisdom of humanity has come back to bite us in the epistemic butt. Well-known figures in the industry speak about language models as [oracles](https://www.youtube.com/watch?v=cdiD-9MMpb0&t=3770s) and journalists present them as [magic](https://www.theguardian.com/technology/2022/sep/21/ais-dark-arts-come-into-their-own#:~:text=rogramming%20a%20computer,illusion%20of%20sentience.). We're currently in the awkward middle phase where we're unsure how to calibrate future premonitions against current realities. We've come to expect omniscience from them too soon.
 
-If I tell it it's bad at maths and ask again, it suddenly doesn't know the answer.
+<BasicImage src="/images/posts/epistemic-ducks/oracle3.png" width="800px" alt="A friendly, helpful AI oracle – Made with Midjourney" showalt margin="0 auto 2rem" />
 
-3. Interfaces 
+<div style={{color:"salmon"}}>
+The problem isn't the current state of GPTs. These models are developing at an alarming rate. But we're in the very early days of generative transformers and large language models. GPT-3 came out in 2020. We're 2 years into this experiment.
 
-To be clear, these people aren't the problem here. They landed on an interface that told them they could ask any questions they liked into the little text box, and it responded with answers that _sounded_ convincing and true. Lots of it probably was true. 
-The problem isn't these people. They came to an interface that looked like it provided reliable answers. There were no disclaimers or accuracy stats or ways to investigate an answer. One of the major issues with language models is they _seem_ so confident and capable, we desperately want them to work.
-
-4. We've already come to expect omniscience from them.
-The problem is less that these models frequently return outright falsehoods or misleading answers, but that we expect anything else from them. The decades-long [cultural]() [narrative]() [we've been]() [weaving]() about the all-knowing, dangerously super-intelligent machine that can absorb and resurface the collective wisdom of humanity has come back to bite us in the epistemic butt.
-
-[Karpathy says language models should be thought of as oracles]
-
-<BasicImage src="/images/posts/epistemic-ducks/oracle3.png" width="800px" alt="A friendly, helpful AI oracle. Made with Midjourney" showalt />
-
-
-
-The problem isn't the current state of GPTs. The problem is we're trying to make them generate original thoughts, rather than help us reflect on our own thoughts.
-
-We're in the very early days of generative transformers and large language models. GPT-3 came out in 2020. We're 2 years into this experiment. 
-
-The lesson here is simply that until language models get a _lot_ better, we have to exercise a _lot_ of discernment and critical thinking.
+The lesson here is simply that until language models get a _lot_ better, we have to exercise a _lot_ of discernment and critical thinking. We need to stop using them to generate original thoughts, rather than help us reflect on our own thoughts.
 
 Until we develop more robust language models and interfaces that are transparent about their reasoning and confidence level, we need to change our framing of them. We should not be thinking and talking about these systems as superintelligent, trustworthy oracles. At least, not right now.
-
-
+</div>
 
 We should instead think of them as rubber ducks.
 
@@ -297,9 +289,7 @@ We should instead think of them as rubber ducks.
 
 Rubber ducking is the practice of having a friend or colleague sit and listen while you work through a problem. They aren't there to tell you the solution to the problem or help actively solve it. They might prompt you with questions and occasionally make affirmational sounds. But their primary job is to help you solve their problem yourself. They're like a rubber duck, quietly listening, while you talk yourself out of a hole. 
 
-[image of back and forth discussion with a rubber duck]
-
-The term comes [from programming](https://en.wikipedia.org/wiki/Rubber_duck_debugging) where you're frequently faced with poorly defined problems that require a bit of thinking out loud.<Footnote idName={8}>Originally coined from a story in [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) where one programmer carried around a literal rubber duck to talk through their code with</Footnote> Simply answering the question "what am I trying to do here?" is often enough to get started on a solution.
+The term comes [from programming](https://en.wikipedia.org/wiki/Rubber_duck_debugging) where you're frequently faced with poorly defined problems that require a bit of thinking out loud.<Footnote idName={10}>Originally coined from a story in [The Pragmatic](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) [Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) where one programmer carried around a literal rubber duck to talk through their code with</Footnote> Simply answering the question "what am I trying to do here?" is often enough to get started on a solution.
 
 **Language models are well suited to rubber ducking.** Their mimicry makes them good reflective thinking partners, not independent sources of truth. 
 
@@ -311,7 +301,7 @@ And not just any rubber ducking...
 
 Epistemology is the study of how we know what we know, also called “theory of knowledge.” It deals with issues like how valid a claim is, how strong its claims and counter-arguments are, whether the evidence came from a reliable source, and whether cognitive biases might be warping our opinions.
 
-Epistemic rubber ducking, then, is talking through an idea, claim, or opinion you hold, with a partner who helps you think through the epistemological dimensions of your thoughts. This isn't simply a devil's advocate incessantly pointing out all the ways you're wrong. <Footnote idName={9}>No one would tolerate that for long, which is why Effective Altruism is such an exhausting community to interact with.</Footnote>
+Epistemic rubber ducking, then, is talking through an idea, claim, or opinion you hold, with a partner who helps you think through the epistemological dimensions of your thoughts. This isn't simply a devil's advocate incessantly pointing out all the ways you're wrong. <Footnote idName={11}>No one would tolerate that for long, which is why Effective Altruism is such an exhausting community to interact with.</Footnote>
 
 A useful epistemic duck would need to be supportive and helpful. It would need to simply ask questions and suggest ideas, none of which you're required to accept or integrate, but are there if you want them. It could certainly prod and critique, but in a way that helps you understand the other side of the coin, and realise the gaps and flaws in your arguments.
 
@@ -329,11 +319,11 @@ What would this look like in practice?
 
 ## From anthropomorphism to animals
 
-There's a side quest I promised myself I wouldn't go down in this piece, but I'll briefly touch on it. I think we should take the **duck-ness** of language models as rubber ducks seriously. Meaning that conceiving of language models as ducks – an animal species with some capacity for intelligence – is better than conceiving of them as human-like agents.
+There's a side quest I promised myself I wouldn't go down in this piece, but I'll briefly touch on it. I think we should take the **duck-ness** of language models as rubber ducks seriously. Meaning that conceiving of language models as ducks – an animal species with some capacity for intelligence – is currently better than conceiving of them as human-like agents.
 
-I have very different expectations of a duck than I do of a human. They're capable of sensing their environment and making strategic decisions in response. They have desires – like not being eaten by a fox. They plan ahead by showing up at the right place and time for the man who brings stale bread loaves to the pond.
+I have very different expectations of a duck than I do of a human. I expect it can sense its environment and make decisions that keep it alive and happy and fat. I expect it would have a much more nuanced understanding of fish species and water currents and migration than I do. I don't expect it would be a very competent babysitter or bus driver or physics teacher. In short, the duck has very different intellectual capacities from you or I. The same will be true of various “AI” systems like language models. Their form of “thinking” will certainly be more human-ish than duck-ish, but it would be a mistake to expect the same of them as we do of humans.
 
-Kate Darling has [made this argument](https://www.penguin.co.uk/books/309409/the-new-breed-by-darling-kate/9780141988641) around robots: that we should look to our history with animals as a touchstone for navigating our future with robots and AI. And I find it _very_ compelling.
+Kate Darling has [made this argument](https://www.penguin.co.uk/books/309409/the-new-breed-by-darling-kate/9780141988641) around robots: that we should look to our history with animals as a touchstone for navigating our future with robots and AI.
 
 <ResourceBook
   url="https://www.penguin.co.uk/books/309409/the-new-breed-by-darling-kate/9780141988641"
@@ -346,7 +336,9 @@ Kate Darling argues we should look to our history with animals to help guide our
 
 </ResourceBook>
 
-At the moment the analogy floating around is “aliens.” A lot of AI researchers talk about ML systems as a kind of [alien intelligence](#). Given our cultural narratives around aliens as parasitic killers that are prone to exploding out of your chest, I'm pretty averse to the metaphor. Having an alien intelligence in my system sounds threatening. It certainly doesn't sound like a helpful collaborative thinking partner. <Footnote idName={10}>This might be a good thing if it helps motivate us to take AI alignment seriously.</Footnote>
+<Spacer size="xs" />
+
+An alternate analogy I've heard floating around is “aliens.” Many AI researchers talk about ML systems as a kind of [alien intelligence](https://www.youtube.com/watch?v=cdiD-9MMpb0&t=391s). Given our cultural narratives around aliens as parasitic killers that are prone to exploding out of your chest, I'm pretty averse to the metaphor. Having an alien intelligence in my system sounds threatening. It certainly doesn't sound like a helpful collaborative thinking partner. <Footnote idName={12}>This might be a good thing if it helps motivate us to take AI alignment seriously.</Footnote>
 
 <TwoColumn maxWidth="950px" alignItems="top">
 
@@ -355,7 +347,7 @@ At the moment the analogy floating around is “aliens.” A lot of AI researche
 
 </TwoColumn>
 
-<Subtext>A few friendly, helpful thinking partners. Made with Midjourney</Subtext>
+<Subtext>A few friendly, helpful thinking partners – Made with Midjourney</Subtext>
 
 I think there's a lot more to explore here around the metaphors we use to talk about language models and AI systems, but I'll save it for another post.
 
