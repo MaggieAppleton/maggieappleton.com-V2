@@ -114,7 +114,7 @@ export default function Index({
           transition={{ delay: 0.7, duration: 1 }}
         >
           <Link href="/garden">
-            <a href="/garden">
+            <a>
               <Title2
                 style={{
                   fontSize: "var(--font-size-2xl)",
@@ -122,7 +122,7 @@ export default function Index({
               >
                 The Garden
               </Title2>
-            </a>
+              </a>
           </Link>
           <Subheader>
             A digital garden is a collection of imperfect notes, essays, and
@@ -140,12 +140,12 @@ export default function Index({
         >
           <section style={{ gridArea: "essays" }}>
             <Link href="/essays">
-              <a href="/essays">
+              <a>
                 <SectionHeader>
                   Essays
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-              </a>
+                </a>
             </Link>
             <Subheader>
               Opinionated, longform narrative writing with an agenda
@@ -160,6 +160,7 @@ export default function Index({
               {essays.map((essay, i) => (
                 <EssayCard
                   id={essay.slug}
+                  key={essay.slug}
                   variants={itemAnimation}
                   slug={essay.slug}
                   cover={essay.data.cover}
@@ -172,12 +173,12 @@ export default function Index({
           </section>
           <section style={{ gridArea: "notes" }}>
             <Link href="/notes">
-              <a href="/notes">
+              <a>
                 <SectionHeader>
                   Notes
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-              </a>
+                </a>
             </Link>
             <Subheader>
               Loose, unopinionated notes on things I don’t entirely understand
@@ -198,12 +199,12 @@ export default function Index({
           </section>
           <section style={{ gridArea: "patterns" }}>
             <Link href="/patterns">
-              <a href="/patterns">
+              <a>
                 <SectionHeader>
                   Patterns
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-              </a>
+                </a>
             </Link>
             <Subheader>
               Design patterns gathered from my own observations and research.
@@ -222,12 +223,12 @@ export default function Index({
           </section>
           <section style={{ gridArea: "library" }}>
             <Link href="/library">
-              <a href="/library">
+              <a>
                 <SectionHeader>
                   Library
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-              </a>
+                </a>
             </Link>
             <Subheader>
               Books I’ve read and books I like the idea of having read.

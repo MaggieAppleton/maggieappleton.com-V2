@@ -80,7 +80,7 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
             </MetadataContainer>
           </div>
         </StyledPatternCard>
-      </a>
+        </a>
     </Link>
   );
 }
@@ -112,6 +112,7 @@ const StyledPatternCard = styled(motion.div)`
   border: 1px solid var(--color-cream);
   transition: all 0.3s ease-in-out;
   align-items: start;
+  cursor: pointer;
   h3 {
     color: var(--color-gray-800);
     transition: all 0.3s ease-in-out;

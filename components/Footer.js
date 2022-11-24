@@ -59,11 +59,9 @@ export default function Footer() {
           ].map((link, i) => {
             return (
               <li key={i}>
-                <Link href={link.slug}>
                   <UnderlineHoverLink href={link.slug}>
                     {link.text}
                   </UnderlineHoverLink>
-                </Link>
               </li>
             );
           })}

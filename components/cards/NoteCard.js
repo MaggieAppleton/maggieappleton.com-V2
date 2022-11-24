@@ -21,7 +21,7 @@ export default function NoteCard({ slug, title, growthStage, date, id }) {
             </MetadataContainer>
           </div>
         </StyledNoteCard>
-      </a>
+        </a>
     </Link>
   );
 }
@@ -52,6 +52,7 @@ const StyledNoteCard = styled(motion.div)`
   border-radius: var(--border-radius-base);
   border: 1px solid var(--color-cream);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
   h3 {
     color: var(--color-gray-800);
     transition: all 0.3s ease-in-out;

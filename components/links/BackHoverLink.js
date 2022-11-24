@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 export default function BackHoverLink({ href, children }) {
     return (
-        <LinkContainer href={href}>
-            <ArrowLeftIcon width="16" height="16" />
-            <StyledLink>{children}</StyledLink>
-        </LinkContainer>
+        <Link href={href}>
+            <LinkContainer>
+                <ArrowLeftIcon width="16" height="16" />
+                <StyledLink>{children}</StyledLink>
+            </LinkContainer>
+        </Link>
     );
 }
 
@@ -36,6 +39,7 @@ const LinkContainer = styled.a`
             transform: translate3d(3px, 0, 0);
         }
     }
+    
 `;
 const StyledLink = styled.span`
     display: inline-block;

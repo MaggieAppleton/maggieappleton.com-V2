@@ -38,7 +38,7 @@ export default function EssayCard({
             </span>
           </MetadataContainer>
         </StyledEssayCard>
-      </a>
+        </a>
     </Link>
   );
 }
@@ -73,6 +73,7 @@ const StyledEssayCard = styled.div`
   background: var(--color-light-cream);
   transition: all 0.3s ease-in-out;
   color: var(--color-gray-800);
+  cursor: pointer;
   img {
     width: 100%;
   }

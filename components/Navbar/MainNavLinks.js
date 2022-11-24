@@ -12,11 +12,10 @@ function GardenPopoverLinks() {
     <Popover style={{ position: "relative" }}>
       <StyledPopoverButton>
         <Link href="/garden">
-          <HoverLink href="/garden">
+          <HoverLink>
             <span>The Garden</span>
           </HoverLink>
-        </Link>
-
+          </Link>
         <StyledChevronDownIcon width="22" height="22" />
       </StyledPopoverButton>
 
@@ -33,21 +32,11 @@ function GardenPopoverLinks() {
           style={{ position: "absolute", zIndex: "10" }}
           key="dropdown"
         >
-          <Link href="/essays">
-            <DropdownLink href="/essays">Essays</DropdownLink>
-          </Link>
-          <Link href="/notes">
-            <DropdownLink href="/notes">Notes</DropdownLink>
-          </Link>
-          <Link href="/patterns">
-            <DropdownLink href="/library">Patterns</DropdownLink>
-          </Link>
-          <Link href="/library">
-            <DropdownLink href="/library">Library</DropdownLink>
-          </Link>
-          <Link href="/antilibrary">
-            <DropdownLink href="/antilibrary">Antilibrary</DropdownLink>
-          </Link>
+            <Link href="/essays"><DropdownLink>Essays</DropdownLink></Link>
+            <Link href="/notes"><DropdownLink>Notes</DropdownLink></Link>
+            <Link href="/library"><DropdownLink>Patterns</DropdownLink></Link>
+            <Link href="/library"><DropdownLink>Library</DropdownLink></Link>
+            <Link href="/antilibrary"><DropdownLink>Antilibrary</DropdownLink></Link>
         </Dropdown>
       </Popover.Panel>
     </Popover>
@@ -61,62 +50,37 @@ export default function MainNavLinks() {
         <GardenPopoverLinks />
       </AnimatePresence>
       <div className="outside-dropdown">
-        <Link href="/now">
-          <UnderlineHoverLink href="/now">Now</UnderlineHoverLink>
-        </Link>
-        <Link href="/about">
-          <UnderlineHoverLink href="/about">About</UnderlineHoverLink>
-        </Link>
+        <UnderlineHoverLink href="/now">Now</UnderlineHoverLink>
+        <UnderlineHoverLink href="/about">About</UnderlineHoverLink>
       </div>
     </Main>
   );
 }
 
-const StyledPopoverButton = styled(Popover.Button)`
-  padding: 0;
-`;
-
 const StyledChevronDownIcon = styled(ChevronDownIcon)`
   vertical-align: middle;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
-    transform 0.8s ease-in-out;
+  transform 0.8s ease-in-out;
   color: var(--color-gray-600);
   margin-left: var(--space-3xs);
   position: relative;
   top: 0;
+`;
+
+const StyledPopoverButton = styled(Popover.Button)`
+  padding: 0;
   &:hover {
-    color: var(--color-bright-crimson);
-    transform: rotateY(180deg);
-    cursor: pointer;
-    background-color: var(--color-gray-100);
-    border-radius: 4px;
+    ${StyledChevronDownIcon} {
+      color: var(--color-bright-crimson);
+      transform: rotateY(180deg);
+      cursor: pointer;
+      background-color: var(--color-gray-100);
+      border-radius: 4px;
+    }
   }
 `;
 
-const Main = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  a {
-    margin-left: var(--space-s);
-    text-decoration: none;
-    font-size: var(--font-size-xs);
-    font-family: var(--font-sans);
-    transition: color 0.2s ease-in-out;
-    span {
-      color: var(--color-gray-800);
-    }
-    :hover {
-      span {
-        color: var(--color-crimson);
-      }
-    }
-  }
-  @media screen and (max-width: 550px) {
-    display: none;
-  } ;
-`;
-
-const DropdownLink = styled.a`
+const DropdownLink = styled.span`
   margin: 0 !important;
   color: var(--color-gray-800);
   text-decoration: none;
@@ -126,6 +90,20 @@ const DropdownLink = styled.a`
   border-left: 2px solid var(--color-cream);
   padding: var(--space-2xs) var(--space-l) var(--space-2xs) var(--space-xs);
   transition: all 0.3s ease-in-out;
+  margin-left: var(--space-s);
+  text-decoration: none;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-sans);
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+  span {
+    color: var(--color-gray-800);
+  }
+  :hover {
+    span {
+      color: var(--color-crimson);
+    }
+  }
   &:hover {
     background: var(--color-light-cream);
     color: var(--color-crimson);
@@ -144,7 +122,20 @@ const Dropdown = styled(motion.div)`
   z-index: 1;
 `;
 
-const HoverLink = styled.a`
+const HoverLink = styled.span`
+  margin-left: var(--space-s);
+  text-decoration: none;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-sans);
+  transition: color 0.2s ease-in-out;
+  span {
+    color: var(--color-gray-800);
+  }
+  :hover {
+    span {
+      color: var(--color-crimson);
+    }
+  }
   cursor: pointer;
   position: relative;
   top: 1px;
@@ -195,12 +186,27 @@ const HoverLink = styled.a`
       100% 0%
     );
   }
-  span {
-    display: inline-block;
-    transition: all 0.5s cubic-bezier(0.2, 1, 0.8, 1);
-    color: var(--color-bright-crimson);
+`;
+
+const Main = styled.div`
+  display: flex;
+  flex-shrink: 0;
+  div.outside-dropdown div{
+    margin-left: var(--space-s);
+    text-decoration: none;
+    font-size: var(--font-size-xs);
+    font-family: var(--font-sans);
+    transition: color 0.2s ease-in-out;
+    span {
+      color: var(--color-gray-800);
+    }
+    :hover {
+      span {
+        color: var(--color-crimson);
+      }
+    }
   }
-  &:hover span {
-    color: var(--color-crimson);
-  }
+  @media screen and (max-width: 550px) {
+    display: none;
+  } ;
 `;
