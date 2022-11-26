@@ -33,165 +33,161 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     (mention) => mention["wm-property"] === "mention-of" && mention.content
   );
 
-
   // blocklist of spam domains
   const blockList = [
     "indiatoday.host",
     "rssfeeds.cloudsite.builders",
     "sharewaredepo.com",
     "pakistanistore.pk",
-    'gadgetsearcher.com',
-    'pixallus.com',
-    'programming.yourworldin90seconds.com',
-    'programming.nichedomain.news',
-    'marketingsolution.com.au',
-    'programming.aplus-review.com',
-    'digitalapexgroup.com',
-    'technologynews.biz',
-    'worldtech.news',
-    'programming.webcloning.com',
-    'www.sacramentowebdesigngroup.com',
-    'htmltreehouse.com',
-    '1dmx.org',
-    'websitedesign-usa.com',
-    'techupd.com',
-    'fancyhints.com',
-    'techalertnews.com',
-    'buzzedly.com',
-    'dztechno.com',
-    'graphicdon.com',
-    'www.newsgosspis.com',
-    'www.digitasbuzz.in',
-    'gotutoral.com',
-    'wpguynews.com',
-    'www.klobal.net',
-    'www.webmastersgallery.com',
-    'pikopong.com',
-    'keren.link',
-    'ntdln.com',
-    'jczh.xyz',
-    'pazukong.wordpress.com',
-    'fullstackfeed.com',
-    'thebrandingstore.net',
-    'development-tools.net',
-    'itdirectory.my',
-    'www.sacramentowebdesigngroup.com',
-    'engrmks.com.ng',
-    'www.xspdf.com',
-    'isokunoffice.club', 
-    'dinezh.com', 
-    'www.makemoneyupdaters.com', 
-    'clicknow.in', 
-    'nexstair.com', 
-    'kovtonyuk.inf.ua', 
-    'postheaven.net', 
-    'www.legendstrivia.co.uk', 
-    'squareblogs.net', 
-    'www.fourthcity.net', 
-    'www.engrmks.com.ng', 
-    '711web.com', 
-    'techupd.com', 
-    'www.67nj.org', 
-    'tipsxd.com', 
-    'www.new.pixel-forge.ca', 
-    'pixallus.com', 
-    'wpnewshub.com', 
-    'tecriter.wordpressarena.com', 
-    'reddits.contractwebsites.com', 
-    'wawas-kingdom.com', 
-    'dztechno.com', 
-    'wpguynews.com', 
-    'www.digitasbuzz.in', 
-    'watchfvsslive.co', 
-    'gotutoral.com', 
-    'techfans.co.uk', 
-    'pikopong.com', 
-    'marketingsolution.com.au',
-    'reportwire.org',
-    'www.codeificant.com',
-    'tipsxd.com',
-    'wpdesigns.live',
-    'gigatechnews.com',
-    'blogs.thebitx.com',
-    'updatetech.xyz',
-    'neoweb4u.com',
-    'www.websjohn.com',
-    'www.webhostpolice.com',
-    'lzomedia.com',
-    'jateng.co',
-    'news.priviw.com',
-    'movilgadget.com',
-    'kitdeveloper.ru',
-    'reactjsexample.com',
-    'dentedreality.com.au',
-    'platoblockchain.net',
-    'aayugcreation.com',
-    'www.67nj.org',
-    'wpnewshub.com',
-    'codinghindi.in',
-    'programmer.chimpymail.com',
-    'sayed.work',
-    'infos.by',
-    'data-science-austria.at',
-    'www.techyrack.com',
-    'opta.live',
-    'www.imoneyhub.com',
-    'www.askorhelp.com',
-    'www.handla.it',
-    'webchilli.co.za',
-    'indyamariejean.com',
-    'hnikoloski.com',
-    'www.makemoneyonlinecom.com',
-    'underskore.in',
-    'codytechs.com',
-    'shanuverma.com',
-    'technewzroom.com',
-    'fiercesite.com',
-    'www.essexwebhosts.com',
-    'tavarro.com',
-    'ecapital.news',
-    'i-capitals.com',
-    'vcodepedia.com',
-    'e-capitals.com',
-    'xlera8.com',
-    'gadgetofficials.com',
-    'coingenius.news',
-    'thenewslog.org',
-    'zplux.com',
-    'tiptipa.com',
-    'zephyrnet.com',
-    'secretofcss.com',
-    'test.designsolutions.online',
-    'www.prixleplusbas.xyz',
-    'www.nolisa.xyz',
-    'datechguru.com',
-    'www.cssdersleri.com',
-    'www.pixellyft.com',
-    'icapital.news',
-    'usae.sit',
-    'helpbuildweb.com',
-    'sharewarepile.com',
-    'sharewaredepo.com',
-    'www.codersjungle.com',
-    'www.monsterstudios.com.ng',
-    'technewsbeats.com',
-    'kerbco.com',
-    'planetdigital963889394.wordpress.com',
-    'digitalworld108117254.wordpress.com',
-    'digitalnow878391108.wordpress.com',
-    'newsdigital742901006.wordpress.com',
-    'digitaldamian273090457.wordpress.com',
-    'codezero844163712.wordpress.com',
-  ]
+    "gadgetsearcher.com",
+    "pixallus.com",
+    "programming.yourworldin90seconds.com",
+    "programming.nichedomain.news",
+    "marketingsolution.com.au",
+    "programming.aplus-review.com",
+    "digitalapexgroup.com",
+    "technologynews.biz",
+    "worldtech.news",
+    "programming.webcloning.com",
+    "www.sacramentowebdesigngroup.com",
+    "htmltreehouse.com",
+    "1dmx.org",
+    "websitedesign-usa.com",
+    "techupd.com",
+    "fancyhints.com",
+    "techalertnews.com",
+    "buzzedly.com",
+    "dztechno.com",
+    "graphicdon.com",
+    "www.newsgosspis.com",
+    "www.digitasbuzz.in",
+    "gotutoral.com",
+    "wpguynews.com",
+    "www.klobal.net",
+    "www.webmastersgallery.com",
+    "pikopong.com",
+    "keren.link",
+    "ntdln.com",
+    "jczh.xyz",
+    "pazukong.wordpress.com",
+    "fullstackfeed.com",
+    "thebrandingstore.net",
+    "development-tools.net",
+    "itdirectory.my",
+    "www.sacramentowebdesigngroup.com",
+    "engrmks.com.ng",
+    "www.xspdf.com",
+    "isokunoffice.club",
+    "dinezh.com",
+    "www.makemoneyupdaters.com",
+    "clicknow.in",
+    "nexstair.com",
+    "kovtonyuk.inf.ua",
+    "postheaven.net",
+    "www.legendstrivia.co.uk",
+    "squareblogs.net",
+    "www.fourthcity.net",
+    "www.engrmks.com.ng",
+    "711web.com",
+    "techupd.com",
+    "www.67nj.org",
+    "tipsxd.com",
+    "www.new.pixel-forge.ca",
+    "pixallus.com",
+    "wpnewshub.com",
+    "tecriter.wordpressarena.com",
+    "reddits.contractwebsites.com",
+    "wawas-kingdom.com",
+    "dztechno.com",
+    "wpguynews.com",
+    "www.digitasbuzz.in",
+    "watchfvsslive.co",
+    "gotutoral.com",
+    "techfans.co.uk",
+    "pikopong.com",
+    "marketingsolution.com.au",
+    "reportwire.org",
+    "www.codeificant.com",
+    "tipsxd.com",
+    "wpdesigns.live",
+    "gigatechnews.com",
+    "blogs.thebitx.com",
+    "updatetech.xyz",
+    "neoweb4u.com",
+    "www.websjohn.com",
+    "www.webhostpolice.com",
+    "lzomedia.com",
+    "jateng.co",
+    "news.priviw.com",
+    "movilgadget.com",
+    "kitdeveloper.ru",
+    "reactjsexample.com",
+    "dentedreality.com.au",
+    "platoblockchain.net",
+    "aayugcreation.com",
+    "www.67nj.org",
+    "wpnewshub.com",
+    "codinghindi.in",
+    "programmer.chimpymail.com",
+    "sayed.work",
+    "infos.by",
+    "data-science-austria.at",
+    "www.techyrack.com",
+    "opta.live",
+    "www.imoneyhub.com",
+    "www.askorhelp.com",
+    "www.handla.it",
+    "webchilli.co.za",
+    "indyamariejean.com",
+    "hnikoloski.com",
+    "www.makemoneyonlinecom.com",
+    "underskore.in",
+    "codytechs.com",
+    "shanuverma.com",
+    "technewzroom.com",
+    "fiercesite.com",
+    "www.essexwebhosts.com",
+    "tavarro.com",
+    "ecapital.news",
+    "i-capitals.com",
+    "vcodepedia.com",
+    "e-capitals.com",
+    "xlera8.com",
+    "gadgetofficials.com",
+    "coingenius.news",
+    "thenewslog.org",
+    "zplux.com",
+    "tiptipa.com",
+    "zephyrnet.com",
+    "secretofcss.com",
+    "test.designsolutions.online",
+    "www.prixleplusbas.xyz",
+    "www.nolisa.xyz",
+    "datechguru.com",
+    "www.cssdersleri.com",
+    "www.pixellyft.com",
+    "icapital.news",
+    "usae.sit",
+    "helpbuildweb.com",
+    "sharewarepile.com",
+    "sharewaredepo.com",
+    "www.codersjungle.com",
+    "www.monsterstudios.com.ng",
+    "technewsbeats.com",
+    "kerbco.com",
+    "planetdigital963889394.wordpress.com",
+    "digitalworld108117254.wordpress.com",
+    "digitalnow878391108.wordpress.com",
+    "newsdigital742901006.wordpress.com",
+    "digitaldamian273090457.wordpress.com",
+    "codezero844163712.wordpress.com",
+  ];
 
- // filter mentionWithContent to only include domains that are not from the blacklist
-  const filteredMentions = mentionWithContent.filter(mention => {
-    const domain = mention.url.split('/')[2]
-    return !blockList.includes(domain)
-  })
-
-
-  console.log(postMentions);
+  // filter mentionWithContent to only include domains that are not from the blacklist
+  const filteredMentions = mentionWithContent.filter((mention) => {
+    const domain = mention.url.split("/")[2];
+    return !blockList.includes(domain);
+  });
 
   // if there are no mentions, return null
   if (postMentions.length === 0) {
@@ -254,60 +250,94 @@ const MentionsWithContent = ({ mentions }) => {
 
   return (
     <>
-    <MentionsContentContainer>
-      {mentionsShown.map((mention) => (
-        <Reply>
-          {mention.author.photo ? (
-            <img src={mention.author.photo} alt={mention.author.name} />
-          ) : (
-            <svg
-              width="42"
-              height="42"
-              viewBox="0 0 42 42"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="placeholder-svg"
-            >
-              <circle cx="50%" cy="50%" r="21" fill="var(--color-sea-blue)" />
-            </svg>
-          )}
-
-          <div className="content">
-            <div className="name-date">
-              <a href={mention.url} className="author">
-                <span>
-                  {mention.author.name || getDomain(mention["wm-source"])}
-                </span>
-              </a>
-              <span className="mention-type">{mentionType(mention)}</span>
-              {sourceType(mention)}
-              <time datetime={mention.published}>
-                {formatDate(mention["wm-received"])}
-              </time>
-            </div>
-            {mention.content && (
-              <span>{formatContent(mention.content.text)}</span>
+      <MentionsContentContainer>
+        {mentionsShown.map((mention, i) => (
+          <Reply key={i}>
+            {mention.author.photo ? (
+              <img src={mention.author.photo} alt={mention.author.name} />
+            ) : (
+              <svg
+                width="42"
+                height="42"
+                viewBox="0 0 42 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="placeholder-svg"
+              >
+                <circle cx="50%" cy="50%" r="21" fill="var(--color-sea-blue)" />
+              </svg>
             )}
-          </div>
-        </Reply>
-      ))}
-      
-    </MentionsContentContainer><ButtonContainer>{mentions.length > 4 && (
-        <button
-          className="show-more"
-          onClick={() => {
-            setisShowing(!isShowing);
-            isShowing
-              ? setmentionsShown(mentions.slice(0, 4))
-              : setmentionsShown(mentions);
-          }}
-        >
-          {isShowing ? "Show less" : `Show ${mentions.length - 4} more`}
-        </button>
-      )}</ButtonContainer>
-      </>
+
+            <div className="content">
+              <div className="name-date">
+                <a href={mention.url} className="author">
+                  <span>
+                    {mention.author.name || getDomain(mention["wm-source"])}
+                  </span>
+                </a>
+                <span className="mention-type">{mentionType(mention)}</span>
+                {sourceType(mention)}
+                <time datetime={mention.published}>
+                  {formatDate(mention["wm-received"])}
+                </time>
+              </div>
+              {mention.content && (
+                <span>{formatContent(mention.content.text)}</span>
+              )}
+            </div>
+          </Reply>
+        ))}
+      </MentionsContentContainer>
+      <ButtonContainer>
+        {mentions.length > 4 && (
+          <button
+            className="show-more"
+            onClick={() => {
+              setisShowing(!isShowing);
+              isShowing
+                ? setmentionsShown(mentions.slice(0, 4))
+                : setmentionsShown(mentions);
+            }}
+          >
+            {isShowing ? "Show less" : `Show ${mentions.length - 4} more`}
+          </button>
+        )}
+      </ButtonContainer>
+    </>
   );
 };
+
+const LikesImages = ({ likes }) => {
+  return (
+    <LikesImagesContainer>
+      <div className="likes-container">
+        {likes.slice(0, 20).map((mention, index) =>
+          mention.author.photo ? (
+            <SingleImage index={index} key={index}>
+              <img src={mention.author.photo} alt={mention.author.name} />
+            </SingleImage>
+          ) : (
+            <SingleImage index={index} key={index}>
+              <svg
+                width="42"
+                height="42"
+                viewBox="0 0 42 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="placeholder-svg"
+              >
+                <circle cx="50%" cy="50%" r="21" fill="var(--color-sea-blue)" />
+              </svg>
+            </SingleImage>
+          )
+        )}
+        <span>{likes.length} Likes and Retweets</span>
+      </div>
+    </LikesImagesContainer>
+  );
+};
+
+// Styles
 
 const ButtonContainer = styled.div`
   width: 100%;
@@ -315,11 +345,11 @@ const ButtonContainer = styled.div`
   justify-content: center;
   button {
     transition: all 0.3s ease-in-out;
-    cursor: pointer; 
+    cursor: pointer;
     width: 100%;
     padding: 1.25rem;
     background: var(--color-white);
-    border-radius: 0 0 0.5rem 0.5rem ;
+    border-radius: 0 0 0.5rem 0.5rem;
     border-top: 1px solid var(--color-gray-100);
     color: var(--color-gray-600);
     :hover {
@@ -327,7 +357,7 @@ const ButtonContainer = styled.div`
       color: var(--color-gray-800);
     }
   }
-`
+`;
 
 const MentionsContentContainer = styled(motion.div)`
   display: flex;
@@ -382,33 +412,6 @@ const Reply = styled.div`
   }
 `;
 
-const LikesImages = ({ likes }) => {
-  return (
-    <LikesImagesContainer>
-      <div className="likes-container">
-        {likes.slice(0, 20).map(
-          (mention, index) =>
-            mention.author.photo ? (
-              <SingleImage index={index}>
-                <img src={mention.author.photo} alt={mention.author.name} />
-              </SingleImage>
-            ) : <SingleImage index={index}><svg
-            width="42"
-            height="42"
-            viewBox="0 0 42 42"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="placeholder-svg"
-          >
-            <circle cx="50%" cy="50%" r="21" fill="var(--color-sea-blue)" />
-          </svg></SingleImage>
-        )}
-        <span>{likes.length} Likes and Retweets</span>
-      </div>
-    </LikesImagesContainer>
-  );
-};
-
 const LikesImagesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -437,7 +440,8 @@ const SingleImage = styled.div`
   transition: all 0.4s ease;
   display: flex;
   align-items: center;
-  img, svg {
+  img,
+  svg {
     display: block;
     width: 42px;
     height: 42px;
@@ -461,7 +465,7 @@ const InnerContainer = styled.div`
   box-shadow: var(--box-shadow-lg);
   border-radius: 8px;
   margin-bottom: -4.15rem;
-  margin-top: ${({hasBacklinks}) => hasBacklinks ? "4rem" : "0"};
+  margin-top: ${({ hasBacklinks }) => (hasBacklinks ? "4rem" : "0")};
   border: 1px solid var(--color-gray-100);
   background: white;
   h3 {
@@ -479,4 +483,3 @@ const InnerContainer = styled.div`
     padding: 1.5rem 2rem 1rem;
   }
 `;
-
