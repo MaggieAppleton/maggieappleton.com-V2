@@ -36,6 +36,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
 
   // blocklist of spam domains
   const blockList = [
+    "indiatoday.host",
     "rssfeeds.cloudsite.builders",
     "sharewaredepo.com",
     "pakistanistore.pk",
@@ -436,7 +437,7 @@ const SingleImage = styled.div`
   transition: all 0.4s ease;
   display: flex;
   align-items: center;
-  img {
+  img, svg {
     display: block;
     width: 42px;
     height: 42px;
