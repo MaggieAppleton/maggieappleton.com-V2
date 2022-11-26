@@ -7,7 +7,7 @@ import {
   MastodonIcon,
   RedditIcon,
 } from "../icons/SocialMediaIcons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function WebMentions({ postSlug, hasBacklinks }) {
   // get all mentions where wm-target is the current post
@@ -247,22 +247,42 @@ function formatContent(content, postSlug) {
   return contentWithoutDomain.slice(0, 280);
 }
 
+
 const MentionsWithContent = ({ mentions }) => {
   const [mentionsShown, setmentionsShown] = useState(mentions.slice(0, 4));
   const [isShowing, setisShowing] = useState(false);
 
+  const replyVariants = {
+    hidden: {
+      opacity: 0,
+      height: 0,
+      staggerChildren: 0.5,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+    visible: {
+      opacity: 1,
+      height: "auto",
+      staggerChildren: 0.5,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  }
+
   return (
     <>
-      <MentionsContentContainer
-        layout
-        transition={{
-          opacity: { ease: "ease-in-out" },
-          layout: { duration: 0.3 },
-          staggerChildren: 0.3,
-        }}
-      >
+      <MentionsContentContainer>
           {mentionsShown.map((mention, i) => (
-            <Reply key={i}>
+            <AnimatePresence><Reply
+            variants={replyVariants}
+            animate="visible"
+            initial="hidden"
+            exit="hidden"
+            key={i} >
               {mention.author.photo ? (
                 <img src={mention.author.photo} alt={mention.author.name} />
               ) : (
@@ -292,7 +312,7 @@ const MentionsWithContent = ({ mentions }) => {
                   </a>
                   <span className="mention-type">{mentionType(mention)}</span>
                   {sourceType(mention)}
-                  <time datetime={mention.published}>
+                  <time dateTime={mention.published}>
                     {formatDate(mention["wm-received"])}
                   </time>
                 </div>
@@ -301,6 +321,7 @@ const MentionsWithContent = ({ mentions }) => {
                 )}
               </div>
             </Reply>
+            </AnimatePresence>
           ))}
       </MentionsContentContainer>
       <ButtonContainer>
