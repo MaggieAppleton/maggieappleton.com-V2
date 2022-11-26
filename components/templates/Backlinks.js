@@ -8,6 +8,7 @@ import { RelativeDate } from "../templates/Dates";
 export default function Backlinks({ backlinks }) {
     return (
         <BacklinkContainer>
+            <InnerContainer>
             <h3>{backlinks.length} Backlinks</h3>
             <div className="grid">
                 {backlinks.map((backlink) => {
@@ -16,21 +17,34 @@ export default function Backlinks({ backlinks }) {
                     );
                 })}
             </div>
+            </InnerContainer>
         </BacklinkContainer>
     );
 }
 
 const BacklinkContainer = styled.section`
-    width: 100%;
-    grid-column: 1/4 !important;
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    background: white;
+    color: var(--color-gray-800);
+`;
+
+const InnerContainer = styled.div`
+    width: 880px;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow-lg);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: -3rem;
+    border: 1px solid var(--color-gray-100);
+    background: white;
     h3 {
-        text-align: center;
-        margin-top: var(--space-xl);
         font-size: var(--font-size-md);
+        font-weight: 300;
     }
     div.grid {
-        margin: var(--space-l) auto var(--space-xl);
+        margin: var(--space-m) auto 0;
         display: grid;
         max-width: 900px;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -69,7 +83,7 @@ function BacklinkCard({ backlink }) {
 const StyledBacklinkCard = styled(motion.div)`
     display: flex;
     flex-direction: row;
-    padding: 0 var(--space-xs) var(--space-xs) 0;
+    padding: 0 var(--space-xs) var(--space-xs) var(--space-2xs);
     margin: 0 var(--space-xs) var(--space-xs) 0;
     transition: all 0.3s ease-in-out;
     h4 {
