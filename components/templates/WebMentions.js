@@ -38,6 +38,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
   // blocklist of spam domains
   const blockList = [
     "indiatoday.host",
+    "www.indiatoday.host",
     "rssfeeds.cloudsite.builders",
     "sharewaredepo.com",
     "pakistanistore.pk",
