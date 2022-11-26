@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import mentions from "/posts/data/webmentions.json";
 import { format } from "date-fns";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   TwitterIcon,
   MastodonIcon,
@@ -252,43 +252,55 @@ const MentionsWithContent = ({ mentions }) => {
 
   return (
     <>
-      <MentionsContentContainer>
-        {mentionsShown.map((mention, i) => (
-          <Reply key={i}>
-            {mention.author.photo ? (
-              <img src={mention.author.photo} alt={mention.author.name} />
-            ) : (
-              <svg
-                width="42"
-                height="42"
-                viewBox="0 0 42 42"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="placeholder-svg"
-              >
-                <circle cx="50%" cy="50%" r="21" fill="var(--color-sea-blue)" />
-              </svg>
-            )}
-
-            <div className="content">
-              <div className="name-date">
-                <a href={mention.url} className="author">
-                  <span>
-                    {mention.author.name || getDomain(mention["wm-source"])}
-                  </span>
-                </a>
-                <span className="mention-type">{mentionType(mention)}</span>
-                {sourceType(mention)}
-                <time datetime={mention.published}>
-                  {formatDate(mention["wm-received"])}
-                </time>
-              </div>
-              {mention.content && (
-                <span>{formatContent(mention.content.text)}</span>
+      <MentionsContentContainer
+        layout
+        transition={{
+          opacity: { ease: "ease-in-out" },
+          layout: { duration: 0.3 },
+          staggerChildren: 0.3,
+        }}
+      >
+          {mentionsShown.map((mention, i) => (
+            <Reply key={i}>
+              {mention.author.photo ? (
+                <img src={mention.author.photo} alt={mention.author.name} />
+              ) : (
+                <svg
+                  width="42"
+                  height="42"
+                  viewBox="0 0 42 42"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="placeholder-svg"
+                >
+                  <circle
+                    cx="50%"
+                    cy="50%"
+                    r="21"
+                    fill="var(--color-sea-blue)"
+                  />
+                </svg>
               )}
-            </div>
-          </Reply>
-        ))}
+
+              <div className="content">
+                <div className="name-date">
+                  <a href={mention.url} className="author">
+                    <span>
+                      {mention.author.name || getDomain(mention["wm-source"])}
+                    </span>
+                  </a>
+                  <span className="mention-type">{mentionType(mention)}</span>
+                  {sourceType(mention)}
+                  <time datetime={mention.published}>
+                    {formatDate(mention["wm-received"])}
+                  </time>
+                </div>
+                {mention.content && (
+                  <span>{formatContent(mention.content.text)}</span>
+                )}
+              </div>
+            </Reply>
+          ))}
       </MentionsContentContainer>
       <ButtonContainer>
         {mentions.length > 4 && (
@@ -310,7 +322,6 @@ const MentionsWithContent = ({ mentions }) => {
 };
 
 const LikesImages = ({ likes }) => {
-
   // filter likes for duplicate author photos
   const likesWithoutDuplicates = likes.filter(
     (like, index, self) =>
@@ -381,7 +392,7 @@ const MentionsContentContainer = styled(motion.div)`
   margin-top: var(--space-s);
 `;
 
-const Reply = styled.div`
+const Reply = styled(motion.div)`
   display: flex;
   flex-direction: row;
   align-items: left;
