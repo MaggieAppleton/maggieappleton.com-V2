@@ -20,6 +20,8 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     (mention) => mention["wm-property"] === "like-of" || "repost-of"
   );
 
+  console.log(likesAndReposts);
+
   //filter for mentions that are mentions or replies or bookmarks
   const trueMention = postMentions.filter(
     (mention) =>
@@ -308,10 +310,22 @@ const MentionsWithContent = ({ mentions }) => {
 };
 
 const LikesImages = ({ likes }) => {
+
+  // filter likes for duplicate author photos
+  const likesWithoutDuplicates = likes.filter(
+    (like, index, self) =>
+      index ===
+      self.findIndex(
+        (t) =>
+          t.author.photo === like.author.photo &&
+          t.author.name === like.author.name
+      )
+  );
+
   return (
     <LikesImagesContainer>
       <div className="likes-container">
-        {likes.slice(0, 20).map((mention, index) =>
+        {likesWithoutDuplicates.slice(0, 20).map((mention, index) =>
           mention.author.photo ? (
             <SingleImage index={index} key={index}>
               <img src={mention.author.photo} alt={mention.author.name} />
