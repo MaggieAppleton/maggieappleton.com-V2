@@ -387,11 +387,20 @@ const LikesImages = ({ likes }) => {
       <div className="likes-container">
         {likes.slice(0, 20).map(
           (mention, index) =>
-            mention.author.photo && (
+            mention.author.photo ? (
               <SingleImage index={index}>
                 <img src={mention.author.photo} alt={mention.author.name} />
               </SingleImage>
-            )
+            ) : <SingleImage index={index}><svg
+            width="42"
+            height="42"
+            viewBox="0 0 42 42"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="placeholder-svg"
+          >
+            <circle cx="50%" cy="50%" r="21" fill="var(--color-sea-blue)" />
+          </svg></SingleImage>
         )}
         <span>{likes.length} Likes and Retweets</span>
       </div>
