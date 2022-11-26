@@ -20,7 +20,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     (mention) => mention["wm-property"] === "like-of" || "repost-of"
   );
 
-  console.log(likesAndReposts);
+  // console.log(likesAndReposts);
 
   //filter for mentions that are mentions or replies or bookmarks
   const trueMention = postMentions.filter(

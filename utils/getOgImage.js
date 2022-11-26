@@ -25,7 +25,7 @@ async function getOgImage(path, title) {
   //   // file does not exist, so we create it
   // }
 
-  console.log("generating og image for", title);
+  // console.log("generating og image for", title);
   const page = await browser.newPage();
   await page.setViewportSize({ width: 1200, height: 630 });
   await page.goto(url, { waitUntil: "networkidle" });
