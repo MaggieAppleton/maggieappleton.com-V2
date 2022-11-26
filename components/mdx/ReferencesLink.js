@@ -8,7 +8,7 @@ export default function ReferencesLink({ title, href, author }) {
         <h4>{title}</h4>
         <ArrowRightIcon width="16" height="16" />
       </ForwardHoverLink>
-      <span className="author">{author}</span>
+      {author && <span className="author">{author}</span>}
     </ReferenceLinkContainer>
   );
 }
