@@ -22,7 +22,7 @@ This talk – "A Picture Worth a Thousand Programmes" – is an exploration of w
 
 </IntroParagraph>
 
-I first presented it at [React Advanced London](https://reactadvanced.com/) 2021. You can watch the recording on the official conference website:
+I first presented it at [React Advanced London](https://reactadvanced.com/) in 2021. You can watch the recording on the official conference website:
 
 <Center><ButtonLink href="https://portal.gitnation.org/contents/visualising-react-metaphors-models-and-spatial-mediums">Watch the talk</ButtonLink></Center>
 
@@ -93,7 +93,7 @@ We worked together to develop a visual language that was a bit more formal than 
 
 Every piece of syntax correlated to a specific visual shape, and we used the system to explain concepts like assigning properties and object mutation.
 
-Now, I’m not running through all this work to show off – I just wanted to give you some context around the kind of programming visuals I’ve made in the past so you have a sense what I mean when I refer to _‘pictures of programming’._
+Now, I’m not running through all this work to show off – I just wanted to give you some context around the kind of programming visuals I’ve made in the past so you have a sense of what I mean when I refer to _‘pictures of programming’._
 
 In going through this process of transforming programming concepts into visual images hundreds of times, I’ve been forced to think a lot about the way we represent and communicate complex programming ideas.
 
@@ -115,7 +115,7 @@ I’m also going to show you why visuals are so special. And it turns out to be 
 
 > Visuals bring invisible, abstract programming concepts down into the embodied world.
 
-The embodied world is where you and I live. Everyone watching this talk has a body. And you use it to interact with physical objects around you, to move through space, and experience events over time. Everything you know about the world is mediated through your body, and this fact is so fundamental we sometimes completely forget it.
+The embodied world is where you and I live. Everyone watching this talk has a body. And you use it to interact with physical objects around you, move through space, and experience events over time. Everything you know about the world is mediated through your body, and this fact is so fundamental we sometimes completely forget it.
 
 And programming concepts are abstract ideas that do not live in the embodied world here with us.
 
@@ -129,9 +129,9 @@ They’re imaginary objects and functions… that exist in a liminal space that 
 
 And we can only interact with them through this disembodied experience of typing linear text instructions into a code editor.
 
-This is precisely what make programming so difficult. We’re trying to reason about and work with things we cannot see or touch, when we are creatures who are evolutionarily adapted to function in a highly visual, spatial, physical world.
+This is precisely what makes programming so difficult. We’re trying to reason about and work with things we cannot see or touch when we are creatures who are evolutionarily adapted to function in a highly visual, spatial, physical world.
 
-And I think visuals are big part of bridging that gap between our embodied human world and the disembodied machine world we’re all trying to programme in.
+And I think visuals are a big part of bridging that gap between our embodied human world and the disembodied machine world we’re all trying to programme in.
 
 So here’s the plan. We’re going to explore this topic through three questions:
 
@@ -151,12 +151,12 @@ After all, there are no new ideas under the sun. Many, many people in the past h
 
 This is an important question to ask because almost everything we do in programming is expressed in text.
 
-This is how every app you’ve ever worked on looks. Text arranged in lines going from left to right and top to bottom.
+This is how every app you’ve ever worked on looks. Text is arranged in lines going from left to right and top to bottom.
 
 <ImageFrame
   width="900"
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1100/v1638480832/maggieappleton.com/notes/programming-pictures/PicturesProgramming-13_gh4bey.jpg"
-  alt="A screenshot of a code editor showing lines runnning left to right and top to bottom"
+  alt="A screenshot of a code editor showing lines running left to right and top to bottom"
 />
 
 Here’s every documentation website you’ve ever read
@@ -177,7 +177,7 @@ And here’s every blog post you’ve ever learned from.
 
 All of our current programming languages, tools, interfaces, and documentation are overwhelmingly text-centric.
 
-You sometimes get a diagram here and there, but it’s really slim pickings.
+You sometimes get a diagram here and there, but it’s slim pickings.
 
 If I had to guess the balance of text to visuals in our industry, I’d bet we’re at 98% text to 2% visuals.
 
@@ -193,7 +193,7 @@ If you take a minute and think over all the code and documentation you encounter
 
 If we look at the history of programming, it’s fairly clear how we ended up in such a text-heavy world.
 
-This is a computer circa 1970. You’ll notice the lack of screen.
+This is a computer circa 1970. You’ll notice the lack of a screen.
 
 <BasicImage
   width="900"
@@ -203,7 +203,8 @@ This is a computer circa 1970. You’ll notice the lack of screen.
 
 You had a keyboard and a stack of punchcards, and the only thing you could do was type linear text to create programmes.
 
-This design constraint meant all our early programming languages were text-based. And once you establish text as the primary paradigm of a field, it becomes hard to break away from. Especially in an industry where we rely so heavily on lower level abstractions created by all the programmers who came before us.
+This design constraint meant all our early programming languages were text-based. And once you establish the text as the primary paradigm of a field, it becomes hard to break away from. Especially in an industry where we rely so heavily on lower-level abstractions created by all the programmers who came before us.
+
 
 There are also plenty of logical reasons why we rely so heavily on text in programming. Written words and syntax are ideal mediums for expressing abstract logic.
 
@@ -234,7 +235,7 @@ When we write code, we’re writing a set of hypothetical instructions to run on
 
 This level of abstraction removes the physical, spatial, and embodied qualities that humans rely upon to understand the world around us.
 
-This can be good in some ways. When we write a function like `fetchUserData()` we don’t have to define the size, shape, or colour of it. It’s just a simple function floating in machine land.
+This can be good in some ways. When we write a function like `fetchUserData()` we don’t have to define its size, shape, or colour of it. It’s just a simple function floating in machine land.
 
 <BasicImage
   width="900"
@@ -242,7 +243,7 @@ This can be good in some ways. When we write a function like `fetchUserData()` w
   alt=""
 />
 
-If you already know what’s this function is and how it works and where its located, this level of brevity is great.
+If you already know what this function is and how it works and where it located, this level of brevity is great.
 
 But imagine someone new to programming who has never written a function to fetch user data, and has no pre-existing mental model of how it might work.
 
@@ -250,7 +251,7 @@ One of the easiest and most effective ways to make it comprehensible to them is 
 
 by using physical qualities they already understand like size, shape, colour, and spatial relationships.
 
-Which might give us something like this to help explain what a fetchUserData function does.
+This might give us something like this to help explain what a fetchUserData function does.
 
 <BasicImage
   width="900"
@@ -260,7 +261,7 @@ Which might give us something like this to help explain what a fetchUserData fun
 
 The visual doesn’t have to be crazy complex or beautiful. Boxes and arrows work great. We’re certainly allowed to use text labels to make the imagery clear.
 
-Visuals lets us use our pre-existing embodied knowledge to show how programmes work in a that way text can’t.
+Visuals let us use our pre-existing embodied knowledge to show how programmes work in a way text can’t.
 
 ## II. What can visuals give us that text can't?
 
@@ -269,7 +270,7 @@ I think visuals reveal three aspects of programming that we’re unable to see i
 <BasicImage
   width="900"
   src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1100/v1638481021/maggieappleton.com/notes/programming-pictures/PicturesProgramming-23_sgmjtt.jpg"
-  alt="Visuals reveal metaphors, spatial meaning, and change over time in ways that linear tect can't"
+  alt="Visuals reveal metaphors, spatial meaning, and change over time in ways that linear text can't"
 />
 
 - They reveal fundamental metaphors embedded in our programming languages.
@@ -290,9 +291,9 @@ Just to make sure we’re all on the same page, let’s establish that metaphors
   alt="Metaphors allow us to understand one thing in terms of another"
 />
 
-So let’s say we have Thing A here that we understand, and Thing B which we don’t.
+So let’s say we have Thing A here which we understand and Thing B which we don’t.
 
-And in order to help us understand Thing B and get a general idea about what it's like and what it can do, we map the qualities of Thing A onto it.
+And to help us understand Thing B and get a general idea about what it's like and what it can do, we map the qualities of Thing A onto it.
 
 If we say corruption is a disease, we understand that corruption spreads, is difficult to overcome, and if left unchecked, can kill.
 
@@ -306,9 +307,9 @@ Similarly, we often say life is a journey. There are many paths our lives might 
 
 Now when I talk about metaphor in the context of programming, I don’t mean the creative, fanciful metaphors you find in poetry and parables like taking the road less travelled or wandering lonely as a cloud.
 
-Those are called figurative or poetic metaphor. They’re the sort we’re warned not to use in technical tutorials since elaborate, poorly chosen metaphors can be more confusing than helpful.
+Those are called figurative or poetic metaphors. They’re the sort we’re warned not to use in technical tutorials since elaborate, poorly chosen metaphors can be more confusing than helpful.
 
-I’m talking about much more fundamental type of metaphor that lies at the heart of all abstract thinking, including programming.
+I’m talking about a much more fundamental type of metaphor that lies at the heart of all abstract thinking, including programming.
 
 These are called **cognitive metaphors** since they enable cognition on a much deeper level.
 
@@ -318,17 +319,17 @@ These are called **cognitive metaphors** since they enable cognition on a much d
   alt="Cognitive metaphors are based in our embodied experience of the world"
 />
 
-These cognitive metaphors are based in our embodied experiences of the world.
+These cognitive metaphors are based on our embodied experiences of the world.
 
-We have all these non-physical things we need to communicate to each other like emotions, and thoughts, and ideas, and programming concepts.
+We have all these non-physical things we need to communicate to each other like emotions, thoughts, ideas, and programming concepts.
 
-And in order to understand them and talk about them, we use our experience of the physical world around us as a metaphor.
+And to understand them and talk about them, we use our experience of the physical world around us as a metaphor.
 
 If you look at the way we talk about abstract things, this becomes obvious….
 
-- We talk about ideas in terms of light when we say “that's a bright idea” or “that really illuminates the problem”
-- We talk about emotions like they’re objects. We say “he hid his jealousy” or “she don’t handle anger very well”
-- We can also use force and motion metaphors to describe experiences, like I found your talk moving, it really touched me
+- We talk about ideas in terms of light when we say “that's a bright idea” or “that illuminates the problem”
+- We talk about emotions like they’re objects. We say “he hid his jealousy” or “she doesn’t handle anger very well”
+- We can also use force and motion metaphors to describe experiences like “I found your talk moving, it touched me”
 - We talk about programming ideas in terms of temperature like hot reloading in React or how the JavaScript landscape is heating up
 
 <BasicImage
@@ -339,7 +340,7 @@ If you look at the way we talk about abstract things, this becomes obvious….
 
 This isn’t a theory I’ve just come up with on my own.
 
-These principles come from the field of cognitive metaphor and embodied cognition. They were first developed in the 1980’s by George Lakoff and Mark Johnson who since have written numerous books on it, and it’s becomes a major area of research in cognitive science.
+These principles come from the field of cognitive metaphor and embodied cognition. They were first developed in the 1980s by George Lakoff and Mark Johnson who since have written numerous books on it, and it’s become a major area of research in cognitive science.
 
 These books, Metaphors We Live By and Philosophy in the Flesh are two of the major texts.
 
@@ -353,9 +354,9 @@ So I can’t go too deep into this now, but if you’re curious to learn more th
 
 Just like every other abstract topic that we can’t see or touch, programming relies heavily on these physical, embodied metaphors.
 
-We have to, because programming itself is a game of abstractions. When we run a JavaScript file, what we’re really doing is telling a microchip to flip a bunch of logic gates using tiny electrical pulses.
+We have to because programming itself is a game of abstractions. When we run a JavaScript file, what we’re really doing is telling a microchip to flip a bunch of logic gates using tiny electrical pulses.
 
-Programming tiny logic gates is very tedious and difficult for human
+Programming tiny logic gates is very tedious and difficult for humans to do.
 
 So we’ve developed a stack of elaborate metaphors that it faster and easier.
 
@@ -365,8 +366,8 @@ So we’ve developed a stack of elaborate metaphors that it faster and easier.
   alt="A graphic showing the stack of metaphors we use to understand programming concepts"
 />
 
-Some people might prefer to call these abstractions, but for the purposes of this talk, assume metaphors and abstractions are roughly the same thing.
-We can debate the differences later on twitter.
+Some people might prefer to call these abstractions, but for the purposes of this talk, assume metaphors and abstractions are roughly the same things.
+We can debate the differences later on Twitter.
 
 We simplify our binary code into machine code, which is simplified into higher-level languages like JavaScript, which we simplify with GUIs.
 
@@ -384,17 +385,17 @@ Components in React are a great example of one of these embodied metaphors in ac
 
 Components are essentially containers – they hold sets of UI elements for us.
 
-So a card component might have an image, and a button, and a paragraph inside of it that it holds.
+So a card component might have an image, a button, and a paragraph inside of it that it holds.
 
 Now the CPU that’s eventually going to render this component on the screen knows nothing about containers. It only knows machine code and how to make the right pixels light up.
 
-The container is a metaphor that we humans need in order to manage and organise the code we write.
+The container is a metaphor that we humans need to manage and organise the code we write.
 
-You the only reason you know what a container is, is because as a child, you dumped sand into a bucket and poured it out again. This interaction with the physical world, of learning through embodied experience, taught you that containers hold things. That they have insides and outsides. That they have boundaries.
+The only reason you know what a container is is that as a child, you dumped sand into a bucket and poured it out again. This interaction with the physical world, of learning through embodied experience, taught you that containers hold things. That they have insides and outsides. That they have boundaries.
 
-All of these concepts are essential and necessary for you to understand how components work in React.
+All of these concepts are essential for you to understand how components work in React.
 
-Let’s take another one. In react we structure our components in a hierarchical tree, where everything is connected back to a single root component.
+Let’s take another one. In React we structure our components in a hierarchical tree, where everything is connected back to a single root component.
 
 <BasicImage
   width="900"
@@ -414,7 +415,7 @@ And you get that they have many branches that spread out from a single root. An 
 
 The React tree metaphor is actually a double metaphor since it’s also based on the idea of a family tree.
 
-We have parent and child components that inherent props in the way children inherit qualities from their parents.
+We have parent and child components that are inherent props in the way children inherit qualities from their parents.
 
 <BasicImage
   width="900"
@@ -426,8 +427,8 @@ These are concepts we’re borrowing from the human world to interact with machi
 
 And you can probably see where I’m going with this.
 
-Since your understand of React is based in your
-pre-existing knowledge of the physical world around you, it would helpful if we could make that explicit in the way we represent and explain React.
+Since your understanding of React is based in your
+pre-existing knowledge of the physical world around you, it would help if we could make that explicit in the way we represent and explain React.
 
 And visual mediums allow us to do this.
 
@@ -448,7 +449,7 @@ As humans with bodies we inherently understand a large array of spatial concepts
   alt=""
 />
 
-And just like we use metaphors based in physical objects to understand our programmes, we also use this knowledge of physical space to talk about the structure and behaviour of programmes.
+And just like we use metaphors based on physical objects to understand our programmes, we also use this knowledge of physical space to talk about the structure and behaviour of programmes.
 
 If you think about the way we talk about the internet, there are very clear physical directions to it.
 
@@ -458,7 +459,7 @@ If you think about the way we talk about the internet, there are very clear phys
   alt=""
 />
 
-We upload data to the cloud above us, and download files to our desktops.
+We upload data to the cloud above us and download files to our desktops.
 
 We look through a browser window.
 
@@ -466,7 +467,7 @@ We browse webpages moving from left to right. So pages we’ve visited in the pa
 
 This format is also based on our western cultural mapping of time to space where we always draw the past on the left and the future on the right. But not all cultures do that.
 
-Specifically in React, we use our understanding of vertical directions and to think about how data moves.
+Specifically in React, we use our understanding of vertical directions to think about how data moves.
 
 <BasicImage
   width="900"
@@ -474,7 +475,7 @@ Specifically in React, we use our understanding of vertical directions and to th
   alt=""
 />
 
-React has a hierarchical order to components – parent components are above children and pass data downwards. Which means I guess we also have gravity in Reactland.
+React has a hierarchical order of components – parent components are above children and pass data downwards. This means I guess we also have gravity in Reactland.
 
 The idea of Prop drilling is another one that suggests we’re drilling downwards, in order to pass data deep into the tree so it also has depth.
 
@@ -526,7 +527,7 @@ We can’t see anything happening down there, and we just have to keep asking fo
 
 Which doesn’t feel like the best developer experience.
 
-This is again where visuals might come in handy, because they allow us to see multiple points in time within a single frame.
+This is again where visuals might come in handy because they allow us to see multiple points in time within a single frame.
 
 <BasicImage
   width="900"
@@ -538,7 +539,7 @@ This lets us compare things side by side in a way that we can’t with linear te
 
 Let’s look at the syntax for the useEffect hook as an example of this.
 
-Here’s four different versions of a useEffect hook which are each going to behave differently when they execute in the browser.
+Here are four different versions of a useEffect hook which are each going to behave differently when they execute in the browser.
 
 <BasicImage
   width="900"
@@ -569,7 +570,7 @@ I’ve made a simple set of diagrams that try to show the difference between the
 />
 
 - Our first version with no dependency array. The useEffect function is called on every re-render regardless of whether our count variable updates or not.
-- Our second version where the dependency array is empty, so the useEffect function is only called on the initial render. And we still don’t care what the count variable is doing.
+- Our second version is where the dependency array is empty, so the useEffect function is only called on the initial render. And we still don’t care what the count variable is doing.
 - Our third version with count in the dependency array, useEffect is called only when count updates, which then triggers a re-render.
 - Our final version, useEffect is called when count updates, and then it runs a cleanup function afterwards.
 
@@ -612,7 +613,7 @@ This is Grail from 1968 where we put text into boxes for the first time.
   alt=""
 />
 
-Here’s Pygmalion from 1975 that built on that box and arrow model.
+Here’s Pygmalion from 1975 built on that box and arrow model.
 
 <BasicImage
   width="900"
@@ -697,9 +698,9 @@ Funnily enough, the new no/low code movement looks suspiciously like visual prog
 
 Many of the interface patterns that visual programming helped develop like nodes and wires, or direct manipulation are visible in tools like Integromat, Zapier, and Webflow
 
-But rather than trying to build Turing complete visual languages able to reach industrial scales, we’ve tactically moved on to developing visual interfaces for specific use-cases in programming with sensible constraints.
+But rather than trying to build Turing complete visual languages able to reach industrial scales, we’ve tactically moved on to developing visual interfaces for specific use cases in programming with sensible constraints.
 
-I’m a huge fan of the visual programming agenda and finding ways to add more visual affordances into our current developer tools. There are tons of smart, impressive people working on the problem.
+I’m a huge fan of the visual programming agenda and finding ways to add more visual affordances to our current developer tools. There are tons of smart, impressive people working on the problem.
 
 But in many ways it’s taking the hard route – building a true visual programming medium will require overcoming a ton of design, culture, and engineering challenges.
 
@@ -709,7 +710,7 @@ But in many ways it’s taking the hard route – building a true visual program
   alt=""
 />
 
-And frankly it’s probably going to take a while…
+And frankly, it’s probably going to take a while…
 
 But there are easier ways to advance this effort in the short term.
 
@@ -721,13 +722,13 @@ We can simply sprinkle some visuals into our existing textual world.
   alt=""
 />
 
-Which means adding more diagrams and illustrations into blog posts, documentation, and learning materials.
+Which means adding more diagrams and illustrations to blog posts, documentation, and learning materials.
 
-And if we’re feeling brave, building plugins for our editors and developer tools that visualise small, scoped elements of our programmes.
+And if we’re feeling brave, build plugins for our editors and developer tools that visualise small, scoped elements of our programmes.
 
-This is essentially the low-tech, paper prototype version of building a fully fledged visual programming interface.
+This is essentially the low-tech, paper prototype version of building a fully-fledged visual programming interface.
 
-So to wrap this, here’s the thing I want to you to takeaway from this talk.
+So to wrap this up, here’s the thing I want you to take away from this talk.
 
 <BasicImage
   width="900"
@@ -743,11 +744,11 @@ We need more visuals that reveal…
 
 To make programming easier for everyone.
 
-It will make it easier for you, since you’re an embodied human who needs to learn complex, abstract programming ideas in order to do your job well.
+It will make it easier for you since you’re an embodied human who needs to learn complex, abstract programming ideas in order to do your job well.
 
-It makes it easier for all the people who don’t currently know how to programme, but are trying to learn.
+It makes it easier for all the people who don’t currently know how to programme but are trying to learn.
 
-And it makes it easier for people who aren’t developers, but need to understand what we do. Like product managers and designers who can’t read all the jargon in our text-heavy documentation.
+And it makes it easier for people who aren’t developers but need to understand what we do. Like product managers and designers who can’t read all the jargon in our text-heavy documentation.
 
 So what can you, a humble but skilled React developer, do to advance that goal?
 
@@ -757,17 +758,41 @@ If you are a current or future creator of tools for other developers, you should
 
 And finally, is to use and advocate for visual explanations in documentation and tutorials. That might mean making them for your own blog posts, or collaborating with designers if you work on larger projects with documentation.
 
-That was a lot of information packed into one talk – this was definitely a taster session to get you intrigued rather than a complete meal.
+That was a lot of information packed into one talk – this was a taster session to get you intrigued rather than a complete meal. Here's books and links you can check out to learn more:
 
-So I’ve put together a list of some things you can google to learn more.
+<References>
+  <ReferencesLink
+    title="Metaphors We Live By"
+    href="https://www.librarything.com/work/63333"
+    author="George Lakoff and Mark Johnson"
+  />
+  <ReferencesLink
+  title="Visual Explanations"
+  href="https://www.librarything.com/work/12965"
+  author="Edward Tufte"
+  />
+  <ReferencesLink
+  title="Philosophy in the Flesh"
+  href="https://www.librarything.com/work/45956"
+  author="George Lakoff and Mark Johnson" />
+  <ReferencesLink
+  title="Mind in Motion"
+  href="https://www.librarything.com/work/23069530"
+  author="Barbara Tversky" />
+  <ReferencesLink
+  title="Whole Code Catalogue"
+  href="https://futureofcoding.org/catalog/"
+  author="Future of Coding Community" />
+  <ReferencesLink
+  title="The Future of Coding Community"
+  href="https://futureofcoding.org" />
+  <ReferencesLink
+  title="Up and Down the Ladder of Abstraction"
+  href="http://worrydream.com/LadderOfAbstraction/"
+  author="Bret Victor" />
+  <ReferencesLink
+  title="Learnable Programming"
+  href="http://worrydream.com/LearnableProgramming/"
+  author="Bret Victor" />
+</References>
 
-## Referencs and Extra Reading
-
-1. [Metaphors We Live By](https://www.librarything.com/work/63333) and [Philosophy in the Flesh](https://www.librarything.com/work/45956) by George Lakoff and Mark Johnson
-2. [Mind in Motion](https://www.librarything.com/work/23069530) by Barbara Tversky
-3. [Future of Coding Community](https://futureofcoding.org)  
-   [Whole Code Catalogue](https://futureofcoding.org/catalog/)
-4. [Visual Explanations](https://www.librarything.com/work/12965) by Edward Tufte
-5. Everything [Bret Victor](http://worrydream.com) has ever made  
-   [Up and Down the Ladder of Abstraction](http://worrydream.com/LadderOfAbstraction/)  
-   [Learnable Programming](http://worrydream.com/LearnableProgramming/)
