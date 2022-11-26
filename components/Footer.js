@@ -157,4 +157,5 @@ const FooterContent = styled.div`
 const StyledFooter = styled.footer`
   padding: var(--space-xl) 0;
   border-top: 1px solid var(--color-gray-300);
+  z-index: -1;
 `;

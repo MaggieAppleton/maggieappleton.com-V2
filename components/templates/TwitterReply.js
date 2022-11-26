@@ -38,7 +38,7 @@ const StyledTweetReply = styled.section`
     align-items: center;
     justify-content: center;
     font-family: var(--font-sans);
-    padding: var(--space-s) 0 var(--space-3xl);
+    padding: 0 0 var(--space-2xl);
     gap: var(--space-3xs);
     background: white;
     color: var(--color-gray-600);

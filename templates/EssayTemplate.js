@@ -13,6 +13,7 @@ import Header from "../components/Header";
 import BackToTop from "../components/mdx/BackToTop";
 import Backlinks from "../components/templates/Backlinks";
 import { TwitterReply } from "../components/templates/TwitterReply";
+import WebMentions from "../components/templates/WebMentions";
 
 export default function EssayTemplate({
   source,
@@ -59,16 +60,18 @@ export default function EssayTemplate({
           <MDXRemote {...source} components={components} />
         </ProseWrapper>
       </StyledMain>
-      <ProseWrapper>
-        {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
-      </ProseWrapper>
       <TwitterReply
         url={`https://maggieappleton.com/${slug}/`}
         title={frontMatter.title}
       />
+
+        {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
+        <WebMentions postSlug={slug} hasBacklinks={backlinks.length > 0} />
+
     </>
   );
 }
+
 
 const TitleContainer = styled.div`
   padding: var(--space-s) 0 var(--space-l);
