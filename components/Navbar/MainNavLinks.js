@@ -34,7 +34,7 @@ function GardenPopoverLinks() {
         >
             <Link href="/essays"><DropdownLink>Essays</DropdownLink></Link>
             <Link href="/notes"><DropdownLink>Notes</DropdownLink></Link>
-            <Link href="/library"><DropdownLink>Patterns</DropdownLink></Link>
+            <Link href="/patterns"><DropdownLink>Patterns</DropdownLink></Link>
             <Link href="/library"><DropdownLink>Library</DropdownLink></Link>
             <Link href="/antilibrary"><DropdownLink>Antilibrary</DropdownLink></Link>
         </Dropdown>
