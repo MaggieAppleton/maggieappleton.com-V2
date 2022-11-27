@@ -1,11 +1,11 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
 const unionBy = require('lodash/unionBy');
-require('dotenv').config();
+require('dotenv').config()
 
 // Define Cache Location and API Endpoint
 const CACHE_DIR = "posts/data";
-const TOKEN = process.env.WEBMENTIONS_TOKEN
+const TOKEN = process.env.WEBMENTION_API_KEY
 
 async function fetchWebmentions(since, perPage = 10000) {
     let url = `https://webmention.io/api/mentions.jf2?domain=maggieappleton.com&token=${TOKEN}&per-page=${perPage}`
