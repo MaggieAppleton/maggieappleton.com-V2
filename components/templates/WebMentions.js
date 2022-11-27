@@ -20,18 +20,10 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     (mention) => mention["wm-property"] === "like-of" || "repost-of"
   );
 
-  //filter for mentions that are mentions or replies or bookmarks
-  const trueMention = postMentions.filter(
-    (mention) =>
-      mention["wm-property"] === "mention-of" ||
-      mention["in-reply-to"] ||
-      mention["bookmark-of"]
-  );
-
   //filter for mention with content
   const mentionWithContent = postMentions.filter(
     (mention) => mention["wm-property"] === "mention-of" && mention.content
-  );
+  ).sort((a, b) => new Date(b["wm-received"]) - new Date(a["wm-received"]));
 
 
   // blocklist of spam domains
@@ -462,7 +454,7 @@ const Reply = styled(motion.div)`
     color: var(--color-gray-800);
     font-weight: 600;
     margin-right: 0.5rem;
-    max-width: 320px;
+    max-width: 380px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
