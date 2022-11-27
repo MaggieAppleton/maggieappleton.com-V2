@@ -197,7 +197,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     return null;
   } else {
     return (
-      <StyledContainer>
+      <OuterContainer>
         <InnerContainer hasBacklinks={hasBacklinks}>
           <div className="header">
             <h3>Mentions around the web</h3>
@@ -205,7 +205,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
           <LikesImages likes={likesAndReposts} />
           <MentionsWithContent mentions={filteredMentions} />
         </InnerContainer>
-      </StyledContainer>
+      </OuterContainer>
     );
   }
 }
@@ -436,32 +436,29 @@ const Reply = styled(motion.div)`
   div.name-date {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
+    gap: 0.5rem;
   }
   a.author {
     font-weight: 600;
-    margin-right: 0.25rem;
     color: var(--color-gray-800);
-  }
-  span.mention-type {
-    margin-right: 0.25rem;
   }
   svg.twitter-svg {
     fill: var(--color-sea-blue);
-    margin-left: 0.25rem;
     position: relative;
     top: 2px;
   }
   time {
     font-size: calc(var(--font-size-xs) * 0.85);
     color: var(--color-gray-600);
-    margin-left: 0.4rem;
   }
 `;
 
 const LikesImagesContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0 2rem;
   div.likes-container {
@@ -498,14 +495,6 @@ const SingleImage = styled.div`
   }
 `;
 
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-sans);
-  background: white;
-  color: var(--color-gray-800);
-`;
-
 const InnerContainer = styled.div`
   width: 880px;
   margin: 0 auto;
@@ -515,6 +504,7 @@ const InnerContainer = styled.div`
   margin-top: ${({ hasBacklinks }) => (hasBacklinks ? "4rem" : "0")};
   border: 1px solid var(--color-gray-100);
   background: white;
+  max-width: 100%;
   h3 {
     font-weight: 300;
     font-size: var(--font-size-md);
@@ -529,4 +519,13 @@ const InnerContainer = styled.div`
     padding: 0;
     padding: 1.5rem 2rem 1rem;
   }
+`;
+
+const OuterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem;
+  font-family: var(--font-sans);
+  background: white;
+  color: var(--color-gray-800);
 `;
