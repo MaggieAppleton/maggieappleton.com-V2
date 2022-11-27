@@ -20,8 +20,6 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     (mention) => mention["wm-property"] === "like-of" || "repost-of"
   );
 
-  // console.log(likesAndReposts);
-
   //filter for mentions that are mentions or replies or bookmarks
   const trueMention = postMentions.filter(
     (mention) =>
@@ -34,6 +32,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
   const mentionWithContent = postMentions.filter(
     (mention) => mention["wm-property"] === "mention-of" && mention.content
   );
+
 
   // blocklist of spam domains
   const blockList = [
@@ -189,7 +188,9 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
   // filter mentionWithContent to only include domains that are not from the blacklist
   const filteredMentions = mentionWithContent.filter((mention) => {
     const domain = mention.url.split("/")[2];
-    return !blockList.includes(domain);
+    // remove mentions where mention[wm-source] matches blockList
+    const isBlocked = blockList.includes(domain);
+    return !isBlocked;
   });
 
   // if there are no mentions, return null
@@ -241,12 +242,10 @@ function getDomain(url) {
   return url.replace(/(^\w+:|^)\/\//, "").split("/")[0];
 }
 
-function formatContent(content, postSlug) {
-  // remove "maggieappleton.com" from content
+function formatContent(content) {
   const contentWithoutDomain = content.replace(/maggieappleton.com.*/g, "");
   return contentWithoutDomain.slice(0, 280);
 }
-
 
 const MentionsWithContent = ({ mentions }) => {
   const [mentionsShown, setmentionsShown] = useState(mentions.slice(0, 4));
@@ -271,18 +270,20 @@ const MentionsWithContent = ({ mentions }) => {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   return (
     <>
       <MentionsContentContainer>
-          {mentionsShown.map((mention, i) => (
-            <AnimatePresence><Reply
-            variants={replyVariants}
-            animate="visible"
-            initial="hidden"
-            exit="hidden"
-            key={i} >
+        {mentionsShown.map((mention, i) => (
+          <AnimatePresence>
+            <Reply
+              variants={replyVariants}
+              animate="visible"
+              initial="hidden"
+              exit="hidden"
+              key={i}
+            >
               {mention.author.photo ? (
                 <img src={mention.author.photo} alt={mention.author.name} />
               ) : (
@@ -305,24 +306,27 @@ const MentionsWithContent = ({ mentions }) => {
 
               <div className="content">
                 <div className="name-date">
-                  <a href={mention.url} className="author">
-                    <span>
+                  <a href={mention.url}>
+                    <span className="author">
                       {mention.author.name || getDomain(mention["wm-source"])}
                     </span>
+                    <span className="mention-type">{mentionType(mention)}</span>
+                    {sourceType(mention)}
+                    {mention.name && (
+                      <span className="post-name">in {mention.name}</span>
+                    )}
+                    <time dateTime={mention.published}>
+                      {formatDate(mention["wm-received"])}
+                    </time>
                   </a>
-                  <span className="mention-type">{mentionType(mention)}</span>
-                  {sourceType(mention)}
-                  <time dateTime={mention.published}>
-                    {formatDate(mention["wm-received"])}
-                  </time>
                 </div>
                 {mention.content && (
                   <span>{formatContent(mention.content.text)}</span>
                 )}
               </div>
             </Reply>
-            </AnimatePresence>
-          ))}
+          </AnimatePresence>
+        ))}
       </MentionsContentContainer>
       <ButtonContainer>
         {mentions.length > 4 && (
@@ -433,16 +437,17 @@ const Reply = styled(motion.div)`
     align-items: left;
     gap: 0.25rem;
   }
-  div.name-date {
+  a {
+    color: var(--color-gray-600);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem;
   }
-  a.author {
+  span.author {
     font-weight: 600;
-    color: var(--color-gray-800);
+    color: var(--color-medium-sea-blue);
   }
   svg.twitter-svg {
     fill: var(--color-sea-blue);
@@ -450,8 +455,17 @@ const Reply = styled(motion.div)`
     top: 2px;
   }
   time {
-    font-size: calc(var(--font-size-xs) * 0.85);
+    font-size: calc(var(--font-size-xs) * 0.9);
     color: var(--color-gray-600);
+  }
+  span.post-name {
+    color: var(--color-gray-800);
+    font-weight: 600;
+    margin-right: 0.5rem;
+    max-width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 
