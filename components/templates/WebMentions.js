@@ -177,15 +177,14 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     "codezero844163712.wordpress.com",
   ];
 
-  // filter mentionWithContent to only include domains that are not from the blacklist
+  // remove mentions where mention[wm-source] matches blockList
   const filteredMentions = mentionWithContent.filter((mention) => {
     const domain = mention.url.split("/")[2];
-    // remove mentions where mention[wm-source] matches blockList
     const isBlocked = blockList.includes(domain);
     return !isBlocked;
   });
 
-  // if there are no mentions, return null
+// main component. if there are no mentions, return null
   if (postMentions.length === 0) {
     return null;
   } else {
@@ -234,6 +233,7 @@ function getDomain(url) {
   return url.replace(/(^\w+:|^)\/\//, "").split("/")[0];
 }
 
+// remove link to the post within the content
 function formatContent(content) {
   const contentWithoutDomain = content.replace(/maggieappleton.com.*/g, "");
   return contentWithoutDomain.slice(0, 280);
