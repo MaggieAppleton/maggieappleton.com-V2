@@ -37,6 +37,7 @@ const Container = styled.figure`
     color: var(--color-gray-600);
     line-height: 1.5;
     width: ${(props) => props.width || "100%"};
+    max-width: 100%;
     margin-top: var(--space-xs);
   }
   @media (max-width: 768px) {

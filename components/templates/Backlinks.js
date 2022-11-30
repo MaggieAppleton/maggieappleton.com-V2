@@ -28,10 +28,12 @@ const BacklinkContainer = styled.section`
     font-family: var(--font-sans);
     background: white;
     color: var(--color-gray-800);
+    margin: 0 0.5rem;
 `;
 
 const InnerContainer = styled.div`
     width: 880px;
+    max-width: 100%;
     margin: 0 auto;
     box-shadow: var(--box-shadow-lg);
     border-radius: 8px;

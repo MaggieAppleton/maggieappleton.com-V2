@@ -408,6 +408,7 @@ const MentionsContentContainer = styled(motion.div)`
   align-items: flex-start;
   padding: 0 2rem 1.5rem;
   margin-top: var(--space-s);
+  max-width: 100%;
 `;
 
 const Reply = styled(motion.div)`
@@ -415,6 +416,7 @@ const Reply = styled(motion.div)`
   flex-direction: row;
   align-items: left;
   margin: 1rem 0;
+  max-width: 100%;
   img,
   svg.placeholder-svg {
     border-radius: 50%;
@@ -428,6 +430,7 @@ const Reply = styled(motion.div)`
     flex-direction: column;
     align-items: left;
     gap: 0.25rem;
+    max-width: 100%;
   }
   a {
     color: var(--color-gray-600);
