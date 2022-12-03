@@ -1,0 +1,114 @@
+---
+title: "WebMentions for Lazy Developers"
+description: "The minimum effort required to make WebMentions work on a personal website"
+startDate: "2022-11-29"
+updated: "2022-11-29"
+type: "note"
+topics: ["Web Development", "JavaScript", "IndieWeb"]
+growthStage: "seedling"
+---
+
+<AssumedAudience>
+People who know enough modern web development and JavaScript to have set up their own website in something like Next.js, Eleventy, Hugo, or Jekyll. You're either a web developer or an advanced web hobbyist.
+</AssumedAudience>
+
+<Spacer size="xs"/>
+
+<IntroParagraph>
+
+W[ebMentions](https://indieweb.org/Webmention) are a standardised way to find all the places across the web that link to your website and receive data about those links.
+
+</IntroParagraph>
+
+ If you write a blog post on postmodern aesthetics and someone else mentions it in their post about flat design, WebMentions sends a “ping” to your website. This “ping” is a JSON object with lots of handy information in it – the name of the original author, the title of the post, a link to the post, and much more. You can use this data to display the mention at the bottom of your own blog post.
+
+It's a bit like a comments section, except the “comments” are other people's blog posts and websites. You can also listen for mentions on social media sites like Twitter, Mastodon, Reddit, Tumblr, etc.
+
+There are already a [bunch of]() [great]() [guides]() on how to do this around the web. This post is frankly a bit redundant, but I wanted to write up the laziest possible implementation. If I get a handful of people to implement WebMentions who wouldn't otherwise have, it'll be worth it.
+
+### You will need:
+1. A personal website that's live on the internet
+2. To know HTML, CSS, and JavaScript
+3. To know how to fetch data from an API
+
+### Step 1: Sign up at WebMention.io
+[Webmention.io](https://webmention.io/) is a service that makes this all reasonably simple. You sign up with them using your live domain name.
+
+### Step 2: Add links to your HTML header
+
+```html
+<link rel="webmention" href=`https://webmention.io/{yourUsername}/webmention` />
+<link rel="pingback" href=`https://webmention.io/{yourUsername}/xmlrpc` />
+```
+
+The "username" here is your domain name you used to sign up on webmentions.io. So I would personally replace `{yourUsername}` with `https://maggieappleton.com`. These will start collecting webmentions and pingbacks for you.
+
+### Step 3: Sign up with Brid.gy
+
+Brid.gy is a site that gathers mentions from major social media sites like Twitter, Mastodon, Reddit, etc. and funnels them into your WebMentions. Without this you may find your mentions a bit sparse.
+
+### Step 4: Write a script to fetch mentions
+
+Make a new JavaScript file somewhere in your project repo. Ideally, in a folder called something like `utils` or `scripts`. Wherever you keep files that run miscellaneous JavaScript helper functions. We're going to fetch WebMentions in this file, so you should call it something sensible like `get-webmentions.js`. 
+
+```js
+Fetch API here
+
+console.log(results)
+```
+
+Once you've validated that the WebMentions are coming in, it's time to store them somewhere.
+
+This is where other people get fancy with server-side functions and Github actions. I will not be getting fancy. Onto step 5.
+
+### Step 5: Write mentions to a static JSON file
+
+We now need to store the data we get back from that API call. The simplest place to store them is in a JSON file in your project.
+
+In `get-webmentions.js` we're going to swap out our `console.log(results)` line for a function that writes the data to a file.
+
+You'll need a few imports for this process. First, we'll use `fs` which is a set of node functions that let you access the local file system. We'll also need `fetch` which lets you fetch data from APIs. 
+
+Use either yarn or npm to install these: `npm install lodash/unionBy dotenv` or `yarn add lodash/unionBy dotenv`
+
+Import these at the top of your file
+
+```js
+const fs = require("fs");
+const fetch = require("node-fetch");
+const unionBy = require('lodash/unionBy');
+require('dotenv').config()
+```
+
+```js
+// Define Cache Location and API Endpoint
+const CACHE_DIR = "posts/data";
+const TOKEN = process.env.WEBMENTION_API_KEY
+const DOMAIN = "maggieappleton.com"
+
+async function fetchWebmentions(since, perPage = 10000) {
+    let url = `https://webmention.io/api/mentions.jf2?domain=${DOMAIN}&token=${TOKEN}&per-page=${perPage}`
+    if (since) url += `&since=${since}`
+
+    const response = await fetch(url)
+    if (response.ok) {
+        const feed = await response.json()
+        console.log(
+            `>>> ${feed.children.length} new webmentions fetched`
+        )
+        return feed
+    }
+
+    return null
+}
+```
+
+I heavily copied and pasted this from Max Boeck's [implementation](https://github.com/maxboeck/mxb/blob/master/src/data/webmentions.js). Thank you Max <span role="img">🙏</span>
+
+### Step 6: Run the script
+
+Run your script locally by opening your terminal and typing `node scripts/get-webmentions.js` (replace that path with the actual path to your own file)
+
+This is called a "client-side script." Meaning we run it on our own computer, rather than in "the cloud" (aka. someone else's computer). Doing this manually means that every time you want to fetch new Webmentions, you'll have to run this script yourself. Could we automate this? Sure, but that would take extra work and we're being lazy here.
+
+I also like the simplicity of doing this manually. Every time I write a bunch of new stuff on the site I call the function. It's like checking your notifications on Twitter.
