@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2022-12-10T21:25:12.476Z",
+  "lastFetched": "2022-12-16T18:28:50.561Z",
   "children": [
     {
       "type": "entry",
@@ -15098,6 +15098,54 @@
         "text": "Love this piece of inspiration on how we could make the CLI more accessible/easier within the GUI. Especially for building products with end-user groups with different levels of understanding of programming.\nmaggieappleton.com/programming-po… via @mappletons"
       },
       "mention-of": "https://maggieappleton.com/programming-portals",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "limaocravo",
+        "photo": "",
+        "url": "https://limaocravo.blog/author/limaocravo/"
+      },
+      "url": "https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/",
+      "published": "2022-12-15T16:34:31-03:00",
+      "wm-received": "2022-12-15T19:34:35Z",
+      "wm-id": 1581723,
+      "wm-source": "https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/",
+      "wm-target": "https://maggieappleton.com/garden",
+      "name": "Que tal cultivar sua criatividade no jardim digital?",
+      "content": {
+        "html": "<p>Em um mundo cada vez mais superficial, os jardins digitais dão novas oportunidades para encontrarmos novas conexões com mais profundidade e nuances. Se você gosta de escrever online e está sempre em busca de novas ideias, em algum momento irá se deparar com o conceito <em>digital gardens</em>, os jardins digitais.</p>\n<p>Segundo uma pesquisa realizada pelo <a href=\"https://www.technologyreview.com/2020/09/03/1007716/digital-gardens-let-you-cultivate-your-own-little-bit-of-the-internet/\">MIT</a>, os jardins digitais não são blogs, nem redes sociais, mas também não são sites totalmente experimentais e sem sentido. É um site criado com o objetivo de compartilhar suas próprias ideias, projetos ou coisas estranhas de forma livre, com menos foco em performance e mais foco em compartilhar seus interesses com o público, como se as pessoas pudessem entrar em sua cabeça por uns instantes.</p>\n<p><a href=\"https://maggieappleton.com/garden\">Maggie Appleton</a>, uma das referências no assunto, separa seus temas por níveis de “amadurecimento”. Em seu site existem textos em nível de semeadura, florescimento ou que já são plantas perenes.</p>\n<p>Seu jardim digital não pode seguir regras, coloque para o mundo qualquer coisa. Há diversos assuntos e várias possibilidades, desde discussões de livros e filmes, até reflexões sobre filosofia e política. Tudo depende de como sua mente trabalha e o que você se interessa, geralmente os temas mais inusitados são os que conseguem mais leitores.</p>\n<p>Fontes: inspi e médium</p>\n\n<h3>Compartilhe:</h3>\n<ul><li><a href=\"https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/?share=twitter\" title=\"Click to share on Twitter\"><span></span><span>Click to share on Twitter (Opens in new window)</span></a></li>\n<li><a href=\"https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/?share=facebook\" title=\"Click to share on Facebook\"><span></span><span>Click to share on Facebook (Opens in new window)</span></a></li>\n<li><a href=\"https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/?share=linkedin\" title=\"Click to share on LinkedIn\"><span></span><span>Click to share on LinkedIn (Opens in new window)</span></a></li>\n<li><a href=\"https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/?share=jetpack-whatsapp\" title=\"Click to share on WhatsApp\"><span></span><span>Click to share on WhatsApp (Opens in new window)</span></a></li>\n<li>\n</li></ul>\n\n<h3>Like this:</h3>\n\n<span><span>Like</span></span> <span>Loading...</span>\n\n<span></span><a></a>",
+        "text": "Em um mundo cada vez mais superficial, os jardins digitais dão novas oportunidades para encontrarmos novas conexões com mais profundidade e nuances. Se você gosta de escrever online e está sempre em busca de novas ideias, em algum momento irá se deparar com o conceito digital gardens, os jardins digitais.\nSegundo uma pesquisa realizada pelo MIT, os jardins digitais não são blogs, nem redes sociais, mas também não são sites totalmente experimentais e sem sentido. É um site criado com o objetivo de compartilhar suas próprias ideias, projetos ou coisas estranhas de forma livre, com menos foco em performance e mais foco em compartilhar seus interesses com o público, como se as pessoas pudessem entrar em sua cabeça por uns instantes.\nMaggie Appleton, uma das referências no assunto, separa seus temas por níveis de “amadurecimento”. Em seu site existem textos em nível de semeadura, florescimento ou que já são plantas perenes.\nSeu jardim digital não pode seguir regras, coloque para o mundo qualquer coisa. Há diversos assuntos e várias possibilidades, desde discussões de livros e filmes, até reflexões sobre filosofia e política. Tudo depende de como sua mente trabalha e o que você se interessa, geralmente os temas mais inusitados são os que conseguem mais leitores.\nFontes: inspi e médium\n\nCompartilhe:\nClick to share on Twitter (Opens in new window)\nClick to share on Facebook (Opens in new window)\nClick to share on LinkedIn (Opens in new window)\nClick to share on WhatsApp (Opens in new window)\n\nLike this:\n\nLike Loading..."
+      },
+      "mention-of": "https://maggieappleton.com/garden",
+      "wm-property": "mention-of",
+      "wm-private": false,
+      "rels": {
+        "canonical": "https://limaocravo.blog/2022/12/15/que-tal-cultivar-sua-criatividade-no-jardim-digital/"
+      }
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Josh Brewer",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/86fff4da4f6312f18d349510b85b201b8911b49b9e072029f3898203ef4f9462.jpg",
+        "url": "https://twitter.com/jbrewer"
+      },
+      "url": "https://twitter.com/jbrewer/status/1602768764130320384",
+      "published": "2022-12-13T20:53:46+00:00",
+      "wm-received": "2022-12-13T22:28:42Z",
+      "wm-id": 1580902,
+      "wm-source": "https://brid.gy/post/twitter/mappletons/1602768764130320384",
+      "wm-target": "https://maggieappleton.com/programming-pictures",
+      "content": {
+        "html": "Consider me a huge <a href=\"https://twitter.com/Mappletons\">@Mappletons</a> fan. I love everything I've read from her. This one is a year old and feels like it’s timeless. Thanks for sharing your insights Maggie! \n\nNow go read it y'all! \n\n<a href=\"https://maggieappleton.com/programming-pictures\">maggieappleton.com/programming-pi…</a>",
+        "text": "Consider me a huge @Mappletons fan. I love everything I've read from her. This one is a year old and feels like it’s timeless. Thanks for sharing your insights Maggie! \n\nNow go read it y'all! \n\nmaggieappleton.com/programming-pi…"
+      },
+      "mention-of": "https://maggieappleton.com/programming-pictures",
       "wm-property": "mention-of",
       "wm-private": false
     }
