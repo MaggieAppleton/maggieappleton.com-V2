@@ -23,7 +23,7 @@ import {
   Title3,
   Title4,
   Subtext,
-  SmallCaps
+  SmallCaps,
 } from "../components/Typography";
 import {
   projectFilePaths,
@@ -75,9 +75,7 @@ export const components = {
     import("../components/mdx/BlockquoteCitation")
   ),
   Subtext: Subtext,
-  Accordion: dynamic(() =>
-    import("../components/mdx/Accordion")
-  ),
+  Accordion: dynamic(() => import("../components/mdx/Accordion")),
   Footnote: dynamic(() => import("../components/mdx/Footnote"), {
     ssr: false,
   }),
@@ -168,21 +166,36 @@ export const components = {
   }),
 
   // Unique components – used in specific essays or notes
-  StickyPosition: dynamic(() => import("../components/unique/css-position/StickyPosition"), {
-    ssr: false,
-  }),
-  RelativeCSSPosition: dynamic(() => import("../components/unique/css-position/RelativeCSSPosition"), {
-    ssr: false,
-  }),
-  AbsoluteCSSPosition: dynamic(() => import("../components/unique/css-position/AbsoluteCSSPosition"), {
-    ssr: false,
-  }),
-  FixedCSSPosition: dynamic(() => import("../components/unique/css-position/FixedCSSPosition"), {
-    ssr: false,
-  }),
-  StaticCSSPosition: dynamic(() => import("../components/unique/css-position/StaticCSSPosition"), {
-    ssr: false,
-  }),
+  StickyPosition: dynamic(
+    () => import("../components/unique/css-position/StickyPosition"),
+    {
+      ssr: false,
+    }
+  ),
+  RelativeCSSPosition: dynamic(
+    () => import("../components/unique/css-position/RelativeCSSPosition"),
+    {
+      ssr: false,
+    }
+  ),
+  AbsoluteCSSPosition: dynamic(
+    () => import("../components/unique/css-position/AbsoluteCSSPosition"),
+    {
+      ssr: false,
+    }
+  ),
+  FixedCSSPosition: dynamic(
+    () => import("../components/unique/css-position/FixedCSSPosition"),
+    {
+      ssr: false,
+    }
+  ),
+  StaticCSSPosition: dynamic(
+    () => import("../components/unique/css-position/StaticCSSPosition"),
+    {
+      ssr: false,
+    }
+  ),
   MysteriousVoid: dynamic(() => import("../components/unique/MysteriousVoid"), {
     ssr: false,
   }),
@@ -309,6 +322,9 @@ export const components = {
       ssr: false,
     }
   ),
+  AIConversation: dynamic(() => import("../components/unique/AIConversation"), {
+    ssr: false,
+  }),
 };
 
 export default function PostPage({
