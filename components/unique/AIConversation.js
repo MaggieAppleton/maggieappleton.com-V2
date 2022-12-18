@@ -68,15 +68,15 @@ function AIConversation() {
             That's right. In fact there's a Nostrum that's been put about a long
             time that as soon as it works it stops being artificial intelligence
             which is a little bit unfair because then, of course, that means
-            that the AI is a field of continual failure. But I think that's in
-            some ways accurate.
+            that AI is a field of continual failure. But I think that's in some
+            ways accurate.
           </p>
           <p>
             For example, every time you drive your car and you get directions
             there's an AI algorithm running in your cellphone that is computing
             the shortest paths and incorporating expected delays and so on. This
-            is a very classical AI algorithm that was developed in the late 60s
-            and early 70s and no one thinks of that as AI anymore.
+            is a very classical AI algorithm that was developed in the late '60s
+            and early '70s and no one thinks of that as AI anymore.
           </p>
         </ChatBubble>
       </Speaker2>
