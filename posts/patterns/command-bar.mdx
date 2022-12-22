@@ -13,7 +13,7 @@ topics: ["Design"]
 
 Graphical user interfaces (GUIs) have been the bread and butter of user interface design since the mid-1980s. Having all your computational objects and actions laid out in little pixelated boxes, icons, toggles, and buttons make it easy to understand what you can do with a computer. They make the affordances _visible_, as we say in nob-designer-land.
 
-<BasicImage margin="0.5rem auto" src="/images/posts/command-bar/gui-buttons.png" width="700px" alt="A set of buttons, toggles, and sliders" />
+<ResponsiveImage margin="0.5rem auto" src="/images/posts/command-bar/gui-buttons.png" width="700px" alt="A set of buttons, toggles, and sliders" />
 
 Before GUIs, every computer interface was a command-line interface (CLI). You typed memorised text-based commands into an input. This certainly kept the screen free of clutter but had several downsides. It was difficult to remember what commands were available. You couldn't see the current state of the system. Everything was hidden away behind that blinking cursor.
 
@@ -32,11 +32,11 @@ Well-designed GUIs make interfaces easier for new users to learn, improve discov
 
 Here's a series of screenshots from Cinema 4D, a popular 3D modelling and animation app:
 
-<ImageFrame margin="0 auto" src="/images/posts/command-bar/cinema4d3.jpeg" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
+<ResponsiveImage framed margin="0 auto" src="/images/posts/command-bar/cinema4d3.jpeg" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
 
-<ImageFrame margin="0 auto" src="/images/posts/command-bar/cinema4d2.jpeg" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
+<ResponsiveImage framed margin="0 auto" src="/images/posts/command-bar/cinema4d2.jpeg" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
 
-<ImageFrame margin="0 auto 2rem" src="/images/posts/command-bar/cinema4d4.jpeg" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
+<ResponsiveImage framed margin="0 auto 2rem" src="/images/posts/command-bar/cinema4d4.jpeg" width="1300px" alt="The interface for Cinema4D. A 3D triangle in the centre surrounded by a huge array of toolbars and panels" />
 
 You absolutely could not do 3D modelling without a graphical interface. Defining 3D objects in text without being able to see them would be laborious, error-prone, and absurd. And yet _look_ at the number of icons, panels, and toolbar options in these screenshots!
 
@@ -57,13 +57,13 @@ Command bars are command-line bars that pop up in the middle of the screen when 
 
 They typically look like this:
 
-<ImageFrame src="/images/posts/command-bar/linear-cmd.jpg" width="1100px" alt="The command K bar in Linear" showalt />
+<ResponsiveImage framed src="/images/posts/command-bar/linear-cmd.jpg" width="1100px" alt="The command K bar in Linear" showalt />
 
 This one is from [Linear](https://linear.app/) - an issue-tracking app for product teams. Bars like this let users search through all the available commands in an application. Rather than remembering which sub-sub-sub menu a function lives in, users need only remember its name. 
 
 They don't even have to remember its exact name. Fuzzy search can help them find it by simply typing in similar names or related keywords. For example, if I type “make” into a command bar, it's likely to show me any actions related to creating new items. Even if “make” isn't part of the action name.
 
-<ImageFrame src="/images/posts/command-bar/fuzzysearch.jpg" width="1100px" alt="Fuzzy search in Linear lets you find actions without needing the exact name" showalt />
+<ResponsiveImage framed src="/images/posts/command-bar/fuzzysearch.jpg" width="1100px" alt="Fuzzy search in Linear lets you find actions without needing the exact name" showalt />
 
 This makes it much faster and easier to find things. If you're in the middle of writing something, you don't even have to take your hands off the keyboard. A few quick finger strokes and you can find the action you need and run it. Far faster than navigating a small cursor through a series of menu mazes.
 
@@ -81,13 +81,13 @@ This lack of friction means it's easy for product teams to pop one of these in w
 
 [Todoist](https://todoist.com/) is a popular task manager that puts a lot of emphasis on quick actions via keyboard shortcuts. You can see in their bar they're using the space on the right-hand side of each action to remind users of keyboard combos.
 
-<ImageFrame src="/images/posts/command-bar/todoist.jpg" width="1000px" />
+<ResponsiveImage framed src="/images/posts/command-bar/todoist.jpg" width="1000px" />
 
 ### Framer
 
 [Framer](https://www.framer.com/) is a design & prototyping tool. You can search for both actions and components, and it fittingly gives you a nice big visual preview. Their command bar is more graphical than most with colourful icons and buttons embedded inside it.
 
-<ImageFrame src="/images/posts/command-bar/framer-cmd.jpg" width="1000px" />
+<ResponsiveImage framed src="/images/posts/command-bar/framer-cmd.jpg" width="1000px" />
 
 ### Tana
 
@@ -107,7 +107,7 @@ This is a good example of how users can chain multiple actions together in comma
 
 [Raycast](https://www.raycast.com/) takes the concept of a command-bar-as-universal-interface to the extreme. The whole app is just a command bar. But it has access to your full desktop environment and integrates with most major applications.
 
-<ImageFrame src="/images/posts/command-bar/raycast1.jpg" width="1000px" margin="1rem auto" />
+<ResponsiveImage framed src="/images/posts/command-bar/raycast1.jpg" width="1000px" margin="1rem auto" />
 
 Think of Apple's [Spotlight](https://support.apple.com/en-gb/guide/mac-help/mchlp1008/mac) feature, but if search actually worked and it could tap into all your other applications – Slack messages, Google drive files, Github PR, Figma files, etc. Raycast very cleverly designed the system to be extensible. Any developer can build a new extension for it, meaning there's no ceiling to the number of actions potentially available in it.
 
@@ -122,8 +122,8 @@ Here's a quick demo of me accessing Wikipedia, Spotify, Google, and even queryin
 
 [Lazy](https://lazy.so/) is following the spirit of Raycast, but specifically for information capture and knowledge management. It's a bar you can pull up in any context – twitter, an article, a youtube video, email – and natively capture key information into a personal database.
 
-<ImageFrame src="/images/posts/command-bar/lazy1.jpg" width="800px" margin="1rem auto 0" />
-<ImageFrame src="/images/posts/command-bar/lazy3.jpg" width="800px" margin="0 auto 2rem" />
+<ResponsiveImage framed src="/images/posts/command-bar/lazy1.jpg" width="800px" margin="1rem auto 0" />
+<ResponsiveImage framed src="/images/posts/command-bar/lazy3.jpg" width="800px" margin="0 auto 2rem" />
 
 <TweetEmbed tweetId="1589633050107080704" />
  
@@ -135,12 +135,12 @@ They're still pre-release so you'll have to settle for the fancy landing page an
 
 The origins of command bars go back to 2005 when Apple released their [Spotlight feature](https://www.anandtech.com/show/1671/6) in MacOS 10.4 X Tiger. The update introduced a universal search bar you could launch by hitting `CMD + Space`. As part of the native operating system, it had access to every kind of file and function: documents, email messages, photos, settings, etc.
 
-<BasicImage src="/images/posts/command-bar/mac-spotlight.jpeg" width="400px" margin="1rem auto 3rem" alt="Spotlight in MacOS Tiger" sourceUrl="https://www.anandtech.com/show/1671/6" sourceTitle="Anand Tech" showalt />
+<ResponsiveImage src="/images/posts/command-bar/mac-spotlight.jpeg" width="400px" margin="1rem auto 3rem" alt="Spotlight in MacOS Tiger" sourceUrl="https://www.anandtech.com/show/1671/6" sourceTitle="Anand Tech" showalt />
 
 Spotlight is still a core feature of Mac today and set many of the standards for other command bars to copy.
 
-<BasicImage src="/images/posts/command-bar/spotlight1.jpg" width="800px" margin="0 auto" />
-<BasicImage src="/images/posts/command-bar/spotlight2.jpg" width="800px" margin="0 auto 2rem" showalt alt="Spotlight on MacOS Monterey (2022)" />
+<ResponsiveImage src="/images/posts/command-bar/spotlight1.jpg" width="800px" margin="0 auto" />
+<ResponsiveImage src="/images/posts/command-bar/spotlight2.jpg" width="800px" margin="0 auto 2rem" showalt alt="Spotlight on MacOS Monterey (2022)" />
 
 Independent developers swooped in to build advanced versions of Spotlight and application launchers for Mac. [Quicksilver](https://qsapp.com/) was one of the earliest ones 
 
@@ -158,7 +158,7 @@ Independent developers swooped in to build advanced versions of Spotlight and ap
 
 The plugin [Sketch runner](https://sketchrunner.com/) added a CLI experience on top of the once-popular design platform [Sketch](https://www.sketch.com/).
 
-<ImageFrame src="/images/posts/command-bar/sketch.jpg" width="1100px" alt="The sketch runner command bar" showalt />
+<ResponsiveImage framed src="/images/posts/command-bar/sketch.jpg" width="1100px" alt="The sketch runner command bar" showalt />
 
 
 

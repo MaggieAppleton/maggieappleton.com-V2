@@ -109,6 +109,9 @@ export const components = {
   BasicImage: dynamic(() => import("../components/mdx/BasicImage"), {
     ssr: false,
   }),
+  ResponsiveImage: dynamic(() => import("../components/mdx/ResponsiveImage"), {
+    ssr: false,
+  }),
   ImageFrame: dynamic(() => import("../components/mdx/ImageFrame"), {
     ssr: false,
   }),
