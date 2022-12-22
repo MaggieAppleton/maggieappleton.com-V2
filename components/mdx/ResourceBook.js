@@ -26,7 +26,6 @@ export default function ResourceBook({
           width={small ? 158 : 220}
           height={small ? 228 : 319}
           alt={title}
-          layout="responsive"
           src={image}
         />
       </div>
@@ -81,7 +80,7 @@ const Metadata = styled.div`
     width: 100%;
     max-width: 36ch;
   }
-  ,
+
   h3,
   p,
   span {

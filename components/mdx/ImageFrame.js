@@ -10,9 +10,12 @@ export default function ImageFrame({
   sourceTitle,
   ...props
 }) {
+  const { srcSet } = props;
+  delete props.srcSet;
+
   return (
     <Container margin={margin} {...props}>
-      <StyledImageFrame src={src} alt={alt} width={width || "100%"} />
+      <StyledImageFrame src={src} srcSet={srcSet} alt={alt} width={width || "100%"} />
       {showalt ? (
         sourceUrl ? (
           <figcaption>
