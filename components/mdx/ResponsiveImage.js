@@ -9,7 +9,6 @@ export default function ResponsiveImage(props) {
   }
 
   let srcSet;
-  let sizes;
   const srcParts = props.src.split("/");
 
   if (srcParts[1] === "images" && srcParts[2] === "posts") {
@@ -25,7 +24,7 @@ export default function ResponsiveImage(props) {
       .join(", ");
   }
 
-  if (props.framed) return <ImageFrame srcSet={srcSet} sizes={sizes} {...props} />;
+  if (props.framed) return <ImageFrame srcSet={srcSet} {...props} />;
 
-  return <BasicImage srcSet={srcSet} sizes={sizes} {...props} />;
+  return <BasicImage srcSet={srcSet} {...props} />;
 }
