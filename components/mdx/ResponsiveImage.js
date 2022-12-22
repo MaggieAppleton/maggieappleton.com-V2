@@ -1,13 +1,15 @@
 import BasicImage from "./BasicImage";
+import ImageFrame from "./ImageFrame";
 
-export default function BasicImageOptimised(props) {
+export default function ResponsiveImage(props) {
   if (!props.src) {
-    const message = "You need to pass a src attribute to a BasicImageOptimised component";
+    const message = "You need to pass a src attribute to a ResponsiveImage component";
     console.error(message);
     throw new Error(message); // Remove this if it gets annoying
   }
 
   let srcSet;
+  let sizes;
   const srcParts = props.src.split("/");
 
   if (srcParts[1] === "images" && srcParts[2] === "posts") {
@@ -23,5 +25,7 @@ export default function BasicImageOptimised(props) {
       .join(", ");
   }
 
-  return <BasicImage srcSet={srcSet} {...props} />;
+  if (props.framed) return <ImageFrame srcSet={srcSet} sizes={sizes} {...props} />;
+
+  return <BasicImage srcSet={srcSet} sizes={sizes} {...props} />;
 }
