@@ -16,15 +16,14 @@ export default function ProjectCard({ slug, cover, title, date, topics }) {
     <Link href={`/${slug}`}>
       <a>
         <StyledProjectCard>
-          <div style={{ maxWidth: "450", maxHeight: "338" }}>
+          <ImageWrapper>
             <Image
               src={cover}
               alt={title}
               width={300}
               height={225}
-              layout="responsive"
             />
-          </div>
+          </ImageWrapper>
           <Metadata>
             <h3>{title}</h3>
             <div className="metadata">
@@ -39,8 +38,11 @@ export default function ProjectCard({ slug, cover, title, date, topics }) {
   );
 }
 
-const ImageContainer = styled.div`
-  display: block;
+const ImageWrapper = styled.div`
+  display: grid;
+  place-content: center;
+  max-width: 450px;
+  max-height: 338px;
 `;
 
 const Metadata = styled.div`
