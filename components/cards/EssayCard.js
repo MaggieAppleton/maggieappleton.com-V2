@@ -20,12 +20,7 @@ export default function EssayCard({
         <StyledEssayCard variants={variants}>
           {cover && (
             <ImageWrapper>
-              <Image
-                src={cover}
-                alt={title}
-                width={300}
-                height={300}
-              />
+              <Image src={cover} alt={title} width={400} height={400} />
             </ImageWrapper>
           )}
           <h3>{title}</h3>
@@ -37,7 +32,7 @@ export default function EssayCard({
             </span>
           </MetadataContainer>
         </StyledEssayCard>
-        </a>
+      </a>
     </Link>
   );
 }
@@ -47,7 +42,7 @@ const ImageWrapper = styled.div`
   place-items: center;
   max-width: 450px;
   max-height: 450px;
-`
+`;
 
 const MetadataContainer = styled.div`
   display: flex;
