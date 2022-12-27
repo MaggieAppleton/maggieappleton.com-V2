@@ -29,6 +29,10 @@ const Cite = styled.cite`
 `;
 
 const Blockquote = styled.blockquote`
+  p {
+    font-size: var(--font-size-m);
+    line-height: 1.25;
+  }
   & > p {
     margin: var(--space-m) auto var(--space-s) !important;
   }
