@@ -17,7 +17,7 @@ export const Title1 = styled(motion.h1)`
 `;
 
 export const Title2 = styled(motion.h2)`
-  font-size: var(--font-size-xl);
+  font-size: calc(var(--font-size-xl) / 1.2);
   font-family: var(--font-serif);
   color: var(--color-gray-800);
   font-weight: 100;
