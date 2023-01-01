@@ -8,7 +8,7 @@ import {
   TwitterIcon,
   LinkedInIcon,
   DribbbleIcon,
-  MastodonIcon
+  MastodonIcon,
 } from "./icons/SocialMediaIcons";
 
 export default function Footer() {
@@ -40,6 +40,9 @@ export default function Footer() {
               <MastodonIcon />
             </a>
           </SocialMediaIcons>
+          <span className="copyright">
+            © {new Date().getFullYear()} Maggie Appleton
+          </span>
         </RSSFeed>
         <SitemapList>
           {[
@@ -59,9 +62,9 @@ export default function Footer() {
           ].map((link, i) => {
             return (
               <li key={i}>
-                  <UnderlineHoverLink href={link.slug}>
-                    {link.text}
-                  </UnderlineHoverLink>
+                <UnderlineHoverLink href={link.slug}>
+                  {link.text}
+                </UnderlineHoverLink>
               </li>
             );
           })}
@@ -74,7 +77,7 @@ export default function Footer() {
 const SocialMediaIcons = styled.div`
   display: flex;
   align-items: center;
-  margin-top: var(--space-m);
+  margin: var(--space-m) 0 var(--space-2xs);
   grid-gap: var(--space-xs);
   a {
     color: var(--color-gray-400);
@@ -98,7 +101,7 @@ const RSSFeed = styled.div`
     font-size: var(--font-size-md);
     font-family: var(--font-body);
     font-weight: 300;
-    margin-bottom: var(--space-s);
+    margin-bottom: var(--space-xs);
   }
   button {
     display: inline-flex;
@@ -121,6 +124,12 @@ const RSSFeed = styled.div`
       box-shadow: var(--box-shadow-sm);
     }
   }
+  span.copyright {
+    font-size: var(--font-size-xs);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: var(--color-gray-500);
+  }
 `;
 
 const SitemapList = styled.ul`
@@ -140,7 +149,7 @@ const FooterContent = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   max-width: 1400px;
-  margin: var(--space-l) auto;
+  margin: var(--space-m) auto;
   padding: 0 var(--space-l);
   @media ${breakpoints.mediaMD} {
     margin: var(--space-m) auto;
