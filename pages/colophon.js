@@ -8,6 +8,11 @@ import ComingSoon from "../components/mdx/ComingSoon";
 import AssumedAudience from "../components/mdx/AssumedAudience";
 import ResourceBook from "../components/mdx/ResourceBook";
 import Alert from "../components/mdx/Alert";
+import Footnote from "../components/mdx/Footnote";
+import SeedlingIcon from "../components/icons/SeedlingIcon";
+import BuddingIcon from "../components/icons/BuddingIcon";
+import EvergreenIcon from "../components/icons/EvergreenIcon";
+import { Spacer } from "../components/Spacer";
 
 export default function Colophon() {
   return (
@@ -23,6 +28,72 @@ export default function Colophon() {
         </HeaderContainer>
         <MainSection>
           <ProseWrapper>
+            <p>
+              I designed and built this site myself.
+              <Footnote idName={1}>
+                Mostly. My{" "}
+                <a href="https://www.davebernhard.com/">long-term partner</a> is
+                also a developer and I sometimes coerce him into building small
+                features or fixing stubborn bugs.
+              </Footnote>{" "}
+              Everything is open souce and published on{" "}
+              <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">
+                Github
+              </TooltipLink>{" "}
+              if you'd like to poke around. The whole thing is frankly
+              overengineered for a personal website, but playing with transient
+              web technologies is an indulgent hobby I don't want to relinquish.
+              I started building it in late 2021 and tinker on it regularly.
+            </p>
+            <Title3>Technologies & Techniques</Title3>
+
+            <p>
+              <TooltipLink href="https://nextjs.org/">Next.js</TooltipLink> does
+              most of the heavy lifting – it's a static site builder that takes
+              care of a lot of otherwise cumbersome optimsiations like
+              server-side rendering, image loading, and routing.
+            </p>
+            <p>
+              I used{" "}
+              <TooltipLink href="https://reactjs.org/">React</TooltipLink> and{" "}
+              <TooltipLink href="https://styled-components.com/">
+                styled components
+              </TooltipLink>{" "}
+              to build and design the interface. All the individual notes and
+              essays are written in{" "}
+              <TooltipLink href="https://github.com/mdx-js/mdx">
+                MDX
+              </TooltipLink>{" "}
+              – a souped-up version of markdown that makes it easy to design and
+              reuse custom components and interactive JavaScript elements.{" "}
+              <TooltipLink href="https://vercel.com/">Vercel</TooltipLink> takes
+              care of hosting. Animations are built with{" "}
+              <TooltipLink href="https://www.framer.com/motion/">
+                Framer Motion
+              </TooltipLink>
+              .
+            </p>
+            <Title3>Writing and Editing Content</Title3>
+            <p>
+              My CMS is just a bunch of flat files and folders. When I edit
+              content on here I'm just typing text and syntax into MDX and JS
+              files in VS Code. There's no fancy pipeline shuttling content
+              directly from my personal knowledge management database (eg.{" "}
+              <TooltipLink href="https://roamresearch.com">Roam</TooltipLink> or{" "}
+              <TooltipLink href="https://tana.inc">Tana</TooltipLink>
+              ). All my ideas start and marinate in my Tana, but I wait for them
+              to mature a bit before they move over to this garden.
+            </p>
+            <p>
+              I know other people prefer setups where they can click one button
+              and push content from personal notes to the web. I personally like
+              having more control over how the material is displayed and laid
+              out. Working directly in the native medium of the web – HTML, CSS,
+              and JavaScript – gives me fine-grained control. It allows me to
+              play with typography, illustrations, graphic design, videos,
+              animations, and interactive elements that pure text pipelines
+              can't support. Text isn't the only way to represent ideas.
+            </p>
             <Title3>Typography</Title3>
             <p>
               Headers are set in{" "}
@@ -54,49 +125,19 @@ export default function Colophon() {
               which uses some wild CSS calculations to continuously adjust the
               font size relative to your browser's width.
             </p>
-            <Title3>Technologies</Title3>
-            <p>
-              <TooltipLink href="https://nextjs.org/">Next.js</TooltipLink> does
-              most of the heavy lifting on this site – it's a static site
-              builder that takes care of a lot of otherwise cumbersome
-              optimsiations like server-side rendering, image loading, and
-              routing.
-            </p>
-            <p>
-              I used React and styled components to build and design the
-              interface. All the individual notes are written in{" "}
-              <TooltipLink href="https://github.com/mdx-js/mdx">
-                MDX
-              </TooltipLink>{" "}
-              – a souped-up version of markdown that makes it easy to design and
-              reuse custom components and interactive JavaScript elements.{" "}
-            </p>
-            <p>
-              <TooltipLink href="https://vercel.com/">Vercel</TooltipLink> takes
-              care of hosting. Animations are built with{" "}
-              <TooltipLink href="https://www.framer.com/motion/">
-                Framer Motion
-              </TooltipLink>
-              . My CMS is just a bunch of files and folders. Everything is open
-              souce and published on{" "}
-              <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">
-                Github
-              </TooltipLink>
-              . The whole thing is frankly overengineered for a personal
-              website, but playing with transient web technologies is an
-              indulgent hobby I don't want to relinquish.
-            </p>
+
             <Title3>Growth Stages</Title3>
             <p>
-              Every post on this site has a <b>growth stage</b>. Everything
-              starts as a reasonably unopinionated note (as much as that's
-              possible – I'm a cultural relativist at heart and question the
-              idea of pure, objective knowledge).
-            </p>
-            <p>
-              Notes begin as seedlings, grow into buddings, and finally reach an
-              evergreen stage. Some of them go on to become essays if I feel I
-              have a clear opinion on the topic.
+              Every post on this site has a <b>growth stage</b> indicating how
+              complete and comprehensive it is. They start as{" "}
+              <SeedlingIcon width="24px" height="24px" /> seedlings, grow into{" "}
+              <BuddingIcon width="24px" height="24px" /> buddings, and finally
+              end up as <EvergreenIcon width="24px" height="24px" /> evergreens.
+              You'll often find notes and essays that are unfinished or in
+              progress. In an ideal world I'd finish everything I started. But
+              we don't live there and I'm notoriously bad at leaving things half
+              baked. I do cycle back though. Sometimes months or years later.
+              What goes around comes around.
             </p>
             <Title3>Custom Components</Title3>
             <p>
@@ -111,7 +152,7 @@ export default function Colophon() {
             <p>
               There's an <i>assumed audience</i> component that I put at the top
               of some posts to make explicit who I'm writing for:
-              <br />
+              <Spacer size="xs" />
               <AssumedAudience>
                 People who care about how websites are built.
               </AssumedAudience>
