@@ -157,6 +157,7 @@ export default function Colophon() {
                 People who care about how websites are built.
               </AssumedAudience>
             </p>
+            <Spacer size="xs" />
             <p>
               I occassionally need to <i>alert</i> readers to dangers and
               threats:
@@ -169,7 +170,7 @@ export default function Colophon() {
               </Alert>
             </p>
             <p>
-              Some are simply nicely styled callouts for books:
+              Some are nicely styled callouts for books:
               <ResourceBook
                 url="https://www.librarything.com/work/9697447"
                 title="Addiction By Design"
