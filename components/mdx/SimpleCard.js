@@ -6,12 +6,18 @@ export default function SimpleCard({
   subtle,
   padding,
   margin,
+  props,
 }) {
   if (subtle) {
-    return <SubtleCard>{children}</SubtleCard>;
+    return <SubtleCard {...props}>{children}</SubtleCard>;
   } else {
     return (
-      <StyledCard padding={padding} margin={margin} alignLeft={alignLeft}>
+      <StyledCard
+        padding={padding}
+        margin={margin}
+        alignLeft={alignLeft}
+        {...props}
+      >
         {children}
       </StyledCard>
     );
