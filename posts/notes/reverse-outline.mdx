@@ -1,0 +1,144 @@
+---
+title: "Reverse Outlining with Language Models"
+description: "Using language models to generate reverse outlines of writing drafts"
+startDate: "2023-01-08"
+updated: "2023-01-08"
+type: "note"
+topics: ["Writing", "Artificial Intelligence", "Language Models"]
+growthStage: "budding"
+---
+
+<AssumedAudience>
+
+People who write and/or are interested in designing writing tools. Also people who are familiar with [language models](https://towardsdatascience.com/the-beginners-guide-to-language-models-aa47165b57f9) and curious about their potential to improve the writing process
+
+</AssumedAudience>
+
+<Spacer size="xs" />
+
+<IntroParagraph>
+
+Reverse outlining is one of my go-to writing tactics when I'm stuck on a piece of writing. It's the opposite of traditional outlining. Rather than outlining the shape of your piece first, organising the structure, and then filling in all the details, you do it backwards.
+
+</IntroParagraph>
+
+You start with a long, rambling, unorganised slew of text first: you write the messy and chaotic first draft without worrying too much about structure. _Then_ you go through the piece and for every paragraph, write a single sentence that summarises it.
+
+<ResponsiveImage
+  width="600px"
+  margin="0 auto 1rem"
+  src="/images/posts/reverse-outline/outline-sketch.jpg"
+  alt="Illustration of starting with a draft and using it to create an outline"
+/>
+
+You then put your one-sentence summaries on small, moveable objects like post-it notes or cards, and reorganise them into a sensible flow.
+
+Once you have a decent structure to work within, you go back to your crappy first draft, cut and paste salvageable bits of it into the new structure, and smooth out all the rough transitions.
+
+This process helps you do a few important things:
+
+- Easily spot logical flaws or holes in your argument
+- Add transitional bridges between paragraphs that make large leaps or change topics unexpectedly
+- Combine paragraphs that are trying to say the same thing
+- Remove paragraphs you don't need or are tangential to the argument
+- Break up paragraphs that are trying to say too many things in one breath
+- Arrange your points into a narrative arc that will make sense to the reader
+
+For a more comprehensive description of this process, read [this guide](https://explorationsofstyle.com/2011/02/09/reverse-outlines/) from _Explorations of Style_ <Footnote idName={1}>Explorations of Style is a _fantastic_ writing blog that is worth spending a weekend on. Start with the links [for new folks](ttps://explorationsofstyle.com/for-new-visitors/)</Footnote>.
+
+## Classic Tools for Reverse Outlining
+
+Reverse outlining is popular enough that we already have some specialised tools to help with it. I personally do it with digital whiteboarding tools like [Miro](https://miro.com/) or [Mural](https://www.mural.co/) that give you an infinite canvas to arrange arguments on.
+
+Here's one of my Miro reverse outlines where I'm figuring out the structure of one of my longer essays on [[Tools for Thought as Cultural Practices]]
+
+<ResponsiveImage
+  framed
+  width="1200px"
+  src="/images/posts/reverse-outline/miro.png"
+  alt="One of my reverse outlines on a Miro whiteboard"
+/>
+
+Miro and Mural work well enough, but they're not specifically designed to help with this task.
+
+[Scrivener](https://www.literatureandlatte.com/scrivener/overview) is a much better example of writing tool that enables reverse outlining. It's designed for huge, heady projects like novels, non-fiction books, or screenplays where you have to wrangle lots of material. It's stuffed full of features but two in particular help with reverse outlining: synopsis sentences and corkboards.
+
+For every chunk of text you can write a "synopsis" that summarises what it's about. These are visible in the inspector sidebar and on the "corkboard" – the other key feature.
+
+<ResponsiveImage
+  framed
+  width="1200px"
+  src="/images/posts/reverse-outline/scrivener1.jpg"
+  alt="Highlighting the synopsis and corkboard sections of Scrivener's interface"
+  showalt
+/>
+
+The corkboard shows you a set of cards with the title and synopsis visible. Each of these cards represents a longer chunk of text that you can view if you click inside them. You can drag and drop these into different arrangements.
+
+<ResponsiveImage
+  framed
+  width="1200px"
+  src="/images/posts/reverse-outline/scrivener2.jpg"
+  alt="Dragging and dropping a card on the corkboard"
+  showalt
+/>
+
+As you drag the cards into a different arrangement, the original, longer text chunks are also rearranged – there's a 1:1 mapping between them. This saves you from cutting and pasting the piece into its new structure after you've sorted your outline. There's a more detailed walkthrough of how Scrivener's synopses and corkboard work in [this video](https://www.youtube.com/watch?v=UC3tu5z6KL0&list=PLo2CDPcmw9xQFII-qTpj8tb2hlPoFzp4k&index=17).
+
+This is already a big improvement over using whiteboarding software that's completely disconnected from notes and drafts stored elsewhere. We can still do better though.
+
+## Bring in the Language Models
+
+Summarising existing text turns out to be something large language models are very good at. We can feed them long chunks of text and get back shorter, simpler summaries. This makes them promising tools for reverse outlining: we could have a model summarise each paragraph for us.
+
+A few people have already started exploring this idea.
+
+A group of researchers at the University of Bayreuth, Germany built a prototype specifically designed for reverse outlining with language models. In [**Beyond Text Generation**](https://arxiv.org/abs/2208.09323)**: Supporting Writers with Continuous Automatic Text Summaries** (2022) they describe the interface and their results after testing it with a small group of students and academics
+
+Here's an annotated screenshot of the main interface:
+
+<ResponsiveImage
+  width="1300px"
+  src="/images/posts/reverse-outline/beyondtext.jpg"
+  alt="An annotated interface of the prototype in the 'beyond text' paper"
+/>
+
+It's a split-view text editor with summary cards linked to each paragraph. The summaries themselves are generated by a language model – in this case [Google's T5](https://huggingface.co/docs/transformers/model_doc/t5) model. They also tried a variation that pulls out the most important sentence directly from the text.
+
+They baked an impressive amount of functionality into this. Users could obviously drag and drop to rearrange paragraphs. But they could also add new paragraphs, delete them, merge them, and split them. These kind of text interactions are essential for editing, but I imagine they're non-trivial to build.
+
+Last year, [Amelia Wattenberger](https://wattenberger.com/) shared a [series of prototype](https://twitter.com/Wattenberger/status/1412480516268437512) [videos](https://twitter.com/Wattenberger/status/1388575699422883849) on Twitter that are remarkably similar in spirit. You have text and generated summaries shown side-by-side, and you can drag and drop to rearrange the content:
+
+<TwoColumn alignItems="top" maxWidth="1100px">
+
+<TweetEmbed tweetId="1388575699422883849" />
+
+<TweetEmbed tweetId="1412480516268437512" />
+
+</TwoColumn>
+
+<ResponsiveImage
+  framed
+  width="1200px"
+  src="/images/posts/reverse-outline/amelia1.jpg"
+  alt="Text and generated summaries side-by-side in Amelia's prototype"
+  margin="1rem auto 3rem"
+  showalt
+/>
+
+<ResponsiveImage
+  framed
+  width="1200px"
+  src="/images/posts/reverse-outline/amelia2.jpg"
+  alt="Dragging and dropping sections of text in Amelia's prototype"
+  margin="1rem auto 5rem"
+  showalt
+/>
+
+Both of these prototypes feel full of promise. But for the moment, neither exist in any public format. I can't point you to a link or Github repo to try them out yourself.<Footnote idName={2}>Or at least I couldn't find them – I've emailed the paper authors to ask whether they published it and we'll have to see.</Footnote> I also haven't seen this feature in any of the existing “AI writing tools” flooding the market.
+
+I wish I could end this note with a link to my _own_ prototype that we could all play around with. But I am a _very_ mediocre developer, and text editors are notoriously complex beasts. I know better than to dive down that rabbit hole. But I'm hoping someone else doesn't...
+
+{/* I'm vehemently against the argument that chatbots are the [ultimate interface]() for language models. This is nonsense. Specific workflows and tasks will always want and need specialised interfaces and affordances. There is no single interface for everything. */}
+
+{/* We should be exploring how language models can be used to craft [small and very sharp tools](https://brandur.org/small-sharp-tools). */}
