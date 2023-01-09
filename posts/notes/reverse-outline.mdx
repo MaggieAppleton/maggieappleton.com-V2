@@ -2,7 +2,7 @@
 title: "Reverse Outlining with Language Models"
 description: "Using language models to generate reverse outlines of writing drafts"
 startDate: "2023-01-08"
-updated: "2023-01-08"
+updated: "2023-01-09"
 type: "note"
 topics: ["Writing", "Artificial Intelligence", "Language Models"]
 growthStage: "budding"
@@ -138,6 +138,21 @@ Last year, [Amelia Wattenberger](https://wattenberger.com/) shared a [series of 
 Both of these prototypes feel full of promise. But for the moment, neither exist in any public format. I can't point you to a link or Github repo to try them out yourself.<Footnote idName={2}>Or at least I couldn't find them – I've emailed the paper authors to ask whether they published it and we'll have to see.</Footnote> I also haven't seen this feature in any of the existing “AI writing tools” flooding the market.
 
 I wish I could end this note with a link to my _own_ prototype that we could all play around with. But I am a _very_ mediocre developer, and text editors are notoriously complex beasts. I know better than to dive down that rabbit hole. But I'm hoping someone else doesn't...
+
+## Design Considerations & Open Questions
+
+There's still a few open questions about how this kind of system could be helpful to writers.
+
+- **Are the summaries accurate enough?**  
+  It might turn out that the automated summaries don't capture the essence of the idea well. This seems like a solveable problem given the pace of LM development. If they aren't good enough right now, they will be soon.
+- **Does getting a generated summary help as much as writing your own?**  
+  Perhaps the act of writing summaries yourself is critical to understanding what you're really trying to say. The meaning could very well be hidden in your mind and not on the page. In this case the automated summary points out what you're _not_ saying – this still seems helpful to me, but it reframes the point of the summaries.
+- **How much editing functionality does this need?**  
+  I imagine any usable writing interface will need a high baseline of text editing functionality: selecting and moving text, copying and pasting, deleting, merging sections, auto-saving, bolding, italics, lists, export in various formats, etc.
+- **How can we maximise the human-in-the-loop aspect of this system?**  
+  Surely we'll want to sometimes edit or re-write the automated summaries ourselves. Ideally we could give it instructions on the kind of summaries we want it to write: we may need different levels of detail, or different summary types, depending on the type of work we're doing. It should feel like we're collaborating with the system and both working on the piece, rather than having it do all the work for us.
+- **What other language model abilities could assist with reverse outlining?**  
+  Could they spot logical flaws in your argument? Could they suggest new paragraphs that bridge the gap between points? Could they find duplicate arguments and help merge them?
 
 {/* I'm vehemently against the argument that chatbots are the [ultimate interface]() for language models. This is nonsense. Specific workflows and tasks will always want and need specialised interfaces and affordances. There is no single interface for everything. */}
 
