@@ -21,10 +21,11 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
   );
 
   //filter for mention with content
-  const mentionWithContent = postMentions.filter(
-    (mention) => mention["wm-property"] === "mention-of" && mention.content
-  ).sort((a, b) => new Date(b["wm-received"]) - new Date(a["wm-received"]));
-
+  const mentionWithContent = postMentions
+    .filter(
+      (mention) => mention["wm-property"] === "mention-of" && mention.content
+    )
+    .sort((a, b) => new Date(b["wm-received"]) - new Date(a["wm-received"]));
 
   // blocklist of spam domains
   const blockList = [
@@ -184,7 +185,7 @@ export default function WebMentions({ postSlug, hasBacklinks }) {
     return !isBlocked;
   });
 
-// main component. if there are no mentions, return null
+  // main component. if there are no mentions, return null
   if (postMentions.length === 0) {
     return null;
   } else {
@@ -430,7 +431,7 @@ const Reply = styled(motion.div)`
     flex-direction: column;
     align-items: left;
     gap: 0.25rem;
-    max-width: 100%;
+    max-width: 80%;
   }
   a {
     color: var(--color-gray-600);
