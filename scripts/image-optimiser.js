@@ -16,8 +16,8 @@ const pathToPostImages = path.join(pathPrefix, postName);
 
 const imagesFileNames = fs.readdirSync(pathToPostImages);
 
-imagesFileNames.forEach(fileName => {
-  widths.forEach(width => {
+imagesFileNames.forEach((fileName) => {
+  widths.forEach((width) => {
     const { name, ext } = path.parse(fileName);
     // Only resize images => ignore gifs, svgs, etc.
     if (![".jpg", ".jpeg", ".png", ".webp", ".avif"].includes(ext)) return;
@@ -30,7 +30,7 @@ imagesFileNames.forEach(fileName => {
         width,
         quality: 100,
         format: "jpg",
-        strip: true
+        strip: true,
       });
     } catch (err) {
       console.log(err);
