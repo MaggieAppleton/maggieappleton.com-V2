@@ -329,7 +329,7 @@ const MentionsWithContent = ({ mentions }) => {
               setisShowing(!isShowing);
               isShowing
                 ? setmentionsShown(mentions.slice(0, 4))
-                : setmentionsShown(mentions);
+                : setmentionsShown(mentions.slice(0, 30));
             }}
           >
             {isShowing ? "Show less" : `Show ${mentions.length - 4} more`}
