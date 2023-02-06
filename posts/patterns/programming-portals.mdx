@@ -10,7 +10,7 @@ topics: ["Design", "End-user Programming"]
 
 <h2 className="micro">The Context</h2>
 
-In the mid-1980's the world of computer interfaces cracked in two<Footnote idName={1}>Specifically, in 1984 when Apple's Macintosh became the first GUI-based computer to gain market traction. Honourable mentions: [Xerox Star](https://en.wikipedia.org/wiki/Xerox_Star) and [Apple Lisa](https://en.wikipedia.org/wiki/Apple_Lisa)</Footnote>, leaving a gaping divide between two opposing paradigms.
+In the mid-1980s the world of computer interfaces cracked in two<Footnote idName={1}>Specifically, in 1984 when Apple's Macintosh became the first GUI-based computer to gain market traction. Honourable mentions: [Xerox Star](https://en.wikipedia.org/wiki/Xerox_Star) and [Apple Lisa](https://en.wikipedia.org/wiki/Apple_Lisa)</Footnote>, leaving a gaping divide between two opposing paradigms.
 
 <TwoColumn maxWidth="1200px" gridGap="3rem">
 
@@ -62,7 +62,7 @@ Scroll forward a few decades and we now live in an overwhelmingly GUI world. At 
 
 **End users** are the 99%. They're all the regular folk who interact with computers through the carefully designed GUI applications built for them by teams of designers, developers, and product managers. They have little control over what actions and affordances are made available to them.
 
-**Programmers** are the tiny, elite subsection of the population who control what computers can do.<Footnote idName={3}>To add some nuance to this, there are other parties controlling what the computers can do: VCs doling out cash, C-suite leaders and product managers directing the vision, and designers orchestrating the user experience. But if the programmers refuse to build it, it's not going to exist. They are the final touch point and nexus of control between the power of the computing machines and the rest of the world.</Footnote> They decide what information appears on the dashboard, what actions are available in the menu, and whether you're allowed to delete your data. They stayed behind in the world of CLIs and text editors.
+**Programmers** are the tiny, elite subsection of the population who control what computers can do.<Footnote idName={3}>To add some nuance to this, programmers are not alone in controlling what the computers can do. We also have VCs doling out cash, C-suite leaders and product managers directing the vision, and designers orchestrating the user experience. But if the programmers refuse to build it, it's not going to exist. They are the final touch point and nexus of control between the power of the computing machines and the rest of the world.</Footnote> They decide what information appears on the dashboard, what actions are available in the menu, and whether you're allowed to delete your data. They stayed behind in the world of CLIs and text editors.
 
 ### The Joys of Text and CLIs
 
@@ -78,7 +78,7 @@ It's about that gaping divide. When we confined end users to the GUIs and hid th
 
 If a regular user in 1980 wanted to write a small programme to automate part of their workflow, the tools to do so were ready at hand. They could chain together small, composable UNIX commands in the same environment they do everything else in.
 
-If someone wants to try that nowadays, they'll need to enter a strange and unfamiliar environment: the terminal. They'll have to learn to navigate it with an unfamiliar language and set of commands. If they want to augment or interact with any third-party software – aka. all the software they have ever known – they're in a rough awakening. They now need to download an IDE, install homebrew, install node or python, troubleshoot $PATH errors, navigate API documentation, and finally figure out how to execute the programme.
+If someone wants to try that nowadays, they'll need to enter a strange and unfamiliar environment: the terminal. They'll have to learn to navigate it with an unfamiliar language and set of commands. If they want to augment or interact with any third-party software – aka. all the software they have ever known – they're in for a rough awakening. They now need to download an IDE, install homebrew, install node or python, troubleshoot $PATH errors, navigate API documentation, and finally figure out how to execute the programme.
 
 <ResponsiveImage
   framed
@@ -89,6 +89,8 @@ If someone wants to try that nowadays, they'll need to enter a strange and unfam
 />
 
 The problem isn't just that development environments have grown complex and unwieldy. It's that we've failed to find ways to integrate the benefits of text-based programming and command line interfaces back into graphical interfaces. We're starting to see hints of it though – patterns are appearing that try to bridge the gap.
+
+Search inputs are becoming more structured and programmatic. ["Command K" bars](https://dribbble.com/tags/command_k) are popping up in the middle of complex dashboards. And I keep finding tiny portals back into the programmatic realm; windows I'm calling **programming portals**.
 
 Search inputs are becoming more structured and programmatic. [[Command K bars]] are popping up in the middle of complex dashboards. And I keep finding tiny portals back into the programmatic realm; windows I'm calling **programming portals**.
 
@@ -114,9 +116,9 @@ It allows you to right-click and inspect any shape on the canvas:
   width="900px"
 />
 
-You can see its X and Y coordinates, width, height, fill, stroke, and so on. Just the sort of thing you can see when you open the developer tools in the browser. But these are now part of the interface as a first-class citizen. They're discoverable by regular users who aren't rooting around in complex browser menus.
+ You can see its X and Y coordinates, width, height, fill, stroke, and so on. Just the sort of thing you can see when you open the developer tools in the browser. But these are now part of the interface as a first-class citizen. They're discoverable by regular users who aren't rooting around in complex browser menus.
 
-Seeing metadata about objects is great, but having the power to change them is better. All programming portals give users ways to write simple logic statements that change the interface. Here I've entered some logic into the formula bar to change the styling of the circle:
+ Seeing metadata about objects is great, but having the power to change them is better. All programming portals give users ways to write simple logic statements that change the interface. Here I've entered some logic into the formula bar to change the styling of the circle:
 
 <ResponsiveImage
   margin="0 auto 0.5rem"
@@ -177,7 +179,7 @@ Here's a quick 30-second clip showing how users could easily view and edit a Hyp
 
 <Spacer size="small" />
 
-The Hypertalk language tried to closely mimic natural written English. Its command were simple; `find`, `calculate`, and `go to`. These could be built up into sentences like `go to next card` or `put 2*6 into theValue` or `set the location of card button x to pos`. It's not too different to today's [AppleScript](https://en.wikipedia.org/wiki/AppleScript) which allows macOS users to automate small processes.
+The Hypertalk language tried to closely mimic natural written English. Its commands were simple; `find`, `calculate`, and `go to`. These could be built up into sentences like `go to next card` or `put 2*6 into theValue` or `set the location of card button x to pos`. It's not too different to today's [AppleScript](https://en.wikipedia.org/wiki/AppleScript) which allows MacOS users to automate small processes.
 
 <ResponsiveImage
   framed
@@ -250,9 +252,9 @@ Inkbase is a prototype rather than an up-and-running platform but follows the sa
   showalt
 />
 
-Inkbase is more flexible than the previous examples. You can draw anything freehand onto a canvas using the ipad, then pop open the programming portal to manipulate its behaviour.
+Inkbase is more flexible than the previous examples. You can draw anything freehand onto a canvas using the iPad, then pop open the programming portal to manipulate its behaviour.
 
-Their portal is one of the more elaborate ones I've seen. They made it easy to see properties update in real time, which means you can observe reactive data flows. They also have extra affordances to make it usable on a touch screen like large toggle buttons to control state, and tap-to-insert buttons for their common syntax characters like `( ) [ ] { } each for on`. But they [specifically point out](https://youtu.be/z3axx5rZMWI?t=179) they think the current UI of this inspector pane is "incidental to the project" and a "crutch to get to other ideas." I'm keen to see how it evolves in future iterations.
+Their portal is one of the more elaborate ones I've seen. They made it easy to see properties update in real-time, which means you can observe reactive data flows. They also have extra affordances to make it usable on a touch screen like large toggle buttons to control state, and tap-to-insert buttons for their common syntax characters like `( ) [ ] { } each for on`. But they [specifically point out](https://youtu.be/z3axx5rZMWI?t=179) they think the current UI of this inspector pane is "incidental to the project" and a "crutch to get to other ideas." I'm keen to see how it evolves in future iterations.
 
 The combination of loose drawing and scripting seems like an odd pairing until you see what's possible in these demos. Any quickly scrawled doodle can be turned into a set of ad-hoc interface controls. You can draw your own sliders or handles or checkboxes, then connect it to any other data on the canvas.
 

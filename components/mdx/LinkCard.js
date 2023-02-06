@@ -39,10 +39,11 @@ const StyledLinkCard = styled.div`
   transition: all 0.3s ease-in-out;
   img {
     width: 100%;
+    margin-bottom: 1rem;
   }
   span {
-    font-family: var(--font-body);
-    font-size: var(--font-size-base);
+    font-family: var(--font-sans);
+    font-size: calc(var(--font-size-base) * 0.9);
     margin: var(--space-3xs) 0;
     color: var(--color-gray-600);
   }
@@ -52,7 +53,7 @@ const StyledLinkCard = styled.div`
     font-family: var(--font-body);
     margin: var(--space-3xs) 0;
     line-height: var(--leading-snug);
-    font-size: calc(var(--font-size-md) * 0.9);
+    font-size: calc(var(--font-size-md) * 0.85);
   }
   &:hover {
     box-shadow: var(--box-shadow-lg);
