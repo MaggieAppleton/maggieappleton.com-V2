@@ -20,6 +20,7 @@
 *.pem
 .vscode
 /public/rss.xml
+public/rss.xml
 rss.xml
 
 # debug

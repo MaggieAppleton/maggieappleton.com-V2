@@ -4,6 +4,7 @@ import "./_app.css";
 import { DefaultSeo } from "next-seo";
 import Navbar from "../components/Navbar/index.js";
 import Footer from "../components/Footer";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 function MyApp({ Component, pageProps, router }) {
   // Don't include navbar and footer when generating open graph images
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <GlobalStyle />
+      <GoogleAnalytics trackPageViews />
       <container>
         <DefaultSeo
           title="Maggie Appleton's digital garden"

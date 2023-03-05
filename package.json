@@ -33,6 +33,7 @@
     "next-pwa": "^5.4.1",
     "next-remote-watch": "1.0.0",
     "next-seo": "^4.28.1",
+    "nextjs-google-analytics": "^2.3.3",
     "playwright-aws-lambda": "^0.7.0",
     "playwright-core": "^1.17.1",
     "prism-react-renderer": "^1.2.1",
