@@ -55,10 +55,6 @@ class MyDocument extends Document {
             rel="webmention"
             href="https://webmention.io/maggieappleton.com/webmention"
           />
-          <link
-            rel="pingback"
-            href="https://webmention.io/maggieappleton.com/xmlrpc"
-          />
         </Head>
         <body>
           <Main />
