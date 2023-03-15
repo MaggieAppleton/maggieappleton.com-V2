@@ -1,14 +1,36 @@
 import Layout from "../components/Layout";
 import { Title1, Title2, SmallCaps } from "../components/Typography";
-import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/Header";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import { Spacer } from "../components/Spacer";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
-import LeafIcon from "../components/icons/LeafIcon";
 import { RelativeDate } from "../components/templates/Dates";
+import { useState } from "react";
+
+const photoSources = [
+  "/images/Stripe2_1000.jpg",
+  "/images/Scarf_1000.jpg",
+  "/images/Brown_1000.jpg",
+];
+
+function RandomPhoto() {
+  const [currentImage, setCurrentImage] = useState(
+    photoSources[Math.floor(Math.random() * photoSources.length)]
+  );
+
+  return (
+    <Image
+      src={currentImage}
+      alt="a photo of maggie appleton"
+      width={800 / 1.25}
+      height={1200 / 1.25}
+      layout="responsive"
+      objectFit="contain"
+    />
+  );
+}
 
 export default function About() {
   return (
@@ -32,10 +54,9 @@ export default function About() {
               </p>
               <p>
                 Titles and disciplines are fickle and fleeting. But my work fits
-                under the umbrellas of UX design, visual interface design, and DX
-                (developer experience). With some
-                cultural analysis, writing, and visual illustration sprinkled on
-                top.
+                under the umbrellas of UX design, visual interface design, and
+                DX (developer experience). With some cultural analysis, writing,
+                and visual illustration sprinkled on top.
               </p>
               <p>
                 I currently lead design at
@@ -44,25 +65,34 @@ export default function About() {
                     Ought
                   </UnderlineHoverLink>
                 </b>
-                where we're exploring how machine learning can help researchers with open-ended reasoning.
+                where we're exploring how machine learning can help researchers
+                with open-ended reasoning.
               </p>
               <p>
                 I'm not currently available for any contract work, side
                 projects, or full-time roles.
               </p>
               <p>
-                Before Ought I was head of design at <b style={{ margin: "0 0.5rem 0 0" }}>
-                  <UnderlineHoverLink href="https://hash.ai">HASH</UnderlineHoverLink>
-                </b> – a company developing an open-source platform to improve the way we structure knowledge on the web.</p>
-                <p>Before that I spent five years at the developer education
+                Before Ought I was head of design at{" "}
+                <b style={{ margin: "0 0.5rem 0 0" }}>
+                  <UnderlineHoverLink href="https://hash.ai">
+                    HASH
+                  </UnderlineHoverLink>
+                </b>{" "}
+                – a company developing an open-source platform to improve the
+                way we structure knowledge on the web.
+              </p>
+              <p>
+                Before that I spent five years at the developer education
                 company{" "}
                 <b style={{ margin: "0 0.5rem 0 0" }}>
                   <UnderlineHoverLink href="https://egghead.io">
                     egghead
                   </UnderlineHoverLink>
                 </b>
-                as the art director and UX designer. It was there that I developed a system for visualising programming
-                concepts through metaphors and cultural symbols.
+                as the art director and UX designer. It was there that I
+                developed a system for visualising programming concepts through
+                metaphors and cultural symbols.
               </p>
               <p>
                 On the side I create{" "}
@@ -133,14 +163,7 @@ export default function About() {
                 home.
               </p>
             </div>
-            <Image
-              src="/images/profile_bw_800.png"
-              alt="a photo of maggie appleton"
-              width={800 / 1.5}
-              height={1141 / 1.5}
-              layout="responsive"
-              objectFit="contain"
-            />
+            <RandomPhoto />
           </section>
           <Divider />
           <section className="talks">
@@ -400,8 +423,8 @@ const StyledMain = styled.main`
   }
   section.intro {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: var(--space-l);
+    grid-template-columns: 4fr 3fr;
+    gap: var(--space-xl);
     align-items: flex-start;
     ${SmallCaps}:not(:first-of-type) {
       margin-top: var(--space-xl);
