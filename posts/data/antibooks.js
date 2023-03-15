@@ -1,5 +1,76 @@
 export const antiBookData = [
   {
+    title: "Why Fish Don't Exist",
+    subtitle: "A Story of Loss, Love, and the Hidden Order of Life",
+    author: "Lulu Miller",
+    cover: "/images/books/fish.jpg",
+    link: "https://www.google.co.uk/books/edition/Why_Fish_Don_t_Exist/usSeDwAAQBAJ",
+  },
+  {
+    title: "Atlas of Anomalous AI",
+    author: "Ben Vickers, Kenric McDowell",
+    cover: "/images/books/atlas.jpg",
+    link: "https://www.google.co.uk/books/edition/Atlas_of_Anomalous_AI/e04AxAEACAAJ",
+  },
+  {
+    title: "The Geometry of Meaning: Semantics Based on Conceptual Spaces",
+    author: "Peter Gärdenfors",
+    cover: "/images/books/geometry.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Geometry_of_Meaning/QDOkAgAAQBAJ",
+  },
+  {
+    title: "Consciousness Explained",
+    author: "Daniel C. Dennett",
+    cover: "/images/books/consciousness.jpg",
+    link: "https://www.google.co.uk/books/edition/Consciousness_Explained/d2P_QS6AwgoC",
+  },
+  {
+    title: "Dancing in the Streets: A History of Collective Joy",
+    author: "Barbara Ehrenreich",
+    cover: "/images/books/dancing.jpg",
+    link: "https://www.google.co.uk/books/edition/Dancing_in_the_Streets/-QwTAQAAIAAJ",
+  },
+  {
+    title:
+      "The Perception of the Environment: Essays on Livelihood, Dwelling and Skill",
+    author: "Tim Ingold",
+    cover: "/images/books/perception.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Perception_of_the_Environment/Y_VPEAAAQBAJ",
+  },
+  {
+    title: "The Matter With Things",
+    subtitle: "Our Brains, Our Delusions, and the Unmaking of the World",
+    author: "Iain McGilchrist",
+    cover: "/images/books/matter.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Matter_with_Things/zZa3zgEACAAJ?hl=en",
+  },
+  {
+    title: "Otherlands: A World in the Making",
+    author: "Thomas Halliday",
+    cover: "/images/books/otherlands.jpg",
+    link: "https://www.google.co.uk/books/edition/Otherlands/6T_3DwAAQBAJ",
+  },
+  {
+    title: "The Civilizing Process",
+    author: "Norbert Elias",
+    cover: "/images/books/civilising.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Civilizing_Process/ThJJcfgga54C",
+  },
+  {
+    title: "A Social History of Truth",
+    subtitle: "Civility and Science in Seventeenth-Century England",
+    author: "Steven Shapin",
+    cover: "/images/books/social.jpg",
+    link: "https://www.google.co.uk/books/edition/A_Social_History_of_Truth/Cr4lEAAAQBAJ",
+  },
+  {
+    title: "The Master and His Emissary",
+    subtitle: "The Divided Brain and the Making of the Western World",
+    author: "Iain McGilchrist",
+    cover: "/images/books/emissary.jpg",
+    link: "https://www.google.com/books/edition/The_Master_and_His_Emissary/alSIDwAAQBAJ",
+  },
+  {
     title: "Death Without Weeping",
     subtitle: "The Violence of Everyday Life in Brazil",
     author: "Nancy Scheper-Hughes",
@@ -27,13 +98,6 @@ export const antiBookData = [
     author: "Ellen Ullman",
     cover: "/images/books/lifecode.jpg",
     link: "https://www.google.co.uk/books/edition/Life_in_Code/rPTtDQAAQBAJ?hl=en",
-  },
-  {
-    title: "Subprime Attention Crisis",
-    subtitle: "Advertising and the Time Bomb at the Heart of the Internet",
-    author: "Tim Hwang",
-    cover: "/images/books/subprime.jpg",
-    link: "https://www.google.co.uk/books/edition/Subprime_Attention_Crisis/iyPQDwAAQBAJ?hl=en&gbpv=0",
   },
   {
     title: "Turing's Cathedral",

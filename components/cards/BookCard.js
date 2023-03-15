@@ -28,12 +28,7 @@ export default function BookCard({
         </ExternalHoverLink>
         {cover && (
           <ImageWrapper>
-            <Image
-              src={cover}
-              alt={title}
-              width={200}
-              height={300}
-            />
+            <Image src={cover} alt={title} width={230} height={345} />
           </ImageWrapper>
         )}
         <div>
@@ -50,10 +45,10 @@ export default function BookCard({
 
 const ImageWrapper = styled.div`
   display: grid;
-  place-items: center;
+  place-items: baseline;
   max-width: 300px;
   max-height: 450px;
-`
+`;
 
 const ExternalHoverLink = styled.a`
   position: absolute;

@@ -1,5 +1,38 @@
 export const bookData = [
   {
+    title:
+      "Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness",
+    author: "Peter Godfrey-Smith",
+    cover: "/images/books/otherminds.jpg",
+    link: "https://www.google.co.uk/books/edition/Other_Minds/WhQ7vgAACAAJ?hl=en",
+  },
+  {
+    title: "The Weirdest People in the World",
+    author: "Joseph Henrich",
+    cover: "/images/books/weirdest.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Weirdest_People_in_the_World/ciLIDwAAQBAJ?hl=en&gbpv=0",
+  },
+  {
+    title: "The Empathy Diaries",
+    author: "Sherry Turkle",
+    cover: "/images/books/empathy.jpg",
+    link: "https://www.google.co.uk/books/edition/The_Empathy_Diaries/rrvpDwAAQBAJ?hl=en&gbpv=0",
+  },
+  {
+    title: "Intuition Pumps and Other Tools for Thinking",
+    author: "Daniel Dennett",
+    cover: "/images/books/intuition.jpg",
+    link: "https://www.google.co.uk/books/edition/Intuition_Pumps_and_Other_Tools_for_Thin/9SduAwAAQBAJ?hl=en&gbpv=0",
+  },
+
+  {
+    title: "Subprime Attention Crisis",
+    subtitle: "Advertising and the Time Bomb at the Heart of the Internet",
+    author: "Tim Hwang",
+    cover: "/images/books/subprime.jpg",
+    link: "https://www.google.co.uk/books/edition/Subprime_Attention_Crisis/iyPQDwAAQBAJ?hl=en&gbpv=0",
+  },
+  {
     title: "The New Media Reader",
     author: "Nick Montfort and Noah Wardrip-Fruin (ed.)",
     cover: "/images/books/newmedia.jpeg",
