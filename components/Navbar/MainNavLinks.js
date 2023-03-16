@@ -10,13 +10,13 @@ import { Popover } from "@headlessui/react";
 function GardenPopoverLinks() {
   return (
     <Popover style={{ position: "relative" }}>
+      <Link href="/garden">
+        <HoverLink>
+          <span>The Garden</span>
+        </HoverLink>
+      </Link>
       <StyledPopoverButton>
-        <Link href="/garden">
-          <HoverLink>
-            <span>The Garden</span>
-          </HoverLink>
-          </Link>
-        <StyledChevronDownIcon width="22" height="22" />
+        <StyledChevronDownIcon width="24" height="24" />
       </StyledPopoverButton>
 
       <Popover.Panel>
@@ -32,11 +32,21 @@ function GardenPopoverLinks() {
           style={{ position: "absolute", zIndex: "10" }}
           key="dropdown"
         >
-            <Link href="/essays"><DropdownLink>Essays</DropdownLink></Link>
-            <Link href="/notes"><DropdownLink>Notes</DropdownLink></Link>
-            <Link href="/patterns"><DropdownLink>Patterns</DropdownLink></Link>
-            <Link href="/library"><DropdownLink>Library</DropdownLink></Link>
-            <Link href="/antilibrary"><DropdownLink>Antilibrary</DropdownLink></Link>
+          <Link href="/essays">
+            <DropdownLink>Essays</DropdownLink>
+          </Link>
+          <Link href="/notes">
+            <DropdownLink>Notes</DropdownLink>
+          </Link>
+          <Link href="/patterns">
+            <DropdownLink>Patterns</DropdownLink>
+          </Link>
+          <Link href="/library">
+            <DropdownLink>Library</DropdownLink>
+          </Link>
+          <Link href="/antilibrary">
+            <DropdownLink>Antilibrary</DropdownLink>
+          </Link>
         </Dropdown>
       </Popover.Panel>
     </Popover>
@@ -60,7 +70,7 @@ export default function MainNavLinks() {
 const StyledChevronDownIcon = styled(ChevronDownIcon)`
   vertical-align: middle;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
-  transform 0.8s ease-in-out;
+    transform 0.8s ease-in-out;
   color: var(--color-gray-600);
   margin-left: var(--space-3xs);
   position: relative;
@@ -113,7 +123,7 @@ const DropdownLink = styled.span`
 const Dropdown = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   background: var(--color-cream);
   margin-left: 0.4rem;
   border: 1px solid var(--color-tinted-cream);
@@ -191,7 +201,7 @@ const HoverLink = styled.span`
 const Main = styled.div`
   display: flex;
   flex-shrink: 0;
-  div.outside-dropdown div{
+  div.outside-dropdown div {
     margin-left: var(--space-s);
     text-decoration: none;
     font-size: var(--font-size-xs);
