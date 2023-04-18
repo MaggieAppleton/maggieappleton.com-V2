@@ -1,0 +1,69 @@
+---
+title: "Computational Notebooks"
+description: "Shareable, browser-based documents that can compile and run code"
+growthStage: "budding"
+startDate: "2023-04-18"
+updated: "2023-04-18"
+type: "pattern"
+topics: ["Design", "Machine Learning", "JavaScript", "End-user Programming"]
+---
+
+<AssumedAudience>
+  People who have basic familiarity with programming terms like "development environment", "variables", "compilation", and "functions." You probably won't understand this if you haven't done any programming.
+</AssumedAudience>
+
+<Spacer size="small" />
+
+<h2 className="micro">The Context</h2>
+
+Getting a local development environment setup is often a frustrating and error-riddled process. Especially if it's in a language or framework you're unfamiliar with. You end up in an epic struggle against package managers, unresolved $PATH directories, and conflicting versions of utilities and libraries. Online guidance varies widely depending on your operating system and what else you have installed.
+
+Once you get everything sorted and start playing around with code, it's then hard to share that work with others. There's no quick link that can share both the syntax and output of a snippet of code running locally on your machine.
+
+When you want to show someone a single function or a quick experiment, it's too much to ask them to install a bunch of command line crap. And even if they do, there's no infrastructure to guide them step by step through what the code does and in what order.
+
+This is especially painful in educational environments when you want to guide new programmers through a set of instructions or lessons.
+
+What you really need is a programming environment that doesn't involve locally installing anything, where you can share almost any size programme - small or large - via a simple link, and allows you to guide and annotate it for others to work through.
+
+<Spacer size="small" />
+
+<h2 className="micro">The Pattern</h2>
+
+"Computational notebooks"<Footnote idName={1}>Listed as a [notebook interface](https://en.wikipedia.org/wiki/Notebook_interface) on Wikipedia, which seems like a much worse name to me.</Footnote> have emerged as one of the best solutions to the problem of unshareable, unexplainable code trapped in cumbersome local development environments.
+
+They're online documents that don't look all that different to a traditional text editor like Microsoft Word or Google Docs. You get a “page” that flows from top to bottom, accompanied by various toolbars and formatting options.
+
+{/* [image of Google Colab] */}
+
+But rather than typing freeform text, these notebooks are more structured. They're made up of “cells” that each have an input and an output. You type programming syntax into the cell and then “run” it, which compiles the code and produces an output. You can think of each cell as a small, self-contained programme running inline.
+
+{/* [images of cells] */}
+
+Cells can be one of a few types: X, Y, or plain text. Being able to write plain text alongside working code allows the author to annotate their programme as they go. They can explain what each function does, why they wrote it, and add context to complex sections. This is why notebooks are ideal for tutorials or walkthroughs. Readers are never faced with mystery code, and they can clearly see the compiled output of each cell.
+
+As a slight sidenote, there's a whole philosophy called [literature programming](https://en.wikipedia.org/wiki/Literate_programming) that argues _all_ code should be written in these linear, readable documents. It's literally self-documenting! See Chris Granger's [Eve project](https://witheve.com/) for a beautiful example of mixing prose and code.
+
+To be a proper programming environment, these cells clearly need to coordinate. And they can! Cells can use variables and functions declared in other cells. If I declare `city = "Cockfosters"` in one cell, I can call `print(city)` in a later cell, which resolves to the string "Cockfosters".
+
+Notebooks vary in how they handle variable scopes. In some you can only access variables declared above the current cell. In others variables are globally avaliable, no matter where they're declared.
+
+You can also drag and drop cells around to rearrange them. This functionality is similar to block-based editors like [Notion](https://www.notion.so/) or [Coda](https://coda.io/) – you're able to edit at the block-level, rather than just on individual characters.
+
+Most computational notebooks are designed for data science and machine learning. They typically support languages like Python and R and come with rich data visualisation and analysis tools. The one exception to this is [Observable](https://observablehq.com/) which runs JavaScript and is aimed at data visualiation designers.
+
+Best of all, these notebooks run entirely in the browser. Which means you can share them with a quick link. This enables shareability in a way that's impossible with local code. People are able to fork other people's notebooks to run the code themselves and play around.
+
+{/* Do some support multiplayer? */}
+
+<Spacer size="small"/>
+
+<h2 className="micro">Examples</h2>
+
+1. [Observable](https://observablehq.com/)
+2. [DeepNote](https://deepnote.com/)
+3. [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb)
+4. [Jupyter Notebook](https://jupyter.org/)
+5. [Wolfram Mathematica](https://www.wolfram.com/mathematica/)
+
+
