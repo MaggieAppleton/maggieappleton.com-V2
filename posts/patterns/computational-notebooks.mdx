@@ -42,7 +42,7 @@ But rather than typing freeform text, these notebooks are more structured. They'
 
 Cells can be either code or plain text. Being able to write plain text alongside working code allows the author to annotate their programme as they go. They can explain what each function does, why they wrote it, and add context to complex sections. This is why notebooks are ideal for tutorials or walkthroughs. Readers are never faced with mystery code, and they can clearly see the compiled output of each cell.
 
-As a slight sidenote, there's a whole philosophy called [literature programming](https://en.wikipedia.org/wiki/Literate_programming) that argues _all_ code should be written in these linear, readable documents. It's literally self-documenting! See Chris Granger's [Eve project](https://witheve.com/) for a beautiful example of mixing prose and code.
+This approach of interleaving documentation and source code is called [literate programming](https://en.wikipedia.org/wiki/Literate_programming). [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) proposed it in 1984 as a solution to the burden of documenting code in environments divorced from the code itself. He argued that _all_ code should be written in these linear, readable documents. See Chris Granger's [Eve project](https://witheve.com/) for a beautiful example of mixing prose and code.
 
 To be a proper programming environment, these cells clearly need to coordinate. And they can! Cells can use variables and functions declared in other cells. If I declare `city = "Cockfosters"` in one cell, I can call `print(city)` in a later cell, which resolves to the string "Cockfosters".
 
@@ -52,7 +52,7 @@ You can also drag and drop cells around to rearrange them. This functionality is
 
 Most computational notebooks are designed for data science and machine learning. They typically support languages like Python and R and come with rich data visualisation and analysis tools. The one exception to this is [Observable](https://observablehq.com/) which runs JavaScript and is aimed at data visualiation designers.
 
-Best of all, these notebooks run entirely in the browser. Which means you can share them with a quick link. This enables shareability in a way that's impossible with local code. People are able to fork other people's notebooks to run the code themselves and play around. Some even have multiplayer support, allowing you to work alongside people in the same notebook in real time.
+Best of all, most of these notebooks run entirely in the browser. Which means you can share them with a quick link. This enables shareability in a way that's impossible with local code. People are able to fork other people's notebooks to run the code themselves and play around. Some even have multiplayer support, allowing you to work alongside people in the same notebook in real time.
 
 <Spacer size="small"/>
 
