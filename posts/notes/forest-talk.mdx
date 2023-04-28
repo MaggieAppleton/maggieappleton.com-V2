@@ -14,7 +14,13 @@ Slides and notes from my talk at [Causal Islands](https://www.causalislands.com/
 
 <BasicImage width="1200px" src="/images/posts/forest-talk/dft_1.jpeg" />
 
-### References in order of appearance
+## Livestream Recording
+
+<Video src="https://www.youtube.com/embed/ZZgQ3MoNJUQ?start=26193" />
+
+<Spacer size="small" />
+
+## References in order of appearance
 
 <ReferencesLink
   title="The Dark Forest Theory of the Internet"
@@ -64,8 +70,10 @@ Slides and notes from my talk at [Causal Islands](https://www.causalislands.com/
   author="Nicholas Kees and Janus on LessWrong"
 />
 
+<Spacer size="small" />
 
-### Slides and Transcript
+
+## Slides and Transcript
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_2.jpeg">
 
@@ -456,9 +464,9 @@ You're able to reuse content quite easily. This is all a marketer's dream!
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_52.jpeg">
 
-Most of the tools and examples I’ve shown have a simple architecture.
+Most of the tools and examples I’ve shown so far have a fairly simple architecture.
 
-They’re made by feeding a single input, or prompt, into the big black mystery box of a language model. (We call them black boxes because we can’t really see how they reason or produce answers. It's a mystery to everyone, including their creators.)
+They’re made by feeding a single input, or prompt, into the big black mystery box of a language model. (We call them black boxes because we don't know that much about how they reason or produce answers. It's a mystery to everyone, including their creators.)
 
 And we get a single output – an image, some text, or an article.
 
@@ -476,17 +484,17 @@ But we’re still limited in how sophisticated we can get with these outputs.
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_54.jpeg">
 
-Recently, we have seen more sophisticated methods of prompting language models, such as "prompt chaining" or composition.
+Recently, people have been developing more sophisticated methods of prompting language models, such as "prompt chaining" or composition.
 
-Ought has been researching this for a few years, and libraries like LangChain have become popular in the last few months.
+Ought has been researching this for a few years. Recently released libraries like LangChain make it much easier to do.
 
-This approach solves many flaws in language models, such as a lack of knowledge of recent events, inaccuracy, difficulty with mathematics, lack of longterm memory, and inability to interact with the rest of our digital systems.
+This approach solves many of the weaknesses of language models, such as a lack of knowledge of recent events, inaccuracy, difficulty with mathematics, lack of long-term memory, and their inability to interact with the rest of our digital systems.
 
-Prompt chaining is a way of setting up a language model to act in a loop with external tools.
+Prompt chaining is a way of setting up a language model to mimic a reasoning loop in combination with external tools.
 
-It starts with an input goal, and then the model observes and reflects on what it knows and its goals, deciding on a course of action by picking from a set of available tools to solve the problem, such as searching the web, writing and running code, querying a database, using a calculator, hitting an API, connecting to Zapier or IFTTT, etc.
+You give it a goal to achieve, and then the model loops through a set of steps: it observes and reflects on what it knows so far and then decides on a course of action. It can pick from a set of tools to help solve the problem, such as searching the web, writing and running code, querying a database, using a calculator, hitting an API, connecting to Zapier or IFTTT, etc.
 
-After each action, the model reflects on what it learned and then picks another action, continuing until it arrives at the final output.
+After each action, the model reflects on what it's learned and then picks another action, continuing the loop until it arrives at the final output.
 
 This gives us much more sophisticated answers than a single language model call, making them more accurate and able to do more complex tasks.
 
@@ -496,15 +504,15 @@ This mimics a very basic version of how humans reason. It's similar to the OODA 
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_55.jpeg">
 
-Recently, people have taken this idea further and developing new ways to create “generative agents”.
+Recently, people have taken this idea further and developed what are being called “generative agents”.
 
-Just over two weeks ago, this paper "[Generative Agents](https://arxiv.org/abs/2304.03442): Interactive Simulacra of Human Behavior" came out outlining an experiment where they made a sim-like game (as in, The Sims) filled with little people, each controlled by a language-model agent. 
+Just over two weeks ago, this paper **"[Generative Agents](https://arxiv.org/abs/2304.03442): Interactive Simulacra of Human Behavior"** came out outlining an experiment where they made a sim-like game (as in, The Sims) filled with little people, each controlled by a language-model agent. 
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_56.jpeg">
 
-The tiny sim language models had some key features, such as a long-term memory database they could read and write to, the ability to reflect on their experiences, plan what to do next, and interact with other sim agents in the game.
+These language-model-powered sims had some key features, such as a long-term memory database they could read and write to, the ability to reflect on their experiences, planning what to do next, and interacting with other sim agents in the game.
 
 </TalkSlide>
 
@@ -514,15 +522,15 @@ And this architecture produced very compelling and believable human behaviours.
 
 The agents would perform everyday tasks such as cooking breakfast, stopping if something is burning, chatting to one another, forming opinions, and reflecting on their day.
 
-Additionally, these agents have also been shown to exhibit more emergent social behaviours, such as planning and attending a Valentine's Day party and asking each other out on dates.
+Additionally, these agents exhibited more emergent social behaviours, such as planning and attending a Valentine's Day party and asking each other out on dates.
 
-There's a new library called AgentGPT that's making it easier to build these kind of agents. We're now able to easily spin up similar agents for the web.
+There's a new library called [AgentGPT](https://agentgpt.reworkd.ai/) that's making it easier to build these kind of agents. It's not as sophisticated as the sim character version, but follows the same idea of autonomous agents with memory, reflection, and tools avaliable. It's now relatively easy to spin up similar agents that can interact with the web.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_58.jpeg">
 
-I think we’re about to enter a stage of sharing the web with non-human agents that are very different to our current bots – they have a lot more data on how behave like realistic humans and are rapidly going to get more and more capable.
+I think we’re about to enter a stage of sharing the web with lots of non-human agents that are very different to our current bots – they have a lot more data on how behave like realistic humans and are rapidly going to get more and more capable.
 
 Soon we won’t be able to tell the difference between generative agents and real humans on the web.
 
@@ -534,7 +542,7 @@ Sharing the web with agents isn’t inherently bad and could have good use cases
 
 Now, why is this a problem?
 
-I’m only going to focus on how this will be a problem for humans relationships and information over the web.
+I’m only going to focus on how this will be a problem for human relationships and information over the web.
 
 Anything else – like how we might all end up unemployed or dead soon – is beyond my pay grade.
 
@@ -543,27 +551,31 @@ Anything else – like how we might all end up unemployed or dead soon – is be
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_60.jpeg">
 
-The cost of creating and publishing content to the web has just dropped to almost zero. Humans are expensive and slow at making content, needing time to research, read, think, and clumsily string words together, as well as taking breaks, eating, sleeping, and showering.
+The cost of creating and publishing content on the web just dropped to almost zero. 
 
-Generative models, on the other hand, write much faster, don't need time off, and don't get bored. ChatGPT currently costs a fraction of a cent ($0.002) to generate 1000 tokens (words), meaning that it would cost only two cents to generate 100 articles of 1000 words. If we used a more sophisticated architecture like prompt chaining the cost would certainly be higher, but still affordable.
+Humans are expensive and slow at making content. We need time to research, read, think, and clumsily string words together. And then we insist on taking more time to eat, sleep, socialise, and shower.
 
-Given that these creations are cheap, easy to use, fast, and can produce a nearly infinite amount of content, the cost of creating and publishing content to the web has become almost negligible.
+Generative models, on the other hand, write much faster, don't need time off, and don't get bored.
+
+ChatGPT currently costs a fraction of a cent ($0.002) to generate 1000 tokens (~words), meaning that it would cost only two cents to generate 100 articles of 1000 words. If we used a more sophisticated architecture like prompt chaining the cost would certainly be higher, but still affordable.
+
+Given that these creations are cheap, easy to use, fast, and can produce a nearly infinite amount of content...
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_61.jpeg">
 
-I think we’re about to drown in a sea of informational garbage.
+...I think we’re about to drown in a sea of informational garbage.
 
-We’re going to be absolutely swamped by masses of mediocre content.
+We’re going to be _absolutely swamped_ by masses of mediocre content.
 
 Every marketer, SEO strategist, and optimiser bro is going to have a field day
 filling Twitter and Facebook and Linked In and Google search results
-with masses of keyword-stuffed, optimised, generated crap
+with masses of keyword-stuffed, optimised, generated crap.
 
-This explosion of noise will make it difficult to find good-quality content and hear any signal.
+This explosion of noise will make it difficult to hear any signal. We'll need to find more robust ways to filter our feeds and curate good-quality work.
 
-While we already have tools to deal with spam and filter low-quality content, I think this new, more sophisticated type will leak through. I expect it will take a few years to get our content moderation, filtering, and defence systems to catch up.
+While we already have tools to deal with spam and filter low-quality content, I think this new, more sophisticated of junk will leak through. I expect it will take a few years to get our content moderation, filtering, and defence systems to catch up.
 
 Meta note: This image was made in Midjourney. It's the only AI-generated image I’m using in this talk. I mostly wanted to show that AI can do hands now – progress!
 
@@ -573,10 +585,9 @@ Meta note: This image was made in Midjourney. It's the only AI-generated image I
 
 We can tell this is already happening because spammers and scammers are lazy as fuck.
 
-This recent Verge article: "_'[As an Al language model](https://www.theverge.com/2023/4/25/23697218/ai-generated-spam-fake-user-reviews-as-an-ai-language-model)': the phrase
-that shows how Al is polluting the web_" pointed out that the phrase “as an AI language model” is showing up in all kinds of places: Amazon reviews, Yelp reviews, Tweets, and LinkedIn posts.
+This recent Verge article: **"'[As an Al language model](https://www.theverge.com/2023/4/25/23697218/ai-generated-spam-fake-user-reviews-as-an-ai-language-model)': the phrase that shows how Al is polluting the web"** pointed out that the phrase “as an AI language model” is showing up in all kinds of places: Amazon reviews, Yelp reviews, Tweets, and LinkedIn posts.
 
-This is a common phrase that shows up in ChatGPT outputs.
+This is a common phrase that shows up in ChatGPT outputs. As in “as an AI language model, I do not have any political opinions”
 
 The fact spammers couldn’t even be bothered to remove this obvious giveaway from their outputs shows the level of care and detail they’ll put into future work.
 
@@ -586,7 +597,9 @@ The fact spammers couldn’t even be bothered to remove this obvious giveaway fr
 
 Let’s look at some hypothetical scenarios of how this might unfold.
 
-This is Nigel. He’s written a book on ‘Why Nepotism is Great’ and he wants to be a bookfluencer. We're going to give him the benefit of the doubt and assume he's actually written this book and not prompted it into existence.
+This is Nigel. He’s written a book on ‘Why Nepotism is Great’ and he wants to be a bookfluencer.
+
+We're going to give him the benefit of the doubt and assume he's actually written this book and not prompted it into existence.
 
 So he spins up an agent
 
@@ -598,11 +611,14 @@ And then gives it access to all his social media accounts via APIs or something 
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_64.jpeg">
 
-The agent take a moment to strategise. And then gets to work.
+The agent takes a moment to strategise. And then gets to work.
 
-It generates and schedules a steady stream of tweets, LinkedIn and Facebook posts based on the book content, writes and schedules a newsletter every week for 6 months, sets up a Medium account and republishes those as articles, creates a set of addictive TikTok videos, a 24-part series for YouTube, generates a bunch of podcast episodes that use Nigel’s voice, and finds other people writing about nepotism and starts replying to everything they publish on Twitter, LinkedIn, etc.
+It generates and schedules a steady stream of tweets based on the book content. Then turns those into posts optimised for LinkedIn and Facebook. It then writes and schedules a newsletter every week for 6 months. Then sets up a Medium account and republishes those as articles. It moves onto creating a set of addictive TikTok videos, a 24-part series for YouTube, and generates a bunch of podcast episodes that use Nigel’s voice (trivial to do at this point). And finally finds other people writing about nepotism and starts replying to everything they publish on Twitter, LinkedIn, etc. in order to 
 
-This is not that different to what Nigel could do, but the agent doesn’t make tons of content so as not to set off any red flags on Nigel’s accounts. Without an agent, 99% of Nigles wouldn’t have the time, energy and motivation to do this, even if they’ve written a book, and certainly can’t do this volume and consistency of output.
+This is not that different to what Nigel could do.
+And the agent knows not to make _tons_ of content, lest it set off any red flags from content moderators. So it seems plausible this all could have been Nigel's doing.
+
+Without an agent, 99% of Nigel's wouldn’t have the time, energy and motivation to do this, even if they had written a book. And they certainly couldn't keep up this consistency of output. I also expect Nigel’s agent will write quite good, compelling content. Perhaps better than Nigel.
 
 </TalkSlide>
 
@@ -614,10 +630,9 @@ So now instead of only 1% of people having the time and energy to be prolific se
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_66.jpeg">
 
-99% of people now have the capacity to publish this mass of content to the web. Doesn't mean they will, but they _could_.
+99% of people have the capacity to publish this mass of content to the web. It doesn't mean they will, but they _could_.
 
-Clearly, we have lots of spam on the web now that we’re able to filter out and ignore.
-But I think the scale and quality of this new kind of something we’re not prepared for. I also expect Nigel’s agent will write quite good, compelling content. Perhaps better than Nigel.
+Clearly, we already have lots of spam on the web now that we’re able to filter out and ignore. But I think the scale and quality of this new kind is something we’re not prepared for. 
 
 Now imagine how this plays out with a political group with a specific agenda to push...
 
@@ -625,7 +640,7 @@ Now imagine how this plays out with a political group with a specific agenda to 
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_67.jpeg">
 
-So here's Genetic Guardians – they're a bunch of lobbyists who strongly believe in gene editing. And want to spread the good word
+So here's Genetic Guardians – they're a bunch of political lobbyists who strongly believe in gene editing. And want to spread the good word.
 
 But they understand scale in a way Nigel doesn’t.
 
@@ -634,16 +649,16 @@ But they understand scale in a way Nigel doesn’t.
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_68.jpeg">
 
 They spin up 1000 agents.
-And tell them to go be influencers. They appear to be real, consistent people who have accounts on most major social media platforms. They have their own websites and Twitter accounts. And they behave just like the other humans on the web.
 
-But each influencer is a one-person media machine making engaging and educational content about gene editing. They publish books. They make mini docs on YouTube. they host each other on their podcasts.
+And tell each of them to go be influencers. They should appear to be real, consistent people who have accounts on most major social media platforms. They have their own websites and Twitter accounts. And they behave just like the other humans on the web.
 
-They essentially build an influencer ring around gene editing
+But each influencer is a one-person media machine making engaging and educational content about gene editing. They publish books. They make mini-docs on YouTube. They host each other on their podcasts.
 
-And they don’t set off any content moderation flags. Individually all appear to make a reasonable, human amount of content.
+They essentially build an influencer content ring around gene editing.
 
-This is all fairly doable right now. It would a bit expensive to do at this scale.
-But we should expect costs to drop and there are some well-funded lobbying groups out there.
+And they still don’t set off any suspicions of being bots or content moderation flags. Individually, they all appear to make a reasonable, human amount of content.
+
+This is almost doable right now. It would certainly be a bit expensive to do at this scale. But we should expect costs to drop and there are some well-funded lobbying groups out there. I wouldn't be surprised if it's already happening.
 
 </TalkSlide>
 
@@ -665,18 +680,20 @@ This is only a problem if...
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_71.jpeg">
 
-...we want to use the web for very particular purposes. Such as facilitating genuine human connections, pursuing collective sense-making and building knowledge together, and ideally grounding our knowledge of the world in reality.
+...we want to use the web for very particular purposes.
+
+Such as facilitating genuine human connections, pursuing collective sense-making and building knowledge together, and ideally grounding our knowledge of the world in reality.
 
 So, if you don't care about these things, don't worry about generative AI!
 Everything will be fine!
 
-We're about to have much more engaging content on social media.
+We're about to have much more engaging content on social media. TikTok will be lit.
 
 However, I'm quite keen on these outcomes; I write on the web a lot, I'm a big proponent of people publishing personal knowledge online, and I encourage everyone to do it.
 
-I keep banging on about digital gardening which is like having your own personal wiki on the web.
+I keep banging on about digital gardening which is essentially having your own personal wiki on the web.
 
-The goal here is to make the web a space for collective understanding and knowledge-building, something lots of other speakers here have touched on, which requires us to find, share, and curate high-quality, reliable, and insightful information.
+The goal here is to make the web a space for collective understanding and knowledge-building, something lots of other speakers here have touched on. Which requires that we're able to find, share, and curate high-quality, reliable, and insightful information.
 
 I'm worried that generative agents threaten that, at least in the short term.
 
@@ -691,7 +708,7 @@ When I talk to people about my worries, I always get this question:
 In most cases, language models are more accurate and knowledgeable than most humans.
 Benchmarks have shown this. At least when it comes to referencing well-documented facts. They’re frankly better writers than a lot of us.
 
-Surely, having more generated content on the web might actually make it a more reliable and valuable place for all of us.
+Surely, having more generated content on the web would make it a more reliable and valuable place for all of us?
 
 And I’m sympathetic to this point...
 
@@ -709,7 +726,7 @@ And finally their potential for human relationships
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_74.jpeg">
 
-First, generated content is different because it has a different relationship to reality than us
+First, generated content is different because it has a different relationship to reality than us.
 
 </TalkSlide>
 
@@ -717,9 +734,11 @@ First, generated content is different because it has a different relationship to
 
 We are embodied humans in a shared reality filled with rich embodied sensory information.
 
-When we read, we compare other people's account of reality against our own experiences. And then we write our own accounts. We are all participating in this beautiful cycle of trying to make sense of everything together. This is the core of all science, art, and literature. We are trying to understand and teach each other things through writing.
+When we read, we compare other people's accounts of reality against our own experiences. We question whether their views align with ours. And then we write our own accounts.
 
-We have now fed this enormous written record into large language models, encoding a bunch of patterns in their networks, creating a representation of the written record of humanity.
+In doing this, we are all participating in this beautiful cycle of trying to make sense of everything together. This is the core of all science, art, and literature. We are trying to understand and teach each other things through writing.
+
+We have now fed this enormous written record into large language models, encoding a bunch of patterns in their networks, creating a representation of the existing written knowledge of humanity.
 
 This model can now generate text that is predictably similar to all the text it has seen before.
 
@@ -729,13 +748,13 @@ But the tricky bit is trying to figure out how much this generated text relates 
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_76.jpeg">
 
-In some sense, it’s fully UNHINGED.
+In some sense, it’s fully _UNHINGED_.
 
 The model cannot check its claims against reality because it can’t access reality.
 
 But it’s a bit like a fuzzy memory of reality.
 
-It is based off what we’ve written about the world, but can’t validate its claims.
+It _is_ based off what we’ve written about the world, but can’t validate its claims.
 
 </TalkSlide>
 
@@ -743,7 +762,7 @@ It is based off what we’ve written about the world, but can’t validate its c
 
 We politely call it “hallucination” when language models say things that don’t reflect reality.
 
-In ways, it’s like a terribly smart person on some mild drugs. They're confused about who they are and where they are.
+In ways, it’s like a terribly smart person on some mild drugs. They're confused about who they are and where they are, but they're still super knowledgeable.
 
 This disconnect between its superhuman intelligence and incompetence is one of the hardest things to reconcile.
 
@@ -751,53 +770,53 @@ This disconnect between its superhuman intelligence and incompetence is one of t
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_78.jpeg">
 
-A big part of this limitation is that these models only deal in language.
+A big part of this limitation is that these models only deal with language.
 
 And language is only one small part of how a human understands and processes the world.
 
-We perceive and reason and interact with the world via spatial reasoning, embodiment, sense of time, touch, taste, memory, vision, and consciousness.
-These are all pre-linguistic. They live in an entirely separate part of the brain.
+We perceive and reason and interact with the world via spatial reasoning, embodiment, sense of time, touch, taste, memory, vision, and sound.
+These are all pre-linguistic. And they live in an entirely separate part of the brain from language.
 
 Generating text strings is not the end-all be-all of what it means to be intelligent or human.
 
-So simulated humans that can only deal with language are missing a big part of what we perceive as “reality.”
+So simulated humans that can only deal with language are missing a big part of what we perceive as human “reality.”
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_79.jpeg">
 
-Language models are different in their social context.
-In that they have a unique relationship to our social world.
+Language models are also different in their social context.
+In that they have a strange relationship to our social world.
 
 Everything we say is situated in a social context.
 I'm assuming everyone in this room has an usually high level of technical literacy. I don’t talk to my writer friends, or my aunt in the same way I'm going to talk to you.
+We are always evaluating the amount of shared context we have with people we're talking to - it changes how we communicate.
 
-We are always guessing the amount of shared context we have with people we're talking to - it changes how we communicate.
+If I met someone from Shakespearean England, we’d have some trouble communicating because we share less context. We don't just speak in different dialects, we have different morals and values, we have different assumptions about how society works and how science works.
 
-If I met someone from Shakespearean England, we’d have trouble communicating. We don't just speak in different dialects, we have different morals and values, we have different assumptions about how society works and how science works.
+The point is there is no truth or knowledge outside of social context. Everything we say is contextual and relies on a shared social world.
 
-There is no truth or knowledge outside of social context. Everything we say is contextual, rests on shared context.
-
-But a language model is not a person with a fixed identify.
+But a language model is not a person with a fixed identity.
 
 They know nothing about the cultural context of who they’re talking to.
 They take on different characters depending on how you prompt them and don’t hold fixed opinions.
-They are not speaking from one stable social position
+They are not speaking from one stable social position.
 
-This makes some people claim they’re objective or more reliable than humans with biases.
+This leads some people to claim they’re objective or more reliable than humans with biases.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_80.jpeg">
 
-But they do represent a particular way of seeing the world.
+But they in fact _do_ represent a very particular way of seeing the world.
 
-We trained them primarily on text on the web. Which means they represent the generalised views of a majority English-speaking, western population
-who have written a lot on Reddit and lived between about 1900 and 2023
+We trained them primarily on text scraped from the web. They're of course also trained on books and Wikipedia, but it's a far smaller percentage of the training data.
+
+This means they primarily represent the generalised views of a majority English-speaking, western population who have written a lot on Reddit and lived between about 1900 and 2023.
 
 Which in the grand scheme of history and geography, is an _incredibly_ narrow slice of humanity.
 
-This obviously does not represent all human cultures and languages and ways of being.
+This clearly does not represent all human cultures and languages and ways of being.
 
 We are taking an already dominant way of seeing the world and generating even more content reinforcing that dominance.
 
@@ -811,115 +830,98 @@ This hopefully improves with time, but it's hard to solve with limited data.
 
 If I put my anthropologist hat on and look at this problem it feels exceptionally tragic.
 
-
 Our entire discipline tries to expand the collective understanding of how diverse human cultures can be. We try to help people realise both how unified we are as a species, but also how flexible and adaptable human cultures can be – far weirder and more wonderful than we can imagine.
 
-This is a quote from Tim ingold a brilliant anthropologist.
+This is captured well in this quote from Tim Ingold, a well-known and brilliant anthropologist: “Every way of life represents a communal experiment in living. The world itself is never settled in its structure and composition. It is continually coming into being.”
 
-Generating a mass of content from a very particular way of viewing the world funnels us down into a monoculture.
+Generating a mass of content from a very particular way of viewing the world funnels us down into a monoculture. Which feels like shutting down a ton of possibilities and diversity for all the ways human culture might unfold in the future.
 
-Which feels like shutting down a ton of possibilities and diversity for all the ways human culture might unfold in the future.
-
-Not to mention all the existing cultures and languages we might lose
+Not to mention all the existing cultures and languages we might lose in this process.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_82.jpeg">
 
-Lastly, generated content lacks potential for human relationships
-That human-made content has
+Lastly, generated content lacks any potential for human relationships.
 
-When you read someone else’s writing online, it’s often an invitation to connect with them.
+When you read someone else’s writing online, it’s an invitation to connect with them. You can reply to their work, direct message them, meet for coffee or a drink, and ideally become friends or intellectual sparring partners. I’ve had this happen with so many people. Highly recommend.
 
-You can reply to their work, DM them, meet for coffee, and ideally become friends or intellectual sparring partners.
-I’ve had this happen with so many people
+There is always someone on the other side of the work who you can have a full human relationship with.
 
-There is someone on the other side of the work who you can have a full human relationship with
-
-Some of us might argue this is the whole point of writing on the web
+Some of us might argue this is the whole point of writing on the web.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_83.jpeg">
 
-This is a still from the film ‘her’
-It’s now the canonical reference for para-social relationships with AIs. 
+This isn't the case with generated writing.
 
-In it Joaquin Phoenix has a wonderful relationship with his personal AI
-- talks to via an earpiece all day
-grows increasingly distant from the humans around him. 
-AI grows bored of him and leaves
+This is a still from the film ‘Her’ which is now the canonical reference for para-social relationships with AIs.
 
-Points to potentially unfulfilling outcomes if we try to form emotional relationships with AI
- - agents are already being used as friend or girlfriend chatbots
-– trying to use them to fill an emotional void
+In it, Joaquin Phoenix has a wonderful relationship with his personal AI. He talks to her via an earpiece all day, grows increasingly distant from the humans around him, and eventually falls in love. The AI then grows bored of him and his tiny human mind and leaves.
 
-Obvs. they cannot fulfil all the needs humans have for each other.
-They cannot hug you, come to your birthday party, truly empathise, tell you about their experiences grounded in the real world
+This is a good lesson about the potentially unfulfilling outcomes we face if we try to form emotional relationships with AI.
+People are already building girlfriend chatbots using language models, trying to use them to fill an emotional void.
+
+_Obviously_, generative models cannot fulfil all the needs humans have in relationships. They cannot hug you, come to your birthday party, truly empathise with your situation, or tell you about their experiences grounded in the real world.
 
 Generated content can’t facilitate real, fulfilling human relationships.
-
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_84.jpeg">
 
-So that all sounds quite bad. Deep breaths 
+So that all sounds quite bad. Let's do some more deep breaths.
 
-I now want to talk about possible futures. Roughly over the next 5 years.
+I now want to talk about possible futures.
 
-Non-comprehensive list and not mutually exclusive of themes and trends.
-Many of these will happen in parallel.
+This is going to be a non-comprehensive, not mutually exclusive list of themes and trends. I'm guessing many of these will happen in parallel over the next 5 years. I'm not dumb enough to predict any further out than that.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_85.jpeg">
 
-First is we’re all about to spend a lot of time thinking about how to pass the reverse Turing test
+First, we’re all about to spend a lot of time thinking about how to pass the reverse Turing test.
 
-A lot of this talk is based on an essay I wrote in January
-so roughly 5 years ago in AI development time.
+A lot of this talk is based on an essay called [[The Expanding Dark Forest and Generative AI]] I wrote back in January. So roughly 5 years ago in AI development time.
 
-focused a lot on this question of how we might prove we’re human on a web filled with fairly sophisticated generated content and agents
-I still think this is a relevant short term concern.
-
+In it, I focused a lot on this question of how we might prove we’re human on a web filled with fairly sophisticated generated content and agents. I still think this is a relevant short-term concern.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_86.jpeg">
 
-Original Turing test had a human talk to a computer and another human through only text messages.
+The original Turing test had a human talk to a computer and another human through only text messages.
 
 If the computer seemed plausibly human, it passed the test.
 
-In the original the computer is the one who has to prove competency.
-
-
+In the original, the computer is the one who has to prove competency.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_87.jpeg">
 
-On the new web, we’re the ones under scrutiny – we have to prove we’re real.
+On the new web, we’re the ones under scrutiny. Everyone is assumed to be a model until they can prove they're human.
 
 This is going to be challenging on a web flooded with sophisticated agents.
 
-In the short term we can employ a bunch of tricks like
-using unusual jargon and insider terminology
-writing in non-dominant languages that the models don’t have as much training data for - welsh, catalan
-being multi-modal: text plus video plus audio (won’t last long)
-Higher quality writing w/ more research and critical thinking
+In the short term, we can employ a bunch of tricks like using unusual jargon and insider terminology that language models won't know yet.
+
+We can write in non-dominant languages that the models don’t have as much training data for, such as Welsh or Catalan (requires knowing one of these languages).
+
+We can publish multi-modal work that covers both text and audio and video. This defence will probably only last another 6-12 months.
+
+And lastly, we can push ourselves to do higher quality writing, research, and critical thinking. At the moment models still can't do sophisticated long form writing full of legitimate citations and original insights.
 
 </TalkSlide>
 
 <TalkSlide imgSrc="/images/posts/forest-talk/dft_88.jpeg">
 
-We’ll have higher standard for humans as models take over more mundane tasks.
+Related to this, I think we're about to have _much_ higher standard for humans. Models take over more mundane cognitive tasks and simpler writing.
 
-We’ll demand more of human writers because great automated writing is cheap and prolific.
+We’ll demand more from human writers because great automated writing is cheap and prolific.
 
-This raises both the floor and the ceiling for quality of writing.
-
+This raises both the floor and the ceiling for the quality of writing.
 
 </TalkSlide>
 
