@@ -29,14 +29,8 @@ export default function Colophon() {
         <MainSection>
           <ProseWrapper>
             <p>
-              I designed and built this site myself.
-              <Footnote idName={1}>
-                Mostly. My{" "}
-                <a href="https://www.davebernhard.com/">long-term partner</a> is
-                also a developer and I sometimes coerce him into building small
-                features or fixing stubborn bugs.
-              </Footnote>{" "}
-              Everything is open souce and published on{" "}
+              I designed and built this site myself. Everything is open souce
+              and published on{" "}
               <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">
                 Github
               </TooltipLink>{" "}
