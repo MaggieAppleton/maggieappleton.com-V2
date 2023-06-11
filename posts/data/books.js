@@ -1,6 +1,6 @@
 export const bookData = [
   {
-    title: "Being You A New Science of Consciousness",
+    title: "Being You: A New Science of Consciousness",
     author: "Anil Seth",
     cover: "/images/books/beingyou.jpg",
     link: "https://www.google.co.uk/books/edition/Being_You/g0-4DwAAQBAJ?hl=en&gbpv=0",
