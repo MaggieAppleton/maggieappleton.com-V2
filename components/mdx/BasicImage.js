@@ -15,7 +15,12 @@ export default function BasicImage({
 
   return (
     <Container margin={margin} {...props}>
-      <StyledBasicImage src={src} srcSet={srcSet} alt={alt} width={width || "100%"} />
+      <StyledBasicImage
+        src={src}
+        srcSet={srcSet}
+        alt={alt}
+        width={width || "100%"}
+      />
       {showalt ? (
         sourceUrl ? (
           <figcaption>
@@ -32,14 +37,14 @@ export default function BasicImage({
 const Container = styled.figure`
   max-width: 100%;
   grid-column: 1 / 4 !important;
-  margin: ${props => props.margin || "var(--space-l) auto"};
+  margin: ${(props) => props.margin || "var(--space-l) auto"};
   text-align: center;
   figcaption {
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     color: var(--color-gray-600);
     line-height: 1.5;
-    width: ${props => props.width || "100%"};
+    width: ${(props) => props.width || "100%"};
     max-width: 100%;
     margin-top: var(--space-xs);
   }
@@ -49,7 +54,8 @@ const Container = styled.figure`
 `;
 
 const StyledBasicImage = styled.img`
-  width: ${props => props.width || "1100px"};
+  width: ${(props) => props.width || "1100px"};
+  max-width: 100%;
   margin: 0 auto var(--space-xs);
   border-radius: var(--border-radius-sm);
 `;

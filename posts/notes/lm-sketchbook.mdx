@@ -1,0 +1,232 @@
+---
+title: "Language Model Sketchbook, or Why I Hate Chatbots"
+description: "Sketchy ideas for interfaces that play with the novel capabilities of language models"
+startDate: "2023-06-12"
+updated: "2023-06-12"
+type: "note"
+topics:
+  [
+    "Design",
+    "Language Models",
+    "Tools for Thought",
+    "Artificial Intelligence",
+  ]
+growthStage: "budding"
+toc: true
+---
+
+<IntroParagraph>
+
+We don't quite know what to do with language models yet. But we have some hunches. To me they seem obviously useful as epistemic [rubber ducks](https://en.wikipedia.org/wiki/Rubber_duck_debugging) <span role="img">🐥</span> – as things we can query for fuzzy answers, bounce ideas off, and think through problems with. They can help strengthen our own critical thinking and reasoning abilities in the same way a good debate partner does.
+
+</IntroParagraph>
+
+This isn't the _only_ way they're useful, but it's the one I'm most curious about. So I've been playing with it.
+
+The primary interface everyone and their mother jumps to at this point is the chatbot. We are irreversibly anchored to this text-heavy, turn-based interface paradigm. And sure, it's a great solution in a lot of cases! It's flexible, familiar, and easy to implement.
+
+But it's also the lazy solution. It's only the obvious tip of the iceberg when it comes to exploring how we might interact with these strange new language model agents we've grown inside a neural net.
+
+{/* --- pic of iceberg of lm interfaces ---- */}
+
+I won't turn this into an anti-chatbot-tirade, but I am certainly brewing one. A few of my friends have eloquently [written](https://wattenberger.com/thoughts/boo-chatbots) [about](https://www.youtube.com/watch?v=rd-J3hmycQs) [this](https://austinhenley.com/blog/naturallanguageui.html) so just go read their work in the meantime.
+
+Back to the point: I have a large, sprawling Figma file full of tiny interface sketches trying to explore what kinds of non-chatbot, epistemic-rubber-ducky-interfaces could be helpful for us. Here's a couple of them.
+
+## Daemons
+
+Imagine the environment you're writing in has a few characters who hang out in the background and suggest ideas to you every now and then.
+
+These [daemons](https://en.wikipedia.org/wiki/Daimon) have particular personalities – one plays devil's advocate, one says encouraging things and compliments your writing, one synthesises your ideas into more concise statements, one fetches evidence and research for you, one elaborates on points you haven't fully explained, etc. 
+
+As you write, one of them might highlight a sentence and suggest a revision, or ask you to defend a claim. You can always ignore them if you like and the suggestion will fade.
+
+Here's a more detailed walkthrough of how this works
+
+<Video src="https://www.youtube.com/embed/oDuVAczLqTk?vq=hd720" />
+
+<Spacer size="small"/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/daemon_1.jpg"
+  alt="Screenshot of the daemons prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/daemon_2.jpg"
+  alt="Screenshot of the daemons prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/daemon_3.jpg"
+  alt="Screenshot of the daemons prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/daemon_4.jpg"
+  alt="Screenshot of the daemons prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/daemon_5.jpg"
+  alt="Screenshot of the daemons prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/daemon_6.jpg"
+  alt="Screenshot of the daemons prototype"
+/>
+
+<Spacer size="small"/>
+
+## Branches
+
+A lot of what we think of as “understanding an issue” often comes down to “What caused this?” and “What are the consequences of this?”. Or put another way, “Why did this happen?” and “What's likely to happen next?”
+
+We usually get to the bottom of these questions through a mix of research and sitting alone trying to think hard about the issue at hand.
+
+It seems plausible language models would be good helpers in this department. They have plenty of latent knowledge and I've found they're quite good at suggesting reasonable cause-and-effect chains. As long as you double-check its suggestions and don't take them as gospel.
+
+This concept is centered around exploring these cause/consequence chains
+
+<Video src="https://www.youtube.com/embed/otxgVcyQNdU?vq=hd720" />
+
+<Spacer size="small"/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/branches_1.jpg"
+  alt="Screenshot of the branches prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/branches_2.jpg"
+  alt="Screenshot of the branches prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/branches_3.jpg"
+  alt="Screenshot of the branches prototype"
+/>
+
+<Spacer size="small"/>
+
+## Epi
+
+While I love interfaces with a tightly-scoped and specific purpose, there's clearly some opportunity for a more general-purpose reasoning assistant with LMs. Specifically for folks doing research and non-fiction writing.
+
+Models can help in a bunch of small ways – rephrasing sentences, offering critiques of ideas, helping to find evidence for claims, generating possible research questions, and pointing out our assumptions.
+
+Epi uses the familiar right-click context menu to make these moves available in a simple writing context.
+
+<Video src="https://www.youtube.com/embed/8XpIPbhgq0M?vq=hd720" />
+
+<Spacer size="small"/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_1.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_2.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_3.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_4.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_5.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_6.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+<ResponsiveImage
+  framed
+  margin="var(--space-xs) auto"
+  width="950px"
+  src="/images/posts/lm-sketchbook/epi_7.jpg"
+  alt="Screenshot of the epi prototype"
+/>
+
+---
+
+I'm still building out this collection. More to come.
+
+{/* Magnet
+
+Embeddings feel like the dark horse in this whole generative AI hype cycle.
+
+Sixer
+
+This is based off Edward de Bono's famous [Six Thinking Hats]() technique. You take a problem you're facing and look at it through a series of lenses. Or in this case, while wearing one of many different hats.
+
+There are – unsurprisingly – six hats:
+
+- White for considering what information you currently know
+- Red for emotional hunches, feelings, and intuitions
+- Green for creative possibilities and exploring alternatives
+- Yellow for optimistic positivity
+- Black for pessimism, caution, and considering risks
+- Blue for meta-analysis: are you approaching the problem the right way?
+
+Using language models to help fill out some of the answers within a well-defined framework
+
+Invenntion
+ */}

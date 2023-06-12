@@ -3,8 +3,8 @@ import styled from "styled-components";
 const Video = ({ src, title, width, height, margin, ...props }) => (
   <StyledVideo margin={margin} {...props}>
     <iframe
-      width={ width ? width : "1000"}
-      height={ height ? height : "570"}
+      width={width ? width : "1000"}
+      height={height ? height : "570"}
       src={src}
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -15,7 +15,9 @@ const Video = ({ src, title, width, height, margin, ...props }) => (
 );
 
 const StyledVideo = styled.div`
-  margin: ${(props) => {props.margin || "2rem auto"}};
+  margin: ${(props) => {
+    props.margin || "2rem auto";
+  }};
   grid-column: 1/4 !important;
   width: 950px;
   height: 570px;
@@ -26,9 +28,9 @@ const StyledVideo = styled.div`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--box-shadow-lg);
-  @media (max-width: 724px) {
-      width: 100%;
-      height: 50vw;
+  @media (max-width: 950px) {
+    width: 100%;
+    height: 50vw;
   }
   iframe {
     left: 0;
