@@ -17,6 +17,7 @@ import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
+import TalkTemplate from "../templates/TalkTemplate";
 import {
   Title1,
   Title2,
@@ -30,10 +31,12 @@ import {
   noteFilePaths,
   essayFilePaths,
   patternFilePaths,
+  talksFilePaths,
   ESSAYS_PATH,
   PATTERNS_PATH,
   NOTES_PATH,
   PROJECTS_PATH,
+  TALKS_PATH,
 } from "../utils/mdxUtils";
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -385,6 +388,16 @@ export default function PostPage({
         ogImage={ogImage}
       />
     );
+  } else if (frontMatter.type === "talk") {
+    return (
+      <TalkTemplate
+        slug={slug}
+        source={source}
+        frontMatter={frontMatter}
+        components={components}
+        ogImage={ogImage}
+      />
+    );
   }
 }
 
@@ -403,6 +416,7 @@ export const getStaticProps = async ({ params }) => {
   const notes = fs.readdirSync(NOTES_PATH);
   const projects = fs.readdirSync(PROJECTS_PATH);
   const patterns = fs.readdirSync(PATTERNS_PATH);
+  const talks = fs.readdirSync(TALKS_PATH);
 
   // const type = essays.find((e) => e.includes(params.slug)) ? "post" : "note";
 
@@ -416,6 +430,8 @@ export const getStaticProps = async ({ params }) => {
     type = "note";
   } else if (patterns.find((file) => file.includes(params.slug))) {
     type = "pattern";
+  } else if (talks.find((file) => file.includes(params.slug))) {
+    type = "talk";
   }
 
   // switch case statement to determine which file to load
@@ -432,6 +448,9 @@ export const getStaticProps = async ({ params }) => {
       break;
     case "pattern":
       filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
+      break;
+    case "talk":
+      filePath = path.join(TALKS_PATH, `${params.slug}.mdx`);
       break;
   }
 
@@ -495,9 +514,15 @@ export const getStaticPaths = async () => {
   const essayPaths = getSlugParams(essayFilePaths);
   const projectPaths = getSlugParams(projectFilePaths);
   const patternPaths = getSlugParams(patternFilePaths);
+  const talkPaths = getSlugParams(talksFilePaths);
 
   // Combine all paths into one array
-  const paths = notePaths.concat(essayPaths, projectPaths, patternPaths);
+  const paths = notePaths.concat(
+    essayPaths,
+    projectPaths,
+    patternPaths,
+    talkPaths
+  );
 
   return {
     paths,

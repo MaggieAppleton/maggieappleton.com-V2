@@ -5,6 +5,7 @@ const matter = require("gray-matter");
 const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
 const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
 const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
+const TALKS_PATH = path.join(process.cwd(), "posts", "talks");
 
 // Extract all instances of substrings between double brackets [[]] from a long string
 const bracketsExtractor = (str) => {
@@ -62,12 +63,14 @@ const getAllPostData = () => {
   const essayFiles = fs.readdirSync(ESSAYS_PATH);
   const noteFiles = fs.readdirSync(NOTES_PATH);
   const patternFiles = fs.readdirSync(PATTERNS_PATH);
+  const talkFiles = fs.readdirSync(TALKS_PATH);
 
   const essaysData = getDataForBacklinks(essayFiles, ESSAYS_PATH);
   const notesData = getDataForBacklinks(noteFiles, NOTES_PATH);
   const patternsData = getDataForBacklinks(patternFiles, PATTERNS_PATH);
+  const talksData = getDataForBacklinks(talkFiles, TALKS_PATH);
 
-  return [...essaysData, ...notesData, ...patternsData];
+  return [...essaysData, ...notesData, ...patternsData, ...talksData];
 };
 
 (function () {

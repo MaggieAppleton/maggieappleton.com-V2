@@ -47,11 +47,19 @@ const projectFilePaths = fs
   .readdirSync(PROJECTS_PATH)
   .filter((path) => /\.mdx?$/.test(path));
 
+const TALKS_PATH = path.join(process.cwd(), "posts", "talks");
+
+const talksFilePaths = fs
+  .readdirSync(TALKS_PATH)
+  .filter((path) => /\.mdx?$/.test(path));
+
 module.exports = {
   essayFilePaths,
   noteFilePaths,
   projectFilePaths,
   patternFilePaths,
+  talksFilePaths,
+  TALKS_PATH,
   PATTERNS_PATH,
   ESSAYS_PATH,
   NOTES_PATH,

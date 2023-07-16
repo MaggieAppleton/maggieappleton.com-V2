@@ -12,10 +12,25 @@ const {
   NOTES_PATH,
   patternFilePaths,
   PATTERNS_PATH,
+  talksFilePaths,
+  TALKS_PATH,
 } = mdxUtils;
 
 let essays = essayFilePaths.map((filePath) => {
   const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+  const { content, data } = matter(source);
+  const slug = filePath.replace(/\.mdx$/, "");
+
+  return {
+    content,
+    data,
+    slug,
+    filePath,
+  };
+});
+
+let talks = talksFilePaths.map((filePath) => {
+  const source = fs.readFileSync(path.join(TALKS_PATH, filePath));
   const { content, data } = matter(source);
   const slug = filePath.replace(/\.mdx$/, "");
 
@@ -53,7 +68,7 @@ let patterns = patternFilePaths.map((filePath) => {
   };
 });
 
-const posts = [...essays, ...notes, ...patterns];
+const posts = [...essays, ...notes, ...patterns, ...talks];
 
 function transformPostsToSearchObjects(posts) {
   const transformed = posts.map((post) => {

@@ -10,9 +10,10 @@ import generateRSSFeed from "../utils/generateRSSFeed";
 import { Spacer } from "../components/Spacer";
 import { Title1, Title2, SmallTitle2 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
-import ProjectCard from "../components/cards/ProjectCard";
+// import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
 import PatternCard from "../components/cards/PatternCard";
+import NoteCard from "../components/cards/NoteCard";
 import { bookData } from "../posts/data/books";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
@@ -34,8 +35,9 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 export default function Index({
   sortedEssays: essays,
   sortedNotes: notes,
-  sortedProjects: projects,
+  // sortedProjects: projects,
   sortedPatterns: patterns,
+  // sortedTalks: talks,
 }) {
   // React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
 
@@ -88,7 +90,7 @@ export default function Index({
             transition={{ delay: 0.2, duration: 1 }}
             style={{
               marginTop: "var(--space-m)",
-              maxWidth: "1100px"
+              maxWidth: "1100px",
             }}
           >
             <b>Maggie </b>
@@ -122,7 +124,7 @@ export default function Index({
               >
                 The Garden
               </Title2>
-              </a>
+            </a>
           </Link>
           <Subheader>
             A digital garden is a collection of imperfect notes, essays, and
@@ -145,7 +147,7 @@ export default function Index({
                   Essays
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Opinionated, longform narrative writing with an agenda
@@ -178,24 +180,23 @@ export default function Index({
                   Notes
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Loose, unopinionated notes on things I don’t entirely understand
               yet.
             </Subheader>
-            {notes.slice(0, 12).map((note) => (
-              <Link key={note.slug} href={`/${note.slug}`}>
-                <a>
-                  <IndexNoteCard>
-                    {note.data.growthStage && (
-                      <GrowthIcon growthStage={note.data.growthStage} />
-                    )}
-                    <h3>{note.data.title}</h3>
-                  </IndexNoteCard>
-                </a>
-              </Link>
-            ))}
+            <div style={{ marginLeft: "-1.4rem", marginTop: "-1rem" }}>
+              {notes.slice(0, 10).map((note) => (
+                <NoteCard
+                  id={note.slug}
+                  slug={note.slug}
+                  title={note.data.title}
+                  growthStage={note.data.growthStage}
+                  date={note.data.updated}
+                />
+              ))}
+            </div>
           </section>
           <section style={{ gridArea: "patterns" }}>
             <Link href="/patterns">
@@ -204,7 +205,7 @@ export default function Index({
                   Patterns
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Design patterns gathered from my own observations and research.
@@ -228,7 +229,7 @@ export default function Index({
                   Library
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Books I’ve read and books I like the idea of having read.
@@ -315,34 +316,34 @@ const ReadmoreLink = styled.a`
   }
 `;
 
-const IndexNoteCard = styled.div`
-  display: flex;
-  padding: var(--space-xs) 0 1.2rem;
-  border-bottom: 1px solid var(--color-tinted-cream);
-  transition: all 0.3s ease-in-out;
-  svg {
-    position: relative;
-    top: 5px;
-    flex-shrink: 0;
-  }
-  h3 {
-    color: var(--color-gray-800);
-    transition: all 0.3s ease-in-out;
-    font-family: var(--font-body);
-    font-size: var(--font-size-base);
-    font-weight: 400;
-    line-height: var(--leading-snug);
-    margin-left: var(--space-xs);
-    transition: all 0.3s ease-in-out;
-  }
-  &:hover {
-    border-bottom: 1px solid var(--color-sea-blue);
-    h3 {
-      color: var(--color-crimson);
-    }
-    transform: scale3d(1.02, 1.02, 1.02);
-  }
-`;
+// const IndexNoteCard = styled.div`
+//   display: flex;
+//   padding: var(--space-xs) 0 1.2rem;
+//   border-bottom: 1px solid var(--color-tinted-cream);
+//   transition: all 0.3s ease-in-out;
+//   svg {
+//     position: relative;
+//     top: 5px;
+//     flex-shrink: 0;
+//   }
+//   h3 {
+//     color: var(--color-gray-800);
+//     transition: all 0.3s ease-in-out;
+//     font-family: var(--font-body);
+//     font-size: var(--font-size-base);
+//     font-weight: 400;
+//     line-height: var(--leading-snug);
+//     margin-left: var(--space-xs);
+//     transition: all 0.3s ease-in-out;
+//   }
+//   &:hover {
+//     border-bottom: 1px solid var(--color-sea-blue);
+//     h3 {
+//       color: var(--color-crimson);
+//     }
+//     transform: scale3d(1.02, 1.02, 1.02);
+//   }
+// `;
 
 const GardenSection = styled(motion.section)`
   margin: var(--space-xl) 0 var(--space-s);

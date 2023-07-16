@@ -40,6 +40,7 @@ export default function Notes({ notes }) {
 const NotesGrid = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-gap: 1rem;
 `;
 
 // Fetches the data for the page.
