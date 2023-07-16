@@ -56,8 +56,11 @@ export default function Footer() {
             // { text: "Tools I Use", slug: "/uses" },
             { text: "Library", slug: "/library" },
             // { text: "Changelog", slug: "/changelog" },
-            { text: "Projects", slug: "/projects" },
+            { text: "Podcasts", slug: "/podcasts" },
             { text: "Colophon", slug: "/colophon" },
+            { text: "Talks", slug: "/talks" },
+            { text: "Projects", slug: "/projects" },
+
             // { text: "Illustration Resources", slug: "/resources" },
           ].map((link, i) => {
             return (
