@@ -13,7 +13,12 @@ export default function Podcasts() {
       <Layout>
         <header style={{ marginBottom: "var(--space-xl)" }}>
           <TitleWithCount posts={podcastData}>Podcasts</TitleWithCount>
-          <Title2>Interviews and chats on podcasts</Title2>
+          <Title2>Interviews and casual chats on podcasts</Title2>
+          <p>
+            A handful of kind and interesting people have been gracious enough
+            to let me ramble about programming, metaphors, and/or programming
+            metaphors on their podcasts.
+          </p>
         </header>
         <NotesGrid>
           {podcastData.map(
