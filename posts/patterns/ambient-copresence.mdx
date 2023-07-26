@@ -40,7 +40,7 @@ This looks like quietly reading on the back porch with family, sitting in a cafe
 
 The others rarely demand your attention or strike up conversations. They just exist nearby, unobtrusively doing whatever they're doing. Providing companionship, comfort, and small windows of insight into how others choose to show up in the world and spend their time.
 
-### Multiplayer Cursors
+#### Multiplayer Cursors
 
 Our current digital attempt at this is the multiplayer cursor. Other people who have access to your file are visible in the interface. Usually as small, pointy, colourful cursors or highlighted text selections. Sometimes with little names or floating profile pictures next to them to help identify people.
 
@@ -54,16 +54,33 @@ AFAIK Google Docs was the first to implement this, quickly followed by everyone 
 
 This adds a sense of shared activity in digital spaces but lacks the ambient quality we're seeking. Seeing _exactly_ which word or design mock your manager is focused on isn't the chill background sensation we're going for.
 
-They also don't scale. Having hundreds of individual cursors zooming around an interface quickly feels overwhelming. Anyone who has been in a massive shared Google Doc or Figma file knows this sensation well. They're clearly designed for smaller scale, closed contexts like private teams and internal work. 
+They also don't scale. Having hundreds of individual cursors zooming around an interface quickly feels overwhelming. Anyone who has been in a massive shared Google Doc or Figma file knows this sensation well. They're clearly designed for smaller-scale, closed contexts like private teams and internal work. 
 
 To scale this sensation of sensing others in a workspace without being distracted by them, we could turn the pointy, specific, animated cursor into a softer, fuzzier hint of presence. More like a heatmap.
 
-### Ambient Sound
+#### Ambient Sound
 
-Ambient sounds feels like one of the most promising avenues to explore here. Two projects have done this well
+Ambient sounds feel like one of the most promising avenues to explore here. Sound naturally follows a spatial gradient in physical space; people close to you are louder, and people further away are quieter, with many shades in between.
 
-[Gather Town](https://www.gather.town/) is a “digital space for distributed teams” which I've seen used for everything from unconferences to team retreats. 
+This gives us some flexibility between private and public conversations. We can move in and out of earshot of other people, or enjoy the low hum of other voices in larger spaces without being distracted.
 
-[Cozyroom](https://cozyroom.xyz/) is a small project built by Azlen Elza and XXX that took this a step further. 
+Two projects have done this well in digital space:
+
+1. [Gather Town](https://www.gather.town/) is a “digital space for distributed teams” which I've seen used for everything from unconferences to team retreats. You appear as a game-like character in a fake living room or office, and can then move around the space.
+
+<BasicImage src="" alt="Gather town spatial audio and video" />
+
+The clever bit here is the video and audio channels of people around you fade in and out as you move closer and further from them. You're able to move around a room and jump between conversational groups, just like at a cocktail party.
+
+2. [Cozyroom](https://cozyroom.xyz/) is more of a prototype, but is specifically designed to explore spatial audio. You appear as a little blobby character on screen who can talk. As you move near people, their audio volume increases. You can also draw bounded areas 
+
+<BasicImage src="" alt="Cozyroom spatial audio" />
 
 
+<References>
+  <ReferencesLink
+    title="Designing multiplayer apps with patterns from architecture"
+    href="https://interconnected.org/home/2022/01/21/social_gradient"
+    author="Matt Webb"
+  />
+</References>
