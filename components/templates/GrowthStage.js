@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function GrowthStage({ stage }) {
     if (stage === "evergreen") {
         return (
-            <Tooltip maxWidth={300} content="Evergreens are ideas I've invested significant time into. They are refined, edited, and won't significantly change – aside from the occassional trimming.">
+            <Tooltip maxWidth={300} content="Evergreens are ideas I've invested significant time into. They are refined, edited, and won't significantly change – aside from the occasional trimming.">
                 <StyledGrowthStage>{stage}</StyledGrowthStage>
             </Tooltip>
         );

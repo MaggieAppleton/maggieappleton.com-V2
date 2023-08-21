@@ -169,7 +169,7 @@ export default function About() {
           <section className="talks">
             <Title2>Talks</Title2>
             <p>
-              I occassionally give talks. Some are about why we should use more
+              I occasionally give talks. Some are about why we should use more
               visual explanations and intentional metaphors in programming.
               Others touch on cultural anthropology topics and the narratives we
               tell ourselves in the world of software.
