@@ -4,31 +4,29 @@ description: "Creating a subtle, peripheral, and synchronous sense of shared spa
 type: "pattern"
 growthStage: "seedling"
 startDate: "2023-07-26"
-updated: "2023-07-26"
+updated: "2023-07-30"
 topics: ["Design", "The Web"]
 ---
 
 <h2 className="micro">The Context</h2>
 
-Creating a subtle sense of shared, synchronous space is one of the hardest design challenges of the web.
+It's tricky to create a subtle sense of shared, synchronous space among multiple people on the web.
 
-You and I are currently in an <u><i>a</i></u>synchronous exchange. I've written these words in the past. You're reading them at some point in the future. We are not in sync.
-
-Despite being on the same web<u><i>site</i></u> – which suggests a shared digital space – it bears very little resemblance to how we might interact in a shared physical space in real-time.
+You and I are currently in an <u><i>a</i></u>synchronous exchange. I've written these words in the past. You're reading them at some point in the future. We are not in sync. Despite being on the same web<u><i>site</i></u> – which suggests a shared digital space – it bears very little resemblance to how we might interact in a shared physical space in real-time.
 
 We currently have no visual, audible, tactile, spatial, or embodied awareness of one another. We also have no awareness of the other people reading this article, even if they're doing it at the exact same moment.
 
 For a long time, the asynchronous nature of the web was a technical limitation. Internet speeds and bandwidth simply couldn't accommodate anything beyond sending reams of static text to one another with long, slow lags in between.
 
-But things have progressed. We now take for granted that our web connections refresh every few milliseconds. We experience most of it in real-time; spicy Twitter drama, collaborative editing in Google docs, overcrowded Zoom meetings, sensationalist BBC breaking news coverage, World of Warcraft tournaments, and the flood of comments on every Twitch livestream load in the blink of an eye.
+But things have progressed. We now take for granted that our web connections refresh every few milliseconds. We experience most of it in real-time; spicy Twitter drama, collaborative editing in Google docs, overcrowded Zoom meetings, sensationalist BBC breaking news coverage, World of Warcraft tournaments, and the flood of emoji reactions on Twitch livestreams load in the blink of an eye.
 
 But it feels as though we haven't quite clocked what's possible here. The synchronous, multiplayer web is brand new, and the design space around it is still relatively unexplored.
 
-Most of the web is designed for a slow-loading, single-player experience. Our personalised live streams of content give us a sense of immediacy, but they still lack everything else about shared space; directionality, subtle awareness of those around us, opportunities for ad-hoc interactions, freedom to explore, and most critically, a shared understanding we are seeing the same reality as people in our immediate vicinity. There is no '_vicinity_' when you are an individual staring down a content stream that no one else will ever see or know. 
+Most of the web is still designed as a slow-loading, single-player experience. We all stare into linear, individualised feeds that lack the qualities of shared physical space; directionality, subtle awareness of those around us, opportunities for ad-hoc interactions, freedom to explore, and most critically, a shared understanding we are seeing the same reality as people in our immediate vicinity. There is no '_vicinity_' when you are alone staring down a personalised content stream that no one else will ever see or know. 
 
-We don't necessarily need to constantly interact with people “around” us on the web. The sensation of being in the quiet companionship of someone else, as if you're reading next to them in a cafe, is what we're missing. The sense of ambiently sharing space – of being co-present – while engaged in other activities is a staple of shared public spaces that we're still figuring out how to design in the digital realm.
+We don't necessarily need to constantly interact with people “around” us on the web. The sensation of being in the quiet companionship of someone else, like reading next to them in a cafe, is what we're missing. The sense of ambiently sharing space – of being co-present – while engaged in other activities is a staple of shared public spaces that we're still figuring out how to design in the digital realm.
 
-Our current “multiplayer” experiences draw too much attention to the multiplayer-ness. The other people around you demand attention. They move. They animate. They point to exactly what they're focused on, drawing you away from your own focal point. We are missing out on a fuzzier, softer sense of the shared web.
+Our current “multiplayer” experiences draw too much attention to the multiplayer-ness. The other people around you demand attention. They move. They flash. They point to exactly what they're focused on, drawing you away from your own focal point. We are missing out on a fuzzier, softer sense of the shared web.
 
 <Spacer size="small"/>
 
@@ -42,9 +40,10 @@ The others rarely demand your attention or strike up conversations. They just ex
 
 #### Multiplayer Cursors
 
-Our current digital attempt at this is the multiplayer cursor. Other people who have access to your file are visible in the interface. Usually as small, pointy, colourful cursors or highlighted text selections. Sometimes with little names or floating profile pictures next to them to help identify people.
+Our current digital attempt at this is the multiplayer cursor. Other people who have access to your file are visible in the interface as small, pointy, colourful cursors or text markers within a document. Sometimes with little names or floating profile pictures next to them to help identify people.
 
-AFAIK Google Docs was the first to implement this, quickly followed by everyone else. Notion, Figma, Miro, and most other collaborative platforms use this pattern.
+
+As far as I'm aware, Google Docs was the first to implement this, quickly followed by everyone else. Notion, Figma, Miro, Mural, and most other collaborative platforms now use this pattern.
 
 <BasicImage src="" alt="Multiplayer cursors in Google Docs" />
 
@@ -56,17 +55,17 @@ This adds a sense of shared activity in digital spaces but lacks the ambient qua
 
 They also don't scale. Having hundreds of individual cursors zooming around an interface quickly feels overwhelming. Anyone who has been in a massive shared Google Doc or Figma file knows this sensation well. They're clearly designed for smaller-scale, closed contexts like private teams and internal work. 
 
-To scale this sensation of sensing others in a workspace without being distracted by them, we could turn the pointy, specific, animated cursor into a softer, fuzzier hint of presence. More like a heatmap.
+To scale this feeling of sensing others in a workspace without being distracted by them, we could turn the pointy, specific, animated cursor into a softer, fuzzier hint of presence. More like a heatmap. This would also allow us to show the presence of a large number of people in a space – hundreds or thousands – without it feeling chaotic.
 
 <BasicImage src="" alt="Heatmap of subtle presence indicators" />
 
-Imagine having this on everything from New York Times articles to little independent blogs. You'd get a vague sense of others reading live on the page. Perhaps it would feel a bit gimmicky. Or maybe we'd feel a little companionship. Perhaps a little thrill that someone else is reading the same words as us.
+Imagine having this on everything from New York Times articles to little independent blogs. You'd get a vague sense of how many others are reading live on the page. Perhaps it would feel a bit gimmicky. Or maybe we'd feel a little companionship. Perhaps a little thrill that someone else is reading the same words as us.
 
-It's soft a starting point for layering on more attention-heavy interactions; leaving inline comments, making connections with people who always show up in the same spaces as you, or creating trails for others to follow.
+It's a soft starting point for layering on more attention-heavy interactions; leaving inline comments, making connections with people who always show up in the same spaces as you, or creating trails for others to follow.
 
-#### Ambient Sound
+#### Spatial Audio
 
-Ambient sounds feel like one of the most promising avenues to explore here. Sound naturally follows a spatial gradient in physical space; people close to you are louder, and people further away are quieter, with many shades in between.
+Spatial audio feels like one of the most promising avenues to explore ambiently sensing many people in a space. Sound naturally follows a spatial gradient in physical space; people close to you are louder, and people further away are quieter, with many shades in between.
 
 This gives us some flexibility between private and public conversations. We can move in and out of earshot of other people, or enjoy the low hum of other voices in larger spaces without being distracted.
 
@@ -84,9 +83,22 @@ You appear as a game-like character in a fake living room or office, and can the
 
 Cozyroom is more of a prototype, but is specifically designed to explore spatial audio.
 
-You appear as a little blobby character on screen who can talk. As you move near people, their audio volume increases. You can also draw bounded areas to contain audio to. Only blobs within the bounded area can hear you. A bit like going into a private room and shutting the door to contain sound.
+You appear as a little blobby character on screen who can talk. Just like in Gather Town, as you move near people their audio volume increases. You can also draw bounded areas to contain Audio. Only blobs within the bounded area can hear you. A bit like going into a private room and shutting the door to contain sound.
 
 <BasicImage src="" alt="Cozyroom spatial audio" />
+
+Think of how different it would be to move around this kind of space with 100 other people vs. having 100 people on a single Zoom call sharing only one audio channel.
+
+#### Annotations and Trails
+
+Annotations and markers left on public websites are less synchronous than the other patterns here, but give us a peripheral sense of other people's activities. A few products are exploring this approach:
+
+#### 1. [Hypothesis](https://web.hypothes.is)
+
+Hypothesis is a browser plugin that allows you to highlight and take notes on any content on the web. It works as an annotation layer over the internet. But one that everyone shares. You have control over how public or private you want to make these annotations; public, semi-private within an invite-only group, or fully private. 
+
+#### 2. [Highlights on Medium](https://blog.medium.com/introducing-highlights-a4df69e8ed43)
+
 
 
 
@@ -96,4 +108,5 @@ You appear as a little blobby character on screen who can talk. As you move near
     href="https://interconnected.org/home/2022/01/21/social_gradient"
     author="Matt Webb"
   />
+  
 </References>
