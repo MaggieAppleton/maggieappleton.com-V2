@@ -55,7 +55,9 @@ const StyledBasicImage = styled.img`
 
 const StyledVideo = styled(Video)`
   border-radius: var(--border-radius-sm);
+  grid-column: 1 !important;
   @media (max-width: 1200px) {
     max-width: 100%;
+    width: 900px;
   }
 `;

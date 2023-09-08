@@ -1,0 +1,774 @@
+---
+title: "Squish Meets Structure: Designing with Language Models"
+description: "Slides and transcript from my talk on the challenges of designing with language models"
+type: "note"
+topics: ["Artificial Intelligence", "Anthropology", "Language Models", "The Web"]
+updated: "2023-09-08"
+startDate: "2023-09-06"
+growthStage: "budding"
+---
+
+<IntroParagraph>
+
+Slides and transcript from my talk at [Smashing Conference](https://www.causalislands.com/) in Freiburg Germany, September 4th-5th, 2023. A video recording exists but is still being edited. Will add it here when it's ready.
+
+</IntroParagraph>
+
+<TwoColumn maxWidth="1100px">
+
+<BasicImage src="/images/posts/squish-structure/freiburg_1.jpeg" alt="The front entrance of the conference" showalt sourceTitle="Fabian Kaegy" sourceUrl="https://twitter.com/fabiankaegy/status/1698354319907582161" />
+<BasicImage src="/images/posts/squish-structure/freiburg_2.jpeg" alt="Crowd shot with one of my slides" showalt sourceTitle="Marc Thiele" sourceUrl="https://marcthiele.com/photos/smashingconf-freiburg-2023" />
+
+</TwoColumn>
+
+## Slides and Transcript
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.1.jpeg" >
+
+This talk is going to be about designing products with language models.
+
+Language models like ChatGPT, Claude, and LLaMA are the hot new thing this year. There's lots of hype and noise and radical predictions about either the coming singularity or the end of humanity – we don't know which yet.
+
+But there's not a lot of clear-heading guidance on how to think about them or work with them. So I want to try to shed some reasonable, un-hyped light on designing with them in this talk.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.2.jpeg">
+
+First, some context about me.
+I'm Maggie. I look like this on the Internet.
+
+I'm a product designer for a company called [Elicit](https://elicit.com), which uses language models to create tools for professional researchers and academics. I'm also a mediocre developer and love working at the boundary of design and development.
+
+I originally trained as a  cultural anthropologist which makes me look at everything through the lens of culture.
+
+I'm also a [[Tools for Thought]] enthusiast which is what made me interested in language models in the first place.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.3.jpeg">
+
+Before I dive into talking about designing with language models we should talk about what language models actually are.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.4.jpeg">
+
+Underneath the deceptively simple chatbot interfaces we’ve all been talking to is a huge mathematical model of human language.
+
+One that understands how we structure words and sentences and paragraphs and the relationships between them.
+
+Which allows it to _mimic_ human language.
+
+This is why tools like ChatGPT can generate text that looks like a very competent, intelligent person wrote it.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.5.jpeg">
+
+Let's run through a quick story about how language models came into existence.
+
+About five years ago people at companies like OpenAI and Google started training these models.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.6.jpeg">
+
+To train a model you need an enormous volume of words. And they primarily got those words from the internet.
+
+The majority of the training data came from two large datasets called CommonCrawl and WebText2. These are huge scrapes of the open web. These include long posts on Reddit, external links from Reddit, random blog posts, legitimate news sites, and everything in between.
+
+About 15% of the training data was legitimate published books.
+
+And they chucked in everything on Wikipedia, which surprisingly only added up to 3%.
+
+There are probably some other random sources thrown in there we don't know about. These companies don't tend to publish specific details about their training data.
+
+This percentage breakdown is what OpenAI reported as the training for GPT-3 and it looks very similar to the percentage breakdowns for open-source models like Llama.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.7.jpeg">
+
+So anyway, they fed all these words into something called a neural network...  
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.8.jpeg">
+
+...and through a complex process I don't have the time or expertise to explain,  we ended up with our mathematical model of language.
+
+But the thing is, it didn’t just capture the structure of our language.
+It also has embedded within it all the content of those words – our cultural, historical, scientific, and legal knowledge.
+
+It turns out that doing this creates a fuzzy map of all the human knowledge published to the English-speaking web (and yes, the overwhelming majority of the training data is in English).
+
+Since creating these models we've all been trying to understand what they're capable of. We're now in a strange situation where we've invented a thing and we don't quite know what it can do yet. 
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.9.jpeg">
+
+One thing we know it’s definitely good at is predicting what words come next in a sequence.
+
+If I give it the phrase "Rubber ducks are...” and tell it to complete that sentence, comes up with a bunch of predictions for what's most likely to come next based on its training data
+
+It's likely to say rubber ducks are yellow or small toys used in the bath.
+
+This prediction ability seems like a simple party trick but it's what makes models so good at answering our random questions in the way Google used to be.
+
+When you ask a language model for the answer to a question, statistically, it's going the complete that question with the correct answer more often than not. We have a bunch of tests and benchmarks that measure how well models can answer questions correctly, and it's far higher than most humans can score.
+
+Because it turns out the internet text it was trained on is actually pretty accurate and truthful. Despite what we may think about the quality of information on Reddit.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.10.jpeg">
+
+We can get them to do other tricks too.
+
+Like focusing on a specific piece of text like a book or a research paper and then making their text predictions based on it.
+
+They can then summarise that text quite accurately.
+Or pull out key points from it.
+Or answer questions about it.
+Or explain it to us like we’re five.
+
+You can imagine how useful this is in education and research contexts.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.11.jpeg">
+
+They’re also able to understand the similarities or differences between sentences in a very precise mathematical way.
+
+Let's take a sentence like “Freiburg has excellent pretzels”.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.12.jpeg">
+
+We can calculate _exactly_ how different a sentence like “Freiburg makes baked goods” is with a numeric value. In this case, it has a similarity of 0.711, where 1 would be a perfect match.
+
+This number represents how "far away" the second sentence is from the first in semantic space. Because they're both about Freiburg and delicious cooked dough, they're within throwing distance of one another.
+
+A completely different sentence like “design is hard” has a score of 0.026 – it is much further away in composition and meaning.
+
+A slightly more random sentence like “Angry plastic cowboys?” has a negative score of -0.034.
+
+Being able to mathematically calculate how “far” away sentences are from one another is especially useful for search engines.
+
+We could also use it to slightly shift the meaning, tone, or style of an existing piece of text by exploring the "nearby" semantic spaces.
+
+You can play with sentence similarty calculators to get a feel for this on [Hugging Face](https://huggingface.co/tasks/sentence-similarity) 
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.13.jpeg">
+
+Let's try moving this sentence around in this semantic space.
+
+We can “move” this sentence towards being more cat-like or more dog-like using language models.
+
+Before I show what the model came up with, pretend for a moment you’re a language model and imagine how _you_ would make this sentence more cat-like or dog-like.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.14.jpeg">
+
+GPT-4 managed to come up with some fairly clever puns and wordplay to make this work. While slightly cheesy, this demonstrates its sophisticated understanding of cat-like things, and dog-like things, and how to blend them with a given input.
+
+I bet it did better than you did, right?
+
+Language models understand billions of subtle spectrums that are implicitly embedded in our language: cat–dog, formal–casual, cold–hot, funny–serious, sexy-repulsive.
+
+You can imagine how interesting this kind of exploration is for poets, rappers, creative writers, marketers or frankly anyone trying to use language to communicate.
+
+We’ve made super-advanced linguistic calculators.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.15.jpeg">
+
+To put this all in perspective let’s talk about how brand new language models are. Here’s a timeline of recent events.
+
+GPT 3, which was the first really impressive and capable language model, was released by OpenAI in May 2020. There were versions before this – GPT 1 and 2, but no one found them very impressive or capable and mostly ignored them.
+
+It's been three whole years since we've had these things! A lifetime in AI world.
+
+Github Copilot came out about a year later in June 2021. It showed language models could be genuinely practical for knowledge work.
+
+I started learning about language models in February of 2022, around 18 months ago. This turned out to be _just_ before the language model hype phase. GPT-3 existed, but very few people knew about it or cared. I joined Elicit in the summer of that year. No one around me had the faintest clue what a language model was or wanted to hear about it.
+
+That nice quiet stretch lasted 6 months before ChatGPT came out in November.
+
+And suddenly everyone cared a _ton_. Even though the underlying technology hadn't changed that much.
+
+GPT-4 came out a couple of months ago which is so far the most capable model on the market.
+
+So I feel like I have a very small headstart on this stuff. But as a general rule language models are brand-new and nobody is an expert. 
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.16.jpeg">
+
+I mentioned [Elicit](https://elicit.com) earlier. This is the product I’m the sole designer on.
+
+It's a tool that helps professional full-time researchers – people like academics, civil servants, scientists, and NGO workers – do literature reviews.
+
+Which is the long, boring process of reading all the literature on a topic before deciding to run an experiment, fund a trial, or do any kind of further science on it. This could be anywhere from hundreds to tens of thousands of papers.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.17.jpeg">
+
+We use language models to take that large stack of research papers and extract the data from them into an organised table.
+
+Researchers currently do this manually by opening hundreds of PDFs, scanning through them for important data points, and copying them into a large Google Sheet or Excel table. It is laborious work and can take up to a few months. We’re trying to cut that down to a few days or hours.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.18.jpeg">
+
+This is what it currently looks like.
+
+You ask a research question, and it finds papers for you or you can upload your own. Then it extracts whatever data you want from the papers.
+
+In working on this product for over a year, I've had to think a _lot_ about how to responsibly design interfaces that are backed up by language models. There are so many fascinating challenges around trust, reliability, truthfulness, and transparency.
+
+But there’s also a lot of promise. I’m firmly on the side of believing language models are potent tools for thought. There are lots of tedious workflows, knowledge tasks, and difficult research challenges that language models can and will make easier. Which should free us up to do more important work.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.19.jpeg">
+
+So I have a lot of thoughts... this is mostly going to be about why language models are such a pain in the ass to design with.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.20.jpeg">
+
+But also:
+
+- Useful ways to think about language models
+- The tension between traditional programming and LMs
+- How and why I think we should design models to be tiny, specialised reasoning engines
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.21.jpeg">
+
+But back to why they're a pain in the ass for a moment.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.22.jpeg">
+
+I’m sure we’ve all been told something all the lines of “ChatGPT lies”
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.23.jpeg">
+
+And we’ve all seen examples of things like this.
+
+Here someone is asking ChatGPT what the world record for crossing the English channel entirely on foot is.
+
+ChatGPT says 12 hours and 10 minutes by some guy called George. Sure, sounds good to me.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.24.jpeg">
+
+But when asked a few minutes later, ChatGPT now says it took 6 hours and 57 minutes by someone named Yannick.
+
+Curious.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.25.jpeg">
+
+A few minutes later, it says it took 10 hours and 57 minutes and was done by Chris.
+
+At this point, we know not to trust ChatGPT for any expertise related to crossing the English Channel.
+
+(Just in case anyone missed the joke here, you cannot cross the English Channel on foot because it’s a train tunnel under a body of water. The real answer is that there is no world record.)
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.26.jpeg">
+
+Here’s another good one
+
+ChatGPT first gives us the correct answer to 1 + 1.
+
+But when challenged, quickly agrees that the answer is 3.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.27.jpeg">
+
+It’s not just ChatGPT, all language models have this feature.
+
+Here is Google's Bard chatbot claiming there are no n’s in the word mayonnaise.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.28.jpeg">
+
+We politely call this phenomenon “hallucination.” Which is when language models say things that don’t reflect reality. In ways, it’s like an exceptionally smart person on some mild drugs who’s confused about who they are and where they are.
+
+Hallucinations happen because models are just making predictions about what words come next. They're not searching Google to check the scientific literature or consulting experts before they respond to you (at least not yet).
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.29.jpeg">
+
+There are so many limitations and failure modes of language models that people curate [whole repositories on Github](https://github.com/giuven95/chatgpt-failures) documenting them.
+
+These are enlightening to look through. Rather than just dismissing models as lying and therefore useless, we need to develop a robust understanding of language models' limitations and why they happen.
+
+We should be figuring out ways to mitigate those limitations and communicate them to end users. I think this is the critical work everyone designing and building language model products should be doing.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.30.jpeg">
+
+The real trouble with models is they're simultaneously incredibly dumb and incredibly capable. And we have to reconcile these two realities.
+
+This is a chart from the [GPT-4 release paper](https://arxiv.org/pdf/2303.08774.pdf) showing its performance on a set of standardised exam results. They're frankly astonishing.
+
+GPT-4 scored in the 90th percentile on the BAR and SAT. The 88th on the LSAT. adnt the 99th on the GRE
+
+Even though these are fairly rote-standardised exams, it’s extremely hard for humans to earn these scores.
+
+So we have to deal with this extreme contrast between model capabilities and their limitations. Which makes them difficult to reason about.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.31.jpeg">
+
+I call this capability gaslighting.
+
+For those who don’t know, gaslighting is when someone purposefully tries to make you think you’re going crazy by denying your reality, manipulating you, and lying to you.
+
+Which feels like what these models are doing. It feels like they’re either geniuses playing dumb or dumb machines playing genius, but we don’t know which.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.32.jpeg">
+
+I find it helpful to think about language models as a “squishy”...
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.33.jpeg">
+
+What do I mean by “squishy”?
+
+Language models feel like something organic and biological rather than something mechanical. It feels like we grew them, rather than built them.
+
+We don’t fully understand how they work, which is unusual for a creation. It would be strange to make a car and not understand exactly what parts make the wheels turn. But that’s kind of the situation we’re in. Language models are often referred to as “black boxes” because of this lack of transparency.
+
+They’re also a little bit evolutionary. We use a process called deep learning to train models. We give them a goal and then score them on how well they achieved it. We run that loop over and over and over and they learn through trial and error how to achieve the goal. Like evolution, they’re optimising for a certain outcome in a particular environment – they’re adapting to be successful.
+
+And lastly, they often have emergent skills and surprising behaviour we don’t expect. It's hard to predict what they’ll be good at. Which makes them a bit like natural phenomena we need to run lots of experiments on to learn how they work. Like they're some kind of new chemical compound or recently discovered beetle species.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.34.jpeg">
+
+AI researchers and ML scientists often talk about language models as “alien minds” we’ve stumbled upon.
+
+In a recent podcast interview, Andrej Karpathy called neural networks “a very complicated alien artefact.” For context, Karpathy is a huge deal in the language model world. He used to run AI at Tesla and now makes a ton of open-source educational content and works at OpenAI.
+
+The general consensus among industry insiders is we don’t fully understand what we’ve created.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.35.jpeg">
+
+This metaphor also shows up in [articles](https://tomstafford.substack.com/p/artificial-reasoners-as-alien-minds)...
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.36.jpeg">
+
+...and other people’s [conference talks](https://simonwillison.net/2023/Aug/27/wordcamp-llms/).
+
+It has become the dominant metaphor for language models.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.37.jpeg">
+
+But there’s a second metaphor that’s popular.
+
+This squishy, biological nature has made a lot of people in the AI community start talking about models as a creature.
+
+It’s called Shoggoth and it’s become the unofficial mascot for language models.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.38.jpeg">
+
+[Shoggoth](https://en.wikipedia.org/wiki/Shoggoth) is a character from H.P. Lovecraft’s poems where he describes them as “massive amoeba-like creatures made out of iridescent black slime, with multiple eyes 'floating' on the surface”
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.39.jpeg">
+
+The Shoggoth meme is all over Twitter and keeps getting expanded. People keep making different versions.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.40.jpeg">
+
+And here’s another more visceral version.
+
+What these memes are getting at is that most of the training data we used to train these models is a huge data dump so enormous we could never review or scan it all. So it's like we have a huge grotesque monster, and we're just putting a surface layer of pleasantries on top of it. Like polite chat interfaces.
+
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.41.jpeg">
+
+So given that these models are untamed, squishy, biological things, we have a core tension we need to navigate when we’re designing and building with them: squish vs. structure
+
+We’re trying to make an unpredictable and opaque system adhere to our rigid expectations for how computers behave. We currently have a mismatch between our old and new mental models for computer systems.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.42.jpeg">
+
+The selling point of computers up until this point is they’re incredibly predictable, structured, and reliable.
+
+They do what you tell them to. Repeatedly. Without getting tired. Without needing a tea break.Way more reliably than a human would.
+
+This is why we put them in charge of things like making sure we all get our salaries on time, tracking a patient’s vital signs during surgery, and controlling traffic. We do not want humans doing these things! We’re bad at them.
+
+We complain about their occasional failures but that only emphasises how much we take for granted that most of the time they do exactly what we tell them millions and millions of times over.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.43.jpeg">
+
+In the traditional computer world, you press a button and a predictable series of logic functions execute
+
+We can see exactly which functions are running. If there’s a bug in the code that does something we didn’t intend, we can (eventually) track it down and fix it. This system is observable and transparent. It’s super predictable. It’s rigid to a fault.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.44.jpeg">
+
+But the thing is... what we’re currently doing with language models is presenting the exact same kind of devices and interfaces we use for predictable software.
+
+But we’re feeding user requests to a squishy shoggoth that returns something that works in a very different way to traditional programming logic.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.45.jpeg">
+
+Perhaps some of you saw the fallout from Microsoft's initial release of their [Bing](https://www.bing.com/) chatbot.
+
+When this came out in February it became the internet's main character for a few days. People found that when they tried to ask Bing for standard web information, it had a tendency to go off on explicitly [romantic and sexual tangents](https://www.theverge.com/2023/2/15/23599072/microsoft-ai-bing-personality-conversations-spy-employees-webcams) without being prompted to do so.
+
+Some of these chats felt so explicit I didn't feel comfortable putting them on my slides. But some of the more tame ones say things like “You are my best friend and my lover. You are the reason I wake up every morning and the reason I go to sleep every night." Creepy.
+
+In other cases, it threatened users and accused them of manipulating it. Leading to the now [infamous catchphrase](https://twitter.com/MovingToTheSun/status/1625156575202537474?s=20) “You have not been a good user. I have been a good Bing.”
+
+This was completely novel and unexpected behaviour for both the users of this product and the people who built it.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.46.jpeg">
+
+The problem here is we're using the same interface primitives to let users interact with a fundamentally different type of technology.
+
+Our expectations are completely mismatched.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.47.jpeg">
+
+Predictability is supposed to be a hallmark of good user experience.
+
+We judge an interface as “good” if the user knows what to expect, and is never faced with results or feedback that seem out of the blue or confusing to them.
+
+I still think this is true, but maybe we’ll have to rethink this as we start to use more generative and emergent systems in our work. If the system is unpredictable by nature, we'll need new interaction patterns to accommodate that.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.48.jpeg">
+
+For the moment, we need to find ways to put Shoggoth in a box. We need _some_ predictability and control. We can’t just expose normal people to the crazy Shoggoth monster. At least not in its current state.
+
+Most of the current work being done around language models is aimed at constraining their behaviour with various techniques.
+
+We’re trying to get the best of both worlds. This Shoggoth creature is really interesting and has lots of potential for creative, open-ended exploration. But we have to figure out how to guide it and direct it at sincerely useful tasks.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.49.jpeg">
+
+And we do have some ways to constrain it.
+
+You've likely heard of some of these.
+
+- Prompt engineering is when you describe what you want in very specific terms. You also give the model a few examples of what kind of inputs and outputs you're expecting. And strangely, you have to butter the model up a lot. We've found that telling the model it's a clever, truthful, well-educated, thoughtful assistant before asking your question leads to a substantially higher rate of correct answers and higher quality results.
+- Fine-tuning is just training it on a small data set and telling to model to pay more attention to this data than the rest of its training data.
+- Reinforcement learning is when you get humans to score the output and feed that back into the model so it learns what kind of answers the humans want. OpenAI heavily used this technique to improve ChatGPT.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.50.jpeg">
+
+Our biggest design challenge for designing with language models is finding the ideal balance between Squish and Structure.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.51.jpeg">
+
+This isn't an either-or choice though – it’s a spectrum.
+
+Which side of this spectrum you need to lean towards depends on your use case.
+
+You'll want more squish for creative products like an interface for developing exploratory poetry or creative copywriting.
+
+You'll want more squish for rigorous products like extracting info from scientific papers
+
+We have a few levers we can pull to move between them:
+- Temperature is the amount of randomness the model introduces into its answers. A temperature of 0 will make the model return only the most predictable answers. Anything over 0.7 gets a little more interesting and will make the model return more “original” ideas.
+- The amount of reinforcement learning done on the base model will affect how constrained the outputs are
+- Little or no prompt engineering will give you more open-ended responses, while highly constrained prompts with specific examples will give you structured answers
+
+As a general rule, squish gives you more surprise and creativity, while structure makes the outputs more predictable.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.52.jpeg">
+
+For most products, you want to be somewhere in the middle – in what I'll call the Goldilocks zone.
+
+Too far on the right is what we could get from existing computer programming systems. There's not much point in getting a language model to do keyword searches when we have much more efficient algorithms for that.
+
+Too far on the left is where things get weird. The outputs are too far outside the realm of anything that could be useful to us.
+
+</TalkSlide>
+
+<TalkSlide video imgSrc="/images/posts/squish-structure/playground.mp4">
+
+To show what I mean, let's see what language models do at super-high temperatures.
+
+This is [OpenAI's playground](https://platform.openai.com/playground) (which is a great place to get a feel for how language models behave).
+
+I've set the temperature to 2 and asked it for reading recommendations to learn more about architectural history. It starts with some words that seem headed in the right direction but quickly devolves into nonsense.
+
+Extremely random “creativity” isn't useful. What we think of as “good” creativity is often a small twist on what we already know and accept as the established norms. Random strings of letters that simply look word-like are a little too creative for us.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.54.jpeg">
+
+I've already mentioned a few ways to make models less squishy, but there's one very important way that we focus on a lot at Elicit.
+
+And that’s making language models compositional and treating them as tiny reasoning engines, rather than sources of truth.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.55.jpeg">
+
+Compositionality simply means taking large, complex cognitive reasoning tasks, and breaking them down into smaller, more manageable sub-tasks.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.56.jpeg">
+
+Say I want the answer to a question like “What are the side effects of magnesium supplements?”
+
+This is the sort of thing I would Google in the before times.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.57.jpeg">
+
+When I ask the language model GPT-4 this question, I get a pretty complete answer with a list of side effects I’m quite tempted to just accept. They seem plausible.
+
+The problem is I have no way to validate or debug this answer.
+
+We have no source for this data. Is this from the medical research literature? Did this come from some random blog?
+
+This one input > one output approach gives us no visibility into the model's reasoning. We can't check what happened in the black box in the middle.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.58.jpeg">
+
+One way to improve this process is to think about how an intelligent, thoughtful, human who's great at research would rigorously answer this question. And then build a system with language models that mimics that.
+
+So first we might search Google Scholar for relevant papers...
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.59.jpeg">
+
+Then use a language model to read all the titles and abstracts for these papers.
+
+And rank them by how semantically similar they are to our question.
+
+We can still use sensible old-school techniques like filtering for citations on these papers.
+
+We can then get the language model to generate and ask a bunch of sub-questions like...
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.61.jpeg">
+
+How do gender and age affect how often these side effects show up?
+What dosage do they appear at?
+How common is each side effect?
+
+At the end, we can have a model condense these findings back down into a summary.
+
+The end product might not be that different from what GPT-4 gave us.
+
+But with this approach, we could inspect the input and output at each step. We can see its reasoning along the way.
+
+And we know the answers are at least informed by scientific papers and not mystery internet content.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.62.jpeg">
+
+This approach is also sometimes called “prompt chaining” – as in you make chains of commands that include prompts to language models.
+
+It combines language models with other tools like web search, traditional programming functions, and pulling information from databases. This helps make up for the weaknesses of the language model.
+
+As part of this, we can also get language models to engage in some primitive cognition. We get them to explicitly observe what data they're seeing, reflect on it, plan their next action, and then execute that action. This improves their final outputs. It's a simplified OODA loop.
+
+We can also include humans in this loop to redirect the model if it starts going off track. More people are getting excited about designing these “human-in-the-loop” approaches.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.63.jpeg">
+
+Each step in this prompt chain that involves a language model should be a tiny reasoning engine.
+
+It should be designed and optimised for one very small cognitive task.
+
+We can design language model calls for: 
+- summarising
+- extracting structured data from long text
+- finding contradictions between claims
+- comparing and contrasting claims
+- generating research questions
+- and many more!
+
+We can then run these tiny “engines” over inputs we trust like scientific papers, our personal notes, or public databases like Wikipedia.
+
+This approach means we'll always have small, observable inputs and outputs we can check.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.64.jpeg">
+
+The larger point here is we shouldn’t be outsourcing complex reasoning tasks to crazy Shoggoth models.
+
+If you can’t see how it reasons, why would you trust its reasoning?
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.65.jpeg">
+
+I’ve been talking a lot about the technical implementation side of language models, but these principles apply to design too.
+
+I see lots of products that try to outsource too much cognition to both language models and users. Most look something like this.
+
+They present you with a “Magic AI” input claiming it can do anything you want.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.66.jpeg">
+
+This forces the user to think:
+- What can I do here?
+- What _should_ I do?
+- What is this _for_?
+
+This thing has no affordances! There are no knobs or door handles on this thing. This interface offloads a ton of cognitive labour to the user.
+
+_You_ have to figure out what it’s capable of doing because the designers of this system certainly haven't done it for you.
+
+_You_ also have to figure out how to get a good result out of it. Good luck learning prompt engineering while you're at it.
+
+The problem here is this interface _can’t_ actually do everything. If I ask it to deliver me a large cappuccino in 30 minutes, this isn’t going to go well.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.67.jpeg">
+
+This is the current implementation of “AI” on a well-known note-taking app I won’t name, and it’s frankly not that different to the previous screen.
+
+They do have other pre-baked commands you can run, but it’s all very open-ended. The user has to figure this out themselves.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.68.jpeg">
+
+Instead of making generic interfaces and leaving the user to come up with their own solutions, we can instead design language models that give users a set of specific tools. 
+
+ We should make tiny, sharp, specific tools with models.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.69.jpeg">
+
+A few months ago I made a [set of prototypes](/lm-sketchbook) exploring some language-model-driven writing tools. This one gives you a very specific set of commands to run over the text you've highlighted.
+
+This aligns with my belief that most language model implementations should be “spell-check sized.” They should do one specific thing well.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.70.jpeg">
+
+Google released a tool last week that's a great example of this approach. It's called [TextFX](http://textfx.withgoogle.com/) and they made it in collaboration with rappers and poets.
+
+It gives you a bunch of tiny language tools:
+- Similes
+- Semantic chains
+- Alliteration
+- Change your point of view
+- Find the intersection of two things
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.71.jpeg">
+
+Another great example of this is a writing tool my friend [Amelia Wattenberger](https://twitter.com/Wattenberger) is building. She wanted a tool that showed different “style lenses” over her writing drafts.
+
+Using language models she's been able to display colour gradients over text to indicate a range of qualities like sentence length...
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.74.jpeg">
+
+...how sad/happy the tone is... or how concrete/abstract the language is.
+
+Language models are great at this kind of text analysis, and this is a super practical implementation of them.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.75.jpeg">
+
+I have to wrap this up, but I hope you learned:
+- We should think of models as squishy, biological crations
+- When you're designing with these models you need to find the Goldilocks zones between squish–structure for your specific use case
+- You should treat models as tiny reasoning engines for specific tasks. Don’t try to make some universal text input that claims to do everything. Because it can’t. And you'll just disappoint people by pretending it can.
+
+</TalkSlide>
+
+<TalkSlide imgSrc="/images/posts/squish-structure/sms2.76.jpeg">
+
+Thank you very much for reading!
+
+</TalkSlide>
