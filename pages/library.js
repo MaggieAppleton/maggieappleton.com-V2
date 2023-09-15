@@ -27,7 +27,9 @@ export default function Library() {
               <StyledLink> Antilibrary</StyledLink>
             </Link>
           </TitleWithCount>
-          <Title2>Books I’ve read.</Title2>
+          <Title2>
+            Books I’ve read that significantly influenced how I see the world.
+          </Title2>
         </header>
         <BookshelfGrid>
           {bookData.map((book, i) => (
