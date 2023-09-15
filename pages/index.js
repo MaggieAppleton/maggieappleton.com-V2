@@ -88,7 +88,7 @@ export default function Index({
             transition={{ delay: 0.2, duration: 1 }}
             style={{
               marginTop: "var(--space-m)",
-              maxWidth: "1100px"
+              maxWidth: "1100px",
             }}
           >
             <b>Maggie </b>
@@ -102,8 +102,8 @@ export default function Index({
             Designer, anthropologist, and mediocre developer
             <br />
             Currently leading design at{" "}
-            <UnderlineHoverLink href="https://ought.org">
-              <b>Ought</b>
+            <UnderlineHoverLink href="https://elicit.com">
+              <b>Elicit</b>
             </UnderlineHoverLink>{" "}
           </SmallTitle2>
         </header>
@@ -122,7 +122,7 @@ export default function Index({
               >
                 The Garden
               </Title2>
-              </a>
+            </a>
           </Link>
           <Subheader>
             A digital garden is a collection of imperfect notes, essays, and
@@ -145,7 +145,7 @@ export default function Index({
                   Essays
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Opinionated, longform narrative writing with an agenda
@@ -178,7 +178,7 @@ export default function Index({
                   Notes
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Loose, unopinionated notes on things I don’t entirely understand
@@ -204,7 +204,7 @@ export default function Index({
                   Patterns
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Design patterns gathered from my own observations and research.
@@ -228,7 +228,7 @@ export default function Index({
                   Library
                   <ArrowRightIcon width="18" height="18" />
                 </SectionHeader>
-                </a>
+              </a>
             </Link>
             <Subheader>
               Books I’ve read and books I like the idea of having read.
