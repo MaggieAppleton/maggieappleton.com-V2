@@ -14,8 +14,8 @@ const StyledContainer = styled(motion.div)`
   margin-top: -2.8rem;
   span {
     position: relative;
-    top: 5.6rem;
-    left: -2.8rem;
+    top: 5.2rem;
+    left: -3.1rem;
     font-size: var(--font-size-md);
     color: var(--color-sea-blue);
     font-weight: 400;
