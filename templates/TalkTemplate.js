@@ -3,12 +3,13 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import Link from "next/link";
 import BackToTop from "../components/mdx/BackToTop";
 import { TwitterReply } from "../components/templates/TwitterReply";
-import EvergreenIcon from "../components/icons/EvergreenIcon";
-import { Title1 } from "../components/Typography";
+import Topics from "../components/templates/Topics";
+import Dates from "../components/templates/Dates";
 import styled from "styled-components";
 import { breakpoints } from "../utils/breakpoints";
 import BackHoverLink from "../components/links/BackHoverLink";
 import Header from "../components/Header";
+import { MapPinIcon, CalendarIcon } from "@heroicons/react/20/solid";
 
 export default function TalkTemplate({
   source,
@@ -17,13 +18,6 @@ export default function TalkTemplate({
   slug,
   ogImage,
 }) {
-  function formattedDate(date) {
-    return new Date(date).toLocaleDateString("en-GB", {
-      year: "numeric",
-      month: "long",
-    });
-  }
-
   return (
     <>
       <Header
@@ -31,7 +25,6 @@ export default function TalkTemplate({
         description={frontMatter.description}
         ogImage={ogImage}
       />
-
       <HeaderSection>
         <div className="above-title">
           <Link href="/talks">
@@ -39,19 +32,36 @@ export default function TalkTemplate({
           </Link>
         </div>
         <TitleContainer>
-          <Title1>{frontMatter.title}</Title1>
+          <h1>{frontMatter.title}</h1>
+          {frontMatter.description && <p>{frontMatter.description}</p>}
         </TitleContainer>
-        <Metadata className="metadata">
-          {frontMatter.topics && (
-            <span style={{ textTransform: "capitalize" }}>
-              {frontMatter.topics}
-            </span>
-          )}
-          <EvergreenIcon width="14" height="14" />
-          {frontMatter.date && (
-            <span>{formattedDate(frontMatter.updated)}</span>
-          )}
+        <Metadata>
+          {frontMatter.topics && <Topics topics={frontMatter.topics} />}
+          <Dates
+            startDate={frontMatter.startDate}
+            updated={frontMatter.updated}
+          />
         </Metadata>
+        <ConferenceContainer>
+          <p>Conferences</p>
+          <div className="conf-grid">
+            {frontMatter.conferences.map(({ name, date, location }, i) => {
+              return (
+                <div className="conf-item" key={i}>
+                  <h3>{name}</h3>
+                  <p>
+                    <CalendarIcon width="16" height="16" />
+                    {date}
+                  </p>
+                  <p>
+                    <MapPinIcon width="16" height="16" />
+                    {location}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </ConferenceContainer>
       </HeaderSection>
       <StyledMain>
         <BackToTop />
@@ -67,12 +77,49 @@ export default function TalkTemplate({
   );
 }
 
+const ConferenceContainer = styled.div`
+  margin-top: var(--space-l);
+  p:first-child {
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    color: var(--color-gray-600);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.05rem;
+  }
+  .conf-grid {
+    display: flex;
+    grid-gap: 2rem;
+  }
+  .conf-item {
+    margin-top: 1rem;
+    h3 {
+    }
+    p {
+      font-family: var(--font-sans);
+      color: var(--color-gray-600);
+      font-size: var(--font-size-xs);
+    }
+  }
+`;
+
 const TitleContainer = styled.div`
-  padding: var(--space-xs) 0 var(--space-3xs);
+  padding: var(--space-s) 0 var(--space-l);
+  border-bottom: 1px solid var(--color-tinted-cream);
+  h1 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--leading-tighter);
+    max-width: 100%;
+    @media screen and (max-width: 425px) {
+      font-size: var(--font-size-xl);
+    }
+  }
   p {
     font-size: var(--font-size-md);
     margin: var(--space-s) 0 0 0;
     color: var(--color-gray-600);
+    @media screen and (max-width: 425px) {
+      font-size: var(--font-size-base);
+    }
   }
 `;
 
@@ -105,9 +152,14 @@ const HeaderSection = styled.header`
 `;
 
 const Metadata = styled.div`
+  justify-content: space-between;
   display: flex;
-  grid-gap: var(--space-3xs);
-  align-items: center;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
 `;
 
 const StyledMain = styled.main`
