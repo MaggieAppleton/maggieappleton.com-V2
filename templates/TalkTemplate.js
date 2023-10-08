@@ -43,20 +43,22 @@ export default function TalkTemplate({
           />
         </Metadata>
         <ConferenceContainer>
-          <p>Conferences</p>
+          <p className="title">Conferences</p>
           <div className="conf-grid">
             {frontMatter.conferences.map(({ name, date, location }, i) => {
               return (
                 <div className="conf-item" key={i}>
                   <h3>{name}</h3>
-                  <p>
-                    <CalendarIcon width="16" height="16" />
-                    {date}
-                  </p>
-                  <p>
-                    <MapPinIcon width="16" height="16" />
-                    {location}
-                  </p>
+                  <div className="conf-meta">
+                    <p>
+                      <CalendarIcon width="16" height="16" />
+                      {date}
+                    </p>
+                    <p>
+                      <MapPinIcon width="16" height="16" />
+                      {location}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -78,26 +80,36 @@ export default function TalkTemplate({
 }
 
 const ConferenceContainer = styled.div`
-  margin-top: var(--space-l);
-  p:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+  border-bottom: 1px solid var(--color-tinted-cream);
+  padding-bottom: var(--space-2xs);
+  p.title {
     text-transform: uppercase;
     font-family: var(--font-sans);
     color: var(--color-gray-600);
     font-size: var(--font-size-xs);
     letter-spacing: 0.05rem;
-  }
-  .conf-grid {
-    display: flex;
-    grid-gap: 2rem;
+    margin: 1.25rem var(--space-m) 0 0;
   }
   .conf-item {
-    margin-top: 1rem;
-    h3 {
+    margin: 1rem 3rem 1.5rem 0;
+    width: 100%;
+    max-width: 320px;
+    div.conf-meta {
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      grid-gap: 1rem;
     }
     p {
       font-family: var(--font-sans);
       color: var(--color-gray-600);
       font-size: var(--font-size-xs);
+      display: flex;
+      align-items: center;
+      grid-gap: 0.25rem;
     }
   }
 `;
