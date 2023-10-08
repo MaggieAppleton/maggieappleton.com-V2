@@ -18,7 +18,8 @@ export default function PodcastCard({
         {podcastCover && (
           <ImageWrapper initial="initial" whileHover="hover">
             <ExternalLinkContainer>
-              <ArrowTopRightOnSquareIcon width="48" height="48" />
+              <ArrowTopRightOnSquareIcon width="36" height="36" />
+              <span>View episode</span>
             </ExternalLinkContainer>
             <Image
               src={podcastCover}
@@ -120,5 +121,18 @@ const ExternalLinkContainer = styled.div`
   position: absolute;
   top: 30%;
   left: 30%;
-  color: var(--color-gray-800);
+  margin-top: -3%;
+  margin-left: -28%;
+  color: var(--color-crimson);
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  align-items: center;
+  grid-gap: 0.25rem;
+  span {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    font-family: var(--font-sans);
+    line-height: var(--leading-snug);
+  }
 `;
