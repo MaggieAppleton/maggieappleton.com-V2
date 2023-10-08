@@ -5,6 +5,7 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import { Title2 } from "../components/Typography";
 import TalkCard from "../components/cards/TalkCard";
+import { Spacer } from "../components/Spacer";
 import { talksFilePaths, TALKS_PATH } from "../utils/mdxUtils";
 import Header from "../components/Header";
 import TitleWithCount from "../components/TitleWithCount";
@@ -18,13 +19,12 @@ export default function Talks({ talks }) {
       <Layout>
         <header style={{ marginBottom: "var(--space-xl)" }}>
           <TitleWithCount posts={talks}>Talks</TitleWithCount>
-          <Title2>Conference talks and meetups</Title2>
-          <p>
-            I occassionally give talks. Some are about why we should use more
-            visual explanations and intentional metaphors in programming. Others
-            touch on cultural anthropology topics and the narratives we tell
-            ourselves in the world of software.
-          </p>
+          <Title2>
+            I occassionally give talks. Loosely about visual programming,
+            metaphors, cultural anthropology, design tactics, and the narratives
+            we tell about software.
+          </Title2>
+          <p></p>
         </header>
         <ImageGrid>
           <Image
@@ -48,7 +48,15 @@ export default function Talks({ talks }) {
             height={1104 / 3}
             layout="responsive"
           />
+          <Image
+            src="/images/talks_4.jpg"
+            alt="a photo of maggie in front of a large presentation slide"
+            width={1600 / 3}
+            height={1104 / 3}
+            layout="responsive"
+          />
         </ImageGrid>
+        <Spacer size="large" />
         <MasonryGrid columnGapBottom="2rem">
           {talks.map((talk) => (
             <TalkCard
