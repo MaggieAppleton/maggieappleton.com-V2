@@ -104,8 +104,8 @@ export default function Index({
             Designer, anthropologist, and mediocre developer
             <br />
             Currently leading design at{" "}
-            <UnderlineHoverLink href="https://ought.org">
-              <b>Ought</b>
+            <UnderlineHoverLink href="https://elicit.com">
+              <b>Elicit</b>
             </UnderlineHoverLink>{" "}
           </SmallTitle2>
         </header>

@@ -1,0 +1,107 @@
+---
+title: "OODA Loop Language Models & Small Black Boxes"
+description: "Notes on composable language models, machine meta-cognition, and modular tools"
+startDate: "2023-03-18"
+updated: "2023-03-18"
+type: "note"
+topics:
+  [
+    "Design",
+    "Language Models",
+    "Tools for Thought",
+    "Artificial Intelligence",
+  ]
+growthStage: "budding"
+---
+
+<AssumedAudience>
+People who know how to code, are beginning to experiment with language model APIs, and reluctantly follow the AI hype train
+</AssumedAudience>
+
+<Spacer size="xs" />
+
+When I tell people about the research we do at [Ought](https://ought.org),<Footnote idName={1}>Ought is an ML research lab where I work as a product designer. This note isn't entirely about Ought, but our research is relevant here.</Footnote> I usually make the joke that we take the one big black box of a language model call and break it down into many smaller black boxes.
+
+When you ask a large language model like GPT-4 a question such as “What's the estimated combined weight of all the books in the British Library?”, it gives a pretty plausible answer.
+
+<ImageFrame width="1000px" alt="A screenshot me asking OpenAI's GPT-4 system the estimated weight of all the books in the British library. It responds by estimating the number of books, the average weight of a book, and then correctly calculates the number by the weight to return an answer of 12.5 million kilograms" src="/images/posts/ooda/gpt4-lib.jpg" />
+
+It first makes some reasonable guesses about the number of books in the library and the average weight of a book. It then correctly calculates books x weight. Impressive!
+
+But we have a few problems here. First, GPT-4 isn't looking up the average weight of books or the collection size of the British Library from reliable, external sources. It's just making predictions based on its training data. Predictions that _sound_ right but we have no legitimate reason to trust.
+
+Second, given that language models are notoriously [bad at maths](), we shouldn't assume that the final calculation is correct. It happens to be in this case, but language models aren't designed to be calculators and often get simple questions wrong.
+
+Finally, and most problematically, we have no way to “look inside” the model and understand how it arrived at this answer. We cannot – in short – see how it “reasons.” The method is just “return whatever text would statistically complete this sequence of words.”
+
+It's a giant black box. You put an answer in, you get an answer out. What happened in the middle? No one knows. Not even the people who build and maintain these models.
+
+<BasicImage width="1100px" alt="Illustration of a large black box with the OpenAI logo on it. There's an answer going in and an answer coming out" src="/images/posts/ooda/big-black-box.jpg" />
+
+This uncertainty makes it difficult to understand how much to trust language model answers. Most of the time they seem coherent and plausible, and turn out to be correct. And yet some percentage of the time they're not. We just don't know which ones are which. One rotten answer spoils the reliability soup.
+
+So what should you do with a giant black box you can't fully trust? Break it down into many smaller black boxes you can't fully trust!
+
+## Composing Language Models
+
+There's a new wave of interest in “composing” or “chaining” many language model calls together.
+
+Rather than asking a language model to answer one big, complex question that needs to draw on multiple data points, assumptions, and calculations (ones it might get wrong), you break that question down into smaller steps and get it to answer each piece individually.
+
+We now have a chain of actions that can tackle more complex tasks. The answer to one step feeds into the next. None of the individual language model calls or external tools needs to understand the bigger task at hand. They only have to worry about their small part.
+
+Once you have multiple language model calls, it naturally extends that you can mix in other tools, techniques, and data sources. Ones that can do things that language models can't do, or aren't very good at. Such as searching the web, querying APIs, reading long text files, running code, doing calculations, and reading/writing to external memory sources.
+
+At Ought, we call this process [factored cognition](https://ought.org/research/factored-cognition), meaning taking a complex cognitive process and breaking it down (or 'factoring' it) into many smaller pieces. I'm seeing most other people call it “chaining” or ”looping” or if they're feeling extra technical "prompt ops" (as in, prompts operations)
+
+<img src="" alt="Many small black boxes" />
+
+The Python Library [LangChain]() has been gaining a lot of traction in this space. It provides a set of pre-made “tools” and “agents” to build these chains.
+
+Just yesterday OpenAI released [ChatGPT Plugins](https://openai.com/blog/chatgpt-plugins)
+
+This helps us do a couple of things:
+
+1. Observe the interim “reasoning” steps of a model. This is “[supervising process](https://ought.org/updates/2022-04-06-process)”
+
+2. Augment the language model abilities with other kinds of computing tools like calculators, web searchers, long-term memory, and code.
+
+3. Create OODA – observe, orient, decide, act – feedback loops within models
+
+## UNIX-y Language Models
+
+The [UNIX philosophy]() holds a lot of cultural weight for the people I hang out with. To sum it up:
+
+1. Make small, very sharp tools
+2. Make them composable
+
+Kasey Klimes has some wonderfully insightful thoughts on emergent design in X and Y
+
+Ought has its own Python library called the [Interactive Composition Explorer](https://ought.org/updates/2022-10-06-ice-primer) (ICE) which uses the same kind of compositional approach as LangChain, but focuses more on visualising the traces of each call and debugging recipes.
+
+<BasicImage alt="The ICE interface visualising a trace of a language model call" src="/images/ooda/ice-preview.jpg" />
+
+---
+
+<References>
+  <ReferencesLink
+    title="Factored Cognition"
+    href="https://ought.org/research/factored-cognition"
+    author="Ought"
+  />
+  <ReferencesLink
+    title="Supervising Process, not Outcomes"
+    href="https://ought.org/updates/2022-04-06-process"
+    author="Ought"
+  />
+  <ReferencesLink
+    title="A Library and Tutorial for Factored Cognition with Language Models"
+    href="https://ought.org/updates/2022-10-06-ice-primer"
+    author="Ought"
+  />
+  <ReferencesLink
+    title="The surprising ease and effectiveness of AI in a loop"
+    href="https://interconnected.org/home/"
+    author="Matt Webb"
+  />
+</References>

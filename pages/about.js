@@ -61,8 +61,8 @@ export default function About() {
               <p>
                 I currently lead design at
                 <b style={{ margin: "0 0.6rem 0 0.3rem" }}>
-                  <UnderlineHoverLink href="https://ought.org">
-                    Ought
+                  <UnderlineHoverLink href="https://elicit.com">
+                    Elicit
                   </UnderlineHoverLink>
                 </b>
                 where we're exploring how machine learning can help researchers
@@ -73,7 +73,7 @@ export default function About() {
                 projects, or full-time roles.
               </p>
               <p>
-                Before Ought I was head of design at{" "}
+                Before Elicit I was head of design at{" "}
                 <b style={{ margin: "0 0.5rem 0 0" }}>
                   <UnderlineHoverLink href="https://hash.ai">
                     HASH
