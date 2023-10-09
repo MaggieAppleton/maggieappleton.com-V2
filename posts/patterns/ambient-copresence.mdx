@@ -2,33 +2,39 @@
 title: "Ambient Co-presence"
 description: "Creating a subtle, peripheral, and synchronous sense of shared space and context on the web"
 type: "pattern"
-growthStage: "seedling"
-startDate: "2023-07-26"
-updated: "2023-07-30"
+growthStage: "budding"
+startDate: "2023-10-09"
+updated: "2023-10-09"
 topics: ["Design", "The Web"]
 ---
 
 <h2 className="micro">The Context</h2>
 
-It's tricky to create a subtle sense of shared, synchronous space among multiple people on the web.
+It's hard to create a subtle sense of shared, synchronous space among multiple people on the web.
 
-You and I are currently in an <u><i>a</i></u>synchronous exchange. I've written these words in the past. You're reading them at some point in the future. We are not in sync. Despite being on the same web<u><i>site</i></u> – which suggests a shared digital space – it bears very little resemblance to how we might interact in a shared physical space in real-time.
+You and I are currently in an <u><i>a</i></u>synchronous exchange. I've written these words in the past. You're reading them at a point in the future. We are not in sync. Despite being on the same web<u><i>site</i></u> – which suggests a shared digital space – it bears very little resemblance to how we might interact in a shared physical space in real-time.
 
-We currently have no visual, audible, tactile, spatial, or embodied awareness of one another. We also have no awareness of the other people reading this article, even if they're doing it at the exact same moment.
+We currently have no visual, audible, tactile, spatial, or embodied awareness of one another. We also have no awareness of the other people reading this post, even if they're doing it at the exact same moment.
 
 For a long time, the asynchronous nature of the web was a technical limitation. Internet speeds and bandwidth simply couldn't accommodate anything beyond sending reams of static text to one another with long, slow lags in between.
 
+<BasicImage src="/images/posts/ambient/dialup-gif.gif" width={800} alt="Two old desktop computers slowly sending signals to one another over a dial-up connection" />
+
 But things have progressed. We now take for granted that our web connections refresh every few milliseconds. We experience most of it in real-time; spicy Twitter drama, collaborative editing in Google docs, overcrowded Zoom meetings, sensationalist BBC breaking news coverage, World of Warcraft tournaments, and the flood of emoji reactions on Twitch livestreams load in the blink of an eye.
+
+<BasicImage margin="1rem auto 3rem" src="/images/posts/ambient/gog-gif.gif" width={1200} alt="A Twitch live stream of a video game with a flood of comments pouring in each second" />
 
 But it feels as though we haven't quite clocked what's possible here. The synchronous, multiplayer web is brand new, and the design space around it is still relatively unexplored.
 
-Most of the web is still designed as a slow-loading, single-player experience. We all stare into linear, individualised feeds that lack the qualities of shared physical space; directionality, subtle awareness of those around us, opportunities for ad-hoc interactions, freedom to explore, and most critically, a shared understanding we are seeing the same reality as people in our immediate vicinity. There is no '_vicinity_' when you are alone staring down a personalised content stream that no one else will ever see or know. 
+Most of the web is still designed to accomodate slow-loading, single-player experiences. We all stare into linear, individualised feeds that lack the qualities of shared physical space; directionality, subtle awareness of those around us, opportunities for ad-hoc interactions, freedom to explore, and most critically, a shared understanding we are seeing the same reality as people in our immediate vicinity. There is no '_vicinity_' when you are alone staring down a personalised content stream that no one else will ever see or know. 
+
+<ImageFrame margin="2rem auto 4rem" src="/images/posts/ambient/linkedin.gif" width={1200} alt="Me having  deeply meaningful interactions with people on LinkedIn." showalt />
 
 We don't necessarily need to constantly interact with people “around” us on the web. The sensation of being in the quiet companionship of someone else, like reading next to them in a cafe, is what we're missing. The sense of ambiently sharing space – of being co-present – while engaged in other activities is a staple of shared public spaces that we're still figuring out how to design in the digital realm.
 
 Our current “multiplayer” experiences draw too much attention to the multiplayer-ness. The other people around you demand attention. They move. They flash. They point to exactly what they're focused on, drawing you away from your own focal point. We are missing out on a fuzzier, softer sense of the shared web.
 
-<Spacer size="small"/>
+<Spacer />
 
 <h2 className="micro">The Pattern</h2>
 
@@ -38,7 +44,7 @@ This looks like quietly reading on the back porch with family, sitting in a cafe
 
 The others rarely demand your attention or strike up conversations. They just exist nearby, unobtrusively doing whatever they're doing. Providing companionship, comfort, and small windows of insight into how others choose to show up in the world and spend their time.
 
-#### Multiplayer Cursors
+### Multiplayer Cursors
 
 Our current digital attempt at this is the multiplayer cursor. Other people who have access to your file are visible in the interface as small, pointy, colourful cursors or text markers within a document. Sometimes with little names or floating profile pictures next to them to help identify people.
 
@@ -55,15 +61,29 @@ This adds a sense of shared activity in digital spaces but lacks the ambient qua
 
 They also don't scale. Having hundreds of individual cursors zooming around an interface quickly feels overwhelming. Anyone who has been in a massive shared Google Doc or Figma file knows this sensation well. They're clearly designed for smaller-scale, closed contexts like private teams and internal work. 
 
-To scale this feeling of sensing others in a workspace without being distracted by them, we could turn the pointy, specific, animated cursor into a softer, fuzzier hint of presence. More like a heatmap. This would also allow us to show the presence of a large number of people in a space – hundreds or thousands – without it feeling chaotic.
+To scale this feeling of sensing others in a workspace without being distracted by them, we could turn the pointy, specific, animated cursor into a softer, fuzzier hint of presence. More like a heatmap. Imagine having this on everything from New Yorker articles to little independent blogs. 
 
-<BasicImage src="" alt="Heatmap of subtle presence indicators" />
+<Spacer size="xs" />
 
-Imagine having this on everything from New York Times articles to little independent blogs. You'd get a vague sense of how many others are reading live on the page. Perhaps it would feel a bit gimmicky. Or maybe we'd feel a little companionship. Perhaps a little thrill that someone else is reading the same words as us.
+<Video src="https://www.youtube.com/embed/WaJuBS_fCRQ?si=PXJ35pJ_frpZOq0e" />
+
+<Spacer size="small" />
+
+You'd get a vague sense of other people reading live on the page. Perhaps this would feel a bit gimmicky and distracting. Or maybe we'd feel a little companionship. Perhaps a little thrill that someone else is reading the same words as us.
+
+Here's a less attention-grabbing variant that shows the volume of other readers on a page with a single soft, glowing blob:
+
+<Video src="https://www.youtube.com/embed/YHBz2-qu3pM?si=lba9L88nvedJ6s70" />
+
+<Spacer size="small" />
+
+This second approach is much calmer and allows us to show the presence of a large number of people in a space – hundreds or thousands – without it feeling chaotic.
 
 It's a soft starting point for layering on more attention-heavy interactions; leaving inline comments, making connections with people who always show up in the same spaces as you, or creating trails for others to follow.
 
-#### Spatial Audio
+<Spacer size="small" />
+
+### Spatial Audio
 
 Spatial audio feels like one of the most promising avenues to explore ambiently sensing many people in a space. Sound naturally follows a spatial gradient in physical space; people close to you are louder, and people further away are quieter, with many shades in between.
 
@@ -77,7 +97,17 @@ Gather Town is a “digital space for distributed teams” which I've seen used 
 
 You appear as a game-like character in a fake living room or office, and can then move around the space. The clever bit is the video and audio channels of people around you fade in and out as you move closer and further from them. You're able to move around a room and jump between conversational groups, just like at a cocktail party.
 
-<BasicImage src="" alt="Gather town spatial audio and video" />
+<BasicImage margin="2rem auto 0" src="/images/posts/ambient/gather3.webp" alt="Gather town spatial audio and video" width={1000} />
+
+<TwoColumn alignItems="start">
+
+<BasicImage src="/images/posts/ambient/gather1.gif" alt="Gather town spatial audio and video" />
+
+<BasicImage src="/images/posts/ambient/gather2.gif" alt="Gather town spatial audio and video" />
+
+</TwoColumn>
+
+<Spacer size="small" />
 
 #### 2. [Cozyroom](https://cozyroom.xyz/)
 
@@ -89,7 +119,9 @@ You appear as a little blobby character on screen who can talk. Just like in Gat
 
 Think of how different it would be to move around this kind of space with 100 other people vs. having 100 people on a single Zoom call sharing only one audio channel.
 
-#### Annotations and Trails
+<Spacer size="small" />
+
+### Annotations and Trails
 
 Annotations and markers left on public websites are less synchronous than the other patterns here, but give us a peripheral sense of other people's activities. A few products are exploring this approach:
 
