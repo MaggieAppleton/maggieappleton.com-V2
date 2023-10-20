@@ -18,7 +18,7 @@ export const podcastData = [
   // {
   //   type: "podcast",
   //   podcastName: "Clerestory",
-  //   episodeName: "",
+  //   episodeName: "Something about Language Models",
   //   date: "2023",
   //   url: " ",
   //   coverImage: " ",
