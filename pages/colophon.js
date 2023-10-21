@@ -153,7 +153,7 @@ export default function Colophon() {
             </p>
             <Spacer size="xs" />
             <p>
-              I occassionally need to <i>alert</i> readers to dangers and
+              I occasionally need to <i>alert</i> readers to dangers and
               threats:
               <Alert>
                 <h2>This is an alert</h2>
