@@ -1,28 +1,44 @@
 export const podcastData = [
-  // {
-  //   type: "podcast",
-  //   podcastName: "BBC Digital Human",
-  //   episodeName: "",
-  //   date: "2023",
-  //   url: " ",
-  //   coverImage: " ",
-  // },
-  // {
-  //   type: "podcast",
-  //   podcastName: "Clerestory",
-  //   episodeName: "The Dark Forest and Generative AI",
-  //   date: "2023-02-04",
-  //   url: "",
-  //   coverImage: "",
-  // },
-  // {
-  //   type: "podcast",
-  //   podcastName: "Clerestory",
-  //   episodeName: "Something about Language Models",
-  //   date: "2023",
-  //   url: " ",
-  //   coverImage: " ",
-  // },
+  {
+    type: "podcast",
+    podcastName: "Shoptalk Show",
+    episodeName: "Language Models, AI, and Digital Gardens",
+    date: "2023-09-18",
+    url: "https://shoptalkshow.com/583/",
+    coverImage: "/images/podcasts/shoptalk.webp",
+  },
+  {
+    type: "podcast",
+    podcastName: "The Informed Life",
+    episodeName: "On Digital Gardening",
+    date: "2023-07-16",
+    url: "https://theinformed.life/2023/07/16/episode-118-maggie-appleton/",
+    coverImage: "/images/podcasts/informed.webp",
+  },
+  {
+    type: "podcast",
+    podcastName: "BBC's Digital Human",
+    episodeName: "Nope",
+    date: "2023-06-26",
+    url: "https://www.bbc.co.uk/programmes/m001n8f5",
+    coverImage: "/images/podcasts/digitalhuman.webp",
+  },
+  {
+    type: "podcast",
+    podcastName: "Clerestory",
+    episodeName: "Why We Write and Language Models",
+    date: "2023-04-06",
+    url: "https://podcasts.apple.com/gb/podcast/why-we-write-and-language-models-with-maggie-appleton/id1566773049?i=1000607621430",
+    coverImage: "/images/podcasts/clere.webp",
+  },
+  {
+    type: "podcast",
+    podcastName: "Clerestory",
+    episodeName: "The Dark Forest and Generative AI",
+    date: "2023-02-04",
+    url: "https://podcasts.apple.com/gb/podcast/the-dark-forest-and-generative-ai-with-maggie-appleton/id1566773049?i=1000597977301",
+    coverImage: "/images/podcasts/clere.webp",
+  },
   {
     type: "podcast",
     podcastName: "The Stack Overflow Podcast",
@@ -38,7 +54,7 @@ export const podcastData = [
     episodeName: "On Digital Gardening",
     date: "2022-04-13",
     url: "https://anchor.fm/reverbbysane/episodes/EP-09-Maggie-Appleton-on-digital-gardening-e1hrec7",
-    coverImage: "/images/podcasts/reverb.jpeg",
+    coverImage: "/images/podcasts/reverb.webp",
   },
   {
     type: "podcast",
@@ -46,7 +62,7 @@ export const podcastData = [
     episodeName: "Fortress of Solitude",
     date: "2021-08-10",
     url: "https://frontendheroes.transistor.fm/episodes/fortress-of-solitude-w-maggie-appleton",
-    coverImage: "/images/podcasts/heroes.jpeg",
+    coverImage: "/images/podcasts/heroes.webp",
   },
   {
     type: "podcast",
@@ -54,7 +70,7 @@ export const podcastData = [
     episodeName: "Visual Programming",
     date: "2021-08-05",
     url: "https://museapp.com/podcast/37-visual-programming/",
-    coverImage: "/images/podcasts/metamuse.jpeg",
+    coverImage: "/images/podcasts/metamuse.webp",
   },
   {
     type: "podcast",
@@ -62,7 +78,7 @@ export const podcastData = [
     episodeName: "Digital Disembodiment",
     date: "2021-04-05",
     url: "https://hopeinsource.com/disembodiment/",
-    coverImage: "/images/podcasts/hope.jpeg",
+    coverImage: "/images/podcasts/hope.webp",
   },
   {
     type: "podcast",
@@ -70,7 +86,7 @@ export const podcastData = [
     episodeName: "Unique Roles of a Developer",
     date: "2021-03-23",
     url: "https://topenddevs.com/podcasts/she-s-in-tech/episodes/episode-5-unique-roles-of-a-developer-she-s-in-tech-004",
-    coverImage: "/images/podcasts/shetech.jpeg",
+    coverImage: "/images/podcasts/shetech.webp",
   },
   {
     type: "podcast",
@@ -78,7 +94,7 @@ export const podcastData = [
     episodeName: "Growing Digital Gardens and Tending the Web",
     date: "2021-02-13",
     url: "https://podcasts.apple.com/us/podcast/weekend-drop-digital-gardening-w-maggie-appleton/id1549059398?i=1000508923478",
-    coverImage: "/images/podcasts/swyx.jpeg",
+    coverImage: "/images/podcasts/swyx.webp",
   },
   {
     type: "podcast",
@@ -86,7 +102,7 @@ export const podcastData = [
     episodeName: "Digital Anthropology, Digital Gardens and Illustrated Notes",
     date: "2020-07-25",
     url: "https://thatsthenorm.com/maggie-appleton-transcript/",
-    coverImage: "/images/podcasts/roamfm.jpeg",
+    coverImage: "/images/podcasts/roamfm.webp",
   },
   {
     type: "podcast",
@@ -94,7 +110,7 @@ export const podcastData = [
     episodeName: "Technology as Process",
     date: "2020-11-02",
     url: "https://hopeinsource.com/process/",
-    coverImage: "/images/podcasts/hope.jpeg",
+    coverImage: "/images/podcasts/hope.webp",
   },
   {
     type: "podcast",
@@ -102,7 +118,7 @@ export const podcastData = [
     episodeName: "Embodied Knowledge - Part 2",
     date: "2020-11-02",
     url: "https://hopeinsource.com/embodied/",
-    coverImage: "/images/podcasts/hope.jpeg",
+    coverImage: "/images/podcasts/hope.webp",
   },
   {
     type: "podcast",
@@ -110,7 +126,7 @@ export const podcastData = [
     episodeName: "Embodied Knowledge - Part 1",
     date: "2020-05-13",
     url: "https://hopeinsource.com/metaphor/",
-    coverImage: "/images/podcasts/hope.jpeg",
+    coverImage: "/images/podcasts/hope.webp",
   },
   {
     type: "podcast",
@@ -118,7 +134,7 @@ export const podcastData = [
     episodeName: "Open Source as a Gift Economy",
     date: "2020-05-03",
     url: "https://hopeinsource.com/gift/",
-    coverImage: "/images/podcasts/hope.jpeg",
+    coverImage: "/images/podcasts/hope.webp",
   },
   {
     type: "podcast",
@@ -126,7 +142,7 @@ export const podcastData = [
     episodeName: "The Power of Mental Models",
     date: "2020-03-03",
     url: "https://reactpodcast.simplecast.com/episodes/86",
-    coverImage: "/images/podcasts/react.jpeg",
+    coverImage: "/images/podcasts/react.webp",
   },
   {
     type: "podcast",
@@ -135,6 +151,6 @@ export const podcastData = [
       "Turning Technical Concepts into Approachable Illustrated Metaphors",
     date: "2019-05-03",
     url: "https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton",
-    coverImage: "/images/podcasts/egghead.jpeg",
+    coverImage: "/images/podcasts/egghead.webp",
   },
 ];
