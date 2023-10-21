@@ -4,7 +4,8 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import PodcastCard from "../components/cards/PodcastCard";
 import TitleWithCount from "../components/TitleWithCount";
-import { podcastData } from "../posts/data/podcasts";
+
+const podcastData = require("../posts/data/podcasts");
 
 export default function Podcasts() {
   return (
