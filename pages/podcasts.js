@@ -26,6 +26,7 @@ export default function Podcasts() {
             ({ podcastName, episodeName, coverImage, date, url }, i) => (
               <PodcastCard
                 id={i}
+                key={i}
                 url={url}
                 episodeName={episodeName}
                 podcastName={podcastName}

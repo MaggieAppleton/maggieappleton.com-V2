@@ -1,4 +1,4 @@
-export const podcastData = [
+const podcastData = [
   {
     type: "podcast",
     podcastName: "Shoptalk Show",
@@ -154,3 +154,5 @@ export const podcastData = [
     coverImage: "/images/podcasts/egghead.webp",
   },
 ];
+
+module.exports = podcastData;
