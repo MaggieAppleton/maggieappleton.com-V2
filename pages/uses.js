@@ -92,6 +92,13 @@ const tools = [
     type: "software",
   },
   {
+    name: "Lunch Money",
+    url: "https://lunchmoney.app/",
+    description: "Personal finance and budgeting",
+    image: "/images/tools/lunchmoney.png",
+    type: "software",
+  },
+  {
     name: "Garmin Vivomove",
     url: "https://buy.garmin.com/en-US/US/p/641121",
     description: "Fitness tracking",
