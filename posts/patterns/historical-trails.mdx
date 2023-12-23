@@ -3,7 +3,7 @@ title: "Historical Trails"
 description: "Giving people a visible, useful trail of where they've been over the course of an exploratory journey"
 growthStage: "budding"
 startDate: "2023-12-18"
-updated: "2023-12-22"
+updated: "2023-12-23"
 type: "pattern"
 topics: ["Design", "The Web", "Language Models"]
 ---
@@ -211,7 +211,7 @@ Patryk Adaś' published [a set](https://www.freecodecamp.org/news/lossless-web-n
 
 These trails would show users a narrative history, including the full trace of how a user ended up on a page, even if they used the back button or opened many new pages from a single source (like a search results page).
 
-The trail model could give us a nice overview map of not only which pages we spent time on, but how we got from one to the next.
+The trail model could give us a nice overview map of not only which pages we spent time on, but how we got from one to the next. While not specifically focused on histories, some of the qualities of my [[Spatial Web Browsing]] pattern could also give us this view.
 
 <BasicImage width="800px" src="/images/posts/trails/trails2.png" showalt alt="A possible overview map of trails and their connections" sourceTitle="The Future of Browser History" sourceUrl="https://www.freecodecamp.org/news/browserhistory-2abad38022b1" margin="0 auto 3rem" />
 
@@ -219,7 +219,7 @@ Adaś also prototyped a spatial navigation view for moving between these trails 
 
 <Video src="https://www.youtube.com/embed/AWpbnV41zUE" margin="1rem 0 4rem" />
 
-Previous projects explored this idea of a visible trail of browser links, like the Chrome extension [Trailblazer](https://web.archive.org/web/20180707074835/http://www.trailblazer.io/) and this [unpublished draft paper](https://cs.brown.edu/courses/csci2951-l/huag/redesign.html) by HCI professor Hua Guo, but most aren't alive and usable.
+Adaś was building off some prior art here. Previous projects that explored visible trails of browser links include the Chrome extension [Trailblazer](https://web.archive.org/web/20180707074835/http://www.trailblazer.io/) and this [unpublished draft paper](https://cs.brown.edu/courses/csci2951-l/huag/redesign.html) by HCI professor Hua Guo. But neither of these are alive and usable.
 
 One exception is Szymon Kaliski's [Cartographist](https://szymonkaliski.com/projects/cartographist/) which is an experimental [open-source](https://github.com/szymonkaliski/cartographist) browser that combines a branching trail view in a sidebar with the (now quite popular) horizontally-stacked window pattern.
 
@@ -231,14 +231,20 @@ Imagine Chrome's grouped “journeys” I showed above, but less noisy, more acc
 
 <ImageFrame src="/images/posts/trails/history7.gif" width="1200px" alt="A prototype mockup of a browser history that combines thematic groups and trails" />
 
-This interface is similar to one of Patryk Adaś' maps above, but with page visits grouped into related journeys rather than by domain. I made the branching display a detail view inside each journey, since I think showing a full browser history in fine-grained detail can quickly get visually overwhelming. In something like this, you can dive into journeys one at a time.
+I've designed this speculative interface inspired by one of Patryk Adaś' maps above, but with page visits grouped into thematically related journeys rather than by website. Here's a more detailed walkthrough:
 
-Grouping journeys by topic instead of URL is more feasible than you might think. While I'm hesitant to suggest the most popular hammer of the moment, [language models](/squish-structure) could be legitimately helpful in improving semantic clustering. Rather than only relying on rudimentary hints like keywords and timing to guess which browsing sessions are related, these models can identify which pages are thematically related and part of a unified journey – even across multiple days.
+<Video src="https://www.youtube.com/embed/yFpmKIXCh6g" margin="1rem 0 3rem" />
 
+Grouping journeys by topic instead of by website is more feasible than you might think. While I'm hesitant to suggest the most popular hammer of the moment, [language models](/squish-structure) could be legitimately helpful in improving semantic clustering.
+
+Rather than only relying on rudimentary hints like keywords and timing to guess which browsing sessions are related, these models can identify which pages are thematically related and part of a unified journey – even across multiple sites and multiple days.
+
+Putting the detailed, branching trail inside each journey avoids making this visually overwhelming. You can dive into journeys one at a time, rather than trying to process a giant list of links all at once.
 
 <References>
 <ReferencesLink title="Lossless Web Navigation with Trails" href="https://www.freecodecamp.org/news/lossless-web-navigation-with-trails-9cd48c0abb56/" author="Patryk Adaś" />
 <ReferencesLink title="A Spacial Model for Lossless Web Navigation" href="https://www.freecodecamp.org/news/lossless-web-navigation-spatial-model-37f83438201d" author="Patryk Adaś" />
 <ReferencesLink title="The Future of Browser History" href="https://www.freecodecamp.org/news/browserhistory-2abad38022b1" author="Patryk Adaś" />
 <ReferencesLink title="Cartographer" href="https://szymonkaliski.com/projects/cartographist/" author="Szymon Kaliski" />
+<ReferencesLink title="Cartographer" href="/cartographist/" author="Szymon Kaliski" />
 </References>
