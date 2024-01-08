@@ -24,6 +24,7 @@ import {
   Title4,
   Subtext,
   SmallCaps,
+  Highlight,
 } from "../components/Typography";
 import {
   projectFilePaths,
@@ -58,6 +59,8 @@ export const components = {
   h3: Title3,
   h4: Title4,
   SmallCaps: SmallCaps,
+  Subtext: Subtext,
+  Highlight: Highlight,
   InternalTooltipLink: InternalTooltipLink,
   Tween: Tween,
   Timeline: Timeline,
@@ -74,7 +77,6 @@ export const components = {
   BlockquoteCitation: dynamic(() =>
     import("../components/mdx/BlockquoteCitation")
   ),
-  Subtext: Subtext,
   Accordion: dynamic(() => import("../components/mdx/Accordion")),
   Footnote: dynamic(() => import("../components/mdx/Footnote"), {
     ssr: false,
@@ -328,6 +330,12 @@ export const components = {
   AIConversation: dynamic(() => import("../components/unique/AIConversation"), {
     ssr: false,
   }),
+  TranscriptionTimeline: dynamic(
+    () => import("../components/unique/speakularity/TranscriptionTimeline"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({

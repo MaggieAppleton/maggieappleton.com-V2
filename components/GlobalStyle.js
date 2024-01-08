@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 		--color-dark-sea-blue: #00758F;
 		--color-purple: #7558B2;
 		--color-salmon: #FD8370;
+		--color-light-salmon: #FFD09C;
 
 
 		/* Fonts */
