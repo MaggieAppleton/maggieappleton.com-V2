@@ -330,12 +330,12 @@ export const components = {
   AIConversation: dynamic(() => import("../components/unique/AIConversation"), {
     ssr: false,
   }),
-  TranscriptionTimeline: dynamic(
-    () => import("../components/unique/speakularity/TranscriptionTimeline"),
-    {
-      ssr: false,
-    }
-  ),
+  // TranscriptionTimeline: dynamic(
+  //   () => import("../components/unique/speakularity/TranscriptionTimeline"),
+  //   {
+  //     ssr: false,
+  //   }
+  // ),
 };
 
 export default function PostPage({
