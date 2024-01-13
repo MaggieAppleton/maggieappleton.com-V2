@@ -3,7 +3,9 @@ import MasonryGrid from "../MasonryGrid";
 import EssayCard from "../cards/EssayCard";
 import NoteCard from "../cards/NoteCard";
 import PatternCard from "../cards/PatternCard";
-import styled from "styled-components";
+
+import PodcastCard from "../cards/PodcastCard";
+import TalkCard from "../cards/TalkCard";
 
 function GardenHits({ hits, allPostData }) {
   const hitLength = hits?.length;
@@ -13,7 +15,7 @@ function GardenHits({ hits, allPostData }) {
   const filteredGardenHits = hitLength > 0 ? hits : sortedPosts;
 
   return (
-    <MasonryGrid>
+    <MasonryGrid columnGapLeft="1rem" columnGapBottom="1rem">
       {filteredGardenHits.map((post, i) => {
         if (post.type === "essay") {
           return (
@@ -47,6 +49,30 @@ function GardenHits({ hits, allPostData }) {
               title={post.title}
               growthStage={post.growthStage}
               date={post.updated}
+            />
+          );
+        } else if (post.type === "talk") {
+          return (
+            <TalkCard
+              key={i}
+              id={post.slug}
+              slug={post.slug}
+              title={post.title}
+              date={post.updated}
+              cover={post.cover}
+              conferences={post.conferences}
+            />
+          );
+        } else if (post.type === "podcast") {
+          return (
+            <PodcastCard
+              key={i}
+              id={i}
+              url={post.url}
+              episodeName={post.episodeName}
+              podcastName={post.podcastName}
+              date={post.date}
+              podcastCover={post.coverImage}
             />
           );
         }

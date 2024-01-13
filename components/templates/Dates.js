@@ -69,3 +69,9 @@ export function RelativeDate({ postDate }) {
     return relativeDate;
   }
 }
+
+export function DateToNow({ postDate }) {
+  const date = parse(postDate, "yyyy-MM-dd", new Date());
+  const dateToNow = formatDistanceToNow(date, { addSuffix: true });
+  return dateToNow;
+}

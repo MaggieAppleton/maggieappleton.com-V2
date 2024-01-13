@@ -4,6 +4,7 @@ const matter = require("gray-matter");
 const dotenv = require("dotenv");
 const algoliasearch = require("algoliasearch");
 const mdxUtils = require("../utils/mdxUtils");
+const podcastData = require("../posts/data/podcasts");
 
 const {
   essayFilePaths,
@@ -12,10 +13,38 @@ const {
   NOTES_PATH,
   patternFilePaths,
   PATTERNS_PATH,
+  talksFilePaths,
+  TALKS_PATH,
 } = mdxUtils;
+
+let podcasts = podcastData.map((podcast) => {
+  const { podcastName, episodeName, type, url, coverImage, date } = podcast;
+
+  return {
+    podcastName,
+    episodeName,
+    type,
+    url,
+    coverImage,
+    date,
+  };
+});
 
 let essays = essayFilePaths.map((filePath) => {
   const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+  const { content, data } = matter(source);
+  const slug = filePath.replace(/\.mdx$/, "");
+
+  return {
+    content,
+    data,
+    slug,
+    filePath,
+  };
+});
+
+let talks = talksFilePaths.map((filePath) => {
+  const source = fs.readFileSync(path.join(TALKS_PATH, filePath));
   const { content, data } = matter(source);
   const slug = filePath.replace(/\.mdx$/, "");
 
@@ -53,7 +82,7 @@ let patterns = patternFilePaths.map((filePath) => {
   };
 });
 
-const posts = [...essays, ...notes, ...patterns];
+const posts = [...essays, ...notes, ...patterns, ...talks];
 
 function transformPostsToSearchObjects(posts) {
   const transformed = posts.map((post) => {
@@ -77,6 +106,24 @@ function transformPostsToSearchObjects(posts) {
   return transformed;
 }
 
+function transformPodcastsToSearchObjects(podcasts) {
+  const transformed = podcasts.map((podcast) => {
+    const podcastId = podcast.episodeName.toLowerCase().replace(/\s/g, "-");
+
+    return {
+      objectID: podcastId,
+      podcastName: podcast.podcastName,
+      episodeName: podcast.episodeName,
+      type: podcast.type,
+      url: podcast.url,
+      coverImage: podcast.coverImage,
+      date: podcast.date,
+    };
+  });
+
+  return transformed;
+}
+
 (async function () {
   // initialize environment variables
   dotenv.config();
@@ -84,6 +131,10 @@ function transformPostsToSearchObjects(posts) {
   try {
     // const posts = await getPostdata();
     const searchObjects = transformPostsToSearchObjects(posts);
+    const podcastObjects = transformPodcastsToSearchObjects(podcasts);
+
+    searchObjects.push(...podcastObjects);
+
     const appID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
     const adminKey = process.env.ALGOLIA_SEARCH_ADMIN_KEY;
 

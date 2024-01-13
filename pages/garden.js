@@ -11,11 +11,15 @@ import {
   NOTES_PATH,
   patternFilePaths,
   PATTERNS_PATH,
+  talksFilePaths,
+  TALKS_PATH,
 } from "../utils/mdxUtils";
 import TitleWithCount from "../components/TitleWithCount";
 import { GardenFiltersAndHits } from "../components/search/GardenFiltersAndHits";
+import { podcastData } from "../posts/data/podcasts";
 
 export default function Garden({ allPosts }) {
+  allPosts = allPosts.concat(podcastData);
   return (
     <>
       <Header title="The Garden of Maggie Appleton" />
@@ -23,8 +27,8 @@ export default function Garden({ allPosts }) {
         <header style={{ marginBottom: "var(--space-xl)" }}>
           <TitleWithCount posts={allPosts}>The Garden</TitleWithCount>
           <Title2>
-            A collection of essays, notes, and half-baked explorations I'm
-            always tending to.
+            A collection of essays, notes, talks, podcasts, and half-baked
+            explorations I'm always tending to.
           </Title2>
         </header>
         <GardenFiltersAndHits allPostData={allPosts} />
@@ -78,14 +82,24 @@ export function getStaticProps() {
     const source = fs.readFileSync(path.join(PATTERNS_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
-    const { title, description, type, startDate, updated } = data;
+    const {
+      title,
+      description,
+      type,
+      startDate,
+      updated,
+      topics,
+      growthStage,
+    } = data;
 
     return {
       content,
       title,
       description,
       startDate,
+      growthStage,
       updated,
+      topics,
       type,
       slug,
       filePath,
@@ -127,7 +141,35 @@ export function getStaticProps() {
   });
   notes = sortedNotes;
 
-  const allPosts = essays.concat(notes, patterns);
+  // Get all talks
+  let talks = talksFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(TALKS_PATH, filePath));
+    const { content, data } = matter(source);
+    const slug = filePath.replace(/\.mdx$/, "");
+    const { title, description, type, topics, updated, conferences, cover } =
+      data;
+
+    return {
+      content,
+      title,
+      description,
+      topics,
+      updated,
+      cover,
+      conferences,
+      type,
+      slug,
+      filePath,
+    };
+  });
+
+  // Sort talks by date
+  const sortedTalks = talks.sort((a, b) => {
+    return new Date(b.updated) - new Date(a.updated);
+  });
+  talks = sortedTalks;
+
+  const allPosts = essays.concat(notes, patterns, talks);
 
   return { props: { allPosts } };
 }

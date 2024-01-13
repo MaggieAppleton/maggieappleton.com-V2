@@ -68,19 +68,21 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
     <Link key={id} as={`/${slug}`} href={`/${slug}`}>
       <a>
         <StyledPatternCard initial="initial" whileHover="hover">
+          {/* {growthStage && <GrowthIcon size="24" growthStage={growthStage} />} */}
+
           <Leaves />
           <div>
             <h3>{title}</h3>
             <MetadataContainer>
               <span>Pattern</span>
-              <svg width="6px" height="8px">
-                <circle r="3" cx="3" cy="3" fill="var(--color-gray-400)" />
+              <svg width="4px" height="6px">
+                <circle r="2" cx="2" cy="4" fill="var(--color-gray-400)" />
               </svg>
               <RelativeDate postDate={date} />
             </MetadataContainer>
           </div>
         </StyledPatternCard>
-        </a>
+      </a>
     </Link>
   );
 }
@@ -90,26 +92,27 @@ const MetadataContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: var(--space-xs);
-  margin-top: var(--space-2xs);
   font-family: var(--font-sans);
-  font-size: calc(var(--font-size-xs) / 1.08);
+  font-size: var(--font-size-xs);
   color: var(--color-gray-500);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.015rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  text-transform: capitalize;
   font-weight: 400;
   svg {
-    margin: 0 0.4rem;
+    margin: 0 0.5rem !important;
   }
 `;
 
 const StyledPatternCard = styled(motion.div)`
   display: flex;
   flex-direction: row;
-  padding: var(--space-xs);
-  margin: 0 var(--space-xs) 0 0;
+  grid-gap: 1rem;
+  padding: var(--space-xs) var(--space-s);
   border-radius: var(--border-radius-base);
   border: 1px solid var(--color-cream);
+  /* background: var(--color-light-cream); */
   transition: all 0.3s ease-in-out;
   align-items: start;
   cursor: pointer;
@@ -120,16 +123,15 @@ const StyledPatternCard = styled(motion.div)`
     font-size: var(--font-size-base);
     font-weight: 400;
     line-height: var(--leading-snug);
-    margin-left: var(--space-xs);
     transition: all 0.3s ease-in-out;
+    margin-bottom: 0.5rem;
   }
   svg {
-    position: relative;
     top: 1px;
     flex-shrink: 0;
   }
   &:hover {
-    transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.01, 1.01, 1.01);
     background: var(--color-light-cream);
     box-shadow: var(--box-shadow-sm);
     border: 1px solid var(--color-tinted-cream);
