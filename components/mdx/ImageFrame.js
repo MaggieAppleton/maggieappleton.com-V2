@@ -50,6 +50,7 @@ const FigCaption = styled.figcaption`
   color: var(--color-gray-600);
   display: inline-block;
   width: 800px;
+  max-width: 100%;
   line-height: 1.75rem;
 `;
 
