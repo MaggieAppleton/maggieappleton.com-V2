@@ -168,7 +168,7 @@ export default function Colophon() {
               <ResourceBook
                 url="https://www.librarything.com/work/9697447"
                 title="Addiction By Design"
-                image="/images/books/addiction.jpg"
+                image="/images/books/addiction.webp"
                 author="Natasha Dow Schull"
               >
                 Addiction by Design takes readers into the intriguing world of
