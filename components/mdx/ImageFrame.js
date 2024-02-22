@@ -5,6 +5,7 @@ export default function ImageFrame({
   alt,
   width,
   margin,
+  padding,
   showalt,
   sourceUrl,
   sourceTitle,
@@ -19,15 +20,16 @@ export default function ImageFrame({
         src={src}
         srcSet={srcSet}
         alt={alt}
+        padding={padding}
         width={width || "100%"}
       />
       {showalt ? (
         sourceUrl ? (
-          <figcaption>
+          <FigCaption>
             {alt} – Source: <a href={sourceUrl}>{sourceTitle}</a>
-          </figcaption>
+          </FigCaption>
         ) : (
-          <figcaption>{alt}</figcaption>
+          <FigCaption>{alt}</FigCaption>
         )
       ) : null}
     </Container>
@@ -39,19 +41,24 @@ const Container = styled.figure`
   grid-column: 1 / 4 !important;
   margin: ${(props) => props.margin || "var(--space-s) auto var(--space-xl)"};
   text-align: center;
-  figcaption {
-    margin-top: var(--space-xs);
-    font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
-  }
+`;
+
+const FigCaption = styled.figcaption`
+  margin-top: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  display: inline-block;
+  width: 800px;
+  line-height: 1.75rem;
 `;
 
 const StyledImageFrame = styled.img`
   width: ${(props) => props.width || "1100px"};
+  padding: ${(props) => props.padding || ""};
   max-width: 100%;
   border-radius: var(--border-radius-base);
   border: 1px solid var(--color-tinted-cream);
   box-shadow: var(--box-shadow-lg);
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-xs);
 `;
