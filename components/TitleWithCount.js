@@ -15,7 +15,7 @@ const StyledContainer = styled(motion.div)`
   span {
     position: relative;
     top: 5.2rem;
-    left: -3.1rem;
+    left: -3.4rem;
     font-size: var(--font-size-md);
     color: var(--color-sea-blue);
     font-weight: 400;
