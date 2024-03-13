@@ -74,9 +74,9 @@ export const components = {
   EditRed: EditRed,
   LinkWithIcon: LinkWithIcon,
   Icon: Icon,
-  AnimatedImage: dynamic(() => import("../components/mdx/AnimatedImage"), {
-    ssr: false,
-  }),
+  // AnimatedImage: dynamic(() => import("../components/mdx/AnimatedImage"), {
+  //   ssr: false,
+  // }),
   ButtonLink: dynamic(() => import("../components/links/ButtonLink")),
   Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
     ssr: false,
@@ -179,9 +179,9 @@ export const components = {
   ListNumber: dynamic(() => import("../components/mdx/ListNumber"), {
     ssr: false,
   }),
-  AudioPlayer: dynamic(() => import("../components/mdx/AudioPlayer"), {
-    ssr: false,
-  }),
+  // AudioPlayer: dynamic(() => import("../components/mdx/AudioPlayer"), {
+  //   ssr: false,
+  // }),
 
   // Unique components – used in specific essays or notes
   StickyPosition: dynamic(
@@ -343,12 +343,12 @@ export const components = {
   AIConversation: dynamic(() => import("../components/unique/AIConversation"), {
     ssr: false,
   }),
-  TranscriptionTimeline: dynamic(
-    () => import("../components/unique/speakularity/TranscriptionTimeline"),
-    {
-      ssr: false,
-    }
-  ),
+  // TranscriptionTimeline: dynamic(
+  //   () => import("../components/unique/speakularity/TranscriptionTimeline"),
+  //   {
+  //     ssr: false,
+  //   }
+  // ),
 };
 
 export default function PostPage({
