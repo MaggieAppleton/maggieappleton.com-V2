@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
-export default function BlockquoteCitation({ children, author, title, url }) {
+export default function BlockquoteCitation({
+  children,
+  author,
+  title,
+  url,
+  small,
+}) {
   return (
     <figure>
-      <Blockquote>
+      <Blockquote small={small}>
         <p>{children}</p>
         <figcaption>
           <Cite>
-            <span>{author} – </span>
-            <a href={url}>{title}</a>
+            <span>{author}</span>
+            {title && <a href={url}> – {title}</a>}
           </Cite>
         </figcaption>
       </Blockquote>
@@ -30,8 +36,10 @@ const Cite = styled.cite`
 
 const Blockquote = styled.blockquote`
   p {
-    font-size: var(--font-size-m);
-    line-height: 1.25;
+    font-size: ${(props) =>
+      props.small ? "var(--font-size-base)" : "var(--font-size-m)"};
+    line-height: ${(props) => (props.small ? "1.5" : "1.25")};
+    margin-bottom: 0;
   }
   & > p {
     margin: var(--space-m) auto var(--space-s) !important;
