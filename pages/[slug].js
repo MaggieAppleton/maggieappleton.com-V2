@@ -17,6 +17,8 @@ import EssayTemplate from "../templates/EssayTemplate";
 import NoteTemplate from "../templates/NoteTemplate";
 import ProjectTemplate from "../templates/ProjectTemplate";
 import PatternTemplate from "../templates/PatternTemplate";
+import LinkWithIcon from "../components/mdx/LinkWithIcon";
+import Icon from "../components/mdx/Icon";
 import {
   Title1,
   Title2,
@@ -70,6 +72,11 @@ export const components = {
   Spacer: Spacer,
   Controls: Controls,
   EditRed: EditRed,
+  LinkWithIcon: LinkWithIcon,
+  Icon: Icon,
+  AnimatedImage: dynamic(() => import("../components/mdx/AnimatedImage"), {
+    ssr: false,
+  }),
   ButtonLink: dynamic(() => import("../components/links/ButtonLink")),
   Podcastiframe: dynamic(() => import("../components/mdx/Podcastiframe"), {
     ssr: false,
@@ -145,6 +152,9 @@ export const components = {
   LinkCard: dynamic(() => import("../components/mdx/LinkCard"), {
     ssr: false,
   }),
+  QuoteCard: dynamic(() => import("../components/mdx/QuoteCard"), {
+    ssr: false,
+  }),
   ImageLink: dynamic(() => import("../components/links/ImageLink"), {
     ssr: false,
   }),
@@ -167,6 +177,9 @@ export const components = {
     ssr: false,
   }),
   ListNumber: dynamic(() => import("../components/mdx/ListNumber"), {
+    ssr: false,
+  }),
+  AudioPlayer: dynamic(() => import("../components/mdx/AudioPlayer"), {
     ssr: false,
   }),
 
@@ -330,12 +343,12 @@ export const components = {
   AIConversation: dynamic(() => import("../components/unique/AIConversation"), {
     ssr: false,
   }),
-  // TranscriptionTimeline: dynamic(
-  //   () => import("../components/unique/speakularity/TranscriptionTimeline"),
-  //   {
-  //     ssr: false,
-  //   }
-  // ),
+  TranscriptionTimeline: dynamic(
+    () => import("../components/unique/speakularity/TranscriptionTimeline"),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 export default function PostPage({
