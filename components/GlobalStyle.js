@@ -360,6 +360,10 @@ export const GlobalStyle = createGlobalStyle`
 		padding: var(--space-12) var(--space-24);
 	}
 
+	mark {
+		background-color: var(--color-light-salmon);
+	}
+
 	.visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
