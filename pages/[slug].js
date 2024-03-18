@@ -6,7 +6,7 @@ import path from "path";
 import { getHeadings } from "../utils/getHeadings";
 import { linkify } from "../utils/linkify";
 import PostLinks from "../links.json";
-import getOgImage from "../utils/getOgImage";
+// import getOgImage from "../utils/getOgImage";
 import { Spacer } from "../components/Spacer";
 import AssumedAudience from "../components/mdx/AssumedAudience";
 import Disclaimer from "../components/mdx/Disclaimer";
@@ -358,7 +358,7 @@ export default function PostPage({
   headings,
   backlinks,
   toc,
-  ogImage,
+  // ogImage,
 }) {
   if (frontMatter.type === "note") {
     return (
@@ -370,7 +370,7 @@ export default function PostPage({
         components={components}
         backlinks={backlinks}
         headings={headings}
-        ogImage={ogImage}
+        // ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "essay") {
@@ -383,7 +383,7 @@ export default function PostPage({
         components={components}
         backlinks={backlinks}
         headings={headings}
-        ogImage={ogImage}
+        // ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "project") {
@@ -393,7 +393,7 @@ export default function PostPage({
         source={source}
         frontMatter={frontMatter}
         components={components}
-        ogImage={ogImage}
+        // ogImage={ogImage}
       />
     );
   } else if (frontMatter.type === "pattern") {
@@ -403,21 +403,21 @@ export default function PostPage({
         source={source}
         frontMatter={frontMatter}
         components={components}
-        ogImage={ogImage}
+        // ogImage={ogImage}
       />
     );
   }
 }
 
-const getOgImagePath = (properties) => {
-  let url = "/og-image?";
-  Object.keys(properties).forEach((property) => {
-    if (properties[property]) {
-      url += `${property}=${encodeURIComponent(properties[property])}&`;
-    }
-  });
-  return url;
-};
+// const getOgImagePath = (properties) => {
+//   let url = "/og-image?";
+//   Object.keys(properties).forEach((property) => {
+//     if (properties[property]) {
+//       url += `${property}=${encodeURIComponent(properties[property])}&`;
+//     }
+//   });
+//   return url;
+// };
 
 export const getStaticProps = async ({ params }) => {
   const essays = fs.readdirSync(ESSAYS_PATH);
@@ -470,8 +470,8 @@ export const getStaticProps = async ({ params }) => {
     growthStage: data.growthStage,
     cover: data.cover,
   };
-  const ogImagePath = getOgImagePath(ogObject);
-  const ogImage = await getOgImage(ogImagePath, data.title);
+  // const ogImagePath = getOgImagePath(ogObject);
+  // const ogImage = await getOgImage(ogImagePath, data.title);
 
   const contentWithBidirectionalLinks = linkify(content, data.title);
 
@@ -499,7 +499,7 @@ export const getStaticProps = async ({ params }) => {
       slug: params.slug,
       toc,
       backlinks,
-      ogImage,
+      // ogImage,
     },
   };
 };
