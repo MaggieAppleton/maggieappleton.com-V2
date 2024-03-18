@@ -23,7 +23,6 @@ export default function NoteTemplate({
   toc,
   headings,
   backlinks,
-  ogImage,
 }) {
   return (
     <>
@@ -31,7 +30,6 @@ export default function NoteTemplate({
         title={frontMatter.title}
         description={frontMatter.description}
         keywords={frontMatter.topics}
-        ogImage={ogImage}
       />
       <HeaderSection>
         <div className="above-title">
@@ -64,12 +62,11 @@ export default function NoteTemplate({
         url={`https://maggieappleton.com/${slug}/`}
         title={frontMatter.title}
       />
-        {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
-        <WebMentions postSlug={slug} hasBacklinks={backlinks.length > 0} />
+      {backlinks.length ? <Backlinks backlinks={backlinks} /> : null}
+      <WebMentions postSlug={slug} hasBacklinks={backlinks.length > 0} />
     </>
   );
 }
-
 
 const TitleContainer = styled.div`
   padding: var(--space-s) 0 var(--space-l);
