@@ -1,0 +1,328 @@
+---
+title: "Hitting the Speakularity"
+description: "Reaching the moment when voice transcription becomes accurate, fast, private, cheap, and convenient enough to become ubiquitous"
+updated: "2024-02-05"
+startDate: "2024-02-05"
+type: "note"
+topics: ["Design", "Artificial Intelligence", "Language Models"]
+growthStage: "budding"
+toc: true
+---
+
+<IntroParagraph>
+
+I hit the Speakularity sometime back in August of 2023. The Speakularity is the crossover moment when you start speaking to your computer more than typing into it. It's when voice transcription becomes fast, accurate, private, cheap,<Footnote idName={1} isClosed>“Cheap” is a relative concept, but for it to become widespread it needs to be virtually free. You don't pay to use your keyboard, why would you pay to use your voice?</Footnote> and convenient enough to use all day, every day.
+
+</IntroParagraph>
+
+Journalist [Matt Thompson](https://twitter.com/mthomps) [coined the phrase](https://snarkmarket.com/2010/6498/) in 2010 when speech-to-text technology was still in its infancy and automated captions were [“cringe-inducing.”](https://snarkmarket.com/2010/6498/#:~:text=Cringe%2Dinducing%2C%20right%3F) It was a hopeful prediction in a dire time for voice input and audio transcription.
+
+Companies were just beginning to make voice input “happen” around 2010. While we've had specialised dictation software like [Dragon Dictate](https://en.wikipedia.org/wiki/DragonDictate) since the 1990's, it certainly wasn't cheap, easily accessible, or integrated into existing user workflows.<Footnote idName={2}>The first release of Dragon Dictate in 1990 [cost $9,000](https://www.nytimes.com/1990/03/20/business/company-news-dragon-introduces-voice-typewriter.html), but then dropped to a more [“reasonable” $695](https://www.nytimes.com/1999/03/01/business/technology-market-place-dragon-systems-a-former-little-guy-gets-ready-for-market.html) by 1997</Footnote> Google was the first to try and change this [in late 2008](https://www.nytimes.com/2008/11/14/technology/internet/14voice.html) when they added voice search to their iOS app.
+
+Because it was free and seamlessly integrated into a familiar task, they made it far more accessible than previous transcription technologies. You didn't have to buy, install, and learn specialised software; you just tapped a button in your search bar. More importantly, they eased people into the idea we might be able to _talk_ to our devices one day. Apple quickly built on this idea by releasing Siri in [October 2011](https://en.wikipedia.org/wiki/Siri#:~:text=its%20release%20on-,4%20October%202011,-%2C%20removing%20the%20separate) – the first attempt at a general purpose voice assistant.
+
+<TwoColumn maxWidth="1200px" gridTemplateColumns="3fr 2fr" margin="-2rem auto 4rem">
+
+<ImageFrame width="800px" src="/images/posts/speakularity/googlesearch.webp" alt="Voice input integrated into Google Search, 2011" showalt sourceUrl="https://googlesystem.blogspot.com/2011/01/voice-search-for-google-chrome.html" sourceTitle="Google Operating System" />
+<BasicImage src="/images/posts/speakularity/siri-screen.webp" alt="Siri's original interface, 2011" showalt sourceUrl="https://www.forbes.com/sites/nicoleperlroth/2011/10/12/siri-was-born-a-man-and-other-things-you-dont-know-about-apples-new-personal-assistant/" sourceTitle="Forbes" />
+
+</TwoColumn>
+
+This kicked off a decade of voice assistant hype and development as Amazon and Microsoft released their assistants [Alexa](https://arc.net/l/quote/ygynnskd) and [Cortana](https://arc.net/l/quote/yherkzah) in 2014. We entered a world where you could now summon facts, weather forecasts, music, and direct the lights in your house to cycle through a rainbow with simple voice commands.
+
+<TranscriptionTimeline />
+
+These voice assistants tend only accepted short, structured queries like:
+<div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "1.75rem" }}>
+<p style={{ padding: "2px 24px 6px", border: "1px solid var(--color-gray-300)", borderRadius: "32px", textAlign: "center", margin: "0 auto 1rem", display: "flex", alignItems: "center", gridGap: "0.25rem" }}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style={{width:"20px", height:"20px", marginRight: "0.25rem", marginTop: "0.25rem", color: "var(--color-gray-600)"}}><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>Nearby pharmacies open now</p>
+<p style={{ padding: "2px 24px 6px", border: "1px solid var(--color-gray-300)", borderRadius: "32px", textAlign: "center", margin: "0 auto 1rem", display: "flex", alignItems: "center", gridGap: "0.25rem" }}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style={{width:"20px", height:"20px", marginRight: "0.25rem", marginTop: "0.25rem", color: "var(--color-gray-600)"}}><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>Hey Siri, remind me to buy yams tomorrow</p>
+<p style={{ padding: "2px 24px 6px", border: "1px solid var(--color-gray-300)", borderRadius: "32px", textAlign: "center", margin: "0 auto 0.5rem", display: "flex", alignItems: "center", gridGap: "0.25rem" }}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style={{width:"20px", height:"20px", marginRight: "0.25rem", marginTop: "0.25rem", color: "var(--color-gray-600)"}}><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>Alexa, when is the winter solstice?</p>
+</div>
+
+The brevity of these inputs was both a feature and a design limitation. They were quick to interact with, but masked a lot of the rough edges. When you're only saying a few words, you don't notice that the accuracy rate is less-than-perfect. They didn't need to be that _good_ at voice recognition. They didn't have to deal with an unlimited range of specialised vocabularies, speech acts, or contexts. 
+
+At least not as good as systems that have to handle long, continous voice dictations or transcribe hours of audio. They also trained us to think about voice input as a short-form medium. Most people still associate voice input with short, directive commands Few people think about long-form transcription when they hear “voice input.”
+
+If you tried to use voice for longform inputs back then, the accuracy issues would have immediately become apparent. I experienced this firsthand in 2011<Footnote idName={3}>Coincidently, the year after Matt Thompson's Speakularity prediction</Footnote> when I snapped my right wrist into multiple pieces during a hungover attempt to tackle an enormous woman in a rugby game.
+
+As a student with a few weeks until finals, this wasn't the best moment to have a metal pin surgically inserted into my dominant writing hand. The student centre handed me a copy of Dragon Dictate and sent me off to transcribe all my exams and essays.
+
+Despite extensively training it on my voice, it filled sentences with strings of misinterpretations. I spent the rest of the semester painstakingly correcting absurd transcriptions at a snail's pace. Resulting in final work resembling staccato poetry, riddled with grammatical errors and misplaced words. The Speakularity felt very far away at this point.
+
+Jump forward a dozen years and we're in a very different place.
+
+Voice is now my primary input method. A series of advancements over the last 18 months have made the Speakularity possible.
+
+
+## Living in the Speakularity
+
+I was surprised at how quickly and easily voice became my primary input method. Every morning I sit at my desk and “write” my reflections, tasks, and top-of-mind concerns by speaking out loud to my Macbook. When I open Slack to catch-up on my co-worker's messages, I dash off responses with my voice. When I have an idea for a new essay, I create the first draft by talking out loud. When I have to reply to a particularly tiresome and beaurocratic email, I get over that resistance by verbalising it.
+
+How am I doing this articulated magic?
+
+I have a little app called [SuperWhisper](https://superwhisper.com/)<Footnote idName={4}>This is currently the best app on the market by a good margin, but I'll discuss different options and design considerations later on.</Footnote> that lives in my menu bar. It stays out of the way unless I summon it by hitting a keyboard shortcut. I use `Ctrl + W`, but you can set it to whatever you like. When called, it opens a small pop-over window and begins recording. 
+
+<BasicImage width="600px" src="/images/posts/speakularity/superwhisper0.jpg" />
+
+I say what I want to say, and press the same keyboard shortcut. After a brief loading period, the transciption text is pasted inline wherever I have my cursor placed.
+
+[ video of superwhisper ]
+
+In that loading period, Superwhisper feeds my audio file into an AI model called [Whisper](https://openai.com/research/whisper). It's an [open source](https://github.com/openai/whisper) voice-to-text model created by [OpenAI](https://openai.com/) in 2022. SuperWhisper downloads Whisper onto my local machine and gives me an easy way to use it. It even lets me pick which size model I want – larger models are slower, but more accurate.
+
+<ImageFrame width="800px" src="/images/posts/speakularity/superwhisper1.jpg" />
+
+The inline paste feature is critical. It means I can transcribe my voice into any app without worrying about compatability. The single keyboard shortcut to record and paste is also important. It only takes me one swift motion to be in transcription mode.
+
+I've crossed some talking tipping point now. When I'm in a room alone, I will opt to use voice input over typing every time. Even when my partner is sitting next to me I can't help but switch to voice occasionally.<Footnote idName={2}>I've given him permission to veto this behaviour anytime he wants.</Footnote>
+
+I now find myself irrationally frustrated when I'm in contexts where I can't use my voice to type, such as shared spaces with other people, or zoom calls. I begrudingly take notes by sloooooooowly banging them out with my stubby little fingers.
+
+What's so great about voice?
+
+### Speed
+
+The big, obvious, shining benefit of voice transcription is speed. I type at a respectable 63 words per minute.<Footnote idName={6}>You can test your own typing speed [here](https://www.typingtest.com/).</Footnote> This is slightly better than your average computer-user at 40 words per minute. Even the most intense typists among us – the folks with split hand [Moonlanders](https://www.zsa.io/moonlander/) and blank keys – only get up to about 120 words per minute.
+
+You and I can speak at [160 words per minute](https://arc.net/l/quote/jmmhfczp) without even trying. That's a comfortable cadence for audiobooks and relaxed conversations, but it's still a 4x increase over typing. Frenetic auctioneers and policy debaters get closer to 250-300 words per minute.
+
+[ quick viz of spoken words vs typing speeds ]
+
+You can viscerally feel yourself flying through tasks in a quarter of the time. Documents fill with words. Emails are dashed off. Drafts feel like they knock themselves out.
+
+We are good talkers, and good at thinking while speaking. Consider how much easier it is to roll over to a colleague in the same room to chat through a problem vs. compose an email to them. The majority of us would choose voice-to-voice communication every time.
+
+### Friction
+
+The flying speed of voice has some interesting knock-on effects. When you know it's only going to take you a quarter of the time to ”write” something, you're much more willing to do it. You feel less emotional friction.
+
+This is certainly true of tasks where the thing you're doing is a predictable, utility chore. The kind that doesn't require deep thought. Sending a simple email. Capturing post-meeting notes for yourself. Replying to a co-worker when you already know the answer to their question.
+
+But it's also true of trickier cognitive tasks, like figuring out the main point of a large, sprawling essay you're trying to wrangle into a coherent narrative. Or considering how to give critical feedback to a colleague. Or narrowing in on a concise, clear problem statement in a feature spec. It's easier to get a first pass done by thinking out loud.
+
+### Emotional processing
+
+Perhaps unsurprisingly, journaling with your voice rather than your fingers has a very different emotional resonance. Typing “I feel desperately sad” and _audibly saying_ “I feel desperately sad” are not the same experience. There is something about hearing your own voice make statements that lends itself well to acknowledging and accepting them.
+
+Or at least it does for me. There is a deeper reality to the words. I can type anything onto a screen and stay fairly disembodied from it. I have trouble using my voice and breath and body to say something, hear myself saying it, and still remain disconnected.
+
+Perhaps it's because I usually use my voice to let others hear me. Rather than so my computer can send an audio file to an API that will feed it into a neural network and return a text string for me to read. Describing our feelings out loud to other people makes them much harder to ignore, brush over, or pretend we never felt them. Now someone else knows. This is the basis of much of talk therapy.
+
+Talking to my computer feels like a useful kink in this system. It's nowhere near as effective as talking to a real person who can talk back, but... [what?]
+
+### Rubber ducking and spitballing
+
+For processing less emotional but still fuzzy and unformed ideas, voice to text can help you rubber duck.
+
+---
+
+## Historical Tipping Points
+
+At this point, a few of you are thinking “why are you trying to hard sell me on a feature I've had in my OS for over a decade?”
+
+And that's a good question!
+
+Apple introduced speech-to-text dication to MacOS back in 2012 as part of [Mountain Lion](https://arc.net/l/quote/gtvxklyl).<Footnote idName={1}>Getting these historical dates straight has been tricky, because Apple added a command-only speech recognition system called [Voice Navigator](https://en.wikipedia.org/wiki/Voice_Navigator) in 1989, but it didn't support dicatation. A few third-party software systems enabled dictation on Mac earlier, but you had to purchase them separately.</Footnote>Microsoft introduced it to [Windows XP in 2006](https://en.wikipedia.org/wiki/Windows_Speech_Recognition). But operating systems tend to hide dication deep inside settings menus. They don't advertise them in shiny release accouncements, and they've traditionally been thought of as assistance technologies for people with disabilities.
+
+Why am I suddenly raving about this? What changed in speech to text technologies that made the experience of using them remarkably different?
+
+This lack of fanfare is likely because, until _very_ recently, speech-to-text systems were relatively shit. Much like young Maggie in 2011, anyone who tried to use dictation for long-form input would've found they were better off typing it. Most people still have this experience.
+
+I ran a quick poll on Twitter to ask how many people regularly used voice input, and for people who never used it, what the main reason was.
+
+<TweetEmbed tweetId="1755556368893751475" />
+ 
+Well over half (53.9%) of the 892 respondents never use voice. And a full 90% of people use it less than 20% of the time. This surprised me! My Twitter network is full of exploratory and highly technically literate nerds. Exactly the kind of people who might experiment with voice input.
+
+The two main reasons people don't use it are that it would annoy people around them, and that it makes too many mistakes. I'll address noise and environment issues a bit later on, but lets talk about accuracy for a moment.
+
+### The Accuracy Gap
+
+Above all else, accuracy is the most important metric for any speech-to-text system. And it's the metric that's shifted the most over the last few years. I think most people are stuck in a perception gap. Their previous experience with older, less accurate voice input makes them skeptical that newer ones are drastically better.
+
+The academics and researchers in charge of improving speech-to-text systems measure their accuracy in “Word Error Rates” or WER. Human transcribers have an average WER of 5%, meaning they get 5 out of 100 words wrong.
+
+<Accordion header="How exactly do researchers measure speech-to-text accuracy?">
+
+I thought it would be simple to look up the accuracy rates of various speech-to-text systems over the last few decades. Oh, was I wrong! It turned into quite a research rabbit hole.
+
+There are a number of different benchmarks researchers use to measure the accuracy of each system. Their performance varies based on the quality of the audio, the accents of the speakers, the language being spoken, and the style of speech. For example, organic human-to-human conversation is harder to transcribe than slower, structured speech like reading an article.
+
+</Accordion>
+
+In trying to research accuracy improvements to speech systems over the last few decades, I've landed in the tangled problem of how we evaluate these systems. The question becomes _who_ are the systems accurate for? And it turns out to be people with American or British accents speaking slowly and clearly without much background noise or interference.
+
+While researchers may claim a WER of under 5% on benchmarks like Switchboard or CallHome, these don't accurately represent the kinds of speech people need transcribed in real life. Anyone with a different accent or even a low quality microphone will have trouble being understood and have a much higher WER.
+
+WERs started around 30-40% in the 1990's<Footnote idName={8}>Cite</Footnote>, but slowly progressed downwards. Over the last decade, companies continuously declared they had had broken the record of human-level accuracy for transcription.
+It started in XXX when IBM announcced a WER of 5.9.
+Then in 2017 Google announced they'd achieved a WER of X, below the 5% mark taken as "human-level".
+
+
+<ImageFrame padding="3rem" src="/images/posts/speakularity/wer.svg" sourceTitle="Speech Recognition Is Not Solved – Awni Hannun" sourceUrl="https://awni.github.io/speech-recognition/" alt="WER improvements over time on the Switchboard benchmark. Switchboard is a dataset of 40 phone chats between two native English speakers" showalt width="1200px" />
+
+So it turns out there is no such thing as a single WER rate for a given model. Its performance depends on the speaker, the amount of background noise, and the subject matter being talked about.
+
+Deepgram [measured](https://arc.net/l/quote/rxyldyks) the accuracy rate of the current most popular models across a range of tasks.<Footnote idName={9}>We should take this with some grains of salt, because Deepgram offers a paid speech-to-text API that competes with every model they've listed here. We'll give them the benefit of the doubt for this graph, but don't take it as Science.</Footnote> Podcasts had the lowest WER likely because it's one or two people speaking clearly into a good quality mic. Phone calls have a higher WER given that people on calls tend to speak faster, more casually, and talk over one another. Plus the audio quality is rarely stellar.
+
+<ImageFrame src="/images/posts/speakularity/wer-rates.webp" alt="Average WER rate for popular ASR models across a range of tasks" sourceUrl="https://arc.net/l/quote/atksqtsc" sourceTitle="Deepgram" showalt width={1400} />
+
+These models can fail because they don't have the same kind of context about us as someone we're speaking to. They don't know our professions, what tasks we're currently trying to do, or any of the specialised vocabulary we might use.
+
+In medical contexts they won't recognise words like XXX or XXX. In earnings meetings they won't know company names like XXX and XXX. When a product manager is trying to write a product spec, they're not going to know what XXX or XXX is.
+
+Benchmarks from 2021 were 80-85% – [How Accurate Is Speech-to-Text In 2023?](https://www.cxtoday.com/speech-analytics/how-accurate-is-speech-to-text-in-2023-assemblyai/)
+
+We used hidden Markov models from xxx to xxx. We then switched to using recurrent neural networks (RNNs) and convolutional neural networks (CNNs) around 2017. Many of the lowest word error rates required systems to be fine-tuned and optimized on specific datasets.
+
+In September of 2022, OpenAI released a model called Whisper.
+
+Now, I say this as someone who's voice meshes well with these systems. My British-American hybrid accent is a little bit strange, but it's certainly not drastically different from the kinds of voices these systems are trained on, which are primarily American accents. I have no doubt these models are much less accurate for people who speak English as a second language, or have accents from anywhere else in the world.
+
+[ Data about Whisper's accuracy on non-english accents and other languages ]
+
+---
+
+
+
+Before August, I never considered pure voice input a feasible option. Because, like all of you, my personal experience of native transcription was, in a word, shit.
+
+Let's compare a few sentences transcribed with Whisper versus with Apple's native TTS. I've picked some sentences from this piece and read them out loud to each system:
+
+
+<AudioPlayer title="Sample 1: Accents and speech recognition" src="/audio/speakularity/mag-sample-2.m4a" />
+
+#### Whisper output
+My British-American hybrid accent is a little bit strange, but it's certainly not drastically different from the kinds of voices these systems are trained on, which are primarily American accents. These models are much less accurate for people who speak English as a second language, or have accents from anywhere else in the world.
+
+
+#### Apple native TTS output
+My British American hybrid accent is a little bit strange, but it certainly not drastically different from the kinds of voices. The systems are trained on which are primarily American accents. These models are much less accurate for people who speak English as a second language who who have accents from anywhere else in the wor?
+
+<Spacer size="small" />
+
+<AudioPlayer title="Sample 2: Blockers to the Speakularity" src="/audio/speakularity/mag-sample-1.m4a" />
+
+#### Whisper output
+In Matt's original specularity prediction, they identified a few major blockers to the specularity happening, namely speed, cost and quality. While these are all important, they forget that one of the biggest blockers is design and ease of use.
+
+#### Apple native TTS output
+In maths, original, secularity prediction, they identified a few major blockers to the secularity happening, namely, speed cost and quality. All these more importantly, forget that one of the biggest blockers design and ease of use.
+
+---
+
+Hopefully the difference between these two outputs is clear.
+
+The mistakes that Mac TTS system makes seem minor. But when you look at it you realise you're going to have to rewrite the entire thing by hand. But with Whisper I find I only need to fix one or two words or some punctuation.
+
+I find it particularly frustrating that Mac's text-to-speech outputs don't make grammatical sense. They're clearly not checking whether the sentence is complete and cohesive.
+
+This is where the way Whisper is built makes a difference. Whisper is built off similar technology to GBT 3.5 and above. It uses the already established words earlier in the sentence to predict the most likely next word. So it's more likely to return text that makes coherent sense as a whole. It's not just transcribing each word one at a time.
+
+---
+
+How is Whisper doing this? Here's a simple diagram that clearly explains the whole system:
+
+<BasicImage width="1100px" src="/images/posts/speakularity/whisper-diagram.png" />
+
+Oh, you're confused? Are you not familiar with Log-Mel Spectrograms? Did you get lost somewhere around the “Sinusoidal Positional Encoding” mark?
+
+
+But something meaningfully shifted over the last (18 months?). Namely, that we (pulled transformers, neural networks, and machine learning into the picture).
+
+(OpenAI released Whisper in X, Y released Z. Cite some research papers of people discovering how to make STT better)
+
+(Add diagram of neural networks and audio data?)
+
+
+
+You are not alone! I have only the fuzziest conceptual understanding of transformer models and self-attention. 
+
+These advancements all led up to my inflection point over the summer. (I first tried Whisper in Tana and realised how much easier it was to capture thoughts with voice. I then found MurmurType via Setapp and that REALLY shifted my behaviour. The UX design and lack of friction was the turning point.)
+
+
+It's always been cheap enough – we all have free built-in voice-to-text features on Mac, Windows, or our smartphones. It's not that fast, but it's tolerable. The primary blocker up to now has been _accuracy_. It's just not very _good_ at recognising what we're saying.
+
+( image of cheap, fast, and accurate )
+
+
+
+(!! I think this claim is correct but I have to double check it and I also have to figure out how I'm going to double check it. Hopefully someone has written a piece about why Whisper is such a different technology to previous transcription technologies and why it's so much more accurate. I'm fairly certain it's to do with language models and attention and transformers but I have to verify that!!
+
+The key thing we were missing in technologies like Dragon Dictate and early Google voice transcription was language models. Previous transcription software could only make guesses at what words we were using but couldn't understand the larger context they sat within. Until we got transformers who could look at the full context of all the sentences a spoken word sits within, it's very hard to predict what the correct version of that word is. There are far too many spoken pronunciations that sound identical that we only understand through the context they're placed within.)
+
+(Diagram of transformers and attention)
+
+"Whisper is a machine learning model for speech recognition and transcription, created by OpenAI and first released as open-source software in September 2022"
+
+While it's true that accuracy was one of the main blockers here, I think the user experience has also been a sticking point.
+
+I frankly should have hit it much earlier. The technology that makes voice-to-text transcription fast, accurate, and cheap was released was OpenAI back in X. But I was held back by the things that always holds back breakthrough technologies - the user experience.
+
+## Feeling the Design Friction
+
+In Matt's original Speakularity prediction, they identified a few major blockers to the speakularity happening: speed, cost, and quality. While these are all important, they forgot one of the biggest blocker: **design and ease of use**.
+
+I didn't start consistently using voice input until I had an app that allowed me to capture voice input and paste it inline with two quick keyboard tap.
+
+Need a suite of settings to interpret what you've said.
+
+Running language models over the output of transcription models is the perfect combination.
+
+Want to run language models over the transcription for:
+
+- Common names, brands, strange words it doesn't know but you say all the time: Jungwon / Jeng Wan, John one. Elicit / illicit. Speakularity / Specularity.
+- Telling it to write in british english and not american english
+- Pulling out tasks and actions, rather than just transcribing
+- Transforming speech style text into written style text: la parole and la language. Remove ums, pauses, don't transcribe ellipses, remove the word "and" from the start of every sentence.
+
+"When I talk, it often sounds like this. I'm taking long gaps in between things I'm saying, and I use the word "and" all the time. I often start sentences of the "and", and I'm trying to think of the next thing to say. So I'll pause for long periods of time, but that doesn't mean I want a whole string of ellipses in this transcription."
+
+**[I've just realised I should make a new component for this piece where I can have people play audio recordings of me talking and then show what was transcribed by something like Super Whisper.]**
+
+There are also some specialised tasks that don't lend themselves well to plain transcription. Programming is a good example of this. It's hard to know how to describe certain kinds of syntax using your voice. And you often need to move the cursor around.
+
+Pokey Rule has built a system called Cursorless that supports a whole host of complex programming functionality with only voice:
+
+<Video src="https://www.youtube.com/embed/0ZZb12Qp6-0?si=VbLipvz48QufpZl-&amp;start=76" />
+
+<Spacer />
+
+## Noise Problems
+
+There's one blaring problem with switching to voice input; you have to make a bunch of noise. Not just noise, but distracting, disrupting speech that will interrupt the thoughts of anyone around you.
+
+Not only will you annoy them, you'll likely feel subconscious trying to talk to your machine in earshot of them. It's not a good time to explore anything private or sensitive.
+
+
+
+Subaudible microphone technology roundup.
+
+<References>
+  <ReferencesLink
+    title="Speech Recognition Through the Decades: How We Ended Up With Siri"
+    href="https://www.pcworld.com/article/477914/speech_recognition_through_the_decades_how_we_ended_up_with_siri.html"
+    author="Melanie Pinola, PC World, 2011"
+  />
+  <ReferencesLink
+    title="A Brief History of Speech to Text and How it Actually Works"
+    href="https://mythicalai.substack.com/p/a-brief-history-of-speech-to-text"
+    author="Josh Dance, 2023"
+  />
+  <ReferencesLink
+    title="Audrey, Alexa, Hal, and More"
+    href="https://computerhistory.org/blog/audrey-alexa-hal-and-more/"
+    author="Dag Spicer, Computer History Museum, 2021"
+  />
+  <ReferencesLink
+    title="Speech Recognition Is Not Solved"
+    href="https://awni.github.io/speech-recognition/"
+    author="Awni Hannun, 2017"
+  />
+  <ReferencesLink
+    title="The Future of Speech Recognition: Where Will We Be in 2030?"
+    href="https://thegradient.pub/the-future-of-speech-recognition/"
+    author="Migüel Jetté, The Gradient, 2022"
+  />
+  
+</References>
