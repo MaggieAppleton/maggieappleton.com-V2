@@ -1,0 +1,917 @@
+---
+title: "Cambrian Blocks: The Emergence & Evolution of Block-based Editors"
+description: "The rise of interactive, user-editable blocks as the basic unit of documents on the web"
+aliases: ['Cambrian Blocks']
+updated: "2022-08-15"
+startDate: "2022-08-15"
+type: "essay"
+cover: "/images/covers/databases-cover@2x.png"
+topics: ["Design", "The Web"]
+featured: true
+toc: true
+growthStage: "seedling"
+---
+
+<AssumedAudience>
+
+People who design and build websites, apps, and interfaces. Likely ones related to the fields of “tools for thought”, knowledge management, and collaborative work.
+
+</AssumedAudience>
+
+<Disclaimer>
+
+I used to work at [HASH](https://hash.ai), a company building infrastructure for block-based editors. This essay and all the research associated with it is my own personal work and opinion, and no one else at the company was involved in its creation. It has no ulterior motive, other than to share my research and reflections on the block-based landscape. Feel free to take it all with a grain of salt anyway.
+<br/>
+Also, this essay has nothing to do with the blockchain or the Web3 movement and will not be available for purchase as an NFT. It's not that kind of block.
+
+</Disclaimer>
+
+<Spacer size="small" />
+
+<IntroParagraph>
+
+Over the last five years, our digital documents, canvases, emails, and pages have taken on a strange shape. They have become noticeably _blocky_.
+
+</IntroParagraph>
+
+The **block** is our hot new interface pattern<Footnote idName={1} isClosed>Take “new” lightly here. The concept of blocks is an exceptionally old idea in software design, but we will cover that ground later.</Footnote>. The way swipeable cards were all the rage in 2014. You have almost certainly seen and used these blocks. They come in an array of familiar types; ranging from simple formats like headers and blockquotes, to complex interactive widgets like tables and embeds.
+
+<TwoColumn maxWidth="1100px" gridGap="2rem" alignItems="start">
+
+<DemoBlock1 />
+<DemoBlock2 />
+
+</TwoColumn>
+
+<TwoColumn maxWidth="1100px" gridGap="2rem" alignItems="start">
+
+<DemoBlock3 />
+<DemoBlock4 />
+
+</TwoColumn>
+
+<Spacer size="small" />
+
+These blocks don't look drastically different to the interface elements you use on the web every day. Except normal, everyday users can **create**, **edit**, and **publish** them to the web without touching any HTML, CSS, or JS. <Footnote idName={2}>At a lower level these blocks are of course built with core web technologies, but at the level of the user interface people don't need to touch code.</Footnote> They are a syntax-free, user-friendly way to create dynamic, complex, multimedia documents, websites, and even apps on the web.
+
+The places where we create these blocks them have been christened _block-based editors_. They typically take the form of a document or canvas where the user can select blocks from a pre-defined set and arrange them on a page. Through simple click and drag interactions, they're able to compose fairly sophisticated layouts. 
+
+<BasicImage margin="0 auto 1.5rem" width="1400px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660224347/Block%20Party/canvas-doc-blocks-squashed-3_gzg3yp.jpg" alt="A mockup showing a canvas based block editor versus a document based block editor" />
+
+
+These blocks don't seem remarkable at this point. We've become accustomed to interfaces that allow us to whip together complex, multimedia documents in a few clicks. They've quickly become a mundane backdrop on the modern web; so quotidian that we've failed to recognise that they're pushing forward a long sought-after dream: the belief that **everyday people should be able to create and publish dynamic, sophisticated, multimedia content to the web, without extensive training or technical knowledge**.
+
+This dream goes by a few names: end-user programming, the read-write web.
+
+[ These ordinary blocks are helping shift power from developers to end-users. They are a huge force in enabling end-user programming. One that how flown under the radar. They've enabled the democratisation of publishing rich, multimedia docusment to the web in a way that has been entirely unappreciated and unacknowledged. We are underrating blocks. We should be pointing at them and loudly acknolwedging how important they are to shifting power away from the technical elite. Then ask how we can keep pushing in this direction. ]
+
+
+## The Block-based Landscape
+
+We're now in the middle of a Cambrian explosion of these editors. Blocks are a core concept in almost every modern document editor and no-code website builder. At last count I found 30 block-editors in active development, and I've certainly missed some. Two more will get seed funding while you're reading this.
+
+There's three main software categories where these block-based editors are especially popular and widespread:
+
+<ListNumber number="1" title="Personal and collaborative knowledge managament">
+
+Document editors, team wikis, and personal note-taking systems were the first category to get on board with blocks. The most popular examples here include [Notion](https://www.notion.so/), [Coda](https://coda.io/), and [Roam Research](https://roamresearch.com/)
+
+</ListNumber>
+
+<ListNumber number="2" title="“No-code” website builders">
+
+Platforms that help people create blog posts, emails, and simple webpages through drag-and-drop interfaces rely upon blocks. These include [Wordpress Gutenberg](https://wordpress.org/gutenberg/), [Squarespace](https://www.squarespace.com/), [Mailchimp](https://mailchimp.com/en-gb/features/dynamic-content/) and [Webflow](https://webflow.com/)
+
+</ListNumber>
+
+<ListNumber number="3" title="Do-it-yourself SaaS application builders">
+
+Platforms that give small teams and companies the flexibilty to create their own dynamic views of data and perform basic actions are also heavy block-users. Newer apps like [Retool](https://retool.com/), [Glide](https://www.glideapps.com/), and [ClickUp](https://clickup.com/) fit into this space.
+
+</ListNumber>
+
+In addition to those mentioned above there's also [Craft](https://www.craft.do/), [Clover](https://cloverapp.co/), [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop?ms.url=microsoftcommicrosoft-loop), [Kosmik](https://www.kosmik.app/), [Roam Research](https://roamresearch.com/), [Logseq](https://logseq.com/), [Fermat](https://fermat.ws), [Remnote](https://www.remnote.com/), [Thunknotes](https://www.thunknotes.com/), [Clarity](https://www.clarity.so/), [Muse](https://museapp.com/), [Reflect](https://reflect.app/), [Athens](https://www.athensresearch.org/), the list goes on.
+
+<BasicImage
+  width="960px"
+  src="https://res.cloudinary.com/dsflrqp6b/image/upload/c_scale,f_auto,q_auto:best,w_1300/v1660064966/Block%20Party/blocklogos_waabgi.jpg"
+  alt="A grid of logos of popular block-based editors"
+  margin="0 auto 1rem"
+/>
+
+We're at the stage where Notion – one of the pioneers of the block-based interface – have plastered giant advertisements all over the London tube. One of many signs that blocks are no longer a niche interface pattern that a few startups are experimenting with. They've gone mainstream.
+
+<BasicImage margin="0 auto 2rem" width="900px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1660060511/Block%20Party/notion-tube-squashed-1_qdezku.jpg" alt="A giant Notion advert on the London underground" showalt />
+
+Given this popular burst, it's a fine time to ask some clarifying questions:
+
+- What _exactly_ is a “block”?
+- Why are blocks such a popular and widely used interface pattern?
+- What common standards and best practices are we congregating around for how blocks work?
+- What historical threads led us to block interfaces?
+- What new possibilities do blocks enable for both developers and end-users?
+
+We'll attempt to answer all these questions in this piece. We'll start with a quick tour through the popular interface patterns being used in these editors. We'll explore what historical interface traditions and infrastructure made our block-filled present possible. We'll then ask what block-based editors allows us to do that classical text editors and straight programming syntax can't.
+
+## The Established Patterns of Blocks
+
+At the moment we don't have a strict definition of what counts as a _block-based editor_, but our current ones all follow an impressively consistent set of interface patterns:
+
+<div style={{display: "inline-block"}}>
+<svg
+aria-labelledby="titleID"
+  width="120"
+  height="120"
+  viewBox="0 0 142 142"
+  fill="none"
+  style={{ float: "left", display: "inline-block", marginRight: "1.5rem", top: "0.5rem", position: "relative" }}
+  xmlns="http://www.w3.org/2000/svg"
+>
+<title id="titleID">Pattern #1</title>
+  <rect width="142" height="142" fill="white" />
+  <path
+    d="M88.31 112.39V112.17C83.47 106.12 82.37 102.82 82.37 94.57V30H80.83C72.69 38.03 63.23 43.53 53 47.93V49.69H62.68V94.57C62.68 102.71 61.69 106.12 56.85 112.17V112.39H88.31Z"
+    fill="#04A5BB"
+  />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>Blocks are first-class citizens</h3>
+
+Blocks are the primary objects users interact with in these editors. Documents made with blocks look suspiciously similar to traditional documents, but
+are built around a different conceptual model. Rather than treating documents as
+strings and paragraphs of styled text, these editors treat them as a stack of types
+blocks:
+
+ </div>
+
+<FullWidthSection width="1200px">
+
+<TextvBlocks />
+
+</FullWidthSection>
+
+It's a mindset shift from a text-first environment to a block-first environment.
+
+In classic text documents the primary semantic unit is a single character or sentence. The document has no understanding of a set of sentences adding up to a larger semantic unit like a list, callout box, or code block. While you can sometimes add special elements to text documents like images or tables, they're treated as exceptions.
+
+In block-editors, we don't treat text any differently to an image or table – it's just another block. Blocks are the primary unit of composition, not pages, paragraphs, or individual lines of text. 
+
+
+<div style={{display: "inline-block", marginTop: "3rem"}}>
+
+<svg
+  aria-labelledby="titleID"
+  width="120"
+  height="120"
+  viewBox="0 0 142 142"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  style={{
+    float: "left",
+    display: "inline-block",
+    marginRight: "1.5rem",
+    top: "0.5rem",
+    position: "relative",
+  }}
+>
+  <title id="titleID">Pattern #2</title>
+  <rect width="142" height="142" fill="white" />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+  <path
+    d="M92.81 112.17L100.73 85.44L99.08 84.89C94.68 91.49 87.53 97.21 77.3 97.21H57.72C83.57 79.83 97.21 66.63 97.21 51.67C97.21 39.35 88.08 30 67.4 30C57.83 30 51.56 31.98 47.6 33.52L44.63 55.41L46.39 55.96C52.33 42.98 59.7 33.63 66.85 33.63C73.45 33.63 77.41 40.67 77.41 52.11C77.41 68.39 68.28 84.12 41 110.19V112.17H92.81Z"
+    fill="#04A5BB"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>1-click block creation</h3>
+
+All block-based editors allow you to quickly add a block to a document or canvas within 1-2 clicks or keystrokes. Most do this by having users type a hotkey – usually the slash `/` key <Footnote idName={3}> Or rarely @ if an app is feeling particularly spicy and innovative. Sometimes you can also click a floating + icon nearby.</Footnote>. This triggers a “block picker” menu that offers users a set of block choices:
+
+</div>
+
+<ThreeColumn gridGap="0">
+
+<BasicImage
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_600/v1643453676/maggieappleton.com/essays/block-editors/block-ed_slash_4_sj3kqe.png"
+  alt="Slash command menu with a list of blocks in Notion"
+  margin="0"
+/>
+<BasicImage
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_600/v1643453676/maggieappleton.com/essays/block-editors/block-ed_slash_5_tfjmxu.png"
+  alt="Slash command menu with a list of blocks in Roam Research"
+  margin="0"
+/>
+<BasicImage
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_600/v1643453676/maggieappleton.com/essays/block-editors/block-ed_slash_1_evqqr8.png"
+  alt="Slash command menu with a list of blocks in Wordpress Gutenberg"
+  margin="0"
+/>
+
+<BasicImage
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_600/v1643453676/maggieappleton.com/essays/block-editors/block-ed_slash_3_ivuxvv.png"
+  alt="Slash command menu with a list of blocks in Coda"
+  margin="0"
+/>
+<BasicImage
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_600/v1643453676/maggieappleton.com/essays/block-editors/block-ed_slash_2_wwwsd8.png"
+  alt="Slash command menu with a list of blocks in Clover"
+  margin="0"
+/>
+<BasicImage
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1643453676/maggieappleton.com/essays/block-editors/block-ed_slash_6_ggum0f.png"
+  alt="Slash command menu with a list of blocks in Wordpress Almanac"
+  margin="0"
+/>
+
+</ThreeColumn>
+
+You click on the block type you want and it appears inline. You can then add content to the block, or continue adding blocks below.
+
+This interaction pattern allows you to very quickly browse and select blocks without moving your hands off the keyboard. It helps keep you in the flow of writing like a traditional text editor would. Only with a far greater range of mediums and formatting options available at your fingertips.
+
+Editors that are based around a canvas rather than a document often opt to display blocks in a persistent sidebar. This gives users a way select a block outside of a text input, and has the benefit of a larger browing area.
+
+<BasicImage margin="0.75rem auto 1rem" width="1200px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660132780/Block%20Party/sidebar-blocks_deasms.jpg" alt="Examples of block-based editors with sidebars" />
+
+<div style={{display: "inline-block", marginTop: "3rem"}}>
+
+<svg
+  aria-labelledby="titleID"
+  width="120"
+  height="120"
+  viewBox="0 0 142 142"
+  style={{
+    float: "left",
+    display: "inline-block",
+    marginRight: "1.5rem",
+    top: "0.5rem",
+    position: "relative",
+  }}
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id="titleID">Pattern #3</title>
+  <rect width="142" height="142" fill="white" />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+  <path
+    d="M100.41 86.1C100.41 68.39 84.68 60.69 70.38 60.69C67.85 60.69 65.54 60.91 63.45 61.35L99.53 31.76V30H51.79L45.3 44.96H78.08L50.25 67.84L51.79 69.82C55.42 67.29 59.71 65.2 65.21 65.2C74.89 65.2 80.72 72.02 80.72 86.21C80.72 99.52 75.33 108.54 66.09 108.54C57.07 108.54 51.79 99.41 43.76 86.1L42 86.54L44.86 107.33C49.48 110.08 58.17 112.17 67.19 112.17C86.88 112.17 100.41 102.38 100.41 86.1Z"
+    fill="#04A5BB"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>Each block has a unique, pre-formatted type</h3>
+
+Every block has a “type” – a specific format that determines what kind of content it will accept (some text, a set of numbers, an image, etc.), how it displays that data, and how the user can interact with it.
+
+When you create a new block, the default interface elements and input fields usually make it clear what kind of content you can enter.
+
+</div>
+
+Checklist blocks let you type in text, tap the checkbox to items as done, assign people to tasks, and add due dates.
+
+<ImageFrame
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1200/v1645048968/maggieappleton.com/essays/block-editors/Checklist_gadznt.png"
+  alt="A set of three different checklists in block-editor apps"
+  width="800px"
+  margin="0 auto 3rem"
+/>
+
+Image blocks let you upload files, embed images via URL, or search through popular creative commons libraries like Unsplash.
+
+<ImageFrame
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1200/v1645048968/maggieappleton.com/essays/block-editors/Images_hpreeg.png"
+  alt="A set of three different image inputs in block-editor apps"
+  width="800px"
+  margin="0 auto 3rem"
+/>
+
+Table blocks let you arrange data in spreadsheets where you can name columns, add extra rows, and sort and filter values.
+
+<ImageFrame
+  src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1200/v1645048968/maggieappleton.com/essays/block-editors/Table_mfyqtj.png"
+  alt="A set of three different tables in block-editor apps"
+  width="800px"
+  margin="0 auto 3rem"
+/>
+
+Each editor has their own set of block types they offer. While there’s no universally agreed upon list, there’s a set of basics that appear almost everywhere: text, header, checklist, bullet list, numbered list, image, video, callout, table, blockquote, embed, code block, divider, and file upload.
+
+Beyond those essentials, its open game. Some editors distinguish themselves by offering a wider array of blocks with advanced functionality. These become competitive advantages in a domains where every app is a block-based editor. If you want to draw mermaid diagrams in a block you'll have to use [Notion](https://notion.com/). If you want a collaborative voting block you'll want to pick [Coda](https://coda.io/). If you want a block that behaves like a spaced repetition flashcard you'll want [Remnote](https://www.remnote.com/).
+
+<BasicImage margin="0.5rem auto 1.5rem" width="1200px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660226738/Block%20Party/adv-blocks_ybo4gz.jpg" alt="Notion's mermaid diagram block and Coda's voting table block" />
+
+There seems to be no ceiling to the complexity level we're willing to wrap up into a single block. Some could be standalone apps in their own right. Kanban boards, image galleries, live coding environments, and fully decked-out spreadsheets that function as relational databases can all be encapsulated into a “block”. This extends to embeds which allow users to stick the whole of Google Maps, Figma, or Airtable into a document.
+
+
+<div style={{display: "inline-block", marginTop: "3rem"}}>
+
+<svg
+  aria-labelledby="titleID"
+  width="120"
+  height="120"
+  viewBox="0 0 142 142"
+  style={{
+    float: "left",
+    display: "inline-block",
+    marginRight: "1.5rem",
+    top: "0.5rem",
+    position: "relative",
+  }}
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id="titleID">Pattern #4</title>
+  <rect width="142" height="142" fill="white" />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+  <path
+    d="M67.93 111.52H96.97V111.3C93.34 105.47 92.57 102.28 92.57 94.36V90.62H102.25L103.46 86.44H92.57V65.54H72.33V86.44H44.61L97.85 31H74.64L39 88.64V90.62H72.33V94.36C72.33 102.17 71.56 105.47 67.93 111.3V111.52Z"
+    fill="#04A5BB"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>Direct manipulation of blocks</h3>
+
+If you want to create, edit, or move a block, you do it via [direct manipulation](https://www.nngroup.com/articles/direct-manipulation/). Meaning you move your cursor over the block and click on any parts you want to edit.
+
+</div>
+
+[image]
+
+You can also click and hold a block, then drag-and-drop it into another place on the page. This makes it quick to restructure a document without faffing about with precise text selection.
+
+[image]
+
+You are directly touching and manipluating the thing you want to change, rather than typing instructions describing the thing you want to change into a text editor or command line.
+
+This might not sound any different to how you interact with anything else on your computer. And it's not. Direct manipulation one of the hallmarks of modern graphical user interfaces. Ever since [Ben Schneiderman](https://en.wikipedia.org/wiki/Ben_Shneiderman) developed the principles of direct manipulation in the 1980's:
+
+- Continuous representation of objects on the screen
+- Using physical actions to perform tasks; clicking, dragging, and gestures
+- Having continuous feedback about the system status
+- Being able to make reversible, incremental actions
+
+Blocks are a perfect example of how direct manipulation can drastically improve usability. Direct manipulation brings the principles of physical interaction to the digital interface and help make block-based interfaces intuitive for people to use.
+
+
+<div style={{display: "inline-block", marginTop: "3rem"}}>
+
+<svg
+  aria-labelledby="titleID"
+  width="120"
+  height="120"
+  style={{
+    float: "left",
+    display: "inline-block",
+    marginRight: "1.5rem",
+    top: "0.5rem",
+    position: "relative",
+  }}
+  viewBox="0 0 142 142"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id="titleID">Pattern #5</title>
+  <rect width="142" height="142" fill="white" />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+  <path
+    d="M65.44 112.17C81.06 112.17 98.22 104.03 98.22 85C98.22 67.18 83.15 59.15 67.53 59.15C62.14 59.15 56.86 60.14 52.46 62.34L55.43 44.96H94.15L96.9 30H53.89L47.84 66.63L49.38 67.73C53.78 64.76 57.85 63.77 62.14 63.77C73.69 63.77 78.97 71.36 78.97 85.77C78.97 100.18 73.58 108.54 65.88 108.54C57.74 108.54 51.58 97.98 44.76 86.21L43 86.65L45.75 107.33C49.71 109.75 56.64 112.17 65.44 112.17Z"
+    fill="#04A5BB"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>Seperation of data and formatting</h3>
+
+Each block displays a specific set of data. This might be a string of text like "A shrubbery is the innocuous demand made by the knights who say _Ni!_ in the 1975 film _Monty Python and the Holy Grail_". Or it could be a PNG photograph of John Cleese. Or a set dates cataloguing when each Monty Python film was released.
+
+</div>
+
+The content a block holds and the way it displays that data isn't firmly tied together. This means if you decide you want a different block, you can easily swap it out. The content adapts to fit its new format. Data and display aren't tied to one another in block land. You can flexibly play with multiple ways to show the same data. 
+
+We could take this data set about Monty Python's filmography and display it as a table, a set of cards, a kanban board with statuses, or a timeline chart plotting data points. 
+
+<TwoColumn alignItems="top">
+
+<ImageFrame src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660563262/Block%20Party/mp-1-squashed_bsughk.jpg" alt="Monty Python data as a table" showalt />
+<ImageFrame src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660563262/Block%20Party/mp-2-squashed_ysla9y.jpg" alt="Monty Python data as a set of cards" showalt />
+<ImageFrame src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660563262/Block%20Party/mp-3-squashed_jkzk0i.jpg" alt="Monty Python data as a kanban board" showalt />
+<ImageFrame src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660563262/Block%20Party/mp-4-squashed_zrltwg.jpg" alt="Monty Python data as a timeline chart" showalt />
+
+</TwoColumn>
+
+These examples are made in [Coda](https://coda.io) but most advanced block-editors allow you to do this.
+
+Checklists can become blockquotes. Headers can become collapsible toggles. Tables can become kanban boards. <Footnote idName={4}>There are of course sensible limitations to this. Most applications won't let you turn an image into a code block or a video block.</Footnote>
+
+[Swapping block types in Notion]
+
+
+<div style={{display: "inline-block", marginTop: "3rem"}}>
+
+<svg
+  aria-labelledby="titleID"
+  width="120"
+  height="120"
+  viewBox="0 0 142 142"
+  style={{
+    float: "left",
+    display: "inline-block",
+    marginRight: "1.5rem",
+    top: "0.5rem",
+    position: "relative",
+  }}
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id="titleID">Pattern #6</title>
+  <rect width="142" height="142" fill="white" />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+  <path
+    d="M89.38 30.87L88.83 29C49.89 38.13 39 62.33 39 79.82C39 98.08 50.99 112.82 70.35 112.82C87.62 112.82 102.14 101.16 102.14 83.67C102.14 67.39 90.81 57.71 77.17 57.71C68.15 57.71 62.98 62.11 60.56 66.84C63.64 52.1 71.67 37.14 89.38 30.87ZM58.91 82.79C58.91 79.6 59.13 76.19 59.57 72.67C61.66 66.95 66.06 64.42 70.68 64.42C77.83 64.42 82.23 70.25 82.23 85.87C82.23 100.94 78.27 109.19 71.01 109.19C62.21 109.19 58.91 97.09 58.91 82.79Z"
+    fill="#04A5BB"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>Individually addressable and linkable</h3>
+
+Each block can be directly linked to. The same way you can link to a webpage. It has a unique URL you can send somone to.
+
+Internally within these tools you can usually directly reference another block anywhere else in the system.
+
+[ Searching for other blocks in Notion, Roam, and ]
+
+</div>
+
+<div style={{display: "inline-block", marginTop: "3rem"}}>
+
+<svg
+  aria-labelledby="titleID"
+  width="120"
+  height="120"
+  viewBox="0 0 142 142"
+  style={{
+    float: "left",
+    display: "inline-block",
+    marginRight: "1.5rem",
+    top: "0.5rem",
+    position: "relative",
+  }}
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id="titleID">Pattern #6</title>
+  <rect width="142" height="142" fill="white" />
+  <rect
+    x="7"
+    y="7"
+    width="128"
+    height="128"
+    stroke="#04A5BB"
+    strokeWidth="2"
+  />
+  <path
+    d="M89.38 30.87L88.83 29C49.89 38.13 39 62.33 39 79.82C39 98.08 50.99 112.82 70.35 112.82C87.62 112.82 102.14 101.16 102.14 83.67C102.14 67.39 90.81 57.71 77.17 57.71C68.15 57.71 62.98 62.11 60.56 66.84C63.64 52.1 71.67 37.14 89.38 30.87ZM58.91 82.79C58.91 79.6 59.13 76.19 59.57 72.67C61.66 66.95 66.06 64.42 70.68 64.42C77.83 64.42 82.23 70.25 82.23 85.87C82.23 100.94 78.27 109.19 71.01 109.19C62.21 109.19 58.91 97.09 58.91 82.79Z"
+    fill="#04A5BB"
+  />
+</svg>
+
+<h3 style={{ margin: "0.25rem 0 0.5rem" }}>Shared data between blocks</h3>
+
+The content we put into a block isn't necessarily constrained to just that block. In some of the more advanced block-editors, blocks can query and reference data held in other blocks.
+
+</div>
+
+This requires more robust data structures and complexity on the backend, but it makes it possible to relate blocks to one another through links, references, and programmatic logic.
+
+Notion's _database_ blocks are a classic example of this. You're able to add related data through "rollups" and "functions" – these let you query data in other database blocks.
+
+[ Notion rollups feature ]
+
+Roam Research become known for their powerful referencing and backlinking features within blocks. They pioneered the idea of "embed blocks" where a single block could be embedded in multiple locations and synchronously edited from each instance. Soon after, Notion added "synced blocks" which follow the same principle.<Footnote idName={1}>This principle has a much longer history which I covered in both [[A Short History of Bi-directional Links]] and [[Transclusion and Transcopyright]] dreams</Footnote>
+
+[ Embedded blocks in roam ]
+
+Block-editors like Glide and Fibery takes shared data a step further and allow you to construct data relationships outside of blocks, then reference them inside blocks. This separates the ontology layer from the display layer.
+
+
+
+---
+
+## What _exactly_ is a block?
+
+We've now seen the general shape and interface patterns of blocks, but what _precisely_ defines a block?
+
+We all love a good definitional debate, and I am not one to rob us of this opportunity. I offered a concise definition above: “A block is a rectangular section of your document that looks and acts a certain way, depending on its type."
+
+I think it's pretty good summary of the situation, but one that leaks in a hundred ways. According to this, the navigation bar, dropdown menus, and obnoxious chat widget that won't stop audibly alerting you to a message from a bot could all be mistaken for blocks.
+
+Let's try this defintion again, this time wearing our technological pedant hat: <Footnote idName={5}>This is a good faith best effort, which I'm certainly open to revising if and when more intelligent and experienced people point out its flaws on Twitter. At least be polite when you do :)</Footnote>
+
+<SimpleCard padding="var(--space-s) var(--space-l) var(--space-xs)" alignLeft>
+
+<SmallCaps style={{fontSize: "0.875rem"}}>Definition: block<span style={{color:"var(--color-gray-400)", marginLeft:"0.5rem"}}>| blɒk |</span><span style={{color:"var(--color-gray-600)", marginLeft:"0.5rem"}}>Noun</span></SmallCaps>
+
+A block is the basic semantic unit of a block-based interface. It is a self-contained set of data, with a specific type, that can a user can easily add to a document or canvas. Blocks can be flexibly composed, arranged, and interlinked with other blocks on the page.
+Each block...
+
+- is connected to a specific set of data
+- has a unique type that determines how it displays that data. This type can be changed without affecting the data it displays.
+- allows _end-users_ to input, edit, and delete data within the block
+
+</SimpleCard>
+
+Here's a visual version to help drive that definition home
+
+### What Blocks are Not
+
+To reduce any confusion, let's also make clear what blocks are _not_. Within the context of this essay, blocks do _not_ refer to:
+
+- Components in the [component-based software](https://en.wikipedia.org/wiki/Component-based_software_engineering) sense. Blocks and CBS are certainly compatible concepts, but the former is an interface design pattern and the latter an approach to software engineering that goes well beyond user-editable interfaces. 
+- A specific technical implementation. They are not the same as React components, Web Components, or the-next-hot-JS-framework components. They are a conceptual idea about how we present editable content to end-users of the web. One that could be implemented in any number of languages or frameworks.
+- An entry on a blockchain ledger, or anything to do with Web3 blockchain hype. Please take that party elsewhere.
+
+[cartoon sketch of a block as a higher interface concept, possibly implemented in WC/React/etc, but not concerned with implementation. And nothing to do with the blockchain]
+
+The blocks I am talking about here are an interface pattern. How that pattern is implemented is beyond the scope of this article and my limited knowledge as a pseudo-developer. I'm interested in blocks from a user and interface designer perspective, rather than a web infrastructure perspective. <Footnote idName={6}>There is plenty to be said about the technical challenges of how we could/should build interoperable blocks built on solid web standards, but I'll leave that to someone else. Perhaps you?</Footnote>
+
+---
+
+## A History of Blocks
+
+If I asked you to guess when blocks and block-based editors first appeared, I'd expect the audience to split into two camps with very different time scales.
+
+In casual surveys with friends I found most people first became aware of block-based editors via [Notion](https://www.notion.so/). A smaller contingent with a longer history in software development cited projects like Microsoft's [OLE](https://en.wikipedia.org/wiki/Object_Linking_and_Embedding) system and Apple's [OpenDoc](https://en.wikipedia.org/wiki/OpenDoc) project:
+
+<FullWidthSection margin="0 auto 1rem" width="880px">
+
+<Blocktimeline />
+
+</FullWidthSection>
+
+To gauge the level of historical awareness around block-editors with a larger audience, I ran a quick Twitter poll. I don't have hard stats on the demographics of my twitter followers, but I'd summarise the group as well-informed programmers (primarily web developers), tools for thought enthusiasts, and interface designers. In that order.
+
+<TweetEmbed tweetId="1486694395583901709" />
+
+Let's first acknowledge the fundamental flaws in my poll; it offers my predicted answers by default, and requires people go to the effort of replying if they have an alternate view.
+
+The question itself was also duplicitous. Trying to pinpoint a single “invention moment” by one person or project in history is a fool's errand. Especially in the field of interface design where every new creation is a bric-a-brac recompilation of existing conventions and standards.
+
+But we all make compromises to run reductive, ad-hoc twitter polls.
+
+There were plenty of write-in replies that included [Hypercard](https://en.wikipedia.org/wiki/HyperCard), Douglas Engelbart's [NLS System](<https://en.wikipedia.org/wiki/NLS_(computer_system)>), [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson), and the [Pygmalion](http://acypher.com/wwid/Chapters/01Pygmalion.html) visual programming language. I agree that all of these projects played a role in the development of block interfaces. Many of them described or implemented software patterns that could easily be interpreted as block-like. We'll take a closer look at these in a minute.
+
+Out of 185 people, over 50% knew about the OLE and OpenDoc projects from the 90's. A solid 30% still thought Notion was the first. This isn't too surprising, given that it's easily the most visible and widely used to date. Its predecessors are not immediately obvious, and do a poor job of self-promotion.
+
+This is compounded by the fact the web development and design industry is reasonably oblivious to historical precedent. This isn't out of laziness or ambivalence. We're not an industry with well-established intellectual centres, academic legacies, or official degrees yet. None of us were required to take Web History 101 before FTP-ing up our weird Flash sites. We're left to scavenge community histories from the [C2 wiki](https://wiki.c2.com/), wayback machine, and scattered Twitter threads from indsutry veterans.
+
+With that in mind, let's forge ahead to try and make sense of this historical trajectory. I've split the evolution of blocks into three distinct ages:
+
+<FullWidthSection width="800px">
+
+<BlockAges />
+
+</FullWidthSection>
+
+Each of these time frames saw a surge in projects that explored the qualities that led to block interfaces. Many of the early efforts addressed pragmatic issues like ecosystem integration, UX usability, and hardware capacity.
+
+### The First Age of Blocks – Xanadu and NLS
+
+<h5 style={{ marginTop: "-0.6rem" }}>1965-1968</h5>
+
+The history of any modern interface pattern has to start in California in the late 1960s with the work of Ted Nelson, Douglas Engelbart, and Xerox PARC. The interface waters we currently swim in — graphical screens, click-and-point interactions, hyperlinks, and direct manipulation — all lead back to this same river.
+
+To lightly set the scene, in the 1960s “computers” were giant, hulking, room-sized machines that only large, wealthy corporations and governments owned to run complex statistical and scientific calculations. The idea an individual person might own a one of these multi-million dollar computer was ludicrous. What could they possibly need it for?
+
+<BasicImage margin="0.75rem auto 2.75rem" width="900px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660378701/Block%20Party/ibm-mainframe_t2fept.jpg" alt="An IBM 700 mainframe computer from the 1960's" sourceUrl="https://www.ibm.com/ibm/history/ibm100/us/en/icons/ibm700series/transform/" sourceTitle="ibm.com" showalt />
+
+It took a few rogue thinkers (and a few good drugs) to look at these industrial-size calculators and see something else entirely; the potential for personal devices that could augment the way people think, communicate, and create.
+
+[Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson) was one of the first to realise this. He wasn't a programmer, but a writer, film maker, and sociologist. He saw the early graphical interfaces engineers were hooking up to computers and imagined ways they might help him write screenplays and edit films.
+
+Throughout the early 1960s he wrote a series of papers proposing a hypothetical system for managing text and editing documents on computers. The most relevant for us is a paper published by the ACM in 1965 called [**Complex Information Processing**](https://dl.acm.org/doi/10.1145/800197.806036): **A File Structure for the Complex, the Changing, and the Indeterminate.** Here he coined the term hypertext, and laid out a structure for file management on machines that would influence the way we structure information for many decades.
+
+The proposed ELF (evolutionary file structure) was made up of a "simple and generalizable **building-block structure**, user-oriented and wholly general purpose" that could be "shaped into various forms, changed from one arrangement to another in accordance with the user's changing need." <Footnote idName={1}>Nelson 1965, Complex Information Processing, p.84-89</Footnote> 
+
+That system involved documents made up of 'parts', which could be any data type, and could be freely moved around a document. Being able to insert a part into multiple documents, link parts to one another, and easily rearrange parts within a document were all essential to the concept.
+
+<BasicImage margin="0.5rem auto 2.5rem" width="800px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660386268/Block%20Party/nelson1965-squashed_cjzd1t.jpg" alt="Composable blocks linked to one another in Nelson's ELF system" showalt />
+
+Nelson's subsequent work on [[Project Xanadu]] built on these initial ideas and continued to pursue systems for “serious electronic literature.” It's clear his central concept of linked, rearrangeable blocks of multimedia content lives on in our modern block-based editors.
+
+Working in the same realm as Nelson was [Douglas Engelbart](https://en.wikipedia.org/wiki/Douglas_Engelbart). 
+
+In 1968 Engelbart gave [the mother of all demos](https://www.youtube.com/watch?v=M5PgQS3ZBWA&list=PLCGFadV4FqU3flMPLg36d8RFQW65bWsnP&index=1) showcasing the NLS (oNLine System). It featured a graphical interface, hyperlinks, point and click interactions, and live video conferencing via the internet all at once. Features that had never been seen before in computing.
+
+In terms of block-like interactions, the NLS used flexible parts of a document that could be rearranged. This helped set the precedent for flexible data structures and dynamic documents.
+
+<ImageFrame width="800px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1661256305/Block%20Party/CleanShot_2022-08-23_at_13.03.38_lk5kqv.png" alt="Engelbart demonstrating the NLS interface" showalt sourceTitle="YouTube, Douglas Engelbart Institute" sourceUrl="https://www.youtube.com/watch?v=M5PgQS3ZBWA&list=PLCGFadV4FqU3flMPLg36d8RFQW65bWsnP&index=1" />
+
+
+These projects are all spiritual predecesors in this story. They aren't exactly like the blocks of today, but the interfaces patterns they established moved us closer to thinking in blocks.
+
+### The Second Age of Blocks – Hypercard, Microsoft OLE, and Open Doc
+
+<h5 style={{ marginTop: "-0.6rem" }}>1987-1997</h5>
+
+By the late 1980s, the personal computing revolution was in full swing. Boxy white DELL's graced every modern office desk. Families could afford their own Macintosh and a floppy of Oregon Trail.
+
+The first meaningful block project in this period was Hypercard. Developed in 1987 by Bill Atkinson, Hypercard was designed to help non-programmers build their own multimedia apps. In Bill's own words, it's "a software erector set that lets non-programmers put together interactive information"
+
+<BasicImage margin="0 auto 1rem" width="1100px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660140979/Block%20Party/hypercard-squashed_ftihlo.jpg" alt="A set of Hypercard cards" showalt sourceUrl="https://www.youtube.com/watch?v=tx_WCIAM4bA" sourceTitle="Apple's Tour of Hypercard" />
+
+The concept was simple: users had a stack of cards they could put anything onto – text, pictures, videos, links, buttons, animations, and sound effects. Just like modern blocks, it relied on simple drag-and-drop functionality to make this process intuitive for users.
+
+The detail that makes Hypercard truly remarkable is that each element on a card was programmable – you could open up an editing window and customise its behaviour using _Hypertalk_, a simplified progreamming language specially designed for Hypercard. 
+
+<Video src="https://www.youtube.com/embed/FquNpWdf9vg?start=272" title="The Computer Chronicles - Hypercard (1987)" />
+
+
+The beauty of Hypercard was that it has low floors and high ceilings<Footnote idName={1}>Cite low floows and high ceilings from Paypert and Mindstorms</Footnote>, meaning it was simple enough for children to learn to use. But also powerful enough to support complex business applications. People built CRMs, encyclopaedias, and accounting tools in it.
+
+<Spacer size="xs"/>
+
+The next two projects of this era were rivals racing to develop a brand new type of software: "**compound documents**". A [compound document](https://en.wikipedia.org/wiki/Compound_document) 
+
+allow developers to write small component-level applications that would fit together as a unified document. 
+
+
+Microsoft was the first to begin working on infrastructure that would allow small components from one application to be used inside another.
+
+This became a standard known as [Open Linking and Embedding]() (OLE)
+
+Microsoft developed a system that allowed users to select an “object” created in one Microsoft application and embed it in another. This **Object Linking and Embedding (OLE)** technology meant you could select a set of cells in Microsoft Excel, copy it, and then paste it into a Microsoft Word document. 'Embedding' the Excel object into Word.
+
+Microsoft's OLE was the first implementation that made block documents possible. Despite this big pragmatic leap, they let their imaginations stop short. OLE didn't seem to spur any dreams beyond copying and pasting bits of Microsoft applications into one another.
+
+Apple stepped up with a vision that aimed to compete with OLE, but took the idea to its full potential. [OpenDoc]() was a programme that flipped the concept of how applications worked on its head. It proposed a compound document made up of multiple small applications, things it called “parts” – similar to our modern day blocks, but more ambitious.
+
+<BasicImage width="1400px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660741146/Block%20Party/opendoc-squash_qglueu.jpg" alt="OpenDoc's snazzy packaging design" showalt sourceTitle="r/VintageApple on Reddit" sourceUrl="https://www.reddit.com/r/VintageApple/comments/rlwh87/opendoc_the_1990s_technology_that_took_over_the/" />
+
+"create small, reusable components, responsible for a specific task, such as text editing, bitmap editing, or browsing an FTP server. OpenDoc provides a framework in which these components can run together, and a document format for storing the data created by each component."
+
+"Instead of requiring developers to write huge applications that had to do many things (for instance, any credible word processor needs not just editing features but spell checking, tables, embeddable photos, etc.) the [[OpenDoc]] concept was that developers could just write the one piece they were best at, then let end-users mix and match all of the little pieces of functionality together as they wished"<Footnote idName={1}>Greg Maletic, Open Doc: https://gregmaletic.wordpress.com/2006/11/12/opendoc/</Footnote>
+
+<TwoColumn>
+
+<BasicImage width="" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660741162/Block%20Party/dnd1994110101_mtp1un.gif" alt="Editing text in an OpenDoc application" sourceUrl="https://support.novell.com/techcenter/articles/dnd19941101.html" sourceTitle="novell.com" showalt />
+
+<BasicImage width="" src="https://res.cloudinary.com/dsflrqp6b/image/upload/v1660741162/Block%20Party/dnd1994110102_nyql8f.gif" alt="Editing an image in an OpenDoc application" sourceUrl="https://support.novell.com/techcenter/articles/dnd19941101.html" sourceTitle="novell.com" showalt />
+
+</TwoColumn>
+
+the first OpenDoc-based product release was Apple's CyberDog web browser in May 1996. It died along with Hypercard in 1997
+
+Despite the enthusiasm for the idea, it came too soon. At the time the physical limitations of the hardware  couldn’t keep up with their ambitions. OpenDoc required 4-8 MB of RAM while most Apple computers only shipped with 2.
+
+The idea died as attention and funding shifted from proprietary platform apps to the open web. These technologies were built in a time before the web; they were designed to work within a contained desktop environment. When the web rose in popularity, they weren't able to adapt. Microsoft created ActiveX which tried to bring OLE Object Linking and Embedding to the web but was wildly insecure. It would execute almost any .exe file you downloaded from the internet.
+
+
+If we're just going off the promotional videos, OpenDoc is the clear winner in this popularity contest:
+
+<Video src="https://www.youtube.com/embed/oFJdjk2rq4E" />
+
+There's still a strong contingent of OpenDoc enthusiasts around. Lamenting its death, analysing what went wrong, and waiting for the idea to re-emerge.
+
+<TweetEmbed tweetId="1389236351711731712" />
+
+<TweetEmbed tweetId="1362779200143446018" />
+
+Outside of specific projects like OpenDoc and OLE, the early 1990's was a moment when this dream of giving end-users access to the power and flexibilty that developers enjoy began to take shape.
+
+- Angelika Leeb's MIT master's thesis: A flexible object architecture for component software (1996)
+
+### The Third Age of Blocks – Gutenberg, Notion, and the Cambrian Explosion
+
+<h5 style={{ marginTop: "-0.6rem" }}>2016-present</h5>
+
+Starting in 2016 we entered the third age of the block.
+
+2016 was a significantly blocky year for two reasons. First, a small company called Notion released version 1.0 of their team wiki application. This first release introduced many of the interface patterns we now think of canonical for block-based editors. Second, a startup called [Elementor](https://elementor.com/) released a plug-in for Wordpress that would end up changing the entire platform.
+
+These are two useful landmarks to pay attention to, but it would be insincere to say blocks weren't already brewing on the web before this point.
+
+From the start of “Web 2.0” in the mid-2000s block-like objects began to appear on our newly invented _web apps_ – websites that allowed users to dynamically interact with the page without refreshing or reloading it.
+
+Tumblr is worth mentioning here.
+
+Tumblr was at the height of its popularity. The web was interactive and Web 2.0 was in full swing. More and more people needed accessible tools to publish content to the web.
+
+<ImageFrame width="900px" src="https://res.cloudinary.com/dsflrqp6b/image/upload/c_scale,f_auto,q_auto:good,w_1300/v1660382395/Block%20Party/tumblr2011_mn1qd9.jpg" alt="Tumblr's dashboard cira 2011" showalt sourceUrl="https://stoweboyd.medium.com/new-tumblr-dashboard-d2c232f1da92https://stoweboyd.medium.com/new-tumblr-dashboard-d2c232f1da92" sourceTitle="Stowe Boyd" />
+
+
+#### Wordpress 
+
+Wordpress started work on Gutenberg in 2017(?) and released its first version in 2018(?).
+
+
+#### Notion
+
+Notion released version 2.0 in 2018. In this context, despite being the most visible and widely used block-editor to date, Notion was quite late to the game.
+It's undeniable Notion has been the most influential platform championing and pushing the boundaries of block editing in recent years.
+
+Notion's first release in 2018 kicked things into high gear here. While Wordpress Gutenberg has been out for X years, it served a small use case; writing blog posts. Notion reframed the block-based editor as an everyday tool – a place to write collaborative documents for your team, or even just yourself. It turned it into an editor you live in, rather than a publishing tool for a specific purpose.
+
+[Hypercard Template for Notion](https://nikkiccccc.gumroad.com/l/HyperCardOSNotionTemplate)
+
+#### The Cambrian Explosion
+
+It is exceptionally ironic that when Micrososoft announced their new project "Microsoft Loop” in X, it was lambasted across Twitter as a “shameless Notion clone."
+
+These editors are sometimes belittled as “Notion clones", although Notion was not the first or last platform to implement the conceptual model of documents composed of blocks. Nevertheless, it became a touchstone reference point – a software category in its own right. Like _Uber for X_, we now have _Notion, but with Y feature_.
+
+---
+
+## The Costs and Benefits of Blocks [rename this]
+
+As with every shiny new interface pattern, we should question it. Even if the benefits of blocks seem obvious on the surface, it's worth asking what ways of working blocks have made possible. And what ways of working they've made harder or entirely impossible.
+
+block-based editors are changing the way people create documents, websites, and apps on the web
+
+### Documents Before Blocks
+
+Before these atomic, interactive blocks started appearing, our documents were predominately made up of simple text. A linear string of characters, spaces, and new lines breaks were the basic units of any digital document.
+
+<FullWidthSection width="1000px">
+
+<LinearChars />
+
+</FullWidthSection>
+
+String enough of these lines together, and you have a document.
+
+Simple text didn't stay simple for long. Starting in the 1980's, we added on _rich text editing_ – text marked up with formatting like **bold**, _italics_, ~~strikethroughs~~, <u>underlines</u>, <mark>highlights</mark> and the like. Souped up text editors dave us even more formatting options like making the <br /><span style={{ fontSize: "2rem" }}>font size huge <span style={{ color: "#DB552C" }}>and orange</span></span> <img src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:good,w_1200/v1643619446/maggieappleton.com/essays/block-editors/wordart_1_qtghbu.png" alt="The words 'and 3D' styled in a giant, orange 3D text effect" style={{ display: "inline-block", margin: "0", width: "220px", position: "relative", top: "30px", marginTop: "-25px" }} />
+
+<Spacer size="small" />
+
+These presentational annotations certainly add semantic meaning – big, orange, 3D text is clearly important.
+
+But the formatting options available to us in classic rich text editing only manipulate the visual style of a set of characters. They rarely add meaningful semantic or functional structure to the document that the computer can understand.
+
+Blocks, on the other hand, combine visual formatting with semantic structure. A Header block is significant both visually and as a type the computer understands.
+
+In the case of documents in wikis and notes, we simply couldn't have created docs as complex with our previous tools.
+
+### Web Publishing & Blogging Before Blocks
+
+Before they came along, creating a website or blog post of _the same level of complexity_ avaliable in block-based editors would have required writing HTML, CSS, and JS by hand. 
+
+
+It is unsurprising the standard list of block types maps fairly tightly to the [basic text tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content) in HTML; `<h1>`, `<img>`, `<ul>`, `<blockquote>`, etc. The web was originally designed as a medium to author and share academic documents, and these basic primitives are still serving us well.
+
+We might be tempted to think blocks are just a way to reuse pre-made snippets of HTML with a GUI stuck on top. This could be true for very basic blocks that simply format text. But many blocks offered by these editors included advanced functionality like uploading files, running calculations, external data integrations, state management, dynamic views, and the ability to filter, sort, and search for data.
+
+We're so used to having access to this type of advanced formatting and functionality on the web we barely think twice about it.
+
+But before these block-editors showed up you would need to know a non-trivial amount of HTML, CSS, and JavaScript if you wanted to add something this complex to a document on the web.
+
+Figuring out how to stick some text in a `<p>` tag is one thing, but building a dynamic table with sorting and filtering is way beyond the programming capabilities of most of us. Blocks provide a user-friendly interface for creating rich, complex web components that previously only developers has access to. They shift power – even if only slightly – from developers to end users.
+
+Even document editors that aren't _officially_ webpage creators end up inadvertendly playing the role. Notion is designed as a wiki for teams, but so many people have reappropriated it as a platform for building personal websites, whole side industries have emerged to support it.
+
+
+### What Do Blocks Give Us That Linear Text Can't?
+
+On the surface level, a page of linear text and a page of blocks seem identical. But _structurally_ and _functionally_ they are entirely different beasts.
+
+[description of how block documents are different to rich text editors]
+
+- Stylistic edits vs structural edits
+- Granular character level editing vs block-level editing
+- Documents as basic unit of linking, reference, and comments vs block as basic unit
+- Flexibility of drag and drop rearrangement; importance of rapid rearrangement
+- Swapping block types without changing the content; able to easily view the same data multiple ways
+- Interactive and reactive documents; dynamic data on a page you can see in multiple ways, transform, and edit.
+
+All of these presentational annotations expand what we're able to express and communicate through the medium of digital documents. But they're mostly surface level. Stylistic annotations change the visual display of our information, without applying any structural changes to the data. When we make text big and orange, the programme does not encode that as “this text is important” or “this text is a headline.” It has no semantic structure.
+
+Formatting at the character level gives us an enormous amount of granular control – enough to hang ourselves with.
+
+Classical documents might format at the character level, but they organise at the document level. The document is the entity you reference when you link to your work or reference it by name.
+
+A block can be dragged and dropped into a new position on the page. It can be swapped for another type of block without changing its content. It can be copied and pasted into a different document without losing its content and structure.
+
+<img width="" src="https://via.placeholder.com/600x300" alt="" />
+
+[annotated diagram of swapping blocks and dragging and dropping blocks]
+
+Blocks open up a world of flexibility and interactive power within a scoped area. They're easier to move around – a key quality for anyone working with ideas who needs to arrange and rearrange information in relationships to find the right groupings and sequences – which is to say, all of us doing knowledge work.
+
+
+### Blocks as Emergent, User-Driven Design Primitives
+
+Blocks are about handing power over to end-users. I've touched on the topic of end-user programming in this piece already.
+
+The long-tail problem of user interface design. We try to serve the most populous, visible, and loud users. There simply aren't enough developer resources to craft use cases for everyone.
+
+Kamey Klimes calls this _Designing for Emergence_ – when we take it as a given that users understand their own problems far better than we do, and should be given tools to design their own solutions. As opposed to designers and developers forcing their opinionated solution onto users. 
+
+This spirit of user-drvien design run back all the way back to the Smalltalk and HyperCard projects.  
+
+Block-based editors realise the dream of component documents that faltered in the 1990's. Many of the people who worked on the original OpenDoc project now point at the web as the realisation of their efforts. A multimedia document that can host multiple mini applications within a unified container. 
+
+The web has given us the shared medium to build on. Modular, composable blocks are the next major metaphor after the page.
+
+
+## Conclusion and summary
+
+Say what you've said. Poetic wrap up.
+
+The story of blocks is the story of historical dreams taking shape. The visions of componund documents and end-user applications defined in the early 1990's are finally coming together on the web.
+
+<SimpleCard>
+
+Read next
+
+The follow-up to this post is [[Block to the Future]] – a short essay exploring how I think block-based editors will evolve over the next 5-10 years
+
+</SimpleCard>
+
+<References>
+  <ReferencesLink
+    title="The Early History of Smalltalk"
+    href="http://worrydream.com/EarlyHistoryOfSmalltalk/"
+    author="Alan Kay"
+  />
+  <ReferencesLink
+    title="Intertwingled:The Work and Influence of Ted Nelson"
+    href="https://link.springer.com/content/pdf/10.1007/978-3-319-16925-5.pdf"
+    author="Dechow and Struppa (2015)"
+  />
+  <ReferencesLink
+    title="Designing the OpenDoc Human Interface"
+    href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.8&rep=rep1&type=pdf"
+    author="Dave Curbow and Elizabeth Dykstra-Erickson"
+  />
+  <ReferencesLink
+    title="OpenDoc"
+    href="http://basalgangster.macgui.com/RetroMacComputing/The_Long_View/Entries/2010/4/17_OpenDoc.html"
+    author="The Long View"
+  />
+  <ReferencesLink
+    title="Why OpenDoc failed, and then failed 3 more times?"
+    href="https://instadeq.com/blog/posts/why-opendoc-failed-and-then-failed-3-more-times/"
+    author="Instadeq Blog"
+  />
+  <ReferencesLink
+    title="OpenDoc Reflections"
+    href="https://gregmaletic.wordpress.com/2006/11/12/opendoc/"
+    author="Greg Malmetic"
+  />
+  <ReferencesLink
+    title="Designing Creative Tools with David Hoang"
+    href="https://museapp.com/podcast/47-designing-creative-tools/"
+    author="Metamuse Podcast"
+  />
+  <ReferencesLink
+    title="Rich text with Sarah 'Slim' Lim"
+    href="https://museapp.com/podcast/48-rich-text/"
+    author="Metamuse Podcast"
+  />
+  <ReferencesLink
+    title="When to Design for Emergence"
+    href="https://www.kaseyklimes.com/notes/2022/6/9/when-to-design-for-emergence"
+    author="Kasey Klimes"
+  />
+</References>
