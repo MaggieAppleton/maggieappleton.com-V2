@@ -375,11 +375,11 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.small-caps {
-		font-size: var(--font-size-xs) !important;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  color: var(--color-gray-800);
-  text-transform: uppercase;
-  letter-spacing: 0.06rem;
+	font-size: var(--font-size-xs) !important;
+	font-family: var(--font-sans);
+	font-weight: 700;
+	color: var(--color-gray-800);
+	text-transform: uppercase;
+	letter-spacing: 0.06rem;
 	}
 `;
