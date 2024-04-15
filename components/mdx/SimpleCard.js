@@ -9,7 +9,16 @@ export default function SimpleCard({
   props,
 }) {
   if (subtle) {
-    return <SubtleCard {...props}>{children}</SubtleCard>;
+    return (
+      <SubtleCard
+        padding={padding}
+        margin={margin}
+        alignLeft={alignLeft}
+        {...props}
+      >
+        {children}
+      </SubtleCard>
+    );
   } else {
     return (
       <StyledCard
@@ -53,6 +62,10 @@ const StyledCard = styled.div`
 `;
 
 const SubtleCard = styled(StyledCard)`
-  margin: 0 auto var(--space-s);
+  margin: ${(props) => (props.margin ? props.margin : "0 auto var(--space-s)")};
   box-shadow: var(--box-shadow-sm);
+  padding: ${(props) =>
+    props.padding ? props.padding : "var(--space-m) var(--space-l)"};
+  align-items: ${(props) => (props.alignLeft ? "" : "center")};
+  text-align: ${(props) => (props.alignLeft ? "" : "center")};
 `;
