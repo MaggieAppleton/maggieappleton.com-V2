@@ -1,0 +1,139 @@
+---
+title: "Starting a Digital Garden and Other Ill-Advised Pursuits"
+description: "On building your own online space to slowly grow ideas in"
+startDate: "2024-04-01"
+updated: "2024-04-01"
+type: "note"
+toc: true
+topics: ["Digital Gardening", "The Web", "Roam", "Personal Knowledge"]
+growthStage: "budding"
+---
+
+<AssumedAudience>
+
+People who know some web development interested in building a space online to cultivate their ideas slowly over time. One they fully own and contol, independent of proprietary social media platforms and their algorithms.
+
+</AssumedAudience>
+
+<Spacer size="small" />
+
+<IntroParagraph>
+
+Enough people have asked me to write this piece that I eventually had to cave.<Footnote idName={1} isClosed> I've been reluctant to do so, because writing about digital gardening on a digital garden feels a bit like a myopic circle jerk. I promise I have other interests and concerns, but for some reason can't escape this one.</Footnote> Three years ago, I published a long essay on the history and ethos of [[digital gardening]]. Since then, I've become a magnet for people asking for practical advice on how to build their own digital garden.
+
+</IntroParagraph>
+
+The trouble is, the answer to “how do I build my own digital garden?” is both ”it depends” and ”it's complicated.”
+
+It depends on how much you know about web development.  
+It depends on why you want to create a garden in the first place.  
+It depends on your current design skills.  
+It depends on how much control and ownership you're comfortable handing over to a proprietary platform.
+
+This piece contains all the advice I have about setting up your own digital garden if you _already know_ how to build a website with code. Or are excited and willing to learn how to build a website. This means you know how to use the command line, have a Github account, and know what the words `node`, `npm`, and `git` mean. If that's not you, I have a seperate note on [[Digital Gardening for Non-Technical Folks]].
+
+For the record, I think trying to build a garden is a decent introduction to web development – though it will throw you in at the deep end. I learned the majority of what I know by doing this. So if you're feeling a bit lost, but also brave and driven to learn, please continue reading.
+
+## What is a Digital Garden?
+
+First, lets make sure we're on the same page about the definition of a “digital garden.” A garden is a _public_ website where you publish ideas, and slowly develop them over time. That's it. That's the whole definition.
+
+It is not built on a particular platform or app. It doesn't have to include specific features like backlinks, hover links, or growth stages. It is essentially a blog, but with less focus on the chronological order that posts were written in. 
+
+Blog stands for "web log", meaning a chronological log of events or ideas you have. Gardens are non-chronological. You write ideas, connect them together, and present them based on themes and their relationship to one another. It's a topography, not a stream.
+
+## On Goals
+
+I'm going to make some generous assumptions about why you want to build a garden. I assume you're motivated by creating a space for personal reflection, idea development, researching topics that interest you, and sharing your knowledge with other people.
+
+#### Assumed goals
+
+- Helping other people by sharing your knowledge and experience
+- Show up authentically as yourself
+- Developing your ideas
+- Learning new things
+- Finding intellectual sparring partners
+- Making friends
+
+These are all good and virtous goals. They're the primary reasons I built and maintain this garden. I recommend them. There are also some goals I'm assuming you don't have.
+
+#### Assumed non-goals
+
+- Building an elaborate piece of engineering architecture
+- Getting thousands of followers on social media
+- Becoming famous
+- Making money
+
+I don't know how to do any of these things well, and I'm not trying to, so can't advise you on them.
+
+It's good to be clear on your goals up front, because buidling a garden is an involved endeavour. You're going to sink many hours into it, and you should damn well know why you're doing it.
+
+## Information Architecture and Ontologies
+
+You should begin your garden by defining the types of things you want to put in it. By "things," I mean what types of information or creations are you going to plant?
+
+Some possible species to plant:
+- Longform essays
+- Rough notes
+- Books you've read
+- Books you haven't read
+- Code snippets
+- Videos
+- Questions
+- Movie reviews
+- Conference talks
+- Podcast interviews
+- Hypotheses with evidence
+- Ideas for startups
+- Design patterns
+- Haikus
+- Coffee brews
+- Beers
+- Songs
+- Recipes
+- Trips
+- Walking trails
+
+From now on we'll call these “types”. Each type has a set of expected properites. Things like _title_ and _date published_. More specific types will have more specific properties.
+
+This is where we get into _ontologies_. 
+
+"Ontology refers to the study of the nature of being, becoming, existence, or reality. An ontology, in the context of information science, is a way of representing knowledge. It's a set of concepts within a domain, and the relationships between those concepts. For example, in a digital garden, your ontology might include concepts like "notes", "essays", "books", and "ideas", and the relationships between them could be things like "is related to", "is a part of", or "is a type of". Ontologies help to organize information and define the relationships between different pieces of information. They're often used in artificial intelligence, knowledge management, and the semantic web to provide a shared understanding of a domain. In the context of your digital garden, defining your ontology means deciding what types of content you want to include (the "concepts"), and how they relate to each other. This will help you structure your garden and make it easier for both you and your readers to navigate and understand." – ChatGPT
+
+Gardens are a personal landscape of things you care about and want to research or explore. 
+
+## Technical Infrastructure
+
+Alright, so you have a well-mapped set of _things_ you want to put in your garden. How do you do this?
+
+If you have no programming or web development experience, and don't _want_ to learn more about web development, head on over to my guide to [[gardening for non-technical people]].
+
+From this point on I'll assume you:
+
+- Know how to use the command line
+- Have a text editor like [Visual Studio Code](https://code.visualstudio.com/) or [Sublmie Text](https://www.sublimetext.com/) on your machine for editing code
+- Know how to use [Github](https://github.com/)
+- Have [node](https://nodejs.org/en) and [git](https://git-scm.com/) installed on your machine
+- Know how to install packages via [npm](https://www.npmjs.com/)
+
+Some considerations:
+
+- Independence – you need to own and control your own work
+- Longevity – design something you plan to use for 50 years
+- Simplicity – you're doing this to develop your ideas, not build the engineering architecure of the gods
+
+## Static Site Generators
+
+Static site generators an ideal technology for building gardens.
+
+They take in a set of files: content and templates, and create HTML pages.
+
+"Static websites consist of pre-built HTML, CSS, and JavaScript files that are served directly to the user's browser. Static sites can handle high traffic volumes with minimal server resources, making them highly scalable"
+
+_Diagram of how SSGs work_
+
+### Picking an SSG
+
+Frankly, I think there are only four generators you should consider: [Hugo](#), [Jekyll](#), [Eleventy](#), and [Astro](#). There are others, but they're unnessecarily complex for building a garden.
+
+I know this first-hand because I build my first garden in [Gatsby](#), and my current one in [Next.js](#), which are both terrible choices. I did this because I'm an inexperienced, mediocre engineer, and I was choosing frameworks I was already familiar with from professional contexts. Gatsby and Next are good choices if you're building an enterprise SaaS app, but not a garden. Total overkill and extra complexity. Don't make my mistakes.

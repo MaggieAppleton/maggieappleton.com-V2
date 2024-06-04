@@ -22,6 +22,7 @@
 /public/rss.xml
 public/rss.xml
 rss.xml
+/posts/.obsidian
 
 # debug
 npm-debug.log*
