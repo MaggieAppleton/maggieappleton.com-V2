@@ -59,7 +59,17 @@ export default function About() {
 								and visual illustration sprinkled on top.
 							</p>
 							<p>
-								I spent the last two years as the sole designer for
+								I'm a lead design engineer at
+								<b style={{ margin: "0 0.6rem 0 0.3rem" }}>
+									<UnderlineHoverLink href="https://normally.com">
+										Normally
+									</UnderlineHoverLink>
+								</b>
+								, a research and design studio building mindful AI into all
+								kinds of products and services.
+							</p>
+							<p>
+								Before that I was the founding designer at
 								<b style={{ margin: "0 0.6rem 0 0.3rem" }}>
 									<UnderlineHoverLink href="https://elicit.com">
 										Elicit

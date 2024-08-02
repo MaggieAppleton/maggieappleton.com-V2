@@ -101,6 +101,12 @@ export default function Index({
 					>
 						Designer, anthropologist, and mediocre developer
 						<br />
+						Currently design engineering at{" "}
+						<b style={{ margin: "0 0.6rem 0 0.3rem" }}>
+							<UnderlineHoverLink href="https://normally.com">
+								Normally
+							</UnderlineHoverLink>
+						</b>
 					</SmallTitle2>
 				</header>
 				<Spacer size="medium" />
