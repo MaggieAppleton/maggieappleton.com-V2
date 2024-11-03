@@ -319,18 +319,6 @@ export const components = {
 	BlockLogos: dynamic(() => import("../components/unique/blocks/BlockLogos"), {
 		ssr: false,
 	}),
-	TodoApp: dynamic(
-		() => import("../components/unique/direct-manipulation/TodoApp"),
-		{
-			ssr: false,
-		}
-	),
-	DetatchedTodoApp: dynamic(
-		() => import("../components/unique/direct-manipulation/DetatchedTodoApp"),
-		{
-			ssr: false,
-		}
-	),
 	NoteAction: dynamic(
 		() => import("../components/unique/programmatic-notes/NoteAction"),
 		{
