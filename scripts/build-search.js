@@ -80,8 +80,8 @@ function transformPostsToSearchObjects(posts) {
 
 	const transformed = nonPodcastPosts.map((post) => {
 		const postId = post.data.title.toLowerCase().replace(/\s/g, "-");
-
-		return {
+		
+		const transformedPost = {
 			objectID: postId,
 			slug: post.slug,
 			title: post.data.title,
@@ -94,6 +94,12 @@ function transformPostsToSearchObjects(posts) {
 			type: post.data.type,
 			content: post.content,
 		};
+
+		if (post.data.type === "talk" && post.data.conferences) {
+			transformedPost.conferences = post.data.conferences;
+		}
+
+		return transformedPost;
 	});
 
 	return transformed;
