@@ -29,28 +29,28 @@ export default function Talks({ talks }) {
 				</header>
 				<ImageGrid>
 					<Image
-						src="/images/talks_1.jpg"
+						src="/images/talks_1.webp"
 						alt="a photo of maggie speaking on stage"
 						width={1600 / 3}
 						height={1104 / 3}
 						layout="responsive"
 					/>
 					<Image
-						src="/images/talks_2.jpg"
+						src="/images/talks_2.webp"
 						alt="a photo of maggie answering questions after a talk"
 						width={1600 / 3}
 						height={1104 / 3}
 						layout="responsive"
 					/>
 					<Image
-						src="/images/talks_3.jpg"
+						src="/images/talks_3.webp"
 						alt="a photo of maggie in front of a large presentation slide"
 						width={1600 / 3}
 						height={1104 / 3}
 						layout="responsive"
 					/>
 					<Image
-						src="/images/talks_5.jpg"
+						src="/images/talks_5.webp"
 						alt="a photo of maggie in front of a large presentation slide"
 						width={1600 / 3}
 						height={1104 / 3}
