@@ -11,6 +11,7 @@ import TitleWithCount from "../../components/TitleWithCount";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import DynamicPostsGrid from "../../components/DynamicPostsGrid";
+import { getPodcastsForTopic } from "../../utils/getPodcasts";
 
 // ? Possibly useful for reference: https://github.com/inadeqtfuturs/garden/blob/b8b98f4931e204cbb34fa0bcc11fab75b24c0df1/src/pages/tags/%5Bslug%5D.js
 
@@ -44,8 +45,9 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params }) => {
   const topic = params?.topic;
-  const topics = getUniqueTopics().filter((t) => t !== topic); // Get all OTHER unique topics
+  const topics = getUniqueTopics().filter((t) => t !== topic);
 
+  // Get posts data (including patterns)
   const slugsWithTopic = getAllPostSlugsForTopic(params?.topic);
   const postsWithTopic = await Promise.all(
     slugsWithTopic.map((post) => getPostdata(post.slug))
@@ -55,13 +57,18 @@ export const getStaticProps = async ({ params }) => {
   const postData = frontMatterArr.map((fm, i) => ({
     ...fm,
     slug: slugsWithTopic[i].slug,
+    type: 'post'
   }));
+
+  // Get podcasts data (now synchronous, no need for await)
+  const podcastsWithTopic = getPodcastsForTopic(topic);
+  const allContent = [...postData, ...podcastsWithTopic];
 
   return {
     props: {
       topic,
       topics,
-      postData,
+      postData: allContent,
     },
   };
 };
