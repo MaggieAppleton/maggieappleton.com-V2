@@ -1,5 +1,6 @@
 import { Menu, MenuSelect } from "react-instantsearch-dom";
 import styled from "styled-components";
+import { capitalize } from "lodash";
 
 export default function GardenFilters() {
   return (
@@ -25,7 +26,7 @@ export default function GardenFilters() {
             transformItems={(items) =>
               items.map((item) => ({
                 ...item,
-                label: _.capitalize(item.label),
+                label: capitalize(item.label),
               }))
             }
             attribute="topics"
@@ -39,7 +40,7 @@ export default function GardenFilters() {
           transformItems={(items) =>
             items.map((item) => ({
               ...item,
-              label: _.capitalize(item.label),
+              label: capitalize(item.label),
             }))
           }
           attribute="growthStage"
@@ -52,7 +53,7 @@ export default function GardenFilters() {
           transformItems={(items) =>
             items.map((item) => ({
               ...item,
-              label: `${_.capitalize(item.label)}s`,
+              label: `${capitalize(item.label)}s`,
             }))
           }
           attribute="type"

@@ -1,4 +1,55 @@
-export const podcastData = [
+const podcastData = [
+	{
+		type: "podcast",
+		podcastName: "Dive Club",
+		episodeName: "Becoming an AI-native Designer",
+		updated: "2024-06-12",
+		url: "https://www.dive.club/deep-dives/maggie-appleton",
+		coverImage: "/images/podcasts/dive.webp",
+		topics: ["Artificial Intelligence", "Design", "Web Development"],
+	},
+	{
+		type: "podcast",
+		podcastName: "Devtools FM",
+		episodeName:
+			"Visual Storytelling in Tech, Designing for Al, and the Future of Coding",
+		updated: "2024-04-29",
+		url: "https://www.devtools.fm/episode/96",
+		coverImage: "/images/podcasts/devtools.webp",
+		topics: ["Artificial Intelligence", "Design", "Web Development"],
+	},
+	{
+		type: "podcast",
+		podcastName: "Complementary",
+		episodeName: "Possible Futures for AI in Interaction Design",
+		updated: "2024-08-11",
+		url: "https://podcasters.spotify.com/pod/show/complementary/episodes/39-Possible-Futures-for-AI-in-Interface-Design-with-Maggie-Appleton-e2n1h3u",
+		coverImage: "/images/podcasts/complementary.webp",
+		topics: ["Artificial Intelligence", "Design", "Web Development"],
+	},
+	{
+		type: "podcast",
+		podcastName: "Localfirst.fm",
+		episodeName: "Barefoot Developers, AI, and End-user programming",
+		updated: "2024-08-13",
+		url: "https://www.localfirst.fm/13",
+		coverImage: "/images/podcasts/localfirst.webp",
+		topics: [
+			"Artificial Intelligence",
+			"Design",
+			"Web Development",
+			"End-User Programming",
+		],
+	},
+	{
+		type: "podcast",
+		podcastName: "Sketchnote Army",
+		episodeName: "AI Tool Design and Tending a Digital Garden",
+		updated: "2024-03-05",
+		url: "https://sketchnotearmy.com/blog/2024/3/5/maggie-appleton",
+		coverImage: "/images/podcasts/sketchnote.webp",
+		topics: ["Artificial Intelligence", "Design", "Digital Gardening"],
+	},
 	{
 		type: "podcast",
 		podcastName: "Shoptalk Show",
@@ -6,6 +57,7 @@ export const podcastData = [
 		updated: "2023-09-18",
 		url: "https://shoptalkshow.com/583/",
 		coverImage: "/images/podcasts/shoptalk.webp",
+		topics: ["Artificial Intelligence", "Design", "Digital Gardening"],
 	},
 	{
 		type: "podcast",
@@ -14,6 +66,7 @@ export const podcastData = [
 		updated: "2023-07-16",
 		url: "https://theinformed.life/2023/07/16/episode-118-maggie-appleton/",
 		coverImage: "/images/podcasts/informed.webp",
+		topics: ["Digital Gardening"],
 	},
 	{
 		type: "podcast",
@@ -22,6 +75,7 @@ export const podcastData = [
 		updated: "2023-06-26",
 		url: "https://www.bbc.co.uk/programmes/m001n8f5",
 		coverImage: "/images/podcasts/digitalhuman.webp",
+		topics: ["Digital Gardening", "Artificial Intelligence", "The Web"],
 	},
 	{
 		type: "podcast",
@@ -30,6 +84,7 @@ export const podcastData = [
 		updated: "2023-04-06",
 		url: "https://podcasts.apple.com/gb/podcast/why-we-write-and-language-models-with-maggie-appleton/id1566773049?i=1000607621430",
 		coverImage: "/images/podcasts/clere.webp",
+		topics: ["Artificial Intelligence", "Design", "Writing"],
 	},
 	{
 		type: "podcast",
@@ -38,6 +93,7 @@ export const podcastData = [
 		updated: "2023-02-04",
 		url: "https://podcasts.apple.com/gb/podcast/the-dark-forest-and-generative-ai-with-maggie-appleton/id1566773049?i=1000597977301",
 		coverImage: "/images/podcasts/clere.webp",
+		topics: ["Artificial Intelligence", "Design", "Writing"],
 	},
 	{
 		type: "podcast",
@@ -47,6 +103,7 @@ export const podcastData = [
 		updated: "2022-05-09",
 		url: "https://stackoverflow.blog/2022/06/10/want-to-be-great-at-ux-research-take-a-cue-from-cultural-anthropology-ep-451/",
 		coverImage: "/images/podcasts/stack.webp",
+		topics: ["Antrhopology", "Design"],
 	},
 	{
 		type: "podcast",
@@ -55,6 +112,7 @@ export const podcastData = [
 		updated: "2022-04-13",
 		url: "https://anchor.fm/reverbbysane/episodes/EP-09-Maggie-Appleton-on-digital-gardening-e1hrec7",
 		coverImage: "/images/podcasts/reverb.webp",
+		topics: ["Digital Gardening"],
 	},
 	{
 		type: "podcast",
@@ -63,6 +121,7 @@ export const podcastData = [
 		updated: "2021-08-10",
 		url: "https://frontendheroes.transistor.fm/episodes/fortress-of-solitude-w-maggie-appleton",
 		coverImage: "/images/podcasts/heroes.webp",
+		topics: ["Digital Gardening", "The Web"],
 	},
 	{
 		type: "podcast",
@@ -71,6 +130,13 @@ export const podcastData = [
 		updated: "2021-08-05",
 		url: "https://museapp.com/podcast/37-visual-programming/",
 		coverImage: "/images/podcasts/metamuse.webp",
+		topics: [
+			"Design",
+			"The Web",
+			"JavaScript",
+			"End-User Programming",
+			"Tools for Thought",
+		],
 	},
 	{
 		type: "podcast",
@@ -79,6 +145,7 @@ export const podcastData = [
 		updated: "2021-04-05",
 		url: "https://hopeinsource.com/disembodiment/",
 		coverImage: "/images/podcasts/hope.webp",
+		topics: ["Metaphors", "Anthropology", "Linguistics"],
 	},
 	{
 		type: "podcast",
@@ -95,6 +162,7 @@ export const podcastData = [
 		updated: "2021-02-13",
 		url: "https://podcasts.apple.com/us/podcast/weekend-drop-digital-gardening-w-maggie-appleton/id1549059398?i=1000508923478",
 		coverImage: "/images/podcasts/swyx.webp",
+		topics: ["Digital Gardening"],
 	},
 	{
 		type: "podcast",
@@ -103,6 +171,13 @@ export const podcastData = [
 		updated: "2020-07-25",
 		url: "https://thatsthenorm.com/maggie-appleton-transcript/",
 		coverImage: "/images/podcasts/roamfm.webp",
+		topics: [
+			"Anthropology",
+			"Digital Gardening",
+			"Roam",
+			"Tools for Thought",
+			"Illustrated Notes",
+		],
 	},
 	{
 		type: "podcast",
@@ -111,6 +186,7 @@ export const podcastData = [
 		updated: "2020-11-02",
 		url: "https://hopeinsource.com/process/",
 		coverImage: "/images/podcasts/hope.webp",
+		topics: ["Anthropology"],
 	},
 	{
 		type: "podcast",
@@ -119,6 +195,7 @@ export const podcastData = [
 		updated: "2020-11-02",
 		url: "https://hopeinsource.com/embodied/",
 		coverImage: "/images/podcasts/hope.webp",
+		topics: ["Anthropology"],
 	},
 	{
 		type: "podcast",
@@ -127,6 +204,7 @@ export const podcastData = [
 		updated: "2020-05-13",
 		url: "https://hopeinsource.com/metaphor/",
 		coverImage: "/images/podcasts/hope.webp",
+		topics: ["Anthropology"],
 	},
 	{
 		type: "podcast",
@@ -135,6 +213,7 @@ export const podcastData = [
 		updated: "2020-05-03",
 		url: "https://hopeinsource.com/gift/",
 		coverImage: "/images/podcasts/hope.webp",
+		topics: ["Anthropology"],
 	},
 	{
 		type: "podcast",
@@ -143,6 +222,7 @@ export const podcastData = [
 		updated: "2020-03-03",
 		url: "https://reactpodcast.simplecast.com/episodes/86",
 		coverImage: "/images/podcasts/react.webp",
+		topics: ["Metaphor", "JavaScript", "React"],
 	},
 	{
 		type: "podcast",
@@ -152,5 +232,8 @@ export const podcastData = [
 		updated: "2019-05-03",
 		url: "https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton",
 		coverImage: "/images/podcasts/egghead.webp",
+		topics: ["Metaphor", "JavaScript", "How to Illustrate"],
 	},
 ];
+
+module.exports = { podcastData };

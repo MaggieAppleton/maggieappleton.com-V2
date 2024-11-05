@@ -8,7 +8,7 @@ export default function PodcastCard({
 	podcastName,
 	episodeName,
 	url,
-	updated,
+	date,
 	id,
 	podcastCover,
 }) {
@@ -34,10 +34,10 @@ export default function PodcastCard({
 					<PodcastName>{podcastName}</PodcastName>
 					<MetadataContainer>
 						<span>Podcast</span>
-						<svg width="4px" height="6px">
+						<svg width="4px" height="4px">
 							<circle r="2" cx="2" cy="2" fill="var(--color-gray-400)" />
 						</svg>
-						<DateToNow postDate={updated} />
+						{date && <DateToNow postDate={date} />}
 					</MetadataContainer>
 				</InnerText>
 			</StyledPodcastCard>
@@ -80,6 +80,8 @@ const MetadataContainer = styled.div`
 	font-weight: 400;
 	svg {
 		margin: 0 0.4rem !important;
+		position: relative;
+		top: 1px;
 	}
 `;
 

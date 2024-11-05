@@ -4,45 +4,40 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import PodcastCard from "../components/cards/PodcastCard";
 import TitleWithCount from "../components/TitleWithCount";
+import MasonryGrid from "../components/MasonryGrid";
 
-const podcastData = require("../posts/data/podcasts");
+const { podcastData } = require("../posts/data/podcasts");
 
 export default function Podcasts() {
-  return (
-    <>
-      <Header title="Podcasts with Maggie Appleton" />
-      <Layout>
-        <header style={{ marginBottom: "var(--space-xl)" }}>
-          <TitleWithCount posts={podcastData}>Podcasts</TitleWithCount>
-          <Title2>Interviews and casual chats on podcasts</Title2>
-          <p>
-            A handful of kind and interesting people have been gracious enough
-            to let me ramble about programming, metaphors, and/or programming
-            metaphors on their podcasts.
-          </p>
-        </header>
-        <NotesGrid>
-          {podcastData.map(
-            ({ podcastName, episodeName, coverImage, date, url }, i) => (
-              <PodcastCard
-                id={i}
-                key={i}
-                url={url}
-                episodeName={episodeName}
-                podcastName={podcastName}
-                date={date}
-                podcastCover={coverImage}
-              />
-            )
-          )}
-        </NotesGrid>
-      </Layout>
-    </>
-  );
+	return (
+		<>
+			<Header title="Podcasts with Maggie Appleton" />
+			<Layout>
+				<header style={{ marginBottom: "var(--space-xl)" }}>
+					<TitleWithCount posts={podcastData}>Podcasts</TitleWithCount>
+					<Title2>
+						Interviews and casual chats on various podcasts. Inevitably about
+						digital gardening, artifical intelligence, or metaphors.
+					</Title2>
+				</header>
+				<MasonryGrid columnGapBottom="0.5rem">
+					{[...podcastData]
+						.sort((a, b) => new Date(b.updated) - new Date(a.updated))
+						.map(
+							({ podcastName, episodeName, coverImage, updated, url }, i) => (
+								<PodcastCard
+									id={i}
+									key={i}
+									url={url}
+									episodeName={episodeName}
+									podcastName={podcastName}
+									date={updated}
+									podcastCover={coverImage}
+								/>
+							)
+						)}
+				</MasonryGrid>
+			</Layout>
+		</>
+	);
 }
-
-const NotesGrid = styled.section`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 3rem;
-`;

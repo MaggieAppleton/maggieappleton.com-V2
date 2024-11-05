@@ -3,7 +3,6 @@ import MasonryGrid from "../MasonryGrid";
 import EssayCard from "../cards/EssayCard";
 import NoteCard from "../cards/NoteCard";
 import PatternCard from "../cards/PatternCard";
-
 import PodcastCard from "../cards/PodcastCard";
 import TalkCard from "../cards/TalkCard";
 
@@ -73,7 +72,7 @@ function GardenHits({ hits, allPostData }) {
 							url={post.url}
 							episodeName={post.episodeName}
 							podcastName={post.podcastName}
-							date={post.date}
+							date={post.updated}
 							podcastCover={post.coverImage}
 						/>
 					);

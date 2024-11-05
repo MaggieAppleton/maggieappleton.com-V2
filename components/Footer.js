@@ -9,7 +9,7 @@ import {
 	LinkedInIcon,
 	DribbbleIcon,
 	MastodonIcon,
-  BlueSkyIcon
+	BlueSkyIcon,
 } from "./icons/SocialMediaIcons";
 
 export default function Footer() {
@@ -57,11 +57,13 @@ export default function Footer() {
 						{ text: "Notes", slug: "/notes" },
 						{ text: "Now", slug: "/now" },
 						{ text: "Patterns", slug: "/patterns" },
+						{ text: "Podcasts", slug: "/podcasts" },
+						{ text: "Talks", slug: "/talks" },
+						{ text: "Colophon", slug: "/colophon" },
 						// { text: "Tools I Use", slug: "/uses" },
 						{ text: "Library", slug: "/library" },
 						// { text: "Changelog", slug: "/changelog" },
-						{ text: "Projects", slug: "/projects" },
-						{ text: "Colophon", slug: "/colophon" },
+						// { text: "Projects", slug: "/projects" },
 						// { text: "Illustration Resources", slug: "/resources" },
 					].map((link, i) => {
 						return (
@@ -76,69 +78,69 @@ export default function Footer() {
 			</FooterContent>
 		</StyledFooter>
 	);
-  return (
-    <StyledFooter>
-      <FooterContent>
-        <RSSFeed>
-          <h3>Want to stay up to date?</h3>
-          <Link href="/rss.xml">
-            <button>
-              <RssIcon width="20" height="20" />
-              Subscribe via RSS Feed
-            </button>
-          </Link>
-          <SocialMediaIcons>
-            <a rel="me" href="https://github.com/MaggieAppleton">
-              <GithubIcon />
-            </a>
-            <a rel="me" href="https://uk.linkedin.com/in/maggieappleton">
-              <LinkedInIcon />
-            </a>
-            <a rel="me" href="https://dribbble.com/mappleton">
-              <DribbbleIcon />
-            </a>
-            <a rel="me" href="https://twitter.com/Mappletons">
-              <TwitterIcon />
-            </a>
-            <a rel="me" href="https://indieweb.social/@maggie">
-              <MastodonIcon />
-            </a>
-          </SocialMediaIcons>
-          <span className="copyright">
-            © {new Date().getFullYear()} Maggie Appleton
-          </span>
-        </RSSFeed>
-        <SitemapList>
-          {[
-            { text: "The Garden", slug: "/garden" },
-            // { text: "Start Here", slug: "/start" },
-            { text: "Essays", slug: "/essays" },
-            { text: "About", slug: "/about" },
-            { text: "Notes", slug: "/notes" },
-            { text: "Now", slug: "/now" },
-            { text: "Patterns", slug: "/patterns" },
-            // { text: "Tools I Use", slug: "/uses" },
-            { text: "Library", slug: "/library" },
-            // { text: "Changelog", slug: "/changelog" },
-            { text: "Podcasts", slug: "/podcasts" },
-            { text: "Colophon", slug: "/colophon" },
-            { text: "Talks", slug: "/talks" },
-            { text: "Projects", slug: "/projects" },
+	return (
+		<StyledFooter>
+			<FooterContent>
+				<RSSFeed>
+					<h3>Want to stay up to date?</h3>
+					<Link href="/rss.xml">
+						<button>
+							<RssIcon width="20" height="20" />
+							Subscribe via RSS Feed
+						</button>
+					</Link>
+					<SocialMediaIcons>
+						<a rel="me" href="https://github.com/MaggieAppleton">
+							<GithubIcon />
+						</a>
+						<a rel="me" href="https://uk.linkedin.com/in/maggieappleton">
+							<LinkedInIcon />
+						</a>
+						<a rel="me" href="https://dribbble.com/mappleton">
+							<DribbbleIcon />
+						</a>
+						<a rel="me" href="https://twitter.com/Mappletons">
+							<TwitterIcon />
+						</a>
+						<a rel="me" href="https://indieweb.social/@maggie">
+							<MastodonIcon />
+						</a>
+					</SocialMediaIcons>
+					<span className="copyright">
+						© {new Date().getFullYear()} Maggie Appleton
+					</span>
+				</RSSFeed>
+				<SitemapList>
+					{[
+						{ text: "The Garden", slug: "/garden" },
+						// { text: "Start Here", slug: "/start" },
+						{ text: "Essays", slug: "/essays" },
+						{ text: "About", slug: "/about" },
+						{ text: "Notes", slug: "/notes" },
+						{ text: "Now", slug: "/now" },
+						{ text: "Patterns", slug: "/patterns" },
+						// { text: "Tools I Use", slug: "/uses" },
+						{ text: "Library", slug: "/library" },
+						// { text: "Changelog", slug: "/changelog" },
+						{ text: "Podcasts", slug: "/podcasts" },
+						{ text: "Colophon", slug: "/colophon" },
+						{ text: "Talks", slug: "/talks" },
+						{ text: "Projects", slug: "/projects" },
 
-            // { text: "Illustration Resources", slug: "/resources" },
-          ].map((link, i) => {
-            return (
-              <li key={i}>
-                <UnderlineHoverLink href={link.slug}>
-                  {link.text}
-                </UnderlineHoverLink>
-              </li>
-            );
-          })}
-        </SitemapList>
-      </FooterContent>
-    </StyledFooter>
-  );
+						// { text: "Illustration Resources", slug: "/resources" },
+					].map((link, i) => {
+						return (
+							<li key={i}>
+								<UnderlineHoverLink href={link.slug}>
+									{link.text}
+								</UnderlineHoverLink>
+							</li>
+						);
+					})}
+				</SitemapList>
+			</FooterContent>
+		</StyledFooter>
+	);
 }
 
 const SocialMediaIcons = styled.div`

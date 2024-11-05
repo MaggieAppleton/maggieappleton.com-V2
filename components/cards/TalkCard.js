@@ -19,7 +19,7 @@ export default function TalkCard({
 				<StyledCard initial="initial" whileHover="hover">
 					{cover && (
 						<ImageWrapper>
-							<Image src={cover} alt={title} width={430} height={240} />
+							<Image src={cover} alt={title} layout="fill" objectFit="cover" />
 						</ImageWrapper>
 					)}
 					<InnerText>
@@ -84,11 +84,12 @@ const ConferencesContainer = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-	display: grid;
-	place-items: center;
+	position: relative;
 	width: 100%;
+	aspect-ratio: 430/240;
 	margin-bottom: 0 !important;
 	img {
+		object-fit: cover;
 		border-top-left-radius: var(--border-radius-base);
 		border-top-right-radius: var(--border-radius-base);
 	}
@@ -114,7 +115,7 @@ const MetadataContainer = styled.div`
 const StyledCard = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
-	margin: 0 var(--space-xs);
+	margin: 0 var(--space-2xs) var(--space-2xs) 0;
 	border-radius: var(--border-radius-base);
 	background: var(--color-light-cream);
 	border: 1px solid var(--color-tinted-cream);
