@@ -44,7 +44,7 @@ export default function Colophon() {
             <p>
               <TooltipLink href="https://nextjs.org/">Next.js</TooltipLink> does
               most of the heavy lifting – it's a static site builder that takes
-              care of a lot of otherwise cumbersome optimsiations like
+              care of a lot of otherwise cumbersome optimisations like
               server-side rendering, image loading, and routing.
             </p>
             <p>
@@ -168,7 +168,7 @@ export default function Colophon() {
               <ResourceBook
                 url="https://www.librarything.com/work/9697447"
                 title="Addiction By Design"
-                image="/images/books/addiction.jpg"
+                image="/images/books/addiction.webp"
                 author="Natasha Dow Schull"
               >
                 Addiction by Design takes readers into the intriguing world of

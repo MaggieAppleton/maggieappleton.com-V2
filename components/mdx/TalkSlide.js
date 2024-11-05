@@ -31,8 +31,10 @@ const StyledSlide = styled.div`
 const TextContainer = styled.div`
   align-items: center;
   display: grid;
+  width: 100%;
   p {
     padding: 0 var(--space-m);
+    width: 100%;
     margin: 0 auto;
     @media (max-width: 1200px) {
       padding: 0;

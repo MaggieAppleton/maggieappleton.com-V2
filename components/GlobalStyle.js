@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 		--color-dark-sea-blue: #00758F;
 		--color-purple: #7558B2;
 		--color-salmon: #FD8370;
+		--color-light-salmon: #FFD09C;
 
 
 		/* Fonts */
@@ -191,22 +192,22 @@ export const GlobalStyle = createGlobalStyle`
 				var(--fluid-bp)
 			);
 		
-			--f-2-min: 31.25;
-			--f-2-max: 37.18;
+			--f-2-min: 30.00;
+			--f-2-max: 36.00;
 			--font-size-lg: calc(
 			((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
 				var(--fluid-bp)
 			);
 		
 			--f-3-min: 39.06;
-			--f-3-max: 48.33;
+			--f-3-max: 44.00;
 			--font-size-xl: calc(
 			((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
 				var(--fluid-bp)
 			);
 		
 			--f-4-min: 46.87;
-			--f-4-max: 62.83;
+			--f-4-max: 56.00;
 			--font-size-2xl: calc(
 			((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
 				var(--fluid-bp)
@@ -359,6 +360,10 @@ export const GlobalStyle = createGlobalStyle`
 		padding: var(--space-12) var(--space-24);
 	}
 
+	mark {
+		background-color: var(--color-light-salmon);
+	}
+
 	.visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
@@ -370,11 +375,15 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.small-caps {
-		font-size: var(--font-size-xs) !important;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  color: var(--color-gray-800);
-  text-transform: uppercase;
-  letter-spacing: 0.06rem;
+	font-size: var(--font-size-xs) !important;
+	font-family: var(--font-sans);
+	font-weight: 700;
+	color: var(--color-gray-800);
+	text-transform: uppercase;
+	letter-spacing: 0.06rem;
+	}
+
+	.blue {
+		color: var(--color-medium-sea-blue);
 	}
 `;

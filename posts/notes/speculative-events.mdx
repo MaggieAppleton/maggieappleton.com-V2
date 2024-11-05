@@ -1,0 +1,98 @@
+---
+title: "Speculative Calendar Events"
+description: "Designing tentative calendar events to solve complex scheduling problems"
+updated: "2024-01-08"
+startDate: "2024-01-07"
+type: "note"
+topics: ["Design"]
+growthStage: "budding"
+---
+
+<IntroParagraph>
+
+My calendar fails me in many ways, but the most egregious is its failure to support speculative events.
+
+</IntroParagraph>
+
+Every week, I engage in an elaborate scheduling game with multiple people. I do this with friends I need to get coffee with, professional contacts trying to set up meetings, and new acquaintances who want to catch a weekday breakfast.
+
+We email, WhatsApp or DM each other very specific lists of options.  
+8-10:30 a.m. on Tuesday, Weds, and Friday next week?  
+Or 2-3:30 p.m. next next Thursday?  
+Or 11 a.m. on February 20th?
+
+<TwoColumn alignItems="start" margin="0 auto 3rem">
+
+<ImageFrame src="/images/posts/speculative-events/chat1.webp" />
+<ImageFrame src="/images/posts/speculative-events/chat2.webp" />
+
+</TwoColumn>
+
+<Subtext>My highly inefficient standard process for coordinating meetings</Subtext>
+
+<Spacer size="xs" />
+
+
+Once this message is sent, these time blocks need to be marked on my calendar somehow. One naïve, hacky solution is to add them as normal events, but with a `?` at the end. `Coffee with Paul?`
+
+But real calendar events have real repercussions: my co-workers can't book calls with me at times when I have blocks on my calendar. My watch buzzes me 10 minutes before each one. My Mac pops a little notification reminder in the corner of my screen. Receiving notifications for not-real speculative events is immensely frustrating.
+
+<ImageFrame src="/images/posts/speculative-events/cal-notifs.webp" width="1100px" margin="1rem auto 2rem" />
+
+So I don't want to add them as real events. Because they are not real events. They are speculative possibilities of events. The majority of them won't be filled, and having both speculative and real events looking and behaving like the same type of thing is messy and confusing. I can't glance at my calendar to get a quick read on how busy my day or week is.
+
+But I also need to remember who I have promised time slots to! I am often telling multiple people I'm free 8-10:30 a.m. on Tuesday next week. What if they all say yes to that time?
+
+What I need is a new type of calendar primitive: <Highlight>the speculative event</Highlight>. Speculative events may or may not happen. So they show up _tentatively_. Perhaps with a dashed border and some light opacity.
+
+<ImageFrame src="/images/posts/speculative-events/spec-event.webp" width="1200px" alt="A speculative calendar event marked with a dotted border, light opacity background, and question mark icon" />
+
+A very basic implementation of this idea in Mac's native calendar could be adding a little “unconfirmed” checkbox in the editing window:
+
+<BasicImage src="/images/posts/speculative-events/spec-event.gif" width="1400px" margin="1rem auto" alt="Marking a new calendar event as 'unconfirmed' in Mac calendar" />
+
+This is not the _ideal_ design solution, but it's a low-effort starting point. By visually distinguishing these events and turning off their notifications, we've solved most of the problem.
+
+Without this, I shall have to continue doing what I do now: sending people lists of times that I may or may not be free for, forgettings I've promised those times, booking other events and meetings into those times, and then having to play four extra rounds of oh-sorry-I'm-actually-busy-email-scheduling-ping-pong.
+
+Some of the fancy new calendar startups like [Cron](https://cron.com/) and [Amie](https://amie.so/) are trying to solve this problem by letting you send someone a link with your available times.
+
+<TwoColumn gridTemplateColumns="3fr 4fr" alignItems="start" maxWidth="1600px" margin="0 auto var(--space-xl)">
+
+<ImageFrame src="/images/posts/speculative-events/cron.webp" width={685} alt="Selecting avaliable blocks in Cron" showalt />
+
+<ImageFrame src="/images/posts/speculative-events/amie.webp" width={915} alt="Booking an avaliable slot time in Amie" showalt />
+
+</TwoColumn>
+
+The recipient can then select which slots also work for them, and the event is added to your calendar. This is perfect for professional meetings, but feels a bit impersonal and automated for some contexts. When I'm trying to coordinate dinner with family or a close friend over WhatsApp, sending an automated scheduling link makes me look and feel like an intolerable tech bro.
+
+Maybe I don't want a perfectly optimised system. Maybe I just want a bit more flexibility in marking up my calendar.
+
+Just as I was finishing this note, I spotted the infamous [37Signals](https://37signals.com/) / [Basecamp](https://basecamp.com/) / [HEY](https://www.hey.com/) team announced they've added a [new calendar view](https://www.youtube.com/watch?v=SztU4232u_o) to their email service. And it includes a “maybe” event type! 
+
+<TwoColumn alignItems="start" maxWidth="1400px" margin="1rem auto 2rem">
+
+<ImageFrame src="/images/posts/speculative-events/maybe2.webp" alt="Maybe events on HEY calendar" />
+
+<ImageFrame src="/images/posts/speculative-events/maybe.webp" alt="Maybe events on HEY calendar" />
+
+</TwoColumn>
+
+<Subtext>Screenshots from the calendar [announcement video](https://www.youtube.com/watch?v=SztU4232u_o)</Subtext>
+
+<Spacer size="xs" />
+
+It works exactly as I described in my concept above. The event displays with a light, monochrome patterned background and doesn't have notifications. Good to see this out in a real product, although I'm not about to move from my beautiful system-level MacOS calendar to something as quirky as HEY.
+
+<Spacer size="xs" />
+
+<SimpleCard alignLeft>
+
+#### End Notes
+
+I've had this frustration for a long time. But only had the impulse to mock up a tangible solution after reading Julian Lehr's beautiful reflection on [Multi-layered Calendars](https://julian.digital/2023/07/06/multi-layered-calendars/).
+
+Seeing others beautifully present ideas always compels me to contribute my own. Thanks to Julian for making the effort, and everyone else consistently publishing small, thoughtful, well-crafted ideas in public.
+
+</SimpleCard>

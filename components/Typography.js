@@ -68,3 +68,10 @@ export const Subtext = styled.aside`
   color: var(--color-gray-600);
   margin-bottom: var(--space-m);
 `;
+
+export const Highlight = styled.span`
+  color: var(--color-crimson);
+  background: var(--color-light-salmon);
+  padding: 0 8px 4px;
+  border-radius: 4px;
+`;

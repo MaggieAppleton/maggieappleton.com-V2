@@ -15,9 +15,7 @@ const Video = ({ src, title, width, height, margin, ...props }) => (
 );
 
 const StyledVideo = styled.div`
-  margin: ${(props) => {
-    props.margin || "2rem auto";
-  }};
+  margin: ${(props) => props.margin || ""};
   grid-column: 1/4 !important;
   width: 950px;
   height: 570px;

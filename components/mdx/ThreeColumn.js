@@ -27,6 +27,10 @@ const ThreeColumnContainer = styled.div`
   div,
   img,
   figure {
+    margin: 0 auto;
     grid-column: auto !important;
+  }
+  img {
+    margin: var(--space-s) auto 0;
   }
 `;

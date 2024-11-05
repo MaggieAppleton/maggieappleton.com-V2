@@ -3,7 +3,6 @@ import { Title1, Title2 } from "../../components/Typography";
 import { MDXRemote } from "next-mdx-remote";
 import ProseWrapper from "../../components/mdx/ProseWrapper";
 import styled from "styled-components";
-import { breakpoints } from "../../utils/breakpoints";
 import { components } from "../[slug].js";
 import fs from "fs";
 import path from "path";
