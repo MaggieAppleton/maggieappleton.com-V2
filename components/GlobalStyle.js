@@ -382,4 +382,8 @@ export const GlobalStyle = createGlobalStyle`
 	text-transform: uppercase;
 	letter-spacing: 0.06rem;
 	}
+
+	.blue {
+		color: var(--color-medium-sea-blue);
+	}
 `;
