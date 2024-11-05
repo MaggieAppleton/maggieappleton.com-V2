@@ -71,7 +71,21 @@ export function RelativeDate({ postDate }) {
 }
 
 export function DateToNow({ postDate }) {
-  const date = parse(postDate, "yyyy-MM-dd", new Date());
-  const dateToNow = formatDistanceToNow(date, { addSuffix: true });
-  return dateToNow;
+  try {
+    if (!postDate || !/^\d{4}-\d{2}-\d{2}$/.test(postDate)) {
+      return 'Invalid date';
+    }
+    
+    const date = parse(postDate, 'yyyy-MM-dd', new Date());
+    
+    if (isNaN(date.getTime())) {
+      return 'Invalid date';
+    }
+    
+    const dateToNow = formatDistanceToNow(date, { addSuffix: true });
+    return dateToNow;
+  } catch (error) {
+    console.error('Date parsing error:', error);
+    return 'Invalid date';
+  }
 }

@@ -73,8 +73,8 @@ export default function PatternCard({ slug, date, title, growthStage, id }) {
 						<h3>{title}</h3>
 						<MetadataContainer>
 							<span>Pattern</span>
-							<svg width="6px" height="8px">
-								<circle r="3" cx="3" cy="3" fill="var(--color-gray-400)" />
+							<svg width="4px" height="6px">
+								<circle r="2" cx="2" cy="2" fill="var(--color-gray-400)" />
 							</svg>
 							<RelativeDate postDate={date} />
 						</MetadataContainer>
@@ -91,12 +91,11 @@ const MetadataContainer = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	margin-left: var(--space-xs);
-	margin-top: var(--space-2xs);
+	margin-top: 8px;
 	font-family: var(--font-sans);
-	font-size: calc(var(--font-size-xs) / 1.08);
+	font-size: var(--font-size-xs);
+	text-transform: capitalize;
 	color: var(--color-gray-500);
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
 	font-weight: 400;
 	svg {
 		margin: 0 0.4rem;

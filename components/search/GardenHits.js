@@ -15,7 +15,7 @@ function GardenHits({ hits, allPostData }) {
 	const filteredGardenHits = hitLength > 0 ? hits : sortedPosts;
 
 	return (
-		<MasonryGrid columnGapLeft="1rem" columnGapBottom="1rem">
+		<MasonryGrid columnGapLeft="0.8rem" columnGapBottom="0.8rem">
 			{filteredGardenHits.map((post, i) => {
 				if (!post || !post.type) return null;
 

@@ -25,7 +25,7 @@ export default function EssayCard({
 					)}
 					<h3>{title}</h3>
 					<MetadataContainer>
-						{growthStage && <span>{growthStage} Essay</span>}
+						{growthStage && <span>Essay</span>}
 						{growthStage && <GrowthIcon size="15" growthStage={growthStage} />}
 						<span>
 							<RelativeDate postDate={date} />
@@ -48,16 +48,13 @@ const MetadataContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	span {
-		display: inline-block;
-		font-family: var(--font-sans);
-		font-size: calc(var(--font-size-xs) / 1.08);
-		color: var(--color-gray-600);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		font-weight: 400;
-		margin-top: 2px;
-	}
+	display: inline-block;
+	font-family: var(--font-sans);
+	font-size: var(--font-size-xs);
+	text-transform: capitalize;
+	color: var(--color-gray-600);
+	font-weight: 400;
+	margin-top: 2px;
 	svg {
 		margin: 0 var(--space-2xs);
 	}
