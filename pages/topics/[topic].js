@@ -49,12 +49,10 @@ export const getStaticProps = async ({ params }) => {
 
 	// Get posts data (including patterns)
 	const slugsWithTopic = getAllPostSlugsForTopic(params?.topic);
-	console.log('Slugs found for topic:', slugsWithTopic);
 
 	const postsWithTopic = await Promise.all(
 		slugsWithTopic.map((post) => getPostdata(post.slug))
 	);
-	console.log('Posts found:', postsWithTopic.length);
 
 	const frontMatterArr = postsWithTopic.map((post) => matter(post).data);
 	const postData = frontMatterArr.map((fm, i) => {
@@ -82,7 +80,6 @@ export const getStaticProps = async ({ params }) => {
 	// Get podcasts data
 	const podcastsWithTopic = getPodcastsForTopic(topic);
 	const allContent = [...postData, ...podcastsWithTopic];
-	console.log('Content by type:', allContent.map(item => item.type));
 
 	return {
 		props: {

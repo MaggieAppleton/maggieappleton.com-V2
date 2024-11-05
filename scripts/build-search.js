@@ -74,8 +74,10 @@ let patterns = patternFilePaths.map((filePath) => {
 const posts = [...essays, ...notes, ...patterns, ...talks, ...podcasts];
 
 function transformPostsToSearchObjects(posts) {
-	const nonPodcastPosts = posts.filter(post => post.data && post.data.type !== 'podcast');
-	
+	const nonPodcastPosts = posts.filter(
+		(post) => post.data && post.data.type !== "podcast"
+	);
+
 	const transformed = nonPodcastPosts.map((post) => {
 		const postId = post.data.title.toLowerCase().replace(/\s/g, "-");
 
@@ -120,14 +122,12 @@ function transformPodcastsToSearchObjects(podcasts) {
 	dotenv.config();
 
 	try {
-		const searchObjects = transformPostsToSearchObjects(posts.filter(post => post.data));
+		const searchObjects = transformPostsToSearchObjects(
+			posts.filter((post) => post.data)
+		);
 		const podcastObjects = transformPodcastsToSearchObjects(podcastData);
 
 		const allObjects = [...searchObjects, ...podcastObjects];
-
-		console.log("Number of posts:", searchObjects.length);
-		console.log("Number of podcasts:", podcastObjects.length);
-		console.log("Total objects:", allObjects.length);
 
 		const appID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
 		const adminKey = process.env.ALGOLIA_SEARCH_ADMIN_KEY;
