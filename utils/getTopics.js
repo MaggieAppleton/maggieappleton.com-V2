@@ -74,8 +74,10 @@ export const getAllTopics = () => {
       if (data.topics) {
         data.topics.forEach((topic) => {
           const slugifiedTopic = slugifyTopic(topic);
-          if (!result.includes({ params: { topic: slugifiedTopic } }))
+          // Check if this topic already exists in result
+          if (!result.some(item => item.params.topic === slugifiedTopic)) {
             result.push({ params: { topic: slugifiedTopic } });
+          }
         });
       }
     });
