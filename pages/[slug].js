@@ -34,20 +34,12 @@ import {
 	noteFilePaths,
 	essayFilePaths,
 	patternFilePaths,
+	talksFilePaths,
 	ESSAYS_PATH,
 	PATTERNS_PATH,
 	NOTES_PATH,
 	PROJECTS_PATH,
-  projectFilePaths,
-  noteFilePaths,
-  essayFilePaths,
-  patternFilePaths,
-  talksFilePaths,
-  ESSAYS_PATH,
-  PATTERNS_PATH,
-  NOTES_PATH,
-  PROJECTS_PATH,
-  TALKS_PATH,
+	TALKS_PATH,
 } from "../utils/mdxUtils";
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -408,64 +400,17 @@ export default function PostPage({
 				// ogImage={ogImage}
 			/>
 		);
+	} else if (frontMatter.type === "talk") {
+		return (
+			<TalkTemplate
+				slug={slug}
+				source={source}
+				frontMatter={frontMatter}
+				components={components}
+				// ogImage={ogImage}
+			/>
+		);
 	}
-  if (frontMatter.type === "note") {
-    return (
-      <NoteTemplate
-        slug={slug}
-        source={source}
-        toc={toc}
-        frontMatter={frontMatter}
-        components={components}
-        backlinks={backlinks}
-        headings={headings}
-        ogImage={ogImage}
-      />
-    );
-  } else if (frontMatter.type === "essay") {
-    return (
-      <EssayTemplate
-        slug={slug}
-        source={source}
-        toc={toc}
-        frontMatter={frontMatter}
-        components={components}
-        backlinks={backlinks}
-        headings={headings}
-        ogImage={ogImage}
-      />
-    );
-  } else if (frontMatter.type === "project") {
-    return (
-      <ProjectTemplate
-        slug={slug}
-        source={source}
-        frontMatter={frontMatter}
-        components={components}
-        ogImage={ogImage}
-      />
-    );
-  } else if (frontMatter.type === "pattern") {
-    return (
-      <PatternTemplate
-        slug={slug}
-        source={source}
-        frontMatter={frontMatter}
-        components={components}
-        ogImage={ogImage}
-      />
-    );
-  } else if (frontMatter.type === "talk") {
-    return (
-      <TalkTemplate
-        slug={slug}
-        source={source}
-        frontMatter={frontMatter}
-        components={components}
-        ogImage={ogImage}
-      />
-    );
-  }
 }
 
 // const getOgImagePath = (properties) => {
@@ -483,11 +428,7 @@ export const getStaticProps = async ({ params }) => {
 	const notes = fs.readdirSync(NOTES_PATH);
 	const projects = fs.readdirSync(PROJECTS_PATH);
 	const patterns = fs.readdirSync(PATTERNS_PATH);
-  const essays = fs.readdirSync(ESSAYS_PATH);
-  const notes = fs.readdirSync(NOTES_PATH);
-  const projects = fs.readdirSync(PROJECTS_PATH);
-  const patterns = fs.readdirSync(PATTERNS_PATH);
-  const talks = fs.readdirSync(TALKS_PATH);
+	const talks = fs.readdirSync(TALKS_PATH);
 
 	// const type = essays.find((e) => e.includes(params.slug)) ? "post" : "note";
 
@@ -501,19 +442,9 @@ export const getStaticProps = async ({ params }) => {
 		type = "note";
 	} else if (patterns.find((file) => file.includes(params.slug))) {
 		type = "pattern";
+	} else if (talks.find((file) => file.includes(params.slug))) {
+		type = "talk";
 	}
-  if (projects.find((file) => file.includes(params.slug))) {
-    type = "project";
-  } else if (essays.find((file) => file.includes(params.slug))) {
-    type = "essay";
-  } else if (notes.find((file) => file.includes(params.slug))) {
-    type = "note";
-  } else if (patterns.find((file) => file.includes(params.slug))) {
-    type = "pattern";
-  } else if (talks.find((file) => file.includes(params.slug))) {
-    type = "talk";
-  }
-
 	// switch case statement to determine which file to load
 	let filePath;
 	switch (type) {
@@ -529,26 +460,10 @@ export const getStaticProps = async ({ params }) => {
 		case "pattern":
 			filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
 			break;
+		case "talk":
+			filePath = path.join(TALKS_PATH, `${params.slug}.mdx`);
+			break;
 	}
-  // switch case statement to determine which file to load
-  let filePath;
-  switch (type) {
-    case "essay":
-      filePath = path.join(ESSAYS_PATH, `${params.slug}.mdx`);
-      break;
-    case "note":
-      filePath = path.join(NOTES_PATH, `${params.slug}.mdx`);
-      break;
-    case "project":
-      filePath = path.join(PROJECTS_PATH, `${params.slug}.mdx`);
-      break;
-    case "pattern":
-      filePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
-      break;
-    case "talk":
-      filePath = path.join(TALKS_PATH, `${params.slug}.mdx`);
-      break;
-  }
 
 	const source = fs.readFileSync(filePath);
 	const { content, data } = matter(source);
@@ -610,21 +525,15 @@ export const getStaticPaths = async () => {
 	const essayPaths = getSlugParams(essayFilePaths);
 	const projectPaths = getSlugParams(projectFilePaths);
 	const patternPaths = getSlugParams(patternFilePaths);
-  const notePaths = getSlugParams(noteFilePaths);
-  const essayPaths = getSlugParams(essayFilePaths);
-  const projectPaths = getSlugParams(projectFilePaths);
-  const patternPaths = getSlugParams(patternFilePaths);
-  const talkPaths = getSlugParams(talksFilePaths);
+	const talkPaths = getSlugParams(talksFilePaths);
 
 	// Combine all paths into one array
-	const paths = notePaths.concat(essayPaths, projectPaths, patternPaths);
-  // Combine all paths into one array
-  const paths = notePaths.concat(
-    essayPaths,
-    projectPaths,
-    patternPaths,
-    talkPaths
-  );
+	const paths = notePaths.concat(
+		essayPaths,
+		projectPaths,
+		patternPaths,
+		talkPaths
+	);
 
 	return {
 		paths,

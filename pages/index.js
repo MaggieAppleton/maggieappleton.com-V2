@@ -37,11 +37,7 @@ export default function Index({
 	sortedNotes: notes,
 	sortedProjects: projects,
 	sortedPatterns: patterns,
-  sortedEssays: essays,
-  sortedNotes: notes,
-  // sortedProjects: projects,
-  sortedPatterns: patterns,
-  // sortedTalks: talks,
+	// sortedTalks: talks,
 }) {
 	// React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
 
