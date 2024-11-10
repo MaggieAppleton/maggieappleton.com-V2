@@ -171,6 +171,7 @@ export default function Index({
 									title={essay.data.title}
 									growthStage={essay.data.growthStage}
 									date={essay.data.updated}
+									description={essay.data.description}
 								/>
 							))}
 						</div>
@@ -221,6 +222,7 @@ export default function Index({
 									title={pattern.data.title}
 									growthStage={pattern.data.growthStage}
 									date={pattern.data.updated}
+									description={pattern.data.description}
 								/>
 							))}
 						</div>
@@ -258,223 +260,6 @@ export default function Index({
 						</div>
 					</section>
 				</GardenSection>
-				{/* <Spacer />
-  return (
-    // <NextSeo>
-    <>
-      <Header title="Maggie Appleton" />
-      <Layout>
-        <header
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "var(--space-2xs)",
-          }}
-        >
-          <Title1
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 1 }}
-            style={{
-              marginTop: "var(--space-m)",
-              maxWidth: "1100px",
-            }}
-          >
-            <b>Maggie </b>
-            makes visual essays about programming, design, and anthropology.
-          </Title1>
-          <SmallTitle2
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            Designer, anthropologist, and mediocre developer
-            <br />
-            Currently leading design at{" "}
-            <UnderlineHoverLink href="https://elicit.com">
-              <b>Elicit</b>
-            </UnderlineHoverLink>{" "}
-          </SmallTitle2>
-        </header>
-        <Spacer size="medium" />
-        <motion.section
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 1 }}
-        >
-          <Link href="/garden">
-            <a>
-              <Title2
-                style={{
-                  fontSize: "var(--font-size-2xl)",
-                }}
-              >
-                The Garden
-              </Title2>
-            </a>
-          </Link>
-          <Subheader>
-            A digital garden is a collection of imperfect notes, essays, and
-            ideas growing slowly over time.{" "}
-            <ReadmoreLink href="/garden-history">
-              Learn more
-              <ArrowRightIcon width="18" height="18" />
-            </ReadmoreLink>
-          </Subheader>
-        </motion.section>
-        <GardenSection
-          variants={collectionAnimation}
-          initial="hidden"
-          animate="visible"
-        >
-          <section style={{ gridArea: "essays" }}>
-            <Link href="/essays">
-              <a>
-                <SectionHeader>
-                  Essays
-                  <ArrowRightIcon width="18" height="18" />
-                </SectionHeader>
-              </a>
-            </Link>
-            <Subheader>
-              Opinionated, longform narrative writing with an agenda
-            </Subheader>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                gridGap: "var(--space-2xs)",
-              }}
-            >
-              {essays.map((essay, i) => (
-                <EssayCard
-                  id={essay.slug}
-                  key={essay.slug}
-                  variants={itemAnimation}
-                  slug={essay.slug}
-                  cover={essay.data.cover}
-                  title={essay.data.title}
-                  growthStage={essay.data.growthStage}
-                  date={essay.data.updated}
-                />
-              ))}
-            </div>
-          </section>
-          <section style={{ gridArea: "notes" }}>
-            <Link href="/notes">
-              <a>
-                <SectionHeader>
-                  Notes
-                  <ArrowRightIcon width="18" height="18" />
-                </SectionHeader>
-              </a>
-            </Link>
-            <Subheader>
-              Loose, unopinionated notes on things I don’t entirely understand
-              yet.
-            </Subheader>
-            <div style={{ marginLeft: "-1.4rem", marginTop: "-1rem" }}>
-              {notes.slice(0, 10).map((note) => (
-                <NoteCard
-                  id={note.slug}
-                  slug={note.slug}
-                  title={note.data.title}
-                  growthStage={note.data.growthStage}
-                  date={note.data.updated}
-                />
-              ))}
-            </div>
-          </section>
-          <section style={{ gridArea: "patterns" }}>
-            <Link href="/patterns">
-              <a>
-                <SectionHeader>
-                  Patterns
-                  <ArrowRightIcon width="18" height="18" />
-                </SectionHeader>
-              </a>
-            </Link>
-            <Subheader>
-              Design patterns gathered from my own observations and research.
-            </Subheader>
-            <div style={{ marginLeft: "-1.4rem" }}>
-              {patterns.map((pattern) => (
-                <PatternCard
-                  key={pattern.slug}
-                  slug={pattern.slug}
-                  title={pattern.data.title}
-                  growthStage={pattern.data.growthStage}
-                  date={pattern.data.updated}
-                />
-              ))}
-            </div>
-          </section>
-          <section style={{ gridArea: "library" }}>
-            <Link href="/library">
-              <a>
-                <SectionHeader>
-                  Library
-                  <ArrowRightIcon width="18" height="18" />
-                </SectionHeader>
-              </a>
-            </Link>
-            <Subheader>
-              Books I’ve read and books I like the idea of having read.
-            </Subheader>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-                gridGap: "var(--space-2xs)",
-              }}
-            >
-              {bookData.slice(0, 8).map((book, i) => (
-                <BookCard
-                  small
-                  subtitle={book.subtitle}
-                  key={i}
-                  cover={book.cover}
-                  title={book.title}
-                  author={book.author}
-                  link={book.link}
-                />
-              ))}
-            </div>
-          </section>
-        </GardenSection>
-        {/* <Spacer />
-        <section>
-          <Link href="/projects">
-            <a href="/projects">
-              <Title2
-                style={{
-                  fontSize: "var(--font-size-2xl)",
-                }}
-              >
-                Projects
-              </Title2>
-            </a>
-          </Link>
-          <Subheader>In the past I have made things</Subheader>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gridGap: "var(--space-s)",
-            }}
-          >
-            {projects.slice(0, 3).map((project, i) => (
-              <ProjectCard
-                key={i}
-                slug={project.slug}
-                title={project.data.title}
-                cover={project.data.cover}
-                date={project.data.updated}
-                topics={project.data.topics}
-              />
-            ))}
-          </div>
-        </section> */}
 			</Layout>
 		</>
 	);
@@ -531,34 +316,6 @@ const IndexNoteCard = styled.div`
 		transform: scale3d(1.02, 1.02, 1.02);
 	}
 `;
-// const IndexNoteCard = styled.div`
-//   display: flex;
-//   padding: var(--space-xs) 0 1.2rem;
-//   border-bottom: 1px solid var(--color-tinted-cream);
-//   transition: all 0.3s ease-in-out;
-//   svg {
-//     position: relative;
-//     top: 5px;
-//     flex-shrink: 0;
-//   }
-//   h3 {
-//     color: var(--color-gray-800);
-//     transition: all 0.3s ease-in-out;
-//     font-family: var(--font-body);
-//     font-size: var(--font-size-base);
-//     font-weight: 400;
-//     line-height: var(--leading-snug);
-//     margin-left: var(--space-xs);
-//     transition: all 0.3s ease-in-out;
-//   }
-//   &:hover {
-//     border-bottom: 1px solid var(--color-sea-blue);
-//     h3 {
-//       color: var(--color-crimson);
-//     }
-//     transform: scale3d(1.02, 1.02, 1.02);
-//   }
-// `;
 
 const GardenSection = styled(motion.section)`
 	margin: var(--space-xl) 0 var(--space-s);
@@ -685,7 +442,7 @@ export function getStaticProps() {
 		};
 	});
 	// Sort patterns by date
-	const sortedPatterns = patterns.sort((a, b) => {
+	const sortedPatterns = patterns.slice(0, 8).sort((a, b) => {
 		return new Date(b.data.updated) - new Date(a.data.updated);
 	});
 
