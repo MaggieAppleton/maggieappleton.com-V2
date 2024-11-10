@@ -28,17 +28,16 @@ const LoadingFilters = () => (
 );
 
 const FiltersWithResults = connectStateResults(({ isSearchStalled }) => {
-	const [isStalled, setIsStalled] = useState(true);
+	const [initialLoad, setInitialLoad] = useState(true);
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsStalled(isSearchStalled);
-		}, 1000);
-
-		return () => clearTimeout(timer);
+		if (!isSearchStalled && initialLoad) {
+			// Once we've loaded for the first time, never show loading state again
+			setInitialLoad(false);
+		}
 	}, [isSearchStalled]);
 
-	if (isStalled) {
+	if (initialLoad && isSearchStalled) {
 		return <LoadingFilters />;
 	}
 
