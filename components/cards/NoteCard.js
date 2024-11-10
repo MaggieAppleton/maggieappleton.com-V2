@@ -4,7 +4,14 @@ import GrowthIcon from "../icons/GrowthIcon";
 import { motion } from "framer-motion";
 import { RelativeDate } from "../templates/Dates";
 
-export default function NoteCard({ slug, title, growthStage, date, id }) {
+export default function NoteCard({
+	slug,
+	title,
+	growthStage,
+	date,
+	id,
+	description,
+}) {
 	return (
 		<Link key={id} as={`/${slug}`} href={`/${slug}`}>
 			<a>
@@ -12,6 +19,7 @@ export default function NoteCard({ slug, title, growthStage, date, id }) {
 					{growthStage && <GrowthIcon size="24" growthStage={growthStage} />}
 					<div>
 						<h3>{title}</h3>
+						<Description>{description}</Description>
 						<MetadataContainer>
 							<span>Note</span>
 							<svg width="4px" height="10px">
@@ -32,7 +40,7 @@ const MetadataContainer = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	margin-left: var(--space-xs);
-	margin-top: var(--space-2xs);
+	margin-top: 4px;
 	font-family: var(--font-sans);
 	font-size: var(--font-size-xs);
 	color: var(--color-gray-500);
@@ -41,6 +49,15 @@ const MetadataContainer = styled.div`
 	svg {
 		margin: 0 0.4rem;
 	}
+`;
+
+const Description = styled.p`
+	font-size: var(--font-size-xs);
+	color: var(--color-gray-500);
+	font-family: var(--font-sans);
+	font-weight: 400;
+	margin-left: var(--space-xs);
+	margin-top: var(--space-2xs);
 `;
 
 const StyledNoteCard = styled(motion.div)`

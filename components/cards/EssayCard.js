@@ -13,6 +13,7 @@ export default function EssayCard({
 	date,
 	variants,
 	id,
+	description,
 }) {
 	return (
 		<Link key={id} as={`/${slug}`} href={`/${slug}`}>
@@ -24,6 +25,7 @@ export default function EssayCard({
 						</ImageWrapper>
 					)}
 					<h3>{title}</h3>
+					<Description>{description}</Description>
 					<MetadataContainer>
 						{growthStage && <span>Essay</span>}
 						{growthStage && <GrowthIcon size="15" growthStage={growthStage} />}
@@ -52,12 +54,20 @@ const MetadataContainer = styled.div`
 	font-family: var(--font-sans);
 	font-size: var(--font-size-xs);
 	text-transform: capitalize;
-	color: var(--color-gray-600);
+	color: var(--color-gray-500);
 	font-weight: 400;
-	margin-top: 2px;
+	margin-top: 6px;
 	svg {
 		margin: 0 var(--space-2xs);
 	}
+`;
+
+const Description = styled.p`
+	font-size: var(--font-size-xs);
+	color: var(--color-gray-500);
+	font-family: var(--font-sans);
+	font-weight: 400;
+	margin-top: 4px;
 `;
 
 const StyledEssayCard = styled.div`

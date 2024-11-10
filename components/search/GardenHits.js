@@ -28,6 +28,7 @@ function GardenHits({ hits, allPostData }) {
 							title={post.title}
 							growthStage={post.growthStage}
 							date={post.updated}
+							description={post.description}
 						/>
 					);
 				} else if (post.type === "note") {
@@ -39,6 +40,7 @@ function GardenHits({ hits, allPostData }) {
 							title={post.title}
 							growthStage={post.growthStage}
 							date={post.updated}
+							description={post.description}
 						/>
 					);
 				} else if (post.type === "pattern") {
@@ -50,6 +52,7 @@ function GardenHits({ hits, allPostData }) {
 							title={post.title}
 							growthStage={post.growthStage}
 							date={post.updated}
+							description={post.description}
 						/>
 					);
 				} else if (post.type === "talk") {
