@@ -3,26 +3,41 @@ import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import Tooltip from "../Tooltip";
 import styled from "styled-components";
 
-export default function AcademicReference({ author, year, title, href }) {
+export default function AcademicReference({
+	authors,
+	year,
+	abstract,
+	title,
+	href,
+	children,
+}) {
 	return (
 		<Tooltip
 			maxWidth={400}
 			content={
-				<StyledExternalUrl href={href}>
-					<span>{title}</span>
-					<ArrowTopRightOnSquareIcon
-						width="16"
-						height="16"
-						style={{ position: "relative", top: "3px" }}
-					/>
-				</StyledExternalUrl>
+				<div>
+					<TitleLink href={href}>
+						<span>{title}</span>
+						<ArrowTopRightOnSquareIcon
+							width="16"
+							height="16"
+							style={{ position: "relative", top: "3px" }}
+						/>
+					</TitleLink>
+					<span>
+						{authors}, {year}
+					</span>
+					{abstract && (
+						<AbstractContainer>
+							<FullAbstract>{abstract}</FullAbstract>
+						</AbstractContainer>
+					)}
+				</div>
 			}
 		>
 			<StyledLink href={href}>
 				<AcademicCapIcon width="20" height="20" />
-				<span>
-					{author} {year}
-				</span>
+				<span>{children}</span>
 			</StyledLink>
 		</Tooltip>
 	);
@@ -64,9 +79,10 @@ const StyledLink = styled.a`
 	}
 `;
 
-const StyledExternalUrl = styled.a`
-	color: var(--color-gray-600);
+const TitleLink = styled.a`
+	color: var(--color-dark-crimson);
 	transition: color 0.2s ease-in-out;
+	font-family: var(--font-serif);
 	display: inline-flex;
 	grid-gap: 6px;
 	max-width: 420px;
@@ -76,5 +92,30 @@ const StyledExternalUrl = styled.a`
 	}
 	&:hover {
 		color: var(--color-bright-crimson);
+	}
+`;
+
+const AbstractContainer = styled.div`
+	position: relative;
+`;
+
+const FullAbstract = styled.div`
+	max-height: 160px;
+	overflow-y: auto;
+	margin-top: 8px;
+	padding-right: 8px;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--color-gray-100);
+		border-radius: 3px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--color-gray-300);
+		border-radius: 3px;
 	}
 `;

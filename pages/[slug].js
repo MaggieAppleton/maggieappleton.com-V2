@@ -115,6 +115,9 @@ export const components = {
 	a: dynamic(() => import("../components/links/TooltipLink"), {
 		ssr: false,
 	}),
+	TooltipLink: dynamic(() => import("../components/links/TooltipLink"), {
+		ssr: false,
+	}),
 	pre: dynamic(() => import("../components/mdx/CodeBlock"), {
 		ssr: false,
 	}),
