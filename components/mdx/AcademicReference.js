@@ -13,26 +13,29 @@ export default function AcademicReference({
 }) {
 	return (
 		<Tooltip
-			maxWidth={400}
+			maxWidth={440}
 			content={
-				<div>
+				<TooltipContent>
 					<TitleLink href={href}>
 						<span>{title}</span>
 						<ArrowTopRightOnSquareIcon
 							width="16"
 							height="16"
-							style={{ position: "relative", top: "3px" }}
+							style={{ position: "relative", top: "8px", right: "8px" }}
 						/>
 					</TitleLink>
-					<span>
-						{authors}, {year}
-					</span>
+					<AuthorYear>
+						{authors}
+						<Dot>•</Dot>
+						{year}
+					</AuthorYear>
 					{abstract && (
 						<AbstractContainer>
+							<span>Abstract</span>
 							<FullAbstract>{abstract}</FullAbstract>
 						</AbstractContainer>
 					)}
-				</div>
+				</TooltipContent>
 			}
 		>
 			<StyledLink href={href}>
@@ -82,10 +85,13 @@ const StyledLink = styled.a`
 const TitleLink = styled.a`
 	color: var(--color-dark-crimson);
 	transition: color 0.2s ease-in-out;
-	font-family: var(--font-serif);
+	font-family: var(--font-body);
+	font-size: calc(var(--font-size-base) / 1.1);
+	line-height: var(--leading-snug);
+	font-weight: 400;
 	display: inline-flex;
-	grid-gap: 6px;
-	max-width: 420px;
+	grid-gap: 12px;
+	margin-bottom: var(--space-2xs);
 	svg {
 		margin: 0 !important;
 		flex-shrink: 0;
@@ -95,15 +101,34 @@ const TitleLink = styled.a`
 	}
 `;
 
+const AuthorYear = styled.div`
+	color: var(--color-gray-600);
+`;
+
+const Dot = styled.span`
+	margin: 0 6px;
+	color: var(--color-gray-400);
+	font-size: calc(var(--font-size-xs) / 1.1);
+`;
+
 const AbstractContainer = styled.div`
-	position: relative;
+	margin-top: var(--space-s);
+	span {
+		color: var(--color-gray-600);
+		text-transform: uppercase;
+		color: var(--color-bright-crimson);
+		font-size: calc(var(--font-size-xs) / 1.1);
+		letter-spacing: 0.04rem;
+		font-weight: 500;
+	}
 `;
 
 const FullAbstract = styled.div`
-	max-height: 160px;
+	max-height: 200px;
 	overflow-y: auto;
-	margin-top: 8px;
-	padding-right: 8px;
+	padding-right: 12px;
+	margin-top: var(--space-3xs);
+	line-height: var(--leading-base);
 
 	&::-webkit-scrollbar {
 		width: 6px;
@@ -118,4 +143,9 @@ const FullAbstract = styled.div`
 		background: var(--color-gray-300);
 		border-radius: 3px;
 	}
+`;
+
+const TooltipContent = styled.div`
+	padding: var(--space-3xs);
+	padding-right: 0;
 `;
