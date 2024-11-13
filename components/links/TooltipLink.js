@@ -23,13 +23,13 @@ function InternalLink({ href, children, noStyling, notes }) {
 			maxWidth={420}
 			content={
 				<TooltipContent>
-					<StyledExternalUrl href={href}>{href}</StyledExternalUrl>
 					{notes && (
 						<>
-							<Divider />
 							<Notes>{notes}</Notes>
+							<Divider />
 						</>
 					)}
+					<StyledExternalUrl href={href}>{href}</StyledExternalUrl>
 				</TooltipContent>
 			}
 		>
@@ -48,6 +48,12 @@ function ExternalLink({ href, children, noStyling, notes }) {
 			maxWidth={420}
 			content={
 				<TooltipContent>
+					{notes && (
+						<>
+							<Notes>{notes}</Notes>
+							<Divider />
+						</>
+					)}
 					<StyledExternalUrl href={href}>
 						{href}
 						<ArrowTopRightOnSquareIcon
@@ -56,12 +62,6 @@ function ExternalLink({ href, children, noStyling, notes }) {
 							style={{ position: "relative", top: "3px" }}
 						/>
 					</StyledExternalUrl>
-					{notes && (
-						<>
-							<Divider />
-							<Notes>{notes}</Notes>
-						</>
-					)}
 				</TooltipContent>
 			}
 		>
@@ -82,6 +82,7 @@ const StyledExternalUrl = styled.a`
 	max-width: 420px;
 	svg {
 		margin: 0 !important;
+		margin-left: 6px !important;
 	}
 	&:hover {
 		color: var(--color-bright-crimson);
@@ -177,16 +178,23 @@ const StyledLink = styled.a`
 	}
 `;
 
-const TooltipContent = styled.div``;
-
-const Divider = styled.hr`
-	border: none;
-	border-top: 1px solid var(--color-gray-400);
-	margin: 8px 0;
+const TooltipContent = styled.div`
+	padding: var(--space-3xs);
 `;
 
-const Notes = styled.p`
-	color: var(--color-gray-600);
+const Divider = styled.div`
+	width: calc(100% + 36px);
+	height: 1px;
+	background: var(--color-gray-300);
+	margin: var(--space-xs) 0;
+	margin-left: -18px;
+	margin-right: -18px;
+`;
+
+const Notes = styled.span`
+	line-height: var(--leading-base);
+	font-family: var(--font-family-sans);
+	color: var(--color-gray-800);
 	margin: 0;
 	word-break: break-all;
 `;
