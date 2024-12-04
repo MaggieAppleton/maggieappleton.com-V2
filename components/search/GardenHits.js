@@ -5,12 +5,15 @@ import NoteCard from "../cards/NoteCard";
 import PatternCard from "../cards/PatternCard";
 import PodcastCard from "../cards/PodcastCard";
 import TalkCard from "../cards/TalkCard";
+import { useMemo } from 'react';
 
 function GardenHits({ hits, allPostData }) {
 	const hitLength = hits?.length;
-	const sortedPosts = allPostData.sort((a, b) => {
-		return new Date(b.updated) - new Date(a.updated);
-	});
+	const sortedPosts = useMemo(() => {
+		return allPostData.sort((a, b) => {
+			return new Date(b.updated) - new Date(a.updated);
+		});
+	}, [allPostData]);
 	const filteredGardenHits = hitLength > 0 ? hits : sortedPosts;
 
 	return (
