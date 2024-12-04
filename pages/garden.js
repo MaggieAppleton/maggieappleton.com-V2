@@ -17,8 +17,18 @@ import {
 import TitleWithCount from "../components/TitleWithCount";
 import { GardenFiltersAndHits } from "../components/search/GardenFiltersAndHits";
 import { podcastData } from "../posts/data/podcasts.js";
+import { useEffect } from 'react';
 
 export default function Garden({ allPosts }) {
+	useEffect(() => {
+		const t0 = performance.now();
+		
+		return () => {
+			const t1 = performance.now();
+			console.log(`Garden page unmount took ${t1 - t0} milliseconds`);
+		}
+	}, []);
+
 	const postsAndPodcasts = allPosts.concat(podcastData);
 
 	return (
@@ -37,7 +47,6 @@ export default function Garden({ allPosts }) {
 		</>
 	);
 }
-
 // Fetches the data for the page.
 
 export function getStaticProps() {
