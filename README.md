@@ -1,6 +1,6 @@
-# Maggie's Digital Garden
+# Maggie's Digital Garden, Version 2 – RETIRED ⚠️
 
-This is the source code for [maggieappleton.com](https://maggieappleton.com), a digital garden filled with growing notes, essays, and design patterns.
+This was the source code for [maggieappleton.com](https://maggieappleton.com), a digital garden filled with growing notes, essays, and design patterns. I've now [rebuilt it in Astro](https://github.com/MaggieAppleton/maggieappleton.com-v3)
 
 It's open source to let people poke around and get ideas for their own garden. However, I'd rather you didn't fork it wholesale in order to build your own garden. First because my code is a hot mess (I am a developer by necessity, not by profession or choice), and second because I designed it according to my own aesthetic preferences, and functional needs / desires. Yours won't be the same.
 
